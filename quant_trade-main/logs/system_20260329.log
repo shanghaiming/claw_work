@@ -1,0 +1,15 @@
+2026-03-29 13:36:23,877 - UnifiedTradingSystem - INFO - 系统初始化完成 - 版本: 1.0.0
+2026-03-29 13:36:23,888 - UnifiedTradingSystem - INFO - 启动数据管道: ['TEST001.SZ'] (2026-02-06 至 2026-03-28)
+2026-03-29 13:36:23,889 - UnifiedTradingSystem - INFO - 获取数据: TEST001.SZ
+2026-03-29 13:36:23,901 - UnifiedTradingSystem - ERROR - 数据管道执行失败: 'cache_ttl_hours'
+Traceback (most recent call last):
+  File "/Users/chengming/.openclaw/workspace/quant_integration/phase4_system_integration/main.py", line 245, in run_data_pipeline
+    data = data_manager.get_data(
+        symbol=symbol,
+    ...<3 lines>...
+        **kwargs
+    )
+  File "/Users/chengming/.openclaw/workspace/quant_integration/phase4_system_integration/data/data_manager.py", line 676, in get_data
+    self.cache_manager.set(cache_key, processed_data, self.config['cache_ttl_hours'])
+                                                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'cache_ttl_hours'

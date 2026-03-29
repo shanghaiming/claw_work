@@ -1,0 +1,134 @@
+{
+  "key_levels": [
+    {
+      "type": "support",
+      "price": 111.06553567257045,
+      "composite_score": 0.6200000000000001,
+      "sources": [
+        "pivot_trough"
+      ],
+      "action": "watch_for_bounce_or_break",
+      "confidence": 0.8
+    },
+    {
+      "type": "support",
+      "price": 114.68953115461453,
+      "composite_score": 0.6533333333333334,
+      "sources": [
+        "pivot_trough",
+        "range_cluster"
+      ],
+      "action": "watch_for_bounce_or_break",
+      "confidence": 0.8166666666666668
+    },
+    {
+      "type": "support",
+      "price": 120.16172249419189,
+      "composite_score": 0.6200000000000001,
+      "sources": [
+        "pivot_trough"
+      ],
+      "action": "watch_for_bounce_or_break",
+      "confidence": 0.8
+    },
+    {
+      "type": "support",
+      "price": 124.5762405069531,
+      "composite_score": 0.6200000000000001,
+      "sources": [
+        "pivot_trough"
+      ],
+      "action": "watch_for_bounce_or_break",
+      "confidence": 0.8
+    },
+    {
+      "type": "resistance",
+      "price": 114.12983564300913,
+      "composite_score": 0.6200000000000001,
+      "sources": [
+        "pivot_peak"
+      ],
+      "action": "watch_for_rejection_or_breakout",
+      "confidence": 0.8
+    },
+    {
+      "type": "resistance",
+      "price": 117.21251799438951,
+      "composite_score": 0.6200000000000001,
+      "sources": [
+        "pivot_peak"
+      ],
+      "action": "watch_for_rejection_or_breakout",
+      "confidence": 0.8000000000000002
+    },
+    {
+      "type": "resistance",
+      "price": 120.8585526764485,
+      "composite_score": 0.7000000000000002,
+      "sources": [
+        "range_cluster"
+      ],
+      "action": "watch_for_rejection_or_breakout",
+      "confidence": 0.9
+    },
+    {
+      "type": "resistance",
+      "price": 124.70743227530225,
+      "composite_score": 0.6200000000000001,
+      "sources": [
+        "pivot_peak"
+      ],
+      "action": "watch_for_rejection_or_breakout",
+      "confidence": 0.8
+    },
+    {
+      "type": "resistance",
+      "price": 128.7985228225777,
+      "composite_score": 0.6200000000000001,
+      "sources": [
+        "pivot_peak"
+      ],
+      "action": "watch_for_rejection_or_breakout",
+      "confidence": 0.8
+    },
+    {
+      "type": "resistance",
+      "price": 138.42453406693053,
+      "composite_score": 0.64,
+      "sources": [
+        "compensated_ma"
+      ],
+      "action": "watch_for_rejection_or_breakout",
+      "confidence": 0.7
+    }
+  ],
+  "potential_setups": [
+    {
+      "type": "range_trading",
+      "description": "区间交易策略：在支撑位附近买入，阻力位附近卖出",
+      "confidence": 0.7,
+      "risk_level": "medium",
+      "key_considerations": [
+        "等待价格接近区间边界",
+        "使用小止损（区间宽度内）",
+        "区间突破时及时退出"
+      ]
+    }
+  ],
+  "risk_warnings": [
+    {
+      "type": "high_risk",
+      "description": "高风险市场环境，建议减小仓位或观望",
+      "reason": "成交量背离或高波动性"
+    }
+  ],
+  "monitoring_points": [
+    {
+      "type": "volume_divergence",
+      "description": "价格-成交量背离，可能预示反转",
+      "action": "密切关注价格行为确认"
+    }
+  ],
+  "entry_considerations": [],
+  "exit_considerations": []
+}

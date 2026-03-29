@@ -1,0 +1,800 @@
+/* assets/styles.css - 量化分析系统样式（完整修复版） */
+
+/* 基础重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #react-entry-point, #react-entry-point > div, ._dash-loading {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ========== 登录页面样式 ========== */
+.login-page {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff10" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+}
+
+.login-background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.login-form {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.login-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.login-input::placeholder {
+    color: #adb5bd;
+}
+
+.login-button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+}
+
+.login-button:active {
+    transform: translateY(-1px);
+}
+
+.login-error {
+    color: #e74c3c;
+    text-align: center;
+    margin: 15px 0;
+    min-height: 20px;
+    font-weight: 500;
+    padding: 10px;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+}
+
+.demo-section {
+    margin-top: 30px;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #bdc3c7, transparent);
+    margin: 25px 0;
+}
+
+.demo-title {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.demo-accounts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.demo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.demo-item:hover {
+    background: #fff;
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.demo-role {
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.demo-account {
+    color: #667eea;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* ========== 导航栏样式 ========== */
+.nav-bar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 20px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.15);
+    border-bottom-color: rgba(255,255,255,0.8);
+    transform: translateY(-1px);
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 25px;
+}
+
+.user-info {
+    color: white;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.logout-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logout-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ========== 数据管理页面样式 ========== */
+.data-management-page {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-management-content {
+    flex: 1;
+    padding: 25px;
+    overflow: auto;
+    background: #f8f9fa;
+}
+
+.data-management-page .header {
+    text-align: center;
+    color: #2c3e50;
+    margin: 20px 0 30px 0;
+    font-size: 2.4em;
+    font-weight: 300;
+    background: linear-gradient(135deg, #2c3e50, #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.data-management-page .control-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    flex: 0 0 auto;
+}
+
+.data-management-page .data-panel,
+.data-management-page .strategy-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    text-align: center;
+    min-width: 320px;
+    border: 1px solid #e1e5e9;
+    transition: all 0.3s ease;
+}
+
+.data-management-page .data-panel:hover,
+.data-management-page .strategy-panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.data-management-page .panel-title {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.data-management-page .data-btn,
+.data-management-page .strategy-btn {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76,175,80,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.data-management-page .data-btn:hover,
+.data-management-page .strategy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76,175,80,0.4);
+}
+
+.data-management-page .strategy-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+}
+
+.data-management-page .strategy-btn:hover {
+    box-shadow: 0 8px 25px rgba(255,107,107,0.4);
+}
+
+.data-management-page .status-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #666;
+    border-left: 5px solid #4CAF50;
+    font-weight: 500;
+}
+
+.data-management-page .log-panel,
+.data-management-page .error-panel {
+    background: white;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border: 1px solid #e1e5e9;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-management-page .log-container {
+    background: #1a1a1a;
+    color: #00d9ff;
+    padding: 20px;
+    border-radius: 10px;
+    height: 180px;
+    flex: none;
+    overflow-y: auto;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    border: 1px solid #333;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.data-management-page .log-entry {
+    margin: 6px 0;
+    padding: 4px 0;
+    border-bottom: 1px solid #2a2a2a;
+    transition: all 0.2s ease;
+}
+
+.data-management-page .log-entry:hover {
+    background: rgba(0, 217, 255, 0.1);
+    padding-left: 10px;
+}
+
+.error-log-container {
+    background: #2a1a1a;
+    color: #ff6b6b;
+    padding: 20px;
+    border-radius: 10px;
+    height: 140px;
+    overflow-y: auto;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    border: 1px solid #5a2a2a;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.error-entry {
+    margin: 5px 0;
+    padding: 4px 0;
+    border-bottom: 1px solid #3a2a2a;
+    transition: all 0.2s ease;
+}
+
+.error-entry:hover {
+    background: rgba(255, 107, 107, 0.1);
+    padding-left: 10px;
+}
+
+/* ========== 股票分析页面样式 ========== */
+.analysis-page {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.analysis-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.analysis-page .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background: white;
+    border-bottom: 1px solid #e1e5e9;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    flex: 0 0 auto;
+    height: 85px;
+}
+
+.analysis-page .control-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.analysis-page .nav-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.analysis-page .nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.analysis-page .timeframe-selector {
+    margin-left: 15px;
+}
+
+/* ========== 同步图表容器样式 ========== */
+.sync-charts-container {
+    padding: 0;
+    background: #f8f9fa;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: calc(100vh - 155px); /* 减去头部和导航栏高度 */
+}
+
+.sync-chart-section {
+    background: white;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #e1e5e9;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.sync-chart-section:hover {
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.sync-chart-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sync-chart-section:hover::before {
+    opacity: 1;
+}
+
+/* 图表同步样式 */
+.js-plotly-plot .plotly .modebar {
+    background: rgba(255,255,255,0.95) !important;
+    border: 1px solid #e1e5e9 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+}
+
+.js-plotly-plot .plotly .main-svg {
+    border-radius: 0 !important;
+}
+
+.js-plotly-plot .plotly .gridlayer .xgrid,
+.js-plotly-plot .plotly .gridlayer .ygrid {
+    stroke: #f0f0f0 !important;
+    stroke-width: 1px !important;
+}
+
+/* 十字光标样式 */
+.crosshair {
+    cursor: crosshair !important;
+}
+
+/* 图表高度优化 */
+#price-chart {
+    height: 38vh !important;
+}
+
+#volume-chart {
+    height: 19vh !important;
+}
+
+#macd-chart {
+    height: 19vh !important;
+}
+
+#wr-chart {
+    height: 19vh !important;
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 1024px) {
+    .login-card {
+        max-width: 400px;
+        padding: 40px 30px;
+    }
+    
+    .data-management-page .control-container {
+        gap: 30px;
+    }
+    
+    .data-management-page .data-panel,
+    .data-management-page .strategy-panel {
+        min-width: 280px;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-card {
+        padding: 30px 25px;
+        margin: 20px;
+    }
+    
+    .login-title {
+        font-size: 1.8em;
+    }
+    
+    .nav-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+    
+    .nav-link {
+        padding: 12px 20px;
+    }
+    
+    .user-section {
+        padding: 15px 20px 0 20px;
+    }
+    
+    .analysis-page .header-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        height: auto;
+    }
+    
+    .analysis-page .control-group {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .data-management-page .control-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .data-management-page .data-panel,
+    .data-management-page .strategy-panel {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .data-management-page .log-panel,
+    .data-management-page .error-panel {
+        margin: 15px;
+        padding: 20px;
+    }
+    
+    .sync-charts-container {
+        height: calc(100vh - 200px);
+    }
+    
+    /* 移动端调整图表高度 */
+    #price-chart {
+        height: 35vh !important;
+    }
+    
+    #volume-chart,
+    #macd-chart,
+    #wr-chart {
+        height: 18vh !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 25px 20px;
+        margin: 15px;
+    }
+    
+    .login-title {
+        font-size: 1.6em;
+    }
+    
+    .login-input {
+        padding: 12px 15px;
+    }
+    
+    .demo-item {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .data-management-page .header {
+        font-size: 2em;
+    }
+    
+    .analysis-page .header-container h1 {
+        font-size: 1.5em;
+    }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6a4190);
+}
+
+/* 加载动画 */
+._dash-loading {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+._dash-loading::after {
+    content: '🚀 加载中...';
+    color: white;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* 链接激活状态 */
+.nav-link.active {
+    background-color: rgba(255,255,255,0.2);
+    border-bottom-color: white;
+}
+
+/* 按钮点击状态 */
+.logout-button:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* 确保所有按钮都有正确的样式 */
+.nav-button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}

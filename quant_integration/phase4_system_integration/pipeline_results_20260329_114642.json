@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "symbols": [
+      "TEST001.SZ"
+    ],
+    "start_date": "2026-02-01",
+    "end_date": "2026-03-28",
+    "data_source": "local",
+    "timestamp": "2026-03-29T11:46:42.139427"
+  },
+  "stages": {}
+}

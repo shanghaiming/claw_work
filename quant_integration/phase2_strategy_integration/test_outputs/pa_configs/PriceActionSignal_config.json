@@ -1,0 +1,11 @@
+{
+  "signal_type": "MACDDivergence",
+  "signal_params": {
+    "fast_period": 12,
+    "slow_period": 26,
+    "signal_period": 9
+  },
+  "window_size": 100,
+  "step": 20,
+  "description": "\u57fa\u4e8eSignalDefinition\u7684\u4ef7\u683c\u884c\u4e3a\u4fe1\u53f7\u7b56\u7565"
+}

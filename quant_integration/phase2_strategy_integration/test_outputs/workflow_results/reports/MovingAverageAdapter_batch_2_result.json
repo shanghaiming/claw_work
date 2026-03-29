@@ -1,0 +1,109 @@
+{
+  "strategy_name": "MovingAverageAdapter",
+  "instance_name": "MovingAverageAdapter_batch_2",
+  "execution_time": 0.171192,
+  "signal_count": 1,
+  "signals": [
+    {
+      "strategy": "MovingAverageAdapter_batch_2",
+      "signal_id": "MovingAverageAdapter_batch_2_0000",
+      "timestamp": "2024-02-15 00:00:00",
+      "action": "buy",
+      "price": "2024-02-15     96.332783\n2024-02-15    109.822985\n2024-02-15    102.245368\nName: close, dtype: float64",
+      "raw_signal": {
+        "timestamp": "2024-02-15 00:00:00",
+        "action": "buy",
+        "price": "2024-02-15     96.332783\n2024-02-15    109.822985\n2024-02-15    102.245368\nName: close, dtype: float64",
+        "symbol": "MSFT",
+        "type": "ma_golden_cross",
+        "confidence": 0.7,
+        "features": {
+          "strategy": "MovingAverage",
+          "short_window": 5,
+          "long_window": 20,
+          "threshold": 0.01,
+          "original_signal": {
+            "timestamp": "2024-02-15 00:00:00",
+            "action": "buy",
+            "symbol": "MSFT"
+          }
+        }
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:20.725198",
+        "strategy_params": {
+          "short_window": 5,
+          "long_window": 20,
+          "threshold": 0.01,
+          "selection_method": "score",
+          "enable_multi_stock": true,
+          "min_data_length": 50,
+          "position_state_enabled": false,
+          "enabled": true,
+          "version": "1.1.0",
+          "description": "\u79fb\u52a8\u5e73\u5747\u7b56\u7565\u9002\u914d\u5668\uff0c\u652f\u6301\u539f\u59cb\u5b9e\u73b0\u548c\u539f\u751f\u5b9e\u73b0"
+        },
+        "signal_index": 0
+      },
+      "symbol": "MSFT",
+      "confidence": 0.7,
+      "signal_type": "ma_golden_cross",
+      "features": {
+        "strategy": "MovingAverage",
+        "short_window": 5,
+        "long_window": 20,
+        "threshold": 0.01,
+        "original_signal": {
+          "timestamp": "2024-02-15 00:00:00",
+          "action": "buy",
+          "symbol": "MSFT"
+        }
+      }
+    }
+  ],
+  "performance_metrics": {
+    "strategy_name": "MovingAverageAdapter_batch_2",
+    "execution_stats": {
+      "signal_count": 1,
+      "buy_count": 1,
+      "sell_count": 0,
+      "execution_time": 0.171187
+    },
+    "signal_summary": {
+      "total_signals": 1,
+      "buy_signals": 1,
+      "sell_signals": 0,
+      "hold_signals": 0
+    },
+    "params": {
+      "short_window": 5,
+      "long_window": 20,
+      "threshold": 0.01,
+      "selection_method": "score",
+      "enable_multi_stock": true,
+      "min_data_length": 50,
+      "position_state_enabled": false,
+      "enabled": true,
+      "version": "1.1.0",
+      "description": "\u79fb\u52a8\u5e73\u5747\u7b56\u7565\u9002\u914d\u5668\uff0c\u652f\u6301\u539f\u59cb\u5b9e\u73b0\u548c\u539f\u751f\u5b9e\u73b0"
+    },
+    "initialized": true,
+    "signal_time_range": {
+      "start": "2024-02-15 00:00:00",
+      "end": "2024-02-15 00:00:00"
+    }
+  },
+  "config": {
+    "short_window": 5,
+    "long_window": 20,
+    "threshold": 0.01,
+    "selection_method": "score",
+    "enable_multi_stock": true,
+    "min_data_length": 50,
+    "position_state_enabled": false,
+    "enabled": true,
+    "version": "1.1.0",
+    "description": "\u79fb\u52a8\u5e73\u5747\u7b56\u7565\u9002\u914d\u5668\uff0c\u652f\u6301\u539f\u59cb\u5b9e\u73b0\u548c\u539f\u751f\u5b9e\u73b0"
+  },
+  "timestamp": "2026-03-28T21:46:20.554016"
+}

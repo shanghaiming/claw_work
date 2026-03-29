@@ -1,0 +1,999 @@
+2025-03-08 22:24:03,415 - INFO - fetch.py:38 - Loading selected stocks from: /Users/chengming/project/backtest/src/config/selected_stocks.csv
+2025-03-08 22:24:03,430 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002119.csv
+2025-03-08 22:24:03,440 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002119.csv
+2025-03-08 22:24:03,449 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002119.csv
+2025-03-08 22:24:03,473 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603118.csv
+2025-03-08 22:24:03,482 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603118.csv
+2025-03-08 22:24:03,491 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603118.csv
+2025-03-08 22:24:03,511 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600066.csv
+2025-03-08 22:24:03,520 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600066.csv
+2025-03-08 22:24:03,529 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600066.csv
+2025-03-08 22:24:03,549 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.301078.csv
+2025-03-08 22:24:03,559 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.301078.csv
+2025-03-08 22:24:03,570 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.301078.csv
+2025-03-08 22:24:03,590 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002625.csv
+2025-03-08 22:24:03,600 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002625.csv
+2025-03-08 22:24:03,609 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002625.csv
+2025-03-08 22:24:03,629 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688123.csv
+2025-03-08 22:24:03,638 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688123.csv
+2025-03-08 22:24:03,646 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688123.csv
+2025-03-08 22:24:03,667 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300007.csv
+2025-03-08 22:24:03,676 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300007.csv
+2025-03-08 22:24:03,685 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300007.csv
+2025-03-08 22:24:03,704 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002179.csv
+2025-03-08 22:24:03,713 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002179.csv
+2025-03-08 22:24:03,722 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002179.csv
+2025-03-08 22:24:03,741 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601336.csv
+2025-03-08 22:24:03,750 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601336.csv
+2025-03-08 22:24:03,759 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601336.csv
+2025-03-08 22:24:03,779 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.301013.csv
+2025-03-08 22:24:03,787 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.301013.csv
+2025-03-08 22:24:03,796 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.301013.csv
+2025-03-08 22:24:03,815 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000157.csv
+2025-03-08 22:24:03,823 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000157.csv
+2025-03-08 22:24:03,832 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000157.csv
+2025-03-08 22:24:03,850 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300454.csv
+2025-03-08 22:24:03,858 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300454.csv
+2025-03-08 22:24:03,868 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300454.csv
+2025-03-08 22:24:03,888 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300580.csv
+2025-03-08 22:24:03,898 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300580.csv
+2025-03-08 22:24:03,909 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300580.csv
+2025-03-08 22:24:03,929 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300763.csv
+2025-03-08 22:24:03,939 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300763.csv
+2025-03-08 22:24:03,948 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300763.csv
+2025-03-08 22:24:03,967 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300525.csv
+2025-03-08 22:24:03,977 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300525.csv
+2025-03-08 22:24:03,986 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300525.csv
+2025-03-08 22:24:04,005 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300031.csv
+2025-03-08 22:24:04,015 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300031.csv
+2025-03-08 22:24:04,025 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300031.csv
+2025-03-08 22:24:04,048 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002681.csv
+2025-03-08 22:24:04,057 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002681.csv
+2025-03-08 22:24:04,067 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002681.csv
+2025-03-08 22:24:04,087 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300073.csv
+2025-03-08 22:24:04,096 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300073.csv
+2025-03-08 22:24:04,104 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300073.csv
+2025-03-08 22:24:04,124 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000596.csv
+2025-03-08 22:24:04,132 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000596.csv
+2025-03-08 22:24:04,141 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000596.csv
+2025-03-08 22:24:04,161 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002745.csv
+2025-03-08 22:24:04,170 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002745.csv
+2025-03-08 22:24:04,178 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002745.csv
+2025-03-08 22:24:04,196 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002398.csv
+2025-03-08 22:24:04,205 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002398.csv
+2025-03-08 22:24:04,214 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002398.csv
+2025-03-08 22:24:04,232 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002195.csv
+2025-03-08 22:24:04,241 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002195.csv
+2025-03-08 22:24:04,250 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002195.csv
+2025-03-08 22:24:04,268 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688333.csv
+2025-03-08 22:24:04,277 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688333.csv
+2025-03-08 22:24:04,287 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688333.csv
+2025-03-08 22:24:04,306 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688017.csv
+2025-03-08 22:24:04,315 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688017.csv
+2025-03-08 22:24:04,324 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688017.csv
+2025-03-08 22:24:04,343 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601127.csv
+2025-03-08 22:24:04,353 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601127.csv
+2025-03-08 22:24:04,362 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601127.csv
+2025-03-08 22:24:04,380 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688256.csv
+2025-03-08 22:24:04,389 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688256.csv
+2025-03-08 22:24:04,399 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688256.csv
+2025-03-08 22:24:04,419 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002897.csv
+2025-03-08 22:24:04,428 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002897.csv
+2025-03-08 22:24:04,437 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002897.csv
+2025-03-08 22:24:04,457 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002175.csv
+2025-03-08 22:24:04,466 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002175.csv
+2025-03-08 22:24:04,474 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002175.csv
+2025-03-08 22:24:04,493 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002558.csv
+2025-03-08 22:24:04,502 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002558.csv
+2025-03-08 22:24:04,511 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002558.csv
+2025-03-08 22:24:04,534 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000807.csv
+2025-03-08 22:24:04,545 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000807.csv
+2025-03-08 22:24:04,558 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000807.csv
+2025-03-08 22:24:04,590 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600316.csv
+2025-03-08 22:24:04,602 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600316.csv
+2025-03-08 22:24:04,612 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600316.csv
+2025-03-08 22:24:04,632 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300253.csv
+2025-03-08 22:24:04,642 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300253.csv
+2025-03-08 22:24:04,651 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300253.csv
+2025-03-08 22:24:04,670 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601868.csv
+2025-03-08 22:24:04,678 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601868.csv
+2025-03-08 22:24:04,688 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601868.csv
+2025-03-08 22:24:04,707 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300602.csv
+2025-03-08 22:24:04,717 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300602.csv
+2025-03-08 22:24:04,726 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300602.csv
+2025-03-08 22:24:04,745 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002194.csv
+2025-03-08 22:24:04,754 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002194.csv
+2025-03-08 22:24:04,762 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002194.csv
+2025-03-08 22:24:04,781 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300311.csv
+2025-03-08 22:24:04,789 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300311.csv
+2025-03-08 22:24:04,797 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300311.csv
+2025-03-08 22:24:04,816 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600879.csv
+2025-03-08 22:24:04,824 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600879.csv
+2025-03-08 22:24:04,832 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600879.csv
+2025-03-08 22:24:04,851 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300213.csv
+2025-03-08 22:24:04,859 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300213.csv
+2025-03-08 22:24:04,868 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300213.csv
+2025-03-08 22:24:04,886 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002371.csv
+2025-03-08 22:24:04,896 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002371.csv
+2025-03-08 22:24:04,905 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002371.csv
+2025-03-08 22:24:04,924 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002600.csv
+2025-03-08 22:24:04,932 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002600.csv
+2025-03-08 22:24:04,940 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002600.csv
+2025-03-08 22:24:04,959 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603000.csv
+2025-03-08 22:24:04,968 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603000.csv
+2025-03-08 22:24:04,977 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603000.csv
+2025-03-08 22:24:04,996 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002249.csv
+2025-03-08 22:24:05,004 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002249.csv
+2025-03-08 22:24:05,012 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002249.csv
+2025-03-08 22:24:05,034 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000792.csv
+2025-03-08 22:24:05,051 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000792.csv
+2025-03-08 22:24:05,063 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000792.csv
+2025-03-08 22:24:05,091 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000725.csv
+2025-03-08 22:24:05,101 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000725.csv
+2025-03-08 22:24:05,109 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000725.csv
+2025-03-08 22:24:05,129 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688165.csv
+2025-03-08 22:24:05,137 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688165.csv
+2025-03-08 22:24:05,146 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688165.csv
+2025-03-08 22:24:05,168 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601111.csv
+2025-03-08 22:24:05,177 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601111.csv
+2025-03-08 22:24:05,186 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601111.csv
+2025-03-08 22:24:05,205 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603809.csv
+2025-03-08 22:24:05,214 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603809.csv
+2025-03-08 22:24:05,222 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603809.csv
+2025-03-08 22:24:05,241 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000625.csv
+2025-03-08 22:24:05,251 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000625.csv
+2025-03-08 22:24:05,260 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000625.csv
+2025-03-08 22:24:05,280 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000063.csv
+2025-03-08 22:24:05,288 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000063.csv
+2025-03-08 22:24:05,297 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000063.csv
+2025-03-08 22:24:05,316 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600100.csv
+2025-03-08 22:24:05,325 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600100.csv
+2025-03-08 22:24:05,333 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600100.csv
+2025-03-08 22:24:05,352 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603259.csv
+2025-03-08 22:24:05,361 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603259.csv
+2025-03-08 22:24:05,372 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603259.csv
+2025-03-08 22:24:05,395 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603887.csv
+2025-03-08 22:24:05,406 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603887.csv
+2025-03-08 22:24:05,414 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603887.csv
+2025-03-08 22:24:05,435 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600703.csv
+2025-03-08 22:24:05,448 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600703.csv
+2025-03-08 22:24:05,458 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600703.csv
+2025-03-08 22:24:05,480 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300394.csv
+2025-03-08 22:24:05,494 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300394.csv
+2025-03-08 22:24:05,503 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300394.csv
+2025-03-08 22:24:05,522 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688027.csv
+2025-03-08 22:24:05,531 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688027.csv
+2025-03-08 22:24:05,542 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688027.csv
+2025-03-08 22:24:05,565 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600845.csv
+2025-03-08 22:24:05,575 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600845.csv
+2025-03-08 22:24:05,584 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600845.csv
+2025-03-08 22:24:05,604 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603108.csv
+2025-03-08 22:24:05,612 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603108.csv
+2025-03-08 22:24:05,621 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603108.csv
+2025-03-08 22:24:05,640 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600809.csv
+2025-03-08 22:24:05,648 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600809.csv
+2025-03-08 22:24:05,658 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600809.csv
+2025-03-08 22:24:05,678 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300457.csv
+2025-03-08 22:24:05,687 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300457.csv
+2025-03-08 22:24:05,697 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300457.csv
+2025-03-08 22:24:05,714 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300085.csv
+2025-03-08 22:24:05,723 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300085.csv
+2025-03-08 22:24:05,731 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300085.csv
+2025-03-08 22:24:05,751 - WARNING - fetch.py:114 - File not found: /Users/chengming/Downloads/2022/BJ.830799.csv
+2025-03-08 22:24:05,751 - WARNING - fetch.py:114 - File not found: /Users/chengming/Downloads/2023/BJ.830799.csv
+2025-03-08 22:24:05,751 - WARNING - fetch.py:114 - File not found: /Users/chengming/Downloads/2024/BJ.830799.csv
+2025-03-08 22:24:05,751 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600693.csv
+2025-03-08 22:24:05,759 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600693.csv
+2025-03-08 22:24:05,768 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600693.csv
+2025-03-08 22:24:05,785 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300123.csv
+2025-03-08 22:24:05,794 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300123.csv
+2025-03-08 22:24:05,804 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300123.csv
+2025-03-08 22:24:05,821 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688158.csv
+2025-03-08 22:24:05,830 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688158.csv
+2025-03-08 22:24:05,838 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688158.csv
+2025-03-08 22:24:05,857 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002261.csv
+2025-03-08 22:24:05,866 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002261.csv
+2025-03-08 22:24:05,874 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002261.csv
+2025-03-08 22:24:05,892 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603636.csv
+2025-03-08 22:24:05,900 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603636.csv
+2025-03-08 22:24:05,909 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603636.csv
+2025-03-08 22:24:05,927 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601360.csv
+2025-03-08 22:24:05,936 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601360.csv
+2025-03-08 22:24:05,945 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601360.csv
+2025-03-08 22:24:05,963 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688598.csv
+2025-03-08 22:24:05,972 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688598.csv
+2025-03-08 22:24:05,981 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688598.csv
+2025-03-08 22:24:06,000 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300153.csv
+2025-03-08 22:24:06,008 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300153.csv
+2025-03-08 22:24:06,017 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300153.csv
+2025-03-08 22:24:06,035 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300421.csv
+2025-03-08 22:24:06,044 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300421.csv
+2025-03-08 22:24:06,054 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300421.csv
+2025-03-08 22:24:06,073 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688608.csv
+2025-03-08 22:24:06,082 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688608.csv
+2025-03-08 22:24:06,092 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688608.csv
+2025-03-08 22:24:06,112 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603009.csv
+2025-03-08 22:24:06,121 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603009.csv
+2025-03-08 22:24:06,129 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603009.csv
+2025-03-08 22:24:06,147 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601919.csv
+2025-03-08 22:24:06,156 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601919.csv
+2025-03-08 22:24:06,165 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601919.csv
+2025-03-08 22:24:06,183 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000785.csv
+2025-03-08 22:24:06,191 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000785.csv
+2025-03-08 22:24:06,201 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000785.csv
+2025-03-08 22:24:06,219 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.301101.csv
+2025-03-08 22:24:06,227 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.301101.csv
+2025-03-08 22:24:06,236 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.301101.csv
+2025-03-08 22:24:06,255 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601717.csv
+2025-03-08 22:24:06,264 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601717.csv
+2025-03-08 22:24:06,272 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601717.csv
+2025-03-08 22:24:06,291 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002271.csv
+2025-03-08 22:24:06,300 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002271.csv
+2025-03-08 22:24:06,309 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002271.csv
+2025-03-08 22:24:06,328 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300432.csv
+2025-03-08 22:24:06,337 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300432.csv
+2025-03-08 22:24:06,345 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300432.csv
+2025-03-08 22:24:06,363 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.605499.csv
+2025-03-08 22:24:06,373 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.605499.csv
+2025-03-08 22:24:06,382 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.605499.csv
+2025-03-08 22:24:06,403 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300224.csv
+2025-03-08 22:24:06,413 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300224.csv
+2025-03-08 22:24:06,423 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300224.csv
+2025-03-08 22:24:06,442 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300229.csv
+2025-03-08 22:24:06,450 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300229.csv
+2025-03-08 22:24:06,459 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300229.csv
+2025-03-08 22:24:06,478 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300251.csv
+2025-03-08 22:24:06,486 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300251.csv
+2025-03-08 22:24:06,494 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300251.csv
+2025-03-08 22:24:06,513 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600835.csv
+2025-03-08 22:24:06,523 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600835.csv
+2025-03-08 22:24:06,532 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600835.csv
+2025-03-08 22:24:06,551 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300287.csv
+2025-03-08 22:24:06,559 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300287.csv
+2025-03-08 22:24:06,570 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300287.csv
+2025-03-08 22:24:06,590 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600309.csv
+2025-03-08 22:24:06,599 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600309.csv
+2025-03-08 22:24:06,608 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600309.csv
+2025-03-08 22:24:06,626 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600096.csv
+2025-03-08 22:24:06,635 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600096.csv
+2025-03-08 22:24:06,643 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600096.csv
+2025-03-08 22:24:06,662 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688234.csv
+2025-03-08 22:24:06,671 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688234.csv
+2025-03-08 22:24:06,679 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688234.csv
+2025-03-08 22:24:06,698 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600048.csv
+2025-03-08 22:24:06,707 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600048.csv
+2025-03-08 22:24:06,715 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600048.csv
+2025-03-08 22:24:06,734 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300608.csv
+2025-03-08 22:24:06,741 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300608.csv
+2025-03-08 22:24:06,750 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300608.csv
+2025-03-08 22:24:06,769 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000560.csv
+2025-03-08 22:24:06,777 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000560.csv
+2025-03-08 22:24:06,786 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000560.csv
+2025-03-08 22:24:06,804 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300762.csv
+2025-03-08 22:24:06,813 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300762.csv
+2025-03-08 22:24:06,821 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300762.csv
+2025-03-08 22:24:06,840 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000617.csv
+2025-03-08 22:24:06,848 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000617.csv
+2025-03-08 22:24:06,857 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000617.csv
+2025-03-08 22:24:06,875 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603063.csv
+2025-03-08 22:24:06,884 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603063.csv
+2025-03-08 22:24:06,893 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603063.csv
+2025-03-08 22:24:06,918 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002063.csv
+2025-03-08 22:24:06,930 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002063.csv
+2025-03-08 22:24:06,942 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002063.csv
+2025-03-08 22:24:06,968 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300316.csv
+2025-03-08 22:24:06,978 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300316.csv
+2025-03-08 22:24:06,995 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300316.csv
+2025-03-08 22:24:07,026 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300568.csv
+2025-03-08 22:24:07,038 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300568.csv
+2025-03-08 22:24:07,049 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300568.csv
+2025-03-08 22:24:07,079 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300678.csv
+2025-03-08 22:24:07,089 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300678.csv
+2025-03-08 22:24:07,099 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300678.csv
+2025-03-08 22:24:07,119 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002670.csv
+2025-03-08 22:24:07,127 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002670.csv
+2025-03-08 22:24:07,136 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002670.csv
+2025-03-08 22:24:07,155 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002463.csv
+2025-03-08 22:24:07,164 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002463.csv
+2025-03-08 22:24:07,172 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002463.csv
+2025-03-08 22:24:07,191 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600362.csv
+2025-03-08 22:24:07,201 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600362.csv
+2025-03-08 22:24:07,210 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600362.csv
+2025-03-08 22:24:07,229 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300870.csv
+2025-03-08 22:24:07,238 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300870.csv
+2025-03-08 22:24:07,246 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300870.csv
+2025-03-08 22:24:07,266 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000967.csv
+2025-03-08 22:24:07,274 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000967.csv
+2025-03-08 22:24:07,283 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000967.csv
+2025-03-08 22:24:07,302 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002273.csv
+2025-03-08 22:24:07,311 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002273.csv
+2025-03-08 22:24:07,320 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002273.csv
+2025-03-08 22:24:07,339 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600050.csv
+2025-03-08 22:24:07,348 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600050.csv
+2025-03-08 22:24:07,356 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600050.csv
+2025-03-08 22:24:07,375 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600028.csv
+2025-03-08 22:24:07,384 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600028.csv
+2025-03-08 22:24:07,391 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600028.csv
+2025-03-08 22:24:07,414 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300750.csv
+2025-03-08 22:24:07,424 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300750.csv
+2025-03-08 22:24:07,435 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300750.csv
+2025-03-08 22:24:07,457 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601901.csv
+2025-03-08 22:24:07,466 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601901.csv
+2025-03-08 22:24:07,475 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601901.csv
+2025-03-08 22:24:07,494 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300102.csv
+2025-03-08 22:24:07,502 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300102.csv
+2025-03-08 22:24:07,511 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300102.csv
+2025-03-08 22:24:07,530 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300738.csv
+2025-03-08 22:24:07,539 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300738.csv
+2025-03-08 22:24:07,551 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300738.csv
+2025-03-08 22:24:07,572 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300473.csv
+2025-03-08 22:24:07,581 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300473.csv
+2025-03-08 22:24:07,589 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300473.csv
+2025-03-08 22:24:07,609 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300015.csv
+2025-03-08 22:24:07,619 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300015.csv
+2025-03-08 22:24:07,627 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300015.csv
+2025-03-08 22:24:07,646 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600019.csv
+2025-03-08 22:24:07,659 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600019.csv
+2025-03-08 22:24:07,672 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600019.csv
+2025-03-08 22:24:07,695 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688777.csv
+2025-03-08 22:24:07,704 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688777.csv
+2025-03-08 22:24:07,715 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688777.csv
+2025-03-08 22:24:07,739 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601888.csv
+2025-03-08 22:24:07,747 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601888.csv
+2025-03-08 22:24:07,759 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601888.csv
+2025-03-08 22:24:07,782 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601600.csv
+2025-03-08 22:24:07,791 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601600.csv
+2025-03-08 22:24:07,801 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601600.csv
+2025-03-08 22:24:07,822 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603927.csv
+2025-03-08 22:24:07,831 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603927.csv
+2025-03-08 22:24:07,839 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603927.csv
+2025-03-08 22:24:07,858 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002335.csv
+2025-03-08 22:24:07,869 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002335.csv
+2025-03-08 22:24:07,879 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002335.csv
+2025-03-08 22:24:07,902 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601816.csv
+2025-03-08 22:24:07,912 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601816.csv
+2025-03-08 22:24:07,920 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601816.csv
+2025-03-08 22:24:07,939 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002947.csv
+2025-03-08 22:24:07,948 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002947.csv
+2025-03-08 22:24:07,957 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002947.csv
+2025-03-08 22:24:07,981 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002155.csv
+2025-03-08 22:24:07,990 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002155.csv
+2025-03-08 22:24:07,998 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002155.csv
+2025-03-08 22:24:08,018 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603799.csv
+2025-03-08 22:24:08,027 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603799.csv
+2025-03-08 22:24:08,037 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603799.csv
+2025-03-08 22:24:08,056 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002475.csv
+2025-03-08 22:24:08,064 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002475.csv
+2025-03-08 22:24:08,073 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002475.csv
+2025-03-08 22:24:08,092 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300033.csv
+2025-03-08 22:24:08,102 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300033.csv
+2025-03-08 22:24:08,110 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300033.csv
+2025-03-08 22:24:08,130 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603915.csv
+2025-03-08 22:24:08,140 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603915.csv
+2025-03-08 22:24:08,150 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603915.csv
+2025-03-08 22:24:08,170 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002291.csv
+2025-03-08 22:24:08,179 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002291.csv
+2025-03-08 22:24:08,190 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002291.csv
+2025-03-08 22:24:08,212 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300188.csv
+2025-03-08 22:24:08,221 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300188.csv
+2025-03-08 22:24:08,230 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300188.csv
+2025-03-08 22:24:08,255 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300324.csv
+2025-03-08 22:24:08,269 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300324.csv
+2025-03-08 22:24:08,288 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300324.csv
+2025-03-08 22:24:08,310 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600705.csv
+2025-03-08 22:24:08,322 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600705.csv
+2025-03-08 22:24:08,333 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600705.csv
+2025-03-08 22:24:08,359 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300459.csv
+2025-03-08 22:24:08,369 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300459.csv
+2025-03-08 22:24:08,377 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300459.csv
+2025-03-08 22:24:08,400 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600111.csv
+2025-03-08 22:24:08,409 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600111.csv
+2025-03-08 22:24:08,418 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600111.csv
+2025-03-08 22:24:08,436 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603993.csv
+2025-03-08 22:24:08,446 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603993.csv
+2025-03-08 22:24:08,457 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603993.csv
+2025-03-08 22:24:08,477 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002824.csv
+2025-03-08 22:24:08,485 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002824.csv
+2025-03-08 22:24:08,494 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002824.csv
+2025-03-08 22:24:08,513 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300709.csv
+2025-03-08 22:24:08,522 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300709.csv
+2025-03-08 22:24:08,530 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300709.csv
+2025-03-08 22:24:08,549 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600979.csv
+2025-03-08 22:24:08,557 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600979.csv
+2025-03-08 22:24:08,566 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600979.csv
+2025-03-08 22:24:08,586 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002426.csv
+2025-03-08 22:24:08,594 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002426.csv
+2025-03-08 22:24:08,604 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002426.csv
+2025-03-08 22:24:08,623 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002130.csv
+2025-03-08 22:24:08,631 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002130.csv
+2025-03-08 22:24:08,643 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002130.csv
+2025-03-08 22:24:08,675 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300433.csv
+2025-03-08 22:24:08,695 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300433.csv
+2025-03-08 22:24:08,706 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300433.csv
+2025-03-08 22:24:08,770 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603166.csv
+2025-03-08 22:24:08,792 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603166.csv
+2025-03-08 22:24:08,807 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603166.csv
+2025-03-08 22:24:08,845 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688122.csv
+2025-03-08 22:24:08,856 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688122.csv
+2025-03-08 22:24:08,868 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688122.csv
+2025-03-08 22:24:08,901 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688396.csv
+2025-03-08 22:24:08,914 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688396.csv
+2025-03-08 22:24:08,926 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688396.csv
+2025-03-08 22:24:08,954 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000628.csv
+2025-03-08 22:24:08,966 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000628.csv
+2025-03-08 22:24:08,982 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000628.csv
+2025-03-08 22:24:09,008 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002664.csv
+2025-03-08 22:24:09,021 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002664.csv
+2025-03-08 22:24:09,030 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002664.csv
+2025-03-08 22:24:09,049 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688798.csv
+2025-03-08 22:24:09,059 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688798.csv
+2025-03-08 22:24:09,069 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688798.csv
+2025-03-08 22:24:09,089 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002960.csv
+2025-03-08 22:24:09,098 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002960.csv
+2025-03-08 22:24:09,107 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002960.csv
+2025-03-08 22:24:09,129 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600198.csv
+2025-03-08 22:24:09,139 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600198.csv
+2025-03-08 22:24:09,148 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600198.csv
+2025-03-08 22:24:09,169 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000750.csv
+2025-03-08 22:24:09,179 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000750.csv
+2025-03-08 22:24:09,189 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000750.csv
+2025-03-08 22:24:09,214 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600438.csv
+2025-03-08 22:24:09,224 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600438.csv
+2025-03-08 22:24:09,234 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600438.csv
+2025-03-08 22:24:09,253 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600520.csv
+2025-03-08 22:24:09,262 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600520.csv
+2025-03-08 22:24:09,271 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600520.csv
+2025-03-08 22:24:09,290 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000973.csv
+2025-03-08 22:24:09,299 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000973.csv
+2025-03-08 22:24:09,308 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000973.csv
+2025-03-08 22:24:09,327 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300570.csv
+2025-03-08 22:24:09,336 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300570.csv
+2025-03-08 22:24:09,344 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300570.csv
+2025-03-08 22:24:09,363 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000528.csv
+2025-03-08 22:24:09,372 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000528.csv
+2025-03-08 22:24:09,382 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000528.csv
+2025-03-08 22:24:09,402 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601668.csv
+2025-03-08 22:24:09,410 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601668.csv
+2025-03-08 22:24:09,419 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601668.csv
+2025-03-08 22:24:09,438 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002583.csv
+2025-03-08 22:24:09,447 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002583.csv
+2025-03-08 22:24:09,456 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002583.csv
+2025-03-08 22:24:09,476 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601658.csv
+2025-03-08 22:24:09,486 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601658.csv
+2025-03-08 22:24:09,495 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601658.csv
+2025-03-08 22:24:09,514 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600104.csv
+2025-03-08 22:24:09,523 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600104.csv
+2025-03-08 22:24:09,533 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600104.csv
+2025-03-08 22:24:09,551 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600571.csv
+2025-03-08 22:24:09,560 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600571.csv
+2025-03-08 22:24:09,570 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600571.csv
+2025-03-08 22:24:09,591 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688270.csv
+2025-03-08 22:24:09,600 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688270.csv
+2025-03-08 22:24:09,609 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688270.csv
+2025-03-08 22:24:09,628 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300017.csv
+2025-03-08 22:24:09,637 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300017.csv
+2025-03-08 22:24:09,645 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300017.csv
+2025-03-08 22:24:09,666 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688365.csv
+2025-03-08 22:24:09,675 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688365.csv
+2025-03-08 22:24:09,684 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688365.csv
+2025-03-08 22:24:09,703 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600839.csv
+2025-03-08 22:24:09,711 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600839.csv
+2025-03-08 22:24:09,720 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600839.csv
+2025-03-08 22:24:09,739 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600850.csv
+2025-03-08 22:24:09,748 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600850.csv
+2025-03-08 22:24:09,850 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600850.csv
+2025-03-08 22:24:09,882 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300379.csv
+2025-03-08 22:24:09,901 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300379.csv
+2025-03-08 22:24:09,911 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300379.csv
+2025-03-08 22:24:09,930 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300307.csv
+2025-03-08 22:24:09,938 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300307.csv
+2025-03-08 22:24:09,947 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300307.csv
+2025-03-08 22:24:09,970 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002484.csv
+2025-03-08 22:24:09,979 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002484.csv
+2025-03-08 22:24:09,988 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002484.csv
+2025-03-08 22:24:10,007 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600183.csv
+2025-03-08 22:24:10,017 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600183.csv
+2025-03-08 22:24:10,027 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600183.csv
+2025-03-08 22:24:10,047 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002654.csv
+2025-03-08 22:24:10,056 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002654.csv
+2025-03-08 22:24:10,065 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002654.csv
+2025-03-08 22:24:10,086 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000997.csv
+2025-03-08 22:24:10,095 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000997.csv
+2025-03-08 22:24:10,104 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000997.csv
+2025-03-08 22:24:10,124 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300623.csv
+2025-03-08 22:24:10,132 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300623.csv
+2025-03-08 22:24:10,141 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300623.csv
+2025-03-08 22:24:10,162 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000856.csv
+2025-03-08 22:24:10,172 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000856.csv
+2025-03-08 22:24:10,182 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000856.csv
+2025-03-08 22:24:10,204 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601688.csv
+2025-03-08 22:24:10,213 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601688.csv
+2025-03-08 22:24:10,223 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601688.csv
+2025-03-08 22:24:10,243 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300442.csv
+2025-03-08 22:24:10,252 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300442.csv
+2025-03-08 22:24:10,263 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300442.csv
+2025-03-08 22:24:10,283 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601216.csv
+2025-03-08 22:24:10,292 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601216.csv
+2025-03-08 22:24:10,302 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601216.csv
+2025-03-08 22:24:10,324 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002939.csv
+2025-03-08 22:24:10,333 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002939.csv
+2025-03-08 22:24:10,341 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002939.csv
+2025-03-08 22:24:10,364 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002236.csv
+2025-03-08 22:24:10,372 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002236.csv
+2025-03-08 22:24:10,381 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002236.csv
+2025-03-08 22:24:10,401 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002074.csv
+2025-03-08 22:24:10,410 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002074.csv
+2025-03-08 22:24:10,419 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002074.csv
+2025-03-08 22:24:10,437 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002979.csv
+2025-03-08 22:24:10,446 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002979.csv
+2025-03-08 22:24:10,454 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002979.csv
+2025-03-08 22:24:10,472 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601669.csv
+2025-03-08 22:24:10,481 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601669.csv
+2025-03-08 22:24:10,489 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601669.csv
+2025-03-08 22:24:10,507 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300576.csv
+2025-03-08 22:24:10,516 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300576.csv
+2025-03-08 22:24:10,524 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300576.csv
+2025-03-08 22:24:10,543 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600756.csv
+2025-03-08 22:24:10,554 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600756.csv
+2025-03-08 22:24:10,563 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600756.csv
+2025-03-08 22:24:10,583 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603712.csv
+2025-03-08 22:24:10,593 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603712.csv
+2025-03-08 22:24:10,602 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603712.csv
+2025-03-08 22:24:10,621 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601601.csv
+2025-03-08 22:24:10,630 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601601.csv
+2025-03-08 22:24:10,639 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601601.csv
+2025-03-08 22:24:10,660 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.603855.csv
+2025-03-08 22:24:10,670 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.603855.csv
+2025-03-08 22:24:10,679 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.603855.csv
+2025-03-08 22:24:10,698 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300603.csv
+2025-03-08 22:24:10,707 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300603.csv
+2025-03-08 22:24:10,716 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300603.csv
+2025-03-08 22:24:10,734 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300136.csv
+2025-03-08 22:24:10,742 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300136.csv
+2025-03-08 22:24:10,751 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300136.csv
+2025-03-08 22:24:10,769 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002414.csv
+2025-03-08 22:24:10,778 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002414.csv
+2025-03-08 22:24:10,787 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002414.csv
+2025-03-08 22:24:10,804 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.601857.csv
+2025-03-08 22:24:10,812 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.601857.csv
+2025-03-08 22:24:10,821 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.601857.csv
+2025-03-08 22:24:10,839 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000988.csv
+2025-03-08 22:24:10,847 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000988.csv
+2025-03-08 22:24:10,856 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000988.csv
+2025-03-08 22:24:10,876 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300507.csv
+2025-03-08 22:24:10,885 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300507.csv
+2025-03-08 22:24:10,893 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300507.csv
+2025-03-08 22:24:10,913 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000651.csv
+2025-03-08 22:24:10,921 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000651.csv
+2025-03-08 22:24:10,932 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000651.csv
+2025-03-08 22:24:10,952 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300271.csv
+2025-03-08 22:24:10,961 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300271.csv
+2025-03-08 22:24:10,971 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300271.csv
+2025-03-08 22:24:10,990 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600089.csv
+2025-03-08 22:24:10,998 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600089.csv
+2025-03-08 22:24:11,006 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600089.csv
+2025-03-08 22:24:11,025 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002624.csv
+2025-03-08 22:24:11,035 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002624.csv
+2025-03-08 22:24:11,053 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002624.csv
+2025-03-08 22:24:11,089 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.688116.csv
+2025-03-08 22:24:11,104 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.688116.csv
+2025-03-08 22:24:11,117 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.688116.csv
+2025-03-08 22:24:11,144 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.300024.csv
+2025-03-08 22:24:11,158 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.300024.csv
+2025-03-08 22:24:11,175 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.300024.csv
+2025-03-08 22:24:11,207 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600446.csv
+2025-03-08 22:24:11,219 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600446.csv
+2025-03-08 22:24:11,232 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600446.csv
+2025-03-08 22:24:11,263 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.689009.csv
+2025-03-08 22:24:11,279 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.689009.csv
+2025-03-08 22:24:11,294 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.689009.csv
+2025-03-08 22:24:11,343 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002416.csv
+2025-03-08 22:24:11,353 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002416.csv
+2025-03-08 22:24:11,362 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002416.csv
+2025-03-08 22:24:11,382 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SH.600570.csv
+2025-03-08 22:24:11,393 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SH.600570.csv
+2025-03-08 22:24:11,402 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SH.600570.csv
+2025-03-08 22:24:11,429 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.000630.csv
+2025-03-08 22:24:11,440 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.000630.csv
+2025-03-08 22:24:11,451 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.000630.csv
+2025-03-08 22:24:11,469 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2022/SZ.002456.csv
+2025-03-08 22:24:11,477 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2023/SZ.002456.csv
+2025-03-08 22:24:11,486 - INFO - fetch.py:63 - Parsing stock data from: /Users/chengming/Downloads/2024/SZ.002456.csv
+2025-03-08 22:24:11,650 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002119.SZ.csv
+2025-03-08 22:24:11,713 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002119.SZ_30min.csv
+2025-03-08 22:24:11,848 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603118.SH.csv
+2025-03-08 22:24:11,893 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603118.SH_30min.csv
+2025-03-08 22:24:12,035 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600066.SH.csv
+2025-03-08 22:24:12,080 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600066.SH_30min.csv
+2025-03-08 22:24:12,221 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/301078.SZ.csv
+2025-03-08 22:24:12,265 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/301078.SZ_30min.csv
+2025-03-08 22:24:12,405 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002625.SZ.csv
+2025-03-08 22:24:12,450 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002625.SZ_30min.csv
+2025-03-08 22:24:12,592 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688123.SH.csv
+2025-03-08 22:24:12,638 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688123.SH_30min.csv
+2025-03-08 22:24:12,779 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300007.SZ.csv
+2025-03-08 22:24:12,824 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300007.SZ_30min.csv
+2025-03-08 22:24:12,965 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002179.SZ.csv
+2025-03-08 22:24:13,009 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002179.SZ_30min.csv
+2025-03-08 22:24:13,165 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601336.SH.csv
+2025-03-08 22:24:13,210 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601336.SH_30min.csv
+2025-03-08 22:24:13,350 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/301013.SZ.csv
+2025-03-08 22:24:13,394 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/301013.SZ_30min.csv
+2025-03-08 22:24:13,531 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000157.SZ.csv
+2025-03-08 22:24:13,574 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000157.SZ_30min.csv
+2025-03-08 22:24:13,717 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300454.SZ.csv
+2025-03-08 22:24:13,762 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300454.SZ_30min.csv
+2025-03-08 22:24:13,904 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300580.SZ.csv
+2025-03-08 22:24:13,950 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300580.SZ_30min.csv
+2025-03-08 22:24:14,099 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300763.SZ.csv
+2025-03-08 22:24:14,144 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300763.SZ_30min.csv
+2025-03-08 22:24:14,296 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300525.SZ.csv
+2025-03-08 22:24:14,342 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300525.SZ_30min.csv
+2025-03-08 22:24:14,484 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300031.SZ.csv
+2025-03-08 22:24:14,529 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300031.SZ_30min.csv
+2025-03-08 22:24:14,664 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002681.SZ.csv
+2025-03-08 22:24:14,707 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002681.SZ_30min.csv
+2025-03-08 22:24:14,853 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300073.SZ.csv
+2025-03-08 22:24:14,898 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300073.SZ_30min.csv
+2025-03-08 22:24:15,041 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000596.SZ.csv
+2025-03-08 22:24:15,088 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000596.SZ_30min.csv
+2025-03-08 22:24:15,231 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002745.SZ.csv
+2025-03-08 22:24:15,278 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002745.SZ_30min.csv
+2025-03-08 22:24:15,420 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002398.SZ.csv
+2025-03-08 22:24:15,465 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002398.SZ_30min.csv
+2025-03-08 22:24:15,605 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002195.SZ.csv
+2025-03-08 22:24:15,753 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002195.SZ_30min.csv
+2025-03-08 22:24:15,900 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688333.SH.csv
+2025-03-08 22:24:15,946 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688333.SH_30min.csv
+2025-03-08 22:24:16,091 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688017.SH.csv
+2025-03-08 22:24:16,136 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688017.SH_30min.csv
+2025-03-08 22:24:16,284 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601127.SH.csv
+2025-03-08 22:24:16,333 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601127.SH_30min.csv
+2025-03-08 22:24:16,485 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688256.SH.csv
+2025-03-08 22:24:16,531 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688256.SH_30min.csv
+2025-03-08 22:24:16,683 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002897.SZ.csv
+2025-03-08 22:24:16,740 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002897.SZ_30min.csv
+2025-03-08 22:24:16,901 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002175.SZ.csv
+2025-03-08 22:24:16,963 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002175.SZ_30min.csv
+2025-03-08 22:24:17,126 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002558.SZ.csv
+2025-03-08 22:24:17,179 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002558.SZ_30min.csv
+2025-03-08 22:24:17,344 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000807.SZ.csv
+2025-03-08 22:24:17,398 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000807.SZ_30min.csv
+2025-03-08 22:24:17,542 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600316.SH.csv
+2025-03-08 22:24:17,591 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600316.SH_30min.csv
+2025-03-08 22:24:17,734 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300253.SZ.csv
+2025-03-08 22:24:17,777 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300253.SZ_30min.csv
+2025-03-08 22:24:17,963 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601868.SH.csv
+2025-03-08 22:24:18,014 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601868.SH_30min.csv
+2025-03-08 22:24:18,179 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300602.SZ.csv
+2025-03-08 22:24:18,226 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300602.SZ_30min.csv
+2025-03-08 22:24:18,377 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002194.SZ.csv
+2025-03-08 22:24:18,422 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002194.SZ_30min.csv
+2025-03-08 22:24:18,561 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300311.SZ.csv
+2025-03-08 22:24:18,605 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300311.SZ_30min.csv
+2025-03-08 22:24:18,739 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600879.SH.csv
+2025-03-08 22:24:18,782 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600879.SH_30min.csv
+2025-03-08 22:24:18,920 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300213.SZ.csv
+2025-03-08 22:24:18,967 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300213.SZ_30min.csv
+2025-03-08 22:24:19,118 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002371.SZ.csv
+2025-03-08 22:24:19,167 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002371.SZ_30min.csv
+2025-03-08 22:24:19,324 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002600.SZ.csv
+2025-03-08 22:24:19,370 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002600.SZ_30min.csv
+2025-03-08 22:24:19,515 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603000.SH.csv
+2025-03-08 22:24:19,561 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603000.SH_30min.csv
+2025-03-08 22:24:19,696 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002249.SZ.csv
+2025-03-08 22:24:19,739 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002249.SZ_30min.csv
+2025-03-08 22:24:19,880 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000792.SZ.csv
+2025-03-08 22:24:19,925 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000792.SZ_30min.csv
+2025-03-08 22:24:20,061 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000725.SZ.csv
+2025-03-08 22:24:20,105 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000725.SZ_30min.csv
+2025-03-08 22:24:20,238 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688165.SH.csv
+2025-03-08 22:24:20,282 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688165.SH_30min.csv
+2025-03-08 22:24:20,420 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601111.SH.csv
+2025-03-08 22:24:20,466 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601111.SH_30min.csv
+2025-03-08 22:24:20,606 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603809.SH.csv
+2025-03-08 22:24:20,651 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603809.SH_30min.csv
+2025-03-08 22:24:20,802 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000625.SZ.csv
+2025-03-08 22:24:20,849 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000625.SZ_30min.csv
+2025-03-08 22:24:21,018 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000063.SZ.csv
+2025-03-08 22:24:21,104 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000063.SZ_30min.csv
+2025-03-08 22:24:21,279 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600100.SH.csv
+2025-03-08 22:24:21,343 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600100.SH_30min.csv
+2025-03-08 22:24:21,576 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603259.SH.csv
+2025-03-08 22:24:21,654 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603259.SH_30min.csv
+2025-03-08 22:24:21,798 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603887.SH.csv
+2025-03-08 22:24:21,842 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603887.SH_30min.csv
+2025-03-08 22:24:21,987 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600703.SH.csv
+2025-03-08 22:24:22,033 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600703.SH_30min.csv
+2025-03-08 22:24:22,180 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300394.SZ.csv
+2025-03-08 22:24:22,226 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300394.SZ_30min.csv
+2025-03-08 22:24:22,369 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688027.SH.csv
+2025-03-08 22:24:22,415 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688027.SH_30min.csv
+2025-03-08 22:24:22,565 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600845.SH.csv
+2025-03-08 22:24:22,615 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600845.SH_30min.csv
+2025-03-08 22:24:22,767 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603108.SH.csv
+2025-03-08 22:24:22,812 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603108.SH_30min.csv
+2025-03-08 22:24:22,990 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600809.SH.csv
+2025-03-08 22:24:23,062 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600809.SH_30min.csv
+2025-03-08 22:24:23,227 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300457.SZ.csv
+2025-03-08 22:24:23,277 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300457.SZ_30min.csv
+2025-03-08 22:24:23,434 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300085.SZ.csv
+2025-03-08 22:24:23,481 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300085.SZ_30min.csv
+2025-03-08 22:24:23,615 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600693.SH.csv
+2025-03-08 22:24:23,661 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600693.SH_30min.csv
+2025-03-08 22:24:23,807 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300123.SZ.csv
+2025-03-08 22:24:23,855 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300123.SZ_30min.csv
+2025-03-08 22:24:24,014 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688158.SH.csv
+2025-03-08 22:24:24,061 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688158.SH_30min.csv
+2025-03-08 22:24:24,220 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002261.SZ.csv
+2025-03-08 22:24:24,269 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002261.SZ_30min.csv
+2025-03-08 22:24:24,423 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603636.SH.csv
+2025-03-08 22:24:24,469 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603636.SH_30min.csv
+2025-03-08 22:24:24,613 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601360.SH.csv
+2025-03-08 22:24:24,659 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601360.SH_30min.csv
+2025-03-08 22:24:24,812 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688598.SH.csv
+2025-03-08 22:24:24,858 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688598.SH_30min.csv
+2025-03-08 22:24:25,001 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300153.SZ.csv
+2025-03-08 22:24:25,045 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300153.SZ_30min.csv
+2025-03-08 22:24:25,189 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300421.SZ.csv
+2025-03-08 22:24:25,234 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300421.SZ_30min.csv
+2025-03-08 22:24:25,383 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688608.SH.csv
+2025-03-08 22:24:25,429 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688608.SH_30min.csv
+2025-03-08 22:24:25,579 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603009.SH.csv
+2025-03-08 22:24:25,625 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603009.SH_30min.csv
+2025-03-08 22:24:25,775 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601919.SH.csv
+2025-03-08 22:24:25,821 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601919.SH_30min.csv
+2025-03-08 22:24:25,965 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000785.SZ.csv
+2025-03-08 22:24:26,010 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000785.SZ_30min.csv
+2025-03-08 22:24:26,163 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/301101.SZ.csv
+2025-03-08 22:24:26,212 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/301101.SZ_30min.csv
+2025-03-08 22:24:26,358 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601717.SH.csv
+2025-03-08 22:24:26,402 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601717.SH_30min.csv
+2025-03-08 22:24:26,548 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002271.SZ.csv
+2025-03-08 22:24:26,594 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002271.SZ_30min.csv
+2025-03-08 22:24:26,733 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300432.SZ.csv
+2025-03-08 22:24:26,783 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300432.SZ_30min.csv
+2025-03-08 22:24:26,939 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/605499.SH.csv
+2025-03-08 22:24:26,988 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/605499.SH_30min.csv
+2025-03-08 22:24:27,137 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300224.SZ.csv
+2025-03-08 22:24:27,184 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300224.SZ_30min.csv
+2025-03-08 22:24:27,332 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300229.SZ.csv
+2025-03-08 22:24:27,381 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300229.SZ_30min.csv
+2025-03-08 22:24:27,533 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300251.SZ.csv
+2025-03-08 22:24:27,580 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300251.SZ_30min.csv
+2025-03-08 22:24:27,727 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600835.SH.csv
+2025-03-08 22:24:27,778 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600835.SH_30min.csv
+2025-03-08 22:24:27,926 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300287.SZ.csv
+2025-03-08 22:24:27,975 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300287.SZ_30min.csv
+2025-03-08 22:24:28,133 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600309.SH.csv
+2025-03-08 22:24:28,184 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600309.SH_30min.csv
+2025-03-08 22:24:28,329 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600096.SH.csv
+2025-03-08 22:24:28,388 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600096.SH_30min.csv
+2025-03-08 22:24:28,536 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688234.SH.csv
+2025-03-08 22:24:28,589 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688234.SH_30min.csv
+2025-03-08 22:24:28,740 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600048.SH.csv
+2025-03-08 22:24:28,794 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600048.SH_30min.csv
+2025-03-08 22:24:28,952 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300608.SZ.csv
+2025-03-08 22:24:29,000 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300608.SZ_30min.csv
+2025-03-08 22:24:29,174 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000560.SZ.csv
+2025-03-08 22:24:29,223 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000560.SZ_30min.csv
+2025-03-08 22:24:29,390 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300762.SZ.csv
+2025-03-08 22:24:29,443 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300762.SZ_30min.csv
+2025-03-08 22:24:29,605 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000617.SZ.csv
+2025-03-08 22:24:29,650 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000617.SZ_30min.csv
+2025-03-08 22:24:29,808 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603063.SH.csv
+2025-03-08 22:24:29,864 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603063.SH_30min.csv
+2025-03-08 22:24:30,031 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002063.SZ.csv
+2025-03-08 22:24:30,080 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002063.SZ_30min.csv
+2025-03-08 22:24:30,236 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300316.SZ.csv
+2025-03-08 22:24:30,291 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300316.SZ_30min.csv
+2025-03-08 22:24:30,484 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300568.SZ.csv
+2025-03-08 22:24:30,533 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300568.SZ_30min.csv
+2025-03-08 22:24:30,698 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300678.SZ.csv
+2025-03-08 22:24:30,753 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300678.SZ_30min.csv
+2025-03-08 22:24:30,895 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002670.SZ.csv
+2025-03-08 22:24:30,940 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002670.SZ_30min.csv
+2025-03-08 22:24:31,090 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002463.SZ.csv
+2025-03-08 22:24:31,140 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002463.SZ_30min.csv
+2025-03-08 22:24:31,300 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600362.SH.csv
+2025-03-08 22:24:31,375 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600362.SH_30min.csv
+2025-03-08 22:24:31,652 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300870.SZ.csv
+2025-03-08 22:24:31,710 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300870.SZ_30min.csv
+2025-03-08 22:24:31,856 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000967.SZ.csv
+2025-03-08 22:24:31,901 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000967.SZ_30min.csv
+2025-03-08 22:24:32,059 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002273.SZ.csv
+2025-03-08 22:24:32,115 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002273.SZ_30min.csv
+2025-03-08 22:24:32,265 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600050.SH.csv
+2025-03-08 22:24:32,312 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600050.SH_30min.csv
+2025-03-08 22:24:32,470 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600028.SH.csv
+2025-03-08 22:24:32,536 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600028.SH_30min.csv
+2025-03-08 22:24:32,703 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300750.SZ.csv
+2025-03-08 22:24:32,753 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300750.SZ_30min.csv
+2025-03-08 22:24:32,911 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601901.SH.csv
+2025-03-08 22:24:32,960 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601901.SH_30min.csv
+2025-03-08 22:24:33,111 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300102.SZ.csv
+2025-03-08 22:24:33,163 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300102.SZ_30min.csv
+2025-03-08 22:24:33,316 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300738.SZ.csv
+2025-03-08 22:24:33,371 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300738.SZ_30min.csv
+2025-03-08 22:24:33,530 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300473.SZ.csv
+2025-03-08 22:24:33,579 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300473.SZ_30min.csv
+2025-03-08 22:24:33,743 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300015.SZ.csv
+2025-03-08 22:24:33,794 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300015.SZ_30min.csv
+2025-03-08 22:24:33,939 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600019.SH.csv
+2025-03-08 22:24:33,988 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600019.SH_30min.csv
+2025-03-08 22:24:34,145 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688777.SH.csv
+2025-03-08 22:24:34,195 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688777.SH_30min.csv
+2025-03-08 22:24:34,358 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601888.SH.csv
+2025-03-08 22:24:34,410 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601888.SH_30min.csv
+2025-03-08 22:24:34,556 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601600.SH.csv
+2025-03-08 22:24:34,603 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601600.SH_30min.csv
+2025-03-08 22:24:34,748 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603927.SH.csv
+2025-03-08 22:24:34,795 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603927.SH_30min.csv
+2025-03-08 22:24:34,947 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002335.SZ.csv
+2025-03-08 22:24:34,995 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002335.SZ_30min.csv
+2025-03-08 22:24:35,155 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601816.SH.csv
+2025-03-08 22:24:35,208 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601816.SH_30min.csv
+2025-03-08 22:24:35,408 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002947.SZ.csv
+2025-03-08 22:24:35,467 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002947.SZ_30min.csv
+2025-03-08 22:24:35,631 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002155.SZ.csv
+2025-03-08 22:24:35,688 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002155.SZ_30min.csv
+2025-03-08 22:24:35,864 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603799.SH.csv
+2025-03-08 22:24:35,918 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603799.SH_30min.csv
+2025-03-08 22:24:36,087 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002475.SZ.csv
+2025-03-08 22:24:36,147 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002475.SZ_30min.csv
+2025-03-08 22:24:36,321 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300033.SZ.csv
+2025-03-08 22:24:36,372 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300033.SZ_30min.csv
+2025-03-08 22:24:36,535 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603915.SH.csv
+2025-03-08 22:24:36,590 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603915.SH_30min.csv
+2025-03-08 22:24:36,750 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002291.SZ.csv
+2025-03-08 22:24:36,800 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002291.SZ_30min.csv
+2025-03-08 22:24:36,982 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300188.SZ.csv
+2025-03-08 22:24:37,039 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300188.SZ_30min.csv
+2025-03-08 22:24:37,228 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300324.SZ.csv
+2025-03-08 22:24:37,279 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300324.SZ_30min.csv
+2025-03-08 22:24:37,446 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600705.SH.csv
+2025-03-08 22:24:37,505 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600705.SH_30min.csv
+2025-03-08 22:24:37,671 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300459.SZ.csv
+2025-03-08 22:24:37,721 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300459.SZ_30min.csv
+2025-03-08 22:24:37,886 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600111.SH.csv
+2025-03-08 22:24:37,942 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600111.SH_30min.csv
+2025-03-08 22:24:38,106 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603993.SH.csv
+2025-03-08 22:24:38,154 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603993.SH_30min.csv
+2025-03-08 22:24:38,311 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002824.SZ.csv
+2025-03-08 22:24:38,368 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002824.SZ_30min.csv
+2025-03-08 22:24:38,527 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300709.SZ.csv
+2025-03-08 22:24:38,578 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300709.SZ_30min.csv
+2025-03-08 22:24:38,729 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600979.SH.csv
+2025-03-08 22:24:38,777 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600979.SH_30min.csv
+2025-03-08 22:24:38,933 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002426.SZ.csv
+2025-03-08 22:24:38,984 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002426.SZ_30min.csv
+2025-03-08 22:24:39,266 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002130.SZ.csv
+2025-03-08 22:24:39,319 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002130.SZ_30min.csv
+2025-03-08 22:24:39,509 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300433.SZ.csv
+2025-03-08 22:24:39,566 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300433.SZ_30min.csv
+2025-03-08 22:24:39,730 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603166.SH.csv
+2025-03-08 22:24:39,781 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603166.SH_30min.csv
+2025-03-08 22:24:39,949 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688122.SH.csv
+2025-03-08 22:24:40,002 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688122.SH_30min.csv
+2025-03-08 22:24:40,175 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688396.SH.csv
+2025-03-08 22:24:40,236 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688396.SH_30min.csv
+2025-03-08 22:24:40,475 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000628.SZ.csv
+2025-03-08 22:24:40,551 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000628.SZ_30min.csv
+2025-03-08 22:24:40,771 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002664.SZ.csv
+2025-03-08 22:24:40,824 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002664.SZ_30min.csv
+2025-03-08 22:24:41,003 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688798.SH.csv
+2025-03-08 22:24:41,061 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688798.SH_30min.csv
+2025-03-08 22:24:41,232 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002960.SZ.csv
+2025-03-08 22:24:41,284 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002960.SZ_30min.csv
+2025-03-08 22:24:41,458 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600198.SH.csv
+2025-03-08 22:24:41,510 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600198.SH_30min.csv
+2025-03-08 22:24:41,670 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000750.SZ.csv
+2025-03-08 22:24:41,720 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000750.SZ_30min.csv
+2025-03-08 22:24:41,889 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600438.SH.csv
+2025-03-08 22:24:41,940 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600438.SH_30min.csv
+2025-03-08 22:24:42,091 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600520.SH.csv
+2025-03-08 22:24:42,140 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600520.SH_30min.csv
+2025-03-08 22:24:42,289 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000973.SZ.csv
+2025-03-08 22:24:42,341 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000973.SZ_30min.csv
+2025-03-08 22:24:42,499 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300570.SZ.csv
+2025-03-08 22:24:42,548 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300570.SZ_30min.csv
+2025-03-08 22:24:42,697 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000528.SZ.csv
+2025-03-08 22:24:42,745 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000528.SZ_30min.csv
+2025-03-08 22:24:42,905 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601668.SH.csv
+2025-03-08 22:24:42,954 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601668.SH_30min.csv
+2025-03-08 22:24:43,104 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002583.SZ.csv
+2025-03-08 22:24:43,153 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002583.SZ_30min.csv
+2025-03-08 22:24:43,308 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601658.SH.csv
+2025-03-08 22:24:43,366 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601658.SH_30min.csv
+2025-03-08 22:24:43,532 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600104.SH.csv
+2025-03-08 22:24:43,582 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600104.SH_30min.csv
+2025-03-08 22:24:43,737 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600571.SH.csv
+2025-03-08 22:24:43,789 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600571.SH_30min.csv
+2025-03-08 22:24:43,948 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688270.SH.csv
+2025-03-08 22:24:43,998 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688270.SH_30min.csv
+2025-03-08 22:24:44,159 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300017.SZ.csv
+2025-03-08 22:24:44,211 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300017.SZ_30min.csv
+2025-03-08 22:24:44,378 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688365.SH.csv
+2025-03-08 22:24:44,432 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688365.SH_30min.csv
+2025-03-08 22:24:44,595 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600839.SH.csv
+2025-03-08 22:24:44,649 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600839.SH_30min.csv
+2025-03-08 22:24:44,808 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600850.SH.csv
+2025-03-08 22:24:44,856 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600850.SH_30min.csv
+2025-03-08 22:24:45,111 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300379.SZ.csv
+2025-03-08 22:24:45,184 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300379.SZ_30min.csv
+2025-03-08 22:24:45,355 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300307.SZ.csv
+2025-03-08 22:24:45,409 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300307.SZ_30min.csv
+2025-03-08 22:24:45,578 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002484.SZ.csv
+2025-03-08 22:24:45,629 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002484.SZ_30min.csv
+2025-03-08 22:24:45,795 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600183.SH.csv
+2025-03-08 22:24:45,856 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600183.SH_30min.csv
+2025-03-08 22:24:46,013 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002654.SZ.csv
+2025-03-08 22:24:46,061 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002654.SZ_30min.csv
+2025-03-08 22:24:46,227 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000997.SZ.csv
+2025-03-08 22:24:46,275 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000997.SZ_30min.csv
+2025-03-08 22:24:46,432 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300623.SZ.csv
+2025-03-08 22:24:46,485 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300623.SZ_30min.csv
+2025-03-08 22:24:46,625 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000856.SZ.csv
+2025-03-08 22:24:46,672 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000856.SZ_30min.csv
+2025-03-08 22:24:46,833 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601688.SH.csv
+2025-03-08 22:24:46,884 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601688.SH_30min.csv
+2025-03-08 22:24:47,048 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300442.SZ.csv
+2025-03-08 22:24:47,098 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300442.SZ_30min.csv
+2025-03-08 22:24:47,254 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601216.SH.csv
+2025-03-08 22:24:47,303 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601216.SH_30min.csv
+2025-03-08 22:24:47,569 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002939.SZ.csv
+2025-03-08 22:24:47,621 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002939.SZ_30min.csv
+2025-03-08 22:24:47,784 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002236.SZ.csv
+2025-03-08 22:24:47,833 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002236.SZ_30min.csv
+2025-03-08 22:24:47,987 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002074.SZ.csv
+2025-03-08 22:24:48,038 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002074.SZ_30min.csv
+2025-03-08 22:24:48,202 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002979.SZ.csv
+2025-03-08 22:24:48,249 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002979.SZ_30min.csv
+2025-03-08 22:24:48,418 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601669.SH.csv
+2025-03-08 22:24:48,471 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601669.SH_30min.csv
+2025-03-08 22:24:48,638 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300576.SZ.csv
+2025-03-08 22:24:48,689 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300576.SZ_30min.csv
+2025-03-08 22:24:48,843 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600756.SH.csv
+2025-03-08 22:24:48,890 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600756.SH_30min.csv
+2025-03-08 22:24:49,042 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603712.SH.csv
+2025-03-08 22:24:49,090 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603712.SH_30min.csv
+2025-03-08 22:24:49,249 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601601.SH.csv
+2025-03-08 22:24:49,300 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601601.SH_30min.csv
+2025-03-08 22:24:49,470 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/603855.SH.csv
+2025-03-08 22:24:49,520 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/603855.SH_30min.csv
+2025-03-08 22:24:49,691 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300603.SZ.csv
+2025-03-08 22:24:49,745 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300603.SZ_30min.csv
+2025-03-08 22:24:49,922 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300136.SZ.csv
+2025-03-08 22:24:49,976 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300136.SZ_30min.csv
+2025-03-08 22:24:50,150 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002414.SZ.csv
+2025-03-08 22:24:50,204 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002414.SZ_30min.csv
+2025-03-08 22:24:50,381 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/601857.SH.csv
+2025-03-08 22:24:50,435 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/601857.SH_30min.csv
+2025-03-08 22:24:50,608 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000988.SZ.csv
+2025-03-08 22:24:50,665 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000988.SZ_30min.csv
+2025-03-08 22:24:50,831 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300507.SZ.csv
+2025-03-08 22:24:50,883 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300507.SZ_30min.csv
+2025-03-08 22:24:51,061 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000651.SZ.csv
+2025-03-08 22:24:51,118 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000651.SZ_30min.csv
+2025-03-08 22:24:51,329 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300271.SZ.csv
+2025-03-08 22:24:51,401 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300271.SZ_30min.csv
+2025-03-08 22:24:51,571 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600089.SH.csv
+2025-03-08 22:24:51,633 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600089.SH_30min.csv
+2025-03-08 22:24:51,803 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002624.SZ.csv
+2025-03-08 22:24:51,853 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002624.SZ_30min.csv
+2025-03-08 22:24:52,024 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/688116.SH.csv
+2025-03-08 22:24:52,078 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/688116.SH_30min.csv
+2025-03-08 22:24:52,242 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/300024.SZ.csv
+2025-03-08 22:24:52,294 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/300024.SZ_30min.csv
+2025-03-08 22:24:52,456 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600446.SH.csv
+2025-03-08 22:24:52,508 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600446.SH_30min.csv
+2025-03-08 22:24:52,674 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/689009.SH.csv
+2025-03-08 22:24:52,732 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/689009.SH_30min.csv
+2025-03-08 22:24:52,907 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002416.SZ.csv
+2025-03-08 22:24:52,961 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002416.SZ_30min.csv
+2025-03-08 22:24:53,148 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/600570.SH.csv
+2025-03-08 22:24:53,201 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/600570.SH_30min.csv
+2025-03-08 22:24:53,359 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/000630.SZ.csv
+2025-03-08 22:24:53,411 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/000630.SZ_30min.csv
+2025-03-08 22:24:53,567 - INFO - fetch.py:178 - Saved 5min data: /Users/chengming/project/backtest/src/../data/raw/5min/002456.SZ.csv
+2025-03-08 22:24:53,617 - INFO - fetch.py:187 - Saved 30min data: /Users/chengming/project/backtest/src/../data/raw/30min/002456.SZ_30min.csv

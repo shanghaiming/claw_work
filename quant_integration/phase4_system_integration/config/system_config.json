@@ -1,0 +1,82 @@
+{
+  "system": {
+    "name": "UnifiedTradingSystem",
+    "version": "1.0.0",
+    "log_level": "INFO",
+    "log_dir": "./logs",
+    "cache_dir": "./cache",
+    "output_dir": "./output"
+  },
+  "data": {
+    "default_source": "local",
+    "local_data_dir": "./data/example_data",
+    "cache_enabled": true,
+    "preprocessing_enabled": true,
+    "tushare": {
+      "token": "YOUR_TUSHARE_TOKEN_HERE",
+      "timeout": 30
+    }
+  },
+  "analysis": {
+    "enable_price_action": true,
+    "enable_technical": true,
+    "enable_signal": true,
+    "result_integration": "weighted",
+    "confidence_threshold": 0.6,
+    "price_action_config": {
+      "magnet_tolerance": 0.02,
+      "validation_weights": {
+        "touches": 0.25,
+        "volume": 0.2,
+        "price_action": 0.25,
+        "timeframe": 0.15,
+        "volatility": 0.15
+      }
+    }
+  },
+  "strategies": {
+    "default_strategies": ["MovingAverageAdapter", "PriceActionSignal"],
+    "strategy_config_dir": "./config/strategies",
+    "custom_strategies": [],
+    "strategy_weights": {
+      "MovingAverageAdapter": 0.4,
+      "PriceActionSignal": 0.6
+    }
+  },
+  "backtest": {
+    "initial_capital": 1000000,
+    "commission_rate": 0.0003,
+    "slippage": 0.0001,
+    "risk_management": true,
+    "stop_loss": 0.05,
+    "take_profit": 0.10,
+    "max_position_size": 0.1,
+    "max_portfolio_risk": 0.02
+  },
+  "reporting": {
+    "output_dir": "./reports",
+    "default_format": "markdown",
+    "enable_visualization": true,
+    "dashboard_enabled": true,
+    "email_report": false,
+    "report_types": ["summary", "performance", "risk", "full"],
+    "visualization_types": ["dashboard", "charts"]
+  },
+  "monitoring": {
+    "enabled": true,
+    "check_interval_minutes": 5,
+    "alert_on_error": true,
+    "performance_thresholds": {
+      "max_drawdown": 0.15,
+      "min_sharpe_ratio": 0.5,
+      "min_win_rate": 0.45
+    }
+  },
+  "advanced": {
+    "parallel_processing": false,
+    "max_workers": 4,
+    "memory_cache_size": 1000,
+    "data_retention_days": 30,
+    "auto_update": false
+  }
+}

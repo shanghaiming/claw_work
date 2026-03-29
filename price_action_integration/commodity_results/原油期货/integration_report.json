@@ -1,0 +1,28 @@
+{
+  "integration_summary": {
+    "rules_applied": [
+      "magnetic_level_validation",
+      "entry_signals",
+      "risk_management",
+      "trading_plan",
+      "trend_analysis",
+      "psychological_discipline"
+    ],
+    "signals_generated": 1,
+    "trading_plans_created": 0,
+    "validation_rate": 0.6666666666666666
+  },
+  "key_findings": [
+    "磁力位验证通过率中等，需谨慎对待关键水平",
+    "交易信号质量中等，需要选择性执行",
+    "整体风险水平：low"
+  ],
+  "actionable_insights": [],
+  "next_steps": [
+    "根据交易计划执行高质量信号",
+    "严格遵循风险管理参数",
+    "监控市场状态变化，及时调整策略",
+    "记录交易执行结果和教训",
+    "定期回顾和优化交易系统"
+  ]
+}

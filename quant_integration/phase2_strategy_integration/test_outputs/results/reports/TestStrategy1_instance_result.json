@@ -1,0 +1,429 @@
+{
+  "strategy_name": "TestStrategy1",
+  "instance_name": "TestStrategy1_instance",
+  "execution_time": 0.000439,
+  "signal_count": 15,
+  "signals": [
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0000",
+      "timestamp": "2024-01-01 00:00:00",
+      "action": "buy",
+      "price": 120.06860663652871,
+      "raw_signal": {
+        "timestamp": "2024-01-01 00:00:00",
+        "action": "buy",
+        "price": 120.06860663652871,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908263",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 0
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0001",
+      "timestamp": "2024-01-11 00:00:00",
+      "action": "buy",
+      "price": 98.11593085204123,
+      "raw_signal": {
+        "timestamp": "2024-01-11 00:00:00",
+        "action": "buy",
+        "price": 98.11593085204123,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908283",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 1
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0002",
+      "timestamp": "2024-01-21 00:00:00",
+      "action": "buy",
+      "price": 103.02739278560041,
+      "raw_signal": {
+        "timestamp": "2024-01-21 00:00:00",
+        "action": "buy",
+        "price": 103.02739278560041,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908300",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 2
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0003",
+      "timestamp": "2024-01-31 00:00:00",
+      "action": "buy",
+      "price": 130.41847936600448,
+      "raw_signal": {
+        "timestamp": "2024-01-31 00:00:00",
+        "action": "buy",
+        "price": 130.41847936600448,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908315",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 3
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0004",
+      "timestamp": "2024-02-10 00:00:00",
+      "action": "buy",
+      "price": 134.53351356986965,
+      "raw_signal": {
+        "timestamp": "2024-02-10 00:00:00",
+        "action": "buy",
+        "price": 134.53351356986965,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908328",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 4
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0005",
+      "timestamp": "2024-02-20 00:00:00",
+      "action": "buy",
+      "price": 109.72857727038412,
+      "raw_signal": {
+        "timestamp": "2024-02-20 00:00:00",
+        "action": "buy",
+        "price": 109.72857727038412,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908342",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 5
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0006",
+      "timestamp": "2024-03-01 00:00:00",
+      "action": "buy",
+      "price": 144.4429139443402,
+      "raw_signal": {
+        "timestamp": "2024-03-01 00:00:00",
+        "action": "buy",
+        "price": 144.4429139443402,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908355",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 6
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0007",
+      "timestamp": "2024-03-11 00:00:00",
+      "action": "buy",
+      "price": 148.79677867538624,
+      "raw_signal": {
+        "timestamp": "2024-03-11 00:00:00",
+        "action": "buy",
+        "price": 148.79677867538624,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908368",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 7
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0008",
+      "timestamp": "2024-03-21 00:00:00",
+      "action": "buy",
+      "price": 156.73429484735277,
+      "raw_signal": {
+        "timestamp": "2024-03-21 00:00:00",
+        "action": "buy",
+        "price": 156.73429484735277,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908380",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 8
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0009",
+      "timestamp": "2024-03-31 00:00:00",
+      "action": "buy",
+      "price": 125.56982568093842,
+      "raw_signal": {
+        "timestamp": "2024-03-31 00:00:00",
+        "action": "buy",
+        "price": 125.56982568093842,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908392",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 9
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0010",
+      "timestamp": "2024-04-10 00:00:00",
+      "action": "buy",
+      "price": 165.61859660825786,
+      "raw_signal": {
+        "timestamp": "2024-04-10 00:00:00",
+        "action": "buy",
+        "price": 165.61859660825786,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908405",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 10
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0011",
+      "timestamp": "2024-04-20 00:00:00",
+      "action": "buy",
+      "price": 170.348168390667,
+      "raw_signal": {
+        "timestamp": "2024-04-20 00:00:00",
+        "action": "buy",
+        "price": 170.348168390667,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908418",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 11
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0012",
+      "timestamp": "2024-04-30 00:00:00",
+      "action": "buy",
+      "price": 175.51244332839985,
+      "raw_signal": {
+        "timestamp": "2024-04-30 00:00:00",
+        "action": "buy",
+        "price": 175.51244332839985,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908431",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 12
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0013",
+      "timestamp": "2024-05-10 00:00:00",
+      "action": "buy",
+      "price": 173.08317347426888,
+      "raw_signal": {
+        "timestamp": "2024-05-10 00:00:00",
+        "action": "buy",
+        "price": 173.08317347426888,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908443",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 13
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    },
+    {
+      "strategy": "TestStrategy1_instance",
+      "signal_id": "TestStrategy1_instance_0014",
+      "timestamp": "2024-05-20 00:00:00",
+      "action": "buy",
+      "price": 179.35737029921683,
+      "raw_signal": {
+        "timestamp": "2024-05-20 00:00:00",
+        "action": "buy",
+        "price": 179.35737029921683,
+        "confidence": 0.8
+      },
+      "metadata": {
+        "generation_time": "2026-03-28T21:46:19.908455",
+        "strategy_params": {
+          "param1": 10,
+          "param2": 20,
+          "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+        },
+        "signal_index": 14
+      },
+      "symbol": "TEST1",
+      "confidence": 0.8,
+      "signal_type": "unknown",
+      "features": {}
+    }
+  ],
+  "performance_metrics": {
+    "strategy_name": "TestStrategy1_instance",
+    "execution_stats": {
+      "signal_count": 15,
+      "buy_count": 15,
+      "sell_count": 0,
+      "execution_time": 0.000432
+    },
+    "signal_summary": {
+      "total_signals": 15,
+      "buy_signals": 15,
+      "sell_signals": 0,
+      "hold_signals": 0
+    },
+    "params": {
+      "param1": 10,
+      "param2": 20,
+      "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+    },
+    "initialized": true,
+    "signal_time_range": {
+      "start": "2024-01-01 00:00:00",
+      "end": "2024-05-20 00:00:00"
+    }
+  },
+  "config": {
+    "param1": 10,
+    "param2": 20,
+    "description": "\u7b2c\u4e00\u4e2a\u6d4b\u8bd5\u7b56\u7565"
+  },
+  "timestamp": "2026-03-28T21:46:19.908034"
+}

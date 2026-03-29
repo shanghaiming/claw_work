@@ -1,0 +1,52 @@
+{
+  "system": {
+    "name": "QuantTradeMain",
+    "version": "1.0.0",
+    "log_level": "INFO",
+    "log_dir": "./logs",
+    "cache_dir": "./cache",
+    "output_dir": "./output"
+  },
+  "data": {
+    "default_source": "local",
+    "local_data_dir": "./data",
+    "cache_enabled": true,
+    "cache_ttl_hours": 24,
+    "preprocessing_enabled": false,
+    "tushare": {
+      "token": "YOUR_TUSHARE_TOKEN_HERE",
+      "timeout": 30
+    }
+  },
+  "analysis": {
+    "enable_price_action": true,
+    "enable_technical": true,
+    "enable_signal": true,
+    "result_integration": "weighted",
+    "confidence_threshold": 0.6
+  },
+  "strategies": {
+    "default_strategies": ["MovingAverageAdapter", "PriceActionSignal"],
+    "strategy_config_dir": "./config/strategies",
+    "custom_strategies": [],
+    "strategy_weights": {
+      "MovingAverageAdapter": 0.4,
+      "PriceActionSignal": 0.6
+    }
+  },
+  "backtest": {
+    "initial_capital": 1000000,
+    "commission_rate": 0.0003,
+    "slippage": 0.0001,
+    "risk_management": true,
+    "stop_loss": 0.05,
+    "take_profit": 0.10
+  },
+  "reporting": {
+    "output_dir": "./reports",
+    "default_format": "markdown",
+    "enable_visualization": true,
+    "dashboard_enabled": true,
+    "email_report": false
+  }
+}

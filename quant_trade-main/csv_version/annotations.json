@@ -1,0 +1,2267 @@
+{
+  "version": 1.0,
+  "created_at": "2025-07-14T16:11:01.007962",
+  "last_updated": "2025-07-14T17:06:43.163606",
+  "annotations": {
+    "2022-10-13": {
+      "date": "2022-10-13",
+      "label": 1,
+      "sample_type": "event",
+      "sample_hash": "b8bd27e94233fde52975144cf133385e",
+      "features": {
+        "macd": -0.1355161655576838
+      },
+      "timestamp": "2025-07-14T16:11:37.849605"
+    },
+    "2023-01-04 00:00:00": {
+      "date": "2023-01-04 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "336a74d8cc1babd1feb24242fd0b7115",
+      "features": {
+        "macd": 0.4241458430664863
+      },
+      "timestamp": "2025-07-14T16:11:41.121582"
+    },
+    "2024-12-17 00:00:00": {
+      "date": "2024-12-17 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "2187289adafed0b602a204e98ba74c3d",
+      "features": {
+        "macd": -0.0622408842767963
+      },
+      "timestamp": "2025-07-14T16:11:46.441461"
+    },
+    "2024-10-08 00:00:00": {
+      "date": "2024-10-08 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "440e9e620aebf78504c53c2708c2d7a4",
+      "features": {
+        "macd": 0.9272337542074076
+      },
+      "timestamp": "2025-07-14T16:11:49.803643"
+    },
+    "2021-12-27 00:00:00": {
+      "date": "2021-12-27 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "0d0ba48ada624fe27c8b639eb1d0add6",
+      "features": {
+        "macd": -0.1117965014702663
+      },
+      "timestamp": "2025-07-14T16:11:53.023515"
+    },
+    "2025-03-25 00:00:00": {
+      "date": "2025-03-25 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ba5c2f20855968a285e67074111081da",
+      "features": {
+        "macd": -0.0831035778313765
+      },
+      "timestamp": "2025-07-14T16:11:54.713436"
+    },
+    "2025-07-01 00:00:00": {
+      "date": "2025-07-01 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "78573d89547dadbf7406f3cc5ea6817b",
+      "features": {
+        "macd": 0.056337405283914
+      },
+      "timestamp": "2025-07-14T16:11:55.710111"
+    },
+    "2023-09-19 00:00:00": {
+      "date": "2023-09-19 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "8df595db0cea9c3cd384f3ae5d003744",
+      "features": {
+        "macd": -0.0025045597763522
+      },
+      "timestamp": "2025-07-14T16:11:56.449027"
+    },
+    "2022-09-13 00:00:00": {
+      "date": "2022-09-13 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "a8abde2f2815624d5c1dfe58c36bf06b",
+      "features": {
+        "macd": 0.1351121141957101
+      },
+      "timestamp": "2025-07-14T16:11:57.235426"
+    },
+    "2024-11-06 00:00:00": {
+      "date": "2024-11-06 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "eaf14793a1a1347a7a0f5f68cd6de5c6",
+      "features": {
+        "macd": -0.0205911022658149
+      },
+      "timestamp": "2025-07-14T16:11:57.939858"
+    },
+    "2021-10-28 00:00:00": {
+      "date": "2021-10-28 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "2f3cc7b56ee3de98a107d133a464f28a",
+      "features": {
+        "macd": -0.1243767611024627
+      },
+      "timestamp": "2025-07-14T16:12:00.063049"
+    },
+    "2022-07-05 00:00:00": {
+      "date": "2022-07-05 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "a262d68c9a17ca21850f4fadbc34609c",
+      "features": {
+        "macd": 0.1249096975150372
+      },
+      "timestamp": "2025-07-14T16:15:18.736178"
+    },
+    "2022-03-28 00:00:00": {
+      "date": "2022-03-28 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "cc935b3ab31bd7b2e62659c2ee889007",
+      "features": {
+        "macd": 0.2394758060991557
+      },
+      "timestamp": "2025-07-14T16:15:19.795371"
+    },
+    "2022-07-12 00:00:00": {
+      "date": "2022-07-12 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "2c736b074cfca01f4158227ba4433f12",
+      "features": {
+        "macd": -0.1632734010612594
+      },
+      "timestamp": "2025-07-14T16:15:20.379623"
+    },
+    "2024-07-12 00:00:00": {
+      "date": "2024-07-12 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "a84d2aa6deac1b42165e40df2b193e9f",
+      "features": {
+        "macd": 0.1111070309074646
+      },
+      "timestamp": "2025-07-14T16:15:20.786347"
+    },
+    "2020-11-26 00:00:00": {
+      "date": "2020-11-26 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ca4f888c28e019e504c22ec5636bb1ec",
+      "features": {
+        "macd": 0.2247409814145026
+      },
+      "timestamp": "2025-07-14T16:15:21.220435"
+    },
+    "2024-08-12 00:00:00": {
+      "date": "2024-08-12 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "829f60f933572b77a02afc219d6b91e7",
+      "features": {
+        "macd": -0.0003233219231502
+      },
+      "timestamp": "2025-07-14T16:15:21.663346"
+    },
+    "2023-08-14 00:00:00": {
+      "date": "2023-08-14 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "542fafd7cf3962ce227b94c1ade3a5dd",
+      "features": {
+        "macd": -0.2774931311675067
+      },
+      "timestamp": "2025-07-14T16:15:22.096445"
+    },
+    "2023-03-23 00:00:00": {
+      "date": "2023-03-23 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "26df66445fd9d0409b0b9950a7c1ae79",
+      "features": {
+        "macd": 0.1225598276747084
+      },
+      "timestamp": "2025-07-14T16:15:22.491797"
+    },
+    "2021-11-03 00:00:00": {
+      "date": "2021-11-03 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "efaf0de1cded8466f530d9cfe50b2452",
+      "features": {
+        "macd": -0.8210197250680282
+      },
+      "timestamp": "2025-07-14T16:15:22.852342"
+    },
+    "2025-01-14 00:00:00": {
+      "date": "2025-01-14 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "3471ef805c0356fe5de83c4a08c5cb55",
+      "features": {
+        "macd": -0.0503195750075327
+      },
+      "timestamp": "2025-07-14T16:15:23.456357"
+    },
+    "2022-11-09 00:00:00": {
+      "date": "2022-11-09 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "0620da113330a73779078bd70be040e5",
+      "features": {
+        "macd": 0.2597344446002065
+      },
+      "timestamp": "2025-07-14T16:22:19.676675"
+    },
+    "2021-10-12 00:00:00": {
+      "date": "2021-10-12 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "309d1f29c1e3dd2b975a72b666426508",
+      "features": {
+        "macd": 0.6579660674733516
+      },
+      "timestamp": "2025-07-14T16:22:21.877521"
+    },
+    "2022-10-14 00:00:00": {
+      "date": "2022-10-14 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "e3ff309cc4c0f14504a4a22e2aa7b1b8",
+      "features": {
+        "macd": -0.0462763114128911
+      },
+      "timestamp": "2025-07-14T16:22:23.417519"
+    },
+    "2025-03-04 00:00:00": {
+      "date": "2025-03-04 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "292a6cf0d18802044b73d705755ba4c8",
+      "features": {
+        "macd": -0.0550972547993918
+      },
+      "timestamp": "2025-07-14T16:22:26.837070"
+    },
+    "2022-03-11 00:00:00": {
+      "date": "2022-03-11 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "0d8467b956666848675a79fcfba0abe8",
+      "features": {
+        "macd": -0.0021197319108725
+      },
+      "timestamp": "2025-07-14T16:22:29.143284"
+    },
+    "2021-12-29 00:00:00": {
+      "date": "2021-12-29 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "519552ae20bdd4d80b14b75e03c2f3f1",
+      "features": {
+        "macd": -0.1841180363699066
+      },
+      "timestamp": "2025-07-14T16:22:31.970434"
+    },
+    "2022-07-26 00:00:00": {
+      "date": "2022-07-26 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ef3447066a7f8455208145e03568d38f",
+      "features": {
+        "macd": -0.0822267867569818
+      },
+      "timestamp": "2025-07-14T16:22:33.015382"
+    },
+    "2022-01-11 00:00:00": {
+      "date": "2022-01-11 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "cbcb76d5fb2b9c84d37b6450d03831a6",
+      "features": {
+        "macd": 0.2951638958923127
+      },
+      "timestamp": "2025-07-14T16:22:37.112559"
+    },
+    "2020-11-27 00:00:00": {
+      "date": "2020-11-27 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "1b1bfd88758eb6b608c58ccc0754076d",
+      "features": {
+        "macd": 0.2112055620598603
+      },
+      "timestamp": "2025-07-14T16:22:39.712034"
+    },
+    "2023-09-22 00:00:00": {
+      "date": "2023-09-22 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "736966fab5a757cdd729ed20967bb93c",
+      "features": {
+        "macd": 0.0064097627759285
+      },
+      "timestamp": "2025-07-14T16:24:36.132123"
+    },
+    "2020-09-16 00:00:00": {
+      "date": "2020-09-16 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "9b2b73d58662140c062e5dc6d9e3244f",
+      "features": {
+        "macd": 0.0067086878012309
+      },
+      "timestamp": "2025-07-14T16:26:32.603659"
+    },
+    "2021-03-16 00:00:00": {
+      "date": "2021-03-16 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ebda18a970823676a1897a8264642d81",
+      "features": {
+        "macd": 0.2702797669640788
+      },
+      "timestamp": "2025-07-14T16:26:33.043781"
+    },
+    "2021-08-10 00:00:00": {
+      "date": "2021-08-10 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "4d95e3c6c6f4a0bec8c1e3feae34b034",
+      "features": {
+        "macd": 1.119410306559006
+      },
+      "timestamp": "2025-07-14T16:26:33.496176"
+    },
+    "2024-11-29 00:00:00": {
+      "date": "2024-11-29 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "5e33cbb6c592eee07340cf4317f7def3",
+      "features": {
+        "macd": -0.005382395255503
+      },
+      "timestamp": "2025-07-14T16:26:33.882358"
+    },
+    "2021-09-06 00:00:00": {
+      "date": "2021-09-06 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "8d4057b798e15fea9f629285b6b45783",
+      "features": {
+        "macd": 0.095057354150134
+      },
+      "timestamp": "2025-07-14T16:26:34.230353"
+    },
+    "2022-05-19 00:00:00": {
+      "date": "2022-05-19 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "c2a84f07dd2bf5937d24b145446b2d55",
+      "features": {
+        "macd": 0.1367285075914495
+      },
+      "timestamp": "2025-07-14T16:26:34.641535"
+    },
+    "2022-09-23 00:00:00": {
+      "date": "2022-09-23 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "2f4a394bd4f604ef92722aee5ecd02c8",
+      "features": {
+        "macd": -0.1555599723027577
+      },
+      "timestamp": "2025-07-14T16:26:35.049337"
+    },
+    "2023-02-27 00:00:00": {
+      "date": "2023-02-27 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "58b4025e784dd1cdfd47382c9586d17d",
+      "features": {
+        "macd": 0.0276187990499846
+      },
+      "timestamp": "2025-07-14T16:26:35.436353"
+    },
+    "2025-04-07 00:00:00": {
+      "date": "2025-04-07 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "fb72217995e5feebf116880ca0f61e3c",
+      "features": {
+        "macd": -0.1619094784399252
+      },
+      "timestamp": "2025-07-14T16:26:35.885134"
+    },
+    "2024-07-25 00:00:00": {
+      "date": "2024-07-25 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "0087228e8ae1895795b3a10937f76db0",
+      "features": {
+        "macd": -0.0836775635082998
+      },
+      "timestamp": "2025-07-14T16:26:38.140388"
+    },
+    "2022-11-24 00:00:00": {
+      "date": "2022-11-24 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "e08b7e4f351d8094c3034149208c604c",
+      "features": {
+        "macd": -0.019229215891598
+      },
+      "timestamp": "2025-07-14T16:42:20.980831"
+    },
+    "2023-11-16 00:00:00": {
+      "date": "2023-11-16 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "3854b3d42e84975a76b2c79cec9801dc",
+      "features": {
+        "macd": -0.0187279875061693
+      },
+      "timestamp": "2025-07-14T16:42:21.538751"
+    },
+    "2021-04-13 00:00:00": {
+      "date": "2021-04-13 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "af95800af19b2c05447b0ab828c2edd1",
+      "features": {
+        "macd": -0.3278823558436474
+      },
+      "timestamp": "2025-07-14T16:42:21.891050"
+    },
+    "2024-12-10 00:00:00": {
+      "date": "2024-12-10 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "70f4f4bc128ff78dacf4db64e2e639f2",
+      "features": {
+        "macd": 0.155416185854297
+      },
+      "timestamp": "2025-07-14T16:42:22.237534"
+    },
+    "2024-06-12 00:00:00": {
+      "date": "2024-06-12 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "cde6f22183c66c9d05e4bec713ece8bf",
+      "features": {
+        "macd": -0.0784647448097413
+      },
+      "timestamp": "2025-07-14T16:42:22.546158"
+    },
+    "2021-08-31 00:00:00": {
+      "date": "2021-08-31 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "add9dc4c44d06a72df5053f793e4a8a5",
+      "features": {
+        "macd": -0.6530394829390823
+      },
+      "timestamp": "2025-07-14T16:42:22.840054"
+    },
+    "2024-05-10 00:00:00": {
+      "date": "2024-05-10 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "3f6f4e3adb69e31ae9f088d01535fec2",
+      "features": {
+        "macd": 0.0187264928130127
+      },
+      "timestamp": "2025-07-14T16:42:23.152380"
+    },
+    "2024-12-31 00:00:00": {
+      "date": "2024-12-31 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "996247724fbed46f23dba727a3ede95f",
+      "features": {
+        "macd": -0.0312511502265993
+      },
+      "timestamp": "2025-07-14T16:42:23.411042"
+    },
+    "2023-06-13 00:00:00": {
+      "date": "2023-06-13 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "411166c3f732ad30c2d25de17d2f6101",
+      "features": {
+        "macd": 0.043172935285673
+      },
+      "timestamp": "2025-07-14T16:42:23.721528"
+    },
+    "2021-06-15 00:00:00": {
+      "date": "2021-06-15 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "5a283216d0ae2d896eb30ad464eb9107",
+      "features": {
+        "macd": -0.5183358723530276
+      },
+      "timestamp": "2025-07-14T16:53:11.235490"
+    },
+    "2021-11-15 00:00:00": {
+      "date": "2021-11-15 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "d8f3bd87b9c787d0327b788d523dd3d6",
+      "features": {
+        "macd": 0.3740473609598901
+      },
+      "timestamp": "2025-07-14T16:53:16.498729"
+    },
+    "2024-06-25 00:00:00": {
+      "date": "2024-06-25 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "4cbd8c3305bc8b84a207a7438842f0dc",
+      "features": {
+        "macd": 0.0173066932560512
+      },
+      "timestamp": "2025-07-14T16:53:16.810692"
+    },
+    "2021-10-26 00:00:00": {
+      "date": "2021-10-26 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "18ae48aacd61aa353085be9ae0d7a3a7",
+      "features": {
+        "macd": 0.121550064146698
+      },
+      "timestamp": "2025-07-14T16:53:17.143606"
+    },
+    "2023-11-21 00:00:00": {
+      "date": "2023-11-21 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ea42ef1a8a79520904970011c8101e0c",
+      "features": {
+        "macd": 0.0161852507076506
+      },
+      "timestamp": "2025-07-14T16:53:17.513354"
+    },
+    "2022-11-04 00:00:00": {
+      "date": "2022-11-04 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "7d6ae8281a13a482a8855f72aa313684",
+      "features": {
+        "macd": 0.2143753112409101
+      },
+      "timestamp": "2025-07-14T16:53:19.432252"
+    },
+    "2022-09-29 00:00:00": {
+      "date": "2022-09-29 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ec9da77f7e14beb0d875bf22abd839c8",
+      "features": {
+        "macd": -0.1586806782463244
+      },
+      "timestamp": "2025-07-14T16:54:02.137838"
+    },
+    "2022-12-28 00:00:00": {
+      "date": "2022-12-28 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "a6fdda95ddad022c1dd41c93ae8097d8",
+      "features": {
+        "macd": -0.0257629090603185
+      },
+      "timestamp": "2025-07-14T16:54:02.602324"
+    },
+    "2022-08-23 00:00:00": {
+      "date": "2022-08-23 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "cc0bfd08fb7a4ac4feda23854fdf43b8",
+      "features": {
+        "macd": 0.1670301035534586
+      },
+      "timestamp": "2025-07-14T16:54:03.004573"
+    },
+    "2024-10-21 00:00:00": {
+      "date": "2024-10-21 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "3798b9a2bd8010ef09418653ae7a8db2",
+      "features": {
+        "macd": -0.2708743932150785
+      },
+      "timestamp": "2025-07-14T16:54:03.386229"
+    },
+    "2024-09-23 00:00:00": {
+      "date": "2024-09-23 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "9949c00fa76f143bcd17ddbd8e831be9",
+      "features": {
+        "macd": 0.128170629495097
+      },
+      "timestamp": "2025-07-14T16:54:03.763438"
+    },
+    "2025-05-09 00:00:00": {
+      "date": "2025-05-09 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ac7bf8e0888a98bb8496e272eaa15f68",
+      "features": {
+        "macd": 0.0781132172875811
+      },
+      "timestamp": "2025-07-14T16:54:05.725388"
+    },
+    "2023-02-15 00:00:00": {
+      "date": "2023-02-15 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "9f5a6021f5683e4f3222c6a615f0653a",
+      "features": {
+        "macd": -0.1741116331537248
+      },
+      "timestamp": "2025-07-14T16:54:09.385442"
+    },
+    "2021-03-23 00:00:00": {
+      "date": "2021-03-23 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "d17b1d47fdf914d677aa71978a7425de",
+      "features": {
+        "macd": 0.1523458608692695
+      },
+      "timestamp": "2025-07-14T16:54:10.566342"
+    },
+    "2022-11-22 00:00:00": {
+      "date": "2022-11-22 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ef3dde66e82a53124a1c603e376f5e6e",
+      "features": {
+        "macd": 0.0134263495488442
+      },
+      "timestamp": "2025-07-14T16:54:11.572906"
+    },
+    "2021-02-02 00:00:00": {
+      "date": "2021-02-02 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "49fbeedb9657b95def02d48f16f0d287",
+      "features": {
+        "macd": 0.0002364150419047
+      },
+      "timestamp": "2025-07-14T17:00:13.909844"
+    },
+    "2021-10-22 00:00:00": {
+      "date": "2021-10-22 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "4573499f6cd962b8c1cf011e6b7fe128",
+      "features": {
+        "macd": 0.2092749916821202
+      },
+      "timestamp": "2025-07-14T17:00:14.551077"
+    },
+    "2022-03-23 00:00:00": {
+      "date": "2022-03-23 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "932a46e01cbdd79817a9a16cf75d2e83",
+      "features": {
+        "macd": 0.4832763603495118
+      },
+      "timestamp": "2025-07-14T17:00:15.043386"
+    },
+    "2023-08-01 00:00:00": {
+      "date": "2023-08-01 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "c8175bd1243db07f1ecbcc31709682ab",
+      "features": {
+        "macd": 0.2422372590255308
+      },
+      "timestamp": "2025-07-14T17:00:15.427094"
+    },
+    "2021-03-22 00:00:00": {
+      "date": "2021-03-22 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "7bba93dd39370f11fe0ff9bb0761e2e6",
+      "features": {
+        "macd": 0.1567079719986953
+      },
+      "timestamp": "2025-07-14T17:00:15.768652"
+    },
+    "2024-10-22 00:00:00": {
+      "date": "2024-10-22 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "2dfb158a359d182d72d07f5d3ff2ecee",
+      "features": {
+        "macd": -0.3022602068362561
+      },
+      "timestamp": "2025-07-14T17:00:16.126154"
+    },
+    "2025-02-19 00:00:00": {
+      "date": "2025-02-19 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "533af25aaa4e1516e2cfc184f6a1fbbe",
+      "features": {
+        "macd": 0.1102743593778446
+      },
+      "timestamp": "2025-07-14T17:00:16.499354"
+    },
+    "2022-02-17 00:00:00": {
+      "date": "2022-02-17 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "e0bbc7997ca971c40fe3e82b3f83def3",
+      "features": {
+        "macd": -0.0876917372242209
+      },
+      "timestamp": "2025-07-14T17:00:17.035542"
+    },
+    "2021-12-14 00:00:00": {
+      "date": "2021-12-14 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "fc6ad319328071470a976ebbcdaa294a",
+      "features": {
+        "macd": -0.1361398020012671
+      },
+      "timestamp": "2025-07-14T17:00:21.246452"
+    },
+    "2021-09-17 00:00:00": {
+      "date": "2021-09-17 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "f4cc90d9fab2a1eaa24ff7c669a3d364",
+      "features": {
+        "macd": -0.3275106667152407
+      },
+      "timestamp": "2025-07-14T17:00:23.073227"
+    },
+    "2020-09-15 00:00:00": {
+      "date": "2020-09-15 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "621347e4fdc97bbeacac99f7d8ab1fdb",
+      "features": {
+        "macd": -0.0226352711255587
+      },
+      "timestamp": "2025-07-14T17:00:59.467239"
+    },
+    "2020-10-13 00:00:00": {
+      "date": "2020-10-13 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "ef0eb6ce1e1c94de18dc2199560273c6",
+      "features": {
+        "macd": 0.259979398754219
+      },
+      "timestamp": "2025-07-14T17:00:59.990375"
+    },
+    "2020-11-17 00:00:00": {
+      "date": "2020-11-17 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "2751963b3587fc2ab06d9595ab004639",
+      "features": {
+        "macd": -0.1777933509344728
+      },
+      "timestamp": "2025-07-14T17:01:00.432475"
+    },
+    "2021-03-09 00:00:00": {
+      "date": "2021-03-09 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "098c5ef6d5d03e7999a10c0e6f48817b",
+      "features": {
+        "macd": -0.3295689190319768
+      },
+      "timestamp": "2025-07-14T17:01:00.858428"
+    },
+    "2021-04-02 00:00:00": {
+      "date": "2021-04-02 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "b5da97fb00d637fb5ac2329d9446a7e3",
+      "features": {
+        "macd": 0.2377574588775845
+      },
+      "timestamp": "2025-07-14T17:01:01.459657"
+    },
+    "2021-04-14 00:00:00": {
+      "date": "2021-04-14 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "ae8cab676ff55ac44392ced774c13ad0",
+      "features": {
+        "macd": -0.328723167355631
+      },
+      "timestamp": "2025-07-14T17:01:03.603768"
+    },
+    "2021-04-19 00:00:00": {
+      "date": "2021-04-19 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "a2e213088cbc5fd90de13741e6639df2",
+      "features": {
+        "macd": -0.0247380562793603
+      },
+      "timestamp": "2025-07-14T17:01:04.458383"
+    },
+    "2021-06-01 00:00:00": {
+      "date": "2021-06-01 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "8b5c0d360407375296cb6332fab2fa75",
+      "features": {
+        "macd": -0.2541897422862438
+      },
+      "timestamp": "2025-07-14T17:01:05.401381"
+    },
+    "2021-06-25 00:00:00": {
+      "date": "2021-06-25 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "9ef1d9b37fb4069851e6016d11b24722",
+      "features": {
+        "macd": 0.2153688120142195
+      },
+      "timestamp": "2025-07-14T17:01:06.263076"
+    },
+    "2021-07-20 00:00:00": {
+      "date": "2021-07-20 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "ebbab8bca68780a3ba2960abd7fae040",
+      "features": {
+        "macd": -0.02571975546875
+      },
+      "timestamp": "2025-07-14T17:01:06.967202"
+    },
+    "2021-08-05 00:00:00": {
+      "date": "2021-08-05 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "fc93d57ae07262d4375e0ec0f3b51b94",
+      "features": {
+        "macd": 0.238000379982884
+      },
+      "timestamp": "2025-07-14T17:01:07.710091"
+    },
+    "2021-08-23 00:00:00": {
+      "date": "2021-08-23 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "4dad54f1f4d795c2f5065c2b0cac2981",
+      "features": {
+        "macd": -0.1784512120396985
+      },
+      "timestamp": "2025-07-14T17:01:08.404062"
+    },
+    "2021-08-24 00:00:00": {
+      "date": "2021-08-24 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "4cc8eaff9452baeba9d3822492517868",
+      "features": {
+        "macd": -0.2611744610193399
+      },
+      "timestamp": "2025-07-14T17:01:09.304377"
+    },
+    "2021-09-15 00:00:00": {
+      "date": "2021-09-15 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "2ba65b04a006f07ce455fdac5543d76a",
+      "features": {
+        "macd": 0.2176964939888094
+      },
+      "timestamp": "2025-07-14T17:01:10.842348"
+    },
+    "2021-10-08 00:00:00": {
+      "date": "2021-10-08 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "cea260d402208d294a74791126610397",
+      "features": {
+        "macd": 0.2606192817882409
+      },
+      "timestamp": "2025-07-14T17:01:12.167052"
+    },
+    "2021-10-18 00:00:00": {
+      "date": "2021-10-18 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "1ec722a63ad2bb0bda7aafc5b0de3f48",
+      "features": {
+        "macd": 0.2715304335614183
+      },
+      "timestamp": "2025-07-14T17:01:13.039388"
+    },
+    "2021-10-29 00:00:00": {
+      "date": "2021-10-29 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "519a8c877f136169c70140703a398c0b",
+      "features": {
+        "macd": -0.2553716187819385
+      },
+      "timestamp": "2025-07-14T17:01:13.543282"
+    },
+    "2021-11-01 00:00:00": {
+      "date": "2021-11-01 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "7eb256d1c7d20d99729131f641c3be8f",
+      "features": {
+        "macd": -0.332332741234977
+      },
+      "timestamp": "2025-07-14T17:01:14.202081"
+    },
+    "2021-11-17 00:00:00": {
+      "date": "2021-11-17 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "3dca79bf1bf572f7e35d1edcf14dc842",
+      "features": {
+        "macd": 0.2770648090690553
+      },
+      "timestamp": "2025-07-14T17:01:14.697873"
+    },
+    "2021-12-06 00:00:00": {
+      "date": "2021-12-06 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "b566fb07469fefc165cf2b938a5a8e6a",
+      "features": {
+        "macd": 0.2349032860270591
+      },
+      "timestamp": "2025-07-14T17:01:14.972629"
+    },
+    "2022-01-07 00:00:00": {
+      "date": "2022-01-07 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "3558a0ae8f40091b00db0af6af7ebb7e",
+      "features": {
+        "macd": 0.2377243948711105
+      },
+      "timestamp": "2025-07-14T17:01:15.275840"
+    },
+    "2022-01-17 00:00:00": {
+      "date": "2022-01-17 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "bae957f83d7e073ce20962fd745c6038",
+      "features": {
+        "macd": -0.2513907392550696
+      },
+      "timestamp": "2025-07-14T17:01:15.603697"
+    },
+    "2022-03-01 00:00:00": {
+      "date": "2022-03-01 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "d74308fb28e7d930007dc2663b3ad805",
+      "features": {
+        "macd": -0.116627855490761
+      },
+      "timestamp": "2025-07-14T17:01:15.849198"
+    },
+    "2022-03-31 00:00:00": {
+      "date": "2022-03-31 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "78e7fd88f41917d662da8f4ebb8c4259",
+      "features": {
+        "macd": 0.2598688303245693
+      },
+      "timestamp": "2025-07-14T17:01:16.079291"
+    },
+    "2022-04-11 00:00:00": {
+      "date": "2022-04-11 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "b7ad4060ebf2595198592e56adf5c3a1",
+      "features": {
+        "macd": 0.2414213829023153
+      },
+      "timestamp": "2025-07-14T17:01:16.278153"
+    },
+    "2022-07-01 00:00:00": {
+      "date": "2022-07-01 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "688013713b3df2b2598bf657a5e687c4",
+      "features": {
+        "macd": 0.2195978584885901
+      },
+      "timestamp": "2025-07-14T17:01:16.570302"
+    },
+    "2022-11-07 00:00:00": {
+      "date": "2022-11-07 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "297df474e3c93ac0422d539c08f9da50",
+      "features": {
+        "macd": 0.2729675349258103
+      },
+      "timestamp": "2025-07-14T17:01:16.772370"
+    },
+    "2022-11-08 00:00:00": {
+      "date": "2022-11-08 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "3dc5887035e4102aaffe588a19bc3c53",
+      "features": {
+        "macd": 0.2707758746679792
+      },
+      "timestamp": "2025-07-14T17:01:17.522684"
+    },
+    "2022-11-21 00:00:00": {
+      "date": "2022-11-21 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "4636f42777941eef5792a070940e4475",
+      "features": {
+        "macd": -0.0216402805952774
+      },
+      "timestamp": "2025-07-14T17:01:18.495197"
+    },
+    "2022-12-29 00:00:00": {
+      "date": "2022-12-29 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "4c241fedd63f8646a6e9041045873a6b",
+      "features": {
+        "macd": -0.0257624301270814
+      },
+      "timestamp": "2025-07-14T17:01:19.288541"
+    },
+    "2021-01-11 00:00:00": {
+      "date": "2021-01-11 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "944e981cee2a7293700b974cf4ec5deb",
+      "features": {
+        "macd": 0.5211984505220726
+      },
+      "timestamp": "2025-07-14T17:01:25.158409"
+    },
+    "2021-01-13 00:00:00": {
+      "date": "2021-01-13 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "d69eae9629bc48d85ffaccf4f61b7724",
+      "features": {
+        "macd": 0.5209233364779473
+      },
+      "timestamp": "2025-07-14T17:01:25.389085"
+    },
+    "2021-03-31 00:00:00": {
+      "date": "2021-03-31 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "293b8f510b3b25f763b0464a45be5389",
+      "features": {
+        "macd": 0.5200922355636768
+      },
+      "timestamp": "2025-07-14T17:01:25.999049"
+    },
+    "2021-06-07 00:00:00": {
+      "date": "2021-06-07 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "e6d2b7c9be8b98ba3477f64c4e5c9455",
+      "features": {
+        "macd": -0.1028209496823762
+      },
+      "timestamp": "2025-07-14T17:01:26.317725"
+    },
+    "2021-07-21 00:00:00": {
+      "date": "2021-07-21 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "b4175391dd784e9351487e0782f9f7ac",
+      "features": {
+        "macd": -0.1029634517395018
+      },
+      "timestamp": "2025-07-14T17:01:26.636384"
+    },
+    "2021-08-17 00:00:00": {
+      "date": "2021-08-17 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "342a1e48a16f9de12d966f1daeb87d4a",
+      "features": {
+        "macd": 0.5235098894433867
+      },
+      "timestamp": "2025-07-14T17:01:26.898530"
+    },
+    "2021-09-03 00:00:00": {
+      "date": "2021-09-03 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "937912bf2e61c88d4d3959b0af4f9f51",
+      "features": {
+        "macd": -0.1015752822405653
+      },
+      "timestamp": "2025-07-14T17:01:27.318641"
+    },
+    "2022-01-26 00:00:00": {
+      "date": "2022-01-26 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "470d48f1b6825f11d7e990555c4faed5",
+      "features": {
+        "macd": 0.0121958193035017
+      },
+      "timestamp": "2025-07-14T17:01:27.712464"
+    },
+    "2022-11-14 00:00:00": {
+      "date": "2022-11-14 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "d3ccd9379d0acecc8d157c84129f7d9d",
+      "features": {
+        "macd": 0.5251080880975516
+      },
+      "timestamp": "2025-07-14T17:01:28.101613"
+    },
+    "2022-11-23 00:00:00": {
+      "date": "2022-11-23 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "6c4f0f01cd9c17ced430b1af0ae95bcc",
+      "features": {
+        "macd": 0.012508068544156
+      },
+      "timestamp": "2025-07-14T17:01:28.490199"
+    },
+    "2023-04-12 00:00:00": {
+      "date": "2023-04-12 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "a65969e83b1b873fe8848f070236a59d",
+      "features": {
+        "macd": 0.0378254625922064
+      },
+      "timestamp": "2025-07-14T17:01:28.944342"
+    },
+    "2023-07-19 00:00:00": {
+      "date": "2023-07-19 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "93bff5d725ebbc0ab88f973989f99fda",
+      "features": {
+        "macd": 0.0373035069793364
+      },
+      "timestamp": "2025-07-14T17:01:30.612446"
+    },
+    "2023-07-21 00:00:00": {
+      "date": "2023-07-21 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "c964fb1c671335d2044a6a91ffe45cdc",
+      "features": {
+        "macd": 0.0380185675659908
+      },
+      "timestamp": "2025-07-14T17:01:30.992463"
+    },
+    "2023-08-10 00:00:00": {
+      "date": "2023-08-10 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "2e4a1de7a413d2f1754b374f409a3076",
+      "features": {
+        "macd": -0.1021265902054275
+      },
+      "timestamp": "2025-07-14T17:01:31.284420"
+    },
+    "2024-02-07 00:00:00": {
+      "date": "2024-02-07 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "4eee15c53e67adffd84ee2ca27bcae9c",
+      "features": {
+        "macd": 0.0382853724717802
+      },
+      "timestamp": "2025-07-14T17:01:32.034376"
+    },
+    "2025-02-21 00:00:00": {
+      "date": "2025-02-21 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "9a7f38ae9bcd650d3f1cc5e4fd32dbc2",
+      "features": {
+        "macd": 0.0129223316649626
+      },
+      "timestamp": "2025-07-14T17:01:32.740832"
+    },
+    "2021-03-18 00:00:00": {
+      "date": "2021-03-18 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "84c60cd1fc9c5500ff24947435e75108",
+      "features": {
+        "macd": 0.2927351758732676
+      },
+      "timestamp": "2025-07-14T17:01:33.101494"
+    },
+    "2022-08-03 00:00:00": {
+      "date": "2022-08-03 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "2a859e76d668d6e8eca49cb20bb16bc6",
+      "features": {
+        "macd": -0.1077307527132096
+      },
+      "timestamp": "2025-07-14T17:01:33.493204"
+    },
+    "2025-03-27 00:00:00": {
+      "date": "2025-03-27 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "f188124d93dd2a99d6b4ef445fca0d2f",
+      "features": {
+        "macd": -0.0480361543346999
+      },
+      "timestamp": "2025-07-14T17:01:33.880360"
+    },
+    "2024-02-20 00:00:00": {
+      "date": "2024-02-20 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "7e7f3471b3a520683ce373a900b57083",
+      "features": {
+        "macd": 0.0903113848123499
+      },
+      "timestamp": "2025-07-14T17:01:34.270508"
+    },
+    "2021-06-22 00:00:00": {
+      "date": "2021-06-22 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "04432643b0c4c14cd4ed65522e7b4d4b",
+      "features": {
+        "macd": -0.307980827819093
+      },
+      "timestamp": "2025-07-14T17:01:34.621154"
+    },
+    "2020-12-14 00:00:00": {
+      "date": "2020-12-14 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "b8e4ff8ce3ec1a4f8f009f919ff11c1b",
+      "features": {
+        "macd": -0.2899977585113499
+      },
+      "timestamp": "2025-07-14T17:01:35.091465"
+    },
+    "2023-05-19 00:00:00": {
+      "date": "2023-05-19 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "cecd16b791bb3c05c1d455de5cb23187",
+      "features": {
+        "macd": -0.1891947361795502
+      },
+      "timestamp": "2025-07-14T17:01:35.482703"
+    },
+    "2022-02-14 00:00:00": {
+      "date": "2022-02-14 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ac8028e4509f6ed184d7b584be6f01fc",
+      "features": {
+        "macd": 0.1029456717989997
+      },
+      "timestamp": "2025-07-14T17:03:43.751213"
+    },
+    "2021-06-03 00:00:00": {
+      "date": "2021-06-03 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "a5b372ab91ce0443eeb1c1876b6ffa5e",
+      "features": {
+        "macd": -0.3866823647485721
+      },
+      "timestamp": "2025-07-14T17:03:44.191494"
+    },
+    "2022-06-09 00:00:00": {
+      "date": "2022-06-09 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "b3316415b2b489bce75cd87365d1963b",
+      "features": {
+        "macd": 0.1704816338225638
+      },
+      "timestamp": "2025-07-14T17:03:44.718245"
+    },
+    "2024-12-27 00:00:00": {
+      "date": "2024-12-27 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "35f10f908a098dbdb8873ae1947761bf",
+      "features": {
+        "macd": 0.0383461525926834
+      },
+      "timestamp": "2025-07-14T17:03:45.244291"
+    },
+    "2023-01-12 00:00:00": {
+      "date": "2023-01-12 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "ba81bb4561bc5a30dc580dd9ff7f85a9",
+      "features": {
+        "macd": 0.0794507214067582
+      },
+      "timestamp": "2025-07-14T17:03:45.701383"
+    },
+    "2021-07-02 00:00:00": {
+      "date": "2021-07-02 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "bb01ce495b43d018f928c42375a449d6",
+      "features": {
+        "macd": -0.1469694082027511
+      },
+      "timestamp": "2025-07-14T17:03:46.196261"
+    },
+    "2023-02-13 00:00:00": {
+      "date": "2023-02-13 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "436f2e4ff1c8bd51ade6c8572c18178e",
+      "features": {
+        "macd": -0.2499030330784509
+      },
+      "timestamp": "2025-07-14T17:03:46.660605"
+    },
+    "2024-08-06 00:00:00": {
+      "date": "2024-08-06 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "9a9fe3ca3eb111e9bf61d3e54dddd32a",
+      "features": {
+        "macd": -0.0680440117997884
+      },
+      "timestamp": "2025-07-14T17:03:47.094114"
+    },
+    "2023-09-28 00:00:00": {
+      "date": "2023-09-28 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "d57a8f3e531cff658ef169af94f87270",
+      "features": {
+        "macd": 0.0308033738772507
+      },
+      "timestamp": "2025-07-14T17:03:47.477477"
+    },
+    "2023-03-03 00:00:00": {
+      "date": "2023-03-03 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "aa9e9a341c77c5c7a477d4e34a7206e8",
+      "features": {
+        "macd": 0.2181864369234602
+      },
+      "timestamp": "2025-07-14T17:03:48.231502"
+    },
+    "2023-03-09 00:00:00": {
+      "date": "2023-03-09 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "47e1eef12e797e35ed89c2738e5eb421",
+      "features": {
+        "macd": -0.2601554031785711
+      },
+      "timestamp": "2025-07-14T17:03:48.768037"
+    },
+    "2023-04-18 00:00:00": {
+      "date": "2023-04-18 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "ec97f612e137c969dee71bab35e9ac3e",
+      "features": {
+        "macd": 0.2169821189842274
+      },
+      "timestamp": "2025-07-14T17:03:55.915240"
+    },
+    "2023-05-23 00:00:00": {
+      "date": "2023-05-23 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "1a4cbbda9999b94c5df175e9be155558",
+      "features": {
+        "macd": -0.1769657282851316
+      },
+      "timestamp": "2025-07-14T17:03:56.375171"
+    },
+    "2024-01-22 00:00:00": {
+      "date": "2024-01-22 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "1ec1fda3207ca07ad396020bbe809584",
+      "features": {
+        "macd": -0.0260834061979782
+      },
+      "timestamp": "2025-07-14T17:03:56.829122"
+    },
+    "2024-01-24 00:00:00": {
+      "date": "2024-01-24 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "ce39cbdac11fba0897831bbfbbbb7cae",
+      "features": {
+        "macd": 0.0397468071048675
+      },
+      "timestamp": "2025-07-14T17:03:57.320699"
+    },
+    "2024-04-03 00:00:00": {
+      "date": "2024-04-03 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "dc89c8fe472b83421be1fdc09dace3f7",
+      "features": {
+        "macd": -0.0264155344250693
+      },
+      "timestamp": "2025-07-14T17:03:57.725279"
+    },
+    "2024-05-27 00:00:00": {
+      "date": "2024-05-27 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "1382508fe96dc40b831cd39078e634db",
+      "features": {
+        "macd": -0.02238498093351
+      },
+      "timestamp": "2025-07-14T17:03:58.474059"
+    },
+    "2024-06-07 00:00:00": {
+      "date": "2024-06-07 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "b5948795322c3e04eb42c5a992fdd566",
+      "features": {
+        "macd": -0.1159550930405941
+      },
+      "timestamp": "2025-07-14T17:03:58.898901"
+    },
+    "2024-07-05 00:00:00": {
+      "date": "2024-07-05 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "3ad2ec3aa1c39bba8777629bbb6b51ee",
+      "features": {
+        "macd": 0.0389107090104852
+      },
+      "timestamp": "2025-07-14T17:03:59.318864"
+    },
+    "2024-07-08 00:00:00": {
+      "date": "2024-07-08 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "25006ec644c98cf44daa66189b134e60",
+      "features": {
+        "macd": -0.025694034619781
+      },
+      "timestamp": "2025-07-14T17:03:59.837022"
+    },
+    "2025-01-13 00:00:00": {
+      "date": "2025-01-13 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "51c0c952bfb015b39c633cf631d56a17",
+      "features": {
+        "macd": -0.116763648023628
+      },
+      "timestamp": "2025-07-14T17:04:00.287793"
+    },
+    "2025-03-21 00:00:00": {
+      "date": "2025-03-21 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "5a1b271e22f73479e95b8dcac2672fbd",
+      "features": {
+        "macd": -0.1165561158863831
+      },
+      "timestamp": "2025-07-14T17:04:00.891480"
+    },
+    "2025-04-08 00:00:00": {
+      "date": "2025-04-08 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "98ee8de6a0907b9891ef159262049931",
+      "features": {
+        "macd": -0.1776241743946257
+      },
+      "timestamp": "2025-07-14T17:04:01.384272"
+    },
+    "2023-06-06 00:00:00": {
+      "date": "2023-06-06 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "87faac333a95f4ffe38a978ae4ec0089",
+      "features": {
+        "macd": 0.0884495572447696
+      },
+      "timestamp": "2025-07-14T17:04:01.866716"
+    },
+    "2021-11-30 00:00:00": {
+      "date": "2021-11-30 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "b0a7579d3a9624a4a26971cd17f89644",
+      "features": {
+        "macd": -0.0827823883063136
+      },
+      "timestamp": "2025-07-14T17:04:02.366086"
+    },
+    "2021-11-02 00:00:00": {
+      "date": "2021-11-02 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "6799e075ac0cefe2bd6221b79b40f061",
+      "features": {
+        "macd": -0.6975080049429565
+      },
+      "timestamp": "2025-07-14T17:04:02.825287"
+    },
+    "2021-02-03 00:00:00": {
+      "date": "2021-02-03 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "db07f8220fd73943543f768b1bc76027",
+      "features": {
+        "macd": 0.302761609973261
+      },
+      "timestamp": "2025-07-14T17:04:03.294199"
+    },
+    "2025-04-22 00:00:00": {
+      "date": "2025-04-22 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "585c15d8e58c069decc50beebe22a2a6",
+      "features": {
+        "macd": 0.0980654127272276
+      },
+      "timestamp": "2025-07-14T17:04:03.721195"
+    },
+    "2024-01-18 00:00:00": {
+      "date": "2024-01-18 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "d56ee0f0835be72689047809c2e449f9",
+      "features": {
+        "macd": 0.0278352876630353
+      },
+      "timestamp": "2025-07-14T17:04:04.212352"
+    },
+    "2020-11-25 00:00:00": {
+      "date": "2020-11-25 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "b2177dc665c87c6b024daa029e85f0f1",
+      "features": {
+        "macd": 0.2526589250619996
+      },
+      "timestamp": "2025-07-14T17:04:04.690765"
+    },
+    "2024-07-16 00:00:00": {
+      "date": "2024-07-16 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "774a14cd0114f4848a766a01c33feba3",
+      "features": {
+        "macd": 0.1205146435747391
+      },
+      "timestamp": "2025-07-14T17:04:05.193392"
+    },
+    "2022-03-07 00:00:00": {
+      "date": "2022-03-07 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "dfdd9a7eb4530634f5ae774006bb6ae5",
+      "features": {
+        "macd": -0.3231861946391676
+      },
+      "timestamp": "2025-07-14T17:04:05.829667"
+    },
+    "2020-10-12 00:00:00": {
+      "date": "2020-10-12 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "6f66a7c1a5996a2dfafbce8ae4efa453",
+      "features": {
+        "macd": 0.10748252996709
+      },
+      "timestamp": "2025-07-14T17:04:12.307505"
+    },
+    "2020-12-24 00:00:00": {
+      "date": "2020-12-24 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "6cdc2a86f58776aace6c4af767e0751f",
+      "features": {
+        "macd": -0.1471825505629294
+      },
+      "timestamp": "2025-07-14T17:04:13.752644"
+    },
+    "2021-07-16 00:00:00": {
+      "date": "2021-07-16 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "00a395beed30802dd3e78b10f4d4d90a",
+      "features": {
+        "macd": 0.1058067106634735
+      },
+      "timestamp": "2025-07-14T17:04:14.111139"
+    },
+    "2021-07-23 00:00:00": {
+      "date": "2021-07-23 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "57c9cbb9b57b49718f7fe60b6d3a71de",
+      "features": {
+        "macd": -0.1474334100895464
+      },
+      "timestamp": "2025-07-14T17:04:14.644114"
+    },
+    "2021-08-25 00:00:00": {
+      "date": "2021-08-25 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "d71bb947af8c53c2579b2b363ac73450",
+      "features": {
+        "macd": -0.3351688432242406
+      },
+      "timestamp": "2025-07-14T17:04:15.037511"
+    },
+    "2021-09-28 00:00:00": {
+      "date": "2021-09-28 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "185438cf87f0c524de7a014253e23454",
+      "features": {
+        "macd": -0.3327900543034467
+      },
+      "timestamp": "2025-07-14T17:04:15.473044"
+    },
+    "2022-02-11 00:00:00": {
+      "date": "2022-02-11 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "4baad4491cf8446e98700fff7cb01af5",
+      "features": {
+        "macd": 0.2684672844326977
+      },
+      "timestamp": "2025-07-14T17:04:15.950360"
+    },
+    "2022-03-15 00:00:00": {
+      "date": "2022-03-15 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "a84b60dacb6e668a210cf05cdf3e519e",
+      "features": {
+        "macd": -0.1481807390685053
+      },
+      "timestamp": "2025-07-14T17:04:16.373093"
+    },
+    "2022-03-29 00:00:00": {
+      "date": "2022-03-29 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "b29c6f0d8d7df0b5614e2f4992aca8f5",
+      "features": {
+        "macd": 0.1051444684375033
+      },
+      "timestamp": "2025-07-14T17:04:16.768683"
+    },
+    "2022-06-20 00:00:00": {
+      "date": "2022-06-20 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "02ff76f74d621c03222d2cfeb0a77548",
+      "features": {
+        "macd": 0.1069436453060553
+      },
+      "timestamp": "2025-07-14T17:04:17.163864"
+    },
+    "2022-12-21 00:00:00": {
+      "date": "2022-12-21 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "e31ca40d33bd7895d066423bbd513d09",
+      "features": {
+        "macd": -0.3361335056330601
+      },
+      "timestamp": "2025-07-14T17:04:17.588323"
+    },
+    "2023-04-03 00:00:00": {
+      "date": "2023-04-03 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "e80e75200997ebfc669d5e84f1895512",
+      "features": {
+        "macd": 0.1072922907337508
+      },
+      "timestamp": "2025-07-14T17:04:18.020124"
+    },
+    "2023-07-24 00:00:00": {
+      "date": "2023-07-24 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "3bf9f34abc1beb7d12ba61ec9afa54c7",
+      "features": {
+        "macd": 0.0121829049791014
+      },
+      "timestamp": "2025-07-14T17:04:18.448731"
+    },
+    "2023-12-22 00:00:00": {
+      "date": "2023-12-22 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "2c68ffd3cda03cb0f542fa168b1691a0",
+      "features": {
+        "macd": 0.1074122920120232
+      },
+      "timestamp": "2025-07-14T17:04:18.905420"
+    },
+    "2025-06-09 00:00:00": {
+      "date": "2025-06-09 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "4c52d77a854837530b329220bd5df5e3",
+      "features": {
+        "macd": -0.0166326109569151
+      },
+      "timestamp": "2025-07-14T17:04:19.291117"
+    },
+    "2020-12-01 00:00:00": {
+      "date": "2020-12-01 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "6188fdc29d7b4e0b98473bb196072ee0",
+      "features": {
+        "macd": 0.1684101307204365
+      },
+      "timestamp": "2025-07-14T17:04:19.717519"
+    },
+    "2023-08-09 00:00:00": {
+      "date": "2023-08-09 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "61772d5d18a109c1bb3a8799b6d7f10f",
+      "features": {
+        "macd": -0.0889351515647241
+      },
+      "timestamp": "2025-07-14T17:04:20.788746"
+    },
+    "2022-03-14 00:00:00": {
+      "date": "2022-03-14 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "e79c2c2a72a9172e218550546bc42502",
+      "features": {
+        "macd": 0.0426769924488381
+      },
+      "timestamp": "2025-07-14T17:04:21.742228"
+    },
+    "2021-12-31 00:00:00": {
+      "date": "2021-12-31 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "0ce6ae62540009d83810daf9273fbee6",
+      "features": {
+        "macd": -0.2178228415388399
+      },
+      "timestamp": "2025-07-14T17:04:22.131185"
+    },
+    "2023-03-21 00:00:00": {
+      "date": "2023-03-21 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "18797fab03c7e58780420eade52804b5",
+      "features": {
+        "macd": -0.0577396136727377
+      },
+      "timestamp": "2025-07-14T17:04:23.473320"
+    },
+    "2021-12-16 00:00:00": {
+      "date": "2021-12-16 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "428b9befe07ca3efbd9c4f2d722cd4b4",
+      "features": {
+        "macd": -0.2387868029930299
+      },
+      "timestamp": "2025-07-14T17:04:24.070839"
+    },
+    "2025-04-23 00:00:00": {
+      "date": "2025-04-23 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "c34eb69d12e2089228e1907bce05da6f",
+      "features": {
+        "macd": 0.0707664956573286
+      },
+      "timestamp": "2025-07-14T17:04:26.133938"
+    },
+    "2021-06-09 00:00:00": {
+      "date": "2021-06-09 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "4f24f9f88161e8ae0a4a31594c5087bd",
+      "features": {
+        "macd": 0.0478791364278962
+      },
+      "timestamp": "2025-07-14T17:04:32.822512"
+    },
+    "2024-09-20 00:00:00": {
+      "date": "2024-09-20 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "689ad435e646c82e51af07615eb94ff3",
+      "features": {
+        "macd": 0.0620521390124564
+      },
+      "timestamp": "2025-07-14T17:06:24.831453"
+    },
+    "2020-11-12 00:00:00": {
+      "date": "2020-11-12 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "f4fa345df15b72c8c0530f0101cab8b6",
+      "features": {
+        "macd": -0.250109599894121
+      },
+      "timestamp": "2025-07-14T17:06:25.257474"
+    },
+    "2025-06-19 00:00:00": {
+      "date": "2025-06-19 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "dbdc49c4a9cf936809fc0e878c165118",
+      "features": {
+        "macd": -0.0534131473054883
+      },
+      "timestamp": "2025-07-14T17:06:25.704077"
+    },
+    "2023-12-12 00:00:00": {
+      "date": "2023-12-12 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "4828883dc1a22bc61379376888b5ab38",
+      "features": {
+        "macd": 0.0247976841235815
+      },
+      "timestamp": "2025-07-14T17:06:26.188671"
+    },
+    "2021-02-05 00:00:00": {
+      "date": "2021-02-05 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "e5e41ffdf404111f454ae392cbf2009b",
+      "features": {
+        "macd": 0.2034152477495336
+      },
+      "timestamp": "2025-07-14T17:06:26.593060"
+    },
+    "2024-08-07 00:00:00": {
+      "date": "2024-08-07 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "19a5938b4174478934cfa566b088d1e9",
+      "features": {
+        "macd": -0.0788320306209779
+      },
+      "timestamp": "2025-07-14T17:06:27.108662"
+    },
+    "2022-08-15 00:00:00": {
+      "date": "2022-08-15 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "6d558e37ba236a0625611ad93102c8e9",
+      "features": {
+        "macd": 0.179328399337749
+      },
+      "timestamp": "2025-07-14T17:06:27.554116"
+    },
+    "2020-08-26 00:00:00": {
+      "date": "2020-08-26 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "6de174518d088153868043cc8208c2cf",
+      "features": {
+        "macd": -0.2168581337198145
+      },
+      "timestamp": "2025-07-14T17:06:27.961318"
+    },
+    "2020-09-09 00:00:00": {
+      "date": "2020-09-09 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "71c08fdcbf1a868a2a6e79f7eb793caa",
+      "features": {
+        "macd": 0.0135179763657823
+      },
+      "timestamp": "2025-07-14T17:06:28.403324"
+    },
+    "2021-01-14 00:00:00": {
+      "date": "2021-01-14 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "1534816b85d0520dc88ead2ef290174b",
+      "features": {
+        "macd": 0.2029395593331056
+      },
+      "timestamp": "2025-07-14T17:06:28.816075"
+    },
+    "2021-03-29 00:00:00": {
+      "date": "2021-03-29 00:00:00",
+      "label": 1,
+      "sample_type": "uncertain",
+      "sample_hash": "4983a5e4aeb0d3a2867451e191aeaaa5",
+      "features": {
+        "macd": 0.2667880668081619
+      },
+      "timestamp": "2025-07-14T17:06:29.584491"
+    },
+    "2021-09-02 00:00:00": {
+      "date": "2021-09-02 00:00:00",
+      "label": 1,
+      "sample_type": "uncertain",
+      "sample_hash": "b820afa0d9b8b7a5f240420a57ba560a",
+      "features": {
+        "macd": -0.1825780159893847
+      },
+      "timestamp": "2025-07-14T17:06:30.033692"
+    },
+    "2022-01-20 00:00:00": {
+      "date": "2022-01-20 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "400b968232ac7507bba5198e8d7d35b1",
+      "features": {
+        "macd": 0.2031550830665232
+      },
+      "timestamp": "2025-07-14T17:06:30.469360"
+    },
+    "2022-06-15 00:00:00": {
+      "date": "2022-06-15 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "e997b9d4940f4f18f00dfcbad5cbad3e",
+      "features": {
+        "macd": 0.2434953411436782
+      },
+      "timestamp": "2025-07-14T17:06:30.855314"
+    },
+    "2022-08-22 00:00:00": {
+      "date": "2022-08-22 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "806aa8498aea2c495d28599a1ea3a6a8",
+      "features": {
+        "macd": 0.2441969115233685
+      },
+      "timestamp": "2025-07-14T17:06:31.272347"
+    },
+    "2022-11-17 00:00:00": {
+      "date": "2022-11-17 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "c357ce1a3a4f0b76722a374c734d6c90",
+      "features": {
+        "macd": 0.2625562887215906
+      },
+      "timestamp": "2025-07-14T17:06:31.575339"
+    },
+    "2022-12-30 00:00:00": {
+      "date": "2022-12-30 00:00:00",
+      "label": 1,
+      "sample_type": "uncertain",
+      "sample_hash": "63ba4084800fd8aa1bf672ee090c3b8b",
+      "features": {
+        "macd": 0.0136224336360461
+      },
+      "timestamp": "2025-07-14T17:06:32.915115"
+    },
+    "2023-01-03 00:00:00": {
+      "date": "2023-01-03 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "ef5abc544a7dfed30c0e656ab50fb420",
+      "features": {
+        "macd": 0.2073798998561124
+      },
+      "timestamp": "2025-07-14T17:06:33.267689"
+    },
+    "2024-01-30 00:00:00": {
+      "date": "2024-01-30 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "b17dd3019828ab79731f4c0c96c24466",
+      "features": {
+        "macd": 0.1082163623815898
+      },
+      "timestamp": "2025-07-14T17:06:33.541416"
+    },
+    "2025-01-06 00:00:00": {
+      "date": "2025-01-06 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "7113bd27d99fba47d55007907ede638c",
+      "features": {
+        "macd": -0.1791223192860219
+      },
+      "timestamp": "2025-07-14T17:06:33.853951"
+    },
+    "2020-11-13 00:00:00": {
+      "date": "2020-11-13 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "43d2952cd5507677111227fbc39119c5",
+      "features": {
+        "macd": -0.3997119702706507
+      },
+      "timestamp": "2025-07-14T17:06:34.116519"
+    },
+    "2025-02-12 00:00:00": {
+      "date": "2025-02-12 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "34d320612d6f5c4111ac91ae774581e7",
+      "features": {
+        "macd": 0.0448372456355224
+      },
+      "timestamp": "2025-07-14T17:06:34.426368"
+    },
+    "2021-11-08 00:00:00": {
+      "date": "2021-11-08 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "7ab9032de1c55764faa47e146b1cc863",
+      "features": {
+        "macd": -0.6896739530876084
+      },
+      "timestamp": "2025-07-14T17:06:34.744455"
+    },
+    "2021-04-07 00:00:00": {
+      "date": "2021-04-07 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "c62242f79a6e05f7816a413a7942d24c",
+      "features": {
+        "macd": 0.1177311860930787
+      },
+      "timestamp": "2025-07-14T17:06:35.098032"
+    },
+    "2025-06-05 00:00:00": {
+      "date": "2025-06-05 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "91ec57d066c5cd58c2a003a3d7dd7eb3",
+      "features": {
+        "macd": 0.0305839222880127
+      },
+      "timestamp": "2025-07-14T17:06:35.386256"
+    },
+    "2020-09-14 00:00:00": {
+      "date": "2020-09-14 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "2763b96a924842196ee62fec17c6c035",
+      "features": {
+        "macd": -0.0480340659850346
+      },
+      "timestamp": "2025-07-14T17:06:35.668109"
+    },
+    "2024-12-19 00:00:00": {
+      "date": "2024-12-19 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "064408535cd5377225d5871590bb4fa0",
+      "features": {
+        "macd": -0.0422685740921369
+      },
+      "timestamp": "2025-07-14T17:06:36.412805"
+    },
+    "2021-09-29 00:00:00": {
+      "date": "2021-09-29 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "519dde718ebe20be4060ba27498f3d23",
+      "features": {
+        "macd": -0.0864473896681747
+      },
+      "timestamp": "2025-07-14T17:06:36.680484"
+    },
+    "2021-01-06 00:00:00": {
+      "date": "2021-01-06 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "c23ac2db03f2c62ee6d96f9876df41e5",
+      "features": {
+        "macd": 0.2113768004576142
+      },
+      "timestamp": "2025-07-14T17:06:37.280741"
+    },
+    "2022-03-04 00:00:00": {
+      "date": "2022-03-04 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "dc7b97d71138d039fbf75b7b675fbe77",
+      "features": {
+        "macd": -0.1497567112426459
+      },
+      "timestamp": "2025-07-14T17:06:37.589267"
+    },
+    "2024-05-08 00:00:00": {
+      "date": "2024-05-08 00:00:00",
+      "label": 1,
+      "sample_type": "uncertain",
+      "sample_hash": "7a2462e762b4ec3c579c9affc0daac74",
+      "features": {
+        "macd": 0.0121481392912681
+      },
+      "timestamp": "2025-07-14T17:06:37.863648"
+    },
+    "2024-07-03 00:00:00": {
+      "date": "2024-07-03 00:00:00",
+      "label": 2,
+      "sample_type": "uncertain",
+      "sample_hash": "84ea954e25d9d8a0c4ed0bfd6a375127",
+      "features": {
+        "macd": 0.2101112162237036
+      },
+      "timestamp": "2025-07-14T17:06:38.126207"
+    },
+    "2025-01-02 00:00:00": {
+      "date": "2025-01-02 00:00:00",
+      "label": 0,
+      "sample_type": "uncertain",
+      "sample_hash": "8b4434a8a257871356f2e9739a4f742f",
+      "features": {
+        "macd": -0.1483225326308462
+      },
+      "timestamp": "2025-07-14T17:06:38.473343"
+    },
+    "2025-03-24 00:00:00": {
+      "date": "2025-03-24 00:00:00",
+      "label": 1,
+      "sample_type": "uncertain",
+      "sample_hash": "716ef9af17521ce996beb966e73ed16b",
+      "features": {
+        "macd": -0.1155613036693869
+      },
+      "timestamp": "2025-07-14T17:06:38.763631"
+    },
+    "2022-01-28 00:00:00": {
+      "date": "2022-01-28 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "1aa449129dc39a0bc252ef083194eef8",
+      "features": {
+        "macd": -0.3409316654585353
+      },
+      "timestamp": "2025-07-14T17:06:39.545087"
+    },
+    "2022-04-22 00:00:00": {
+      "date": "2022-04-22 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "433013f2237b9f8608eec85087f03b65",
+      "features": {
+        "macd": -0.1433444016569781
+      },
+      "timestamp": "2025-07-14T17:06:39.865316"
+    },
+    "2023-12-06 00:00:00": {
+      "date": "2023-12-06 00:00:00",
+      "label": 0,
+      "sample_type": "random",
+      "sample_hash": "8065bf02261d17ef98d37fa217be1ef6",
+      "features": {
+        "macd": -0.0692804297833636
+      },
+      "timestamp": "2025-07-14T17:06:40.168048"
+    },
+    "2023-08-18 00:00:00": {
+      "date": "2023-08-18 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "ea62799c373c284d72e073caa952264a",
+      "features": {
+        "macd": -0.2154412536145258
+      },
+      "timestamp": "2025-07-14T17:06:40.451093"
+    },
+    "2020-09-11 00:00:00": {
+      "date": "2020-09-11 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "30480c10b2bc715eb6b928e03d7dbc75",
+      "features": {
+        "macd": -0.084202678249785
+      },
+      "timestamp": "2025-07-14T17:06:41.411453"
+    },
+    "2022-05-24 00:00:00": {
+      "date": "2022-05-24 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "07d79e4e53633875162605ac5be9d330",
+      "features": {
+        "macd": 0.0753379261177375
+      },
+      "timestamp": "2025-07-14T17:06:41.759499"
+    },
+    "2022-01-06 00:00:00": {
+      "date": "2022-01-06 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "39674e631f80a18076cbb9501993fc8f",
+      "features": {
+        "macd": 0.176033912592616
+      },
+      "timestamp": "2025-07-14T17:06:42.375257"
+    },
+    "2023-01-06 00:00:00": {
+      "date": "2023-01-06 00:00:00",
+      "label": 2,
+      "sample_type": "random",
+      "sample_hash": "85f6dbe7ff2b364006413132df0c10c2",
+      "features": {
+        "macd": 0.4975486596533509
+      },
+      "timestamp": "2025-07-14T17:06:42.819402"
+    },
+    "2024-12-26 00:00:00": {
+      "date": "2024-12-26 00:00:00",
+      "label": 1,
+      "sample_type": "random",
+      "sample_hash": "083dd1f20ccc7f93962ed21ff56288d1",
+      "features": {
+        "macd": 0.0699208482000854
+      },
+      "timestamp": "2025-07-14T17:06:43.163606"
+    }
+  }
+}

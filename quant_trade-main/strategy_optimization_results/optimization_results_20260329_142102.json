@@ -1,0 +1,21 @@
+{
+  "ma_strategy": {
+    "strategy_name": "移动平均策略",
+    "best_params": {
+      "short_window": 5,
+      "long_window": 144,
+      "stop_loss": 0.03,
+      "take_profit": 0.05
+    },
+    "best_performance": {
+      "total_return": 0.1748505913800008,
+      "sharpe_ratio": 0.1604650041478695,
+      "max_drawdown": -0.35091153001551634,
+      "win_rate": 0.2222222222222222,
+      "trades_count": 18,
+      "final_capital": 1174850.5913800008
+    },
+    "total_combinations": 6,
+    "valid_results": 6
+  }
+}

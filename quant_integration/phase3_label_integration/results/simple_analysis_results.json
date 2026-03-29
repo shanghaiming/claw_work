@@ -1,0 +1,37 @@
+{
+  "insights": {
+    "total_annotations": 1129,
+    "unique_patterns": 7,
+    "unique_stocks": 1,
+    "trend_patterns": 706,
+    "trend_ratio": 62.533215234721,
+    "formation_patterns": 241,
+    "formation_ratio": 21.346324180690875,
+    "phase_patterns": 182,
+    "phase_ratio": 16.12046058458813,
+    "top_patterns": {
+      "下降趋势": 464,
+      "上升趋势": 182,
+      "中阴阶段": 182,
+      "头肩顶": 118,
+      "W底形态": 62,
+      "M顶形态": 61,
+      "区间震荡": 60
+    },
+    "top_stocks": {
+      "000063.SZ": 1129
+    }
+  },
+  "pattern_distribution": {
+    "上升趋势": 182,
+    "下降趋势": 464,
+    "W底形态": 62,
+    "中阴阶段": 182,
+    "区间震荡": 60,
+    "M顶形态": 61,
+    "头肩顶": 118
+  },
+  "stock_distribution": {
+    "000063.SZ": 1129
+  }
+}
