@@ -14,20 +14,31 @@ sys.path.append(src_path)
 
 # 导入所有策略类
 from strategies.ma_strategy import MovingAverageStrategy
+from strategies.tradingview_strategy import TradingViewStrategy
+from strategies.price_action_strategy import PriceActionStrategy
 from backtest.engine import BacktestEngine
 from backtest.performance import PerformanceAnalyzer 
-import matplotlib.pyplot as plt
-from matplotlib import font_manager
+try:
+    import matplotlib.pyplot as plt
+    from matplotlib import font_manager
+    MATPLOTLIB_AVAILABLE = True
+except ImportError:
+    plt = None
+    MATPLOTLIB_AVAILABLE = False
+    print("警告: matplotlib不可用，可视化功能将禁用")
 from utils.visualizer import Visualizer
 from backtest.optimization import ParameterOptimizer 
 
 # 设置中文字体
-plt.rcParams['font.sans-serif'] = ['SimHei'] # 设置默认字体为黑体
-plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
+if MATPLOTLIB_AVAILABLE:
+    plt.rcParams['font.sans-serif'] = ['SimHei'] # 设置默认字体为黑体
+    plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
 
 # 策略映射字典
 STRATEGY_MAP = {
-    "MovingAverage": MovingAverageStrategy
+    "MovingAverage": MovingAverageStrategy,
+    "TradingView": TradingViewStrategy,
+    "PriceAction": PriceActionStrategy
 }
 
 def parse_args():
@@ -42,7 +53,7 @@ def parse_args():
         '--strategy',
         type=str,
         default='MovingAverage',
-        choices=['MovingAverage'],
+        choices=['MovingAverage', 'TradingView', 'PriceAction'],
         help='选择回测策略（默认: MovingAverage）'
     )
     parser.add_argument(
@@ -55,8 +66,9 @@ def parse_args():
 
 def load_all_stock_data():
     """直接遍历指定路径下的所有CSV文件并合并"""
-    # 固定路径
-    target_dir = r"E:\stock\backtest\data\analyzed\5min"
+    # 使用本地数据路径
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    target_dir = os.path.join(base_dir, "data", "analyzed", "5min")
     
     # 获取所有CSV文件
     file_pattern = os.path.join(target_dir, "*.csv")
@@ -70,10 +82,9 @@ def load_all_stock_data():
     all_data = []
     for file_path in matched_files:
         try:
-            # 从文件名提取股票代码，去掉_analysis部分
+            # 从文件名提取股票代码
             filename = os.path.basename(file_path)
-            # 去掉.csv后缀和_analysis部分
-            file_symbol = filename.replace('.csv', '').replace('_analysis', '')
+            file_symbol = filename.replace('.csv', '')
             
             # 读取单个文件
             df_single = pd.read_csv(file_path, parse_dates=['trade_date']).tail(500)
@@ -86,7 +97,7 @@ def load_all_stock_data():
                 print(f"警告: 文件 {filename} 缺少列 {missing}，跳过")
                 continue
             
-            # 添加股票代码列（使用清理后的股票代码）
+            # 添加股票代码列
             df_single['symbol'] = file_symbol
             all_data.append(df_single)
             
@@ -178,27 +189,30 @@ def main():
         print(f"  {symbol}: {len(trades)}次交易, 胜率{win_rate:.2%}, 总收益{total_profit:.2f}")
     
     # 可视化结果 - 添加错误处理
-    try:
-        # 确保有回撤数据
-        drawdown_series = results.get('drawdown', {}).get('drawdown_series', None)
-        
-        # 确保equity_curve是正确格式
-        equity_curve = results['equity_curve']
-        if isinstance(equity_curve, pd.Series):
-            # 如果是Series，确保索引是时间类型
-            if not isinstance(equity_curve.index, pd.DatetimeIndex):
-                # 尝试转换索引
-                try:
-                    equity_curve.index = pd.to_datetime(equity_curve.index)
-                except:
-                    # 如果转换失败，使用默认索引
-                    pass
-        
-        Visualizer.plot_equity_curve(equity_curve, drawdown_series, results['trades_list'])
-        Visualizer.plot_trade_analysis(results['trades_list'])
-    except Exception as e:
-        print(f"可视化过程中出现错误: {e}")
-        print("跳过可视化部分...")
+    if MATPLOTLIB_AVAILABLE:
+        try:
+            # 确保有回撤数据
+            drawdown_series = results.get('drawdown', {}).get('drawdown_series', None)
+            
+            # 确保equity_curve是正确格式
+            equity_curve = results['equity_curve']
+            if isinstance(equity_curve, pd.Series):
+                # 如果是Series，确保索引是时间类型
+                if not isinstance(equity_curve.index, pd.DatetimeIndex):
+                    # 尝试转换索引
+                    try:
+                        equity_curve.index = pd.to_datetime(equity_curve.index)
+                    except:
+                        # 如果转换失败，使用默认索引
+                        pass
+            
+            Visualizer.plot_equity_curve(equity_curve, drawdown_series, results['trades_list'])
+            Visualizer.plot_trade_analysis(results['trades_list'])
+        except Exception as e:
+            print(f"可视化过程中出现错误: {e}")
+            print("跳过可视化部分...")
+    else:
+        print("matplotlib不可用，跳过可视化部分")
     
 if __name__ == "__main__":
     main()

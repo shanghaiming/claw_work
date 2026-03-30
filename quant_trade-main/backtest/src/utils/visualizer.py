@@ -1,7 +1,13 @@
-import matplotlib.pyplot as plt
+try:
+    import matplotlib.pyplot as plt
+    from matplotlib import font_manager
+    MATPLOTLIB_AVAILABLE = True
+except ImportError:
+    plt = None
+    MATPLOTLIB_AVAILABLE = False
+
 import pandas as pd
 import numpy as np
-from matplotlib import font_manager
 
 class Visualizer:
     @staticmethod
