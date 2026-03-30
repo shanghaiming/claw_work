@@ -1,0 +1,167 @@
+{
+  "total_analyzed": 5,
+  "strategies": [
+    {
+      "notebook_name": "comp_g.ipynb",
+      "strategy_type": "未知策略",
+      "description": "",
+      "parameters": {
+        "beta": 0.3,
+        "prev_ema": 0.0,
+        "compensation": 0,
+        "fast": 12,
+        "slow": 26,
+        "signal": 9,
+        "period": 10,
+        "abs_change_sum": 0,
+        "prev_er": 0.0,
+        "std_er": 0,
+        "window": 5,
+        "dpi": 100,
+        "rotation": 45,
+        "linewidth": 2.5,
+        "alpha": 0.8,
+        "days": 20,
+        "shrink": 0.05,
+        "fontsize": 12,
+        "pad": 0.5,
+        "width": 0.8,
+        "hspace": 0.3,
+        "bar_count": 100
+      },
+      "signal_code_snippets": [
+        "from scipy.signal import find_peaks\ndef calculate_macd(close, fast=12, slow=26, signal=9):\ndea = calculate_ema(dif, signal)\ndef calculate_compensated_macd(close, fast=12, slow=26, signal=9, beta=0.15):\ndea = calculate_compensated_ema(dif, signal, beta)"
+      ],
+      "code_cell_count": 2,
+      "markdown_cell_count": 0,
+      "file_size_kb": 17.595703125
+    },
+    {
+      "notebook_name": "spike_bake.ipynb",
+      "strategy_type": "尖峰回调策略",
+      "description": "",
+      "parameters": {
+        "alpha": 0.6,
+        "linewidth": 1,
+        "markersize": 10,
+        "markeredgewidth": 2,
+        "fontsize": 16,
+        "rotation": 45,
+        "width": 0.7,
+        "bar_count": 100
+      },
+      "signal_code_snippets": [
+        "from scipy import stats, signal, cluster\nfrom scipy.signal import find_peaks\nbreak\nbreak\n2. 预测突破后的目标位\n# 确定突破方向（基于中枢类型）"
+      ],
+      "code_cell_count": 1,
+      "markdown_cell_count": 0,
+      "file_size_kb": 101.427734375
+    },
+    {
+      "notebook_name": "ma_compensat.ipynb",
+      "strategy_type": "补偿移动平均策略",
+      "description": "",
+      "parameters": {
+        "window": 5,
+        "beta": 0.4,
+        "gamma": 0.25,
+        "decay_factor": 0.95,
+        "current_sum": 0.0,
+        "prev_mean": 0.0,
+        "cumulative_compensation": 0,
+        "trend_strength": 0.7,
+        "compensation": 0,
+        "decay": 0.97,
+        "dpi": 100,
+        "rotation": 45,
+        "linewidth": 3.0,
+        "alpha": 0.1,
+        "days": 1,
+        "shrink": 0.05,
+        "width": 0.8,
+        "fontsize": 16,
+        "pad": 0.5,
+        "hspace": 0.05,
+        "bar_count": 100
+      },
+      "signal_code_snippets": [
+        "from scipy.signal import find_peaks\nfrom scipy import stats, signal, cluster"
+      ],
+      "code_cell_count": 2,
+      "markdown_cell_count": 0,
+      "file_size_kb": 305.5283203125
+    },
+    {
+      "notebook_name": "cluster.ipynb",
+      "strategy_type": "聚类分析策略",
+      "description": "",
+      "parameters": {
+        "window": 5,
+        "cluster_threshold": 1.9,
+        "min_range_length": 5,
+        "order": 5,
+        "width": 0.6,
+        "width2": 0.05,
+        "fontsize": 12,
+        "alpha": 0.7,
+        "linewidth": 2,
+        "nbins": 10,
+        "rotation": 45,
+        "bar_count": 100
+      },
+      "signal_code_snippets": [
+        "from scipy.signal import find_peaks\nfrom scipy import stats, signal, cluster\nmax_indices = signal.argrelextrema(close_prices, np.greater, order=5)[0]\nmin_indices = signal.argrelextrema(close_prices, np.less, order=5)[0]"
+      ],
+      "code_cell_count": 2,
+      "markdown_cell_count": 0,
+      "file_size_kb": 95.16015625
+    },
+    {
+      "notebook_name": "stategy_momentum.ipynb",
+      "strategy_type": "动量策略",
+      "description": "",
+      "parameters": {
+        "period": 55,
+        "window": 20,
+        "shadow_ratio": 0.7,
+        "min_zone_separation": 0.02,
+        "max_zone_width_ratio": 0.1,
+        "entity_size_threshold": 0.05,
+        "n_clusters": 3,
+        "random_state": 0,
+        "total_energy": 0,
+        "axis": 1,
+        "max_workers": 8,
+        "days": 400,
+        "valid_stock_count": 0,
+        "current_index": 0,
+        "fontsize": 12,
+        "span": 9,
+        "ddof": 1,
+        "hspace": 0.1,
+        "candle_width": 0.8,
+        "zorder": 4,
+        "alpha": 0.4,
+        "width": 0.8,
+        "linewidth": 0.7,
+        "s": 200,
+        "pad": 0.3,
+        "rotation": 45
+      },
+      "signal_code_snippets": [
+        "from scipy.signal import argrelextrema\nfrom scipy.signal import find_peaks\nfrom scipy import stats, signal, cluster\ncrossing_k_lines = []\ncrossing_k_lines.append((entity_high, entity_low))\nif crossing_k_lines:\nentity_highs = [h for h, l in crossing_k_lines]\nentity_lows = [l for h, l in crossing_k_lines]\nmerged_count = len(crossing_k_lines) + existing_count\nbreak"
+      ],
+      "code_cell_count": 2,
+      "markdown_cell_count": 0,
+      "file_size_kb": 52.072265625
+    }
+  ],
+  "strategy_types": {
+    "未知策略": 1,
+    "尖峰回调策略": 1,
+    "补偿移动平均策略": 1,
+    "聚类分析策略": 1,
+    "动量策略": 1
+  },
+  "average_parameters": 17.8
+}

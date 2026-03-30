@@ -1,0 +1,36 @@
+# ATR 指标使用模板
+
+## 功能描述
+ATR(ndarray high, ndarray low, ndarray close, int timeperiod=-0x80000000)
+
+ATR(high, low, close[, timeperiod=?])
+
+Average True Range (Volatility Indicators)
+
+Inputs:
+    prices: ['high', 'low', 'close...
+
+## 参数说明
+- **high**: 类型 any
+- **low**: 类型 any
+- **close**: 类型 any
+- **timeperiod**: 类型 any (默认: -2147483648)
+
+## 使用示例
+```python
+import talib
+import numpy as np
+
+# 准备数据
+close_prices = np.random.random(100) * 100  # 示例收盘价数据
+
+# 使用 ATR
+try:
+    # 根据参数数量调用指标
+    result = talib.ATR(close_prices)
+    print(f"ATR 结果: {result}")
+except Exception as e:
+    print(f"计算 ATR 时出错: {e}")
+
+# 实际应用中需要根据指标要求提供正确的参数
+# 大多数指标需要OHLC数据，而不仅仅是收盘价

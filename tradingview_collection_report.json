@@ -1,0 +1,152 @@
+{
+  "generated_at": "2026-03-29T22:32:49.042471",
+  "total_indicators_collected": 15,
+  "indicators_by_category": {
+    "趋势指标": 4,
+    "动量指标": 2,
+    "成交量指标": 4,
+    "波动率指标": 2,
+    "风险管理": 1,
+    "支撑阻力": 1,
+    "数学变换": 1
+  },
+  "top_popular_indicators": [
+    {
+      "name": "Supertrend",
+      "category": "趋势指标",
+      "description": "超级趋势指标，结合ATR和价格来识别趋势方向",
+      "popularity": 9.5,
+      "formula": "基于ATR和移动平均的多空信号",
+      "parameters": [
+        "ATR周期",
+        "乘数",
+        "移动平均类型"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "Volume Profile",
+      "category": "成交量指标",
+      "description": "成交量分布图，显示不同价格水平的成交量",
+      "popularity": 8.9,
+      "formula": "计算每个价格水平的累计成交量",
+      "parameters": [
+        "价格区间数",
+        "时间段"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "ATR Trailing Stop",
+      "category": "风险管理",
+      "description": "基于ATR的移动止损",
+      "popularity": 8.8,
+      "formula": "价格 ± (ATR × 乘数)",
+      "parameters": [
+        "ATR周期",
+        "乘数"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "RSI Divergence",
+      "category": "动量指标",
+      "description": "RSI背离检测，识别潜在的反转点",
+      "popularity": 8.7,
+      "formula": "价格与RSI指标的背离分析",
+      "parameters": [
+        "RSI周期",
+        "背离灵敏度"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "Ichimoku Cloud",
+      "category": "趋势指标",
+      "description": "一目均衡表，日本技术分析指标",
+      "popularity": 8.5,
+      "formula": "多个移动平均线和未来预测带",
+      "parameters": [
+        "转换线周期",
+        "基准线周期",
+        "先行跨度周期"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "VWAP",
+      "category": "成交量指标",
+      "description": "成交量加权平均价",
+      "popularity": 8.3,
+      "formula": "∑(价格 × 成交量) / ∑成交量",
+      "parameters": [
+        "时间段"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "Bollinger Bands %B",
+      "category": "波动率指标",
+      "description": "布林带%B指标，显示价格在布林带中的位置",
+      "popularity": 8.2,
+      "formula": "(价格 - 下轨) / (上轨 - 下轨)",
+      "parameters": [
+        "布林带周期",
+        "标准差倍数"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "Chaikin Money Flow",
+      "category": "成交量指标",
+      "description": "蔡金资金流量，结合价格和成交量的动量指标",
+      "popularity": 8.1,
+      "formula": "基于累积分布线的资金流量",
+      "parameters": [
+        "周期"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "MACD Histogram",
+      "category": "动量指标",
+      "description": "MACD柱状图，显示MACD与其信号线的差异",
+      "popularity": 8.0,
+      "formula": "MACD - 信号线",
+      "parameters": [
+        "快线周期",
+        "慢线周期",
+        "信号线周期"
+      ],
+      "source": "TradingView社区"
+    },
+    {
+      "name": "Pivot Points",
+      "category": "支撑阻力",
+      "description": "枢轴点及其支撑阻力位",
+      "popularity": 7.9,
+      "formula": "基于前一日高、低、收盘价计算关键位",
+      "parameters": [
+        "计算方法"
+      ],
+      "source": "TradingView社区"
+    }
+  ],
+  "conversion_stats": {
+    "total_converted": 5,
+    "converted_indicators": [
+      "Supertrend",
+      "Volume Profile",
+      "ATR Trailing Stop",
+      "RSI Divergence",
+      "Ichimoku Cloud"
+    ]
+  },
+  "recommendations": [
+    "优先实现Supertrend、RSI Divergence和Volume Profile等流行指标",
+    "结合TA-Lib现有指标进行扩展和优化",
+    "创建指标测试框架确保实现正确性",
+    "考虑指标的计算效率，优化大数据量下的性能",
+    "为每个指标编写详细的使用文档和示例"
+  ]
+}

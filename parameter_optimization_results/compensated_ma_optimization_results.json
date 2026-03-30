@@ -1,0 +1,42 @@
+{
+  "strategy_name": "compensated_ma",
+  "param_grid": {
+    "window": [
+      10,
+      20,
+      30
+    ],
+    "beta": [
+      0.2,
+      0.3,
+      0.4
+    ],
+    "gamma": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "decay_factor": [
+      0.9,
+      0.95,
+      0.98
+    ]
+  },
+  "total_combinations_evaluated": 36,
+  "best_params": {
+    "window": 30,
+    "beta": 0.2,
+    "gamma": 0.1,
+    "decay_factor": 0.95
+  },
+  "best_performance": {
+    "total_return": 0.31973502852445446,
+    "sharpe_ratio": 3.3330121808547255,
+    "max_drawdown": 0,
+    "win_rate": 1.0,
+    "trades_count": 2,
+    "avg_return": 0.14967458016824173,
+    "final_capital": 1319735.0285244545,
+    "trade_details": [
+      {
+        "timestamp": 

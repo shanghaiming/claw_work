@@ -1,0 +1,24 @@
+{
+  "analysis_time": "2026-03-29 19:59:01",
+  "total_tests": 7,
+  "valid_tests": 4,
+  "best_combination": {
+    "name": "四策略-全组合",
+    "strategy_types": [
+      "compensated_ma",
+      "cluster",
+      "momentum",
+      "price_volume"
+    ],
+    "combination_mode": "weighted_vote",
+    "performance": {
+      "total_return": 0.17018469656992052,
+      "sharpe_ratio": 0,
+      "max_drawdown": 0,
+      "win_rate": 1.0,
+      "trades_count": 1,
+      "avg_return": 0.17018469656992058,
+      "final_capital": 1170184.6965699205,
+      "trade_details": [
+        {
+          "timestamp": 

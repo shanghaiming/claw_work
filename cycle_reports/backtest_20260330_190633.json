@@ -1,0 +1,89 @@
+{
+  "移动平均交叉_20260330": {
+    "strategy": {
+      "name": "移动平均交叉_20260330",
+      "type": "ma_crossover",
+      "parameters": {
+        "fast_period": 9,
+        "slow_period": 46
+      }
+    },
+    "performance": {
+      "total_return": 0.018740963304104852,
+      "sharpe_ratio": 0.824101571010133,
+      "max_drawdown": 0.12076037743492361,
+      "win_rate": 0.3573356128488008,
+      "trades_count": 85
+    }
+  },
+  "RSI策略_20260330": {
+    "strategy": {
+      "name": "RSI策略_20260330",
+      "type": "rsi",
+      "parameters": {
+        "period": 16,
+        "oversold": 35,
+        "overbought": 79
+      }
+    },
+    "performance": {
+      "total_return": -0.08785325835747748,
+      "sharpe_ratio": 0.49457078770513363,
+      "max_drawdown": 0.39675853078348605,
+      "win_rate": 0.5545276137271574,
+      "trades_count": 96
+    }
+  },
+  "MACD策略_20260330": {
+    "strategy": {
+      "name": "MACD策略_20260330",
+      "type": "macd",
+      "parameters": {
+        "fast_period": 10,
+        "slow_period": 20,
+        "signal_period": 8
+      }
+    },
+    "performance": {
+      "total_return": 0.10481550582845095,
+      "sharpe_ratio": 0.8440611994858286,
+      "max_drawdown": 0.4272106996554772,
+      "win_rate": 0.37584408182676016,
+      "trades_count": 60
+    }
+  },
+  "布林带策略_20260330": {
+    "strategy": {
+      "name": "布林带策略_20260330",
+      "type": "bollinger",
+      "parameters": {
+        "period": 20,
+        "std_dev": 1.887809497168146
+      }
+    },
+    "performance": {
+      "total_return": -0.10919301612169868,
+      "sharpe_ratio": 0.05641151223664781,
+      "max_drawdown": 0.46077607869966003,
+      "win_rate": 0.5420080559084217,
+      "trades_count": 48
+    }
+  },
+  "ATR通道策略_20260330": {
+    "strategy": {
+      "name": "ATR通道策略_20260330",
+      "type": "atr_channel",
+      "parameters": {
+        "atr_period": 10,
+        "multiplier": 2.075148973217278
+      }
+    },
+    "performance": {
+      "total_return": -0.08975578265544681,
+      "sharpe_ratio": 0.6437243267133295,
+      "max_drawdown": 0.31698840138506246,
+      "win_rate": 0.3448804348580857,
+      "trades_count": 25
+    }
+  }
+}

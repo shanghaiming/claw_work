@@ -1,0 +1,217 @@
+{
+  "trend_following": {
+    "combination_id": "parallel_3",
+    "method": "parallel",
+    "indicators": [
+      {
+        "name": "EMA",
+        "parameters": {
+          "timeperiod": 20
+        },
+        "weight": 1.0,
+        "enabled": true
+      },
+      {
+        "name": "MACD",
+        "parameters": {
+          "fastperiod": 12,
+          "slowperiod": 26,
+          "signalperiod": 9
+        },
+        "weight": 0.8,
+        "enabled": true
+      },
+      {
+        "name": "ADX",
+        "parameters": {
+          "timeperiod": 14
+        },
+        "weight": 0.6,
+        "enabled": true
+      }
+    ],
+    "performance": {
+      "total_return": 0.28110587536159715,
+      "num_trades": 0,
+      "avg_return_per_trade": 0.0,
+      "win_rate": 0.0,
+      "max_return": 0.0,
+      "min_return": 0.0,
+      "sharpe_ratio": 0.0,
+      "final_value": 128110.58753615971,
+      "initial_capital": 100000.0
+    }
+  },
+  "mean_reversion": {
+    "combination_id": "parallel_3",
+    "method": "parallel",
+    "indicators": [
+      {
+        "name": "RSI",
+        "parameters": {
+          "timeperiod": 14
+        },
+        "weight": 1.0,
+        "enabled": true
+      },
+      {
+        "name": "STOCH",
+        "parameters": {
+          "fastk_period": 14,
+          "slowk_period": 3,
+          "slowd_period": 3
+        },
+        "weight": 0.8,
+        "enabled": true
+      },
+      {
+        "name": "BBANDS",
+        "parameters": {
+          "timeperiod": 20,
+          "nbdevup": 2,
+          "nbdevdn": 2
+        },
+        "weight": 0.7,
+        "enabled": true
+      }
+    ],
+    "performance": {
+      "total_return": 0.28780661903304383,
+      "num_trades": 0,
+      "avg_return_per_trade": 0.0,
+      "win_rate": 0.0,
+      "max_return": 0.0,
+      "min_return": 0.0,
+      "sharpe_ratio": 0.0,
+      "final_value": 128780.66190330438,
+      "initial_capital": 100000.0
+    }
+  },
+  "breakout": {
+    "combination_id": "parallel_3",
+    "method": "parallel",
+    "indicators": [
+      {
+        "name": "SAR",
+        "parameters": {
+          "acceleration": 0.02,
+          "maximum": 0.2
+        },
+        "weight": 1.0,
+        "enabled": true
+      },
+      {
+        "name": "ATR",
+        "parameters": {
+          "timeperiod": 14
+        },
+        "weight": 0.7,
+        "enabled": true
+      },
+      {
+        "name": "AROON",
+        "parameters": {
+          "timeperiod": 25
+        },
+        "weight": 0.6,
+        "enabled": true
+      }
+    ],
+    "performance": {
+      "total_return": 0.28242880458226294,
+      "num_trades": 0,
+      "avg_return_per_trade": 0.0,
+      "win_rate": 0.0,
+      "max_return": 0.0,
+      "min_return": 0.0,
+      "sharpe_ratio": 0.0,
+      "final_value": 128242.8804582263,
+      "initial_capital": 100000.0
+    }
+  },
+  "momentum": {
+    "combination_id": "parallel_3",
+    "method": "parallel",
+    "indicators": [
+      {
+        "name": "MOM",
+        "parameters": {
+          "timeperiod": 10
+        },
+        "weight": 1.0,
+        "enabled": true
+      },
+      {
+        "name": "ROC",
+        "parameters": {
+          "timeperiod": 12
+        },
+        "weight": 0.8,
+        "enabled": true
+      },
+      {
+        "name": "TRIX",
+        "parameters": {
+          "timeperiod": 30
+        },
+        "weight": 0.7,
+        "enabled": true
+      }
+    ],
+    "performance": {
+      "total_return": 0.0,
+      "num_trades": 0,
+      "avg_return_per_trade": 0.0,
+      "win_rate": 0.0,
+      "max_return": 0.0,
+      "min_return": 0.0,
+      "sharpe_ratio": 0.0,
+      "final_value": 100000.0,
+      "initial_capital": 100000.0
+    }
+  },
+  "volatility": {
+    "combination_id": "parallel_3",
+    "method": "parallel",
+    "indicators": [
+      {
+        "name": "BBANDS",
+        "parameters": {
+          "timeperiod": 20,
+          "nbdevup": 2,
+          "nbdevdn": 2
+        },
+        "weight": 1.0,
+        "enabled": true
+      },
+      {
+        "name": "ATR",
+        "parameters": {
+          "timeperiod": 14
+        },
+        "weight": 0.8,
+        "enabled": true
+      },
+      {
+        "name": "STDDEV",
+        "parameters": {
+          "timeperiod": 20,
+          "nbdev": 1
+        },
+        "weight": 0.6,
+        "enabled": true
+      }
+    ],
+    "performance": {
+      "total_return": 0.28978782764526406,
+      "num_trades": 0,
+      "avg_return_per_trade": 0.0,
+      "win_rate": 0.0,
+      "max_return": 0.0,
+      "min_return": 0.0,
+      "sharpe_ratio": 0.0,
+      "final_value": 128978.7827645264,
+      "initial_capital": 100000.0
+    }
+  }
+}

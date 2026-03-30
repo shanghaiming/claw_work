@@ -1,0 +1,111 @@
+{
+  "report_time": "2026-03-29 20:37:59",
+  "data_info": {
+    "stock_code": "000001.SZ",
+    "data_points": 500,
+    "time_range": "2012-03-14 00:00:00 到 2014-04-11 00:00:00"
+  },
+  "individual_strategies": {
+    "momentum_strategy": {
+      "signals_count": 222,
+      "status": "SUCCESS",
+      "performance": {
+        "total_return": -0.4105643732374163,
+        "sharpe_ratio": -0.12507737458157192,
+        "max_drawdown": 0.5334490210645789,
+        "win_rate": 0.46153846153846156,
+        "trades_count": 13
+      }
+    },
+    "mean_reversion_strategy": {
+      "signals_count": 33,
+      "status": "SUCCESS",
+      "performance": {
+        "total_return": -0.3787721529055738,
+        "sharpe_ratio": -0.3531024632803889,
+        "max_drawdown": 0.4607802372508255,
+        "win_rate": 0.4,
+        "trades_count": 5
+      }
+    },
+    "breakout_strategy": {
+      "signals_count": 17,
+      "status": "SUCCESS",
+      "performance": {
+        "total_return": -0.20256776034236804,
+        "sharpe_ratio": 0.0,
+        "max_drawdown": 0.20256776034236804,
+        "win_rate": 0.0,
+        "trades_count": 1
+      }
+    },
+    "volatility_strategy": {
+      "signals_count": 125,
+      "status": "SUCCESS",
+      "performance": {
+        "total_return": -0.3264460750569467,
+        "sharpe_ratio": -0.14589945114548644,
+        "max_drawdown": 0.4683038952619949,
+        "win_rate": 0.5,
+        "trades_count": 6
+      }
+    },
+    "composite_factor_strategy": {
+      "signals_count": 13,
+      "status": "SUCCESS",
+      "performance": {
+        "total_return": 0.0,
+        "sharpe_ratio": 0.0,
+        "max_drawdown": 0.0,
+        "win_rate": 0.0,
+        "trades_count": 0
+      }
+    },
+    "optimized_compensated_ma": {
+      "signals_count": 145,
+      "status": "SUCCESS",
+      "performance": {
+        "total_return": -0.34525610634345444,
+        "sharpe_ratio": -0.4358231258051528,
+        "max_drawdown": 0.40199185151652334,
+        "win_rate": 0.3333333333333333,
+        "trades_count": 3
+      }
+    },
+    "cluster_analysis_strategy": {
+      "signals_count": 65,
+      "status": "SUCCESS",
+      "performance": {
+        "total_return": -0.5486551780709983,
+        "sharpe_ratio": -0.5765238047007419,
+        "max_drawdown": 0.5486551780709983,
+        "win_rate": 0.2857142857142857,
+        "trades_count": 7
+      }
+    },
+    "frama_strategy": {
+      "signals_count": 81,
+      "status": "SUCCESS",
+      "performance": {
+        "total_return": 0.502968038122684,
+        "sharpe_ratio": 0.23946651783579928,
+        "max_drawdown": 0.14430283848853453,
+        "win_rate": 0.5945945945945946,
+        "trades_count": 37
+      }
+    }
+  },
+  "combination_strategies": {
+    "确认模式": {
+      "signals_count": 55,
+      "performance": {
+        "total_return": -0.22037307296842035,
+        "sharpe_ratio": -0.267661651590175,
+        "max_drawdown": 0.31340956340956333,
+        "win_rate": 0.5,
+        "trades_count": 4,
+        "avg_return": -0.04432633803930957,
+        "final_capital": 779626.9270315797,
+        "trade_details": [
+          {
+            "timestamp": 

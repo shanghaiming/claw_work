@@ -1,0 +1,37 @@
+================================================================================
+TradingView社区指标采集报告摘要
+================================================================================
+
+采集时间: 2026-03-29 22:32:49
+总指标数量: 15
+
+类别分布:
+  趋势指标: 4个
+  动量指标: 2个
+  成交量指标: 4个
+  波动率指标: 2个
+  风险管理: 1个
+  支撑阻力: 1个
+  数学变换: 1个
+
+最受欢迎的指标:
+1. Supertrend - 9.5/10
+2. Volume Profile - 8.9/10
+3. ATR Trailing Stop - 8.8/10
+4. RSI Divergence - 8.7/10
+5. Ichimoku Cloud - 8.5/10
+6. VWAP - 8.3/10
+7. Bollinger Bands %B - 8.2/10
+8. Chaikin Money Flow - 8.1/10
+9. MACD Histogram - 8.0/10
+10. Pivot Points - 7.9/10
+
+已转换指标: 5个
+指标列表: Supertrend, Volume Profile, ATR Trailing Stop, RSI Divergence, Ichimoku Cloud
+
+建议:
+1. 优先实现Supertrend、RSI Divergence和Volume Profile等流行指标
+2. 结合TA-Lib现有指标进行扩展和优化
+3. 创建指标测试框架确保实现正确性
+4. 考虑指标的计算效率，优化大数据量下的性能
+5. 为每个指标编写详细的使用文档和示例

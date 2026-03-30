@@ -1,0 +1,122 @@
+{
+  "report_time": "2026-03-29 20:54:56",
+  "data_info": {
+    "stock_code": "000001.SZ",
+    "data_points": 500,
+    "time_range": "2012-03-14 00:00:00 到 2014-04-11 00:00:00"
+  },
+  "system_analysis": {
+    "total_systems_scanned": 17,
+    "systems_with_signals": 17,
+    "system_files": [
+      "advanced_risk_management_system.py",
+      "case_study_analyzer.py",
+      "common_errors_avoidance_system.py",
+      "continuous_improvement_system.py",
+      "drawdown_management_system.py",
+      "exit_strategy_optimizer.py",
+      "market_structure_deep_analyzer.py",
+      "multi_timeframe_reversal_system.py",
+      "psychological_discipline_manager.py",
+      "psychological_training_system.py",
+      "reversal_confirmation_system.py",
+      "reversal_timing_system.py",
+      "signal_optimization_system.py",
+      "trading_log_analyzer.py",
+      "trading_plan_creator.py",
+      "trading_system_integrator.py",
+      "trend_channel_analyzer.py"
+    ]
+  },
+  "talib_strategies": {
+    "total_created": 6,
+    "strategy_names": [
+      "ma_crossover",
+      "rsi_oversold",
+      "macd_crossover",
+      "bollinger_bands",
+      "stochastic",
+      "composite_indicators"
+    ]
+  },
+  "backtest_results": {
+    "移动平均交叉策略": {
+      "type": "talib_strategy",
+      "total_return": 0.784027984955948,
+      "max_drawdown": -0.17331526072337544,
+      "win_rate": 0.5,
+      "sharpe_ratio": 1.1533870171181357,
+      "trades_count": 16
+    },
+    "RSI超买超卖策略": {
+      "type": "talib_strategy",
+      "total_return": 0.06136696269948734,
+      "max_drawdown": -0.19294900221729483,
+      "win_rate": 0.6666666666666666,
+      "sharpe_ratio": 0.24457627152551284,
+      "trades_count": 6
+    },
+    "MACD交叉策略": {
+      "type": "talib_strategy",
+      "total_return": 0.3713843578298846,
+      "max_drawdown": -0.19979572445015914,
+      "win_rate": 0.3333333333333333,
+      "sharpe_ratio": 0.7313218171500001,
+      "trades_count": 30
+    },
+    "布林带策略": {
+      "type": "talib_strategy",
+      "total_return": -0.45418089654192745,
+      "max_drawdown": -0.5338752708152587,
+      "win_rate": 0.42857142857142855,
+      "sharpe_ratio": -0.6304285332974326,
+      "trades_count": 14
+    },
+    "随机指标策略": {
+      "type": "talib_strategy",
+      "total_return": -0.4094456598533839,
+      "max_drawdown": -0.571522444236216,
+      "win_rate": 0.5,
+      "sharpe_ratio": -0.5004183003920236,
+      "trades_count": 16
+    },
+    "多指标复合策略": {
+      "type": "talib_strategy",
+      "total_return": 0.3548009489213433,
+      "max_drawdown": -0.1653123204465239,
+      "win_rate": 0.5,
+      "sharpe_ratio": 0.895905703477063,
+      "trades_count": 4
+    },
+    "组合策略_majority_vote": {
+      "type": "combination_strategy",
+      "total_return": -0.07087899480403634,
+      "max_drawdown": -0.2527746391479583,
+      "win_rate": 0.36666666666666664,
+      "sharpe_ratio": -0.0262121489582164,
+      "trades_count": 60
+    },
+    "组合策略_weighted_vote": {
+      "type": "combination_strategy",
+      "total_return": 0.05239300397110288,
+      "max_drawdown": -0.19788939657855398,
+      "win_rate": 0.6666666666666666,
+      "sharpe_ratio": 0.2257820310650274,
+      "trades_count": 6
+    },
+    "组合策略_confirmatory": {
+      "type": "combination_strategy",
+      "total_return": -0.49161623959875106,
+      "max_drawdown": -0.5605939182775971,
+      "win_rate": 0.3333333333333333,
+      "sharpe_ratio": -0.7221850721695435,
+      "trades_count": 12
+    }
+  },
+  "summary": {
+    "total_strategies_tested": 9,
+    "successful_backtests": 9,
+    "best_strategy": "移动平均交叉策略",
+    "best_return": 0.784027984955948
+  }
+}

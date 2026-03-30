@@ -1,0 +1,35 @@
+# STOCH 指标使用模板
+
+## 功能描述
+STOCH(ndarray high, ndarray low, ndarray close, int fastk_period=-0x80000000, int slowk_period=-0x80000000, int slowk_matype=0, int slowd_period=-0x80000000, int slowd_matype=0)
+
+STOCH(high, low, clos...
+
+## 参数说明
+- **high**: 类型 any
+- **low**: 类型 any
+- **close**: 类型 any
+- **fastk_period**: 类型 any (默认: -2147483648)
+- **slowk_period**: 类型 any (默认: -2147483648)
+- **slowk_matype**: 类型 any (默认: 0)
+- **slowd_period**: 类型 any (默认: -2147483648)
+- **slowd_matype**: 类型 any (默认: 0)
+
+## 使用示例
+```python
+import talib
+import numpy as np
+
+# 准备数据
+close_prices = np.random.random(100) * 100  # 示例收盘价数据
+
+# 使用 STOCH
+try:
+    # 根据参数数量调用指标
+    result = talib.STOCH(close_prices)
+    print(f"STOCH 结果: {result}")
+except Exception as e:
+    print(f"计算 STOCH 时出错: {e}")
+
+# 实际应用中需要根据指标要求提供正确的参数
+# 大多数指标需要OHLC数据，而不仅仅是收盘价

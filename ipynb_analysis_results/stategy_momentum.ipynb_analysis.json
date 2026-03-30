@@ -1,0 +1,39 @@
+{
+  "notebook_name": "stategy_momentum.ipynb",
+  "strategy_type": "动量策略",
+  "description": "",
+  "parameters": {
+    "period": 55,
+    "window": 20,
+    "shadow_ratio": 0.7,
+    "min_zone_separation": 0.02,
+    "max_zone_width_ratio": 0.1,
+    "entity_size_threshold": 0.05,
+    "n_clusters": 3,
+    "random_state": 0,
+    "total_energy": 0,
+    "axis": 1,
+    "max_workers": 8,
+    "days": 400,
+    "valid_stock_count": 0,
+    "current_index": 0,
+    "fontsize": 12,
+    "span": 9,
+    "ddof": 1,
+    "hspace": 0.1,
+    "candle_width": 0.8,
+    "zorder": 4,
+    "alpha": 0.4,
+    "width": 0.8,
+    "linewidth": 0.7,
+    "s": 200,
+    "pad": 0.3,
+    "rotation": 45
+  },
+  "signal_code_snippets": [
+    "from scipy.signal import argrelextrema\nfrom scipy.signal import find_peaks\nfrom scipy import stats, signal, cluster\ncrossing_k_lines = []\ncrossing_k_lines.append((entity_high, entity_low))\nif crossing_k_lines:\nentity_highs = [h for h, l in crossing_k_lines]\nentity_lows = [l for h, l in crossing_k_lines]\nmerged_count = len(crossing_k_lines) + existing_count\nbreak"
+  ],
+  "code_cell_count": 2,
+  "markdown_cell_count": 0,
+  "file_size_kb": 52.072265625
+}

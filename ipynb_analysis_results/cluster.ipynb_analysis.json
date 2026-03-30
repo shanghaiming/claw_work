@@ -1,0 +1,25 @@
+{
+  "notebook_name": "cluster.ipynb",
+  "strategy_type": "聚类分析策略",
+  "description": "",
+  "parameters": {
+    "window": 5,
+    "cluster_threshold": 1.9,
+    "min_range_length": 5,
+    "order": 5,
+    "width": 0.6,
+    "width2": 0.05,
+    "fontsize": 12,
+    "alpha": 0.7,
+    "linewidth": 2,
+    "nbins": 10,
+    "rotation": 45,
+    "bar_count": 100
+  },
+  "signal_code_snippets": [
+    "from scipy.signal import find_peaks\nfrom scipy import stats, signal, cluster\nmax_indices = signal.argrelextrema(close_prices, np.greater, order=5)[0]\nmin_indices = signal.argrelextrema(close_prices, np.less, order=5)[0]"
+  ],
+  "code_cell_count": 2,
+  "markdown_cell_count": 0,
+  "file_size_kb": 95.16015625
+}

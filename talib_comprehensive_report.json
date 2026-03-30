@@ -1,0 +1,267 @@
+{
+  "generated_at": "2026-03-29T22:32:40.868951",
+  "talib_version": "0.6.8",
+  "total_functions": 331,
+  "functions_by_category": {
+    "趋势指标": 110,
+    "动量指标": 0,
+    "波动率指标": 16,
+    "成交量指标": 12,
+    "周期指标": 10,
+    "数学变换": 30,
+    "模式识别": 104,
+    "统计指标": 14,
+    "其他指标": 35
+  },
+  "category_details": {
+    "趋势指标": {
+      "count": 110,
+      "functions": [
+        "ADX",
+        "ADXR",
+        "APO",
+        "AROON",
+        "AROONOSC",
+        "BOP",
+        "CCI",
+        "CDL3STARSINSOUTH",
+        "CDLCLOSINGMARUBOZU",
+        "CDLHANGINGMAN",
+        "CDLMARUBOZU",
+        "CDLMATCHINGLOW",
+        "CDLMATHOLD",
+        "CDLRICKSHAWMAN",
+        "CMO",
+        "DEMA",
+        "DX",
+        "EMA",
+        "HT_TRENDLINE",
+        "KAMA"
+      ]
+    },
+    "动量指标": {
+      "count": 0,
+      "functions": []
+    },
+    "波动率指标": {
+      "count": 16,
+      "functions": [
+        "ATR",
+        "BBANDS",
+        "MIDPOINT",
+        "MIDPRICE",
+        "NATR",
+        "STDDEV",
+        "TRANGE",
+        "VAR",
+        "stream_ATR",
+        "stream_BBANDS",
+        "stream_MIDPOINT",
+        "stream_MIDPRICE",
+        "stream_NATR",
+        "stream_STDDEV",
+        "stream_TRANGE",
+        "stream_VAR"
+      ]
+    },
+    "成交量指标": {
+      "count": 12,
+      "functions": [
+        "AD",
+        "ADD",
+        "ADOSC",
+        "CDLADVANCEBLOCK",
+        "CDLLADDERBOTTOM",
+        "OBV",
+        "stream_AD",
+        "stream_ADD",
+        "stream_ADOSC",
+        "stream_CDLADVANCEBLOCK",
+        "stream_CDLLADDERBOTTOM",
+        "stream_OBV"
+      ]
+    },
+    "周期指标": {
+      "count": 10,
+      "functions": [
+        "HT_DCPERIOD",
+        "HT_DCPHASE",
+        "HT_PHASOR",
+        "HT_SINE",
+        "HT_TRENDMODE",
+        "stream_HT_DCPERIOD",
+        "stream_HT_DCPHASE",
+        "stream_HT_PHASOR",
+        "stream_HT_SINE",
+        "stream_HT_TRENDMODE"
+      ]
+    },
+    "数学变换": {
+      "count": 30,
+      "functions": [
+        "ACOS",
+        "ASIN",
+        "ATAN",
+        "CEIL",
+        "COS",
+        "COSH",
+        "EXP",
+        "FLOOR",
+        "LN",
+        "LOG10",
+        "SIN",
+        "SINH",
+        "SQRT",
+        "TAN",
+        "TANH",
+        "stream_ACOS",
+        "stream_ASIN",
+        "stream_ATAN",
+        "stream_CEIL",
+        "stream_COS"
+      ]
+    },
+    "模式识别": {
+      "count": 104,
+      "functions": [
+        "CDL2CROWS",
+        "CDL3BLACKCROWS",
+        "CDL3INSIDE",
+        "CDL3LINESTRIKE",
+        "CDL3OUTSIDE",
+        "CDL3WHITESOLDIERS",
+        "CDLABANDONEDBABY",
+        "CDLBELTHOLD",
+        "CDLBREAKAWAY",
+        "CDLCONCEALBABYSWALL",
+        "CDLCOUNTERATTACK",
+        "CDLDARKCLOUDCOVER",
+        "CDLDOJI",
+        "CDLDOJISTAR",
+        "CDLDRAGONFLYDOJI",
+        "CDLENGULFING",
+        "CDLEVENINGDOJISTAR",
+        "CDLEVENINGSTAR",
+        "CDLGAPSIDESIDEWHITE",
+        "CDLGRAVESTONEDOJI"
+      ]
+    },
+    "统计指标": {
+      "count": 14,
+      "functions": [
+        "BETA",
+        "CORREL",
+        "LINEARREG",
+        "LINEARREG_ANGLE",
+        "LINEARREG_INTERCEPT",
+        "LINEARREG_SLOPE",
+        "TSF",
+        "stream_BETA",
+        "stream_CORREL",
+        "stream_LINEARREG",
+        "stream_LINEARREG_ANGLE",
+        "stream_LINEARREG_INTERCEPT",
+        "stream_LINEARREG_SLOPE",
+        "stream_TSF"
+      ]
+    },
+    "其他指标": {
+      "count": 35,
+      "functions": [
+        "ACCBANDS",
+        "AVGDEV",
+        "AVGPRICE",
+        "DIV",
+        "IMI",
+        "MEDPRICE",
+        "MIN",
+        "MININDEX",
+        "MULT",
+        "SUB",
+        "SUM",
+        "TYPPRICE",
+        "WCLPRICE",
+        "chain",
+        "get_compatibility",
+        "get_function_groups",
+        "get_functions",
+        "get_unstable_period",
+        "set_compatibility",
+        "set_unstable_period"
+      ]
+    }
+  },
+  "parameter_statistics": {
+    "functions_with_parameters": {},
+    "average_parameters": 3.190332326283988,
+    "parameter_distribution": {
+      "4": 142,
+      "1": 45,
+      "2": 74,
+      "6": 6,
+      "3": 33,
+      "5": 22,
+      "7": 2,
+      "10": 2,
+      "8": 2,
+      "0": 3
+    }
+  },
+  "recommended_combinations": [
+    {
+      "name": "趋势跟踪组合",
+      "description": "适用于趋势市场",
+      "indicators": [
+        "EMA",
+        "MACD",
+        "ADX",
+        "ATR"
+      ],
+      "usage": "EMA判断趋势方向，MACD确认趋势强度，ADX衡量趋势力度，ATR用于风险管理"
+    },
+    {
+      "name": "均值回归组合",
+      "description": "适用于震荡市场",
+      "indicators": [
+        "BBANDS",
+        "RSI",
+        "STOCH",
+        "MFI"
+      ],
+      "usage": "布林带识别超买超卖，RSI和随机指标确认信号，MFI验证成交量"
+    },
+    {
+      "name": "突破交易组合",
+      "description": "适用于突破行情",
+      "indicators": [
+        "SAR",
+        "AROON",
+        "CCI",
+        "VOLUME"
+      ],
+      "usage": "抛物线转向识别突破点，AROON衡量趋势强度，CCI判断超买超卖，成交量确认突破"
+    },
+    {
+      "name": "动量策略组合",
+      "description": "适用于动量交易",
+      "indicators": [
+        "MOM",
+        "ROC",
+        "TRIX",
+        "WILLR"
+      ],
+      "usage": "多个动量指标确认动量方向，避免假信号"
+    },
+    {
+      "name": "多时间框架组合",
+      "description": "多时间框架分析",
+      "indicators": [
+        "HT_TRENDLINE",
+        "HT_DCPERIOD",
+        "HT_PHASOR",
+        "HT_SINE"
+      ],
+      "usage": "希尔伯特变换指标进行多时间框架分析"
+    }
+  ]
+}
