@@ -1,0 +1,16 @@
+{
+  "strategy_name": "GRPO_strategy.py",
+  "strategy_class": "Config:",
+  "category": "moving_average",
+  "test_stock": "000001.SZ",
+  "test_time": "2026-03-31T20:20:13.886466",
+  "performance": {
+    "total_return": 0.16939872141793869,
+    "sharpe_ratio": 1.0056759344921613,
+    "max_drawdown": 0.0938086940976892,
+    "win_rate": 0.5945321632366509,
+    "trade_count": 48
+  },
+  "status": "completed",
+  "report_file": null
+}

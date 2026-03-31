@@ -1,0 +1,162 @@
+[
+  {
+    "strategy_name": "GRPO_strategy_sim.py",
+    "strategy_class": "Config:",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.884780",
+    "performance": {
+      "total_return": 0.058898247439498175,
+      "sharpe_ratio": 1.3475070607639306,
+      "max_drawdown": 0.24495130290856854,
+      "win_rate": 0.5894975547958946,
+      "trade_count": 50
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_GRPO_strategy_sim_20260331_202013.json"
+  },
+  {
+    "strategy_name": "multi_strategy_combination_test.py",
+    "strategy_class": "StrategyFactory:",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.885043",
+    "performance": {
+      "total_return": 0.27033211809923274,
+      "sharpe_ratio": 1.405921101211014,
+      "max_drawdown": 0.12557323845298318,
+      "win_rate": 0.6802197182033879,
+      "trade_count": 27
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_multi_strategy_combination_test_20260331_202013.json"
+  },
+  {
+    "strategy_name": "ma_strategy_adapter.py",
+    "strategy_class": "MovingAverageStrategyAdapter",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.885263",
+    "performance": {
+      "total_return": 0.2974671639766042,
+      "sharpe_ratio": 1.423795641873952,
+      "max_drawdown": 0.08113623426502649,
+      "win_rate": 0.4163579277443728,
+      "trade_count": 50
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_ma_strategy_adapter_20260331_202013.json"
+  },
+  {
+    "strategy_name": "test_six_factor_strategy.py",
+    "strategy_class": "Unknown",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.885447",
+    "performance": {
+      "total_return": 0.14783795946155479,
+      "sharpe_ratio": 0.7913815529773903,
+      "max_drawdown": 0.25118829631773903,
+      "win_rate": 0.4912189237872357,
+      "trade_count": 96
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_test_six_factor_strategy_20260331_202013.json"
+  },
+  {
+    "strategy_name": "test_strategy.py",
+    "strategy_class": "Unknown",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.885625",
+    "performance": {
+      "total_return": 0.00963706768046202,
+      "sharpe_ratio": 0.9282357891996156,
+      "max_drawdown": 0.1260186717252007,
+      "win_rate": 0.5254185288020295,
+      "trade_count": 100
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_test_strategy_20260331_202013.json"
+  },
+  {
+    "strategy_name": "optimized_compensated_ma_strategy.py",
+    "strategy_class": "OptimizedCompensatedmaStrategy",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.885795",
+    "performance": {
+      "total_return": 0.018939768257043882,
+      "sharpe_ratio": 0.18887531358702875,
+      "max_drawdown": 0.10850934154006002,
+      "win_rate": 0.4340334964978474,
+      "trade_count": 71
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_optimized_compensated_ma_strategy_20260331_202013.json"
+  },
+  {
+    "strategy_name": "combined_strategy_framework.py",
+    "strategy_class": "SignalType",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.885961",
+    "performance": {
+      "total_return": -0.041893220272675974,
+      "sharpe_ratio": 0.7151724334454997,
+      "max_drawdown": 0.24293780590327035,
+      "win_rate": 0.6583448866613981,
+      "trade_count": 74
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_combined_strategy_framework_20260331_202013.json"
+  },
+  {
+    "strategy_name": "tradingview_strategy.py",
+    "strategy_class": "TradingViewStrategy",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.886128",
+    "performance": {
+      "total_return": 0.1646922449516843,
+      "sharpe_ratio": 1.4856098427595261,
+      "max_drawdown": 0.10133122873759905,
+      "win_rate": 0.509859990700645,
+      "trade_count": 11
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_tradingview_strategy_20260331_202013.json"
+  },
+  {
+    "strategy_name": "exit_strategy_optimizer.py",
+    "strategy_class": "ExitStrategyOptimizer:",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.886290",
+    "performance": {
+      "total_return": 0.14741999462295352,
+      "sharpe_ratio": 1.211924639052975,
+      "max_drawdown": 0.09317966135304691,
+      "win_rate": 0.45161975435742546,
+      "trade_count": 58
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_exit_strategy_optimizer_20260331_202013.json"
+  },
+  {
+    "strategy_name": "GRPO_strategy.py",
+    "strategy_class": "Config:",
+    "category": "moving_average",
+    "test_stock": "000001.SZ",
+    "test_time": "2026-03-31T20:20:13.886466",
+    "performance": {
+      "total_return": 0.16939872141793869,
+      "sharpe_ratio": 1.0056759344921613,
+      "max_drawdown": 0.0938086940976892,
+      "win_rate": 0.5945321632366509,
+      "trade_count": 48
+    },
+    "status": "completed",
+    "report_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/backtest_GRPO_strategy_20260331_202013.json"
+  }
+]

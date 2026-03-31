@@ -6,6 +6,9 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
+# 整合适配 - 自动添加
+from backtest.src.strategies.base_strategy import BaseStrategy
+
 # 添加价格行为集成路径
 workspace_path = "/Users/chengming/.openclaw/workspace"
 sys.path.append(workspace_path)

@@ -1,0 +1,1145 @@
+[
+  {
+    "combination_id": 3,
+    "name": "同类最优_moving_average",
+    "type": "intra_category",
+    "strategies": [
+      "multi_strategy_combination_test.py",
+      "autonomous_strategy_backtest_system.py"
+    ],
+    "strategy_classes": [
+      "StrategyFactory:",
+      "MomentumStrategy"
+    ],
+    "strategy_modules": [
+      "multi_strategy_combination_test",
+      "autonomous_strategy_backtest_system"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 2,
+    "avg_complexity": 90.0,
+    "created_at": "2026-03-31T20:30:03.421661",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": null,
+    "strategy_details": [
+      {
+        "file_name": "multi_strategy_combination_test.py",
+        "module_name": "multi_strategy_combination_test",
+        "category": "moving_average",
+        "complexity_score": 90,
+        "class_name": "StrategyFactory:"
+      },
+      {
+        "file_name": "autonomous_strategy_backtest_system.py",
+        "module_name": "autonomous_strategy_backtest_system",
+        "category": "moving_average",
+        "complexity_score": 90,
+        "class_name": "MomentumStrategy"
+      }
+    ],
+    "evaluation_score": 71.5,
+    "evaluation_details": {
+      "overall_score": 71.5,
+      "diversity_score": 100.0,
+      "complexity_balance_score": 100.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 0.0,
+      "implementation_quality_score": 90.0,
+      "strengths": [],
+      "improvement_suggestions": [
+        "考虑增加不同实现方式的策略",
+        "添加不同类别的策略以分散风险",
+        "为策略添加参数优化变体"
+      ]
+    },
+    "rank": 1
+  },
+  {
+    "combination_id": 1,
+    "name": "同类最优_moving_average",
+    "type": "intra_category",
+    "strategies": [
+      "ma_strategy_adapter.py",
+      "multi_strategy_combination_test.py"
+    ],
+    "strategy_classes": [
+      "MovingAverageStrategyAdapter",
+      "StrategyFactory:"
+    ],
+    "strategy_modules": [
+      "ma_strategy_adapter",
+      "multi_strategy_combination_test"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 2,
+    "avg_complexity": 95.0,
+    "created_at": "2026-03-31T20:30:03.421648",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": null,
+    "strategy_details": [
+      {
+        "file_name": "ma_strategy_adapter.py",
+        "module_name": "ma_strategy_adapter",
+        "category": "moving_average",
+        "complexity_score": 100,
+        "class_name": "MovingAverageStrategyAdapter"
+      },
+      {
+        "file_name": "multi_strategy_combination_test.py",
+        "module_name": "multi_strategy_combination_test",
+        "category": "moving_average",
+        "complexity_score": 90,
+        "class_name": "StrategyFactory:"
+      }
+    ],
+    "evaluation_score": 70.0,
+    "evaluation_details": {
+      "overall_score": 70.0,
+      "diversity_score": 100.0,
+      "complexity_balance_score": 90.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 0.0,
+      "implementation_quality_score": 95.0,
+      "strengths": [],
+      "improvement_suggestions": [
+        "考虑增加不同实现方式的策略",
+        "添加不同类别的策略以分散风险",
+        "为策略添加参数优化变体"
+      ]
+    },
+    "rank": 2
+  },
+  {
+    "combination_id": 2,
+    "name": "同类最优_moving_average",
+    "type": "intra_category",
+    "strategies": [
+      "ma_strategy_adapter.py",
+      "autonomous_strategy_backtest_system.py"
+    ],
+    "strategy_classes": [
+      "MovingAverageStrategyAdapter",
+      "MomentumStrategy"
+    ],
+    "strategy_modules": [
+      "ma_strategy_adapter",
+      "autonomous_strategy_backtest_system"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 2,
+    "avg_complexity": 95.0,
+    "created_at": "2026-03-31T20:30:03.421656",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": null,
+    "strategy_details": [
+      {
+        "file_name": "ma_strategy_adapter.py",
+        "module_name": "ma_strategy_adapter",
+        "category": "moving_average",
+        "complexity_score": 100,
+        "class_name": "MovingAverageStrategyAdapter"
+      },
+      {
+        "file_name": "autonomous_strategy_backtest_system.py",
+        "module_name": "autonomous_strategy_backtest_system",
+        "category": "moving_average",
+        "complexity_score": 90,
+        "class_name": "MomentumStrategy"
+      }
+    ],
+    "evaluation_score": 70.0,
+    "evaluation_details": {
+      "overall_score": 70.0,
+      "diversity_score": 100.0,
+      "complexity_balance_score": 90.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 0.0,
+      "implementation_quality_score": 95.0,
+      "strengths": [],
+      "improvement_suggestions": [
+        "考虑增加不同实现方式的策略",
+        "添加不同类别的策略以分散风险",
+        "为策略添加参数优化变体"
+      ]
+    },
+    "rank": 3
+  },
+  {
+    "combination_id": 4,
+    "name": "中等复杂性组合",
+    "type": "medium_complexity",
+    "strategies": [
+      "test_six_factor_strategy.py",
+      "test_strategy.py"
+    ],
+    "strategy_classes": [
+      null,
+      null
+    ],
+    "strategy_modules": [
+      "test_six_factor_strategy",
+      "test_strategy"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 2,
+    "avg_complexity": 65.0,
+    "created_at": "2026-03-31T20:30:03.421683",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": null,
+    "strategy_details": [
+      {
+        "file_name": "test_six_factor_strategy.py",
+        "module_name": "test_six_factor_strategy",
+        "category": "moving_average",
+        "complexity_score": 70,
+        "class_name": null
+      },
+      {
+        "file_name": "test_strategy.py",
+        "module_name": "test_strategy",
+        "category": "moving_average",
+        "complexity_score": 60,
+        "class_name": null
+      }
+    ],
+    "evaluation_score": 67.0,
+    "evaluation_details": {
+      "overall_score": 67.0,
+      "diversity_score": 100.0,
+      "complexity_balance_score": 90.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 0.0,
+      "implementation_quality_score": 65.0,
+      "strengths": [],
+      "improvement_suggestions": [
+        "考虑增加不同实现方式的策略",
+        "添加不同类别的策略以分散风险",
+        "为策略添加参数优化变体"
+      ]
+    },
+    "rank": 4
+  },
+  {
+    "combination_id": 5,
+    "name": "中等复杂性组合",
+    "type": "medium_complexity",
+    "strategies": [
+      "tradingview_strategy.py",
+      "ma_strategy.py"
+    ],
+    "strategy_classes": [
+      "TradingViewStrategy",
+      "MovingAverageStrategy"
+    ],
+    "strategy_modules": [
+      "tradingview_strategy",
+      "ma_strategy"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 2,
+    "avg_complexity": 63.349999999999994,
+    "created_at": "2026-03-31T20:30:03.421687",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": null,
+    "strategy_details": [
+      {
+        "file_name": "tradingview_strategy.py",
+        "module_name": "tradingview_strategy",
+        "category": "moving_average",
+        "complexity_score": 69.3,
+        "class_name": "TradingViewStrategy"
+      },
+      {
+        "file_name": "ma_strategy.py",
+        "module_name": "ma_strategy",
+        "category": "moving_average",
+        "complexity_score": 57.4,
+        "class_name": "MovingAverageStrategy"
+      }
+    ],
+    "evaluation_score": 66.455,
+    "evaluation_details": {
+      "overall_score": 66.455,
+      "diversity_score": 100.0,
+      "complexity_balance_score": 88.1,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 0.0,
+      "implementation_quality_score": 63.349999999999994,
+      "strengths": [],
+      "improvement_suggestions": [
+        "考虑增加不同实现方式的策略",
+        "添加不同类别的策略以分散风险",
+        "为策略添加参数优化变体"
+      ]
+    },
+    "rank": 5
+  },
+  {
+    "combination_id": 13,
+    "name": "参数优化_ma_strategy_adapter",
+    "type": "parameter_variation",
+    "strategies": [
+      "ma_strategy_adapter.py"
+    ],
+    "strategy_classes": [
+      "MovingAverageStrategyAdapter"
+    ],
+    "strategy_modules": [
+      "ma_strategy_adapter"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 100.0,
+    "created_at": "2026-03-31T20:30:03.421718",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 5,
+      "long_window": 20,
+      "threshold": 0.01
+    },
+    "strategy_details": [
+      {
+        "file_name": "ma_strategy_adapter.py",
+        "module_name": "ma_strategy_adapter",
+        "category": "moving_average",
+        "complexity_score": 100,
+        "class_name": "MovingAverageStrategyAdapter"
+      }
+    ],
+    "evaluation_score": 64.5,
+    "evaluation_details": {
+      "overall_score": 64.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 100.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 6
+  },
+  {
+    "combination_id": 14,
+    "name": "参数优化_ma_strategy_adapter",
+    "type": "parameter_variation",
+    "strategies": [
+      "ma_strategy_adapter.py"
+    ],
+    "strategy_classes": [
+      "MovingAverageStrategyAdapter"
+    ],
+    "strategy_modules": [
+      "ma_strategy_adapter"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 100.0,
+    "created_at": "2026-03-31T20:30:03.421721",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 10,
+      "long_window": 30,
+      "threshold": 0.015
+    },
+    "strategy_details": [
+      {
+        "file_name": "ma_strategy_adapter.py",
+        "module_name": "ma_strategy_adapter",
+        "category": "moving_average",
+        "complexity_score": 100,
+        "class_name": "MovingAverageStrategyAdapter"
+      }
+    ],
+    "evaluation_score": 64.5,
+    "evaluation_details": {
+      "overall_score": 64.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 100.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 7
+  },
+  {
+    "combination_id": 15,
+    "name": "参数优化_ma_strategy_adapter",
+    "type": "parameter_variation",
+    "strategies": [
+      "ma_strategy_adapter.py"
+    ],
+    "strategy_classes": [
+      "MovingAverageStrategyAdapter"
+    ],
+    "strategy_modules": [
+      "ma_strategy_adapter"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 100.0,
+    "created_at": "2026-03-31T20:30:03.421724",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 8,
+      "long_window": 21,
+      "threshold": 0.02
+    },
+    "strategy_details": [
+      {
+        "file_name": "ma_strategy_adapter.py",
+        "module_name": "ma_strategy_adapter",
+        "category": "moving_average",
+        "complexity_score": 100,
+        "class_name": "MovingAverageStrategyAdapter"
+      }
+    ],
+    "evaluation_score": 64.5,
+    "evaluation_details": {
+      "overall_score": 64.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 100.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 8
+  },
+  {
+    "combination_id": 10,
+    "name": "参数优化_multi_strategy_combination_test",
+    "type": "parameter_variation",
+    "strategies": [
+      "multi_strategy_combination_test.py"
+    ],
+    "strategy_classes": [
+      "StrategyFactory:"
+    ],
+    "strategy_modules": [
+      "multi_strategy_combination_test"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 90.0,
+    "created_at": "2026-03-31T20:30:03.421709",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 5,
+      "long_window": 20,
+      "threshold": 0.01
+    },
+    "strategy_details": [
+      {
+        "file_name": "multi_strategy_combination_test.py",
+        "module_name": "multi_strategy_combination_test",
+        "category": "moving_average",
+        "complexity_score": 90,
+        "class_name": "StrategyFactory:"
+      }
+    ],
+    "evaluation_score": 63.5,
+    "evaluation_details": {
+      "overall_score": 63.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 90.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 9
+  },
+  {
+    "combination_id": 11,
+    "name": "参数优化_multi_strategy_combination_test",
+    "type": "parameter_variation",
+    "strategies": [
+      "multi_strategy_combination_test.py"
+    ],
+    "strategy_classes": [
+      "StrategyFactory:"
+    ],
+    "strategy_modules": [
+      "multi_strategy_combination_test"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 90.0,
+    "created_at": "2026-03-31T20:30:03.421712",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 10,
+      "long_window": 30,
+      "threshold": 0.015
+    },
+    "strategy_details": [
+      {
+        "file_name": "multi_strategy_combination_test.py",
+        "module_name": "multi_strategy_combination_test",
+        "category": "moving_average",
+        "complexity_score": 90,
+        "class_name": "StrategyFactory:"
+      }
+    ],
+    "evaluation_score": 63.5,
+    "evaluation_details": {
+      "overall_score": 63.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 90.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 10
+  },
+  {
+    "combination_id": 12,
+    "name": "参数优化_multi_strategy_combination_test",
+    "type": "parameter_variation",
+    "strategies": [
+      "multi_strategy_combination_test.py"
+    ],
+    "strategy_classes": [
+      "StrategyFactory:"
+    ],
+    "strategy_modules": [
+      "multi_strategy_combination_test"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 90.0,
+    "created_at": "2026-03-31T20:30:03.421715",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 8,
+      "long_window": 21,
+      "threshold": 0.02
+    },
+    "strategy_details": [
+      {
+        "file_name": "multi_strategy_combination_test.py",
+        "module_name": "multi_strategy_combination_test",
+        "category": "moving_average",
+        "complexity_score": 90,
+        "class_name": "StrategyFactory:"
+      }
+    ],
+    "evaluation_score": 63.5,
+    "evaluation_details": {
+      "overall_score": 63.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 90.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 11
+  },
+  {
+    "combination_id": 7,
+    "name": "参数优化_GRPO_strategy_sim",
+    "type": "parameter_variation",
+    "strategies": [
+      "GRPO_strategy_sim.py"
+    ],
+    "strategy_classes": [
+      "Config:"
+    ],
+    "strategy_modules": [
+      "GRPO_strategy_sim"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 82.5,
+    "created_at": "2026-03-31T20:30:03.421699",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 5,
+      "long_window": 20,
+      "threshold": 0.01
+    },
+    "strategy_details": [
+      {
+        "file_name": "GRPO_strategy_sim.py",
+        "module_name": "GRPO_strategy_sim",
+        "category": "moving_average",
+        "complexity_score": 82.5,
+        "class_name": "Config:"
+      }
+    ],
+    "evaluation_score": 62.75000000000001,
+    "evaluation_details": {
+      "overall_score": 62.75000000000001,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 82.5,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 12
+  },
+  {
+    "combination_id": 8,
+    "name": "参数优化_GRPO_strategy_sim",
+    "type": "parameter_variation",
+    "strategies": [
+      "GRPO_strategy_sim.py"
+    ],
+    "strategy_classes": [
+      "Config:"
+    ],
+    "strategy_modules": [
+      "GRPO_strategy_sim"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 82.5,
+    "created_at": "2026-03-31T20:30:03.421702",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 10,
+      "long_window": 30,
+      "threshold": 0.015
+    },
+    "strategy_details": [
+      {
+        "file_name": "GRPO_strategy_sim.py",
+        "module_name": "GRPO_strategy_sim",
+        "category": "moving_average",
+        "complexity_score": 82.5,
+        "class_name": "Config:"
+      }
+    ],
+    "evaluation_score": 62.75000000000001,
+    "evaluation_details": {
+      "overall_score": 62.75000000000001,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 82.5,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 13
+  },
+  {
+    "combination_id": 9,
+    "name": "参数优化_GRPO_strategy_sim",
+    "type": "parameter_variation",
+    "strategies": [
+      "GRPO_strategy_sim.py"
+    ],
+    "strategy_classes": [
+      "Config:"
+    ],
+    "strategy_modules": [
+      "GRPO_strategy_sim"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 82.5,
+    "created_at": "2026-03-31T20:30:03.421705",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 8,
+      "long_window": 21,
+      "threshold": 0.02
+    },
+    "strategy_details": [
+      {
+        "file_name": "GRPO_strategy_sim.py",
+        "module_name": "GRPO_strategy_sim",
+        "category": "moving_average",
+        "complexity_score": 82.5,
+        "class_name": "Config:"
+      }
+    ],
+    "evaluation_score": 62.75000000000001,
+    "evaluation_details": {
+      "overall_score": 62.75000000000001,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 82.5,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 14
+  },
+  {
+    "combination_id": 6,
+    "name": "中等复杂性组合",
+    "type": "medium_complexity",
+    "strategies": [
+      "test_exit_strategy.py",
+      "smart_strategy_selector.py"
+    ],
+    "strategy_classes": [
+      null,
+      "TV_Smart_Strategy_Selector:"
+    ],
+    "strategy_modules": [
+      "test_exit_strategy",
+      "smart_strategy_selector"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 2,
+    "avg_complexity": 49.55,
+    "created_at": "2026-03-31T20:30:03.421690",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": null,
+    "strategy_details": [
+      {
+        "file_name": "test_exit_strategy.py",
+        "module_name": "test_exit_strategy",
+        "category": "moving_average",
+        "complexity_score": 37.3,
+        "class_name": null
+      },
+      {
+        "file_name": "smart_strategy_selector.py",
+        "module_name": "smart_strategy_selector",
+        "category": "moving_average",
+        "complexity_score": 61.8,
+        "class_name": "TV_Smart_Strategy_Selector:"
+      }
+    ],
+    "evaluation_score": 62.55500000000001,
+    "evaluation_details": {
+      "overall_score": 62.55500000000001,
+      "diversity_score": 100.0,
+      "complexity_balance_score": 75.5,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 0.0,
+      "implementation_quality_score": 49.55,
+      "strengths": [],
+      "improvement_suggestions": [
+        "考虑增加不同实现方式的策略",
+        "添加不同类别的策略以分散风险",
+        "为策略添加参数优化变体"
+      ]
+    },
+    "rank": 15
+  },
+  {
+    "combination_id": 19,
+    "name": "参数优化_optimized_compensated_ma_strategy",
+    "type": "parameter_variation",
+    "strategies": [
+      "optimized_compensated_ma_strategy.py"
+    ],
+    "strategy_classes": [
+      "OptimizedCompensatedmaStrategy"
+    ],
+    "strategy_modules": [
+      "optimized_compensated_ma_strategy"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 70.9,
+    "created_at": "2026-03-31T20:30:03.421737",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 5,
+      "long_window": 20,
+      "threshold": 0.01
+    },
+    "strategy_details": [
+      {
+        "file_name": "optimized_compensated_ma_strategy.py",
+        "module_name": "optimized_compensated_ma_strategy",
+        "category": "moving_average",
+        "complexity_score": 70.9,
+        "class_name": "OptimizedCompensatedmaStrategy"
+      }
+    ],
+    "evaluation_score": 61.59,
+    "evaluation_details": {
+      "overall_score": 61.59,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 70.9,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 16
+  },
+  {
+    "combination_id": 20,
+    "name": "参数优化_optimized_compensated_ma_strategy",
+    "type": "parameter_variation",
+    "strategies": [
+      "optimized_compensated_ma_strategy.py"
+    ],
+    "strategy_classes": [
+      "OptimizedCompensatedmaStrategy"
+    ],
+    "strategy_modules": [
+      "optimized_compensated_ma_strategy"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 70.9,
+    "created_at": "2026-03-31T20:30:03.421740",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 10,
+      "long_window": 30,
+      "threshold": 0.015
+    },
+    "strategy_details": [
+      {
+        "file_name": "optimized_compensated_ma_strategy.py",
+        "module_name": "optimized_compensated_ma_strategy",
+        "category": "moving_average",
+        "complexity_score": 70.9,
+        "class_name": "OptimizedCompensatedmaStrategy"
+      }
+    ],
+    "evaluation_score": 61.59,
+    "evaluation_details": {
+      "overall_score": 61.59,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 70.9,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 17
+  },
+  {
+    "combination_id": 21,
+    "name": "参数优化_optimized_compensated_ma_strategy",
+    "type": "parameter_variation",
+    "strategies": [
+      "optimized_compensated_ma_strategy.py"
+    ],
+    "strategy_classes": [
+      "OptimizedCompensatedmaStrategy"
+    ],
+    "strategy_modules": [
+      "optimized_compensated_ma_strategy"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 70.9,
+    "created_at": "2026-03-31T20:30:03.421743",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 8,
+      "long_window": 21,
+      "threshold": 0.02
+    },
+    "strategy_details": [
+      {
+        "file_name": "optimized_compensated_ma_strategy.py",
+        "module_name": "optimized_compensated_ma_strategy",
+        "category": "moving_average",
+        "complexity_score": 70.9,
+        "class_name": "OptimizedCompensatedmaStrategy"
+      }
+    ],
+    "evaluation_score": 61.59,
+    "evaluation_details": {
+      "overall_score": 61.59,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 70.9,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 18
+  },
+  {
+    "combination_id": 16,
+    "name": "参数优化_test_six_factor_strategy",
+    "type": "parameter_variation",
+    "strategies": [
+      "test_six_factor_strategy.py"
+    ],
+    "strategy_classes": [
+      null
+    ],
+    "strategy_modules": [
+      "test_six_factor_strategy"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 70.0,
+    "created_at": "2026-03-31T20:30:03.421728",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 5,
+      "long_window": 20,
+      "threshold": 0.01
+    },
+    "strategy_details": [
+      {
+        "file_name": "test_six_factor_strategy.py",
+        "module_name": "test_six_factor_strategy",
+        "category": "moving_average",
+        "complexity_score": 70,
+        "class_name": null
+      }
+    ],
+    "evaluation_score": 61.5,
+    "evaluation_details": {
+      "overall_score": 61.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 70.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 19
+  },
+  {
+    "combination_id": 17,
+    "name": "参数优化_test_six_factor_strategy",
+    "type": "parameter_variation",
+    "strategies": [
+      "test_six_factor_strategy.py"
+    ],
+    "strategy_classes": [
+      null
+    ],
+    "strategy_modules": [
+      "test_six_factor_strategy"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 70.0,
+    "created_at": "2026-03-31T20:30:03.421731",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 10,
+      "long_window": 30,
+      "threshold": 0.015
+    },
+    "strategy_details": [
+      {
+        "file_name": "test_six_factor_strategy.py",
+        "module_name": "test_six_factor_strategy",
+        "category": "moving_average",
+        "complexity_score": 70,
+        "class_name": null
+      }
+    ],
+    "evaluation_score": 61.5,
+    "evaluation_details": {
+      "overall_score": 61.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 70.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 20
+  },
+  {
+    "combination_id": 18,
+    "name": "参数优化_test_six_factor_strategy",
+    "type": "parameter_variation",
+    "strategies": [
+      "test_six_factor_strategy.py"
+    ],
+    "strategy_classes": [
+      null
+    ],
+    "strategy_modules": [
+      "test_six_factor_strategy"
+    ],
+    "categories": [
+      "moving_average"
+    ],
+    "strategy_count": 1,
+    "avg_complexity": 70.0,
+    "created_at": "2026-03-31T20:30:03.421733",
+    "status": "pending",
+    "performance": null,
+    "parameter_variations": {
+      "short_window": 8,
+      "long_window": 21,
+      "threshold": 0.02
+    },
+    "strategy_details": [
+      {
+        "file_name": "test_six_factor_strategy.py",
+        "module_name": "test_six_factor_strategy",
+        "category": "moving_average",
+        "complexity_score": 70,
+        "class_name": null
+      }
+    ],
+    "evaluation_score": 61.5,
+    "evaluation_details": {
+      "overall_score": 61.5,
+      "diversity_score": 50.0,
+      "complexity_balance_score": 60.0,
+      "category_coverage_score": 50.0,
+      "parameter_richness_score": 100.0,
+      "implementation_quality_score": 70.0,
+      "strengths": [
+        "包含参数优化变体"
+      ],
+      "improvement_suggestions": [
+        "添加不同类别的策略以分散风险",
+        "考虑添加互补策略形成组合"
+      ]
+    },
+    "rank": 21
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "cycle_number": 1,
+  "generated_at": "2026-03-31T20:20:13.887963",
+  "strategies_loaded": 29,
+  "strategies_tested": 10,
+  "combinations_generated": 8,
+  "single_strategy_results_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/reports/single_strategy_results_cycle_1.json",
+  "combinations_file": "/Users/chengming/.openclaw/workspace/continuous_backtest_results/state/strategy_combinations_cycle_1.json",
+  "next_steps": [
+    "集成到quant_trade-main真实回测系统",
+    "运行策略组合回测",
+    "参数优化循环",
+    "绩效评估和排名"
+  ]
+}

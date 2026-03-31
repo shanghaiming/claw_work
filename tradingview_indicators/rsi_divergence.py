@@ -67,14 +67,16 @@ def rsi_divergence(high, low, close, rsi_period=14, lookback=20):
 if __name__ == "__main__":
     # 测试代码
     # 测试数据
-np.random.seed(42)
-n = 100
-close = np.cumsum(np.random.randn(n)) + 100
+    np.random.seed(42)
+    n = 100
+    close = np.cumsum(np.random.randn(n)) + 100
+    high = close + np.random.uniform(0, 2, n)
+    low = close - np.random.uniform(0, 2, n)
     
     # 运行示例
     try:
         # 使用示例
-bullish, bearish, rsi_values = rsi_divergence(high_prices, low_prices, close_prices, rsi_period=14, lookback=20)
+        bullish, bearish, rsi_values = rsi_divergence(high, low, close, rsi_period=14, lookback=20)
         print(f"RSI Divergence 测试完成")
     except Exception as e:
         print(f"测试出错: {e}")

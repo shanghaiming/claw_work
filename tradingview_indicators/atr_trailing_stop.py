@@ -31,21 +31,21 @@ def atr_trailing_stop(data, **params):
 if __name__ == "__main__":
     # 测试代码
     # 测试数据
-import pandas as pd
-import numpy as np
-n = 100
-data = pd.DataFrame({
-    'open': np.random.uniform(90, 110, n),
-    'high': np.random.uniform(95, 115, n),
-    'low': np.random.uniform(85, 105, n),
-    'close': np.random.uniform(90, 110, n),
-    'volume': np.random.lognormal(10, 1, n)
-})
+    import pandas as pd
+    import numpy as np
+    n = 100
+    data = pd.DataFrame({
+        'open': np.random.uniform(90, 110, n),
+        'high': np.random.uniform(95, 115, n),
+        'low': np.random.uniform(85, 105, n),
+        'close': np.random.uniform(90, 110, n),
+        'volume': np.random.lognormal(10, 1, n)
+    })
     
     # 运行示例
     try:
         # 使用示例
-result = atr_trailing_stop(data, **{})
+        result = atr_trailing_stop(data, **{})
         print(f"ATR Trailing Stop 测试完成")
     except Exception as e:
         print(f"测试出错: {e}")

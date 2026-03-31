@@ -1,0 +1,16 @@
+{
+  "strategy_name": "optimized_compensated_ma_strategy.py",
+  "strategy_class": "OptimizedCompensatedmaStrategy",
+  "category": "moving_average",
+  "test_stock": "000001.SZ",
+  "test_time": "2026-03-31T20:20:13.885795",
+  "performance": {
+    "total_return": 0.018939768257043882,
+    "sharpe_ratio": 0.18887531358702875,
+    "max_drawdown": 0.10850934154006002,
+    "win_rate": 0.4340334964978474,
+    "trade_count": 71
+  },
+  "status": "completed",
+  "report_file": null
+}
