@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-03-31T20:41:24.311786",
+  "demo_strategy": "MovingAverageStrategy",
+  "total_optimizations": 2,
+  "optimization_algorithms": [
+    {
+      "name": "grid_search",
+      "results_file": "/Users/chengming/.openclaw/workspace/optimization_results/grid_search_MovingAverageStrategy_20260331_204122.json",
+      "best_score": 1,
+      "evaluations": 49
+    },
+    {
+      "name": "random_search",
+      "results_file": "/Users/chengming/.openclaw/workspace/optimization_results/random_search_MovingAverageStrategy_20260331_204124.json",
+      "best_score": 1,
+      "evaluations": 50
+    }
+  ],
+  "parameter_definitions": {
+    "short_window": {
+      "min": 3,
+      "max": 20,
+      "step": 1,
+      "is_integer": true,
+      "log_scale": false
+    },
+    "long_window": {
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "is_integer": true,
+      "log_scale": false
+    },
+    "threshold": {
+      "min": 0.001,
+      "max": 0.05,
+      "step": 0.005,
+      "is_integer": false,
+      "log_scale": false
+    }
+  },
+  "next_steps": [
+    "集成真实策略评估函数",
+    "实现贝叶斯优化算法",
+    "实现遗传算法优化",
+    "添加并行计算支持",
+    "开发优化结果可视化"
+  ]
+}
