@@ -1,6 +1,0 @@
-{
-  "short_window": 5,
-  "long_window": 20,
-  "threshold": 0.01,
-  "description": "\u79fb\u52a8\u5e73\u5747\u7b56\u7565\u9002\u914d\u5668\uff0c\u652f\u6301\u539f\u59cb\u5b9e\u73b0\u548c\u539f\u751f\u5b9e\u73b0"
-}

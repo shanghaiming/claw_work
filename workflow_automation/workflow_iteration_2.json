@@ -1,0 +1,54 @@
+{
+  "name": "策略开发闭环工作流 - 迭代2",
+  "created_at": "2026-04-13T08:16:37.960921",
+  "current_stage": "STRATEGY_DEVELOPMENT",
+  "stages": [
+    {
+      "stage": "STRATEGY_DEVELOPMENT",
+      "objectives": [
+        "基于最佳参数开发改进策略",
+        "扩展优化到其他成功策略",
+        "开发新因子和策略变体"
+      ],
+      "tasks": [
+        "运行改进策略测试",
+        "选择2-3个其他成功策略优化",
+        "创建策略组合框架"
+      ],
+      "expected_output": "改进策略代码、策略组合框架"
+    },
+    {
+      "stage": "BACKTESTING",
+      "objectives": [
+        "回测验证改进策略",
+        "批量回测策略对比",
+        "计算风险指标"
+      ],
+      "tasks": [
+        "运行单策略回测",
+        "批量回测比较",
+        "生成回测报告"
+      ],
+      "expected_output": "回测报告、绩效指标、风险分析"
+    },
+    {
+      "stage": "OPTIMIZATION",
+      "objectives": [
+        "参数优化",
+        "风险控制优化",
+        "仓位优化"
+      ],
+      "tasks": [
+        "参数网格搜索",
+        "优化信号过滤",
+        "调整风险参数"
+      ],
+      "expected_output": "优化参数、改进策略、优化报告"
+    }
+  ],
+  "automation_suggestions": [
+    "创建自动化回测流水线",
+    "设置定时优化任务",
+    "建立策略性能监控"
+  ]
+}
