@@ -983,101 +983,67 @@ class ReversalConfirmationSystemStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于反转确认信号生成交易信号
+
+        基于反转确认信号生成交易信号，使用多指标确认反转
         """
-        # 分析市场数据
-        analysis_result = self.confirmation_system.analyze_market_data(self.data)
-        
-        # 获取确认信号
-        signals_detected = analysis_result.get('total_signals_detected', 0)
-        signal_types = analysis_result.get('signal_types', [])
-        
-        # 获取评估结果
-        assessment_result = analysis_result.get('assessment_result', {})
-        overall_strength = assessment_result.get('overall_strength', '')
-        confidence_score = assessment_result.get('confidence_score', 0)
-        recommended_action = assessment_result.get('recommended_action', '')
-        
-        # 根据确认信号生成信号
-        if signals_detected >= 3 and confidence_score >= 0.7:
-            # 多信号且高置信度
-            if recommended_action:
-                # 有明确建议行动
-                if any(word in recommended_action.lower() for word in ['buy', 'long', '做多', '买入']):
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                elif any(word in recommended_action.lower() for word in ['sell', 'short', '做空', '卖出']):
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='sell',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    # 其他建议，基于整体强度决定
-                    if overall_strength in ['strong', 'very_strong']:
-                        self._record_signal(
-                            timestamp=self.data.index[-1],
-                            action='buy',
-                            price=self.data['close'].iloc[-1]
-                        )
-                    else:
-                        self._record_signal(
-                            timestamp=self.data.index[-1],
-                            action='hold',
-                            price=self.data['close'].iloc[-1]
-                        )
-            else:
-                # 无明确建议，基于信号类型决定
-                has_volume_confirmation = 'volume_confirmation' in signal_types
-                has_price_action_confirmation = 'price_action_confirmation' in signal_types
-                has_timeframe_confirmation = 'timeframe_confirmation' in signal_types
-                
-                # 如果有成交量确认和价格行为确认，买入信号
-                if has_volume_confirmation and has_price_action_confirmation:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                elif has_timeframe_confirmation:
-                    # 有时间框架确认，卖出信号（假设为顶部确认）
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='sell',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-        elif signals_detected >= 2 and confidence_score >= 0.5:
-            # 中等信号和置信度
-            if overall_strength in ['moderate', 'strong']:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        high = df['high']
+        low = df['low']
+
+        # Confirmation signals
+        confirmations = 0
+        bullish_confirmations = 0
+        bearish_confirmations = 0
+
+        # Signal 1: MA crossover
+        ma_short = close.rolling(5).mean()
+        ma_long = close.rolling(20).mean()
+        if ma_short.iloc[-1] > ma_long.iloc[-1] and ma_short.iloc[-2] <= ma_long.iloc[-2]:
+            bullish_confirmations += 1
+            confirmations += 1
+        elif ma_short.iloc[-1] < ma_long.iloc[-1] and ma_short.iloc[-2] >= ma_long.iloc[-2]:
+            bearish_confirmations += 1
+            confirmations += 1
+
+        # Signal 2: RSI reversal from extremes
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+        if rsi.iloc[-1] < 35 and rsi.iloc[-2] < rsi.iloc[-1]:
+            bullish_confirmations += 1
+            confirmations += 1
+        elif rsi.iloc[-1] > 65 and rsi.iloc[-2] > rsi.iloc[-1]:
+            bearish_confirmations += 1
+            confirmations += 1
+
+        # Signal 3: MACD crossover
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+        if macd_line.iloc[-1] > signal_line.iloc[-1] and macd_line.iloc[-2] <= signal_line.iloc[-2]:
+            bullish_confirmations += 1
+            confirmations += 1
+        elif macd_line.iloc[-1] < signal_line.iloc[-1] and macd_line.iloc[-2] >= signal_line.iloc[-2]:
+            bearish_confirmations += 1
+            confirmations += 1
+
+        last_close = close.iloc[-1]
+
+        if bullish_confirmations >= 2:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif bearish_confirmations >= 2:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 信号不足或置信度低，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

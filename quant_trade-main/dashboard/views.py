@@ -238,6 +238,7 @@ def api_stock_screen(request):
     start_date = data.get('start_date')
     end_date = data.get('end_date')
     params = data.get('params', {})
+    cross_screen = data.get('cross_screen', False)
 
     if not strategy_name:
         return JsonResponse({'error': 'strategy_name is required'}, status=400)
@@ -245,8 +246,11 @@ def api_stock_screen(request):
         # Default: all available daily stocks
         symbols = services.get_available_stocks(frequency)
 
-    # Limit to first 50 stocks for performance
-    symbols = symbols[:50]
+    if cross_screen:
+        # Cross-screen: scan all stocks with all strategies
+        results = services.run_cross_screening(symbols=symbols, frequency=frequency,
+                                                start_date=start_date, end_date=end_date)
+        return JsonResponse({'results': results})
 
     results = services.run_stock_screening(
         strategy_name=strategy_name,
@@ -256,4 +260,6 @@ def api_stock_screen(request):
         end_date=end_date,
         params=params,
     )
+    # Filter out hold signals
+    results = [r for r in results if r.get('latest_signal') != 'hold']
     return JsonResponse({'results': results})

@@ -299,6 +299,19 @@ class MaCompensatStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """补偿均线策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        ma5 = df['close'].rolling(5).mean()
+        ma10 = df['close'].rolling(10).mean()
+        ma20 = df['close'].rolling(20).mean()
+        for i in range(20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            # 多头排列
+            if ma5.iloc[i] > ma10.iloc[i] > ma20.iloc[i] and ma5.iloc[i-1] <= ma10.iloc[i-1]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            # 空头排列
+            elif ma5.iloc[i] < ma10.iloc[i] < ma20.iloc[i] and ma5.iloc[i-1] >= ma10.iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

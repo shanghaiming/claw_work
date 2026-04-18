@@ -16,6 +16,8 @@
 """
 
 import json
+import numpy as np
+import pandas as pd
 from dataclasses import dataclass
 from enum import Enum
 from typing import List, Tuple, Optional, Dict, Any
@@ -1278,66 +1280,58 @@ class ReversalTradingPsychologyStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于反转交易心理分析生成交易信号
+
+        基于反转交易心理分析生成交易信号，使用波动率和趋势稳定性作为心理代理
         """
-        # 评估心理状态
-        psychological_assessment = self.psychology_system.assess_psychological_state()
-        
-        # 获取评估结果
-        risk_tolerance = psychological_assessment.get('risk_tolerance', 0.5)
-        discipline_score = psychological_assessment.get('discipline_score', 0.5)
-        emotional_score = psychological_assessment.get('emotional_score', 0.5)
-        improvement_areas = psychological_assessment.get('improvement_areas', [])
-        
-        # 获取训练计划
-        training_plan = self.psychology_system.generate_training_plan()
-        training_focus = training_plan.get('training_focus', [])
-        
-        # 根据心理评估生成信号
-        if discipline_score >= 0.8 and emotional_score >= 0.8 and risk_tolerance >= 0.6:
-            # 心理状态优秀，高纪律和高情绪控制，买入信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
-        elif discipline_score <= 0.4 or emotional_score <= 0.4:
-            # 心理状态差，低纪律或低情绪控制，检查是否有高风险改进领域
-            has_high_risk_areas = any(
-                area in ['emotional_control', 'discipline', 'risk_management']
-                for area in improvement_areas
-            )
-            
-            if has_high_risk_areas:
-                # 有高风险改进领域，hold信号（暂停交易）
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 心理状态差但无高风险领域，卖出信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-        elif 'emotional_control' in training_focus or 'discipline' in training_focus:
-            # 需要情绪控制或纪律训练，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # Volatility (fear/greed proxy)
+        returns = close.pct_change()
+        vol = returns.rolling(20).std() * np.sqrt(252)
+        vol_mean = vol.rolling(50).mean()
+
+        # Trend consistency (discipline proxy)
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+        trend_consistent = ((close > ma_short) & (ma_short > ma_long)).rolling(10).mean()
+
+        # RSI (emotion proxy)
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        last_vol = vol.iloc[-1]
+        last_vol_mean = vol_mean.iloc[-1]
+        last_consistency = trend_consistent.iloc[-1] if not np.isnan(trend_consistent.iloc[-1]) else 0.5
+        last_rsi = rsi.iloc[-1]
+
+        last_close = close.iloc[-1]
+
+        # Discipline score
+        discipline = last_consistency
+        # Emotional score (inverse of volatility deviation)
+        emotional = 1.0 - min(abs(last_vol - last_vol_mean) / last_vol_mean, 1.0)
+        # Risk tolerance (moderate volatility)
+        risk_tolerance = 1.0 if last_vol < last_vol_mean * 1.5 else 0.3
+
+        if discipline >= 0.7 and emotional >= 0.6 and risk_tolerance >= 0.6 and last_rsi < 70:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif discipline <= 0.3 or emotional <= 0.3:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+        elif last_vol > last_vol_mean * 1.5:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+        elif ma_short.iloc[-1] > ma_long.iloc[-1] and last_rsi < 65:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
         else:
-            # 中等心理状态，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

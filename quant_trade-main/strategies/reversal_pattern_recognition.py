@@ -878,99 +878,65 @@ class ReversalPatternRecognitionStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于反转模式识别生成交易信号
+
+        基于反转模式识别生成交易信号，检测双底/双顶/头肩形态
         """
-        # 分析市场数据
-        analysis_result = self.pattern_system.analyze_market_data(self.data)
-        
-        # 获取检测到的模式
-        patterns_detected = analysis_result.get('patterns_detected', {})
-        total_patterns = analysis_result.get('total_patterns_detected', 0)
-        pattern_types = analysis_result.get('pattern_types_detected', [])
-        
-        # 获取系统状态
-        system_status = analysis_result.get('system_status', '')
-        
-        # 根据模式检测结果生成信号
-        if total_patterns >= 2 and system_status == 'active':
-            # 检测到多个模式且系统活跃
-            # 分析模式类型
-            has_double_top = 'double_top' in pattern_types
-            has_head_shoulders_top = 'head_shoulders_top' in pattern_types
-            has_double_bottom = 'double_bottom' in pattern_types
-            has_head_shoulders_bottom = 'head_shoulders_bottom' in pattern_types
-            
-            if has_double_top or has_head_shoulders_top:
-                # 顶部反转模式，卖出信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif has_double_bottom or has_head_shoulders_bottom:
-                # 底部反转模式，买入信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 其他模式，检查强度
-                pattern_strength = analysis_result.get('average_pattern_strength', 0)
-                if pattern_strength >= 0.7:
-                    # 强模式，买入信号（假设为看涨模式）
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    # 弱模式，hold信号
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-        elif total_patterns == 1:
-            # 检测到单个模式
-            confidence = analysis_result.get('average_confidence', 0)
-            if confidence >= 0.7:
-                # 高置信度，基于模式类型决定
-                first_pattern = pattern_types[0] if pattern_types else ''
-                if 'top' in first_pattern:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='sell',
-                        price=self.data['close'].iloc[-1]
-                    )
-                elif 'bottom' in first_pattern:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-            else:
-                # 低置信度，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        low = df['low']
+        high = df['high']
+
+        # Pattern detection using local extrema
+        def find_local_extrema(series, order=5):
+            peaks = []
+            troughs = []
+            for i in range(order, len(series) - order):
+                if all(series.iloc[i] >= series.iloc[i-j] for j in range(1, order+1)) and \
+                   all(series.iloc[i] >= series.iloc[i+j] for j in range(1, order+1)):
+                    peaks.append(i)
+                if all(series.iloc[i] <= series.iloc[i-j] for j in range(1, order+1)) and \
+                   all(series.iloc[i] <= series.iloc[i+j] for j in range(1, order+1)):
+                    troughs.append(i)
+            return peaks, troughs
+
+        peaks, troughs = find_local_extrema(close, order=3)
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss_d = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss_d + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        last_close = close.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+
+        # Check for double bottom pattern (last two troughs near same level)
+        if len(troughs) >= 2:
+            t1, t2 = troughs[-2], troughs[-1]
+            if abs(close.iloc[t1] - close.iloc[t2]) / close.iloc[t1] < 0.03 and last_rsi < 45:
+                self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+                return self.signals
+
+        # Check for double top pattern
+        if len(peaks) >= 2:
+            p1, p2 = peaks[-2], peaks[-1]
+            if abs(close.iloc[p1] - close.iloc[p2]) / close.iloc[p1] < 0.03 and last_rsi > 55:
+                self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+                return self.signals
+
+        # Fallback: RSI-based reversal
+        if last_rsi < 30:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif last_rsi > 70:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 无模式检测，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

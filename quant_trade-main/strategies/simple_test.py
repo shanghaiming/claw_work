@@ -42,6 +42,16 @@ class SimpleTestStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """简单测试策略 - 基于MA交叉"""
+        import numpy as np
+        df = self.data
+        ma5 = df['close'].rolling(5).mean()
+        ma20 = df['close'].rolling(20).mean()
+        for i in range(20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            if ma5.iloc[i] > ma20.iloc[i] and ma5.iloc[i-1] <= ma20.iloc[i-1]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif ma5.iloc[i] < ma20.iloc[i] and ma5.iloc[i-1] >= ma20.iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

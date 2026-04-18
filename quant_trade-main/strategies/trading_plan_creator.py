@@ -1181,78 +1181,57 @@ class TradingPlanCreatorStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于交易计划制定生成交易信号
+
+        基于交易计划制定生成交易信号，使用趋势/支撑阻力/RSI制定计划
         """
-        # 创建交易计划
-        plan = self.creator.create_comprehensive_plan(self.data)
-        
-        # 获取计划建议
-        plan_recommendations = plan.get('recommendations', [])
-        execution_checklist = plan.get('execution_checklist', [])
-        
-        # 根据计划建议生成信号
-        high_priority_recommendations = [
-            r for r in plan_recommendations if r.get('priority') == 'high'
-        ]
-        
-        if high_priority_recommendations:
-            # 有高优先级建议，检查具体内容
-            for rec in high_priority_recommendations:
-                rec_text = rec.get('recommendation', '').lower()
-                if any(word in rec_text for word in ['buy', 'long', '做多', '买入']):
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                    break
-                elif any(word in rec_text for word in ['sell', 'short', '做空', '卖出']):
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='sell',
-                        price=self.data['close'].iloc[-1]
-                    )
-                    break
-                else:
-                    # 其他高优先级建议，hold信号
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        high = df['high']
+        low = df['low']
+
+        # Trend
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+        trend_up = ma_short.iloc[-1] > ma_long.iloc[-1]
+
+        # Support/resistance
+        support = low.rolling(20).min()
+        resistance = high.rolling(20).max()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # MACD
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+
+        last_close = close.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+
+        near_support = last_close <= support.iloc[-1] * 1.02
+        near_resistance = last_close >= resistance.iloc[-1] * 0.98
+
+        if trend_up and macd_line.iloc[-1] > signal_line.iloc[-1] and last_rsi < 70:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif not trend_up and macd_line.iloc[-1] < signal_line.iloc[-1] and last_rsi > 30:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+        elif near_support and last_rsi < 35:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif near_resistance and last_rsi > 65:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 没有高优先级建议，检查执行清单
-            # 如果执行清单中有具体的交易行动，转换为信号
-            for phase in execution_checklist:
-                phase_name = phase.get('phase', '').lower()
-                if 'entry' in phase_name or 'execute' in phase_name:
-                    # 执行阶段，检查是否有具体交易建议
-                    items = phase.get('items', [])
-                    for item in items:
-                        item_text = item.get('item', '').lower()
-                        if any(word in item_text for word in ['buy', 'long', '做多', '买入']):
-                            self._record_signal(
-                                timestamp=self.data.index[-1],
-                                action='buy',
-                                price=self.data['close'].iloc[-1]
-                            )
-                            return self.signals
-                        elif any(word in item_text for word in ['sell', 'short', '做空', '卖出']):
-                            self._record_signal(
-                                timestamp=self.data.index[-1],
-                                action='sell',
-                                price=self.data['close'].iloc[-1]
-                            )
-                            return self.signals
-            
-            # 默认hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

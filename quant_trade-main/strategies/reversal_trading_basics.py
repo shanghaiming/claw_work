@@ -1076,81 +1076,64 @@ class ReversalTradingBasicsStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于反转交易基础系统生成交易信号
+
+        基于反转交易基础系统生成交易信号，使用MA/RSI/MACD检测反转
         """
-        # 分析市场数据
-        analysis_result = self.reversal_system.analyze_market_data(self.data)
-        
-        # 获取检测到的信号
-        signals_detected = analysis_result.get('signals_detected', {})
-        total_signals = signals_detected.get('total', 0)
-        
-        # 获取置信度等级
-        confidence_levels = analysis_result.get('confidence_levels', [])
-        
-        # 获取交易设置
-        trade_setup_generated = analysis_result.get('trade_setup_generated', False)
-        setup_evaluation = analysis_result.get('setup_evaluation', {})
-        
-        # 根据分析结果生成信号
-        if trade_setup_generated and total_signals >= 3:
-            # 有交易设置且信号充足
-            recommendation = setup_evaluation.get('recommendation', '').lower()
-            
-            if 'buy' in recommendation or '做多' in recommendation or '买入' in recommendation:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif 'sell' in recommendation or '做空' in recommendation or '卖出' in recommendation:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 默认基于风险回报比决定
-                risk_reward_ratio = setup_evaluation.get('risk_reward_ratio', 0)
-                if risk_reward_ratio >= 2.0:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-        elif total_signals >= 2:
-            # 有信号但无完整交易设置
-            # 检查置信度
-            avg_confidence = np.mean([c.get('confidence', 0) for c in confidence_levels])
-            if avg_confidence >= 0.7:
-                # 高置信度，买入信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 低置信度，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # MA crossover
+        ma_short = close.rolling(5).mean()
+        ma_long = close.rolling(20).mean()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # MACD
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+
+        # Reversal signals
+        bullish_signals = 0
+        bearish_signals = 0
+
+        # RSI reversal
+        if rsi.iloc[-1] < 30:
+            bullish_signals += 1
+        elif rsi.iloc[-1] > 70:
+            bearish_signals += 1
+
+        # MA crossover
+        if ma_short.iloc[-1] > ma_long.iloc[-1] and ma_short.iloc[-2] <= ma_long.iloc[-2]:
+            bullish_signals += 1
+        elif ma_short.iloc[-1] < ma_long.iloc[-1] and ma_short.iloc[-2] >= ma_long.iloc[-2]:
+            bearish_signals += 1
+
+        # MACD crossover
+        if macd_line.iloc[-1] > signal_line.iloc[-1] and macd_line.iloc[-2] <= signal_line.iloc[-2]:
+            bullish_signals += 1
+        elif macd_line.iloc[-1] < signal_line.iloc[-1] and macd_line.iloc[-2] >= signal_line.iloc[-2]:
+            bearish_signals += 1
+
+        last_close = close.iloc[-1]
+
+        if bullish_signals >= 2:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif bearish_signals >= 2:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 信号不足，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

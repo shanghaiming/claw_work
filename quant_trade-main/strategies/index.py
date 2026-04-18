@@ -308,12 +308,37 @@ class IndexStrategy(BaseStrategy):
         self.name = "IndexStrategy"
         self.description = "基于index的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
-        """生成交易信号"""
-        # 信号生成逻辑
-        return df
+    def generate_signals(self):
+        """RSI(14) with Bollinger Band confirmation. Buy RSI<30 + lower BB, sell RSI>70 + upper BB."""
+        df = self.data
+
+        if len(df) < 30:
+            return self.signals
+
+        close = df['close']
+        # RSI(14)
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0.0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0.0)).rolling(14).mean()
+        rs = gain / loss.replace(0, float('nan'))
+        rsi = 100 - (100 / (1 + rs))
+
+        # Bollinger Bands (20, 2)
+        bb_mid = close.rolling(20).mean()
+        bb_std = close.rolling(20).std()
+        bb_upper = bb_mid + 2 * bb_std
+        bb_lower = bb_mid - 2 * bb_std
+
+        for i in range(20, len(df)):
+            price = float(close.iloc[i])
+            r = rsi.iloc[i]
+            if pd.isna(r):
+                continue
+            # Buy: RSI crosses below 30 AND price touches/crosses lower BB
+            if (r < 30 and price <= bb_lower.iloc[i]):
+                self._record_signal(df.index[i], 'buy', price=price)
+            # Sell: RSI crosses above 70 AND price touches/crosses upper BB
+            elif (r > 70 and price >= bb_upper.iloc[i]):
+                self._record_signal(df.index[i], 'sell', price=price)
+
+        return self.signals

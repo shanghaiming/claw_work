@@ -1064,6 +1064,22 @@ class Zone4Strategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """四区策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        window = 50
+        for i in range(window, len(df)):
+            recent_high = df['high'].iloc[i-window:i].max()
+            recent_low = df['low'].iloc[i-window:i].min()
+            rng = recent_high - recent_low
+            if rng < 1e-10:
+                continue
+            q1 = recent_low + rng * 0.25
+            q3 = recent_low + rng * 0.75
+            price = float(df['close'].iloc[i])
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            if price < q1:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif price > q3:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

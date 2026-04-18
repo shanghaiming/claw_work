@@ -646,12 +646,87 @@ class WaveDtwStrategy(BaseStrategy):
         self.name = "WaveDtwStrategy"
         self.description = "基于wave_dtw的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
-        """生成交易信号"""
-        # 信号生成逻辑
-        return df
+    def generate_signals(self):
+        """DTW pattern matching with 20-bar template, signal on high similarity."""
+        df = self.data
+
+        if len(df) < 60:
+            return self.signals
+
+        try:
+            from dtaidistance import dtw
+        except ImportError:
+            # Fallback: use simple correlation-based pattern matching
+            return self._fallback_pattern_match(df)
+
+        window = 20
+        closes = df['close'].values
+        n = len(closes)
+
+        # Create bullish and bearish templates
+        bullish_template = np.linspace(-1, 1, window)  # ascending
+        bearish_template = np.linspace(1, -1, window)   # descending
+
+        similarity_threshold = 0.75
+        min_hold = 10
+        last_signal_idx = -min_hold
+
+        for i in range(window, n):
+            if i - last_signal_idx < min_hold:
+                continue
+            segment = closes[i - window:i]
+            # Normalize segment
+            seg_std = np.std(segment)
+            if seg_std < 1e-10:
+                continue
+            norm_seg = (segment - np.mean(segment)) / seg_std
+
+            # Compute DTW similarity (convert distance to similarity)
+            dist_bull = dtw.distance(norm_seg, bullish_template)
+            dist_bear = dtw.distance(norm_seg, bearish_template)
+            max_dist = np.sqrt(2 * window)  # theoretical max
+            sim_bull = 1.0 - min(dist_bull / max_dist, 1.0)
+            sim_bear = 1.0 - min(dist_bear / max_dist, 1.0)
+
+            if sim_bull > similarity_threshold and sim_bull > sim_bear:
+                self._record_signal(df.index[i], 'buy', price=float(closes[i]))
+                last_signal_idx = i
+            elif sim_bear > similarity_threshold and sim_bear > sim_bull:
+                self._record_signal(df.index[i], 'sell', price=float(closes[i]))
+                last_signal_idx = i
+
+        return self.signals
+
+    def _fallback_pattern_match(self, df):
+        """Fallback using correlation-based pattern matching when dtaidistance is unavailable."""
+        window = 20
+        closes = df['close'].values
+        n = len(closes)
+
+        bullish_template = np.linspace(-1, 1, window)
+        bearish_template = np.linspace(1, -1, window)
+
+        similarity_threshold = 0.7
+        min_hold = 10
+        last_signal_idx = -min_hold
+
+        for i in range(window, n):
+            if i - last_signal_idx < min_hold:
+                continue
+            segment = closes[i - window:i]
+            seg_std = np.std(segment)
+            if seg_std < 1e-10:
+                continue
+            norm_seg = (segment - np.mean(segment)) / seg_std
+
+            corr_bull = np.corrcoef(norm_seg, bullish_template)[0, 1]
+            corr_bear = np.corrcoef(norm_seg, bearish_template)[0, 1]
+
+            if not np.isnan(corr_bull) and corr_bull > similarity_threshold and corr_bull > corr_bear:
+                self._record_signal(df.index[i], 'buy', price=float(closes[i]))
+                last_signal_idx = i
+            elif not np.isnan(corr_bear) and corr_bear > similarity_threshold and corr_bear > corr_bull:
+                self._record_signal(df.index[i], 'sell', price=float(closes[i]))
+                last_signal_idx = i
+
+        return self.signals

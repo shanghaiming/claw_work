@@ -253,6 +253,31 @@ class KlineStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """K线形态策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        o, h, l, c = df['open'], df['high'], df['low'], df['close']
+        body = abs(c - o)
+        total_range = h - l
+        upper_shadow = h - np.maximum(o, c)
+        lower_shadow = np.minimum(o, c) - l
+
+        for i in range(1, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            tr = total_range.iloc[i]
+            if tr < 1e-10:
+                continue
+            # 锤子线(看涨)
+            if lower_shadow.iloc[i] > 2 * body.iloc[i] and upper_shadow.iloc[i] < 0.1 * tr:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            # 流星线(看跌)
+            elif upper_shadow.iloc[i] > 2 * body.iloc[i] and lower_shadow.iloc[i] < 0.1 * tr:
+                self._record_signal(df.index[i], 'sell', sym, price)
+            # 看涨吞没
+            elif i > 0 and c.iloc[i-1] < o.iloc[i-1] and c.iloc[i] > o.iloc[i] and c.iloc[i] > o.iloc[i-1] and o.iloc[i] < c.iloc[i-1]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            # 看跌吞没
+            elif i > 0 and c.iloc[i-1] > o.iloc[i-1] and c.iloc[i] < o.iloc[i] and c.iloc[i] < o.iloc[i-1] and o.iloc[i] > c.iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

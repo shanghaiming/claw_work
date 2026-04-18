@@ -220,9 +220,6 @@ class CommonErrorsAvoidanceSystem:
             'discipline': self._monitor_discipline_errors
         }
         
-        # 初始化默认错误库
-        self._initialize_default_errors()
-        
         # 统计信息
         self.system_statistics = {
             'total_errors_defined': 0,
@@ -233,7 +230,10 @@ class CommonErrorsAvoidanceSystem:
             'error_recurrence_rate': 0.0,
             'improvement_rate': 0.0
         }
-        
+
+        # 初始化默认错误库
+        self._initialize_default_errors()
+
         # 如果提供了存储路径，尝试加载现有数据
         if storage_path:
             self._load_data_from_storage()
@@ -2268,13 +2268,15 @@ class CommonErrorsAvoidanceSystemStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        error_tolerance = self.params.get('error_tolerance', 'low')
-        include_prevention = self.params.get('include_prevention', True)
-        
+        storage_path = self.params.get('storage_path', None)
+        enable_realtime = self.params.get('enable_realtime_detection', True)
+        enable_learning = self.params.get('enable_learning_feedback', True)
+
         # 创建常见错误与避免系统实例
         self.error_system = CommonErrorsAvoidanceSystem(
-            error_tolerance=error_tolerance,
-            include_prevention=include_prevention
+            storage_path=storage_path,
+            enable_realtime_detection=enable_realtime,
+            enable_learning_feedback=enable_learning
         )
         
         # 初始化样本错误记录（实际使用中应提供真实错误数据）
@@ -2299,54 +2301,37 @@ class CommonErrorsAvoidanceSystemStrategy(BaseStrategy):
         基于常见错误避免系统生成交易信号
         """
         # 获取错误分析报告
-        error_report = self.error_system.get_error_analysis_report()
-        
+        error_report = self.error_system.get_error_analysis()
+
         # 分析错误状态
-        error_summary = error_report.get('error_summary', {})
-        error_level = error_summary.get('overall_error_level', 'unknown').lower()
-        error_count = error_summary.get('total_active_errors', 0)
-        
+        stats = error_report.get('system_statistics', {})
+        total_errors = stats.get('total_errors_defined', 0)
+        total_occurrences = stats.get('total_occurrences', 0)
+        error_count = error_report.get('total_errors_defined', total_errors)
+
         # 获取建议行动
         recommendations = error_report.get('recommendations', [])
-        
+
         # 根据错误状态生成信号
-        if error_level == 'low' and error_count <= 2:
-            # 错误少且级别低，买入信号
+        if total_occurrences <= 2:
             self._record_signal(
                 timestamp=self.data.index[-1],
                 action='buy',
                 price=self.data['close'].iloc[-1]
             )
-        elif error_level in ['high', 'critical'] or error_count >= 5:
-            # 错误多或级别高，检查是否有强制停止建议
-            has_stop_trading = any(
-                'stop_trading' in rec.get('action', '').lower() or 
-                '暂停交易' in rec.get('action', '')
-                for rec in recommendations
+        elif error_count >= 5:
+            self._record_signal(
+                timestamp=self.data.index[-1],
+                action='sell',
+                price=self.data['close'].iloc[-1]
             )
-            
-            if has_stop_trading:
-                # 有暂停交易建议，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 错误多但无暂停建议，卖出信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
         else:
-            # 中等错误状态，hold信号
             self._record_signal(
                 timestamp=self.data.index[-1],
                 action='hold',
                 price=self.data['close'].iloc[-1]
             )
-        
+
         return self.signals
 
 

@@ -290,12 +290,75 @@ class FftStrategy(BaseStrategy):
         self.name = "FftStrategy"
         self.description = "基于fft的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
-        """生成交易信号"""
-        # 信号生成逻辑
-        return df
+    def generate_signals(self):
+        """FFT cycle phase detection - buy at troughs, sell at peaks, min 10 bar hold."""
+        df = self.data
+
+        if len(df) < 60:
+            return self.signals
+
+        try:
+            from scipy import signal as scipy_signal
+        except ImportError:
+            return self.signals
+
+        prices = df['close'].values.copy()
+        n = len(prices)
+
+        # Rolling FFT with a window to detect local cycle phase
+        fft_window = min(120, n)
+        detrended = scipy_signal.detrend(prices[-fft_window:], type='linear')
+        demeaned = detrended - np.mean(detrended)
+        window = scipy_signal.windows.hann(fft_window)
+        windowed_signal = demeaned * window
+        fft_result = np.fft.rfft(windowed_signal)
+        freqs = np.fft.rfftfreq(fft_window, d=1)
+
+        # Find dominant cycle
+        psd = np.abs(fft_result) ** 2
+        peaks, properties = scipy_signal.find_peaks(
+            psd[1:], prominence=np.quantile(psd[1:], 0.90)
+        )
+
+        if len(peaks) == 0:
+            return self.signals
+
+        dominant_idx = peaks[np.argmax(psd[1:][peaks])] + 1
+        dominant_period = int(round(1.0 / freqs[dominant_idx]))
+        if dominant_period < 5:
+            dominant_period = 5
+
+        # Reconstruct dominant cycle signal
+        amp = np.abs(fft_result[dominant_idx]) * 2 / fft_window
+        phase = np.angle(fft_result[dominant_idx])
+        cycle = amp * np.cos(
+            2 * np.pi * freqs[dominant_idx] * np.arange(n) + phase
+        )
+
+        # Derivative of cycle: positive = rising (cycle trough), negative = falling (cycle peak)
+        cycle_deriv = np.diff(cycle)
+
+        min_hold = 10
+        last_signal_idx = -min_hold  # allow first signal
+
+        for i in range(max(1, n - fft_window), len(cycle_deriv)):
+            di = i  # index into cycle_deriv
+            if di < 1:
+                continue
+            bars_since_last = i - last_signal_idx
+            # Buy: cycle derivative crosses from negative to positive (trough)
+            if (cycle_deriv[di] > 0 and cycle_deriv[di - 1] <= 0
+                    and bars_since_last >= min_hold):
+                self._record_signal(
+                    df.index[i], 'buy', price=float(df['close'].iloc[i])
+                )
+                last_signal_idx = i
+            # Sell: cycle derivative crosses from positive to negative (peak)
+            elif (cycle_deriv[di] < 0 and cycle_deriv[di - 1] >= 0
+                    and bars_since_last >= min_hold):
+                self._record_signal(
+                    df.index[i], 'sell', price=float(df['close'].iloc[i])
+                )
+                last_signal_idx = i
+
+        return self.signals

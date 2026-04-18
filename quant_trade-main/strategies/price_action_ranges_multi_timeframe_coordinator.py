@@ -664,45 +664,56 @@ class PriceActionRangesMultiTimeframeCoordinatorStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于多重时间框架协调生成交易信号
+
+        基于多重时间框架协调生成交易信号，使用短/中/长MA对齐度
         """
-        # 分析时间框架一致性
-        analysis_result = self.coordinator.analyze_timeframe_alignment(self.data)
-        
-        # 获取共识信号
-        consensus_signal = analysis_result.get('consensus_signal', {})
-        signal_type = consensus_signal.get('signal', '').lower()
-        signal_confidence = consensus_signal.get('confidence', 0)
-        
-        # 根据共识信号生成交易信号
-        if signal_confidence >= 0.7:
-            if 'buy' in signal_type or 'long' in signal_type:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif 'sell' in signal_type or 'short' in signal_type:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # Multi-timeframe proxy: different MA periods
+        ma5 = close.rolling(5).mean()
+        ma10 = close.rolling(10).mean()
+        ma20 = close.rolling(20).mean()
+        ma50 = close.rolling(50).mean()
+
+        # Alignment: all MAs stacked properly
+        bullish_stack = (ma5.iloc[-1] > ma10.iloc[-1] > ma20.iloc[-1] > ma50.iloc[-1])
+        bearish_stack = (ma5.iloc[-1] < ma10.iloc[-1] < ma20.iloc[-1] < ma50.iloc[-1])
+
+        # MACD confirmation
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss_d = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss_d + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        last_close = close.iloc[-1]
+
+        if bullish_stack and macd_line.iloc[-1] > signal_line.iloc[-1]:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif bearish_stack and macd_line.iloc[-1] < signal_line.iloc[-1]:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 低信心度，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            # Check partial alignment
+            short_align = ma5.iloc[-1] > ma10.iloc[-1]
+            long_align = ma20.iloc[-1] > ma50.iloc[-1]
+            if short_align and long_align:
+                self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+            elif not short_align and not long_align:
+                self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+            else:
+                self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

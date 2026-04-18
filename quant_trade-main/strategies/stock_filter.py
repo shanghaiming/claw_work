@@ -1815,19 +1815,26 @@ if __name__ == "__main__":
 
 class StockFilterStrategy(BaseStrategy):
     """基于stock_filter的策略"""
-    
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        # 初始化代码
-        self.name = "StockFilterStrategy"
-        self.description = "基于stock_filter的策略"
-        
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
+
+    def __init__(self, data: pd.DataFrame, params: dict = None):
+        super().__init__(data, params)
+
+    def generate_signals(self):
         """生成交易信号"""
-        # 信号生成逻辑
-        return df
+        df = self.data
+        if len(df) < 2:
+            return self.signals
+
+        close = df['close']
+        ma_short = close.rolling(5).mean()
+        ma_long = close.rolling(20).mean()
+
+        for i in range(1, len(df)):
+            if pd.isna(ma_long.iloc[i]):
+                continue
+            if ma_short.iloc[i] > ma_long.iloc[i] and ma_short.iloc[i-1] <= ma_long.iloc[i-1]:
+                self._record_signal(timestamp=df.index[i], action='buy', price=float(close.iloc[i]))
+            elif ma_short.iloc[i] < ma_long.iloc[i] and ma_short.iloc[i-1] >= ma_long.iloc[i-1]:
+                self._record_signal(timestamp=df.index[i], action='sell', price=float(close.iloc[i]))
+
+        return self.signals

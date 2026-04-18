@@ -464,55 +464,56 @@ class PositionSizingAdjusterStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于仓位规模调整生成交易信号
+
+        基于仓位规模调整生成交易信号，使用ATR和波动率确定仓位方向
         """
-        # 计算仓位规模建议
-        # 注意: 仓位调整器需要交易信号信息，这里使用模拟数据
-        simulated_trade = {
-            'entry_price': self.data['close'].iloc[-1],
-            'stop_loss': self.data['close'].iloc[-1] * 0.98,
-            'take_profit': self.data['close'].iloc[-1] * 1.04,
-            'confidence': 0.7,
-            'volatility': self.data['close'].pct_change().std() * np.sqrt(252),
-            'market_condition': 'normal'
-        }
-        
-        sizing_result = self.adjuster.calculate_position_size(simulated_trade)
-        
-        # 根据仓位建议生成信号
-        recommendation = sizing_result.get('recommendation', {})
-        action = recommendation.get('action', 'hold').lower()
-        
-        if action == 'increase_position':
-            # 增加仓位建议，转换为买入信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
-        elif action == 'reduce_position':
-            # 减少仓位建议，转换为卖出信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='sell',
-                price=self.data['close'].iloc[-1]
-            )
-        elif action == 'no_trade':
-            # 不交易建议，转换为hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        high = df['high']
+        low = df['low']
+
+        # ATR calculation for position sizing context
+        tr = pd.DataFrame({
+            'hl': high - low,
+            'hc': (high - close.shift(1)).abs(),
+            'lc': (low - close.shift(1)).abs()
+        }).max(axis=1)
+        atr = tr.rolling(14).mean()
+        atr_pct = atr / close
+
+        # Volatility regime
+        vol = close.pct_change().rolling(20).std() * np.sqrt(252)
+
+        # Trend detection
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        last_atr_pct = atr_pct.iloc[-1]
+        last_vol = vol.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+
+        # Position sizing logic: low vol + trend up = buy, high vol + trend down = sell
+        if last_vol < 0.3 and ma_short.iloc[-1] > ma_long.iloc[-1] and last_rsi < 70:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(close.iloc[-1]))
+        elif last_vol > 0.4 or (ma_short.iloc[-1] < ma_long.iloc[-1] and last_rsi > 30):
+            if ma_short.iloc[-1] < ma_long.iloc[-1]:
+                self._record_signal(timestamp=df.index[-1], action='sell', price=float(close.iloc[-1]))
+            else:
+                self._record_signal(timestamp=df.index[-1], action='hold', price=float(close.iloc[-1]))
         else:
-            # 默认hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(close.iloc[-1]))
+
         return self.signals
 
 

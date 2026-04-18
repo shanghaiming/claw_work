@@ -448,6 +448,23 @@ class RectangleStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """矩形整理策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        window = 20
+        for i in range(window, len(df)):
+            recent = df['high'].iloc[i-window:i]
+            resistance = recent.max()
+            support = df['low'].iloc[i-window:i].min()
+            price = float(df['close'].iloc[i])
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            rng = resistance - support
+            if rng < 1e-10:
+                continue
+            # 突破阻力
+            if price > resistance * 1.01:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            # 跌破支撑
+            elif price < support * 0.99:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

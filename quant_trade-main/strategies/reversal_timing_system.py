@@ -991,71 +991,74 @@ class ReversalTimingSystemStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于反转交易时机生成交易信号
+
+        基于反转交易时机生成交易信号，使用MACD/RSI/动量检测时机窗口
         """
-        # 分析市场数据
-        analysis_result = self.timing_system.analyze_market_data(self.data)
-        
-        # 获取时机信号
-        timing_signals = analysis_result.get('timing_signals_detected', 0)
-        timing_windows = analysis_result.get('timing_windows_analyzed', 0)
-        
-        # 获取系统状态
-        system_status = analysis_result.get('system_status', '')
-        trade_setup_generated = analysis_result.get('trade_setup_generated', False)
-        
-        # 根据时机分析生成信号
-        if trade_setup_generated and timing_signals >= 2:
-            # 有交易设置且时机信号充足
-            window_qualities = analysis_result.get('window_qualities', [])
-            if 'optimal' in window_qualities or 'good' in window_qualities:
-                # 有优质时机窗口，买入信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 时机窗口一般，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
-        elif timing_signals >= 1 and timing_windows >= 1:
-            # 有时机信号和窗口分析
-            window_qualities = analysis_result.get('window_qualities', [])
-            if len(window_qualities) > 0:
-                # 有时机质量评估，基于最佳质量决定
-                best_quality = window_qualities[0]
-                if best_quality in ['optimal', 'good']:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-            else:
-                # 无质量评估，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # Timing indicators
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # MACD
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+        macd_histogram = macd_line - signal_line
+
+        # Momentum
+        momentum = close.pct_change(10)
+
+        # Bollinger Band width (volatility squeeze = timing window)
+        bb_ma = close.rolling(20).mean()
+        bb_std = close.rolling(20).std()
+        bb_width = (bb_std * 2) / bb_ma
+
+        last_rsi = rsi.iloc[-1]
+        last_momentum = momentum.iloc[-1]
+        last_macd_hist = macd_histogram.iloc[-1]
+        prev_macd_hist = macd_histogram.iloc[-2]
+        last_bb_width = bb_width.iloc[-1]
+        avg_bb_width = bb_width.rolling(50).mean().iloc[-1]
+
+        last_close = close.iloc[-1]
+
+        # Timing signals
+        timing_score = 0
+
+        # Signal 1: MACD histogram turning positive from negative (bullish timing)
+        if last_macd_hist > 0 and prev_macd_hist <= 0:
+            timing_score += 2
+        elif last_macd_hist < 0 and prev_macd_hist >= 0:
+            timing_score -= 2
+
+        # Signal 2: RSI at extreme + turning
+        if last_rsi < 30:
+            timing_score += 1
+        elif last_rsi > 70:
+            timing_score -= 1
+
+        # Signal 3: Volatility squeeze (low BB width) = timing window
+        if last_bb_width < avg_bb_width * 0.7:
+            timing_score += 1 if last_momentum > 0 else -1
+
+        if timing_score >= 2:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif timing_score <= -2:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 时机信号不足，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

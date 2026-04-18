@@ -44,12 +44,30 @@ class UntitledStrategy(BaseStrategy):
         self.name = "UntitledStrategy"
         self.description = "基于Untitled的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
-        """生成交易信号"""
-        # 信号生成逻辑
-        return df
+    def generate_signals(self):
+        """MA(5)/MA(20) crossover with MACD confirmation."""
+        df = self.data
+
+        if len(df) < 30:
+            return self.signals
+
+        ma5 = df['close'].rolling(5).mean()
+        ma20 = df['close'].rolling(20).mean()
+        # MACD
+        ema12 = df['close'].ewm(span=12, adjust=False).mean()
+        ema26 = df['close'].ewm(span=26, adjust=False).mean()
+        dif = ema12 - ema26
+        dea = dif.ewm(span=9, adjust=False).mean()
+        macd_hist = 2 * (dif - dea)
+
+        for i in range(26, len(df)):
+            # MA crossover: buy when MA5 crosses above MA20
+            if (ma5.iloc[i] > ma20.iloc[i] and ma5.iloc[i - 1] <= ma20.iloc[i - 1]
+                    and macd_hist.iloc[i] > 0):
+                self._record_signal(df.index[i], 'buy', price=float(df['close'].iloc[i]))
+            # MA crossover: sell when MA5 crosses below MA20
+            elif (ma5.iloc[i] < ma20.iloc[i] and ma5.iloc[i - 1] >= ma20.iloc[i - 1]
+                    and macd_hist.iloc[i] < 0):
+                self._record_signal(df.index[i], 'sell', price=float(df['close'].iloc[i]))
+
+        return self.signals

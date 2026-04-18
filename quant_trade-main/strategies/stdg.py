@@ -253,6 +253,30 @@ class StdgStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """Pivot transition strategy - buy when price crosses above pivot_mid from below,
+        sell when crosses below from above."""
+        import numpy as np
+        df = self.data
+        # Calculate pivot mid
+        pivot_high = df['high'].rolling(10).max()
+        pivot_low = df['low'].rolling(10).min()
+        pivot_mid = (pivot_high + pivot_low) / 2
+
+        for i in range(20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            prev_price = float(df['close'].iloc[i - 1])
+            mid = pivot_mid.iloc[i]
+            prev_mid = pivot_mid.iloc[i - 1]
+
+            if pd.isna(mid) or pd.isna(prev_mid):
+                continue
+
+            # Buy: price crosses above pivot_mid from below
+            if price > mid and prev_price <= prev_mid:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            # Sell: price crosses below pivot_mid from above
+            elif price < mid and prev_price >= prev_mid:
+                self._record_signal(df.index[i], 'sell', sym, price)
+
         return self.signals

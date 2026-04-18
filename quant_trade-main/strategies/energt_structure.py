@@ -1198,6 +1198,23 @@ class EnergtStructureStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """能量结构策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        ma5 = df['close'].rolling(5).mean()
+        ma20 = df['close'].rolling(20).mean()
+        vol_ma5 = df['volume'].rolling(5).mean() if 'volume' in df.columns else None
+
+        for i in range(20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            buy_cond = ma5.iloc[i] > ma20.iloc[i] and df['close'].iloc[i] > ma5.iloc[i]
+            sell_cond = ma5.iloc[i] < ma20.iloc[i] and df['close'].iloc[i] < ma5.iloc[i]
+            if vol_ma5 is not None:
+                buy_cond = buy_cond and df['volume'].iloc[i] > vol_ma5.iloc[i]
+                sell_cond = sell_cond and df['volume'].iloc[i] > vol_ma5.iloc[i]
+            if buy_cond:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif sell_cond:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

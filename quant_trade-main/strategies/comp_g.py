@@ -386,6 +386,31 @@ class CompGStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """Momentum state machine - only signal when momentum crosses threshold from opposite side."""
+        import numpy as np
+        df = self.data
+        # Compute blended momentum
+        mom5 = df['close'].pct_change(5)
+        mom10 = df['close'].pct_change(10)
+        energy = mom5 * 0.6 + mom10 * 0.4
+
+        threshold = 0.02
+        state = 'flat'  # 'flat', 'long', 'short'
+
+        for i in range(20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            e = energy.iloc[i]
+            if pd.isna(e):
+                continue
+
+            if e > threshold and state != 'long':
+                self._record_signal(df.index[i], 'buy', sym, price)
+                state = 'long'
+            elif e < -threshold and state != 'short':
+                self._record_signal(df.index[i], 'sell', sym, price)
+                state = 'short'
+            elif abs(e) <= threshold:
+                state = 'flat'
+
         return self.signals

@@ -189,12 +189,36 @@ class WaveletStrategy(BaseStrategy):
         self.name = "WaveletStrategy"
         self.description = "基于wavelet的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
-        """生成交易信号"""
-        # 信号生成逻辑
-        return df
+    def generate_signals(self):
+        """Wavelet smoothed trend crossover - signal when level-3 smoothed trend changes direction."""
+        df = self.data
+
+        if len(df) < 30:
+            return self.signals
+
+        prices = df['close'].values.copy()
+
+        try:
+            import pywt
+            # Decompose at level 3, reconstruct the smooth approximation (trend)
+            coeffs = pywt.wavedec(prices, 'db4', level=3)
+            # Zero out all detail coefficients, keep only approximation
+            smooth_coeffs = [coeffs[0]] + [np.zeros_like(c) for c in coeffs[1:]]
+            smoothed = pywt.waverec(smooth_coeffs, 'db4')
+            smoothed = smoothed[:len(prices)]
+        except (ImportError, ValueError):
+            # Fallback: use 30-day SMA as smooth trend
+            smoothed = df['close'].rolling(30, min_periods=1).mean().values
+
+        # Signal on crossover of smoothed trend direction change
+        for i in range(2, len(df)):
+            if i >= len(smoothed):
+                break
+            # Smoothed trend was falling, now rising -> buy
+            if smoothed[i] > smoothed[i - 1] and smoothed[i - 1] <= smoothed[i - 2]:
+                self._record_signal(df.index[i], 'buy', price=float(df['close'].iloc[i]))
+            # Smoothed trend was rising, now falling -> sell
+            elif smoothed[i] < smoothed[i - 1] and smoothed[i - 1] >= smoothed[i - 2]:
+                self._record_signal(df.index[i], 'sell', price=float(df['close'].iloc[i]))
+
+        return self.signals

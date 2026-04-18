@@ -564,6 +564,20 @@ class ReflectWaveStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """波浪反射策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        ma5 = df['close'].rolling(5).mean()
+        ma20 = df['close'].rolling(20).mean()
+        # 波动率
+        vol = df['close'].pct_change().rolling(20).std()
+        vol_ma = vol.rolling(10).mean()
+        for i in range(20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            # 低波动 + MA金叉 = 买入
+            if ma5.iloc[i] > ma20.iloc[i] and ma5.iloc[i-1] <= ma20.iloc[i-1] and vol.iloc[i] < vol_ma.iloc[i]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif ma5.iloc[i] < ma20.iloc[i] and ma5.iloc[i-1] >= ma20.iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

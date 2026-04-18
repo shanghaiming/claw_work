@@ -751,6 +751,18 @@ class ZonePivotStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """枢轴区间策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        # 计算枢轴点
+        pivot = (df['high'].shift(1) + df['low'].shift(1) + df['close'].shift(1)) / 3
+        r1 = 2 * pivot - df['low'].shift(1)
+        s1 = 2 * pivot - df['high'].shift(1)
+        for i in range(1, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            if price > r1.iloc[i] and df['close'].iloc[i-1] <= r1.iloc[i-1]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif price < s1.iloc[i] and df['close'].iloc[i-1] >= s1.iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

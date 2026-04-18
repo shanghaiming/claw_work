@@ -364,12 +364,36 @@ class 仓位分析Strategy(BaseStrategy):
         self.name = "仓位分析Strategy"
         self.description = "基于仓位分析的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
-        """生成交易信号"""
-        # 信号生成逻辑
-        return df
+    def generate_signals(self):
+        """OBV trend confirmation. Buy when OBV breaks above 20-day high AND price > MA20.
+        Sell when OBV breaks below 20-day low AND price < MA20."""
+        df = self.data
+
+        if len(df) < 25:
+            return self.signals
+
+        if 'volume' not in df.columns:
+            return self.signals
+
+        close = df['close']
+        volume = df['volume']
+        # OBV
+        obv = (np.sign(close.diff()) * volume).cumsum()
+        obv_high20 = obv.rolling(20).max()
+        obv_low20 = obv.rolling(20).min()
+        ma20 = close.rolling(20).mean()
+
+        for i in range(20, len(df)):
+            price = float(close.iloc[i])
+            obv_val = obv.iloc[i]
+            obv_prev = obv.iloc[i - 1]
+            # Buy: OBV breaks above 20-day high AND price > MA20
+            if (obv_val > obv_high20.iloc[i - 1]
+                    and price > ma20.iloc[i]):
+                self._record_signal(df.index[i], 'buy', price=price)
+            # Sell: OBV breaks below 20-day low AND price < MA20
+            elif (obv_val < obv_low20.iloc[i - 1]
+                    and price < ma20.iloc[i]):
+                self._record_signal(df.index[i], 'sell', price=price)
+
+        return self.signals

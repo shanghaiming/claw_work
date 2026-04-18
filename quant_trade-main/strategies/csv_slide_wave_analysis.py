@@ -1219,49 +1219,40 @@ class CSVSlideWaveAnalysisStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
+
         基于CSV滑动波浪分析生成交易信号
         """
-        # 检测高点和低点
-        high_indices, low_indices = detect_high_low_points(self.data, window=2)
-        
-        # 分析波浪
-        waves = analyze_waves(self.data, high_indices, low_indices)
-        
-        if waves:
-            # 取最近的波浪进行分析
-            latest_wave = waves[-1]
-            wave_type = latest_wave.get('wave_type', '')
-            
-            if wave_type == 'up' or wave_type == '上升':
-                # 上升波浪，买入信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif wave_type == 'down' or wave_type == '下降':
-                # 下降波浪，卖出信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 其他波浪类型，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        # 检测高点和低点 - detect_high_low_points returns a DataFrame
+        df_with_high_low = detect_high_low_points(self.data, window=2)
+
+        # 从标记列中提取高低点索引
+        if 'is_high' in df_with_high_low.columns:
+            high_indices = df_with_high_low[df_with_high_low['is_high']].index.tolist()
         else:
-            # 无波浪分析结果，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            high_indices = []
+
+        if 'is_low' in df_with_high_low.columns:
+            low_indices = df_with_high_low[df_with_high_low['is_low']].index.tolist()
+        else:
+            low_indices = []
+
+        # 基于高低点生成信号
+        for idx in high_indices:
+            if idx in self.data.index:
+                self._record_signal(
+                    timestamp=idx,
+                    action='sell',
+                    price=float(self.data.loc[idx, 'high'])
+                )
+
+        for idx in low_indices:
+            if idx in self.data.index:
+                self._record_signal(
+                    timestamp=idx,
+                    action='buy',
+                    price=float(self.data.loc[idx, 'low'])
+                )
+
         return self.signals
 
 

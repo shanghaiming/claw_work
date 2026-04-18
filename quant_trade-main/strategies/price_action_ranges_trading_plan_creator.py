@@ -1174,62 +1174,57 @@ class PriceActionRangesTradingPlanCreatorStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于交易计划制定生成交易信号
+
+        基于交易计划制定生成交易信号，使用趋势强度和支撑阻力制定计划
         """
-        # 创建交易计划
-        market_conditions = {
-            'market_regime': 'trending',
-            'trend_strength': 0.7,
-            'volatility': 0.02,
-            'trading_opportunity': 'good'
-        }
-        
-        plan_result = self.plan_creator.create_trading_plan(market_conditions)
-        
-        # 获取计划验证
-        plan_validation = plan_result.get('plan_validation', {})
-        overall_viability = plan_validation.get('overall_viability', '').lower()
-        validation_score = plan_validation.get('score', 0)
-        
-        # 获取入场规则
-        entry_rules = plan_result.get('entry_rules', {})
-        entry_type = entry_rules.get('entry_type', '').lower()
-        
-        # 根据计划可行性生成信号
-        if overall_viability == 'high' and validation_score >= 0.7:
-            # 高可行性计划，基于入场类型
-            if 'buy' in entry_type or 'long' in entry_type:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif 'sell' in entry_type or 'short' in entry_type:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
-        elif overall_viability == 'medium' and validation_score >= 0.5:
-            # 中等可行性，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        high = df['high']
+        low = df['low']
+
+        # Trend strength via ADX-like measure
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+        trend_strength = ((ma_short - ma_long) / ma_long).abs().rolling(10).mean()
+
+        # Support/resistance
+        support = low.rolling(20).min()
+        resistance = high.rolling(20).min()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # MACD
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+
+        last_close = close.iloc[-1]
+        last_trend = trend_strength.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+
+        # Plan: strong trend + RSI favorable + MACD confirm = execute
+        trend_up = ma_short.iloc[-1] > ma_long.iloc[-1]
+        macd_confirm = macd_line.iloc[-1] > signal_line.iloc[-1]
+
+        if trend_up and macd_confirm and last_rsi < 70 and last_trend > 0.01:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif not trend_up and not macd_confirm and last_rsi > 30 and last_trend > 0.01:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+        elif last_rsi < 30 and trend_up:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif last_rsi > 70 and not trend_up:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 低可行性，卖出信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='sell',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals

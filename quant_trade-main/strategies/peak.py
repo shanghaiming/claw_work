@@ -415,6 +415,21 @@ class PeakStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """峰值检测策略生成交易信号"""
+        import numpy as np
+        from scipy.signal import argrelextrema
+        df = self.data
+        order = self.params.get('peak_order', 5)
+        highs = df['high'].values
+        lows = df['low'].values
+        peak_indices = argrelextrema(highs, np.greater, order=order)[0]
+        trough_indices = argrelextrema(lows, np.less, order=order)[0]
+        for idx in trough_indices:
+            if idx < len(df):
+                sym = df['symbol'].iloc[idx] if 'symbol' in df.columns else 'DEFAULT'
+                self._record_signal(df.index[idx], 'buy', sym, float(df['close'].iloc[idx]))
+        for idx in peak_indices:
+            if idx < len(df):
+                sym = df['symbol'].iloc[idx] if 'symbol' in df.columns else 'DEFAULT'
+                self._record_signal(df.index[idx], 'sell', sym, float(df['close'].iloc[idx]))
         return self.signals

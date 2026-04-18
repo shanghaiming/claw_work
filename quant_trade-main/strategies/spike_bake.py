@@ -344,6 +344,20 @@ class SpikeBakeStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """尖峰检测策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        if 'volume' not in df.columns:
+            return self.signals
+        vol_ma = df['volume'].rolling(20).mean()
+        for i in range(20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            vol_ratio = df['volume'].iloc[i] / vol_ma.iloc[i] if vol_ma.iloc[i] > 0 else 1
+            # 放量上涨
+            if vol_ratio > 2.0 and df['close'].iloc[i] > df['open'].iloc[i]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            # 放量下跌
+            elif vol_ratio > 2.0 and df['close'].iloc[i] < df['open'].iloc[i]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

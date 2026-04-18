@@ -1,0 +1,1215 @@
+- generic [active] [ref=e1]:
+  - button "Skip to main content" [ref=e4]:
+    - generic [ref=e5]:
+      - generic: Skip to main content
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - button "Open menu" [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+        - link "TradingView main page" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - img [ref=e16]
+      - button "Search" [ref=e23]:
+        - img [ref=e24]
+        - generic [ref=e26]: Search
+      - generic [ref=e27]:
+        - button "Open language menu" [ref=e28] [cursor=pointer]:
+          - img [ref=e29]
+          - text: EN
+        - button "Open user menu" [ref=e31] [cursor=pointer]:
+          - img [ref=e32]
+        - link "Get started" [ref=e36] [cursor=pointer]:
+          - /url: /pricing/?source=header_go_pro_button&feature=start_free_trial
+          - generic [ref=e38]: Get started
+    - main "Main content" [ref=e39]:
+      - main [ref=e41]:
+        - generic [ref=e42]:
+          - heading "Indicators and strategies" [level=1] [ref=e43]
+          - navigation [ref=e44]:
+            - tablist [ref=e47]:
+              - tab "Popular" [selected] [ref=e48] [cursor=pointer]:
+                - generic [ref=e49]: Popular
+              - tab "Editors' picks" [ref=e50] [cursor=pointer]:
+                - generic [ref=e51]: Editors' picks
+        - generic [ref=e53]:
+          - generic [ref=e56]:
+            - combobox "Script type filter" [ref=e57]:
+              - generic [ref=e59]: All types
+              - img [ref=e62]:
+                - img [ref=e63]
+            - button "Open-source only" [pressed] [ref=e65]:
+              - generic [ref=e68]:
+                - img [ref=e71]:
+                  - img [ref=e72]
+                - generic [ref=e75]: Open-source only
+            - radiogroup [ref=e77]:
+              - radio "Sort by most recent" [ref=e78]:
+                - img [ref=e81]:
+                  - img [ref=e82]
+              - radio "Sort by popularity" [checked] [ref=e84]:
+                - img [ref=e87]:
+                  - img [ref=e88]
+          - generic [ref=e91]:
+            - article [ref=e92]:
+              - generic [ref=e93]:
+                - link "SuperTrend Take-Profit Dimensions [AlgoAlpha]" [ref=e94] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/tb1TiNJe-SuperTrend-Take-Profit-Dimensions-AlgoAlpha/
+                - link [ref=e95] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/tb1TiNJe-SuperTrend-Take-Profit-Dimensions-AlgoAlpha/
+                  - generic [ref=e97]: "🟠 OVERVIEW A multi-dimensional take-profit aid that scores how typical the current bar looks compared to past SuperTrend pivots, so you can tell when a trend has reached favorable exit conditions. The indicator runs a standard SuperTrend and records every confirmed zigzag pivot that occurs during a matching-direction run. Tops go into a bull pool , bottoms into a bear pool . Each pivot is stored as a set of readings across several independent axes, such as relative volume , time of day , and price position inside the recent range . On every bar, the current reading on each axis is compared to that historical pool. A blended score from 0 to 100 tells you how closely the current conditions resemble where past pivots in the same direction have clustered. The idea is to give trend followers a data-backed sense of when to start tightening up, rather than guessing an exit or using a fixed R-multiple. The three built-in axes were chosen deliberately to be as uncorrelated as possible , each describing a different dimension of market context: volume (relative volume percentile), time (time of day), and price (position in recent range). Correlated inputs would double-count the same information and distort the blended score; picking axes that describe genuinely different aspects of the market means each one contributes independent evidence, and the score reflects how many distinct dimensions are currently in agreement. 🟠 CONCEPTS SuperTrend — An ATR-based trailing stop that flips between bullish and bearish states. Controls which pool of historical pivots the script reads from. Pivot pool — A rolling store of confirmed zigzag pivots, split by direction. Bull pool holds pivot highs that printed during bullish SuperTrend runs; bear pool holds pivot lows from bearish runs. Capped at 2000 entries per side . Context axis — A 0–100 value measured at the pivot bar. The script ships with three built-ins ( relative volume percentile , time of day , position in recent range ) and one optional user-plugged signal. Axis independence — The three built-in axes cover volume , time , and price respectively, chosen so each describes a structurally different part of the market. Low correlation between axes keeps the blended score from being dominated by any single factor. Conditional histogram — For each active axis, the script walks its pool and keeps only pivots whose bins on every other active axis match the current bar. The survivors are binned to form a histogram. Axis score — For one axis, the count of pivots in the current bar's bin divided by the count in the histogram's tallest bin, scaled to 0–100 . 100 means the current context sits in the densest part of past pivots. Blended favourability score — Arithmetic mean of the active per-axis scores. This is what the gauge and table display. Density-match scoring — The score measures how common the current context is among past pivots. It is not a forward probability and makes no claim about what happens next. 🟠 FEATURES Right-side context profiles — Stacked mini histograms render to the right of price, one per active axis. • Bar heights show how pivots in each axis's conditional pool distribute across bins. • A dashed vertical line marks the current bar's bin on that axis, so you can see at a glance where today sits against history. • Bar hue tracks the active SuperTrend direction. Favourability gauge — A vertical gradient table in the bottom-right showing the blended score, with a chevron marking the current level. Green at the top, red at the bottom. Favourability breakdown table — A two-column readout of each active axis's individual score out of 100, plus a final row that classifies the blended score as Good , Neutral , or Bad . Position and text size are configurable. Bar coloring — Bars fade from neutral grey toward the opposing trend colour as the blended score rises toward 100, so the chart itself signals when the context is stretched. Take-profit markers — Small orange markers print above or below the bar when the blended score hits 100 for the active SuperTrend direction. Timeframe guard — The time-of-day axis disables automatically on daily and higher timeframes, where the reading has no meaning, and a banner explains this so the blended score stays honest. Multi-dimensional scoring engine — Four independent axes feed into a single score, each conditioned on all the others. • Three built-in axes can be toggled on or off individually. • A fourth axis accepts any plot via source input , provided the series stays within 0–100 on all loaded bars. • An on-chart warning prints if the custom signal leaves that range, and the axis is ignored until it is corrected. Deliberately uncorrelated built-in axes — Volume ( relative volume percentile ), time ( time of day ), and price ( position in recent range ) cover three structurally different facets of market context. Keeping the axes independent means each one adds new information to the blend rather than reinforcing the others. Alert conditions — Six alerts are included: SuperTrend bullish flip, SuperTrend bearish flip, score peak match, and crossovers into the Good , Neutral , and Bad bands. 🟠 HOW TO USE Add the script to an intraday chart on a liquid instrument and let it run long enough to populate the pools. More history means more stable conditional histograms. Let SuperTrend define the active regime. The script only scores in the direction of the current trend; bar coloring and take-profit markers respect that regime. Read the gauge and breakdown table together. The gauge shows the blended level; the table shows which individual axes are pulling it up or down. Use the right-side profiles as a sanity check. If the dashed current-bin marker is sitting on or near the tallest bar across most axes, the current context closely resembles past pivot contexts in that direction. Treat high scores as a cue to tighten management, not as reversal signals. A reading of 100 means conditions match where pivots have historically clustered, not that the trend is guaranteed to end. Adjust the zigzag pivot length to control how strict the pool is. Lower values admit more pivots ( bigger, noisier sample ); higher values keep only firmer pivots ( smaller, cleaner sample ). Plug your own signal into the custom axis to test whether an existing 0–100 oscillator adds useful conditioning, such as an RSI or a normalised momentum reading. For best results, pick a signal that is not strongly correlated with the three built-ins, so the custom axis adds a new dimension rather than re-stating an existing one. Enable only the alerts that fit your workflow. The band-crossover alerts fire once per transition , not on every bar inside a band. 🟠 LIMITATIONS The pool holds every confirmed pivot during a matching-direction run, not only pivots that ended the trend. Intermediate pullbacks sit alongside genuine terminal pivots. Raising the zigzag pivot length filters the pool further if you want a cleaner sample. On strongly trending symbols the pool is dominated by pullback pivots rather than true terminal exits, because strong trends have many small pullbacks and only one final top or bottom. On choppy symbols the ratio is more balanced. Read the score with this in mind. The blended score is a density-match measure, not a forward probability . A high reading means today's context is common among past pivots of this direction. It does not predict that the trend is about to end. The time-of-day axis has no meaning on daily and higher timeframes and is disabled automatically on those timeframes. A warning banner confirms when this is active. The custom axis requires a source already scaled to 0–100 on every loaded bar. Values outside that range disable the axis and surface a warning. Toggling the custom axis on a live chart starts the range check from the current bar; reload the chart to validate against full loaded history . Pools are capped at 2000 entries per direction , with the oldest entries dropped first. On very long intraday histories the effective lookback is symbol- and timeframe-dependent. All scoring uses data up to and including the confirmation bar of each pivot; pivots themselves are detected with the standard zigzag confirmation lag, meaning the scoring population on any given bar reflects pivots confirmed at least zzLen bars earlier. 🟠 CONCLUSION SuperTrend Take-Profit Dimensions combines a standard SuperTrend with a rolling pool of historical pivot contexts and scores the current bar against that pool across up to four independent axes spanning volume, time, and price. The output is a blended 0–100 favourability reading , a per-axis breakdown, and a set of context profiles that show where past pivots have clustered. It gives trend followers a structured, data-backed way to judge when the current context matches where trends have historically given back profit, without pretending to predict the next bar."
+              - generic [ref=e99]:
+                - generic "Pine Script® indicator" [ref=e100]:
+                  - img [ref=e101]:
+                    - img [ref=e102]
+                  - generic [ref=e104]: Pine Script® indicator
+                - link [ref=e105] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/tb1TiNJe-SuperTrend-Take-Profit-Dimensions-AlgoAlpha/
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - link "by AlgoAlpha" [ref=e110] [cursor=pointer]:
+                    - /url: /u/AlgoAlpha/
+                    - generic [ref=e111]: by AlgoAlpha
+                  - time [ref=e113]: Updated an hour ago
+                - generic [ref=e114]:
+                  - link "10 comments" [ref=e115] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/tb1TiNJe-SuperTrend-Take-Profit-Dimensions-AlgoAlpha/#chart-view-comment-form
+                    - img [ref=e117]:
+                      - img [ref=e118]
+                    - generic [ref=e121]: "10"
+                  - button "1023 boosts 1 K" [ref=e122]:
+                    - generic [ref=e123]:
+                      - img "1023 boosts" [ref=e125]:
+                        - img [ref=e126]
+                      - generic [ref=e130]: 1 K
+            - article [ref=e131]:
+              - generic [ref=e132]:
+                - link "Momentum Terrain 3D [LuxAlgo]" [ref=e133] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/WgcQ7iYB-Momentum-Terrain-3D-LuxAlgo/
+                - link [ref=e134] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/WgcQ7iYB-Momentum-Terrain-3D-LuxAlgo/
+                  - generic [ref=e136]: "The Momentum Terrain 3D tool visualizes multi-dimensional RSI momentum by mapping various lookback lengths across time into a single 3D topographical landscape. 🔶 USAGE The script provides a comprehensive view of momentum by calculating multiple RSI lengths simultaneously. This allows users to see how short-term momentum (foreground) interacts with long-term structural momentum (background) in a single visual pane, offering a unique perspective on trend strength and exhaustion. 🔹 Understanding the Dimensions To navigate the 3D map, it is essential to understand the three axes: X-Axis (Width): Represents Time. The rightmost edge of the terrain represents the current bar, while moving left traverses historical data. Y-Axis (Depth): Represents the RSI Lookback Length. The front of the terrain shows fast, reactive momentum (short lookbacks), while the back shows slow, structural momentum (long lookbacks). Z-Axis (Height): Represents the RSI Value. A semi-transparent \"Neutral Plane\" is fixed at the 50 level. Peaks above this plane represent bullish momentum, while valleys below represent bearish momentum. 🔹 Interpreting the Topography Trend Alignment: When the entire landscape from back to front rises together, it indicates a \"unified\" momentum where all timeframes are in bullish agreement. Spotting Pullbacks: If the background (long-term) remains a high mountain but the foreground (short-term) drops into a valley, it identifies a pullback within a macro uptrend. Trend Compression: If the terrain appears flat and stays near the 50 neutral plane, the market is ranging or in a period of indecision. 🔹 OB/OS Pillars The script identifies extreme momentum through vertical color pillars. Red pillars indicate overbought conditions (RSI > 70), while cyan pillars indicate oversold conditions (RSI < 30). These help traders quickly spot exhaustion points across the entire momentum spectrum without checking multiple individual indicators. 🔶 DETAILS The indicator utilizes an optimized 3D rendering engine built with Pine Script's polyline and matrix systems. By calculating a range of RSI lengths (e.g., from a minimum of 5 to a maximum of 60) for every historical bar within the defined window, it creates a \"momentum matrix.\" This matrix is then projected into 3D space using trigonometric transformations (Yaw and Pitch). The \"Terrain Smoothing\" feature uses an exponential smoothing calculation on the raw RSI data to transform jagged spikes into readable topographical features, making it easier to identify the flow of capital and the weight of momentum shifts. 🔶 SETTINGS 🔹 Terrain & Matrix Time History (Width): Determines how many historical bars are rendered on the X-axis. Lookback Layers (Depth): The number of different RSI lengths calculated. Increasing this creates a denser, more detailed surface. Terrain Smoothing: Applies smoothing to the RSI values to create a more natural, less noisy landscape. Minimum/Maximum Lookback: Defines the range of RSI lengths used for the front (fast) and back (slow) edges. 🔹 Camera Projection Yaw/Pitch: Rotates the landscape horizontally or tilts it vertically to change the visual perspective. Scale X/Y/Z: Adjusts the width, depth, and height intensity of the 3D model. Offset X/Y: Moves the entire 3D object on the chart pane horizontally or vertically for better positioning. 🔹 Style & Colors Show Wireframe/Surface: Toggles the visibility of the grid lines and the solid surface fill. Show OB/OS Volume Fills: Enables the vertical pillars that highlight extreme RSI levels. Show Current Price Marker: Highlights the most recent momentum profile and displays the current price label on the 3D grid. Neutral Plane Color: Adjusts the color and transparency of the RSI 50 reference floor."
+              - generic [ref=e138]:
+                - generic "Pine Script® indicator" [ref=e139]:
+                  - img [ref=e140]:
+                    - img [ref=e141]
+                  - generic [ref=e143]: Pine Script® indicator
+                - link [ref=e144] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/WgcQ7iYB-Momentum-Terrain-3D-LuxAlgo/
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - link "by LuxAlgo" [ref=e149] [cursor=pointer]:
+                    - /url: /u/LuxAlgo/
+                    - generic [ref=e150]: by LuxAlgo
+                  - time [ref=e152]: 18 hours ago
+                - generic [ref=e153]:
+                  - link "2 comments" [ref=e154] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/WgcQ7iYB-Momentum-Terrain-3D-LuxAlgo/#chart-view-comment-form
+                    - img [ref=e156]:
+                      - img [ref=e157]
+                    - generic [ref=e160]: "2"
+                  - button "270 boosts 2 7 0" [ref=e161]:
+                    - generic [ref=e162]:
+                      - img "270 boosts" [ref=e164]:
+                        - img [ref=e165]
+                      - generic [ref=e169]:
+                        - generic [ref=e171]: "2"
+                        - generic [ref=e173]: "7"
+                        - generic [ref=e175]: "0"
+            - article [ref=e176]:
+              - generic [ref=e177]:
+                - link "Smart Trader, Episode 06, Isotropic Trend Lines" [ref=e178] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ZSgx4eSy-Smart-Trader-Episode-06-Isotropic-Trend-Lines/
+                - link [ref=e179] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ZSgx4eSy-Smart-Trader-Episode-06-Isotropic-Trend-Lines/
+                  - generic [ref=e181]: "🔷 WHAT IS ST-EP06 — ISOTROPIC TREND LINES? ST-EP06 is a multi-scale structural trend channel indicator built on a σ-normalized coordinate system. It is designed to solve one of the oldest unaddressed problems in technical analysis: trend angles that cannot be compared across instruments, timeframes, or volatility regimes. A trend line drawn on a chart appears to carry a measurable angle — yet that angle is an artifact of the display window, not a property of the market. Resize the chart horizontally and the slope flattens; compress it and the slope steepens. A given price movement on Gold daily and Bitcoin 1-hour may produce visually identical slopes on screen while reflecting entirely different structural conditions. This happens because traditional charts use a coordinate space where the vertical axis (price) and the horizontal axis (time) share no fixed dimensional relationship. The consequence is not merely cosmetic. A trader cannot meaningfully compare the steepness of a trend on one instrument with another — or even across timeframes on the same instrument — because the weight of \"one unit of price per bar\" varies with the instrument's current volatility. As the author of this indicator, I sought a coordinate system where trend angles would be an intrinsic structural property of the market, independent of charting software or display settings. The goal: a space where a 30° uptrend on EUR/USD weekly carries the same structural meaning as a 30° uptrend on NASDAQ 5-minute — indicating that each market is moving at the same rate relative to its own realized volatility. The solution draws on the principle of dimensional analysis, well established in physics and engineering. Just as the Reynolds number normalizes fluid flow to make behavior comparable across different pipe sizes and fluid viscosities, this indicator normalizes price movement by realized volatility, producing a dimensionless space we call the Isotropic Coordinate System (ICS). In ICS, price is expressed in natural logarithmic form and scaled by a volatility estimate (σ) derived from the Yang-Zhang (2000) method — a drift-invariant estimator that incorporates Open, High, Low, and Close data. The resulting vertical axis is dimensionless: one unit equals one standard deviation of recent realized price behavior. When trend angles are measured in this space, 45° indicates approximately one σ of movement per bar — whether the chart shows a penny stock, a major currency pair, or a commodity index. Traditional chart coordinates assign no fixed relationship between the price axis and the time axis. Resizing the chart window changes the visual slope of the same price movement — a compressed view may show 52° while a stretched view of the same data shows 25°. The angle is a display artifact, not a market property. The Isotropic Coordinate System (ICS) addresses this by normalizing log-price by realized volatility (σ). In this space, the trend angle is designed to remain constant regardless of how the chart is displayed — because it measures price displacement in units of σ per bar, not in pixels per pixel. 🔷 HOW THE MODULES WORK TOGETHER ST-EP06 operates as a deterministic pipeline where each stage consumes the output of the one before it: Realized volatility estimation (σ) → Structural block construction → Monotonic direction detection → ICS angle measurement → Channel boundary fitting → Six-scale parallel analysis → Consensus aggregation → Breakout and retest state tracking → Dashboard narrative generation The Yang-Zhang σ provides the normalization constant for every downstream computation. Price history is then partitioned into structural blocks, each distilled to a single central tendency that resists close-price bias. Consecutive block centers are compared to identify the longest uninterrupted directional segment. The slope of that segment, measured in σ-normalized space, yields the ICS angle. Four price extremes located within the segment define two log-linear channel boundaries. This complete pipeline runs independently at six temporal scales, and their independent outputs are aggregated into a structural consensus. A finite-state machine then tracks the evolving relationship between price and the primary channel — breakout, retest, confirmation, or failure — and translates it into a single-line human-readable narrative. ST-EP06 operates as a deterministic sequential pipeline. Yang-Zhang volatility (σ) provides the normalization constant that flows into every downstream stage. Price history is partitioned into structural blocks, each reduced to a geometric mean. The longest monotonic segment determines direction, and its slope in σ-normalized space yields the ICS angle. Four price extremes define the channel boundaries. This complete pipeline runs independently at six scales — 3, 7, 13, 19, 29, and 47 bars per block — all prime numbers, chosen to minimize harmonic overlap so that multiple scales are unlikely to lock onto the same cyclical artifact. Scale 19 (highlighted) serves as the primary engine: it is the only scale that maps to the user's Trend Block Period input, and the only scale whose output drives the chart-overlay channel lines, the projection, the diamond markers, and the breakout/retest state machine. The other five scales operate at fixed periods and contribute exclusively to the cross-scale consensus count — providing structural context that a single scale cannot offer alone. When 5 or 6 of the 6 scales agree on direction, it suggests a structural trend visible across a broad range of temporal resolutions. 🔷 DATA ANCHORING Every structural computation in ST-EP06 — volatility, block means, direction, channel coordinates, state machine transitions, and dashboard narrative — is governed by a single anchoring reference, selected through the Calculation Bar input. Live Bar mode (default): the anchor is the current forming bar. Values update with each incoming tick. This is standard TradingView behavior and means the indicator may exhibit intra-bar repaint — the live bar's data enters all computations as it evolves. Close Bar mode: the anchor shifts to the last fully confirmed (closed) bar. The forming bar is excluded from every computation. Values lock once a bar closes and do not change retroactively. This mode is intended for structural analysis, back-testing, and any workflow where historical consistency is a priority. One deliberate exception is maintained in both modes: the dashboard header always displays the current live closing price (Live Exception protocol), preserving real-time price awareness regardless of how the indicator's structural engine is anchored. Two modes, same chart moment. In Live Bar the anchor sits on the forming bar, so every value updates tick-by-tick and may repaint within the bar. In Close Bar the anchor shifts to the last closed bar, locking all structural values once the bar closes. The only exception is the dashboard header row, which always displays the live closing price in both modes, so real-time price awareness is never lost. 🔷 YANG-ZHANG VOLATILITY (σ) The foundation of the ICS is a robust volatility estimate. ST-EP06 uses the Yang-Zhang (2000) realized volatility estimator, an academically established method that combines three variance components: Overnight variance — capturing the gap between consecutive sessions, measured from the prior close to the current open. Intraday variance — capturing the movement from open to close within each session. Range-based variance — using the Rogers-Satchell (1991) estimator, which extracts additional information from the high and low prices without assuming zero drift. These three components are blended using an optimal weight that is designed to minimize estimation error. The resulting σ updates every bar, adapts to changing market conditions, and — crucially — is drift-invariant: it is intended to remain unbiased whether the market is trending strongly or mean-reverting. 🔷 BLOCK CONSTRUCTION Rather than analyzing individual bars, ST-EP06 partitions recent price history into consecutive non-overlapping blocks. Each block spans a user-defined number of bars (the Trend Block Period input) and is reduced to a single representative value: the geometric mean of the block's highest high and lowest low, computed in logarithmic space. This log-midpoint serves as the block's central tendency. Unlike a simple average of closing prices, it captures the structural center of the entire price range within the block, avoiding bias toward any single price point. The number of consecutive blocks compared is controlled by the Trend Block Groups input — more groups means deeper lookback and the ability to detect longer structural trends. Price history is partitioned into consecutive non-overlapping blocks. Each block reduces to a single log-midpoint — the geometric mean of its highest high and lowest low. Connecting the midpoints forms the representative chain used for trend detection. 🔷 DIRECTION DETECTION + ICS ANGLE Once blocks are constructed, the engine compares their geometric means in sequence, starting from the most recent. It identifies the longest consecutive segment where each block's central tendency moves in the same direction — either consistently rising or consistently falling. A single reversal terminates the segment. The slope of this segment is then measured in ICS space: the logarithmic price difference between the oldest and newest blocks in the segment, divided by σ, divided by the number of bars between them. The arctangent of this normalized slope produces the ICS angle in degrees. If the absolute angle falls within the Range Threshold (a user-configurable dead zone in degrees), the direction is classified as ranging rather than trending. This threshold acts as a sensitivity filter — wider values require steeper moves before declaring a trend, narrower values respond to subtler directional shifts. An ICS angle of 45° indicates approximately one σ of price movement per bar. An angle near 0° suggests the market may be structurally flat. Because σ adjusts for volatility and the logarithm adjusts for price level, these angles are intended to be directly comparable across any instrument and any timeframe. 🔷 CHANNEL FITTING Within the identified trending segment, the engine locates four price extremes: the highest high, the lowest high, the highest low, and the lowest low — each paired with its bar position. These four points define two linear boundaries in ICS space. During an uptrend, the upper boundary is fitted through the lowest high and highest high (capturing the rising ceiling), while the lower boundary is fitted through the lowest low and highest low (capturing the rising floor). During a downtrend, the fitting order reverses to capture descending structure. During a ranging market, the channel uses horizontal boundaries at the segment's absolute high and low. All boundary computations occur in the σ-normalized logarithmic coordinate system, meaning the channel lines represent geometric (log-linear) paths in price space — curves that naturally follow multiplicative price behavior rather than additive assumptions. Within the trending segment, four extremes — HH, LH, HL, LL — define two log-linear boundaries. In an uptrend, the upper line fits through LH and HH, the lower through LL and HL. The direction reverses the fitting order for downtrends, and a ranging market uses horizontal boundaries. 🔷 6-SCALE PARALLEL ANALYSIS A single temporal scale may capture the trend at one resolution but miss structure at others. ST-EP06 runs the complete pipeline — volatility normalization, block construction, direction detection, ICS angle, and channel fitting — independently at six different scales: 3, 7, 13, 19, 29, and 47 bars per block. These values were chosen as prime numbers to minimize harmonic overlap between scales. Scale 19 serves as the primary engine and maps to the user's Trend Block Period input. The other five scales use fixed periods, providing a structural context that the primary engine alone cannot offer. The dashboard displays each scale's independent trend direction. A consensus count shows how many of the six scales agree: 5/6 or 6/6 agreement suggests a structural trend that is visible across multiple temporal resolutions, while low agreement may indicate transitional or conflicting structure. 🔷 BREAKOUT / RETEST STATE MACHINE ST-EP06 includes a 5-state finite automaton that tracks price's structural relationship to the primary channel boundaries: Inside — price is observed between the channel floor and ceiling. The dashboard shows the position as a percentage: distance from floor and distance to ceiling (summing to 100%). Breakout Up / Breakout Down — price has exited above the ceiling or below the floor. The dashboard shows the breakout price and the percentage of channel width that price has moved beyond the boundary. Retest Up / Retest Down — after a breakout, price has moved at least one σ away from the boundary (establishing distance), then returned to test it. The dashboard shows both the original breakout price and the current retest level. Transitions between states use dynamic σ-based thresholds rather than fixed percentages, meaning the sensitivity automatically adjusts with market volatility. Additional flags track: ✓ Confirmed — a breakout that has been retested and bounced at least one σ away from the boundary. (gap) — price crossed the entire channel width in a single transition. Failed breakout — price re-entered the channel after initially breaking out. Direction reset — the primary trend direction changed, wiping all breakout state. 🔷 VISUAL TOOLS All chart-overlay elements are drawn from the primary engine (scale 19): Channel lines — solid upper and lower boundaries from the segment start to the anchor bar, colored by trend direction (configurable up/down/range colors, width, and line style). Projection lines — dotted forward extension of the channel slopes beyond the anchor bar, providing a visual reference for potential future support and resistance. The projection offset, width, and style are independently configurable. Channel fill — semi-transparent shading between channel boundaries, with independent color selection and adjustable transparency. Applies to both the solid channel and projection segments. Diamond markers (◆) — placed at the channel endpoints on the anchor bar. Hovering reveals a tooltip with the anchored close price, ceiling level, floor level, and the price's position as a percentage of channel width. Direction label — positioned at the midpoint between segment start and projection end. Displays the trend arrow, direction text, and ICS angle (e.g., \"▲ UP +7.3°\"). Tooltip includes block count. 🔷 DASHBOARD A compact information table appears at the top-right corner of the chart, organized in 5 rows: Header — indicator name, ticker symbol, timeframe, and live price (always live under the Live Exception protocol, even in Close Bar mode). Period — the six scale values (3, 7, 13, user's period, 29, 47) displayed across columns. The primary engine column is highlighted. Trend — per-scale trend direction with directional arrows (▲ UP, ▼ DN, ◈ RNG) and color coding. Agreement — consensus count (e.g., \"5/6 UP\") with the primary channel ceiling (▲) and floor (▼) price levels. Narrative — a single merged row presenting the breakout/retest state machine output as a human-readable sentence with distance measurements. This row updates dynamically as price interacts with the channel. All dashboard text, tooltips, and narrative phrases are fully localized. 🔷 ALERT CONDITIONS ST-EP06 provides 19 alert conditions organized in 5 categories, all gated by a master Enable Alerts toggle: D · Direction (3 alerts) — fires when the primary engine trend changes to uptrend, downtrend, or range. B · Breakout (4 alerts) — fires on initial breakout above ceiling or below floor, and separately on confirmed breakout (retested and bounced). R · Retest (2 alerts) — fires when price returns to test the boundary after establishing distance. S · Structural (5 alerts) — fires on gap-through events (price crosses entire channel), failed breakouts (price re-enters channel), and direction resets (trend change wipes state). A · Agreement (5 alerts) — fires when cross-scale consensus reaches significant thresholds: full bullish (6/6), strong bullish (5/6), full bearish (6/6), strong bearish (5/6), or range consensus (≥4/6). Important: alerts require Calculation Bar = Live Bar. In Close Bar mode, all alert conditions are automatically suppressed and a visual warning is displayed on the chart — because Close Bar mode intentionally lags by one bar, which is semantically incompatible with live alert delivery. 🔷 LANGUAGE SUPPORT The dashboard, all tooltips, the breakout/retest narrative, and the alert warning label are available in 7 languages: English · Türkçe · العربية · Русский · Italiano · Português (BR) · 中文 Select the preferred language from the Language dropdown in the Display settings group. All structural and numerical outputs remain unchanged — only the display language of text elements is affected. 🔷 HOW TO USE Apply ST-EP06 to any chart — the indicator is designed to work across instruments (equities, forex, crypto, commodities, indices) and timeframes without parameter re-optimization, because the ICS framework normalizes for volatility and price level automatically. Start with the default settings (Period 26, Groups 5, Sigma Length 20) and observe how the channel captures the dominant structural trend. The 6-scale consensus in the dashboard may help assess whether the observed trend is isolated to one temporal resolution or confirmed across multiple scales. The Calculation Bar setting is a structural decision: use Live Bar for real-time monitoring and alert-driven workflows; use Close Bar for analysis and back-testing where historical stability is prioritized. The ICS angle on the direction label provides a quantitative measure of trend intensity. Comparing angles across different instruments or timeframes is one of the intended use cases of the ICS framework — a 15° angle on one chart and a 15° angle on another may suggest similar structural momentum relative to each market's own volatility. The breakout/retest narrative in the dashboard bottom row is designed to provide context-rich status updates without requiring manual chart reading. The σ-based thresholds ensure that breakout sensitivity adapts to current market conditions rather than relying on fixed values. 🔷 SETTINGS Calculation — Calculation Bar (Live/Close Bar anchoring), Trend Block Period (bars per block), Trend Block Groups (consecutive blocks compared), Range Threshold (ICS dead zone in degrees), Yang-Zhang Sigma Length (volatility lookback). Channel Lines — Up Color, Down Color, Range Color, Line Width, Line Style. Projection Lines — Projection Offset (forward bars), Projection Width, Projection Style. Display — Language (7 options), Show Channel (toggle overlay), Show Fill (toggle shading), Show Dashboard (toggle table), Dashboard Font Size. Channel Fill — Fill Up Color, Fill Down Color, Fill Range Color, Fill Transparency. Alerts — Enable Alerts (master toggle, requires Live Bar mode). 🔷 DISCLAIMER ST-EP06 is an educational and analytical tool. It is designed to provide structural context through σ-normalized trend channels and multi-scale analysis. It does not generate buy or sell signals, does not predict future price movement, and is not intended as financial advice. Historical patterns observed through this indicator do not guarantee future outcomes. All trading decisions remain the sole responsibility of the trader."
+              - generic [ref=e183]:
+                - generic "Pine Script® indicator" [ref=e184]:
+                  - img [ref=e185]:
+                    - img [ref=e186]
+                  - generic [ref=e188]: Pine Script® indicator
+                - link [ref=e189] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ZSgx4eSy-Smart-Trader-Episode-06-Isotropic-Trend-Lines/
+              - generic [ref=e191]:
+                - generic [ref=e192]:
+                  - link "by ata_sabanci" [ref=e194] [cursor=pointer]:
+                    - /url: /u/ata_sabanci/
+                    - generic [ref=e195]: by ata_sabanci
+                  - time [ref=e197]: Apr 17
+                - generic [ref=e198]:
+                  - link "0 comments" [ref=e199] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/ZSgx4eSy-Smart-Trader-Episode-06-Isotropic-Trend-Lines/#chart-view-comment-form
+                    - img [ref=e201]:
+                      - img [ref=e202]
+                  - button "445 boosts 4 4 5" [ref=e204]:
+                    - generic [ref=e205]:
+                      - img "445 boosts" [ref=e207]:
+                        - img [ref=e208]
+                      - generic [ref=e212]:
+                        - generic [ref=e214]: "4"
+                        - generic [ref=e216]: "4"
+                        - generic [ref=e218]: "5"
+            - article [ref=e219]:
+              - generic [ref=e220]:
+                - link "xxxx!!!!!RPS Bot Alertsxxxxx!!!!" [ref=e221] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/RwsyfepJ-xxxx-RPS-Bot-Alertsxxxxx/
+                - link "RPS BOT ALTER for cyprto - Bitcoin, Solana, Etherium etc. 70-80% accuracy. Trading time frame is 1 HR" [ref=e222] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/RwsyfepJ-xxxx-RPS-Bot-Alertsxxxxx/
+                  - generic [ref=e224]: RPS BOT ALTER for cyprto - Bitcoin, Solana, Etherium etc. 70-80% accuracy. Trading time frame is 1 HR
+              - generic [ref=e226]:
+                - generic "Pine Script® indicator" [ref=e227]:
+                  - img [ref=e228]:
+                    - img [ref=e229]
+                  - generic [ref=e231]: Pine Script® indicator
+                - link [ref=e232] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/RwsyfepJ-xxxx-RPS-Bot-Alertsxxxxx/
+              - generic [ref=e234]:
+                - generic [ref=e235]:
+                  - link "by r19jacker" [ref=e237] [cursor=pointer]:
+                    - /url: /u/r19jacker/
+                    - generic [ref=e238]: by r19jacker
+                  - time [ref=e240]: 21 hours ago
+                - generic [ref=e241]:
+                  - link "0 comments" [ref=e242] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/RwsyfepJ-xxxx-RPS-Bot-Alertsxxxxx/#chart-view-comment-form
+                    - img [ref=e244]:
+                      - img [ref=e245]
+                  - button "40 boosts 4 0" [ref=e247]:
+                    - generic [ref=e248]:
+                      - img "40 boosts" [ref=e250]:
+                        - img [ref=e251]
+                      - generic [ref=e255]:
+                        - generic [ref=e257]: "4"
+                        - generic [ref=e259]: "0"
+            - article [ref=e260]:
+              - generic [ref=e261]:
+                - 'link "Magic Hour: Master Playbook [Dokakuri Study]" [ref=e262] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/qppVP2FI-Magic-Hour-Master-Playbook-Dokakuri-Study/
+                - link [ref=e263] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/qppVP2FI-Magic-Hour-Master-Playbook-Dokakuri-Study/
+                  - generic [ref=e265]: "Magic Hour: Master Playbook A full visualization suite built on @Dokakuri's 13-year statistical study of NQ mean reversion (2013–2026, 3,300+ sessions per strategy). The core premise: every hour forms a range. When price breaks outside that range, it statistically reverts back to the midpoint at remarkably high rates — 83.4% for the Golden Hour (07:00 NY). What this indicator does Tracks the Magic Hour range, then maps price extension into six statistical zones after the break. Each zone has a known win rate, reach probability, and density from the study. The indicator tells you exactly where price is relative to the statistical edge at all times. Zone system Z1 IDEAL (0–25%) — tightest, highest probability Z2 PRIME (25–50%) — still strong edge Z3 DEEP (50–100%) — extended but historically recovers INV LINE (100% / 75%) — statistical invalidation threshold Z4 RISK / Z5 LAST STAND / Z6 GRAVEYARD — beyond the edge Features 7 ranked strategies from the Dokakuri study + 9 additional hours (03:00–14:00) Extension zones Z1–Z6 with configurable colors and opacity WIN label showing deepest zone reached on reversion (e.g. ✅ WIN Z2 PRIME) Break candle coloring — highlights the first candle closing outside the range Live zone label tracking current price depth in real time Pacing lines p50/p75/p90 showing statistical time-to-target Formation and window times label MAE stop lines (soft p75 / hard p90) from the study L3C IFVG entry model — FVG scan during the magic hour, IFVG + CISD signals after the break All elements individually toggleable — build your own view layer by layer Zone color picker with opacity slider (default 90% — very subtle) \"Show Last Session Only\" live mode How to use Load on a 5M chart on NQ or MNQ. Select your strategy from the dropdown. Default is 07:00 Golden Hour. Enable extension zones to see the full statistical map. The indicator works on any futures instrument but data is calibrated for NQ. Credit: @Dokakuri on X for the original research."
+              - generic [ref=e267]:
+                - generic "Pine Script® indicator" [ref=e268]:
+                  - img [ref=e269]:
+                    - img [ref=e270]
+                  - generic [ref=e272]: Pine Script® indicator
+                - link [ref=e273] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/qppVP2FI-Magic-Hour-Master-Playbook-Dokakuri-Study/
+              - generic [ref=e275]:
+                - generic [ref=e276]:
+                  - link "by apiyada_inversion" [ref=e278] [cursor=pointer]:
+                    - /url: /u/apiyada_inversion/
+                    - generic [ref=e279]: by apiyada_inversion
+                  - time [ref=e281]: Apr 17
+                - generic [ref=e282]:
+                  - link "0 comments" [ref=e283] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/qppVP2FI-Magic-Hour-Master-Playbook-Dokakuri-Study/#chart-view-comment-form
+                    - img [ref=e285]:
+                      - img [ref=e286]
+                  - button "260 boosts 2 6 0" [ref=e288]:
+                    - generic [ref=e289]:
+                      - img "260 boosts" [ref=e291]:
+                        - img [ref=e292]
+                      - generic [ref=e296]:
+                        - generic [ref=e298]: "2"
+                        - generic [ref=e300]: "6"
+                        - generic [ref=e302]: "0"
+            - article [ref=e303]:
+              - generic [ref=e304]:
+                - link "Enhanced Buy/Sell Profile Logic" [ref=e305] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/afS1M6OM-Enhanced-Buy-Sell-Profile-Logic/
+                - link [ref=e306] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/afS1M6OM-Enhanced-Buy-Sell-Profile-Logic/
+                  - generic [ref=e308]: "Enhanced Buy/Sell Profile is an intraday market-structure tool that combines estimated buy/sell pressure with a rolling volume-style profile. It highlights key reference levels such as POC, value area, and VWMP, tracks imbalance and cluster zones, and summarizes market condition in a table so you can judge whether the auction is balanced, transitioning, or directional. This indicator does three main jobs at once: It estimates buy vs sell participation from candles and volume. It builds a live price-level profile with POC, VAH, VAL, VWMP, and imbalance/cluster logic. It summarizes the current state in the table using Pressure, Structure, Flow, and Bias. The most important levels in the script are: POC = highest traded/allocated volume row VAH / VAL = value area boundaries VWMP = volume-weighted midpoint of the profile optional VWMP sigma bands = dispersion around VWMP Practical use: Above POC and VWMP usually strengthens bullish structure Below POC and VWMP usually strengthens bearish structure Between them or repeatedly crossing them usually means weaker control / rotation The highlighted transition candle It appears when estimated net pressure is no longer Balanced, but has not yet reached Bull, Strong Bull, Bear, or Strong Bear. It is based on netPctHist and the thresholds set by neutralBandPct, bullPressurePct, and strongPressurePct. Why it matters: It signals change, not confirmation. It is more useful than constant bull/bear coloring because it is rarer and highlights when conditions are shifting. Its meaning depends on location: near POC/VWMP, VAH/VAL, clusters, or after a strong move, it can hint at reclaim, rejection, exhaustion, or expansion. It is not automatically bullish or bearish. How to use it: Treat it as an attention candle, not an entry by itself. Then check: Table = interpretation POC / VAH / VAL / VWMP = map Clusters / imbalances = reaction zones Price action = confirmation Bottom line: A TRANSITION candle means pressure is changing, but direction is not confirmed yet. It tells you to watch structure, flow, and location more closely. Where it gets weaker: 1. It is weaker in chop. Because lookbackBars feeds both the historical pressure engine and the live profile window, a shorter lookback makes the state change faster. That is good in expansion, but in sideways trade it can flip between Balanced → Transition → Bull/Bear too easily. So the weakness is not trend days — it is rotational conditions. 2. It is weaker as a “big picture” read. With 30 bars, POC, VWMP, VAH, and VAL are derived from a more local auction rather than a broader one. That makes them more useful for tactical execution, but weaker as major session structure references. In other words, the map updates faster, but it is less durable. 3. It is weaker against fake momentum bursts. The script estimates buy/sell pressure from candle structure using f_buyShare(...) rather than true bid/ask trade classification. That means a sharp candle burst can look more directional than the underlying tape really is. Your faster thresholds make that more responsive, but also more vulnerable to short-lived pushes. 4. It is weaker when volume is average but price is noisy. The reclaim/reject and absorption logic relies on cluster location, price behavior, and optional volume confirmation using volume >= volAvg20 * volumeConfirmMult. If price is whipping around key levels without meaningful expansion in volume, the faster preset can make the script “see” state change sooner than the market has actually committed. 5. It is weaker when clusters are thin or shifting. Cluster detection depends on row-level estimated buy/sell imbalance crossing clusterThresholdPct and clusterMinRows. With a shorter lookback, the profile range is more local and row boundaries shift faster, so clusters can be more fragile. That means the top active cluster can become less stable than in a broader window. Best to use longer lookback 78 and above 6. It is weaker if you treat Transition as confirmation instead of warning. In this script, Transition is just the zone between Balanced and Bull/Bear. With your settings, that zone is narrower than before, so it is useful, but it is still an “attention” state, not a completed signal. The faster preset makes Transition appear sooner, which is helpful, but also easier to overread. So the honest answer is: Stronger at: early detection, tactical intraday use, faster changes, execution timing Weaker at: chop resistance, structural stability, broader session context, filtering false bursts"
+              - generic [ref=e310]:
+                - generic "Pine Script® indicator" [ref=e311]:
+                  - img [ref=e312]:
+                    - img [ref=e313]
+                  - generic [ref=e315]: Pine Script® indicator
+                - link [ref=e316] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/afS1M6OM-Enhanced-Buy-Sell-Profile-Logic/
+              - generic [ref=e318]:
+                - generic [ref=e319]:
+                  - link "by getakabu" [ref=e321] [cursor=pointer]:
+                    - /url: /u/getakabu/
+                    - generic [ref=e322]: by getakabu
+                  - time [ref=e324]: Updated 13 hours ago
+                - generic [ref=e325]:
+                  - link "0 comments" [ref=e326] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/afS1M6OM-Enhanced-Buy-Sell-Profile-Logic/#chart-view-comment-form
+                    - img [ref=e328]:
+                      - img [ref=e329]
+                  - button "315 boosts 3 1 5" [ref=e331]:
+                    - generic [ref=e332]:
+                      - img "315 boosts" [ref=e334]:
+                        - img [ref=e335]
+                      - generic [ref=e339]:
+                        - generic [ref=e341]: "3"
+                        - generic [ref=e343]: "1"
+                        - generic [ref=e345]: "5"
+            - article [ref=e346]:
+              - generic [ref=e347]:
+                - link "CCI Regime Oscillator" [ref=e348] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/R1Xog6Lv-CCI-Regime-Oscillator/
+                - 'link "CCI Regime Oscillator: Using CCI coloring to visualize the deviation of current price to histroical price trends Functions: 1. Help to determin Bullish, Bearish, or Nutruel (Green line, Red line, or Grey line) 2. Indicates Buy Dip (Green dot) or Sell Top (Red dot) at very early stage" [ref=e349] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/R1Xog6Lv-CCI-Regime-Oscillator/
+                  - generic [ref=e351]: "CCI Regime Oscillator: Using CCI coloring to visualize the deviation of current price to histroical price trends Functions: 1. Help to determin Bullish, Bearish, or Nutruel (Green line, Red line, or Grey line) 2. Indicates Buy Dip (Green dot) or Sell Top (Red dot) at very early stage"
+              - generic [ref=e353]:
+                - generic "Pine Script® indicator" [ref=e354]:
+                  - img [ref=e355]:
+                    - img [ref=e356]
+                  - generic [ref=e358]: Pine Script® indicator
+                - link [ref=e359] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/R1Xog6Lv-CCI-Regime-Oscillator/
+              - generic [ref=e361]:
+                - generic [ref=e362]:
+                  - link "by felixhsuN" [ref=e364] [cursor=pointer]:
+                    - /url: /u/felixhsuN/
+                    - generic [ref=e365]: by felixhsuN
+                  - time [ref=e367]: 22 hours ago
+                - generic [ref=e368]:
+                  - link "0 comments" [ref=e369] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/R1Xog6Lv-CCI-Regime-Oscillator/#chart-view-comment-form
+                    - img [ref=e371]:
+                      - img [ref=e372]
+                  - button "179 boosts 1 7 9" [ref=e374]:
+                    - generic [ref=e375]:
+                      - img "179 boosts" [ref=e377]:
+                        - img [ref=e378]
+                      - generic [ref=e382]:
+                        - generic [ref=e384]: "1"
+                        - generic [ref=e386]: "7"
+                        - generic [ref=e388]: "9"
+            - article [ref=e389]:
+              - generic [ref=e390]:
+                - link "PRO FINAL OI OPTION S/R" [ref=e391] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Aux0Wuep-PRO-FINAL-OI-OPTION-S-R/
+                - link "this script is only for nifty futures best for intraday levels" [ref=e392] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Aux0Wuep-PRO-FINAL-OI-OPTION-S-R/
+                  - generic [ref=e394]: this script is only for nifty futures best for intraday levels
+              - generic [ref=e396]:
+                - generic "Pine Script® indicator" [ref=e397]:
+                  - img [ref=e398]:
+                    - img [ref=e399]
+                  - generic [ref=e401]: Pine Script® indicator
+                - link [ref=e402] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Aux0Wuep-PRO-FINAL-OI-OPTION-S-R/
+              - generic [ref=e404]:
+                - generic [ref=e405]:
+                  - link "by jeetunse" [ref=e407] [cursor=pointer]:
+                    - /url: /u/jeetunse/
+                    - generic [ref=e408]: by jeetunse
+                  - time [ref=e410]: Apr 16
+                - generic [ref=e411]:
+                  - link "6 comments" [ref=e412] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/Aux0Wuep-PRO-FINAL-OI-OPTION-S-R/#chart-view-comment-form
+                    - img [ref=e414]:
+                      - img [ref=e415]
+                    - generic [ref=e418]: "6"
+                  - button "473 boosts 4 7 3" [ref=e419]:
+                    - generic [ref=e420]:
+                      - img "473 boosts" [ref=e422]:
+                        - img [ref=e423]
+                      - generic [ref=e427]:
+                        - generic [ref=e429]: "4"
+                        - generic [ref=e431]: "7"
+                        - generic [ref=e433]: "3"
+            - article [ref=e434]:
+              - generic [ref=e435]:
+                - 'link "Statistical VWAP study: Session and RTH VWAP" [ref=e436] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/Wyyu0A2w-Statistical-VWAP-study-Session-and-RTH-VWAP/
+                - link [ref=e437] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Wyyu0A2w-Statistical-VWAP-study-Session-and-RTH-VWAP/
+                  - generic [ref=e439]: "Session & RTH VWAP — Statistical VWAP Study This indicator plots two independently calculated Volume Weighted Average Price lines — one anchored to a user-defined pre-market or custom session, and one anchored to the Regular Trading Hours (RTH) open — and combines them into a statistical study that tracks the relationship between the two lines over time. Beyond the two VWAP lines themselves, the indicator calculates a set of statistical deviation bands derived from the midpoint between both VWAPs, maintains a live stats table that tracks retest and crossover behaviour with timing data, and records win/loss statistics based on the directional relationship between the two lines at the close of each RTH session. The indicator is designed for equity futures traders and anyone who trades instruments with a defined RTH session, though it will function on any market where session times can be configured. It is most useful on intraday timeframes, particularly 1-minute through 15-minute charts, where the two VWAP lines are meaningfully separated and the statistical bands have enough bar data to fill in during the session. ───────────────────────────────────────────── HOW THE TWO VWAPs WORK ───────────────────────────────────────────── The Session VWAP anchors to the start of a configurable pre-market or custom session each day and recalculates bar by bar from that anchor using the standard cumulative price-times-volume divided by cumulative volume formula. Because it anchors before the RTH open on most configurations, it captures the overnight sentiment and carry-forward context that the RTH VWAP does not see. The line resets each day at the session start and, uniquely, reanchors dynamically if price makes a new session high — meaning the anchor always sits at the highest point reached during the session rather than being fixed at the first bar. This makes the Session VWAP a high-anchored VWAP that tracks where the average transaction has occurred relative to the session's developing high. The RTH VWAP anchors to the first bar of the Regular Trading Hours session each day — defaulting to 09:30 EST — and calculates forward from that point. It is a straightforward daily VWAP in the conventional sense, widely used by institutional participants as an execution benchmark. It resets at the RTH open every day regardless of overnight price action. Both VWAPs have independent price source inputs, so you can, for example, run the Session VWAP on HLC3 and the RTH VWAP on the close, or set both to the same source. Both default to HLC3. Previous session VWAP lines can be displayed on chart for historical context, with the number of retained sessions configurable up to 100. ───────────────────────────────────────────── THE ANCHOR AND DEVIATION BANDS ───────────────────────────────────────────── Once both VWAPs are active during the RTH session, the indicator calculates a midpoint anchor on each bar as the simple average of the two VWAP values at that moment. This anchor represents an equilibrium level between the two measures — a price around which both institutional benchmarks are balanced. The anchor can be plotted as a standalone line if desired. All statistical bands are then derived as offsets from this anchor, calculated from the distribution of bar-by-bar deviations of the price source from the anchor during the current RTH session. Each bar inside the RTH session contributes a deviation value (price minus anchor) and an absolute deviation value to a running intraday dataset that the band calculations draw from. Every band type resets at the RTH open and builds from scratch each session, meaning the bands are always describing the current day's price behaviour relative to the anchor rather than any historical average. Symmetric Standard Deviation Bands (± 1σ and ± 2σ) These are calculated using the volume-weighted variance of all bar deviations from the anchor during the session. The formula weights each bar's squared deviation by its volume, so high-volume bars contribute proportionally more to the width of the bands than low-volume bars. The result is a proper volume-weighted standard deviation, not a simple statistical standard deviation. The ± 1σ bands mark the range within which approximately 68% of volume-weighted price activity has occurred relative to the anchor, and ± 2σ marks roughly 95%. On a well-behaved session these bands will tend to expand gradually and consistently as the day progresses. A sudden widening indicates a volatile push away from the anchor with significant volume behind it. Asymmetric Standard Deviation Bands Rather than computing a single standard deviation across all deviations, the asymmetric bands split the deviation dataset into two groups: bars where price was above the anchor and bars where price was below the anchor. A separate volume-weighted variance is computed for each group, yielding an upper sigma and a lower sigma. The upper band sits at anchor plus the upper sigma, and the lower band sits at anchor minus the lower sigma. When the upper band is wider than the lower band, the session's upside volatility has been greater than its downside volatility — the distribution is stretched to the upside. The reverse indicates downside skew. This is a more honest representation of intraday volatility than symmetric bands when the session has a directional bias, since symmetric bands will always produce identical upper and lower widths regardless of where price has actually been spending its time. Median Absolute Deviation Bands (MAD) The MAD bands are calculated from the median of all absolute deviation values collected during the session. Rather than squaring deviations as standard deviation does, MAD takes the median of their absolute values, making it substantially more resistant to outlier bars. A single spike bar with a large deviation will pull the standard deviation bands outward significantly, but will have very little impact on the MAD bands if the majority of bars have remained close to the anchor. In practice, if the MAD bands are noticeably narrower than the ± 1σ bands, it suggests the session has had one or more sharp but brief excursions from the anchor while most activity has been tightly contained. If the two are similar in width, price volatility has been more evenly distributed throughout the session. Percentile Bands (10th, 25th, 75th, 90th) These bands are calculated by sorting the full array of per-bar deviations accumulated during the session and finding the deviation at each percentile using linear interpolation between adjacent values. The result is added to the anchor to produce the plotted level. The 25th and 75th percentile bands define the interquartile range — the zone within which the middle 50% of bars have traded relative to the anchor. The 10th and 90th percentile bands mark the outer boundaries that only 10% of bars have exceeded on each side. Unlike standard deviation bands, percentile bands make no assumption about the shape of the deviation distribution. They are purely empirical — they describe exactly where price has been during the session without any statistical model underlying them. On a trending session the percentile bands will be visibly asymmetric, sitting closer together on one side of the anchor and more spread on the other, directly reflecting the directional distribution of bars. VWAP of Deviations This is a single line calculated as the volume-weighted mean of all bar deviations from the anchor during the session. It is plotted as an offset from the anchor — if the line is above the anchor, it means that volume has been transacting above the anchor on a net basis throughout the day. If it is below, the heavier volume has been printing below the anchor. At the very start of the RTH session when both VWAPs are close to each other the line will be near the anchor, and it will drift in the direction where the heavier volume has been occurring as the session progresses. It functions as a volume-weighted bias indicator — a reading consistently above the anchor suggests buyers have been more active on a volume basis, and vice versa. ───────────────────────────────────────────── CONFIGURATION — SESSIONS SETTINGS ───────────────────────────────────────────── Time Zone sets the timezone used to interpret the Session window. The tooltip reminds you that GMT and UTC are equivalent. Match this to the timezone shown in the bottom right of your TradingView chart. The default is GMT-4, which corresponds to US Eastern Daylight Time. Session defines the start and end time of the window within which the Session VWAP is active and accumulating. The default is 0600-0900, representing the pre-market period from 6am to 9am Eastern. You can change this to any time window that suits your instrument and trading style. On instruments without an extended pre-market you might set this to your own session open or any other meaningful anchor time. Highlight Session enables a background colour fill on bars that fall within the session window, making it easy to see which bars are contributing to the Session VWAP. The colour is configurable next to the toggle and defaults to a faint aqua. ───────────────────────────────────────────── CONFIGURATION — ANCHOR SESSION VWAP SETTINGS ───────────────────────────────────────────── VWAP Source sets the price input used for the Session VWAP calculation. The default is HLC3 (the average of high, low, and close), which is the conventional choice for VWAP calculations. Other available options include close, open, HL2, OHLC4, and HLCC4. Changing this will affect both the VWAP line itself and the deviation values used in the band calculations, since the bands use vsrc as their price input. Session VWAP enables or disables the Session VWAP line on the chart. The colour and line width are set using the colour picker and width field next to the toggle. Show Previous Session VWAPs enables the display of completed Session VWAP lines from prior days, drawn in the same colour as the live line. These give you a visual history of where previous sessions' VWAPs settled and how the current session compares. Number of Previous Sessions controls how many prior session VWAP lines are retained on the chart. The range is 1 to 100, defaulting to 50. Higher values provide more historical context but may create visual clutter on longer lookback charts. ───────────────────────────────────────────── CONFIGURATION — RTH VWAP SETTINGS ───────────────────────────────────────────── Show RTH VWAP enables or disables the RTH VWAP line. The colour and width are set using the adjacent controls. The RTH VWAP defaults to purple at width 2, making it visually distinct from the thinner Session VWAP. RTH Session Time (EST) sets the start and end of the RTH window using a session string in the format HHMM-HHMM, interpreted in the America/New_York timezone. The default is 0930-1600, representing the standard US equity market session. Change this for futures instruments that have different session boundaries, or for non-US markets where you want to define a custom RTH equivalent. RTH VWAP Source sets the price input used specifically for the RTH VWAP calculation, independently of the Session VWAP source. It defaults to HLC3. Having separate source inputs means you can experiment with different price inputs on each line — for example running the RTH VWAP on the close while keeping the Session VWAP on HLC3 — or simply keep both on the same source for consistency. ───────────────────────────────────────────── CONFIGURATION — STATS TABLE ───────────────────────────────────────────── Show Stats Table enables or disables the on-chart statistics table. Position sets where the table appears on the chart. Options cover all eight corners and edge-centre positions. The default is Top Right. Text Size controls the font size used throughout the table. Options are Tiny, Small, and Normal. Small is the default and suits most screen configurations. Max Days to Track sets the maximum number of completed RTH sessions the indicator retains in its historical arrays for statistical calculations. The range is 10 to 500, defaulting to 100. Increasing this provides more statistically stable averages but increases memory usage. All statistics in the table — win rate, retest averages, timing distributions, hourly breakdowns — are computed across however many sessions have been recorded up to this limit. ───────────────────────────────────────────── CONFIGURATION — BAND LEVELS ───────────────────────────────────────────── Each band type has a checkbox to enable it and one or more colour pickers to control how it appears. All bands are off by default. Each is described in detail in the statistical bands section above. The controls are: Anchor (midpoint) — enables the midpoint line between the two VWAPs, with a single colour picker. Useful as a reference when evaluating the bands. ± 1σ (symmetric) — enables the symmetric ± 1 standard deviation bands, with a single shared colour applied to both the upper and lower line. ± 2σ (symmetric) — enables the symmetric ± 2 standard deviation bands, with a single shared colour. Asymmetric σ (upper/lower) — enables the asymmetric bands with separate colour pickers for the upper and lower line, allowing you to visually distinguish upside from downside volatility. MAD (± median abs dev) — enables the MAD bands with a single shared colour. Percentile bands (10/25/75/90) — enables all four percentile bands with separate colour pickers for the inner pair (25th/75th) and the outer pair (10th/90th). VWAP of deviations — enables the volume-weighted mean deviation line with a single colour picker. ───────────────────────────────────────────── THE STATS TABLE — WHAT IT SHOWS AND HOW TO READ IT ───────────────────────────────────────────── The table is divided into four sections. A yellow header row at the very top shows the total number of completed RTH sessions recorded and the maximum days setting, so you always know the sample size behind the statistics. Sessions Coverage The coverage row reads as \"SESSIONS: X days | max tracked: Y\". X is the number of completed RTH sessions the indicator has observed and recorded since being applied to the chart. Y is the Max Days to Track setting. Once X equals Y the oldest sessions begin dropping off as new ones are added, keeping a rolling window. On a 1-minute chart with 100 max days, the indicator will typically reach the maximum within the first few weeks of chart data. Win / Loss This section tracks whether the relative position of the two VWAPs at the end of the RTH session correctly predicted the directional close for that day. The TODAY row shows the current live state: whether the RTH VWAP is currently above or below the Session VWAP (RTH ABOVE or RTH BELOW), and whether price is currently above or below the RTH open (BULL or BEAR). If the RTH session has not yet started, it shows AWAITING. WIN RATE shows the percentage of completed sessions in which the end-of-day RTH VWAP position correctly predicted the directional close. A session is counted as a win when the RTH VWAP finished above the Session VWAP and price closed above the RTH open (a bullish alignment), or when the RTH VWAP finished below the Session VWAP and price closed below the RTH open (a bearish alignment). The detail column shows the raw count as wins over total sessions. BULL/BEAR shows the breakdown of winning sessions by direction — how many of the wins were in the bullish alignment versus the bearish alignment. This helps identify whether the signal has directional asymmetry on your instrument. STREAK shows whether the current streak is a run of wins or losses and how many consecutive sessions it has lasted. Retests & Crossovers This section measures two types of intraday behaviour: VWAP retests and VWAP crossovers. A retest is recorded when a bar's wick crosses through one of the VWAPs but the bar's close remains on the same side it was on before the wick. In other words, price touches or briefly pierces the VWAP level but the candle does not close through it, indicating the level held. RTH RETEST counts retests of the RTH VWAP and SESS RETEST counts retests of the Session VWAP. The mean and median columns show the average and median number of these events per day across the recorded session history. A mean of 3.2 for RTH retests, for example, means the RTH VWAP is typically touched and rejected roughly three times per session. A crossover is recorded when the RTH VWAP crosses above or below the Session VWAP on a confirmed bar. This is a stronger event than a retest because it means the two benchmarks have swapped relative positions. CROSSOVERS shows the average and median number of such crosses per day. On low-volatility days in a clearly directional instrument the crossover count may be zero or one. On ranging or volatile days it may be several. Event Timing This section answers the question of when during the RTH session these events tend to happen. For each of the three event types — RTH retest, Session retest, and crossover — it shows the average time, the median time, and the peak hour, all in EST. The average time is the mean of the fractional hour at which each event has occurred across the full history, converted to a HH:MM display. The median time is the 50th percentile of that same distribution. The peak hour is whichever one-hour bucket between 09:00 and 15:00 has accumulated the most events in total across the session history. If the median RTH retest time is 10:08 and the peak hour is 10h, that tells you retests of the RTH VWAP have historically been most concentrated in the first hour after the open. If the average and median are separated — say average is 11:30 but median is 10:45 — it suggests there is a tail of late-session events pulling the mean later, but most activity happens earlier. Hourly Event Count This section gives you the raw breakdown of event counts by hour, running from the 09:00 hour through to the 15:00 hour. Each row represents one hour and shows the total number of RTH retests, Session retests, and crossovers that have occurred during that hour across all recorded sessions. This is the full distribution from which the peak hour in the timing section is derived, and it lets you see the shape of that distribution rather than just the peak. An instrument where the hourly counts are spread fairly evenly across all hours behaves very differently to one where most events are concentrated in the 09:00 and 15:00 hours, and that pattern is immediately visible here. ───────────────────────────────────────────── TIPS FOR EFFECTIVE USE ───────────────────────────────────────────── Start with the two VWAP lines alone and observe how often the RTH VWAP and Session VWAP converge, diverge, and cross during your instrument's typical session. The relative position of the two lines at the open versus at midday and close is the core input to the win/loss tracking, so developing an intuition for how they interact on your specific instrument before enabling the bands is worthwhile. The win rate statistic is a measure of historical alignment between the two VWAPs and the daily directional close — it is not a prediction of tomorrow's outcome. Its value is in telling you whether the two-VWAP relationship has had directional relevance on this instrument historically. A win rate significantly above 50% suggests the configuration carries predictive information worth paying attention to; near 50% suggests it has been essentially random. For the statistical bands, start by enabling the symmetric ± 1σ and ± 2σ bands alongside the anchor line to get a baseline feel for the session's deviation range. Then enable the asymmetric bands on a few sessions where you noticed a strong directional bias to see how the upper and lower widths diverge. The MAD bands are most informative when compared directly against the ± 1σ bands — if MAD is substantially tighter it means the session has had outlier bars inflating the standard deviation that most of the session's activity did not participate in. The VWAP of deviations line is a useful real-time bias read once you are familiar with it. In a session where the line has been consistently positive (above the anchor) since the open and has not reversed, the weight of volume is behind the bullish side of the anchor. A line that has drifted from positive to negative mid-session suggests a shift in volume-weighted participation, which often precedes or accompanies meaningful directional moves. The timing data in the table is most useful when you have accumulated 50 or more sessions of history and are trading an instrument with a consistent intraday rhythm. Instruments with predictable open-range activity and a defined close pattern will show clear concentrations in the hourly breakdown. Instruments that are event-driven or highly macro-sensitive will tend to show flatter distributions. The Max Days to Track setting has a meaningful effect on all statistics. A smaller value — say 20 or 30 — will make the statistics more responsive to recent conditions but noisier. A larger value — 200 or 500 — will produce more stable averages but may lag if the instrument's behaviour has changed regime. For most use cases 50 to 100 days strikes a reasonable balance. On instruments where the pre-market session is not meaningful or does not exist, set the Session time window to a custom anchor of your choice — for example the overnight high or the globex open — and the Session VWAP will anchor from that point instead. The statistical framework operates identically regardless of what the session window represents. ───────────────────────────────────────────── DISCLAIMER ───────────────────────────────────────────── This indicator is provided for informational and educational purposes only. It does not constitute financial advice, investment advice, or a trading recommendation of any kind. All statistical outputs — win rates, retest averages, timing distributions — are derived from historical data and are not indicative of future results. The user assumes full responsibility for any trading decisions made using this tool. Always apply your own analysis and risk management."
+              - generic [ref=e441]:
+                - generic "Pine Script® indicator" [ref=e442]:
+                  - img [ref=e443]:
+                    - img [ref=e444]
+                  - generic [ref=e446]: Pine Script® indicator
+                - link [ref=e447] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Wyyu0A2w-Statistical-VWAP-study-Session-and-RTH-VWAP/
+              - generic [ref=e449]:
+                - generic [ref=e450]:
+                  - link "by lucymatos" [ref=e452] [cursor=pointer]:
+                    - /url: /u/lucymatos/
+                    - generic [ref=e453]: by lucymatos
+                  - time [ref=e455]: Apr 17
+                - generic [ref=e456]:
+                  - link "1 comment" [ref=e457] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/Wyyu0A2w-Statistical-VWAP-study-Session-and-RTH-VWAP/#chart-view-comment-form
+                    - img [ref=e459]:
+                      - img [ref=e460]
+                    - generic [ref=e463]: "1"
+                  - button "260 boosts 2 6 0" [ref=e464]:
+                    - generic [ref=e465]:
+                      - img "260 boosts" [ref=e467]:
+                        - img [ref=e468]
+                      - generic [ref=e472]:
+                        - generic [ref=e474]: "2"
+                        - generic [ref=e476]: "6"
+                        - generic [ref=e478]: "0"
+            - article [ref=e479]:
+              - generic [ref=e480]:
+                - link "Reversal Probability & Signals" [ref=e481] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Vg1GzKm7-Reversal-Probability-Signals/
+                - link [ref=e482] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Vg1GzKm7-Reversal-Probability-Signals/
+                  - generic [ref=e484]: "This indicator is designed to forecast critical market turning points by predicting the formation of TOPs (Pivot Highs) and BOTTOMs (Pivot Lows). To achieve this, the script utilizes a simplified K-Nearest Neighbors (KNN) machine learning algorithm built directly within Pine Script. By analyzing a wide spectrum of Commodity Channel Index (CCI) values, it calculates the real-time probability that the current price action will result in a structural Pivot reversal. How It Works (The Engine) The script functions as a real-time pattern recognition engine. It operates in three main steps: Feature Extraction: It concurrently calculates 8 different lengths of the CCI (from very short to long-term periods like 10 to 200). This acts as the feature set of the current market momentum. Data Collection (Training): Whenever the market makes a significant structural Top or Bottom (based on Pivot points), the script records the specific state of those 8 CCIs at that exact moment. It also collects random \"non-target\" samples to build a balanced historical database. KNN Classification (Prediction): On every new bar, the algorithm calculates the mathematical Euclidean distance between the current 8 CCI values and the historically saved samples. It looks at the \"K\" nearest historical neighbors. If the majority of those closest historical neighbors were market bottoms, the indicator outputs a high \"Bottom Probability.\" Key Features Dynamic K-Value Adjustment: To ensure stable and accurate calculations even shortly after applying the indicator (when the historical sample pool is still growing), the \"K\" value dynamically scales down based on the available data size and automatically adjusts to odd numbers to prevent tie-breaking ambiguity. Two-Step Smart Signal Logic: To prevent premature entries during strong, ongoing trends, this script uses a dual-threshold confirmation system: Standby: The probability must first surge above an Upper Threshold (Default: 80%), indicating extreme conditions. Trigger: The actual signal is only plotted when the probability peaks and subsequently drops below a Lower Threshold (Default: 50%). This confirms that the extreme momentum has broken and the reversal is underway. Target Selection: Easily switch the engine's focus between predicting a \"BOTTOM\" or a \"TOP\" via the settings panel. Visual Enhancements & Alerts: Includes intuitive dynamic bar coloring (changing based on probability intensity), a clear histogram, distinct signal shapes on the chart, and fully integrated alert conditions for automation. Settings & Configuration Prediction Target: Toggle between BOTTOM (Pivot Lows) and TOP (Pivot Highs). Feature Parameters (CCI): Customize the 8 periods used for momentum extraction. Default settings range from 10 to 200 to capture micro-fluctuations up to macro-trends. KNN Model Settings: * K-Value: The baseline number of nearest neighbors to compare. Max Samples: The memory limit for historical data points (higher = more stability, but heavier computation). Signal Settings: Customize the Upper and Lower thresholds for the two-step signal generation. How to Trade with It Select your target: Decide if you are looking for long opportunities (BOTTOM) or short opportunities (TOP). Watch the Buildup: Observe the histogram or candlestick colors. When the probability goes above 80%, the market is showing conditions highly similar to historical reversals. Do not enter yet. Wait for the Trigger: Wait for the momentum to break. When the probability drops back below the 50% threshold, a triangle shape will appear on the chart. This is your signal that the reversal pattern is executing. Disclaimer: This script uses historical pattern matching and experimental mathematical models. It does not guarantee future results. Please use it in conjunction with broader market context, other technical indicators, and strict risk management."
+              - generic [ref=e486]:
+                - generic "Pine Script® indicator" [ref=e487]:
+                  - img [ref=e488]:
+                    - img [ref=e489]
+                  - generic [ref=e491]: Pine Script® indicator
+                - link [ref=e492] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Vg1GzKm7-Reversal-Probability-Signals/
+              - generic [ref=e494]:
+                - generic [ref=e495]:
+                  - link "by SatohK" [ref=e497] [cursor=pointer]:
+                    - /url: /u/SatohK/
+                    - generic [ref=e498]: by SatohK
+                  - time [ref=e500]: Updated 16 hours ago
+                - generic [ref=e501]:
+                  - link "0 comments" [ref=e502] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/Vg1GzKm7-Reversal-Probability-Signals/#chart-view-comment-form
+                    - img [ref=e504]:
+                      - img [ref=e505]
+                  - button "130 boosts 1 3 0" [ref=e507]:
+                    - generic [ref=e508]:
+                      - img "130 boosts" [ref=e510]:
+                        - img [ref=e511]
+                      - generic [ref=e515]:
+                        - generic [ref=e517]: "1"
+                        - generic [ref=e519]: "3"
+                        - generic [ref=e521]: "0"
+            - article [ref=e522]:
+              - generic [ref=e523]:
+                - link "Market Structure Adaptive RSI" [ref=e524] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/hyrV5uP1-Market-Structure-Adaptive-RSI/
+                - link [ref=e525] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/hyrV5uP1-Market-Structure-Adaptive-RSI/
+                  - generic [ref=e527]: "█ OVERVIEW The Market Structure Adaptive RSI indicator is designed to adjust RSI smoothing based on market structure events (CHOCH and BOS). RSI does not operate in a single mode — its behavior changes depending on whether the market is: * changing direction (CHOCH) * continuing structure (BOS) Because of this, the indicator: * switches between normal and smoothed modes * dynamically adjusts the level of smoothing * reacts faster to potential pullbacks in extended trends █ CONCEPTS Market Structure Adaptive RSI Market Structure Adaptive RSI is a system that measures the direction and continuity of market structure events. Based on that: * it switches RSI behavior (regime switching) * adapts its smoothing (adaptive smoothing) RSI changes its characteristics depending on context: * more stable during trends * more responsive during structural shifts Mode Switching Logic (core mechanism) This is the key part of the indicator: * After a CHOCH opposite to the last BOS → RSI switches to normal mode (no smoothing / pullback mode) * It stays in this mode until a BOS appears * After a BOS → RSI switches to **trend mode (smoothed) BOS / CHOCH in Trend Direction Once in trend mode: * every additional BOS * and CHOCH in the same direction → adjusts the RSI smoothing length (based on settings) Adaptive Smoothing (detailed logic) Default assumption: * consecutive structural events in the same direction → increase the probability of a pullback Therefore: * each additional BOS / CHOCH in trend direction → reduces RSI smoothing length Effect: * RSI becomes faster in extended trends * improves early detection of weakening momentum and pullbacks Multi-Pivot Market Structure Market structure is analyzed using multiple pivot lengths simultaneously. This allows: * detection of both short-term and long-term structures * aggregation of events * selection of the most significant breakout (largest pivot) This reduces noise and improves BOS / CHOCH detection quality. Event Priority on Multi-Break Candles If a single candle breaks multiple pivots at once: * all BOS / CHOCH events are detected normally * the internal logic processes them independently The impact applies only to labels (visualization): * the label displays the event from the largest pivot (highest length) * CHOCH always has priority over BOS █ FEATURES RSI * Trend RSI Length (after BOS) – RSI length used in trend mode * Pullback RSI Length – RSI length used after CHOCH (normal mode) * Smooth RSI in Trend Mode (EMA) – enables/disables smoothing in trend mode Adaptive Smoothing * EMA after 1 BoS** – smoothing after first BOS * EMA after 2 consecutive BoS – smoothing after 2 BOS * EMA after 3 consecutive BoS – smoothing after 3 BOS * EMA after 4 consecutive BoS – smoothing after 4 BOS * EMA after 5+ consecutive BoS – smoothing in strong trends (Note: by default, higher streaks reduce EMA length → RSI becomes faster) Market Structure * Pivot Length 1–5 – pivot lengths used for BOS / CHOCH detection (Smaller values = more signals, larger values = stronger structure) Labels * Show CHOCH / BOS Labels with Length – enables event labels * Label Offset from RSI Line – vertical offset of labels Colors * RSI Line - Above 50 – RSI color above 50 * RSI Line - Below 50 – RSI color below 50 * Overbought Line – OB level color * Oversold Line – OS level color * Neutral Line (50) – 50 level color * Gradient Above OB / Below OS – fill colors outside zones Candle Coloring * Color Candles by Trend – colors candles based on RSI direction OB/OS Levels * Overbought / Oversold – OB and OS levels * Dynamic OB/OS (MPO4 Style) – dynamic transparency * OB/OS Line Width – line thickness * Minimum / Maximum Transparency – transparency range █ APPLICATIONS 1. Trend Following After BOS: * RSI switches to smoothed mode * filters noise * shows stable direction 2. Detecting Trend Weakness In extended trends: * consecutive BOS/CHOCH → shorter smoothing * RSI accelerates → easier to spot early signs of pullbacks 3. Pullback Entries * RSI returns to OB/OS zones * reacts faster due to reduced smoothing → improved entry timing 4. Market Context Shift * opposite CHOCH → mode reset * RSI returns to normal mode → signal that structure may have changed █ NOTES * Smaller pivots → more signals * Larger pivots → stronger structures * Smoothing applies only in trend mode * On multi-break candles, only one label is displayed (priority: CHOCH > BOS)"
+              - generic [ref=e529]:
+                - generic "Pine Script® indicator" [ref=e530]:
+                  - img [ref=e531]:
+                    - img [ref=e532]
+                  - generic [ref=e534]: Pine Script® indicator
+                - link [ref=e535] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/hyrV5uP1-Market-Structure-Adaptive-RSI/
+              - generic [ref=e537]:
+                - generic [ref=e538]:
+                  - link "by Uncle_the_shooter" [ref=e540] [cursor=pointer]:
+                    - /url: /u/Uncle_the_shooter/
+                    - generic [ref=e541]: by Uncle_the_shooter
+                  - time [ref=e543]: Updated 17 hours ago
+                - generic [ref=e544]:
+                  - link "3 comments" [ref=e545] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/hyrV5uP1-Market-Structure-Adaptive-RSI/#chart-view-comment-form
+                    - img [ref=e547]:
+                      - img [ref=e548]
+                    - generic [ref=e551]: "3"
+                  - button "51 boosts 5 1" [ref=e552]:
+                    - generic [ref=e553]:
+                      - img "51 boosts" [ref=e555]:
+                        - img [ref=e556]
+                      - generic [ref=e560]:
+                        - generic [ref=e562]: "5"
+                        - generic [ref=e564]: "1"
+            - article [ref=e565]:
+              - generic [ref=e566]:
+                - link "Merged EMA Crossover & Pullback Analyzer" [ref=e567] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/p8mAdBcy-Merged-EMA-Crossover-Pullback-Analyzer/
+                - link [ref=e568] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/p8mAdBcy-Merged-EMA-Crossover-Pullback-Analyzer/
+                  - generic [ref=e570]: "This Pine Script v5 indicator is a specialized technical analysis tool that combines trend-following logic with a volatility and retracement analyzer. It merges two distinct concepts into one overlay: EMA Crossover Logic (Trend Tracking): It calculates a \"Fast\" and \"Slow\" Exponential Moving Average (EMA) based on Ed Seykota’s guideline that the slow period should be at least three times the fast period. It plots green triangles for bullish crossovers, red triangles for bearish crossunders, and black crosses for exit signals if the \"Long Only\" mode is enabled. Pullback & Move Analyzer (Volatility Tracking): The script dynamically identifies significant price moves (up or down) within a user-defined lookback period. It draws thick solid lines to represent the move and dotted gray lines to mark the maximum \"pullback\" (retracement) encountered during that move. Dynamic Labels: Above and below price action, the script generates labels showing the move size (in percentage, pips, or points) and the specific pullback magnitude. This is designed to help traders calibrate their trailing stop-loss distances based on historical retracement behavior in the current trend. Key Technical Details: Version: Pine Script v5. Alerts: Includes alertcondition() triggers for both bullish and bearish EMA crossovers. Visuals: Uses the Move and MoveFinder User-Defined Types (UDT) to manage complex line and label drawing without repainting issues. Settings: Inputs are grouped into sections (\"Script 1\" and \"Script 2\") for easy configuration in the settings menu."
+              - generic [ref=e572]:
+                - generic "Pine Script® indicator" [ref=e573]:
+                  - img [ref=e574]:
+                    - img [ref=e575]
+                  - generic [ref=e577]: Pine Script® indicator
+                - link [ref=e578] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/p8mAdBcy-Merged-EMA-Crossover-Pullback-Analyzer/
+              - generic [ref=e580]:
+                - generic [ref=e581]:
+                  - link "by orbsaleus" [ref=e583] [cursor=pointer]:
+                    - /url: /u/orbsaleus/
+                    - generic [ref=e584]: by orbsaleus
+                  - time [ref=e586]: 17 hours ago
+                - generic [ref=e587]:
+                  - link "2 comments" [ref=e588] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/p8mAdBcy-Merged-EMA-Crossover-Pullback-Analyzer/#chart-view-comment-form
+                    - img [ref=e590]:
+                      - img [ref=e591]
+                    - generic [ref=e594]: "2"
+                  - button "100 boosts 1 0 0" [ref=e595]:
+                    - generic [ref=e596]:
+                      - img "100 boosts" [ref=e598]:
+                        - img [ref=e599]
+                      - generic [ref=e603]:
+                        - generic [ref=e605]: "1"
+                        - generic [ref=e607]: "0"
+                        - generic [ref=e609]: "0"
+            - article [ref=e610]:
+              - generic [ref=e611]:
+                - link "Jezzy Harmonic" [ref=e612] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/KptS28pZ-Jezzy-Harmonic/
+                - link [ref=e613] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/KptS28pZ-Jezzy-Harmonic/
+                  - generic [ref=e615]: "Introducing the Jezzy Harmonic Pattern Scanner: Precision in Price Geometry The Jezzy Harmonic Indicator is a sophisticated technical analysis tool designed to identify high-probability reversal zones using advanced geometric price patterns. By automating the detection of complex harmonic structures, it allows traders to focus on execution rather than manual charting. Key Features Automated Pattern Recognition: Instantly detects classic harmonic structures including the Gartley, Bat, Butterfly, and Crab patterns. Precision PRZ (Potential Reversal Zone): Automatically calculates and highlights the specific price levels where the pattern completes, identifying high-confluence entry points. Real-Time Liquidity Integration: Designed to work alongside Smart Money Concepts (SMC), filtering patterns based on liquidity sweeps and market structure shifts. Multi-Timeframe Capability: Seamlessly scans across various intervals, from intraday scalping charts to long-term swing trading setups. Visual Clarity: Clean, non-repainting interface that provides clear labels for XABCD points and target ratios."
+              - generic [ref=e617]:
+                - generic "Pine Script® indicator" [ref=e618]:
+                  - img [ref=e619]:
+                    - img [ref=e620]
+                  - generic [ref=e622]: Pine Script® indicator
+                - link [ref=e623] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/KptS28pZ-Jezzy-Harmonic/
+              - generic [ref=e625]:
+                - generic [ref=e626]:
+                  - link "by voidex" [ref=e628] [cursor=pointer]:
+                    - /url: /u/voidex/
+                    - generic [ref=e629]: by voidex
+                  - time [ref=e631]: Apr 17
+                - generic [ref=e632]:
+                  - link "0 comments" [ref=e633] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/KptS28pZ-Jezzy-Harmonic/#chart-view-comment-form
+                    - img [ref=e635]:
+                      - img [ref=e636]
+                  - button "167 boosts 1 6 7" [ref=e638]:
+                    - generic [ref=e639]:
+                      - img "167 boosts" [ref=e641]:
+                        - img [ref=e642]
+                      - generic [ref=e646]:
+                        - generic [ref=e648]: "1"
+                        - generic [ref=e650]: "6"
+                        - generic [ref=e652]: "7"
+            - article [ref=e653]:
+              - generic [ref=e654]:
+                - link "Trendlines with Breaks [EXCAVO]" [ref=e655] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/J49l5VTa-Trendlines-with-Breaks-EXCAVO/
+                - link [ref=e656] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/J49l5VTa-Trendlines-with-Breaks-EXCAVO/
+                  - generic [ref=e658]: "Trendlines with Breaks Dynamic Trendlines from Swing Pivots with Breakout Detection The Trendlines with Breaks indicator draws trendlines by connecting consecutive swing highs and lows. Each new pivot creates a new trendline through the two most recent pivots of the same type. If a new pivot aligns with the active line (within ATR tolerance), the line is extended through three or more pivots instead of creating a duplicate. Historical trendlines validated by three or more pivot touches are preserved as dashed lines. Resistance lines connect swing highs (red). Support lines connect swing lows (blue). Lines that are broken by subsequent price action are automatically removed. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ▸ HOW TO USE Step 1 → Add the indicator. Trendlines appear connecting consecutive swing pivots - blue for support, red for resistance. Step 2 → Solid lines are the most recent active trendlines. Dashed lines are previous trendlines still validated by three or more pivot touches. Step 3 → When price breaks through a trendline, the broken line is automatically removed from the chart. Step 4 → Check the dashboard for active line counts per direction. Step 5 → Adjust Swing Lookback for different pivot sensitivity. Adjust Merge Tolerance to control when aligned pivots extend the same line instead of creating a new one. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ▸ HOW IT CALCULATES ◆ Pivot Detection Swing highs and lows are detected using ta.pivothigh() and ta.pivotlow() with a configurable lookback (default 14 bars each side). Up to 50 pivots of each type are stored in a rolling buffer for trendline construction and validation. ◆ Trendline Construction When a new swing pivot is confirmed, a line is drawn from the previous pivot of the same type through the new pivot: slope = (price_new - price_prev) / (bar_new - bar_prev) This connects the two most recent swing highs (resistance) or swing lows (support). The slope is determined entirely by the pivot geometry. ◆ Merge Logic Before creating a new line, the indicator checks whether the new pivot falls on the projection of the existing active trendline. If the distance between the new pivot and the projected line is within the Merge Tolerance (default 1.0 x ATR), the active line is extended through the new pivot instead of creating a duplicate. This produces one longer line spanning three or more pivots. ◆ Historical Validation When a trendline is demoted (replaced by a newer line), it is checked for pivot touches. Lines with three or more pivot touches within ATR tolerance are preserved as dashed historical trendlines. Lines with fewer touches are removed. Additionally, all pairs of pivots in the buffer are scanned for validated lines (3+ touches) where no pivot crosses to the wrong side of the line. ◆ Breakout Detection and Cleanup On each confirmed bar, all historical trendlines are checked against the current close. Resistance lines where close is above the projection are broken and removed. Support lines where close is below the projection are broken and removed. Lines whose projection goes negative or diverges more than 15 x ATR from the current price are also removed. ◆ Extension and Scaling Lines do not use extend.right to avoid affecting the chart Y-axis auto-scaling. Instead, the three most recent lines per direction (active + two previous) are manually extended forward by 30 bars on the last bar, with price clamped to within 10 x ATR of the close. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ▸ WHAT MAKES IT DIFFERENT ◆ Pivot-to-Pivot Geometry Trendlines are drawn directly through detected swing pivots. The slope is determined by the actual price structure, not by ATR or other volatility proxies. ◆ Merge Instead of Duplicate When consecutive pivots align with the active trendline, the line is extended rather than duplicated. This avoids overlapping lines from the same starting point. ◆ Validated Historical Lines Historical trendlines are only shown if three or more pivots touch the line within ATR tolerance and no pivot crosses to the wrong side. This filters out noise and keeps only structurally significant lines. ◆ Scale-Safe Extension Lines are extended with price clamping instead of extend.right, so the chart Y-axis is never compressed by extreme projections on any timeframe. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ▸ LEGEND Legend table (bottom left) explains every visual element on the chart. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ▸ SETTINGS Calculation Swing Lookback - 14 (bars each side for pivot detection) Max Lines per Side - 8 (maximum trendlines per direction) Merge Tolerance (xATR) - 1.0 (threshold for extending vs creating new line) Max Slope (xATR/bar) - 0.5 (steepness filter for old dashed lines) Visualization Support Color - blue (customizable) Resistance Color - red (customizable) Legend Show Legend - ON Alert Settings Allow Repainting - OFF JSON Alerts - OFF ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ▸ ALERTS Bullish Break - price closed above resistance trendline Bearish Break - price closed below support trendline Any Break - either direction JSON payloads include direction, ticker, price, and timeframe. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Best regards, EXCAVO Disclaimer Trading involves significant risk. This indicator is a technical analysis tool and does not constitute financial advice, investment recommendations, or a guarantee of future results. Past indicator behavior does not guarantee future performance. Always use proper risk management and your own judgment."
+              - generic [ref=e660]:
+                - generic "Pine Script® indicator" [ref=e661]:
+                  - img [ref=e662]:
+                    - img [ref=e663]
+                  - generic [ref=e665]: Pine Script® indicator
+                - link [ref=e666] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/J49l5VTa-Trendlines-with-Breaks-EXCAVO/
+              - generic [ref=e668]:
+                - generic [ref=e669]:
+                  - link "by EXCAVO" [ref=e671] [cursor=pointer]:
+                    - /url: /u/EXCAVO/
+                    - generic [ref=e672]: by EXCAVO
+                  - time [ref=e674]: 14 hours ago
+                - generic [ref=e675]:
+                  - link "0 comments" [ref=e676] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/J49l5VTa-Trendlines-with-Breaks-EXCAVO/#chart-view-comment-form
+                    - img [ref=e678]:
+                      - img [ref=e679]
+                  - button "102 boosts 1 0 2" [ref=e681]:
+                    - generic [ref=e682]:
+                      - img "102 boosts" [ref=e684]:
+                        - img [ref=e685]
+                      - generic [ref=e689]:
+                        - generic [ref=e691]: "1"
+                        - generic [ref=e693]: "0"
+                        - generic [ref=e695]: "2"
+            - article [ref=e696]:
+              - generic [ref=e697]:
+                - 'link "Magic Hour Indicator: McScalpAfee V1" [ref=e698] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/5sN9CTsI-Magic-Hour-Indicator-McScalpAfee-V1/
+                - link [ref=e699] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/5sN9CTsI-Magic-Hour-Indicator-McScalpAfee-V1/
+                  - generic [ref=e701]: "MAGIC HOUR INDICATOR — McScalpAfee Entry Model V1 Visual companion to the Magic Hour Strategy. Plots both entry setups in real time with no order execution. Based on @dokakuri's Magic Hour Statistical Study (NQ, 2013–2026). Entry models credited to @Mc5calpAfee. WHAT YOU SEE ■ Magic Hour Box — the 1-hour range being tracked ■ H / L / EQ extension lines — range levels projected forward ■ BREAK marker — first time price moves outside the range ■ Type 1 — RECLAIM ✅ RECLAIM tag when a candle wicks out and closes inside Orange entry line + STOP line + lime target line 🚩 TAGGED IN on next bar (simulated entry) ✅ TP or ✖ SL outcome label ■ Type 2 — LIMIT (no reclaim) ⚡ NO RECLAIM tag when a candle closes outside the range Dotted limit level + pivot-based STOP + target line 🚩 LIMIT FILLED when price retraces back to the level Stop auto-recalculates on fill to the true pivot extreme ✅ TP or ✖ SL outcome label SETTINGS - 16 selectable Magic Hours (NY time, RANK #1 = 07:00 Golden Hour) - Toggle every label, line, and marker individually - Adjust extension line length - Custom colors for all visuals Perfect for manual trading, journaling, or sanity-checking the strategy version. Free. Share with credit to the original traders."
+              - generic [ref=e703]:
+                - generic "Pine Script® indicator" [ref=e704]:
+                  - img [ref=e705]:
+                    - img [ref=e706]
+                  - generic [ref=e708]: Pine Script® indicator
+                - link [ref=e709] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/5sN9CTsI-Magic-Hour-Indicator-McScalpAfee-V1/
+              - generic [ref=e711]:
+                - generic [ref=e712]:
+                  - link "by apiyada_inversion" [ref=e714] [cursor=pointer]:
+                    - /url: /u/apiyada_inversion/
+                    - generic [ref=e715]: by apiyada_inversion
+                  - time [ref=e717]: 6 hours ago
+                - generic [ref=e718]:
+                  - link "1 comment" [ref=e719] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/5sN9CTsI-Magic-Hour-Indicator-McScalpAfee-V1/#chart-view-comment-form
+                    - img [ref=e721]:
+                      - img [ref=e722]
+                    - generic [ref=e725]: "1"
+                  - button "59 boosts 5 9" [ref=e726]:
+                    - generic [ref=e727]:
+                      - img "59 boosts" [ref=e729]:
+                        - img [ref=e730]
+                      - generic [ref=e734]:
+                        - generic [ref=e736]: "5"
+                        - generic [ref=e738]: "9"
+            - article [ref=e739]:
+              - generic [ref=e740]:
+                - link "JEETU PRO AOC" [ref=e741] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/LaLM13Nb-JEETU-PRO-AOC/
+                - link "this script is useful for nifty future intraday traders and for options intraday traders for indian market keep calm just watch plotting and labels and values does work by own" [ref=e742] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/LaLM13Nb-JEETU-PRO-AOC/
+                  - generic [ref=e744]: this script is useful for nifty future intraday traders and for options intraday traders for indian market keep calm just watch plotting and labels and values does work by own
+              - generic [ref=e746]:
+                - generic "Pine Script® indicator" [ref=e747]:
+                  - img [ref=e748]:
+                    - img [ref=e749]
+                  - generic [ref=e751]: Pine Script® indicator
+                - link [ref=e752] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/LaLM13Nb-JEETU-PRO-AOC/
+              - generic [ref=e754]:
+                - generic [ref=e755]:
+                  - link "by jeetunse" [ref=e757] [cursor=pointer]:
+                    - /url: /u/jeetunse/
+                    - generic [ref=e758]: by jeetunse
+                  - time [ref=e760]: 21 hours ago
+                - generic [ref=e761]:
+                  - link "2 comments" [ref=e762] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/LaLM13Nb-JEETU-PRO-AOC/#chart-view-comment-form
+                    - img [ref=e764]:
+                      - img [ref=e765]
+                    - generic [ref=e768]: "2"
+                  - button "19 boosts 1 9" [ref=e769]:
+                    - generic [ref=e770]:
+                      - img "19 boosts" [ref=e772]:
+                        - img [ref=e773]
+                      - generic [ref=e777]:
+                        - generic [ref=e779]: "1"
+                        - generic [ref=e781]: "9"
+            - article [ref=e782]:
+              - generic [ref=e783]:
+                - link "Liquidity Contour Engine [JOAT]" [ref=e784] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/pUkFnZnK-Liquidity-Contour-Engine-JOAT/
+                - link [ref=e785] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/pUkFnZnK-Liquidity-Contour-Engine-JOAT/
+                  - generic [ref=e787]: "Liquidity Contour Engine Introduction Liquidity Contour Engine is an overlay indicator that identifies two distinct institutional price phenomena: liquidity sweeps at swing highs and lows, and order blocks formed before impulsive structural moves. Liquidity sweep zones mark levels where price reached beyond a prior swing, triggering stop orders, then reversed — the classic footprint of a sweep-and-reversal sequence. Order block zones mark the last opposing candle before a significant directional impulse, representing the area where a large position was initiated. The underlying premise is that institutions build and exit positions through order flow that leaves identifiable marks on the chart. A liquidity sweep is one such mark: price extending beyond a well-established swing level, clearing stops, then reversing. This behavior is not random — it reflects deliberate order accumulation at levels where retail stops cluster. Similarly, order blocks at the origin of impulsive moves may act as re-entry areas when price later returns to them. Core Concepts 1. Confirmed Swing Pivot Detection Swings are identified using ta.pivothigh and ta.pivotlow with a configurable lookback. All pivot detections are confirmed — offset by the lookback bars — meaning no repainting occurs. Only when sufficient bars have closed on both sides of a potential pivot is it registered. 2. Liquidity Sweep Detection A bullish sweep is confirmed when: price wicks below the most recent swing low by at least a configurable ATR multiple, and the bar closes back above that swing low. This captures the wick-past-and-close-back pattern that characterizes institutional accumulation at liquidity levels. A bearish sweep is the mirror condition at swing highs. Upon detection, a zone is created at the swept level, rendered as a dual-width line (thin solid + thick transparent shadow). Zones remain active until price sustains a close beyond the swept level by 0.5 ATR, at which point they convert to dotted lines (mitigated state). 3. Order Block Detection An order block is identified as the prior N candle(s) before a structural impulse. A bullish impulse is defined as a bar that closes above the most recent swing high. The order block is the last candle body before that impulse, rendered as a filled box from body open to the wick high. Mitigation occurs when price closes beyond the 50% level of the order block body, fading the box to indicate the zone has been traded through. 4. Zone Lifecycle Management The indicator uses arrays to track active zones and enforces a maximum count. When the maximum is exceeded, the oldest zone is removed from the chart. This prevents chart clutter while keeping the most recent and relevant zones visible. Features Liquidity Sweep Zones: Dual-width line rendering at swept swing levels, self-managing lifecycle Order Block Boxes: Filled zones at order block origin, with mitigation fading Swing Level Dotted Lines: Current swing high and low extensions as dotted reference lines 9-Row Dashboard: Sweep state, active zone counts, order block counts, last swing levels Configurable ATR Threshold: Adjusts how far price must reach beyond a swing to qualify as a sweep Max Zone Limit: Prevents chart clutter with configurable maximum active zone count Input Parameters Swing Lookback: Bars required each side for pivot confirmation (default: 8) Sweep ATR Threshold: Minimum sweep distance in ATR units (default: 0.3) Max Active Zones: Maximum concurrently displayed liquidity zones (default: 8) ATR Period: Period for ATR calculation (default: 14) Show Order Blocks: Toggle order block rendering OB Lookback: How many bars back to identify the order block candle (default: 3) How to Use This Indicator Sweep-and-Reverse Setups When a bullish sweep fires (price wicked below a swing low and closed back above), the zone represents the level where stops were taken. If price subsequently builds structure above that zone and delta pressure is positive, the setup is a potential long entry with the swept level as reference for the stop. Order Block Re-Tests When price returns to a bullish order block zone (shown in teal), it is revisiting the area where an institutional position was likely initiated. If the zone has not been mitigated (box remains filled), a reaction from that zone is plausible. A mitigated order block (faded) is a less reliable reference. Zone Confluence When a liquidity sweep zone and an order block coincide at the same price level, the confluence represents a stronger structural reference than either zone alone. Limitations Swing pivot confirmation introduces a bar lag equal to the lookback period. Sweeps and order blocks are identified after the fact, not in the moment they form Not every liquidity sweep produces a reversal. Price can continue through a swept level without reversing Order block identification is mechanical and cannot account for all institutional order placement strategies On higher timeframes, zones cover wider price ranges and may require adjustment of the ATR threshold Originality Statement The unified framework for tracking liquidity sweeps and order blocks within a single indicator with a shared zone lifecycle management system is the original design contribution. Zone mitigation logic that converts active zones to passive reference lines (rather than deleting them) preserves structural context while visually indicating that a zone's primary relevance has passed. The dual-width shadow line rendering for sweep zones provides depth that distinguishes them clearly from standard horizontal lines. Disclaimer This indicator is for educational and informational purposes only. Liquidity sweep detection describes a pattern in historical price data. Past occurrences of this pattern do not guarantee future reactions. Order blocks are hypothetical areas of interest, not confirmed institutional levels. Always use proper risk management. -Made with passion by officialjackofalltrades"
+              - generic [ref=e789]:
+                - generic "Pine Script® indicator" [ref=e790]:
+                  - img [ref=e791]:
+                    - img [ref=e792]
+                  - generic [ref=e794]: Pine Script® indicator
+                - link [ref=e795] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/pUkFnZnK-Liquidity-Contour-Engine-JOAT/
+              - generic [ref=e797]:
+                - generic [ref=e798]:
+                  - link "by officialjackofalltrades" [ref=e800] [cursor=pointer]:
+                    - /url: /u/officialjackofalltrades/
+                    - generic [ref=e801]: by officialjackofalltrades
+                  - time [ref=e803]: Apr 17
+                - generic [ref=e804]:
+                  - link "0 comments" [ref=e805] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/pUkFnZnK-Liquidity-Contour-Engine-JOAT/#chart-view-comment-form
+                    - img [ref=e807]:
+                      - img [ref=e808]
+                  - button "91 boosts 9 1" [ref=e810]:
+                    - generic [ref=e811]:
+                      - img "91 boosts" [ref=e813]:
+                        - img [ref=e814]
+                      - generic [ref=e818]:
+                        - generic [ref=e820]: "9"
+                        - generic [ref=e822]: "1"
+            - article [ref=e823]:
+              - generic [ref=e824]:
+                - link "Adaptive Fourier Transform CCI [QuantAlgo]" [ref=e825] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/KWRHKdqw-Adaptive-Fourier-Transform-CCI-QuantAlgo/
+                - link [ref=e826] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/KWRHKdqw-Adaptive-Fourier-Transform-CCI-QuantAlgo/
+                  - generic [ref=e828]: "🟢 Overview The Adaptive Fourier Transform CCI reimagines the classic Commodity Channel Index by replacing its fixed lookback period with one that continuously adjusts to the market's own rhythm. Rather than measuring price deviation against an arbitrary static length, it first isolates the cyclical component of price action through a Discrete Fourier Transform, identifies which cycle period currently holds the most spectral energy, and then tunes the CCI calculation to that dominant period. The result is a momentum oscillator calibrated to the frequency structure of the instrument being traded, naturally tightening during fast, high-frequency regimes and widening during slower, drawn-out cycles without requiring manual timeframe adjustments. 🟢 How It Works Before any cycle detection occurs, raw price is conditioned through two sequential filters. A high-pass filter strips the slow-moving trend component from the close, leaving only the oscillating portion of price action: hp := 0.5 * (1 + a1) * (close - close ) + a1 * hp That residual is then passed through a Super Smoother filter, which removes short-term noise from the cycle signal without introducing the lag that standard moving averages add at this stage: filt := c1 * (hp + hp ) / 2 + c2 * filt + c3 * filt This cleaned signal is what the Discrete Fourier Transform (DFT) operates on. The DFT scans across a range of candidate cycle periods and measures how much price energy is concentrated at each one. The period where that energy is strongest is selected as the dominant cycle. An EMA smooths the period output to prevent erratic length switching between bars, and the result is scaled by the Length Multiplier to derive the final adaptive CCI lookback: adaptiveLen = clamp(round(dominantPeriod × lengthMult), 5, 60) The CCI is then calculated using the standard Lambert formula over that adaptive length, measuring how far typical price has deviated from its mean relative to its average absolute deviation. An optional output smoothing MA reduces bar-to-bar noise before the final value is plotted. 🟢 Signal Interpretation ▶ Overbought (Above Upper Level, Red): When the Adaptive Fourier Transform CCI (AFT-CCI) rises above the upper threshold, price has deviated significantly above its cycle-adaptive mean. The reading reflects momentum extended relative to the market's current detected rhythm rather than a fixed arbitrary baseline. The signal carries more weight when the dominant cycle is stable and the DFT is locked onto a consistent frequency rather than switching between periods. ▶ Oversold (Below Lower Level, Green): When the AFT-CCI falls below the lower threshold, price has moved an equivalent distance below its cycle-adaptive mean. In strongly trending conditions the AFT-CCI can remain in either zone for extended periods, so the threshold levels should be read as zones of extension rather than automatic reversal points. ▶ Neutral Zone (Between Levels, Grey): When the AFT-CCI sits between the upper and lower thresholds, price deviation relative to the detected cycle is within normal range. Zero-line crosses within this zone indicate the adaptive mean is being reclaimed, which can serve as early directional context before a full threshold break develops. ▶ Zero Line: The zero line represents the adaptive mean itself. A cross above zero indicates typical price has moved above the cycle-adaptive mean; a cross below indicates the opposite. These crosses are lower-conviction reads on their own but become more meaningful when followed by a threshold break in the same direction. 🟢 Features ▶ Preconfigured Presets: Two parameter sets sit alongside the default configuration. \"Fast Response\" compresses the DFT window and cycle search range while raising the length multiplier, producing faster adaptation suited to intraday charts from 5-minute to 1-hour. \"Smooth Trend\" expands the window and search range while lowering the multiplier, establishing a more stable cycle read suited to daily and weekly position trading. ▶ Built-in Alerts: Six alert conditions cover the full range of meaningful oscillator events. Separate alerts fire on entering and exiting both overbought and oversold territory, capturing threshold breaks in both directions. Two additional alerts trigger on bullish and bearish zero-line crosses, enabling directional monitoring without requiring constant chart observation. ▶ Visual Customisation: Six colour presets, Classic, Aqua, Cosmic, Cyber, Neon, and Custom, apply consistently across the signal line, glow layers, and threshold level lines so the overbought and oversold colours remain coherent regardless of which preset is active. The optional neon glow effect uses three layered plots at increasing transparency to give the signal line visual depth and make threshold breaks immediately readable at a glance."
+              - generic [ref=e830]:
+                - generic "Pine Script® indicator" [ref=e831]:
+                  - img [ref=e832]:
+                    - img [ref=e833]
+                  - generic [ref=e835]: Pine Script® indicator
+                - link [ref=e836] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/KWRHKdqw-Adaptive-Fourier-Transform-CCI-QuantAlgo/
+              - generic [ref=e838]:
+                - generic [ref=e839]:
+                  - link "by QuantAlgo" [ref=e841] [cursor=pointer]:
+                    - /url: /u/QuantAlgo/
+                    - generic [ref=e842]: by QuantAlgo
+                  - time [ref=e844]: Apr 17
+                - generic [ref=e845]:
+                  - link "0 comments" [ref=e846] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/KWRHKdqw-Adaptive-Fourier-Transform-CCI-QuantAlgo/#chart-view-comment-form
+                    - img [ref=e848]:
+                      - img [ref=e849]
+                  - button "46 boosts 4 6" [ref=e851]:
+                    - generic [ref=e852]:
+                      - img "46 boosts" [ref=e854]:
+                        - img [ref=e855]
+                      - generic [ref=e859]:
+                        - generic [ref=e861]: "4"
+                        - generic [ref=e863]: "6"
+            - article [ref=e864]:
+              - generic [ref=e865]:
+                - link "Volumetric Structure Engine [JOAT]" [ref=e866] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/MD1PrIxW-Volumetric-Structure-Engine-JOAT/
+                - link [ref=e867] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/MD1PrIxW-Volumetric-Structure-Engine-JOAT/
+                  - generic [ref=e869]: "Volumetric Structure Engine Introduction The Volumetric Structure Engine is an institutional market structure tracker that fuses swing-point classification with real-time buy/sell volume delta analysis. Every confirmed swing high and swing low is measured not only by price, but by the net volume composition of the leg that produced it — revealing whether a structural move was driven by genuine institutional buying or selling, or whether it was a low-conviction, thin-volume probe. The indicator classifies market structure as HH/HL (bullish) or LH/LL (bearish), detects Break of Structure (BOS) and Change of Character (ChoCH) events on bar close, and renders each swing zone with a color gradient that reflects the underlying volume delta of that leg. The core problem this solves: most market structure tools draw lines or arrows at swing points but say nothing about the quality of that swing. A break of structure on rising volume is categorically different from one on declining volume — the first signals institutional participation, the second suggests a liquidity grab. VSE quantifies that difference on every bar. Core Concepts 1. Non-Repainting Swing Detection Swings are confirmed using a lookback comparison pattern that resolves only on bar close: float H = ta.highest(high, i_len) float L = ta.lowest(low, i_len) bool new_sh = high == H and high < H bool new_sl = low == L and low > L A swing high at bar N-1 is confirmed when bar N closes lower, meaning the prior bar's high was the highest in the lookback window. This approach never repaints because it always references the closed bar to the left. 2. Volume Delta Accumulation Per Leg Between each confirmed swing, running buy and sell volume totals accumulate. On each bar, if close >= open the bar's volume is classified as buy-side; otherwise it is sell-side. When a new swing is detected, the accumulated totals are saved to that swing node, and the counters reset for the next leg: if new_sh or new_sl run_buy := 0.0 run_sell := 0.0 if close >= open run_buy += volume else run_sell += volume The delta percentage (buy minus sell divided by total volume) determines the color and transparency of each swing zone box. A leg with 80% buy delta renders as a vivid bull green; a leg with 20% buy delta renders as a vivid bear red. Neutral legs render in the neutral color. 3. BOS and ChoCH Detection Break of Structure fires when confirmed price closes through the most recent confirmed swing extreme in the opposite direction. Change of Character fires when the first break occurs against the established trend — the earliest signal that the dominant structure may be shifting. Both signals are barstate.isconfirmed, preventing any lookahead. 4. Structure Cloud A fill between the last confirmed swing high and swing low creates a visual structure range that updates dynamically. The cloud color matches the current trend direction and serves as an at-a-glance bias indicator for the session. Features Swing Zone Boxes: ATR-scaled zone boxes at every confirmed swing, colored by the net buy/sell delta of the producing leg Volume Delta Gradient: Zone colors range from deep bull green (high buy delta) to deep bear red (high sell delta), with transparency encoding conviction BOS Lines: Dashed horizontal lines drawn at the level where a Break of Structure closes, with text label ChoCH Highlight: Change of Character events highlighted with a distinct yellow-amber color to distinguish them from continuation BOS signals Structure Connection Lines: Lines connecting consecutive swing nodes, colored by the delta of each leg Structure Cloud: Gradient fill between the last swing high and low showing current structural range Candle Coloring: Optional candle tinting by current trend direction 9-Row Dashboard: Displays trend bias, last swing high/low price levels, structure range percentage, BOS bull/bear counts, ChoCH count, last leg delta percentage, and total swing node count Alerts: BOS bullish, BOS bearish, ChoCH bullish, ChoCH bearish Input Parameters Structure Detection: Swing Length: Lookback bars for swing high/low detection (default: 20, range: 5-200). Higher values identify fewer, stronger structural swings. Lower values are more reactive. Show BOS Lines: Toggle BOS line rendering (default: on) Show ChoCH: Toggle Change of Character highlighting (default: on) Structure Cloud: Toggle the fill between swing high and low (default: on) Visualization: Bullish / Bearish / Neutral / ChoCH colors: Fully customizable Zone Transparency: Control the base transparency of swing zone boxes (default: 78) Color Candles: Optional candle tinting by structural trend (default: off) Dashboard: Position: Top Right, Top Left, Bottom Right, Bottom Left (default: Top Right) How to Use This Indicator Step 1: Read the Current Structure The dashboard shows the current trend bias (BULLISH / BEARISH / NEUTRAL), the last confirmed swing high and low prices, and the structural range as a percentage. This gives you the directional context at a glance. Step 2: Interpret Zone Colors Zones colored in vivid green (high buy delta) represent legs driven by institutional buying. Zones colored in vivid red (high sell delta) represent institutional selling pressure. Faded or gray zones represent low-conviction legs — useful for identifying weak structure that is more likely to be swept. Step 3: Trade BOS and ChoCH Events A BOS in the direction of the existing trend is a continuation signal. A ChoCH (against the trend) is a structural shift signal and often marks the beginning of a reversal. Volume delta on the breaking leg adds conviction: a BOS on a high-buy-delta leg is more reliable than one on a low-delta leg. Step 4: Use Swing Zones as S/R Each swing zone box represents a price area where a structural pivot occurred. Institutional order flow often returns to these levels. High-delta zones in particular tend to act as meaningful support or resistance. Originality Statement This indicator is original in its combination of confirmed non-repainting swing structure with per-leg volume delta measurement. While market structure tools and volume analysis tools each exist independently, this indicator is justified because: Volume delta is computed per structural leg — not per candle and not as a global indicator — creating a direct mapping between market structure quality and institutional participation The swing confirmation method using the lookback comparison pattern eliminates repainting while maintaining responsiveness to genuine structural changes Zone color encoding with delta-driven gradient creates an immediate visual hierarchy — strong zones versus weak zones — without requiring separate panels or indicators BOS and ChoCH detection with volume delta context provides a more complete signal than either alone Limitations The buy/sell volume classification (close >= open = buy) is an approximation. True tick-level direction is not available in Pine Script. On very short timeframes where volume is sparse, classification may be imprecise Swing length selection significantly affects structure quality. Too short produces noise; too long misses intermediate structure. Users should calibrate to their timeframe and instrument BOS and ChoCH are confirmed on bar close, so they are identified one bar after the actual breakout candle closes. This is a deliberate trade-off for accuracy over speed The indicator does not predict direction — it classifies the current structural state. A bullish structure can break down without warning Disclaimer This indicator is provided for educational and informational purposes only. It does not constitute financial advice or a recommendation to buy or sell any instrument. All trading involves risk of loss. Past structural patterns do not guarantee future results. Always use proper risk management. -Made with passion by jackofalltrades"
+              - generic [ref=e871]:
+                - generic "Pine Script® indicator" [ref=e872]:
+                  - img [ref=e873]:
+                    - img [ref=e874]
+                  - generic [ref=e876]: Pine Script® indicator
+                - link [ref=e877] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/MD1PrIxW-Volumetric-Structure-Engine-JOAT/
+              - generic [ref=e879]:
+                - generic [ref=e880]:
+                  - link "by officialjackofalltrades" [ref=e882] [cursor=pointer]:
+                    - /url: /u/officialjackofalltrades/
+                    - generic [ref=e883]: by officialjackofalltrades
+                  - time [ref=e885]: 7 hours ago
+                - generic [ref=e886]:
+                  - link "1 comment" [ref=e887] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/MD1PrIxW-Volumetric-Structure-Engine-JOAT/#chart-view-comment-form
+                    - img [ref=e889]:
+                      - img [ref=e890]
+                    - generic [ref=e893]: "1"
+                  - button "21 boosts 2 1" [ref=e894]:
+                    - generic [ref=e895]:
+                      - img "21 boosts" [ref=e897]:
+                        - img [ref=e898]
+                      - generic [ref=e902]:
+                        - generic [ref=e904]: "2"
+                        - generic [ref=e906]: "1"
+            - article [ref=e907]:
+              - generic [ref=e908]:
+                - link "Gann-Style MTF Alignment Indicator" [ref=e909] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/e1E4P09o-Gann-Style-MTF-Alignment-Indicator/
+                - link "W.D. Gann theory in trading is a technical analysis approach developed by William Delbert Gann. It uses geometric, mathematical, and astrological concepts to predict price movements in financial markets. Gann's methods include the use of price and time cycles, angles (Gann angles), and patterns to identify support and resistance levels, trend changes, and potential market turning points. The theory emphasizes the relationship between price, time, and pattern geometry to forecast market behavior." [ref=e910] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/e1E4P09o-Gann-Style-MTF-Alignment-Indicator/
+                  - generic [ref=e912]: W.D. Gann theory in trading is a technical analysis approach developed by William Delbert Gann. It uses geometric, mathematical, and astrological concepts to predict price movements in financial markets. Gann's methods include the use of price and time cycles, angles (Gann angles), and patterns to identify support and resistance levels, trend changes, and potential market turning points. The theory emphasizes the relationship between price, time, and pattern geometry to forecast market behavior.
+              - generic [ref=e914]:
+                - generic "Pine Script® indicator" [ref=e915]:
+                  - img [ref=e916]:
+                    - img [ref=e917]
+                  - generic [ref=e919]: Pine Script® indicator
+                - link [ref=e920] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/e1E4P09o-Gann-Style-MTF-Alignment-Indicator/
+              - generic [ref=e922]:
+                - generic [ref=e923]:
+                  - link "by fpcanosci" [ref=e925] [cursor=pointer]:
+                    - /url: /u/fpcanosci/
+                    - generic [ref=e926]: by fpcanosci
+                  - time [ref=e928]: 23 hours ago
+                - generic [ref=e929]:
+                  - link "0 comments" [ref=e930] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/e1E4P09o-Gann-Style-MTF-Alignment-Indicator/#chart-view-comment-form
+                    - img [ref=e932]:
+                      - img [ref=e933]
+                  - button "52 boosts 5 2" [ref=e935]:
+                    - generic [ref=e936]:
+                      - img "52 boosts" [ref=e938]:
+                        - img [ref=e939]
+                      - generic [ref=e943]:
+                        - generic [ref=e945]: "5"
+                        - generic [ref=e947]: "2"
+            - article [ref=e948]:
+              - generic [ref=e949]:
+                - link "CHoCH Anchored VWAP" [ref=e950] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/boLrXB79-CHoCH-Anchored-VWAP/
+                - link [ref=e951] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/boLrXB79-CHoCH-Anchored-VWAP/
+                  - generic [ref=e953]: "█ OVERVIEW The CHoCH Anchored VWAP indicator automatically detects changes in market character (CHoCH) across six different pivot lengths simultaneously and uses them as anchoring points for VWAP. After each detected CHoCH, VWAP is reset and calculated from the moment of confirmed market structure break. Standard deviation bands (SD 1–3) are plotted around it with gradient fills. This allows the indicator to reflect the current “fair value” and deviation range within a new market regime, instead of relying on arbitrary or delayed anchor points. █ CONCEPTS This indicator is designed for traders using Smart Money Concepts (SMC) and ICT methodologies. Its main goal is to solve a common issue with traditional VWAPs — arbitrary or delayed anchoring. Standard VWAPs are calculated from the start of a session, a manually selected point, or a pivot. Each approach has limitations: * the starting point is not directly tied to current market structure * pivot-based VWAP introduces delay, as pivots are confirmed only after several candles and then plotted retroactively In this indicator, the anchor point is derived directly from price action and real structural changes. CHoCH (Change of Character) CHoCH represents a break in the current market structure where control shifts from one side of the market to the other. The indicator detects these events across six different pivot lengths, allowing it to capture: * short-term structural shifts * more significant higher-timeframe reversals A CHoCH is only generated when a structural break occurs in the opposite direction of the previous market bias. Anchored VWAP reset on CHoCH Instead of anchoring VWAP at arbitrary or delayed points, the indicator starts its calculation exactly at the moment of a confirmed structural break. The anchor: * appears on the current candle (no backplotting) * does not use future data * reflects the actual moment of control shift As a result, VWAP represents the average price of participants operating within the new market structure, rather than a mix of old and new conditions. SD Bands (1–3) Standard deviation bands are calculated relative to the VWAP anchored in the new market regime. They show: * the normal range of price movement * equilibrium levels (around VWAP) * potential extremes (SD 2–3) This makes it easier to identify both mean reversion opportunities and trend continuation after pullbacks. █ FEATURES 1. CHoCH * Pivot Length 1–6 – six independent pivot lengths (default: 10, 10, 15, 20, 30, 50) * Show CHoCH Labels – optional labels displaying the pivot length that triggered CHoCH * CHoCH Up / Down colors 2. VWAP & SD Bands * Show Anchored VWAP – toggle VWAP line visibility * Show SD Bands – toggle SD bands (1–3) * 1 / 2 / 3 SD Multiplier – standard deviation multipliers * Use candle range instead of volume – mode for markets without volume 3. Colors & Transparency * Separate base colors for upper and lower SD bands * Independent transparency for each SD level (1–3) * Gradient fills between VWAP and SD bands (3 intensity levels) 4. Visualization * Gradient fills between VWAP and SD bands * Automatic CHoCH labels on each reset (with pivot length) * Clear color coding for CHoCH Up (green) and CHoCH Down (red) 5. Alerts * Alertcondition for CHoCH Up and CHoCH Down * Real-time alert support █ APPLICATIONS The indicator is particularly useful in the following scenarios: 1. Trading in the direction of the new structure In an uptrend: CHoCH Up + price above VWAP creates a bullish context. In a downtrend: CHoCH Down + price below VWAP works analogously. VWAP acts as a dynamic average price for the new market structure and can be used as a reference point when looking for entries in the direction of the trend. 2. Identifying fair value and deviations SD bands show how far price deviates from the new volume-weighted average. This helps to: * identify equilibrium zones (around VWAP) * assess whether price is within a normal range or at an extreme For example: if price reaches higher deviations (e.g., SD2–SD3) and a reaction appears, a move back toward VWAP can be considered. 3. Confluence with other tools The indicator works well as part of a confluence-based approach with other technical tools. For example: * in an uptrend, price tests VWAP and reacts upward * at the same time, a momentum indicator shows bullish strength → this may provide a basis for considering a long position 4. Position management After a CHoCH appears, the indicator provides volatility context through SD bands. Possible use cases: * using SD levels as reference Take Profit targets * using VWAP or structure as a reference for Stop Loss This allows position management decisions to be based on current market structure rather than fixed levels. █ NOTES * Smaller Pivot Length → more signals (higher sensitivity) * Larger Pivot Length → fewer but stronger structural shifts * On markets without volume, the “Use candle range” option replaces volume with candle range"
+              - generic [ref=e955]:
+                - generic "Pine Script® indicator" [ref=e956]:
+                  - img [ref=e957]:
+                    - img [ref=e958]
+                  - generic [ref=e960]: Pine Script® indicator
+                - link [ref=e961] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/boLrXB79-CHoCH-Anchored-VWAP/
+              - generic [ref=e963]:
+                - generic [ref=e964]:
+                  - link "by Uncle_the_shooter" [ref=e966] [cursor=pointer]:
+                    - /url: /u/Uncle_the_shooter/
+                    - generic [ref=e967]: by Uncle_the_shooter
+                  - time [ref=e969]: Apr 17
+                - generic [ref=e970]:
+                  - link "0 comments" [ref=e971] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/boLrXB79-CHoCH-Anchored-VWAP/#chart-view-comment-form
+                    - img [ref=e973]:
+                      - img [ref=e974]
+                  - button "39 boosts 3 9" [ref=e976]:
+                    - generic [ref=e977]:
+                      - img "39 boosts" [ref=e979]:
+                        - img [ref=e980]
+                      - generic [ref=e984]:
+                        - generic [ref=e986]: "3"
+                        - generic [ref=e988]: "9"
+            - article [ref=e989]:
+              - generic [ref=e990]:
+                - link "Swing Fibonacci [BigBeluga]" [ref=e991] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/oC9m0JpD-Swing-Fibonacci-BigBeluga/
+                - link [ref=e992] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/oC9m0JpD-Swing-Fibonacci-BigBeluga/
+                  - generic [ref=e994]: "Swing Fibonacci is a high-precision geometric framework that merges traditional swing structure with parametric spiral projections. Unlike standard Fibonacci retracements that use static horizontal lines, this tool projects expanding harmonic spirals from major structural turning points to map out the \"natural geometry\" of the market. By calculating the mathematical relationship between price volatility and time, the indicator identifies expansion shells where price is naturally inclined to react, stall, or reverse. 🔵 CONCEPTS Macro Swing Detection: The engine utilizes a high-threshold lookback window (50–100 bars) to filter out market noise. It only identifies the most significant structural pivots, ensuring the spirals are anchored to \"institutional\" levels rather than minor retail fluctuations. Anchor Points & Structural Mapping: At every confirmed trend reversal, the script anchors a ⦾ symbol. It then draws a solid \"Swing Leg\" connecting the current anchor to the previous one, providing a clear visual map of the market's structural transitions. Parametric Fibonacci Spirals: The spirals are generated using a high-resolution 300-step parametric calculation. This ensures the curve remains perfectly smooth and mathematically accurate regardless of how many bars are on the screen. Adaptive Price Normalization: To prevent the \"squashed\" look common in geometric tools, the spiral dynamically rescales itself based on the price range of the last 500 bars. This ensures the geometry stays proportional to current market volatility. 🔵 FEATURES Institutional Data Dashboard: Located in the top-right corner, the dashboard provides real-time stats including the exact Anchor Price , the current Trend Status (BULLISH ▲ or BEARISH ▼), and the Swing % move from the low/high. Real-Time Swing Tracking: A dynamic dashed line follows the current price, connecting it back to the active anchor point. This allows you to visualize the current \"swing in progress\" before it is finalized. Parametric Control Suite: • Radius: Adjusts the vertical \"stretch\" and overall size. • Spiral Qty: Controls the number of rotations (up to 10) to project further into the future. Color Flow Visualization: The spirals utilize a professional gradient transition from the bearish color (inner) to the bullish color (outer), visually representing the expansion of price energy. 🔵 HOW TO USE Identify Reaction Zones: Price often treats the edges of the spiral curves as dynamic support and resistance. Look for \"confluence\" where a spiral curve intersects with a horizontal level or a previous swing point. Forecasting Expansion: • Bullish Spiral: Projects outward from a swing low, highlighting potential take-profit zones or areas where the trend might exhaust. • Bearish Spiral: Projects from a swing high, identifying \"expansion floors\" for short positions. Trend Confirmation: Use the Trend Squares at the bottom of the chart for a quick pulse on the current directional bias without cluttering the main price action. Harmonic Timing: The spiral's horizontal reach provides a \"time\" component. If price reaches a specific spiral arc at a specific time, it often marks a high-probability turning point in the cycle. 🔵 CONCLUSION Swing Fibonacci transforms abstract price action into a tangible geometric forecast. By anchoring dynamic, price-normalized spirals to the market’s strongest turning points, it provides a unique lens through which to view volatility, extension, and mean reversion. Ideal for harmonic traders, swing analysts, and anyone looking for a deeper mathematical edge in their structural analysis."
+              - generic [ref=e996]:
+                - generic "Pine Script® indicator" [ref=e997]:
+                  - img [ref=e998]:
+                    - img [ref=e999]
+                  - generic [ref=e1001]: Pine Script® indicator
+                - link [ref=e1002] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/oC9m0JpD-Swing-Fibonacci-BigBeluga/
+              - generic [ref=e1004]:
+                - generic [ref=e1005]:
+                  - link "by BigBeluga" [ref=e1007] [cursor=pointer]:
+                    - /url: /u/BigBeluga/
+                    - generic [ref=e1008]: by BigBeluga
+                  - time [ref=e1010]: Apr 16
+                - generic [ref=e1011]:
+                  - link "2 comments" [ref=e1012] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/oC9m0JpD-Swing-Fibonacci-BigBeluga/#chart-view-comment-form
+                    - img [ref=e1014]:
+                      - img [ref=e1015]
+                    - generic [ref=e1018]: "2"
+                  - button "513 boosts 5 1 3" [ref=e1019]:
+                    - generic [ref=e1020]:
+                      - img "513 boosts" [ref=e1022]:
+                        - img [ref=e1023]
+                      - generic [ref=e1027]:
+                        - generic [ref=e1029]: "5"
+                        - generic [ref=e1031]: "1"
+                        - generic [ref=e1033]: "3"
+            - article [ref=e1034]:
+              - generic [ref=e1035]:
+                - 'link "MACD Pro Signals: Divergence + Smart Cross Entries" [ref=e1036] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/v1fSaUxV-MACD-Pro-Signals-Divergence-Smart-Cross-Entries/
+                - link [ref=e1037] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/v1fSaUxV-MACD-Pro-Signals-Divergence-Smart-Cross-Entries/
+                  - generic [ref=e1039]: A powerful and minimalist MACD indicator designed for traders who want clean visuals, precise signals, and reliable divergence detection—all in one tool. This script enhances the classic MACD by combining momentum columns, signal-line cross markers, and automatic divergence detection to help identify high-probability trading opportunities. 🚀 Key Features MACD Histogram (Column Style) Clear momentum visualization using color-coded columns Instantly spot bullish vs bearish conditions Signal Line Cross (Diamond Markers) Minimalist diamond signals for MACD ↔ signal crossovers ✔ Green = bullish momentum shift ✔ Red = bearish momentum shift Zero-Line Cross Signals Identify early trend direction changes Optional momentum filter to reduce noise Automatic Divergence Detection Detects both bullish and bearish divergence Helps anticipate potential reversals before they happen Smart Filtering Avoids weak signals near the zero line (optional) Reduces false positives in choppy markets Built-in Alerts Signal crossovers Zero-line crosses Divergence signals 📈 How Traders Use It Trend Direction MACD above 0 → bullish bias MACD below 0 → bearish bias Entries Use diamond markers for early entries on momentum shifts Reversals Combine divergence + signal cross for higher-probability setups Best Practice Works best with structure, support/resistance, or higher timeframe confirmation ⚙️ Fully Customizable Adjustable MACD parameters Choose EMA or SMA Toggle divergence and filters Control signal sensitivity ⚠️ Disclaimer This indicator is for educational and analytical purposes only. Always apply proper risk management when trading. 🚀 If you find this useful ✔ Hit 👍 Like ✔ Add to favorites ✔ Share your feedback Your support helps improve future updates!
+              - generic [ref=e1041]:
+                - generic "Pine Script® indicator" [ref=e1042]:
+                  - img [ref=e1043]:
+                    - img [ref=e1044]
+                  - generic [ref=e1046]: Pine Script® indicator
+                - link [ref=e1047] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/v1fSaUxV-MACD-Pro-Signals-Divergence-Smart-Cross-Entries/
+              - generic [ref=e1049]:
+                - generic [ref=e1050]:
+                  - link "by iNsTiNcT_2025" [ref=e1052] [cursor=pointer]:
+                    - /url: /u/iNsTiNcT_2025/
+                    - generic [ref=e1053]: by iNsTiNcT_2025
+                  - time [ref=e1055]: Apr 17
+                - generic [ref=e1056]:
+                  - link "0 comments" [ref=e1057] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/v1fSaUxV-MACD-Pro-Signals-Divergence-Smart-Cross-Entries/#chart-view-comment-form
+                    - img [ref=e1059]:
+                      - img [ref=e1060]
+                  - button "66 boosts 6 6" [ref=e1062]:
+                    - generic [ref=e1063]:
+                      - img "66 boosts" [ref=e1065]:
+                        - img [ref=e1066]
+                      - generic [ref=e1070]:
+                        - generic [ref=e1072]: "6"
+                        - generic [ref=e1074]: "6"
+            - article [ref=e1075]:
+              - generic [ref=e1076]:
+                - link "Kiki Moods" [ref=e1077] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/xz4gxNzC-Kiki-Moods/
+                - link "Follow the astrology, that's what the wealthy does!" [ref=e1078] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/xz4gxNzC-Kiki-Moods/
+                  - generic [ref=e1080]: Follow the astrology, that's what the wealthy does!
+              - generic [ref=e1082]:
+                - generic "Pine Script® indicator" [ref=e1083]:
+                  - img [ref=e1084]:
+                    - img [ref=e1085]
+                  - generic [ref=e1087]: Pine Script® indicator
+                - link [ref=e1088] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/xz4gxNzC-Kiki-Moods/
+              - generic [ref=e1090]:
+                - generic [ref=e1091]:
+                  - link "by kkaminsky" [ref=e1093] [cursor=pointer]:
+                    - /url: /u/kkaminsky/
+                    - generic [ref=e1094]: by kkaminsky
+                  - time [ref=e1096]: 7 hours ago
+                - generic [ref=e1097]:
+                  - link "1 comment" [ref=e1098] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/xz4gxNzC-Kiki-Moods/#chart-view-comment-form
+                    - img [ref=e1100]:
+                      - img [ref=e1101]
+                    - generic [ref=e1104]: "1"
+                  - button "2 boosts 2" [ref=e1105]:
+                    - generic [ref=e1106]:
+                      - img "2 boosts" [ref=e1108]:
+                        - img [ref=e1109]
+                      - generic [ref=e1115]: "2"
+          - button "Show more publications" [ref=e1116]:
+            - generic [ref=e1117]: Show more publications
+          - generic [ref=e1121]:
+            - navigation "Pagination" [ref=e1122]:
+              - button "Previous page" [disabled] [ref=e1123]:
+                - img [ref=e1125]:
+                  - img [ref=e1126]
+              - generic [ref=e1128]:
+                - link "1" [ref=e1129] [cursor=pointer]:
+                  - /url: /scripts/?
+                  - generic [ref=e1130]: "1"
+                - link "2" [ref=e1131] [cursor=pointer]:
+                  - /url: /scripts/page-2/?
+                  - generic [ref=e1132]: "2"
+                - link "3" [ref=e1133] [cursor=pointer]:
+                  - /url: /scripts/page-3/?
+                  - generic [ref=e1134]: "3"
+                - link "4" [ref=e1135] [cursor=pointer]:
+                  - /url: /scripts/page-4/?
+                  - generic [ref=e1136]: "4"
+                - link "5" [ref=e1137] [cursor=pointer]:
+                  - /url: /scripts/page-5/?
+                  - generic [ref=e1138]: "5"
+                - link "6" [ref=e1139] [cursor=pointer]:
+                  - /url: /scripts/page-6/?
+                  - generic [ref=e1140]: "6"
+                - link "7" [ref=e1141] [cursor=pointer]:
+                  - /url: /scripts/page-7/?
+                  - generic [ref=e1142]: "7"
+                - link "8" [ref=e1143] [cursor=pointer]:
+                  - /url: /scripts/page-8/?
+                  - generic [ref=e1144]: "8"
+                - link "9" [ref=e1145] [cursor=pointer]:
+                  - /url: /scripts/page-9/?
+                  - generic [ref=e1146]: "9"
+                - generic [ref=e1147]: …
+                - link "42" [ref=e1148] [cursor=pointer]:
+                  - /url: /scripts/page-42/?
+                  - generic [ref=e1149]: "42"
+              - button "Next page" [ref=e1150]:
+                - img [ref=e1152]:
+                  - img [ref=e1153]
+            - generic:
+              - generic:
+                - generic: …
+                - generic:
+                  - generic: "999"
+                - button:
+                  - generic:
+                    - img:
+                      - img
+    - contentinfo [ref=e1155]:
+      - generic [ref=e1157]:
+        - separator [ref=e1158]
+        - generic [ref=e1159]:
+          - generic [ref=e1160]:
+            - generic [ref=e1161]:
+              - generic [ref=e1162]:
+                - link "TradingView main page" [ref=e1163] [cursor=pointer]:
+                  - /url: /
+                - generic [ref=e1165]:
+                  - link "TradingView on X" [ref=e1166] [cursor=pointer]:
+                    - /url: https://x.com/tradingview/
+                    - img [ref=e1168]:
+                      - img [ref=e1169]
+                  - link "TradingView on Facebook" [ref=e1171] [cursor=pointer]:
+                    - /url: https://www.facebook.com/tradingview/
+                    - img [ref=e1173]:
+                      - img [ref=e1174]
+                  - link "TradingView on YouTube" [ref=e1176] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@TradingView
+                    - img [ref=e1178]:
+                      - img [ref=e1179]
+                  - link "TradingView on Instagram" [ref=e1181] [cursor=pointer]:
+                    - /url: https://www.instagram.com/tradingview/
+                    - img [ref=e1183]:
+                      - img [ref=e1184]
+                  - link "TradingView on LinkedIn" [ref=e1186] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/tradingview/
+                    - img [ref=e1188]:
+                      - img [ref=e1189]
+                  - link "TradingView on Telegram" [ref=e1191] [cursor=pointer]:
+                    - /url: https://t.me/tradingview/
+                    - img [ref=e1193]:
+                      - img [ref=e1194]
+                  - link "TradingView on TikTok" [ref=e1196] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@tradingview/
+                    - img [ref=e1198]:
+                      - img [ref=e1199]
+                  - link "TradingView on Reddit" [ref=e1201] [cursor=pointer]:
+                    - /url: https://www.reddit.com/r/TradingView/
+                    - img [ref=e1203]:
+                      - img [ref=e1204]
+              - generic [ref=e1206]:
+                - button "English" [ref=e1207]:
+                  - img [ref=e1209]:
+                    - img [ref=e1210]
+                  - generic [ref=e1213]: English
+                  - img [ref=e1214]:
+                    - img [ref=e1215]
+                - paragraph [ref=e1217]:
+                  - generic [ref=e1218]:
+                    - text: Select market data provided by
+                    - link "ICE Data Services" [ref=e1219] [cursor=pointer]:
+                      - /url: https://www.theice.com/market-data
+                    - text: .
+                  - generic [ref=e1220]: Select reference data provided by FactSet. Copyright © 2026 FactSet Research Systems Inc.
+                  - generic [ref=e1221]: Copyright © 2026, American Bankers Association. CUSIP Database provided by FactSet Research Systems Inc. All rights reserved.
+                  - generic [ref=e1222]:
+                    - text: SEC fillings and other documents provided by
+                    - link "Quartr" [ref=e1223] [cursor=pointer]:
+                      - /url: https://www.quartr.com
+                    - text: .
+                  - generic [ref=e1224]: © 2026 TradingView, Inc.
+            - generic [ref=e1225]:
+              - generic [ref=e1226]:
+                - generic [ref=e1227]:
+                  - generic [ref=e1228]: More than a product
+                  - list [ref=e1229]:
+                    - listitem [ref=e1230]:
+                      - link "Supercharts" [ref=e1231] [cursor=pointer]:
+                        - /url: /chart/
+                - generic [ref=e1232]:
+                  - generic [ref=e1233]: Screeners
+                  - list [ref=e1234]:
+                    - listitem [ref=e1235]:
+                      - link "Stocks" [ref=e1236] [cursor=pointer]:
+                        - /url: /screener/
+                    - listitem [ref=e1237]:
+                      - link "ETFs" [ref=e1238] [cursor=pointer]:
+                        - /url: /etf-screener/
+                    - listitem [ref=e1239]:
+                      - link "Bonds" [ref=e1240] [cursor=pointer]:
+                        - /url: /bond-screener/
+                    - listitem [ref=e1241]:
+                      - link "Crypto coins" [ref=e1242] [cursor=pointer]:
+                        - /url: /crypto-coins-screener/
+                    - listitem [ref=e1243]:
+                      - link "CEX pairs" [ref=e1244] [cursor=pointer]:
+                        - /url: /cex-screener/
+                    - listitem [ref=e1245]:
+                      - link "DEX pairs" [ref=e1246] [cursor=pointer]:
+                        - /url: /dex-screener/
+                    - listitem [ref=e1247]:
+                      - link "Pine" [ref=e1248] [cursor=pointer]:
+                        - /url: /pine-screener/
+                - generic [ref=e1249]:
+                  - generic [ref=e1250]: Heatmaps
+                  - list [ref=e1251]:
+                    - listitem [ref=e1252]:
+                      - link "Stocks" [ref=e1253] [cursor=pointer]:
+                        - /url: /heatmap/stock/
+                    - listitem [ref=e1254]:
+                      - link "ETFs" [ref=e1255] [cursor=pointer]:
+                        - /url: /heatmap/etf/
+                    - listitem [ref=e1256]:
+                      - link "Crypto coins" [ref=e1257] [cursor=pointer]:
+                        - /url: /heatmap/crypto/
+                - generic [ref=e1258]:
+                  - generic [ref=e1259]: Calendars
+                  - list [ref=e1260]:
+                    - listitem [ref=e1261]:
+                      - link "Economic" [ref=e1262] [cursor=pointer]:
+                        - /url: /economic-calendar/
+                    - listitem [ref=e1263]:
+                      - link "Earnings" [ref=e1264] [cursor=pointer]:
+                        - /url: /earnings-calendar/
+                    - listitem [ref=e1265]:
+                      - link "Dividends" [ref=e1266] [cursor=pointer]:
+                        - /url: /dividend-calendar/
+                - generic [ref=e1267]:
+                  - generic [ref=e1268]: More products
+                  - list [ref=e1269]:
+                    - listitem [ref=e1270]:
+                      - link "Yield Curves" [ref=e1271] [cursor=pointer]:
+                        - /url: /yield-curves/
+                    - listitem [ref=e1272]:
+                      - link "Options" [ref=e1273] [cursor=pointer]:
+                        - /url: /options/
+                    - listitem [ref=e1274]:
+                      - link "Macro Maps" [ref=e1275] [cursor=pointer]:
+                        - /url: /macro-maps/
+                    - listitem [ref=e1276]:
+                      - link "News Flow" [ref=e1277] [cursor=pointer]:
+                        - /url: /news-flow/
+                    - listitem [ref=e1278]:
+                      - link "Pine Script®" [ref=e1279] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/pine-script-docs/
+                - generic [ref=e1280]:
+                  - generic [ref=e1281]: Apps
+                  - list [ref=e1282]:
+                    - listitem [ref=e1283]:
+                      - link "Mobile" [ref=e1284] [cursor=pointer]:
+                        - /url: /mobile/
+                    - listitem [ref=e1285]:
+                      - link "Desktop" [ref=e1286] [cursor=pointer]:
+                        - /url: /desktop/
+              - generic [ref=e1287]:
+                - generic [ref=e1288]:
+                  - generic [ref=e1289]: Tools & subscriptions
+                  - list [ref=e1290]:
+                    - listitem [ref=e1291]:
+                      - link "Features" [ref=e1292] [cursor=pointer]:
+                        - /url: /features/
+                    - listitem [ref=e1293]:
+                      - link "Pricing" [ref=e1294] [cursor=pointer]:
+                        - /url: /pricing/?source=footer&feature=pricing
+                    - listitem [ref=e1295]:
+                      - link "Market data" [ref=e1296] [cursor=pointer]:
+                        - /url: /data-coverage/
+                    - listitem [ref=e1297]:
+                      - link "Gift plans" [ref=e1298] [cursor=pointer]:
+                        - /url: /gifts/
+                - generic [ref=e1299]:
+                  - generic [ref=e1300]: Trading
+                  - list [ref=e1301]:
+                    - listitem [ref=e1302]:
+                      - link "Overview" [ref=e1303] [cursor=pointer]:
+                        - /url: /trading/
+                    - listitem [ref=e1304]:
+                      - link "Top brokers" [ref=e1305] [cursor=pointer]:
+                        - /url: /brokers/
+                    - listitem [ref=e1306]:
+                      - link "Brokers comparison" [ref=e1307] [cursor=pointer]:
+                        - /url: /brokers/compare/
+                - generic [ref=e1308]:
+                  - generic [ref=e1309]: Special offers
+                  - list [ref=e1310]:
+                    - listitem [ref=e1311]:
+                      - link "CME Group futures" [ref=e1312] [cursor=pointer]:
+                        - /url: /cme/
+                    - listitem [ref=e1313]:
+                      - link "Eurex futures" [ref=e1314] [cursor=pointer]:
+                        - /url: /eurex/
+                    - listitem [ref=e1315]:
+                      - link "US stocks bundle" [ref=e1316] [cursor=pointer]:
+                        - /url: /us-markets-bundle/
+                - generic [ref=e1317]:
+                  - generic [ref=e1318]: About company
+                  - list [ref=e1319]:
+                    - listitem [ref=e1320]:
+                      - link "Who we are" [ref=e1321] [cursor=pointer]:
+                        - /url: /about/
+                    - listitem [ref=e1322]:
+                      - link "Space mission" [ref=e1323] [cursor=pointer]:
+                        - /url: /space-mission/
+                    - listitem [ref=e1324]:
+                      - link "Blog" [ref=e1325] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/blog/en/
+                    - listitem [ref=e1326]:
+                      - link "Careers" [ref=e1327] [cursor=pointer]:
+                        - /url: /careers/
+                    - listitem [ref=e1328]:
+                      - link "Media kit" [ref=e1329] [cursor=pointer]:
+                        - /url: /media-kit/
+                - generic [ref=e1330]:
+                  - generic [ref=e1331]: Merch
+                  - list [ref=e1332]:
+                    - listitem [ref=e1333]:
+                      - link "TradingView store" [ref=e1334] [cursor=pointer]:
+                        - /url: https://tradingviewstore.com/
+                    - listitem [ref=e1335]:
+                      - link "Tarot cards for traders" [ref=e1336] [cursor=pointer]:
+                        - /url: /tarot-reading/
+                    - listitem [ref=e1337]:
+                      - link "The C63 TradeTime" [ref=e1338] [cursor=pointer]:
+                        - /url: /tradetime/
+                - generic [ref=e1339]:
+                  - generic [ref=e1340]: Policies & security
+                  - list [ref=e1341]:
+                    - listitem [ref=e1342]:
+                      - link "Terms of Use" [ref=e1343] [cursor=pointer]:
+                        - /url: /policies/
+                    - listitem [ref=e1344]:
+                      - link "Disclaimer" [ref=e1345] [cursor=pointer]:
+                        - /url: /disclaimer/
+                    - listitem [ref=e1346]:
+                      - link "Privacy Policy" [ref=e1347] [cursor=pointer]:
+                        - /url: /privacy-policy/
+                    - listitem [ref=e1348]:
+                      - link "Cookies Policy" [ref=e1349] [cursor=pointer]:
+                        - /url: /cookies-policy/
+                    - listitem [ref=e1350]:
+                      - link "Accessibility Statement" [ref=e1351] [cursor=pointer]:
+                        - /url: /accessibility/
+                    - listitem [ref=e1352]:
+                      - link "Security tips" [ref=e1353] [cursor=pointer]:
+                        - /url: /security/
+                    - listitem [ref=e1354]:
+                      - link "Bug Bounty program" [ref=e1355] [cursor=pointer]:
+                        - /url: /bounty/
+                    - listitem [ref=e1356]:
+                      - link "Status page" [ref=e1357] [cursor=pointer]:
+                        - /url: https://status.tradingview.com/
+              - generic [ref=e1358]:
+                - generic [ref=e1359]:
+                  - generic [ref=e1360]: Community
+                  - list [ref=e1361]:
+                    - listitem [ref=e1362]:
+                      - link "Social network" [ref=e1363] [cursor=pointer]:
+                        - /url: /social-network/
+                    - listitem [ref=e1364]:
+                      - link "Wall of Love" [ref=e1365] [cursor=pointer]:
+                        - /url: /wall-of-love/
+                    - listitem [ref=e1366]:
+                      - link "Refer a friend" [ref=e1367] [cursor=pointer]:
+                        - /url: /share-your-love/?source=footer&feature=refer_friend
+                    - listitem [ref=e1368]:
+                      - link "House Rules" [ref=e1369] [cursor=pointer]:
+                        - /url: /house-rules/
+                    - listitem [ref=e1370]:
+                      - link "Moderators" [ref=e1371] [cursor=pointer]:
+                        - /url: /moderators/
+                - generic [ref=e1372]:
+                  - generic [ref=e1373]: Ideas
+                  - list [ref=e1374]:
+                    - listitem [ref=e1375]:
+                      - link "Trading" [ref=e1376] [cursor=pointer]:
+                        - /url: /ideas/
+                    - listitem [ref=e1377]:
+                      - link "Education" [ref=e1378] [cursor=pointer]:
+                        - /url: /ideas/?type=education
+                    - listitem [ref=e1379]:
+                      - link "Editors' picks" [ref=e1380] [cursor=pointer]:
+                        - /url: /ideas/editors-picks/
+                - generic [ref=e1381]:
+                  - generic [ref=e1382]: Pine Script
+                  - list [ref=e1383]:
+                    - listitem [ref=e1384]:
+                      - link "Indicators & strategies" [ref=e1385] [cursor=pointer]:
+                        - /url: /scripts/
+                    - listitem [ref=e1386]:
+                      - link "Wizards" [ref=e1387] [cursor=pointer]:
+                        - /url: /pine-wizards/
+                    - listitem [ref=e1388]:
+                      - link "Freelancers" [ref=e1389] [cursor=pointer]:
+                        - /url: /pine-script-freelancers/
+                    - listitem [ref=e1390]:
+                      - link "Paid Spaces" [ref=e1391] [cursor=pointer]:
+                        - /url: /spaces/
+              - generic [ref=e1392]:
+                - generic [ref=e1393]:
+                  - generic [ref=e1394]: Business solutions
+                  - list [ref=e1395]:
+                    - listitem [ref=e1396]:
+                      - link "Widgets" [ref=e1397] [cursor=pointer]:
+                        - /url: /widget/
+                    - listitem [ref=e1398]:
+                      - link "Charting libraries" [ref=e1399] [cursor=pointer]:
+                        - /url: /free-charting-libraries/
+                    - listitem [ref=e1400]:
+                      - link "Lightweight Charts™" [ref=e1401] [cursor=pointer]:
+                        - /url: /lightweight-charts/
+                    - listitem [ref=e1402]:
+                      - link "Advanced Charts" [ref=e1403] [cursor=pointer]:
+                        - /url: /advanced-charts/
+                    - listitem [ref=e1404]:
+                      - link "Trading Platform" [ref=e1405] [cursor=pointer]:
+                        - /url: /trading-platform/
+                - generic [ref=e1406]:
+                  - generic [ref=e1407]: Growth opportunities
+                  - list [ref=e1408]:
+                    - listitem [ref=e1409]:
+                      - link "Advertising" [ref=e1410] [cursor=pointer]:
+                        - /url: /advertising-info/
+                    - listitem [ref=e1411]:
+                      - link "Brokerage integration" [ref=e1412] [cursor=pointer]:
+                        - /url: /brokerage-integration/
+                    - listitem [ref=e1413]:
+                      - link "Partner program" [ref=e1414] [cursor=pointer]:
+                        - /url: /partner-program/
+                    - listitem [ref=e1415]:
+                      - link "Education program" [ref=e1416] [cursor=pointer]:
+                        - /url: /students/
+          - img "Look First" [ref=e1418]

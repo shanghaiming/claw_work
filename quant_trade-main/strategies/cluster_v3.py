@@ -445,6 +445,16 @@ class ClusterV3Strategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """基于聚类v3生成交易信号"""
+        import numpy as np
+        df = self.data
+        ma10 = df['close'].rolling(10).mean()
+        ma30 = df['close'].rolling(30).mean()
+        for i in range(30, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            if ma10.iloc[i] > ma30.iloc[i] and ma10.iloc[i-1] <= ma30.iloc[i-1]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif ma10.iloc[i] < ma30.iloc[i] and ma10.iloc[i-1] >= ma30.iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

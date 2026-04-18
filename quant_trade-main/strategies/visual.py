@@ -345,12 +345,29 @@ class VisualStrategy(BaseStrategy):
         self.name = "VisualStrategy"
         self.description = "基于visual的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
-        """生成交易信号"""
-        # 信号生成逻辑
-        return df
+    def generate_signals(self):
+        """Dual MA(10,30) crossover with volume confirmation (>20-day avg volume)."""
+        df = self.data
+
+        if len(df) < 35:
+            return self.signals
+
+        ma10 = df['close'].rolling(10).mean()
+        ma30 = df['close'].rolling(30).mean()
+        vol_ma20 = df['volume'].rolling(20).mean() if 'volume' in df.columns else None
+
+        for i in range(30, len(df)):
+            vol_ok = True
+            if vol_ma20 is not None and not pd.isna(vol_ma20.iloc[i]):
+                vol_ok = df['volume'].iloc[i] > vol_ma20.iloc[i]
+
+            # MA10 crosses above MA30 AND volume confirms
+            if (ma10.iloc[i] > ma30.iloc[i] and ma10.iloc[i - 1] <= ma30.iloc[i - 1]
+                    and vol_ok):
+                self._record_signal(df.index[i], 'buy', price=float(df['close'].iloc[i]))
+            # MA10 crosses below MA30 AND volume confirms
+            elif (ma10.iloc[i] < ma30.iloc[i] and ma10.iloc[i - 1] >= ma30.iloc[i - 1]
+                    and vol_ok):
+                self._record_signal(df.index[i], 'sell', price=float(df['close'].iloc[i]))
+
+        return self.signals

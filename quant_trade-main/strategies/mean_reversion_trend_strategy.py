@@ -85,11 +85,10 @@ class MeanReversionTrendStrategy(BaseStrategy):
             if current_holding is None:
                 best_stock = self._select_best(current_bars, current_time, data)
                 if best_stock:
-                    self.signals.append({
-                        'timestamp': current_time,
-                        'action': 'buy',
-                        'symbol': best_stock,
-                    })
+                    bar = current_bars[current_bars['symbol'] == best_stock].iloc[0]
+                    self._record_signal(
+                        current_time, 'buy', best_stock, float(bar['close'])
+                    )
                     current_holding = best_stock
                     buy_time = current_time
             else:
@@ -97,11 +96,11 @@ class MeanReversionTrendStrategy(BaseStrategy):
                 days_held = len([t for t in unique_times if buy_time < t <= current_time])
                 if days_held >= self.hold_days_min:
                     if self._should_sell(current_holding, current_time, data):
-                        self.signals.append({
-                            'timestamp': current_time,
-                            'action': 'sell',
-                            'symbol': current_holding,
-                        })
+                        bar = current_bars[current_bars['symbol'] == current_holding]
+                        sell_price = float(bar.iloc[0]['close']) if len(bar) > 0 else 0
+                        self._record_signal(
+                            current_time, 'sell', current_holding, sell_price
+                        )
                         current_holding = None
                         buy_time = None
 

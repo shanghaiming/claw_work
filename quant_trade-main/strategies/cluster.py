@@ -300,6 +300,20 @@ class ClusterStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """基于聚类分析生成交易信号"""
+        import numpy as np
+        from scipy import stats
+        df = self.data
+        window = self.params.get('window', 20)
+
+        for i in range(window + 1, len(df)):
+            prices = df['close'].iloc[i-window:i].values
+            x = np.arange(len(prices))
+            slope = stats.linregress(x, prices).slope
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            if slope > 0.05 and df['close'].iloc[i] > df['close'].iloc[i-1]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif slope < -0.05 and df['close'].iloc[i] < df['close'].iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

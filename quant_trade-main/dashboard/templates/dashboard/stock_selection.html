@@ -120,6 +120,9 @@
                     <button class="btn btn-success btn-sm" id="btnScreen">
                         <i class="fas fa-search"></i> Screen All Stocks
                     </button>
+                    <button class="btn btn-warning btn-sm" id="btnCrossScreen">
+                        <i class="fas fa-th"></i> Cross-Screen (All Strategies)
+                    </button>
                 </div>
                 <div class="progress mt-2 d-none" id="screenProgress" style="height:3px">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%"></div>
@@ -204,10 +207,9 @@
                             <tr>
                                 <th>Symbol</th>
                                 <th>Price</th>
-                                <th>Signals</th>
-                                <th>Buy</th>
-                                <th>Sell</th>
-                                <th>Latest</th>
+                                <th>Signal</th>
+                                <th>Date</th>
+                                <th>Reason</th>
                                 <th>Chart</th>
                             </tr>
                         </thead>
@@ -314,7 +316,9 @@ function updateQuickIndicators(data) {
 
     const rsiEl = document.getElementById('rsiValue');
     if (rsiEl && ind.rsi_latest != null) {
-        rsiEl.classList.add(ind.rsi_latest < 30 ? 'text-success' : ind.rsi_latest > 70 ? 'text-danger' : '');
+        rsiEl.classList.remove('text-success', 'text-danger');
+        if (ind.rsi_latest < 30) rsiEl.classList.add('text-success');
+        else if (ind.rsi_latest > 70) rsiEl.classList.add('text-danger');
     }
     const macdEl = document.getElementById('macdValue');
     if (macdEl && ind.macd_latest != null) {
@@ -477,7 +481,7 @@ document.getElementById('btnScreen').addEventListener('click', function() {
     fetch('{% url "dashboard:api_stock_screen" %}', {
         method: 'POST',
         headers: {'Content-Type':'application/json', 'X-CSRFToken': CSRF},
-        body: JSON.stringify({ strategy_name:strategyName, symbols:ALL_STOCKS.slice(0,50), frequency:freq, start_date:start, end_date:end })
+        body: JSON.stringify({ strategy_name:strategyName, symbols:ALL_STOCKS, frequency:freq, start_date:start, end_date:end })
     })
     .then(r => r.text()).then(t => JSON.parse(t))
     .then(data => {
@@ -486,11 +490,53 @@ document.getElementById('btnScreen').addEventListener('click', function() {
         const results = data.results || [];
         document.getElementById('screenResultCount').textContent = results.length + ' stocks';
         const tbody = document.getElementById('screenResults');
-        if (!results.length) { tbody.innerHTML = '<tr><td colspan="7" class="text-center text-muted py-3">No results</td></tr>'; return; }
-        if (results[0] && results[0].error) { tbody.innerHTML = '<tr><td colspan="7" class="text-center text-danger py-3">'+results[0].error+'</td></tr>'; return; }
+        // Restore table header for single-strategy mode
+        const thead = tbody.closest('table').querySelector('thead tr');
+        thead.innerHTML = '<th>Symbol</th><th>Price</th><th>Signal</th><th>Date</th><th>Reason</th><th>Chart</th>';
+        if (!results.length) { tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-3">No results</td></tr>'; return; }
+        if (results[0] && results[0].error) { tbody.innerHTML = '<tr><td colspan="6" class="text-center text-danger py-3">'+results[0].error+'</td></tr>'; return; }
         tbody.innerHTML = results.map(r => {
             const sc = r.latest_signal==='buy'?'bg-success':r.latest_signal==='sell'?'bg-danger':'bg-secondary';
-            return `<tr class="screen-result"><td><strong>${r.symbol}</strong></td><td>${r.latest_price.toFixed(2)}</td><td>${r.signal_count}</td><td class="text-success">${r.buy_count}</td><td class="text-danger">${r.sell_count}</td><td><span class="badge ${sc}">${r.latest_signal}</span></td><td><button class="btn btn-sm btn-outline-primary" onclick="quickLoad('${r.symbol}')"><i class="fas fa-chart-bar"></i></button></td></tr>`;
+            const reason = (r.reason || '').substring(0, 30);
+            const date = r.latest_date || '';
+            return `<tr class="screen-result"><td><strong>${r.symbol}</strong></td><td>${r.latest_price.toFixed(2)}</td><td><span class="badge ${sc}">${r.latest_signal}</span></td><td class="small text-muted">${date}</td><td class="small">${reason}</td><td><button class="btn btn-sm btn-outline-primary" onclick="quickLoad('${r.symbol}')"><i class="fas fa-chart-bar"></i></button></td></tr>`;
+        }).join('');
+    })
+    .catch(e => { prog.classList.add('d-none'); alert('Error: '+e.message); });
+});
+
+// Cross-Screen: all strategies x all stocks
+document.getElementById('btnCrossScreen').addEventListener('click', function() {
+    const freq = document.getElementById('frequencySelect').value;
+    const start = document.getElementById('startDate').value;
+    const end = document.getElementById('endDate').value;
+    const prog = document.getElementById('screenProgress');
+    prog.classList.remove('d-none');
+    prog.querySelector('.progress-bar').style.width = '10%';
+    document.getElementById('screenResultCount').textContent = 'Scanning...';
+
+    fetch('{% url "dashboard:api_stock_screen" %}', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'X-CSRFToken': CSRF},
+        body: JSON.stringify({ strategy_name:'_cross', symbols:ALL_STOCKS, frequency:freq, start_date:start, end_date:end, cross_screen:true })
+    })
+    .then(r => r.text()).then(t => JSON.parse(t))
+    .then(data => {
+        prog.querySelector('.progress-bar').style.width = '100%';
+        setTimeout(() => prog.classList.add('d-none'), 500);
+        const results = data.results || [];
+        document.getElementById('screenResultCount').textContent = results.length + ' stocks with signals';
+        const tbody = document.getElementById('screenResults');
+        if (!results.length) { tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-3">No buy/sell signals found</td></tr>'; return; }
+
+        // Update table header for cross-screen
+        const thead = tbody.closest('table').querySelector('thead tr');
+        thead.innerHTML = '<th>Symbol</th><th>Price</th><th>Buy#</th><th>Sell#</th><th>Strategies</th><th>Chart</th>';
+
+        tbody.innerHTML = results.map(r => {
+            const buyStr = (r.buy_strategies || []).map(s => `<span class="badge bg-success me-1" style="font-size:0.6rem">${s.substring(0,20)}</span>`).join('');
+            const sellStr = (r.sell_strategies || []).map(s => `<span class="badge bg-danger me-1" style="font-size:0.6rem">${s.substring(0,20)}</span>`).join('');
+            return `<tr class="screen-result"><td><strong>${r.symbol}</strong></td><td>${r.latest_price.toFixed(2)}</td><td class="text-success fw-bold">${(r.buy_strategies||[]).length}</td><td class="text-danger fw-bold">${(r.sell_strategies||[]).length}</td><td>${buyStr}${sellStr}</td><td><button class="btn btn-sm btn-outline-primary" onclick="quickLoad('${r.symbol}')"><i class="fas fa-chart-bar"></i></button></td></tr>`;
         }).join('');
     })
     .catch(e => { prog.classList.add('d-none'); alert('Error: '+e.message); });

@@ -1090,55 +1090,62 @@ class PerformanceEvaluatorStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于绩效评估生成交易信号
+
+        基于绩效评估生成交易信号，使用价格动量和趋势质量评估
         """
-        # 调用绩效评估
-        # 注意: 绩效评估需要交易记录，这里使用模拟数据
-        # 在实际使用中，需要提供实际的交易记录
-        simulated_trades = [
-            {
-                'entry_price': self.data['close'].iloc[0],
-                'exit_price': self.data['close'].iloc[-1],
-                'entry_time': self.data.index[0],
-                'exit_time': self.data.index[-1],
-                'pnl': self.data['close'].iloc[-1] - self.data['close'].iloc[0],
-                'position_size': 100
-            }
-        ]
-        
-        evaluation_result = self.evaluator.evaluate_performance(
-            trades=simulated_trades,
-            initial_capital=10000
-        )
-        
-        # 根据绩效评估结果生成信号
-        composite_score = evaluation_result.get('composite_score', {})
-        overall_score = composite_score.get('overall_score', 0)
-        
-        # 基于绩效分数生成信号
-        if overall_score >= 0.7:
-            # 绩效优秀，买入信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
-        elif overall_score >= 0.5:
-            # 绩效一般，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        returns = close.pct_change().dropna()
+
+        # Calculate performance metrics directly from price data
+        total_return = (close.iloc[-1] / close.iloc[0]) - 1
+
+        # Sharpe-like ratio from returns
+        if len(returns) > 1:
+            mean_ret = returns.mean()
+            std_ret = returns.std()
+            sharpe = mean_ret / std_ret * np.sqrt(252) if std_ret > 0 else 0
         else:
-            # 绩效较差，卖出信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='sell',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            sharpe = 0
+
+        # Drawdown
+        cum_returns = (1 + returns).cumprod()
+        running_max = cum_returns.cummax()
+        drawdown = (cum_returns - running_max) / running_max
+        max_drawdown = drawdown.min()
+
+        # Win rate
+        win_rate = (returns > 0).sum() / len(returns) if len(returns) > 0 else 0
+
+        # MA trend
+        ma_short = close.rolling(5).mean()
+        ma_long = close.rolling(20).mean()
+        trend_up = ma_short.iloc[-1] > ma_long.iloc[-1]
+
+        # Composite score
+        score = 0
+        if total_return > 0:
+            score += 1
+        if sharpe > 0.5:
+            score += 1
+        if max_drawdown > -0.1:
+            score += 1
+        if win_rate > 0.5:
+            score += 1
+        if trend_up:
+            score += 1
+
+        if score >= 4:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(close.iloc[-1]))
+        elif score >= 2:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(close.iloc[-1]))
+        else:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(close.iloc[-1]))
+
         return self.signals
 
 

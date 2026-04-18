@@ -682,42 +682,54 @@ class PriceActionRangesExitStrategyOptimizerStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于出场策略优化生成交易信号
+
+        基于出场策略优化生成交易信号，使用移动止损和部分止盈逻辑
         """
-        # 分析当前出场策略
-        analysis_result = self.exit_optimizer.analyze_current_exits(self.data)
-        
-        # 获取优化结果
-        optimized = analysis_result.get('optimized', {})
-        is_optimized = optimized.get('is_optimized', False)
-        
-        # 获取出场信号
-        exit_signals = analysis_result.get('exit_signals', [])
-        
-        # 根据优化结果生成信号
-        if is_optimized and exit_signals:
-            # 有优化且出场信号，卖出信号（出场）
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='sell',
-                price=self.data['close'].iloc[-1]
-            )
-        elif is_optimized:
-            # 有优化但无出场信号，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # Trailing stop calculation
+        atr = (df['high'] - df['low']).rolling(14).mean()
+        highest = close.rolling(20).max()
+        trailing_stop = highest - 2.0 * atr
+
+        # Support/resistance via recent highs/lows
+        recent_high = close.rolling(10).max()
+        recent_low = close.rolling(10).min()
+
+        # Momentum
+        momentum = close.pct_change(5)
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        last_close = close.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+        last_stop = trailing_stop.iloc[-1]
+        last_momentum = momentum.iloc[-1]
+
+        # Exit signal: price hit trailing stop or momentum fading + overbought
+        if last_close <= last_stop:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+        elif last_rsi > 70 and last_momentum < 0:
+            # Momentum fading at overbought -> exit
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+        elif last_rsi < 30 and last_momentum > 0:
+            # Potential reversal up -> buy entry
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif last_close > trailing_stop.iloc[-1] and last_momentum > 0:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
         else:
-            # 无优化，买入信号（入场）
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

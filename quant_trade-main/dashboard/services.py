@@ -133,6 +133,54 @@ def get_strategy_list() -> List[Dict[str, Any]]:
             strategies.append(info)
             continue
 
+        # Verify strategy is actually compatible with BaseStrategy interface
+        try:
+            # Check __init__ takes at least (self, data) = 2 args
+            init_args = cls.__init__.__code__.co_argcount
+            if init_args < 2:
+                info['status'] = 'error'
+                info['error'] = f'__init__ takes {init_args} args (need self+data)'
+                strategies.append(info)
+                continue
+            # Check generate_signals only takes self
+            gs_args = cls.generate_signals.__code__.co_argcount
+            if gs_args > 1:
+                info['status'] = 'error'
+                info['error'] = f'generate_signals takes {gs_args} args (expected 1: self)'
+                strategies.append(info)
+                continue
+        except Exception:
+            pass  # Can't inspect, assume compatible
+
+        # Runtime test: try to instantiate with real stock data
+        try:
+            import pandas as pd, numpy as np
+            try:
+                test_data = load_stock_data('000001.SZ', frequency='daily')
+                if test_data.empty or len(test_data) < 30:
+                    raise ValueError("No real data")
+                test_data = test_data.tail(100)
+                test_data['symbol'] = 'TEST'
+            except Exception:
+                # Fallback to synthetic data if real data unavailable
+                test_data = pd.DataFrame({
+                    'open': np.random.rand(100) * 100 + 10,
+                    'high': np.random.rand(100) * 100 + 12,
+                    'low': np.random.rand(100) * 100 + 8,
+                    'close': np.random.rand(100) * 100 + 10,
+                    'volume': np.random.rand(100) * 1e6,
+                }, index=pd.date_range('2024-01-01', periods=100))
+                test_data['symbol'] = 'TEST'
+                test_data.index.name = 'trade_date'
+            test_instance = cls(test_data, params={})
+            # Also test screen() to catch runtime errors
+            test_instance.screen()
+        except Exception as e:
+            info['status'] = 'error'
+            info['error'] = f'Runtime test failed: {type(e).__name__}: {str(e)[:80]}'
+            strategies.append(info)
+            continue
+
         info['status'] = 'loaded'
         info['class_name'] = cls.__name__
         info['description'] = getattr(cls, 'strategy_description', '') or ''
@@ -474,8 +522,10 @@ def run_stock_screening(strategy_name: str, symbols: List[str],
                         params: Optional[Dict] = None) -> List[Dict[str, Any]]:
     """Run a single strategy on multiple stocks for screening.
 
-    Returns list of dicts with symbol, signal_count, buy_count, sell_count,
-    latest_signal, latest_price.
+    Based on the LATEST data point only - generates a real-time buy/sell/hold
+    decision, not a historical signal count.
+
+    Returns list of dicts with symbol, latest_signal, latest_price, reason.
     """
     module, load_error = _load_strategy_module(strategy_name)
     if load_error:
@@ -494,27 +544,124 @@ def run_stock_screening(strategy_name: str, symbols: List[str],
                 continue
             data['symbol'] = symbol
 
-            instance = cls(data, params=params or {})
-            signals = instance.generate_signals()
+            try:
+                instance = cls(data, params=params or {})
+            except Exception:
+                # Strategy __init__ incompatible or fails on this data
+                continue
 
-            buy_count = len([s for s in signals if s.get('action') == 'buy'])
-            sell_count = len([s for s in signals if s.get('action') == 'sell'])
-            latest_signal = signals[-1]['action'] if signals else 'none'
+            # Use screen() for real-time latest-data decision, not historical signals
+            screen_result = instance.screen()
+            latest_signal = screen_result['action']
+            reason = screen_result['reason']
+
             latest_price = _to_native(data['close'].iloc[-1])
+            latest_date = _to_native(data.index[-1])
 
             results.append({
                 'symbol': symbol,
-                'signal_count': len(signals),
-                'buy_count': buy_count,
-                'sell_count': sell_count,
                 'latest_signal': latest_signal,
                 'latest_price': latest_price,
+                'latest_date': latest_date,
+                'reason': reason,
             })
         except Exception:
             continue
 
-    # Sort by buy signals descending
-    results.sort(key=lambda x: x.get('buy_count', 0), reverse=True)
+    # Sort: buy first, then sell, then hold
+    signal_order = {'buy': 0, 'sell': 1, 'hold': 2}
+    results.sort(key=lambda x: signal_order.get(x.get('latest_signal', 'hold'), 3))
+    return results
+
+
+def run_cross_screening(symbols: List[str], frequency: str = 'daily',
+                         start_date: str = None, end_date: str = None
+                         ) -> List[Dict[str, Any]]:
+    """Scan all stocks with all strategies, return stocks with buy/sell signals
+    and which strategies triggered them.
+
+    Returns list of dicts: {symbol, latest_price, buy_strategies, sell_strategies}
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    # Discover all strategies
+    strategy_files = _discover_strategy_files()
+    strategies_info = []
+    for filename in strategy_files:
+        sname = filename[:-3]
+        module, err = _load_strategy_module(sname)
+        if err:
+            continue
+        cls = _find_strategy_class(module)
+        if cls is None:
+            continue
+        # Verify __init__ accepts (data, params) signature via argcount
+        try:
+            init_args = cls.__init__.__code__.co_argcount
+            if init_args < 2:
+                continue
+            gs_args = cls.generate_signals.__code__.co_argcount
+            if gs_args > 1:
+                continue
+        except Exception:
+            continue
+        strategies_info.append({'name': sname, 'class': cls})
+
+    # For each stock, run all strategies and collect signals
+    stock_signals = {}  # symbol -> {buy: [strategies], sell: [strategies], price, date}
+
+    def _scan_symbol(symbol):
+        try:
+            data = load_stock_data(symbol=symbol, start_date=start_date,
+                                   end_date=end_date, frequency=frequency)
+            if data.empty or len(data) < 20:
+                return None
+            data['symbol'] = symbol
+        except Exception:
+            return None
+
+        buy_strats = []
+        sell_strats = []
+        latest_price = _to_native(data['close'].iloc[-1])
+        latest_date = _to_native(data.index[-1])
+
+        for sinfo in strategies_info:
+            try:
+                instance = sinfo['class'](data, params={})
+            except Exception:
+                continue
+            try:
+                result = instance.screen()
+                action = result.get('action', 'hold')
+                if action == 'buy':
+                    buy_strats.append(sinfo['name'])
+                elif action == 'sell':
+                    sell_strats.append(sinfo['name'])
+            except Exception:
+                continue
+
+        if not buy_strats and not sell_strats:
+            return None
+
+        return {
+            'symbol': symbol,
+            'latest_price': latest_price,
+            'latest_date': latest_date,
+            'buy_strategies': buy_strats,
+            'sell_strategies': sell_strats,
+            'signal_count': len(buy_strats) + len(sell_strats),
+        }
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {executor.submit(_scan_symbol, s): s for s in symbols}
+        for future in as_completed(futures):
+            result = future.result()
+            if result:
+                stock_signals[result['symbol']] = result
+
+    # Sort by signal count descending (stocks with most strategy agreement first)
+    results = sorted(stock_signals.values(),
+                     key=lambda x: x['signal_count'], reverse=True)
     return results
 
 

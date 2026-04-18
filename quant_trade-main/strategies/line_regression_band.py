@@ -519,6 +519,21 @@ class LineRegressionBandStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """线性回归带策略生成交易信号"""
+        import numpy as np
+        from scipy import stats
+        df = self.data
+        window = 20
+        for i in range(window, len(df)):
+            prices = df['close'].iloc[i-window:i].values
+            x = np.arange(window)
+            slope, intercept, _, _, _ = stats.linregress(x, prices)
+            predicted = intercept + slope * window
+            std_err = np.std(prices - (intercept + slope * x))
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            if price < predicted - 2 * std_err:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif price > predicted + 2 * std_err:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

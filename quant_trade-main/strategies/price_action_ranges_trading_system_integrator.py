@@ -1241,80 +1241,69 @@ class PriceActionRangesTradingSystemIntegratorStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于交易系统整合生成交易信号
+
+        基于交易系统整合生成交易信号，综合MA/RSI/MACD/ATR多指标
         """
-        # 执行快速分析
-        quick_analysis = self.integrator.execute_quick_analysis(self.data)
-        
-        # 获取分析结果
-        workflow_status = quick_analysis.get('workflow_status', '')
-        steps_successful = quick_analysis.get('steps_successful', 0)
-        
-        # 执行交易周期
-        trading_cycle = self.integrator.execute_trading_cycle()
-        
-        # 获取交易决策
-        trade_decision = trading_cycle.get('trade_decision', {})
-        entry_signals = trade_decision.get('entry_signals', [])
-        
-        # 根据整合分析生成信号
-        if workflow_status == 'completed' and steps_successful >= 3:
-            # 系统整合成功
-            if entry_signals:
-                # 有入场信号
-                first_signal = entry_signals[0]
-                action = first_signal.get('action', '').lower()
-                
-                if action in ['buy', 'long']:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                elif action in ['sell', 'short']:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='sell',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-            else:
-                # 无入场信号，检查市场分析
-                market_analysis = trade_decision.get('market_analysis', {})
-                market_trend = market_analysis.get('market_trend', '').lower()
-                
-                if market_trend == 'bullish':
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                elif market_trend == 'bearish':
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='sell',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # Subsystem 1: Trend analysis
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+        trend_up = ma_short.iloc[-1] > ma_long.iloc[-1]
+
+        # Subsystem 2: Momentum
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+        macd_bullish = macd_line.iloc[-1] > signal_line.iloc[-1]
+
+        # Subsystem 3: RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+        last_rsi = rsi.iloc[-1]
+
+        # Subsystem 4: Volatility
+        vol = close.pct_change().rolling(20).std() * np.sqrt(252)
+        low_vol = vol.iloc[-1] < 0.3
+
+        # Integrated vote
+        buy_votes = 0
+        sell_votes = 0
+
+        if trend_up:
+            buy_votes += 1
         else:
-            # 系统整合未完成，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            sell_votes += 1
+
+        if macd_bullish:
+            buy_votes += 1
+        else:
+            sell_votes += 1
+
+        if last_rsi < 40:
+            buy_votes += 1
+        elif last_rsi > 60:
+            sell_votes += 1
+
+        if low_vol:
+            buy_votes += 1 if trend_up else 0
+
+        if buy_votes >= 3:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(close.iloc[-1]))
+        elif sell_votes >= 3:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(close.iloc[-1]))
+        else:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(close.iloc[-1]))
+
         return self.signals
 
 

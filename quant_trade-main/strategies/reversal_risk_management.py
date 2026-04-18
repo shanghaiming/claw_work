@@ -16,6 +16,7 @@
 """
 
 import numpy as np
+import pandas as pd
 from dataclasses import dataclass
 from enum import Enum
 from typing import List, Tuple, Optional, Dict, Any
@@ -897,53 +898,73 @@ class ReversalRiskManagementStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于反转风险管理生成交易信号
+
+        基于反转风险管理生成交易信号，使用ATR/波动率评估风险水平
         """
-        # 分析市场风险
-        risk_assessment = self.risk_system.assess_reversal_risk(self.data)
-        
-        # 获取风险评估结果
-        risk_level = risk_assessment.get('risk_level', '').lower()
-        risk_score = risk_assessment.get('risk_score', 0)
-        
-        # 获取风险监控结果
-        risk_monitoring = self.risk_system.monitor_current_risk(self.data)
-        all_limits_ok = risk_monitoring.get('all_limits_ok', True)
-        portfolio_risk_ratio = risk_monitoring.get('portfolio_risk_ratio', 0)
-        
-        # 根据风险管理生成信号
-        if risk_level in ['very_low', 'low'] and risk_score >= 70 and all_limits_ok:
-            # 风险低且分数高，所有限制正常，买入信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
-        elif risk_level in ['high', 'very_high', 'extreme'] or risk_score <= 40 or not all_limits_ok:
-            # 风险高或分数低或限制违规，卖出或hold信号
-            if portfolio_risk_ratio > 0.5:
-                # 风险暴露高，卖出信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 风险高但暴露低，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        high = df['high']
+        low = df['low']
+
+        # Risk metrics
+        tr = pd.DataFrame({
+            'hl': high - low,
+            'hc': (high - close.shift(1)).abs(),
+            'lc': (low - close.shift(1)).abs()
+        }).max(axis=1)
+        atr = tr.rolling(14).mean()
+        atr_pct = atr / close
+
+        # Historical volatility
+        vol = close.pct_change().rolling(20).std() * np.sqrt(252)
+
+        # Drawdown
+        cum_max = close.cummax()
+        drawdown = (close - cum_max) / cum_max
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        last_vol = vol.iloc[-1]
+        last_atr_pct = atr_pct.iloc[-1]
+        last_dd = drawdown.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+        last_close = close.iloc[-1]
+
+        # Risk scoring
+        risk_score = 0
+        if last_vol > 0.4:
+            risk_score += 2  # High vol
+        elif last_vol > 0.25:
+            risk_score += 1
+        if last_atr_pct > 0.04:
+            risk_score += 2  # Wide ranges
+        elif last_atr_pct > 0.02:
+            risk_score += 1
+        if last_dd < -0.1:
+            risk_score += 1  # Already in drawdown
+
+        # Trend
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+
+        if risk_score <= 1 and ma_short.iloc[-1] > ma_long.iloc[-1] and last_rsi < 70:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif risk_score >= 3:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+        elif ma_short.iloc[-1] < ma_long.iloc[-1] and last_rsi < 35:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
         else:
-            # 中等风险，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

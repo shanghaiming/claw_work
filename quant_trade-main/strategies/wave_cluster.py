@@ -1053,12 +1053,26 @@ class WaveClusterStrategy(BaseStrategy):
         self.name = "WaveClusterStrategy"
         self.description = "基于wave_cluster的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
+    def generate_signals(self):
         """生成交易信号"""
-        # 信号生成逻辑
-        return df
+        df = self.data
+
+        if len(df) < 2:
+            return self.signals
+
+        # 基于波浪聚类分析的信号
+        from scipy.signal import argrelextrema
+        high_prices = df['high'].values
+        low_prices = df['low'].values
+        high_indices = argrelextrema(high_prices, np.greater, order=3)[0]
+        low_indices = argrelextrema(low_prices, np.less, order=3)[0]
+
+        for idx in high_indices:
+            if idx < len(df):
+                self._record_signal(df.index[idx], 'sell', price=float(df['high'].iloc[idx]))
+
+        for idx in low_indices:
+            if idx < len(df):
+                self._record_signal(df.index[idx], 'buy', price=float(df['low'].iloc[idx]))
+
+        return self.signals

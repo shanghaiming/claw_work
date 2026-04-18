@@ -462,45 +462,48 @@ class PriceActionRangesPositionSizingAdjusterStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于仓位规模调整生成交易信号
+
+        基于仓位规模调整生成交易信号，使用ATR和波动率确定仓位方向
         """
-        # 计算建议仓位
-        position_result = self.sizing_adjuster.calculate_position_size(self.data)
-        
-        # 获取仓位建议
-        recommendation = position_result.get('recommendation', {})
-        action = recommendation.get('action', '').lower()
-        confidence = recommendation.get('confidence', 0)
-        
-        # 根据仓位建议生成信号
-        if action == 'proceed' and confidence >= 0.7:
-            # 建议进场，买入信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
-        elif action == 'reduce' and confidence >= 0.7:
-            # 建议减仓，卖出信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='sell',
-                price=self.data['close'].iloc[-1]
-            )
-        elif action == 'avoid':
-            # 建议避免交易，卖出信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='sell',
-                price=self.data['close'].iloc[-1]
-            )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        high = df['high']
+        low = df['low']
+
+        # ATR
+        tr = pd.DataFrame({
+            'hl': high - low,
+            'hc': (high - close.shift(1)).abs(),
+            'lc': (low - close.shift(1)).abs()
+        }).max(axis=1)
+        atr = tr.rolling(14).mean()
+
+        # Volatility
+        vol = close.pct_change().rolling(20).std() * np.sqrt(252)
+
+        # Trend
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        last_vol = vol.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+
+        if last_vol < 0.3 and ma_short.iloc[-1] > ma_long.iloc[-1] and last_rsi < 70:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(close.iloc[-1]))
+        elif ma_short.iloc[-1] < ma_long.iloc[-1]:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(close.iloc[-1]))
         else:
-            # hold或无明确建议，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(close.iloc[-1]))
+
         return self.signals

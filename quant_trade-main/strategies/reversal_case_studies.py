@@ -1207,101 +1207,64 @@ class ReversalCaseStudiesStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于反转实战案例分析生成交易信号
+
+        基于反转实战案例分析生成交易信号，使用双底/双顶检测和RSI反转
         """
-        # 分析当前市场情况
-        analysis_result = self.case_system.analyze_current_market(self.data)
-        
-        # 获取匹配案例
-        matched_cases = analysis_result.get('matched_cases', [])
-        matched_cases_count = len(matched_cases)
-        
-        # 获取案例数据库统计
-        case_stats = analysis_result.get('case_database_stats', {})
-        total_cases = case_stats.get('total_cases', 0)
-        success_rate = 0
-        if total_cases > 0:
-            performance_metrics = case_stats.get('performance_metrics', {})
-            success_rate = performance_metrics.get('success_rate', 0)
-        
-        # 根据案例分析生成信号
-        if matched_cases_count >= 3 and success_rate >= 0.7:
-            # 多个匹配案例且高成功率
-            # 分析匹配案例的类型
-            case_types = [case.get('reversal_type', '') for case in matched_cases[:3]]
-            
-            if 'double_bottom' in case_types or 'head_shoulders_bottom' in case_types:
-                # 底部反转模式匹配，买入信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif 'double_top' in case_types or 'head_shoulders_top' in case_types:
-                # 顶部反转模式匹配，卖出信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 其他模式，基于平均置信度决定
-                avg_confidence = np.mean([case.get('confidence', 0) for case in matched_cases[:3]])
-                if avg_confidence >= 0.7:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-        elif matched_cases_count >= 1:
-            # 有匹配案例但数量少
-            best_case = matched_cases[0]
-            case_category = best_case.get('category', '')
-            confidence = best_case.get('confidence', 0)
-            
-            if case_category == 'success' and confidence >= 0.7:
-                # 成功案例且高置信度
-                reversal_type = best_case.get('reversal_type', '')
-                if 'bottom' in reversal_type:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                elif 'top' in reversal_type:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='sell',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-            else:
-                # 案例质量一般，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        low = df['low']
+        high = df['high']
+
+        # Double bottom / double top detection
+        recent_low = low.rolling(10).min()
+        recent_high = high.rolling(10).max()
+        support = low.rolling(30).min()
+        resistance = high.rolling(30).max()
+
+        # Price near support or resistance
+        near_support = close.iloc[-1] <= support.iloc[-1] * 1.02
+        near_resistance = close.iloc[-1] >= resistance.iloc[-1] * 0.98
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # MACD
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+
+        # Volume confirmation
+        vol = df['volume'] if 'volume' in df.columns else pd.Series(1, index=df.index)
+        vol_ma = vol.rolling(20).mean()
+        high_volume = vol.iloc[-1] > vol_ma.iloc[-1] * 1.2
+
+        last_close = close.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+
+        # Bullish reversal: near support + RSI oversold + MACD crossover + volume
+        bullish = near_support and last_rsi < 40 and macd_line.iloc[-1] > signal_line.iloc[-1]
+        bearish = near_resistance and last_rsi > 60 and macd_line.iloc[-1] < signal_line.iloc[-1]
+
+        if bullish and high_volume:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif bearish and high_volume:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+        elif bullish:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif bearish:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 无匹配案例，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

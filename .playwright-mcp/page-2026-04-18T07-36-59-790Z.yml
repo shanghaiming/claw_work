@@ -1,0 +1,869 @@
+- generic [active] [ref=e1]:
+  - button "Skip to main content" [ref=e4]:
+    - generic [ref=e5]:
+      - generic: Skip to main content
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - button "Open menu" [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+        - link "TradingView main page" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - img [ref=e16]
+      - button "Search" [ref=e23]:
+        - img [ref=e24]
+        - generic [ref=e26]: Search
+      - generic [ref=e27]:
+        - button "Open language menu" [ref=e28] [cursor=pointer]:
+          - img [ref=e29]
+          - text: EN
+        - button "Open user menu" [ref=e31] [cursor=pointer]:
+          - img [ref=e32]
+        - link "Get started" [ref=e36] [cursor=pointer]:
+          - /url: /pricing/?source=header_go_pro_button&feature=start_free_trial
+          - generic [ref=e38]: Get started
+    - main "Main content" [ref=e39]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e45]:
+            - generic [ref=e48]: OPEN-SOURCE SCRIPT
+            - generic [ref=e49]:
+              - text: Updated
+              - generic "Apr 18, 2026, 14:27 GMT+8" [ref=e50]
+          - heading "SuperTrend Take-Profit Dimensions [AlgoAlpha]" [level=1] [ref=e51]
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - tablist [ref=e57]:
+                - tab "Chart" [selected] [ref=e58]:
+                  - generic [ref=e59]: Chart
+                - tab "Source code" [ref=e60]:
+                  - generic [ref=e61]: Source code
+                - button:
+                  - img:
+                    - img
+                  - generic: More
+              - button "Add to favorites" [ref=e63]:
+                - img [ref=e65]:
+                  - img [ref=e66]
+                - generic [ref=e69]: Add to favorites
+            - 'region "Chart #1" [ref=e75]':
+              - generic [ref=e79]:
+                - generic:
+                  - generic:
+                    - toolbar:
+                      - generic:
+                        - generic:
+                          - generic "Change symbol":
+                            - generic:
+                              - generic: B
+                            - button "Change symbol": Bitcoin / Tether
+                          - generic "Change interval":
+                            - text: ·
+                            - button "Change interval": "15"
+                          - generic:
+                            - text: ·
+                            - generic: KuCoin
+                      - generic [ref=e81]:
+                        - generic [ref=e82]:
+                          - generic [ref=e83]: O
+                          - generic [ref=e84]: 68,686.5
+                        - generic [ref=e85]:
+                          - generic [ref=e86]: H
+                          - generic [ref=e87]: 68,790.0
+                        - generic [ref=e88]:
+                          - generic [ref=e89]: L
+                          - generic [ref=e90]: 68,663.6
+                        - generic [ref=e91]:
+                          - generic [ref=e92]: C
+                          - generic [ref=e93]: 68,785.1
+                        - generic [ref=e95]: +98.5 (+0.14%)
+                  - generic:
+                    - button "Hide indicator legend" [ref=e96]:
+                      - img [ref=e98]
+                    - generic:
+                      - toolbar:
+                        - generic:
+                          - generic:
+                            - generic "SuperTrend Take-Profit Dimensions [AlgoAlpha]":
+                              - generic: AlgoAlpha - SuperTrend TP Dimensions
+                        - generic [ref=e101]:
+                          - generic "SuperTrend bull flip" [ref=e103]: ∅
+                          - generic "SuperTrend bear flip" [ref=e105]: ∅
+                          - generic "TP take-profit (bull trend)" [ref=e107]: "0.0"
+                          - generic "TP take-profit (bear trend)" [ref=e109]: "0.0"
+                          - generic "Up Trend" [ref=e111]: ∅
+                          - generic "Down Trend" [ref=e113]: 69,113.9
+                - generic "Chart for KUCOIN:BTCUSDT, 15 minutes" [ref=e115]
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - button "Use on chart" [ref=e131]:
+              - img [ref=e134]:
+                - img [ref=e135]
+              - generic [ref=e139]: Use on chart
+            - button "1025 boosts 1 K" [ref=e145]:
+              - generic [ref=e146]:
+                - img "1025 boosts" [ref=e148]:
+                  - img [ref=e149]
+                - generic [ref=e153]: 1 K
+            - button "10" [ref=e154]:
+              - img [ref=e156]:
+                - img [ref=e157]
+              - generic [ref=e160]: "10"
+            - button "More" [ref=e162]:
+              - img [ref=e164]:
+                - img [ref=e165]
+            - generic "Views" [ref=e167]:
+              - img [ref=e168]:
+                - img [ref=e169]
+              - text: 8 283
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - generic "Apr 17, 2026, 02:31 GMT+8" [ref=e176]
+              - generic [ref=e179]:
+                - text: 🟠 OVERVIEW
+                - text: A
+                - strong [ref=e180]: multi-dimensional take-profit aid
+                - text: that scores how typical the current bar looks compared to past SuperTrend pivots, so you can tell when a trend has reached favorable exit conditions.
+                - text: The indicator runs a standard
+                - strong [ref=e181]: SuperTrend
+                - text: and records every confirmed zigzag pivot that occurs during a matching-direction run. Tops go into a
+                - strong [ref=e182]: bull pool
+                - text: ", bottoms into a"
+                - strong [ref=e183]: bear pool
+                - text: . Each pivot is stored as a set of readings across several independent axes, such as
+                - emphasis [ref=e184]: relative volume
+                - text: ","
+                - emphasis [ref=e185]: time of day
+                - text: ", and"
+                - emphasis [ref=e186]: price position inside the recent range
+                - text: .
+                - text: On every bar, the current reading on each axis is compared to that historical pool. A
+                - strong [ref=e187]: blended score from 0 to 100
+                - text: tells you how closely the current conditions resemble where past pivots in the same direction have clustered. The idea is to give trend followers a data-backed sense of when to start tightening up, rather than guessing an exit or using a fixed R-multiple.
+                - text: The three built-in axes were chosen deliberately to be
+                - strong [ref=e188]: as uncorrelated as possible
+                - text: ", each describing a different dimension of market context:"
+                - strong [ref=e189]: volume
+                - text: (relative volume percentile),
+                - strong [ref=e190]: time
+                - text: (time of day), and
+                - strong [ref=e191]: price
+                - text: (position in recent range). Correlated inputs would double-count the same information and distort the blended score; picking axes that describe genuinely different aspects of the market means each one contributes independent evidence, and the score reflects how many distinct dimensions are currently in agreement.
+                - text: 🟠 CONCEPTS
+                - list [ref=e192]:
+                  - listitem [ref=e193]:
+                    - strong [ref=e194]: SuperTrend
+                    - text: — An ATR-based trailing stop that flips between bullish and bearish states. Controls which pool of historical pivots the script reads from.
+                  - listitem [ref=e195]:
+                    - strong [ref=e196]: Pivot pool
+                    - text: — A rolling store of confirmed zigzag pivots, split by direction.
+                    - emphasis [ref=e197]: Bull pool
+                    - text: holds pivot highs that printed during bullish SuperTrend runs;
+                    - emphasis [ref=e198]: bear pool
+                    - text: holds pivot lows from bearish runs. Capped at
+                    - strong [ref=e199]: 2000 entries per side
+                    - text: .
+                  - listitem [ref=e200]:
+                    - strong [ref=e201]: Context axis
+                    - text: — A
+                    - strong [ref=e202]: 0–100
+                    - text: value measured at the pivot bar. The script ships with three built-ins (
+                    - emphasis [ref=e203]: relative volume percentile
+                    - text: ","
+                    - emphasis [ref=e204]: time of day
+                    - text: ","
+                    - emphasis [ref=e205]: position in recent range
+                    - text: ) and one optional user-plugged signal.
+                  - listitem [ref=e206]:
+                    - strong [ref=e207]: Axis independence
+                    - text: — The three built-in axes cover
+                    - strong [ref=e208]: volume
+                    - text: ","
+                    - strong [ref=e209]: time
+                    - text: ", and"
+                    - strong [ref=e210]: price
+                    - text: respectively, chosen so each describes a structurally different part of the market. Low correlation between axes keeps the blended score from being dominated by any single factor.
+                  - listitem [ref=e211]:
+                    - strong [ref=e212]: Conditional histogram
+                    - text: — For each active axis, the script walks its pool and keeps only pivots whose bins on
+                    - emphasis [ref=e213]: every other
+                    - text: active axis match the current bar. The survivors are binned to form a histogram.
+                  - listitem [ref=e214]:
+                    - strong [ref=e215]: Axis score
+                    - text: — For one axis, the count of pivots in the current bar's bin divided by the count in the histogram's tallest bin, scaled to
+                    - strong [ref=e216]: 0–100
+                    - text: .
+                    - strong [ref=e217]: "100"
+                    - text: means the current context sits in the densest part of past pivots.
+                  - listitem [ref=e218]:
+                    - strong [ref=e219]: Blended favourability score
+                    - text: — Arithmetic mean of the active per-axis scores. This is what the gauge and table display.
+                  - listitem [ref=e220]:
+                    - strong [ref=e221]: Density-match scoring
+                    - text: — The score measures how common the current context is among past pivots. It is
+                    - strong [ref=e222]: not
+                    - text: a forward probability and makes no claim about what happens next.
+                - text: 🟠 FEATURES
+                - list [ref=e223]:
+                  - listitem [ref=e224]:
+                    - strong [ref=e225]: Right-side context profiles
+                    - text: — Stacked mini histograms render to the right of price, one per active axis.
+                    - text: • Bar heights show how pivots in each axis's conditional pool distribute across bins.
+                    - text: • A
+                    - emphasis [ref=e226]: dashed vertical line
+                    - text: marks the current bar's bin on that axis, so you can see at a glance where today sits against history.
+                    - text: • Bar hue tracks the active SuperTrend direction.
+                    - link "snapshot" [ref=e227] [cursor=pointer]:
+                      - /url: https://www.tradingview.com/x/Q0vYAvJd/
+                      - img "snapshot" [ref=e228]
+                  - listitem [ref=e229]:
+                    - strong [ref=e230]: Favourability gauge
+                    - text: — A vertical gradient table in the bottom-right showing the blended score, with a chevron marking the current level.
+                    - emphasis [ref=e231]: Green at the top, red at the bottom.
+                    - link "snapshot" [ref=e232] [cursor=pointer]:
+                      - /url: https://www.tradingview.com/x/o4JDSuCE/
+                      - img "snapshot" [ref=e233]
+                  - listitem [ref=e234]:
+                    - strong [ref=e235]: Favourability breakdown table
+                    - text: — A two-column readout of each active axis's individual score out of 100, plus a final row that classifies the blended score as
+                    - strong [ref=e236]: Good
+                    - text: ","
+                    - strong [ref=e237]: Neutral
+                    - text: ", or"
+                    - strong [ref=e238]: Bad
+                    - text: . Position and text size are configurable.
+                    - link "snapshot" [ref=e239] [cursor=pointer]:
+                      - /url: https://www.tradingview.com/x/1kBRw3iJ/
+                      - img "snapshot" [ref=e240]
+                  - listitem [ref=e241]:
+                    - strong [ref=e242]: Bar coloring
+                    - text: — Bars fade from neutral grey toward the opposing trend colour as the blended score rises toward 100, so the chart itself signals when the context is stretched.
+                    - link "snapshot" [ref=e243] [cursor=pointer]:
+                      - /url: https://www.tradingview.com/x/MqO0WHg7/
+                      - img "snapshot" [ref=e244]
+                  - listitem [ref=e245]:
+                    - strong [ref=e246]: Take-profit markers
+                    - text: — Small orange markers print above or below the bar when the blended score hits
+                    - strong [ref=e247]: "100"
+                    - text: for the active SuperTrend direction.
+                    - link "snapshot" [ref=e248] [cursor=pointer]:
+                      - /url: https://www.tradingview.com/x/iwMee8oo/
+                      - img "snapshot" [ref=e249]
+                  - listitem [ref=e250]:
+                    - strong [ref=e251]: Timeframe guard
+                    - text: — The time-of-day axis disables automatically on daily and higher timeframes, where the reading has no meaning, and a banner explains this so the blended score stays honest.
+                  - listitem [ref=e252]:
+                    - strong [ref=e253]: Multi-dimensional scoring engine
+                    - text: — Four independent axes feed into a single score, each conditioned on all the others.
+                    - text: • Three built-in axes can be toggled on or off individually.
+                    - text: • A fourth axis accepts any plot via
+                    - emphasis [ref=e254]: source input
+                    - text: ", provided the series stays within"
+                    - strong [ref=e255]: 0–100
+                    - text: on all loaded bars.
+                    - text: • An on-chart warning prints if the custom signal leaves that range, and the axis is ignored until it is corrected.
+                  - listitem [ref=e256]:
+                    - strong [ref=e257]: Deliberately uncorrelated built-in axes
+                    - text: — Volume (
+                    - emphasis [ref=e258]: relative volume percentile
+                    - text: ), time (
+                    - emphasis [ref=e259]: time of day
+                    - text: ), and price (
+                    - emphasis [ref=e260]: position in recent range
+                    - text: ) cover three structurally different facets of market context. Keeping the axes independent means each one adds new information to the blend rather than reinforcing the others.
+                  - listitem [ref=e261]:
+                    - strong [ref=e262]: Alert conditions
+                    - text: "— Six alerts are included: SuperTrend bullish flip, SuperTrend bearish flip, score peak match, and crossovers into the"
+                    - emphasis [ref=e263]: Good
+                    - text: ","
+                    - emphasis [ref=e264]: Neutral
+                    - text: ", and"
+                    - emphasis [ref=e265]: Bad
+                    - text: bands.
+                - text: 🟠 HOW TO USE
+                - list [ref=e266]:
+                  - listitem [ref=e267]:
+                    - strong [ref=e268]: Add the script to an intraday chart
+                    - text: on a liquid instrument and let it run long enough to populate the pools. More history means more stable conditional histograms.
+                  - listitem [ref=e269]:
+                    - strong [ref=e270]: Let SuperTrend define the active regime.
+                    - text: The script only scores in the direction of the current trend; bar coloring and take-profit markers respect that regime.
+                  - listitem [ref=e271]:
+                    - strong [ref=e272]: Read the gauge and breakdown table together.
+                    - text: The gauge shows the blended level; the table shows which individual axes are pulling it up or down.
+                  - listitem [ref=e273]:
+                    - strong [ref=e274]: Use the right-side profiles as a sanity check.
+                    - text: If the dashed current-bin marker is sitting on or near the tallest bar across most axes, the current context closely resembles past pivot contexts in that direction.
+                  - listitem [ref=e275]:
+                    - strong [ref=e276]: Treat high scores as a cue to tighten management, not as reversal signals.
+                    - text: A reading of
+                    - strong [ref=e277]: "100"
+                    - text: means conditions match where pivots have historically clustered, not that the trend is guaranteed to end.
+                  - listitem [ref=e278]:
+                    - strong [ref=e279]: Adjust the zigzag pivot length
+                    - text: to control how strict the pool is. Lower values admit more pivots (
+                    - emphasis [ref=e280]: bigger, noisier sample
+                    - text: ); higher values keep only firmer pivots (
+                    - emphasis [ref=e281]: smaller, cleaner sample
+                    - text: ).
+                  - listitem [ref=e282]:
+                    - strong [ref=e283]: Plug your own signal into the custom axis
+                    - text: to test whether an existing 0–100 oscillator adds useful conditioning, such as an RSI or a normalised momentum reading. For best results, pick a signal that is
+                    - emphasis [ref=e284]: not strongly correlated
+                    - text: with the three built-ins, so the custom axis adds a new dimension rather than re-stating an existing one.
+                    - link "snapshot" [ref=e285] [cursor=pointer]:
+                      - /url: https://www.tradingview.com/x/pO1HCqP2/
+                      - img "snapshot" [ref=e286]
+                  - listitem [ref=e287]:
+                    - strong [ref=e288]: Enable only the alerts that fit your workflow.
+                    - text: The band-crossover alerts fire
+                    - emphasis [ref=e289]: once per transition
+                    - text: ", not on every bar inside a band."
+                - text: 🟠 LIMITATIONS
+                - list [ref=e290]:
+                  - listitem [ref=e291]:
+                    - text: The pool holds
+                    - strong [ref=e292]: every
+                    - text: confirmed pivot during a matching-direction run,
+                    - strong [ref=e293]: not only
+                    - text: pivots that ended the trend. Intermediate pullbacks sit alongside genuine terminal pivots. Raising the zigzag pivot length filters the pool further if you want a cleaner sample.
+                  - listitem [ref=e294]:
+                    - text: "On"
+                    - emphasis [ref=e295]: strongly trending symbols
+                    - text: the pool is dominated by pullback pivots rather than true terminal exits, because strong trends have many small pullbacks and only one final top or bottom. On
+                    - emphasis [ref=e296]: choppy symbols
+                    - text: the ratio is more balanced. Read the score with this in mind.
+                  - listitem [ref=e297]:
+                    - text: The blended score is a
+                    - strong [ref=e298]: density-match
+                    - text: measure,
+                    - strong [ref=e299]: not a forward probability
+                    - text: . A high reading means today's context is common among past pivots of this direction. It does not predict that the trend is about to end.
+                  - listitem [ref=e300]:
+                    - text: The
+                    - strong [ref=e301]: time-of-day axis
+                    - text: has no meaning on daily and higher timeframes and is disabled automatically on those timeframes. A warning banner confirms when this is active.
+                  - listitem [ref=e302]:
+                    - text: The
+                    - strong [ref=e303]: custom axis
+                    - text: requires a source already scaled to 0–100 on every loaded bar. Values outside that range disable the axis and surface a warning. Toggling the custom axis on a live chart starts the range check from the current bar;
+                    - emphasis [ref=e304]: reload the chart to validate against full loaded history
+                    - text: .
+                  - listitem [ref=e305]:
+                    - text: Pools are capped at
+                    - strong [ref=e306]: 2000 entries per direction
+                    - text: ", with the oldest entries dropped first. On very long intraday histories the effective lookback is symbol- and timeframe-dependent."
+                  - listitem [ref=e307]:
+                    - text: All scoring uses data up to and including the confirmation bar of each pivot; pivots themselves are detected with the standard zigzag confirmation lag, meaning the scoring population on any given bar reflects pivots confirmed at least
+                    - strong [ref=e308]: zzLen
+                    - text: bars earlier.
+                - text: 🟠 CONCLUSION
+                - strong [ref=e309]: SuperTrend Take-Profit Dimensions
+                - text: combines a standard SuperTrend with a rolling pool of historical pivot contexts and scores the current bar against that pool across up to
+                - strong [ref=e310]: four independent axes
+                - text: spanning volume, time, and price. The output is a blended
+                - strong [ref=e311]: 0–100 favourability reading
+                - text: ", a per-axis breakdown, and a set of context profiles that show where past pivots have clustered. It gives trend followers a structured, data-backed way to judge when the current context matches where trends have historically given back profit, without pretending to predict the next bar."
+            - generic [ref=e312]:
+              - generic "Apr 18, 2026, 14:27 GMT+8" [ref=e315]
+              - generic [ref=e317]:
+                - generic [ref=e318]: Release Notes
+                - generic [ref=e319]: "- Bugfix: Custom signal validation is now consistent between bull and bear exit pools"
+          - generic [ref=e320]:
+            - generic [ref=e323]:
+              - heading "Open-source script Click to learn more" [level=2] [ref=e324]:
+                - text: Open-source script
+                - button "Click to learn more" [ref=e326]:
+                  - img:
+                    - img
+              - paragraph [ref=e327]:
+                - text: In true TradingView spirit, the creator of this script has made it open-source, so that traders can review and verify its functionality. Kudos to the author! While you can use it for free, remember that republishing the code is subject to our
+                - link "House Rules" [ref=e328] [cursor=pointer]:
+                  - /url: /support/solutions/43000590599/
+                - text: .
+            - generic [ref=e329]:
+              - generic [ref=e330]:
+                - generic [ref=e331]:
+                  - link "AlgoAlpha" [ref=e332] [cursor=pointer]:
+                    - /url: /u/AlgoAlpha/
+                    - img [ref=e333]
+                    - generic [ref=e335]: AlgoAlpha
+                  - link "Premium" [ref=e336] [cursor=pointer]:
+                    - /url: /pricing/?source=badge&feature=pro_premium
+                - button "Follow" [ref=e340]:
+                  - generic [ref=e343]: Follow
+              - separator [ref=e344]
+              - generic [ref=e346]:
+                - text: "🚨Get premium for 50% OFF (ends April 30th):"
+                - link "algoalpha.io" [ref=e347] [cursor=pointer]:
+                  - /url: https://algoalpha.io
+                  - text: algoalpha.io
+                  - img [ref=e348]:
+                    - img [ref=e349]
+                - text: "🛜Get FREE signals:"
+                - link "discord.gg/xCmqTVRexz" [ref=e351] [cursor=pointer]:
+                  - /url: https://discord.gg/xCmqTVRexz
+                  - text: discord.gg/xCmqTVRexz
+                  - img [ref=e352]:
+                    - img [ref=e353]
+                - text: "💡Tutorials:"
+                - link "youtube.com/@AlgoAlpha" [ref=e355] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@AlgoAlpha
+                  - text: youtube.com/@AlgoAlpha
+                  - img [ref=e356]:
+                    - img [ref=e357]
+              - generic [ref=e359]:
+                - text: "Also on:"
+                - generic [ref=e360]:
+                  - link "X" [ref=e361] [cursor=pointer]:
+                    - /url: https://x.com/Real_AlgoAlpha
+                    - img [ref=e363]:
+                      - img [ref=e364]
+                  - link "Youtube" [ref=e366] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@AlgoAlpha
+                    - img [ref=e368]:
+                      - img [ref=e369]
+                  - link "Instagram" [ref=e371] [cursor=pointer]:
+                    - /url: https://www.instagram.com/algoalphaofficial
+                    - img [ref=e373]:
+                      - img [ref=e374]
+                  - link "Website" [ref=e376] [cursor=pointer]:
+                    - /url: https://www.algoalpha.io/?utm_source=tradingview
+                    - img [ref=e378]:
+                      - img [ref=e379]
+            - generic [ref=e381]:
+              - link "algoalpha" [ref=e382] [cursor=pointer]:
+                - /url: /scripts/algoalpha/
+                - generic [ref=e383]: algoalpha
+              - link "machinelearning" [ref=e384] [cursor=pointer]:
+                - /url: /scripts/machinelearning/
+                - generic [ref=e385]: machinelearning
+              - link "signal" [ref=e386] [cursor=pointer]:
+                - /url: /scripts/signal/
+                - generic [ref=e387]: signal
+              - link "statisticalprobability" [ref=e388] [cursor=pointer]:
+                - /url: /scripts/statisticalprobability/
+                - generic [ref=e389]: statisticalprobability
+              - link "statistics" [ref=e390] [cursor=pointer]:
+                - /url: /scripts/statistics/
+                - generic [ref=e391]: statistics
+              - link "supertrend" [ref=e392] [cursor=pointer]:
+                - /url: /scripts/supertrend/
+                - generic [ref=e393]: supertrend
+              - link "takeprofit" [ref=e394] [cursor=pointer]:
+                - /url: /scripts/takeprofit/
+                - generic [ref=e395]: takeprofit
+              - link "technicalindicators" [ref=e396] [cursor=pointer]:
+                - /url: /scripts/technicalindicators/
+                - generic [ref=e397]: technicalindicators
+              - link "Trend Analysis" [ref=e398] [cursor=pointer]:
+                - /url: /scripts/trendanalysis/
+                - generic [ref=e399]: Trend Analysis
+              - link "trendfollower" [ref=e400] [cursor=pointer]:
+                - /url: /scripts/trendfollower/
+                - generic [ref=e401]: trendfollower
+              - link "trendfollowing" [ref=e402] [cursor=pointer]:
+                - /url: /scripts/trendfollowing/
+                - generic [ref=e403]: trendfollowing
+              - link "Volatility" [ref=e404] [cursor=pointer]:
+                - /url: /scripts/volatility/
+                - generic [ref=e405]: Volatility
+            - generic [ref=e406]:
+              - heading "Disclaimer" [level=2] [ref=e407]
+              - generic [ref=e408]:
+                - text: The information and publications are not meant to be, and do not constitute, financial, investment, trading, or other types of advice or recommendations supplied or endorsed by TradingView. Read more in the
+                - link "Terms of Use" [ref=e409] [cursor=pointer]:
+                  - /url: /policies/#disclaimer-regarding-investment-decisions-and-trading
+                - text: .
+    - contentinfo [ref=e410]:
+      - generic [ref=e412]:
+        - separator [ref=e413]
+        - generic [ref=e414]:
+          - generic [ref=e415]:
+            - generic [ref=e416]:
+              - generic [ref=e417]:
+                - link "TradingView main page" [ref=e418] [cursor=pointer]:
+                  - /url: /
+                - generic [ref=e420]:
+                  - link "TradingView on X" [ref=e421] [cursor=pointer]:
+                    - /url: https://x.com/tradingview/
+                    - img [ref=e423]:
+                      - img [ref=e424]
+                  - link "TradingView on Facebook" [ref=e426] [cursor=pointer]:
+                    - /url: https://www.facebook.com/tradingview/
+                    - img [ref=e428]:
+                      - img [ref=e429]
+                  - link "TradingView on YouTube" [ref=e431] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@TradingView
+                    - img [ref=e433]:
+                      - img [ref=e434]
+                  - link "TradingView on Instagram" [ref=e436] [cursor=pointer]:
+                    - /url: https://www.instagram.com/tradingview/
+                    - img [ref=e438]:
+                      - img [ref=e439]
+                  - link "TradingView on LinkedIn" [ref=e441] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/tradingview/
+                    - img [ref=e443]:
+                      - img [ref=e444]
+                  - link "TradingView on Telegram" [ref=e446] [cursor=pointer]:
+                    - /url: https://t.me/tradingview/
+                    - img [ref=e448]:
+                      - img [ref=e449]
+                  - link "TradingView on TikTok" [ref=e451] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@tradingview/
+                    - img [ref=e453]:
+                      - img [ref=e454]
+                  - link "TradingView on Reddit" [ref=e456] [cursor=pointer]:
+                    - /url: https://www.reddit.com/r/TradingView/
+                    - img [ref=e458]:
+                      - img [ref=e459]
+              - generic [ref=e461]:
+                - button "English" [ref=e462]:
+                  - img [ref=e464]:
+                    - img [ref=e465]
+                  - generic [ref=e468]: English
+                  - img [ref=e469]:
+                    - img [ref=e470]
+                - paragraph [ref=e472]:
+                  - generic [ref=e473]:
+                    - text: Select market data provided by
+                    - link "ICE Data Services" [ref=e474] [cursor=pointer]:
+                      - /url: https://www.theice.com/market-data
+                    - text: .
+                  - generic [ref=e475]: Select reference data provided by FactSet. Copyright © 2026 FactSet Research Systems Inc.
+                  - generic [ref=e476]: Copyright © 2026, American Bankers Association. CUSIP Database provided by FactSet Research Systems Inc. All rights reserved.
+                  - generic [ref=e477]:
+                    - text: SEC fillings and other documents provided by
+                    - link "Quartr" [ref=e478] [cursor=pointer]:
+                      - /url: https://www.quartr.com
+                    - text: .
+                  - generic [ref=e479]: © 2026 TradingView, Inc.
+            - generic [ref=e480]:
+              - generic [ref=e481]:
+                - generic [ref=e482]:
+                  - generic [ref=e483]: More than a product
+                  - list [ref=e484]:
+                    - listitem [ref=e485]:
+                      - link "Supercharts" [ref=e486] [cursor=pointer]:
+                        - /url: /chart/
+                - generic [ref=e487]:
+                  - generic [ref=e488]: Screeners
+                  - list [ref=e489]:
+                    - listitem [ref=e490]:
+                      - link "Stocks" [ref=e491] [cursor=pointer]:
+                        - /url: /screener/
+                    - listitem [ref=e492]:
+                      - link "ETFs" [ref=e493] [cursor=pointer]:
+                        - /url: /etf-screener/
+                    - listitem [ref=e494]:
+                      - link "Bonds" [ref=e495] [cursor=pointer]:
+                        - /url: /bond-screener/
+                    - listitem [ref=e496]:
+                      - link "Crypto coins" [ref=e497] [cursor=pointer]:
+                        - /url: /crypto-coins-screener/
+                    - listitem [ref=e498]:
+                      - link "CEX pairs" [ref=e499] [cursor=pointer]:
+                        - /url: /cex-screener/
+                    - listitem [ref=e500]:
+                      - link "DEX pairs" [ref=e501] [cursor=pointer]:
+                        - /url: /dex-screener/
+                    - listitem [ref=e502]:
+                      - link "Pine" [ref=e503] [cursor=pointer]:
+                        - /url: /pine-screener/
+                - generic [ref=e504]:
+                  - generic [ref=e505]: Heatmaps
+                  - list [ref=e506]:
+                    - listitem [ref=e507]:
+                      - link "Stocks" [ref=e508] [cursor=pointer]:
+                        - /url: /heatmap/stock/
+                    - listitem [ref=e509]:
+                      - link "ETFs" [ref=e510] [cursor=pointer]:
+                        - /url: /heatmap/etf/
+                    - listitem [ref=e511]:
+                      - link "Crypto coins" [ref=e512] [cursor=pointer]:
+                        - /url: /heatmap/crypto/
+                - generic [ref=e513]:
+                  - generic [ref=e514]: Calendars
+                  - list [ref=e515]:
+                    - listitem [ref=e516]:
+                      - link "Economic" [ref=e517] [cursor=pointer]:
+                        - /url: /economic-calendar/
+                    - listitem [ref=e518]:
+                      - link "Earnings" [ref=e519] [cursor=pointer]:
+                        - /url: /earnings-calendar/
+                    - listitem [ref=e520]:
+                      - link "Dividends" [ref=e521] [cursor=pointer]:
+                        - /url: /dividend-calendar/
+                - generic [ref=e522]:
+                  - generic [ref=e523]: More products
+                  - list [ref=e524]:
+                    - listitem [ref=e525]:
+                      - link "Yield Curves" [ref=e526] [cursor=pointer]:
+                        - /url: /yield-curves/
+                    - listitem [ref=e527]:
+                      - link "Options" [ref=e528] [cursor=pointer]:
+                        - /url: /options/
+                    - listitem [ref=e529]:
+                      - link "Macro Maps" [ref=e530] [cursor=pointer]:
+                        - /url: /macro-maps/
+                    - listitem [ref=e531]:
+                      - link "News Flow" [ref=e532] [cursor=pointer]:
+                        - /url: /news-flow/
+                    - listitem [ref=e533]:
+                      - link "Pine Script®" [ref=e534] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/pine-script-docs/
+                - generic [ref=e535]:
+                  - generic [ref=e536]: Apps
+                  - list [ref=e537]:
+                    - listitem [ref=e538]:
+                      - link "Mobile" [ref=e539] [cursor=pointer]:
+                        - /url: /mobile/
+                    - listitem [ref=e540]:
+                      - link "Desktop" [ref=e541] [cursor=pointer]:
+                        - /url: /desktop/
+              - generic [ref=e542]:
+                - generic [ref=e543]:
+                  - generic [ref=e544]: Tools & subscriptions
+                  - list [ref=e545]:
+                    - listitem [ref=e546]:
+                      - link "Features" [ref=e547] [cursor=pointer]:
+                        - /url: /features/
+                    - listitem [ref=e548]:
+                      - link "Pricing" [ref=e549] [cursor=pointer]:
+                        - /url: /pricing/?source=footer&feature=pricing
+                    - listitem [ref=e550]:
+                      - link "Market data" [ref=e551] [cursor=pointer]:
+                        - /url: /data-coverage/
+                    - listitem [ref=e552]:
+                      - link "Gift plans" [ref=e553] [cursor=pointer]:
+                        - /url: /gifts/
+                - generic [ref=e554]:
+                  - generic [ref=e555]: Trading
+                  - list [ref=e556]:
+                    - listitem [ref=e557]:
+                      - link "Overview" [ref=e558] [cursor=pointer]:
+                        - /url: /trading/
+                    - listitem [ref=e559]:
+                      - link "Top brokers" [ref=e560] [cursor=pointer]:
+                        - /url: /brokers/
+                    - listitem [ref=e561]:
+                      - link "Brokers comparison" [ref=e562] [cursor=pointer]:
+                        - /url: /brokers/compare/
+                - generic [ref=e563]:
+                  - generic [ref=e564]: Special offers
+                  - list [ref=e565]:
+                    - listitem [ref=e566]:
+                      - link "CME Group futures" [ref=e567] [cursor=pointer]:
+                        - /url: /cme/
+                    - listitem [ref=e568]:
+                      - link "Eurex futures" [ref=e569] [cursor=pointer]:
+                        - /url: /eurex/
+                    - listitem [ref=e570]:
+                      - link "US stocks bundle" [ref=e571] [cursor=pointer]:
+                        - /url: /us-markets-bundle/
+                - generic [ref=e572]:
+                  - generic [ref=e573]: About company
+                  - list [ref=e574]:
+                    - listitem [ref=e575]:
+                      - link "Who we are" [ref=e576] [cursor=pointer]:
+                        - /url: /about/
+                    - listitem [ref=e577]:
+                      - link "Space mission" [ref=e578] [cursor=pointer]:
+                        - /url: /space-mission/
+                    - listitem [ref=e579]:
+                      - link "Blog" [ref=e580] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/blog/en/
+                    - listitem [ref=e581]:
+                      - link "Careers" [ref=e582] [cursor=pointer]:
+                        - /url: /careers/
+                    - listitem [ref=e583]:
+                      - link "Media kit" [ref=e584] [cursor=pointer]:
+                        - /url: /media-kit/
+                - generic [ref=e585]:
+                  - generic [ref=e586]: Merch
+                  - list [ref=e587]:
+                    - listitem [ref=e588]:
+                      - link "TradingView store" [ref=e589] [cursor=pointer]:
+                        - /url: https://tradingviewstore.com/
+                    - listitem [ref=e590]:
+                      - link "Tarot cards for traders" [ref=e591] [cursor=pointer]:
+                        - /url: /tarot-reading/
+                    - listitem [ref=e592]:
+                      - link "The C63 TradeTime" [ref=e593] [cursor=pointer]:
+                        - /url: /tradetime/
+                - generic [ref=e594]:
+                  - generic [ref=e595]: Policies & security
+                  - list [ref=e596]:
+                    - listitem [ref=e597]:
+                      - link "Terms of Use" [ref=e598] [cursor=pointer]:
+                        - /url: /policies/
+                    - listitem [ref=e599]:
+                      - link "Disclaimer" [ref=e600] [cursor=pointer]:
+                        - /url: /disclaimer/
+                    - listitem [ref=e601]:
+                      - link "Privacy Policy" [ref=e602] [cursor=pointer]:
+                        - /url: /privacy-policy/
+                    - listitem [ref=e603]:
+                      - link "Cookies Policy" [ref=e604] [cursor=pointer]:
+                        - /url: /cookies-policy/
+                    - listitem [ref=e605]:
+                      - link "Accessibility Statement" [ref=e606] [cursor=pointer]:
+                        - /url: /accessibility/
+                    - listitem [ref=e607]:
+                      - link "Security tips" [ref=e608] [cursor=pointer]:
+                        - /url: /security/
+                    - listitem [ref=e609]:
+                      - link "Bug Bounty program" [ref=e610] [cursor=pointer]:
+                        - /url: /bounty/
+                    - listitem [ref=e611]:
+                      - link "Status page" [ref=e612] [cursor=pointer]:
+                        - /url: https://status.tradingview.com/
+              - generic [ref=e613]:
+                - generic [ref=e614]:
+                  - generic [ref=e615]: Community
+                  - list [ref=e616]:
+                    - listitem [ref=e617]:
+                      - link "Social network" [ref=e618] [cursor=pointer]:
+                        - /url: /social-network/
+                    - listitem [ref=e619]:
+                      - link "Wall of Love" [ref=e620] [cursor=pointer]:
+                        - /url: /wall-of-love/
+                    - listitem [ref=e621]:
+                      - link "Refer a friend" [ref=e622] [cursor=pointer]:
+                        - /url: /share-your-love/?source=footer&feature=refer_friend
+                    - listitem [ref=e623]:
+                      - link "House Rules" [ref=e624] [cursor=pointer]:
+                        - /url: /house-rules/
+                    - listitem [ref=e625]:
+                      - link "Moderators" [ref=e626] [cursor=pointer]:
+                        - /url: /moderators/
+                - generic [ref=e627]:
+                  - generic [ref=e628]: Ideas
+                  - list [ref=e629]:
+                    - listitem [ref=e630]:
+                      - link "Trading" [ref=e631] [cursor=pointer]:
+                        - /url: /ideas/
+                    - listitem [ref=e632]:
+                      - link "Education" [ref=e633] [cursor=pointer]:
+                        - /url: /ideas/?type=education
+                    - listitem [ref=e634]:
+                      - link "Editors' picks" [ref=e635] [cursor=pointer]:
+                        - /url: /ideas/editors-picks/
+                - generic [ref=e636]:
+                  - generic [ref=e637]: Pine Script
+                  - list [ref=e638]:
+                    - listitem [ref=e639]:
+                      - link "Indicators & strategies" [ref=e640] [cursor=pointer]:
+                        - /url: /scripts/
+                    - listitem [ref=e641]:
+                      - link "Wizards" [ref=e642] [cursor=pointer]:
+                        - /url: /pine-wizards/
+                    - listitem [ref=e643]:
+                      - link "Freelancers" [ref=e644] [cursor=pointer]:
+                        - /url: /pine-script-freelancers/
+                    - listitem [ref=e645]:
+                      - link "Paid Spaces" [ref=e646] [cursor=pointer]:
+                        - /url: /spaces/
+              - generic [ref=e647]:
+                - generic [ref=e648]:
+                  - generic [ref=e649]: Business solutions
+                  - list [ref=e650]:
+                    - listitem [ref=e651]:
+                      - link "Widgets" [ref=e652] [cursor=pointer]:
+                        - /url: /widget/
+                    - listitem [ref=e653]:
+                      - link "Charting libraries" [ref=e654] [cursor=pointer]:
+                        - /url: /free-charting-libraries/
+                    - listitem [ref=e655]:
+                      - link "Lightweight Charts™" [ref=e656] [cursor=pointer]:
+                        - /url: /lightweight-charts/
+                    - listitem [ref=e657]:
+                      - link "Advanced Charts" [ref=e658] [cursor=pointer]:
+                        - /url: /advanced-charts/
+                    - listitem [ref=e659]:
+                      - link "Trading Platform" [ref=e660] [cursor=pointer]:
+                        - /url: /trading-platform/
+                - generic [ref=e661]:
+                  - generic [ref=e662]: Growth opportunities
+                  - list [ref=e663]:
+                    - listitem [ref=e664]:
+                      - link "Advertising" [ref=e665] [cursor=pointer]:
+                        - /url: /advertising-info/
+                    - listitem [ref=e666]:
+                      - link "Brokerage integration" [ref=e667] [cursor=pointer]:
+                        - /url: /brokerage-integration/
+                    - listitem [ref=e668]:
+                      - link "Partner program" [ref=e669] [cursor=pointer]:
+                        - /url: /partner-program/
+                    - listitem [ref=e670]:
+                      - link "Education program" [ref=e671] [cursor=pointer]:
+                        - /url: /students/
+          - img "Look First" [ref=e673]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list
+            - generic:
+              - log:
+                - list

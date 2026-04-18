@@ -438,6 +438,25 @@ class MathAnalysisStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """数学分析策略生成交易信号"""
+        import numpy as np
+        df = self.data
+        # RSI
+        delta = df['close'].diff()
+        gain = delta.clip(lower=0).rolling(14).mean()
+        loss = (-delta.clip(upper=0)).rolling(14).mean()
+        rsi = 100 - (100 / (1 + gain / loss.replace(0, np.nan)))
+        # Bollinger
+        bb_mid = df['close'].rolling(20).mean()
+        bb_std = df['close'].rolling(20).std()
+
+        for i in range(20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            lower_band = bb_mid.iloc[i] - 2 * bb_std.iloc[i]
+            upper_band = bb_mid.iloc[i] + 2 * bb_std.iloc[i]
+            if price < lower_band and rsi.iloc[i] < 30:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif price > upper_band and rsi.iloc[i] > 70:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

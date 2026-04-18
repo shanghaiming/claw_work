@@ -1539,59 +1539,63 @@ class PriceActionRangesSystemSummaryAndImprovementStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于系统总结与改进分析生成交易信号
+
+        基于系统总结与改进分析生成交易信号，使用综合趋势/动量/波动率评估
         """
-        # 获取学习总结
-        learning_summary = self.summary_system.generate_learning_summary()
-        
-        # 分析学习成果
-        learning_overview = learning_summary.get('learning_overview', {})
-        total_systems = learning_overview.get('total_systems', 0)
-        overall_mastery = learning_summary.get('overall_mastery_level', 0)
-        
-        # 获取改进计划
-        improvement_plan = self.summary_system.create_improvement_plan({})
-        
-        # 根据学习成果生成信号
-        if overall_mastery >= 0.7 and total_systems >= 10:
-            # 掌握程度高且系统多，买入信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
-        elif overall_mastery <= 0.4 or total_systems <= 5:
-            # 掌握程度低或系统少，hold信号（需要学习）
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # Trend assessment
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+        trend_up = ma_short.iloc[-1] > ma_long.iloc[-1]
+
+        # Momentum
+        momentum = close.pct_change(10).iloc[-1]
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # Volatility
+        vol = close.pct_change().rolling(20).std() * np.sqrt(252)
+
+        # MACD
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+
+        last_close = close.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+
+        # Score: how many indicators are favorable
+        score = 0
+        if trend_up:
+            score += 1
+        if momentum > 0:
+            score += 1
+        if macd_line.iloc[-1] > signal_line.iloc[-1]:
+            score += 1
+        if vol.iloc[-1] < 0.3:
+            score += 1
+        if last_rsi < 70:
+            score += 1
+
+        if score >= 4:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif score <= 1:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 中等水平，检查改进计划
-            if improvement_plan.get('success', False):
-                focus_areas = improvement_plan.get('focus_areas', [])
-                if 'risk_management' in focus_areas or 'discipline' in focus_areas:
-                    # 需要风险或纪律改进，hold信号
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    # 其他改进领域，买入信号
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-            else:
-                # 无改进计划，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
+        return self.signals
         
         return self.signals

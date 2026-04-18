@@ -183,12 +183,52 @@ class StructureValidatorStrategy(BaseStrategy):
         self.name = "StructureValidatorStrategy"
         self.description = "基于structure_validator的策略"
         
-    def calculate_signals(self, df):
-        """计算交易信号"""
-        # 策略逻辑
-        return df
-        
-    def generate_signals(self, df):
-        """生成交易信号"""
-        # 信号生成逻辑
-        return df
+    def generate_signals(self):
+        """Swing high/low breakout (BOS). Buy on break above swing high, sell on break below swing low."""
+        df = self.data
+
+        if len(df) < 10:
+            return self.signals
+
+        highs = df['high'].values
+        lows = df['low'].values
+        closes = df['close'].values
+        n = len(df)
+        lookback = 3
+
+        # Detect swing highs and swing lows
+        swing_highs = []
+        swing_lows = []
+        for i in range(lookback, n - lookback):
+            is_swing_high = all(highs[i] >= highs[i + j] for j in range(-lookback, lookback + 1) if j != 0)
+            is_swing_low = all(lows[i] <= lows[i + j] for j in range(-lookback, lookback + 1) if j != 0)
+            if is_swing_high:
+                swing_highs.append((i, highs[i]))
+            if is_swing_low:
+                swing_lows.append((i, lows[i]))
+
+        # Track last swing high/low for BOS signals
+        last_swing_high = None
+        last_swing_low = None
+        sh_idx = 0
+        sl_idx = 0
+
+        for i in range(2 * lookback, n):
+            # Update last swing high
+            while sh_idx < len(swing_highs) and swing_highs[sh_idx][0] < i:
+                last_swing_high = swing_highs[sh_idx][1]
+                sh_idx += 1
+            # Update last swing low
+            while sl_idx < len(swing_lows) and swing_lows[sl_idx][0] < i:
+                last_swing_low = swing_lows[sl_idx][1]
+                sl_idx += 1
+
+            price = closes[i]
+            # BOS bullish: close breaks above last swing high
+            if last_swing_high is not None and price > last_swing_high and closes[i - 1] <= last_swing_high:
+                self._record_signal(df.index[i], 'buy', price=float(price))
+            # BOS bearish: close breaks below last swing low
+            if last_swing_low is not None and price < last_swing_low and closes[i - 1] >= last_swing_low:
+                self._record_signal(df.index[i], 'sell', price=float(price))
+
+        return self.signals

@@ -89,3 +89,92 @@ class BaseStrategy(ABC):
         sells = len([s for s in self.signals if s['action'] == 'sell'])
         holds = len([s for s in self.signals if s['action'] == 'hold'])
         return {"total": len(self.signals), "buys": buys, "sells": sells, "holds": holds}
+
+    def screen(self) -> Dict:
+        """基于最新数据做实时选股判断（非历史统计）
+
+        不调用 generate_signals()（那是回测用的，遍历全历史）。
+        只计算必要的技术指标，然后基于最后一根K线做买卖判断。
+        子类可覆盖此方法实现自定义选股逻辑。
+
+        Returns:
+            Dict with keys: action ('buy'/'sell'/'hold'), reason (str), price (float)
+        """
+        import numpy as np
+
+        if len(self.data) < 20:
+            return {'action': 'hold', 'reason': '数据不足', 'price': float(self.data['close'].iloc[-1])}
+
+        df = self.data
+        latest = df.iloc[-1]
+        close = latest['close']
+        symbol = latest.get('symbol', 'UNKNOWN')
+        timestamp = df.index[-1]
+
+        # 计算基础技术指标（仅用于最新判断）
+        ma5 = df['close'].rolling(5).mean().iloc[-1]
+        ma20 = df['close'].rolling(20).mean().iloc[-1]
+        vol_ma5 = df['volume'].rolling(5).mean().iloc[-1] if 'volume' in df.columns else None
+        vol = latest.get('volume', 0)
+
+        # 价格变化率
+        pct_change = df['close'].pct_change().iloc[-1]
+
+        # RSI(14) 简化计算
+        delta = df['close'].diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean().iloc[-1]
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean().iloc[-1]
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # --- 买入条件 ---
+        buy_score = 0
+        buy_reasons = []
+        if ma5 > ma20 and close > ma5:
+            buy_score += 1
+            buy_reasons.append('均线多头')
+        if vol_ma5 and vol > vol_ma5:
+            buy_score += 1
+            buy_reasons.append('放量')
+        if rsi < 70:
+            buy_score += 1
+            buy_reasons.append('RSI未超买')
+        if pct_change > 0:
+            buy_score += 1
+            buy_reasons.append('收阳')
+
+        # --- 卖出条件 ---
+        sell_score = 0
+        sell_reasons = []
+        if ma5 < ma20 and close < ma5:
+            sell_score += 1
+            sell_reasons.append('均线空头')
+        if vol_ma5 and vol > vol_ma5 and close < latest['open']:
+            sell_score += 1
+            sell_reasons.append('放量下跌')
+        if rsi > 30:
+            sell_score += 1
+            sell_reasons.append('RSI未超卖')
+        if pct_change < 0:
+            sell_score += 1
+            sell_reasons.append('收阴')
+
+        # 决策
+        if buy_score >= 3:
+            return {
+                'action': 'buy',
+                'reason': '+'.join(buy_reasons),
+                'price': float(close),
+            }
+        elif sell_score >= 3:
+            return {
+                'action': 'sell',
+                'reason': '+'.join(sell_reasons),
+                'price': float(close),
+            }
+        else:
+            return {
+                'action': 'hold',
+                'reason': f'buy({buy_score})/sell({sell_score})条件不足',
+                'price': float(close),
+            }

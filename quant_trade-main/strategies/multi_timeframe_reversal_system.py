@@ -835,89 +835,69 @@ class MultiTimeframeReversalSystemStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于多时间框架反转分析生成交易信号
+
+        基于多时间框架反转分析生成交易信号，使用MA/RSI/MACD多周期交叉确认反转
         """
-        # 创建多时间框架数据（简化的模拟）
-        timeframes_data = {
-            'daily': self.data,
-            'hourly': self.data.iloc[::6],  # 简化模拟
-            'min15': self.data.iloc[::24]   # 简化模拟
-        }
-        
-        # 分析多时间框架
-        analysis_results = self.multi_tf_system.analyze_multiple_timeframes(timeframes_data)
-        
-        # 获取分析结果
-        alignment = analysis_results.get('alignment', '').lower()
-        overall_trend = analysis_results.get('overall_trend', '').lower()
-        overall_confidence = analysis_results.get('overall_confidence', 0)
-        alignment_score = analysis_results.get('alignment_score', 0)
-        recommended_action = analysis_results.get('recommended_action', '').lower()
-        
-        # 根据多时间框架分析生成信号
-        if alignment == 'aligned' and alignment_score >= 0.8:
-            # 高对齐分数，基于推荐行动
-            if 'buy' in recommended_action or 'long' in recommended_action or '做多' in recommended_action:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif 'sell' in recommended_action or 'short' in recommended_action or '做空' in recommended_action:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
+        import pandas as pd
+
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # Multiple timeframe MAs (short/medium/long proxy)
+        ma_short = close.rolling(5).mean()
+        ma_medium = close.rolling(20).mean()
+        ma_long = close.rolling(50).mean()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # MACD
+        ema12 = close.ewm(span=12, adjust=False).mean()
+        ema26 = close.ewm(span=26, adjust=False).mean()
+        macd_line = ema12 - ema26
+        signal_line = macd_line.ewm(span=9, adjust=False).mean()
+
+        # Alignment score: how many timeframes agree
+        short_trend = 1 if ma_short.iloc[-1] > ma_medium.iloc[-1] else -1
+        medium_trend = 1 if ma_medium.iloc[-1] > ma_long.iloc[-1] else -1
+        macd_trend = 1 if macd_line.iloc[-1] > signal_line.iloc[-1] else -1
+
+        votes = [short_trend, medium_trend, macd_trend]
+        bullish_votes = sum(1 for v in votes if v > 0)
+        bearish_votes = sum(1 for v in votes if v < 0)
+        alignment_score = max(bullish_votes, bearish_votes) / 3.0
+
+        # Reversal detection: price below long MA + RSI oversold = bullish reversal
+        last_rsi = rsi.iloc[-1]
+        last_close = close.iloc[-1]
+
+        bullish_reversal = (last_rsi < 35 and macd_line.iloc[-1] > macd_line.iloc[-2] and
+                           last_close > ma_short.iloc[-1])
+        bearish_reversal = (last_rsi > 65 and macd_line.iloc[-1] < macd_line.iloc[-2] and
+                           last_close < ma_short.iloc[-1])
+
+        if alignment_score >= 0.67:
+            if bullish_votes >= 2 and (bullish_reversal or last_rsi < 50):
+                self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+            elif bearish_votes >= 2 and (bearish_reversal or last_rsi > 50):
+                self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
             else:
-                # 基于趋势决定
-                if overall_trend == 'bullish':
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='buy',
-                        price=self.data['close'].iloc[-1]
-                    )
-                elif overall_trend == 'bearish':
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='sell',
-                        price=self.data['close'].iloc[-1]
-                    )
-                else:
-                    self._record_signal(
-                        timestamp=self.data.index[-1],
-                        action='hold',
-                        price=self.data['close'].iloc[-1]
-                    )
-        elif alignment_score >= 0.6 and overall_confidence >= 0.7:
-            # 中等对齐和置信度
-            if overall_trend == 'bullish':
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif overall_trend == 'bearish':
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+                self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+        elif bullish_reversal:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif bearish_reversal:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
         else:
-            # 对齐不足或置信度低，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

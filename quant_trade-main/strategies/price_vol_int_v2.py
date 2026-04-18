@@ -695,6 +695,43 @@ class PriceVolIntV2Strategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """Price-OBV divergence with 3-bar confirmation.
+        Buy: price falling but OBV rising (bullish divergence).
+        Sell: price rising but OBV falling (bearish divergence)."""
+        import numpy as np
+        df = self.data
+        if 'volume' not in df.columns:
+            return self.signals
+
+        close = df['close']
+        volume = df['volume']
+        # OBV
+        obv = (np.sign(close.diff()) * volume).cumsum()
+
+        div_window = 3
+
+        for i in range(div_window + 20, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(close.iloc[i])
+
+            # Check 3-bar divergence: price trend vs OBV trend
+            price_trend = close.iloc[i] - close.iloc[i - div_window]
+            obv_trend = obv.iloc[i] - obv.iloc[i - div_window]
+
+            # Bullish divergence: price down but OBV up -> buy
+            if price_trend < 0 and obv_trend > 0:
+                # Confirm with previous bar direction to detect the transition
+                prev_price_trend = close.iloc[i - 1] - close.iloc[i - 1 - div_window]
+                prev_obv_trend = obv.iloc[i - 1] - obv.iloc[i - 1 - div_window]
+                # Only signal when divergence just started (previous bar didn't have it)
+                if not (prev_price_trend < 0 and prev_obv_trend > 0):
+                    self._record_signal(df.index[i], 'buy', sym, price)
+
+            # Bearish divergence: price up but OBV down -> sell
+            elif price_trend > 0 and obv_trend < 0:
+                prev_price_trend = close.iloc[i - 1] - close.iloc[i - 1 - div_window]
+                prev_obv_trend = obv.iloc[i - 1] - obv.iloc[i - 1 - div_window]
+                if not (prev_price_trend > 0 and prev_obv_trend < 0):
+                    self._record_signal(df.index[i], 'sell', sym, price)
+
         return self.signals

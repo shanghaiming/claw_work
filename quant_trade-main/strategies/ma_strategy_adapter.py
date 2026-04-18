@@ -621,6 +621,18 @@ class MaStrategyAdapterStrategy(BaseStrategy):
         return df
         
     def generate_signals(self):
-        """生成交易信号"""
-        # 信号生成逻辑
+        """MA策略适配器生成交易信号"""
+        import numpy as np
+        df = self.data
+        short_w = self.params.get('short_window', 5)
+        long_w = self.params.get('long_window', 20)
+        short_ma = df['close'].rolling(short_w).mean()
+        long_ma = df['close'].rolling(long_w).mean()
+        for i in range(long_w, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            price = float(df['close'].iloc[i])
+            if short_ma.iloc[i] > long_ma.iloc[i] and short_ma.iloc[i-1] <= long_ma.iloc[i-1]:
+                self._record_signal(df.index[i], 'buy', sym, price)
+            elif short_ma.iloc[i] < long_ma.iloc[i] and short_ma.iloc[i-1] >= long_ma.iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, price)
         return self.signals

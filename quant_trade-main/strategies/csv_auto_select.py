@@ -510,105 +510,143 @@ class MomentumEnergyAnalyzer:
     
 
 
-# ================= 策略评估模板 =================
-def evaluate_buy_conditions(daily_data, signal):
+# ================= 策略评估（基于最新数据实时判断） =================
+def evaluate_buy_conditions(analyzer_df):
     """
-    买入条件评估模板
+    基于最新一根K线的技术指标做买入判断（非统计历史信号）
     返回: (是否满足买入条件, 满足的条件列表, 不满足的原因列表)
     """
-    if daily_data.empty:
-        return False, [], ["数据为空"]
-    
-    latest = daily_data.iloc[-1]
+    if analyzer_df.empty or len(analyzer_df) < 20:
+        return False, [], ["数据不足(需至少20根K线)"]
+
+    latest = analyzer_df.iloc[-1]
     conditions_met = []
     reasons = []
-    
-    # ===== 在这里添加您的买入条件 =====
-    count_up = signal.tail(10).isin(['强烈看涨', '温和看涨']).sum()
-    
-    # 条件1模板 (示例: MACD金叉)
-    condition1 = count_up > 4   # 替换为您的条件逻辑
-    if condition1:
-        conditions_met.append("condition1")
-    else:
-        reasons.append("buy条件1未满足")
-    
-    # 条件2模板 (示例: 成交量放大)
-    """condition2 = False  # 替换为您的条件逻辑
-    if condition2:
-        conditions_met.append("condition2")
-    else:
-        reasons.append("条件2未满足")
-    
-    # 条件3模板 (示例: 价格突破均线)
-    condition3 = False  # 替换为您的条件逻辑
-    if condition3:
-        conditions_met.append("condition3")
-    else:
-        reasons.append("条件3未满足")"""
-    
-    # ===== 结束条件添加 =====
-    
-    # 组合买入条件 (默认需要所有条件都满足)
-    buy_signal = len(conditions_met) > 0 and len(reasons) == 0
-    
+
+    # --- 条件1: 均线多头排列 (MA5 > MA20 且收盘价在MA5上方) ---
+    ma5 = latest.get('ma5')
+    ma20 = latest.get('ma20')
+    close = latest['close']
+    if ma5 is not None and ma20 is not None and not (pd.isna(ma5) or pd.isna(ma20)):
+        if close > ma5 > ma20:
+            conditions_met.append("均线多头排列")
+        else:
+            reasons.append("均线未多头排列")
+
+    # --- 条件2: 成交量放大 (当日成交量 > 5日均量) ---
+    vol = latest['volume']
+    vol_ma5 = latest.get('volume_ma5')
+    if vol_ma5 is not None and not pd.isna(vol_ma5) and vol_ma5 > 0:
+        if vol > vol_ma5:
+            conditions_met.append("成交量放大")
+        else:
+            reasons.append("成交量未放大")
+
+    # --- 条件3: 综合势能为正且动量上升 ---
+    comp_energy = latest.get('comprehensive_energy')
+    energy_mom = latest.get('energy_momentum')
+    if comp_energy is not None and energy_mom is not None:
+        if pd.notna(comp_energy) and pd.notna(energy_mom):
+            if comp_energy > 0 and energy_mom > 0:
+                conditions_met.append("势能正向且上升")
+            else:
+                reasons.append("势能条件不满足")
+
+    # --- 条件4: 价格位置偏上 (price_position > 0.6, 即靠近当日高点) ---
+    price_pos = latest.get('price_position')
+    if price_pos is not None and pd.notna(price_pos):
+        if price_pos > 0.6:
+            conditions_met.append("价格偏强")
+        else:
+            reasons.append("价格偏弱")
+
+    # --- 条件5: 趋势势能为正 ---
+    trend_energy = latest.get('trend_energy')
+    if trend_energy is not None and pd.notna(trend_energy):
+        if trend_energy > 0:
+            conditions_met.append("趋势势能正")
+        else:
+            reasons.append("趋势势能负")
+
+    # 组合条件: 至少满足3个条件视为买入信号
+    buy_signal = len(conditions_met) >= 3
+
     return buy_signal, conditions_met, reasons
 
-def evaluate_sell_conditions(daily_data, signal):
+
+def evaluate_sell_conditions(analyzer_df):
     """
-    卖出条件评估模板
+    基于最新一根K线的技术指标做卖出判断（非统计历史信号）
     返回: (是否满足卖出条件, 满足的条件列表, 不满足的原因列表)
     """
-    if daily_data.empty:
-        return False, [], ["数据为空"]
-    
-    latest = daily_data.iloc[-1]
+    if analyzer_df.empty or len(analyzer_df) < 20:
+        return False, [], ["数据不足(需至少20根K线)"]
+
+    latest = analyzer_df.iloc[-1]
     conditions_met = []
     reasons = []
-    
-    count_dn = signal.tail(10).isin(['强烈看跌', '温和看跌']).sum()
-    # ===== 在这里添加您的卖出条件 =====
-    
-    # 条件1模板 (示例: MACD死叉)
-    condition1 = count_dn > 3  # 替换为您的条件逻辑
-    if condition1:
-        conditions_met.append("condition1")
-    else:
-        reasons.append("sell条件1未满足")
-    
-    # 条件2模板 (示例: 跌破支撑位)
-    """condition2 = False  # 替换为您的条件逻辑
-    if condition2:
-        conditions_met.append("condition2")
-    else:
-        reasons.append("条件2未满足")
-    
-    # 条件3模板 (示例: 放量下跌)
-    condition3 = False  # 替换为您的条件逻辑
-    if condition3:
-        conditions_met.append("condition3")
-    else:
-        reasons.append("条件3未满足")"""
-    
-    # ===== 结束条件添加 =====
-    
-    # 组合卖出条件 (默认需要所有条件都满足)
-    sell_signal = len(conditions_met) > 0 and len(reasons) == 0
-    
+
+    # --- 条件1: 均线空头排列 (MA5 < MA20 且收盘价在MA5下方) ---
+    ma5 = latest.get('ma5')
+    ma20 = latest.get('ma20')
+    close = latest['close']
+    if ma5 is not None and ma20 is not None and not (pd.isna(ma5) or pd.isna(ma20)):
+        if close < ma5 < ma20:
+            conditions_met.append("均线空头排列")
+        else:
+            reasons.append("均线未空头排列")
+
+    # --- 条件2: 成交量放大 (放量下跌) ---
+    vol = latest['volume']
+    vol_ma5 = latest.get('volume_ma5')
+    if vol_ma5 is not None and not pd.isna(vol_ma5) and vol_ma5 > 0:
+        if vol > vol_ma5 and close < latest['open']:
+            conditions_met.append("放量下跌")
+        else:
+            reasons.append("非放量下跌")
+
+    # --- 条件3: 综合势能为负且动量下降 ---
+    comp_energy = latest.get('comprehensive_energy')
+    energy_mom = latest.get('energy_momentum')
+    if comp_energy is not None and energy_mom is not None:
+        if pd.notna(comp_energy) and pd.notna(energy_mom):
+            if comp_energy < 0 and energy_mom < 0:
+                conditions_met.append("势能负向且下降")
+            else:
+                reasons.append("势能条件不满足")
+
+    # --- 条件4: 价格位置偏下 (price_position < 0.4, 即靠近当日低点) ---
+    price_pos = latest.get('price_position')
+    if price_pos is not None and pd.notna(price_pos):
+        if price_pos < 0.4:
+            conditions_met.append("价格偏弱")
+        else:
+            reasons.append("价格仍偏强")
+
+    # --- 条件5: 趋势势能为负 ---
+    trend_energy = latest.get('trend_energy')
+    if trend_energy is not None and pd.notna(trend_energy):
+        if trend_energy < 0:
+            conditions_met.append("趋势势能负")
+        else:
+            reasons.append("趋势势能正")
+
+    # 组合条件: 至少满足3个条件视为卖出信号
+    sell_signal = len(conditions_met) >= 3
+
     return sell_signal, conditions_met, reasons
 
+
 def evaluate_strategy(daily_data):
-    """评估股票策略"""
-    # 运行分析
+    """基于最新数据实时评估股票策略"""
+    # 运行分析，计算所有技术指标
     analyzer = MomentumEnergyAnalyzer(daily_data)
-    #analyzer.calculate_all_indicators()
-    signal = analyzer.df['trading_signal']
-    #print(f'测试{signal}')
-    
-    buy_signal, buy_conditions, buy_reasons = evaluate_buy_conditions(daily_data, signal)
-    sell_signal, sell_conditions, sell_reasons = evaluate_sell_conditions(daily_data, signal)
-    
-    # 决策逻辑
+    df = analyzer.df
+
+    # 直接基于最新数据做买卖判断
+    buy_signal, buy_conditions, buy_reasons = evaluate_buy_conditions(df)
+    sell_signal, sell_conditions, sell_reasons = evaluate_sell_conditions(df)
+
     if buy_signal:
         return "BUY", buy_conditions
     elif sell_signal:

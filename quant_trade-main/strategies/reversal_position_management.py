@@ -16,6 +16,7 @@
 """
 
 import numpy as np
+import pandas as pd
 from dataclasses import dataclass
 from enum import Enum
 from typing import List, Tuple, Optional, Dict, Any
@@ -967,71 +968,59 @@ class ReversalPositionManagementStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于反转仓位管理生成交易信号
+
+        基于反转仓位管理生成交易信号，使用ATR计算仓位大小和方向
         """
-        # 计算仓位规模
-        position_results = self.position_system.calculate_position_sizes(self.data)
-        
-        # 分析仓位建议
-        position_recommendations = []
-        for method, results in position_results.items():
-            if isinstance(results, dict):
-                position_recommendations.append({
-                    'method': method,
-                    'position_size': results.get('position_size', 0),
-                    'risk_percentage': results.get('risk_percentage', 0),
-                    'confidence_score': results.get('confidence_score', 0)
-                })
-        
-        # 根据仓位建议生成信号
-        if position_recommendations:
-            # 找到最佳仓位建议
-            best_recommendation = max(
-                position_recommendations, 
-                key=lambda x: x.get('confidence_score', 0)
-            )
-            
-            confidence = best_recommendation.get('confidence_score', 0)
-            position_size = best_recommendation.get('position_size', 0)
-            risk_percentage = best_recommendation.get('risk_percentage', 0)
-            
-            if confidence >= 0.7 and position_size > 0:
-                # 高置信度且有仓位建议，买入信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='buy',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif confidence >= 0.5 and position_size == 0:
-                # 中等置信度但建议无仓位，hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
-            elif risk_percentage > 0.05:
-                # 高风险比例，卖出信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='sell',
-                    price=self.data['close'].iloc[-1]
-                )
-            else:
-                # 默认hold信号
-                self._record_signal(
-                    timestamp=self.data.index[-1],
-                    action='hold',
-                    price=self.data['close'].iloc[-1]
-                )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        high = df['high']
+        low = df['low']
+
+        # ATR for position sizing
+        tr = pd.DataFrame({
+            'hl': high - low,
+            'hc': (high - close.shift(1)).abs(),
+            'lc': (low - close.shift(1)).abs()
+        }).max(axis=1)
+        atr = tr.rolling(14).mean()
+
+        # Trend direction
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        # Volatility for position sizing context
+        vol = close.pct_change().rolling(20).std() * np.sqrt(252)
+
+        last_close = close.iloc[-1]
+        last_atr = atr.iloc[-1]
+        last_vol = vol.iloc[-1]
+        last_rsi = rsi.iloc[-1]
+
+        # Position sizing logic: low vol + trend = larger position (buy/sell)
+        trend_up = ma_short.iloc[-1] > ma_long.iloc[-1]
+        atr_pct = last_atr / last_close
+
+        if trend_up and last_rsi < 70 and atr_pct < 0.05:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(last_close))
+        elif not trend_up and last_rsi > 30 and atr_pct < 0.05:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(last_close))
+        elif atr_pct > 0.05:
+            # High volatility, reduce position -> hold
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
         else:
-            # 无仓位建议，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(last_close))
+
         return self.signals
 
 

@@ -59,56 +59,22 @@ class MeanReversionMAStrategy(BaseStrategy):
         }
     
     def generate_signals(self):
-        """生成交易信号"""
-        # 复制ma_strategy的核心逻辑，但使用优化参数
-        data = self.data.copy()
+        """生成交易信号 - 基于MA交叉"""
+        df = self.data
+        short_w = self.params.get('short_window', 5)
+        long_w = self.params.get('long_window', 20)
         
-        # 确保数据有symbol列
-        if 'symbol' not in data.columns:
-            data['symbol'] = 'DEFAULT'
+        short_ma = df['close'].rolling(short_w).mean()
+        long_ma = df['close'].rolling(long_w).mean()
         
-        close_col = 'close' if 'close' in data.columns else data.columns[0]
-        symbol_col = 'symbol' if 'symbol' in data.columns else 'DEFAULT'
-        
-        self.signals = []
-        current_holding = None
-        
-        # 按时间遍历
-        unique_times = data.index.unique()
-        
-        for i, current_time in enumerate(unique_times):
-            current_bars = data.loc[current_time]
-            
-            if isinstance(current_bars, pd.Series):
-                current_bars = current_bars.to_frame().T
-            
-            # 计算移动平均
-            if len(current_bars) >= max(self.short_window, self.long_window):
-                # 这里简化处理，实际应该计算移动平均交叉
-                # 原始ma_strategy有更复杂的多股票逻辑
-                
-                # 简化的单股票逻辑
-                if current_holding is None:
-                    # 模拟买入信号
-                    self._record_signal(
-                        timestamp=current_time,
-                        action='buy',
-                        symbol='DEFAULT',
-                        price=current_bars[close_col].iloc[0] if len(current_bars) > 0 else 0
-                    )
-                    current_holding = 'DEFAULT'
-                else:
-                    # 模拟卖出信号
-                    self._record_signal(
-                        timestamp=current_time,
-                        action='sell',
-                        symbol='DEFAULT',
-                        price=current_bars[close_col].iloc[0] if len(current_bars) > 0 else 0
-                    )
-                    current_holding = None
+        for i in range(long_w, len(df)):
+            sym = df['symbol'].iloc[i] if 'symbol' in df.columns else 'DEFAULT'
+            if short_ma.iloc[i] > long_ma.iloc[i] and short_ma.iloc[i-1] <= long_ma.iloc[i-1]:
+                self._record_signal(df.index[i], 'buy', sym, float(df['close'].iloc[i]))
+            elif short_ma.iloc[i] < long_ma.iloc[i] and short_ma.iloc[i-1] >= long_ma.iloc[i-1]:
+                self._record_signal(df.index[i], 'sell', sym, float(df['close'].iloc[i]))
         
         return self.signals
-
 # 策略测试代码
 if __name__ == "__main__":
     print("🧪 MeanReversionMAStrategy 策略测试")

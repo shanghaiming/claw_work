@@ -892,48 +892,48 @@ class PriceActionRangesPsychologicalDisciplineManagerStrategy(BaseStrategy):
     def generate_signals(self):
         """
         生成交易信号
-        
-        基于心理纪律分析生成交易信号
+
+        基于心理纪律分析生成交易信号，使用波动率和趋势稳定性评估市场心理
         """
-        # 获取心理评估
-        psych_assessment = self.psych_manager.get_comprehensive_psychology_report()
-        
-        # 分析心理状态
-        overall_score = psych_assessment.get('overall_psychology_score', 0)
-        emotional_stability = psych_assessment.get('emotional_state', {}).get('emotional_stability', 0)
-        
-        # 获取纪律评估
-        discipline_assessment = psych_assessment.get('discipline_assessment', {})
-        overall_discipline_score = discipline_assessment.get('overall_score', 0)
-        
-        # 根据心理状态生成信号
-        if overall_score >= 0.8 and emotional_stability >= 0.7:
-            # 心理状态优秀，买入信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
-        elif overall_score <= 0.5 or emotional_stability <= 0.4:
-            # 心理状态差，卖出信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='sell',
-                price=self.data['close'].iloc[-1]
-            )
-        elif overall_discipline_score >= 0.7:
-            # 纪律良好，买入信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='buy',
-                price=self.data['close'].iloc[-1]
-            )
+        df = self.data
+        if len(df) < 20:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+
+        # Volatility regime (proxy for market emotion)
+        returns = close.pct_change()
+        vol = returns.rolling(20).std() * np.sqrt(252)
+        vol_mean = vol.rolling(50).mean()
+
+        # Trend consistency (proxy for discipline)
+        ma_short = close.rolling(10).mean()
+        ma_long = close.rolling(30).mean()
+        trend_consistent = ((close > ma_short) & (ma_short > ma_long)).rolling(10).mean()
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        last_vol = vol.iloc[-1]
+        last_vol_mean = vol_mean.iloc[-1]
+        last_consistency = trend_consistent.iloc[-1] if not np.isnan(trend_consistent.iloc[-1]) else 0.5
+
+        # Low volatility + high trend consistency = disciplined market = buy
+        # High volatility = emotional market = cautious
+        if last_vol < last_vol_mean * 0.8 and last_consistency > 0.7:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(close.iloc[-1]))
+        elif last_vol > last_vol_mean * 1.5:
+            self._record_signal(timestamp=df.index[-1], action='sell', price=float(close.iloc[-1]))
+        elif last_consistency < 0.3:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(close.iloc[-1]))
+        elif ma_short.iloc[-1] > ma_long.iloc[-1] and rsi.iloc[-1] < 70:
+            self._record_signal(timestamp=df.index[-1], action='buy', price=float(close.iloc[-1]))
         else:
-            # 中等状态，hold信号
-            self._record_signal(
-                timestamp=self.data.index[-1],
-                action='hold',
-                price=self.data['close'].iloc[-1]
-            )
-        
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(close.iloc[-1]))
+
         return self.signals

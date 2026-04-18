@@ -147,54 +147,73 @@ class PriceActionStrategyAdapter(BaseStrategy):
         print("✅ 价格行为引擎初始化完成")
     
     def generate_signals(self) -> List[Dict]:
-        """生成交易信号"""
-        if self.engine is None:
-            raise ValueError("请先初始化引擎")
-        
-        print("🎯 开始生成价格行为交易信号...")
-        
-        # 运行完整分析
-        analysis_results = self.engine.run_analysis()
-        
-        # 获取分析结果
-        pivots = analysis_results.get('pivots', {})
-        ranges = analysis_results.get('ranges', {})
-        cma_results = analysis_results.get('compensated_ma', {})
-        position_energy = analysis_results.get('position_energy', {})
-        multi_momentum = analysis_results.get('multi_momentum', {})
-        price_volume = analysis_results.get('price_volume', {})
-        
-        # 应用价格行为规则
-        signals = []
-        
-        for i in range(len(self.data)):
-            if i < 50:  # 跳过前50个数据点，确保有足够分析数据
-                continue
-                
-            current_time = self.data.index[i]
-            current_price = self.data['close'].iloc[i]
-            
-            # 构建当前分析上下文
-            analysis_context = {
-                'current_index': i,
-                'current_price': current_price,
-                'current_time': current_time,
-                'pivots': pivots,
-                'ranges': ranges,
-                'cma': cma_results,
-                'position_energy': position_energy,
-                'multi_momentum': multi_momentum,
-                'price_volume': price_volume,
-                'data': self.data
-            }
-            
-            # 生成交易信号（简化版逻辑）
-            signal = self._generate_signal_from_context(analysis_context)
-            if signal:
-                signals.append(signal)
-        
-        print(f"✅ 信号生成完成: {len(signals)} 个信号")
-        return signals
+        """生成交易信号，使用价格行为分析（支撑阻力、pin bar、engulfing）"""
+        df = self.data
+        if len(df) < 30:
+            self._record_signal(timestamp=df.index[-1], action='hold', price=float(df['close'].iloc[-1]))
+            return self.signals
+
+        close = df['close']
+        open_price = df['open']
+        high = df['high']
+        low = df['low']
+
+        # Support and resistance
+        support = low.rolling(20).min()
+        resistance = high.rolling(20).max()
+
+        # Pin bar detection
+        body = (close - open_price).abs()
+        lower_wick = close.combine(open_price, min) - low
+        upper_wick = high - close.combine(open_price, max)
+        total_range = high - low
+
+        bullish_pin = (lower_wick > body * 2) & (total_range > 0) & (lower_wick > total_range * 0.6)
+        bearish_pin = (upper_wick > body * 2) & (total_range > 0) & (upper_wick > total_range * 0.6)
+
+        # Engulfing pattern
+        bullish_engulf = (close > open_price) & (close.shift(1) < open_price.shift(1)) & \
+                         (close > open_price.shift(1)) & (open_price < close.shift(1))
+        bearish_engulf = (close < open_price) & (close.shift(1) > open_price.shift(1)) & \
+                         (close < open_price.shift(1)) & (open_price > close.shift(1))
+
+        # RSI
+        delta = close.diff()
+        gain = delta.where(delta > 0, 0).rolling(14).mean()
+        loss = (-delta.where(delta < 0, 0)).rolling(14).mean()
+        rs = gain / (loss + 1e-10)
+        rsi = 100 - (100 / (1 + rs))
+
+        i = len(df) - 1
+        last_close = close.iloc[i]
+
+        near_support = last_close <= support.iloc[i] * 1.02
+        near_resistance = last_close >= resistance.iloc[i] * 0.98
+
+        buy_score = 0
+        sell_score = 0
+
+        if bullish_pin.iloc[i]:
+            buy_score += 2
+        if bullish_engulf.iloc[i]:
+            buy_score += 2
+        if near_support and rsi.iloc[i] < 35:
+            buy_score += 2
+        if bearish_pin.iloc[i]:
+            sell_score += 2
+        if bearish_engulf.iloc[i]:
+            sell_score += 2
+        if near_resistance and rsi.iloc[i] > 65:
+            sell_score += 2
+
+        if buy_score >= 3:
+            self._record_signal(timestamp=df.index[i], action='buy', price=float(last_close))
+        elif sell_score >= 3:
+            self._record_signal(timestamp=df.index[i], action='sell', price=float(last_close))
+        else:
+            self._record_signal(timestamp=df.index[i], action='hold', price=float(last_close))
+
+        return self.signals
     
     def _generate_signal_from_context(self, context: Dict) -> Optional[Dict]:
         """从分析上下文生成单个信号"""
