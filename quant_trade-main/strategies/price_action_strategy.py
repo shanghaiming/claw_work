@@ -1,4 +1,7 @@
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 import pandas as pd
 import numpy as np
 import sys
@@ -6,16 +9,13 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-# 整合适配 - 自动添加
-from backtest.src.strategies.base_strategy import BaseStrategy
-
 # 添加价格行为集成路径
 workspace_path = "/Users/chengming/.openclaw/workspace"
 sys.path.append(workspace_path)
 
 try:
-    from price_action_integration.optimized_integration_engine import OptimizedPriceActionIntegrationEngine
-    from price_action_integration.price_action_rules_integrator import PriceActionRulesIntegrator
+    from strategies.price_action_integration.optimized_integration_engine import OptimizedPriceActionIntegrationEngine
+    from strategies.price_action_integration.price_action_rules_integrator import PriceActionRulesIntegrator
     PRICE_ACTION_AVAILABLE = True
     print("✅ 成功导入价格行为策略模块")
 except ImportError as e:

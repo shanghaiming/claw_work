@@ -24,7 +24,10 @@ import statistics
 import math
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class RiskLevel(Enum):
@@ -78,7 +81,7 @@ class ReversalRiskManagement:
     紧急冲刺模式：核心功能优先，实际完整代码
     """
     
-    def __init__(self, initial_balance: float = 10000.0):
+    def __init__(self, initial_balance: float = 10000.0, **kwargs):
         """
         初始化反转风险管理系统
         
@@ -871,7 +874,7 @@ def demonstrate_risk_management_system():
 class ReversalRiskManagementStrategy(BaseStrategy):
     """反转风险管理策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -882,8 +885,8 @@ class ReversalRiskManagementStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        initial_balance = params.get('initial_balance', 10000.0)
-        risk_tolerance = params.get('risk_tolerance', 'moderate')
+        initial_balance = self.params.get('initial_balance', 10000.0)
+        risk_tolerance = self.params.get('risk_tolerance', 'moderate')
         
         # 创建反转风险管理系统实例
         self.risk_system = ReversalRiskManagement(

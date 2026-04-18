@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 移动平均策略适配器 - 将quant_trade-main中的ma_strategy.py适配到统一策略框架
 
 # 整合适配 - 自动添加
-from backtest.src.strategies.base_strategy import BaseStrategy
 
 功能:
 1. 包装原始ma_strategy.MovingAverageStrategy
@@ -12,6 +10,12 @@ from backtest.src.strategies.base_strategy import BaseStrategy
 3. 信号格式标准化
 4. 性能指标增强
 """
+
+# BaseStrategy导入
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 import sys
 import os
@@ -72,7 +76,7 @@ except ImportError as e:
     ORIGINAL_MA_STRATEGY_AVAILABLE = False
 
 
-class MovingAverageStrategyAdapter(UnifiedStrategyBase):
+class MovingAverageStrategyAdapter(UnifiedStrategyBase, BaseStrategy):
     """
     移动平均策略适配器 - 统一接口的移动平均策略
     
@@ -602,3 +606,21 @@ if __name__ == "__main__":
     )
     
     print(f"\n✅ 移动平均策略适配器测试完成")
+
+class MaStrategyAdapterStrategy(BaseStrategy):
+    """基于ma_strategy_adapter的策略"""
+    
+    def __init__(self, data, params=None):
+        super().__init__(data, params)
+        self.name = "MaStrategyAdapterStrategy"
+        self.description = "基于ma_strategy_adapter的策略"
+        
+    def calculate_signals(self):
+        """计算交易信号"""
+        # 策略逻辑
+        return df
+        
+    def generate_signals(self):
+        """生成交易信号"""
+        # 信号生成逻辑
+        return self.signals

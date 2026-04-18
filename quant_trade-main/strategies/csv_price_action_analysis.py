@@ -7,7 +7,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 # ========== 核心信号定义接口 ==========
 class SignalDefinition(ABC):

@@ -34,7 +34,10 @@ from collections import defaultdict
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class ErrorCategory(Enum):
@@ -201,26 +204,7 @@ class CommonErrorsAvoidanceSystem:
         self.error_statistics = {}      # error_id -> 统计信息
         self.prevention_plans = {}      # plan_id -> ErrorPreventionPlan
         
-        # 检测引擎
-        self.detection_rules = self._initialize_detection_rules()
-        self.detection_patterns = self._initialize_detection_patterns()
-        
-        # 学习系统
-        self.learning_history = []
-        self.improvement_tracking = {}
-        
-        # 实时监控
-        self.realtime_monitors = {
-            'psychological': self._monitor_psychological_errors,
-            'risk_management': self._monitor_risk_management_errors,
-            'execution': self._monitor_execution_errors,
-            'discipline': self._monitor_discipline_errors
-        }
-        
-        # 初始化默认错误库
-        self._initialize_default_errors()
-        
-        # 统计信息
+        # 统计信息（必须在 _initialize_default_errors 之前）
         self.system_statistics = {
             'total_errors_defined': 0,
             'total_occurrences': 0,
@@ -230,6 +214,25 @@ class CommonErrorsAvoidanceSystem:
             'error_recurrence_rate': 0.0,
             'improvement_rate': 0.0
         }
+
+        # 检测引擎
+        self.detection_rules = self._initialize_detection_rules()
+        self.detection_patterns = self._initialize_detection_patterns()
+
+        # 学习系统
+        self.learning_history = []
+        self.improvement_tracking = {}
+
+        # 实时监控
+        self.realtime_monitors = {
+            'psychological': self._monitor_psychological_errors,
+            'risk_management': self._monitor_risk_management_errors,
+            'execution': self._monitor_execution_errors,
+            'discipline': self._monitor_discipline_errors
+        }
+
+        # 初始化默认错误库
+        self._initialize_default_errors()
         
         # 如果提供了存储路径，尝试加载现有数据
         if storage_path:
@@ -2254,7 +2257,7 @@ class CommonErrorsAvoidanceSystem:
 class PriceActionRangesCommonErrorsAvoidanceSystemStrategy(BaseStrategy):
     """价格行为区间常见错误与避免策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         

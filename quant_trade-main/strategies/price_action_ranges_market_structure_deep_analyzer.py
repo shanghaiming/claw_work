@@ -25,7 +25,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class MarketStructureDeepAnalyzer:
     """市场结构深度分析器 - 专注于深度分析而非功能实现"""

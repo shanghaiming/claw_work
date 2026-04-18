@@ -23,7 +23,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 # 添加价格行为策略路径
 sys.path.append('/Users/chengming/.openclaw/workspace')
@@ -34,8 +37,8 @@ print("=" * 80)
 
 # 尝试导入价格行为引擎
 try:
-    from price_action_integration.optimized_integration_engine import OptimizedPriceActionIntegrationEngine
-    from price_action_integration.price_action_rules_integrator import PriceActionRulesIntegrator
+    from strategies.price_action_integration.optimized_integration_engine import OptimizedPriceActionIntegrationEngine
+    from strategies.price_action_integration.price_action_rules_integrator import PriceActionRulesIntegrator
     print("✅ 成功导入价格行为策略模块")
     print(f"   引擎类: {OptimizedPriceActionIntegrationEngine.__name__}")
     print(f"   规则整合器: {PriceActionRulesIntegrator.__name__}")

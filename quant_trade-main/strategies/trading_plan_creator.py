@@ -26,14 +26,17 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class TradingPlanCreator:
     """交易计划制定器（按照第18章标准：完整实际代码）"""
     
     def __init__(self,
                  trader_profile: Dict = None,
-                 default_risk_percentage: float = 0.02):
+                 default_risk_percentage: float = 0.02, **kwargs):
         """
         初始化交易计划制定器
         
@@ -1149,7 +1152,7 @@ class TradingPlanCreator:
 class TradingPlanCreatorStrategy(BaseStrategy):
     """交易计划制定策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -1160,13 +1163,13 @@ class TradingPlanCreatorStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        trader_profile = params.get('trader_profile', {
+        trader_profile = self.params.get('trader_profile', {
             'experience_level': 'intermediate',
             'risk_tolerance': 'moderate',
             'trading_style': 'swing'
         })
-        plan_horizon = params.get('plan_horizon', 'weekly')
-        include_risk_management = params.get('include_risk_management', True)
+        plan_horizon = self.params.get('plan_horizon', 'weekly')
+        include_risk_management = self.params.get('include_risk_management', True)
         
         # 创建交易计划制定器实例
         self.creator = TradingPlanCreator(

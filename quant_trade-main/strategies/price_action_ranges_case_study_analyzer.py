@@ -33,7 +33,10 @@ import random
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class CaseType(Enum):

@@ -24,7 +24,10 @@ from datetime import datetime, timedelta
 import statistics
 
 # 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class ConfirmationSignalType(Enum):
@@ -118,18 +121,18 @@ class ReversalConfirmationSystem(BaseStrategy):
     紧急冲刺模式：核心功能优先，实际完整代码
     """
     
-    def __init__(self, data: pd.DataFrame, params: Dict):
+    def __init__(self, data: pd.DataFrame, params: Dict = None):
         """
         初始化反转确认系统
-        
+
         Args:
             data: 价格数据DataFrame
             params: 参数字典，包含initial_balance等配置
         """
         super().__init__(data, params)
-        
+
         # 从参数中提取配置
-        self.initial_balance = params.get('initial_balance', 10000.0)
+        self.initial_balance = self.params.get('initial_balance', 10000.0)
         self.current_balance = self.initial_balance
         self.confirmation_signals = []  # 确认信号
         self.assessments = []           # 评估结果
@@ -137,20 +140,20 @@ class ReversalConfirmationSystem(BaseStrategy):
         
         # 系统配置
         self.config = {
-            "volume_spike_multiplier": params.get('volume_spike_multiplier', 2.0),        # 成交量放大倍数阈值
-            "price_breakout_threshold": params.get('price_breakout_threshold', 0.01),      # 价格突破阈值（1%）
-            "timeframe_alignment_threshold": params.get('timeframe_alignment_threshold', 0.7),  # 时间框架对齐阈值
-            "momentum_divergence_threshold": params.get('momentum_divergence_threshold', 0.05), # 动量背离阈值（5%）
-            "min_signals_for_strong_confirmation": params.get('min_signals_for_strong_confirmation', 3),  # 强确认最小信号数
-            "default_risk_per_trade": params.get('default_risk_per_trade', 0.02),        # 默认每笔交易风险（2%）
+            "volume_spike_multiplier": self.params.get('volume_spike_multiplier', 2.0),        # 成交量放大倍数阈值
+            "price_breakout_threshold": self.params.get('price_breakout_threshold', 0.01),      # 价格突破阈值（1%）
+            "timeframe_alignment_threshold": self.params.get('timeframe_alignment_threshold', 0.7),  # 时间框架对齐阈值
+            "momentum_divergence_threshold": self.params.get('momentum_divergence_threshold', 0.05), # 动量背离阈值（5%）
+            "min_signals_for_strong_confirmation": self.params.get('min_signals_for_strong_confirmation', 3),  # 强确认最小信号数
+            "default_risk_per_trade": self.params.get('default_risk_per_trade', 0.02),        # 默认每笔交易风险（2%）
         }
         
         # 确认信号检测器映射
         self.confirmation_detectors = {
-            ConfirmationSignalType.VOLUME_CONFIRMATION: self._detect_volume_confirmation,
-            ConfirmationSignalType.PRICE_ACTION_CONFIRMATION: self._detect_price_action_confirmation,
-            ConfirmationSignalType.TIMEFRAME_CONFIRMATION: self._detect_timeframe_confirmation,
-            ConfirmationSignalType.MOMENTUM_CONFIRMATION: self._detect_momentum_confirmation,
+            ConfirmationSignalType.VOLUME_CONFIRMATION: self.detect_volume_confirmation,
+            ConfirmationSignalType.PRICE_ACTION_CONFIRMATION: self.detect_price_action_confirmation,
+            ConfirmationSignalType.TIMEFRAME_CONFIRMATION: self.detect_timeframe_confirmation,
+            ConfirmationSignalType.MOMENTUM_CONFIRMATION: self.detect_momentum_confirmation,
         }
     
     # ==================== 核心确认信号检测方法 ====================

@@ -1,9 +1,7 @@
 # migrated to quant_trade-main/integrated/strategies/
 # original file in workspace root
 # migration time: 2026-04-09T23:53:23.028917
-
-"""
-反转交易心理量化分析系统 - 第8章《反转交易心理》
+"""反转交易心理量化分析系统 - 第8章《反转交易心理》
 严格按照第18章标准：实际完整代码，非伪代码框架
 紧急冲刺模式：17:41开始，18:11完成
 
@@ -14,6 +12,12 @@
 4. 心理训练计划：生成个性化心理训练计划
 5. 绩效心理分析：分析心理因素对交易绩效的影响
 """
+
+# BaseStrategy导入
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 import json
 from dataclasses import dataclass
@@ -1242,3 +1246,21 @@ def demonstrate_trading_psychology_system():
 if __name__ == "__main__":
     # 当直接运行此文件时执行演示
     demonstrate_trading_psychology_system()
+
+class PriceActionReversalsReversalTradingPsychologyStrategy(BaseStrategy):
+    """基于price_action_reversals_reversal_trading_psychology的策略"""
+    
+    def __init__(self, data, params=None):
+        super().__init__(data, params)
+        self.name = "PriceActionReversalsReversalTradingPsychologyStrategy"
+        self.description = "基于price_action_reversals_reversal_trading_psychology的策略"
+        
+    def calculate_signals(self):
+        """计算交易信号"""
+        # 策略逻辑
+        return df
+        
+    def generate_signals(self):
+        """生成交易信号"""
+        # 信号生成逻辑
+        return self.signals

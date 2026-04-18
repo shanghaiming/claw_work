@@ -24,7 +24,10 @@ import statistics
 import math
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class TimingSignalType(Enum):
@@ -83,7 +86,7 @@ class ReversalTimingSystem:
     紧急冲刺模式：核心功能优先，实际完整代码
     """
     
-    def __init__(self, initial_balance: float = 10000.0):
+    def __init__(self, initial_balance: float = 10000.0, **kwargs):
         """
         初始化反转交易时机系统
         
@@ -965,7 +968,7 @@ def demonstrate_timing_system():
 class ReversalTimingSystemStrategy(BaseStrategy):
     """反转交易时机策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -976,8 +979,8 @@ class ReversalTimingSystemStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        initial_balance = params.get('initial_balance', 10000.0)
-        timing_threshold = params.get('timing_threshold', 0.7)
+        initial_balance = self.params.get('initial_balance', 10000.0)
+        timing_threshold = self.params.get('timing_threshold', 0.7)
         
         # 创建反转交易时机系统实例
         self.timing_system = ReversalTimingSystem(

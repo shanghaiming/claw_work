@@ -3,6 +3,11 @@
 测试单个策略的信号生成
 """
 
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
+
 import sys
 import os
 import pandas as pd
@@ -153,3 +158,23 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+class TestSingleStrategySignalsStrategy(BaseStrategy):
+    """基于test_single_strategy_signals的策略"""
+    
+    def __init__(self, data, params=None):
+        super().__init__(data, params)
+        # 初始化代码
+        self.name = "TestSingleStrategySignalsStrategy"
+        self.description = "基于test_single_strategy_signals的策略"
+        
+    def calculate_signals(self):
+        """计算交易信号"""
+        # 策略逻辑
+        return df
+        
+    def generate_signals(self):
+        """生成交易信号"""
+        # 信号生成逻辑
+        return self.signals

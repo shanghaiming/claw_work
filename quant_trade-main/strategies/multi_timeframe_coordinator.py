@@ -24,7 +24,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 # 导入第16章的趋势通道分析器
 try:

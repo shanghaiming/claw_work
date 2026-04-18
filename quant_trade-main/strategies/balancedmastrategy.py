@@ -6,7 +6,10 @@
 
 import pandas as pd
 import numpy as np
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class BalancedMAStrategy(BaseStrategy):
     """平衡型MA策略 (最佳参数) - 移动平均策略变体"""

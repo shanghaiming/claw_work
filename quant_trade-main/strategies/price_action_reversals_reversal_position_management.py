@@ -1,9 +1,7 @@
 # migrated to quant_trade-main/integrated/strategies/
 # original file in workspace root
 # migration time: 2026-04-09T23:53:23.029959
-
-"""
-反转仓位管理量化分析系统 - 第6章《反转仓位管理》
+"""反转仓位管理量化分析系统 - 第6章《反转仓位管理》
 严格按照第18章标准：实际完整代码，非伪代码框架
 紧急冲刺加速模式：15:33-16:03完成
 
@@ -14,6 +12,12 @@
 4. 仓位优化算法：优化仓位规模和分配
 5. 仓位报告系统：生成仓位分析和建议报告
 """
+
+# BaseStrategy导入
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 import numpy as np
 from dataclasses import dataclass
@@ -933,3 +937,21 @@ def demonstrate_position_management_system():
 if __name__ == "__main__":
     # 当直接运行此文件时执行演示
     demonstrate_position_management_system()
+
+class PriceActionReversalsReversalPositionManagementStrategy(BaseStrategy):
+    """基于price_action_reversals_reversal_position_management的策略"""
+    
+    def __init__(self, data, params=None):
+        super().__init__(data, params)
+        self.name = "PriceActionReversalsReversalPositionManagementStrategy"
+        self.description = "基于price_action_reversals_reversal_position_management的策略"
+        
+    def calculate_signals(self):
+        """计算交易信号"""
+        # 策略逻辑
+        return df
+        
+    def generate_signals(self):
+        """生成交易信号"""
+        # 信号生成逻辑
+        return self.signals

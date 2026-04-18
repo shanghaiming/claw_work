@@ -23,7 +23,10 @@ import math
 from statistics import mean, stdev
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class ReversalPatternType(Enum):
@@ -80,7 +83,7 @@ class ReversalPatternRecognition:
     所有方法均为实际完整代码，非伪代码框架
     """
     
-    def __init__(self, initial_balance: float = 10000.0):
+    def __init__(self, initial_balance: float = 10000.0, **kwargs):
         """
         初始化反转模式识别系统
         
@@ -852,7 +855,7 @@ def demonstrate_pattern_recognition_system():
 class ReversalPatternRecognitionStrategy(BaseStrategy):
     """反转模式识别策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -863,8 +866,8 @@ class ReversalPatternRecognitionStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        initial_balance = params.get('initial_balance', 10000.0)
-        pattern_threshold = params.get('pattern_threshold', 0.7)
+        initial_balance = self.params.get('initial_balance', 10000.0)
+        pattern_threshold = self.params.get('pattern_threshold', 0.7)
         
         # 创建反转模式识别系统实例
         self.pattern_system = ReversalPatternRecognition(

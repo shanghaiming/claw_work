@@ -1,16 +1,17 @@
-# 修复BaseStrategy导入 - 避免重复导入
-# from strategies.base_strategy import BaseStrategy  # 注释掉可能冲突的导入
-# from backtest.src.strategies.base_strategy import BaseStrategy  # 注释掉可能冲突的导入
-
-# 统一使用当前目录的base_strategy
-import os
-import sys
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 import pandas as pd
 import numpy as np
-import talib
+try:
+    import talib
+    _HAS_TALIB = True
+except ImportError:
+    _HAS_TALIB = False
+import sys
+import os
 
 # 添加TradingView指标路径
 workspace_path = "/Users/chengming/.openclaw/workspace"

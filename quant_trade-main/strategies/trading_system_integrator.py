@@ -32,7 +32,10 @@ from abc import ABC, abstractmethod
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 # 子系统接口定义（抽象基类）
 class TradingSubsystem(ABC):

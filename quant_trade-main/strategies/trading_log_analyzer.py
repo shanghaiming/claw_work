@@ -25,17 +25,22 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class TradingLogAnalyzer:
     """交易日志分析器（按照第18章标准：完整实际代码）"""
     
     def __init__(self,
+                 log_data: List[Dict] = None,
+                 analysis_config: Dict = None,
                  trader_profile: Dict = None,
                  log_retention_days: int = 365):
         """
         初始化交易日志分析器
-        
+
         参数:
             trader_profile: 交易者个人资料
             log_retention_days: 日志保留天数
@@ -2423,7 +2428,7 @@ class TradingLogAnalyzer:
 class TradingLogAnalyzerStrategy(BaseStrategy):
     """交易日志分析策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -2434,8 +2439,8 @@ class TradingLogAnalyzerStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        analysis_period = params.get('analysis_period', 30)
-        include_psychological = params.get('include_psychological', True)
+        analysis_period = self.params.get('analysis_period', 30)
+        include_psychological = self.params.get('include_psychological', True)
         
         # 创建交易日志分析器实例
         self.analyzer = TradingLogAnalyzer(

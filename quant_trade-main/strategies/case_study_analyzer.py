@@ -33,7 +33,10 @@ import random
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class CaseType(Enum):
@@ -1670,7 +1673,7 @@ class CaseStudyAnalyzer:
 class CaseStudyAnalyzerStrategy(BaseStrategy):
     """实战案例分析策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -1681,8 +1684,8 @@ class CaseStudyAnalyzerStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        case_count = params.get('case_count', 10)
-        include_lessons = params.get('include_lessons', True)
+        case_count = self.params.get('case_count', 10)
+        include_lessons = self.params.get('include_lessons', True)
         
         # 创建实战案例分析器实例
         self.analyzer = CaseStudyAnalyzer(

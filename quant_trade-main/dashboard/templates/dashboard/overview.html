@@ -1,0 +1,149 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}总览 - Quant Dashboard{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h2><i class="fas fa-tachometer-alt"></i> 平台总览</h2>
+    </div>
+</div>
+
+<!-- 统计卡片 -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="stat-card" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+            <div class="stat-number">{{ total_strategies }}</div>
+            <div class="stat-label"><i class="fas fa-cubes"></i> 策略总数</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+            <div class="stat-number">{{ loaded_strategies }}</div>
+            <div class="stat-label"><i class="fas fa-check-circle"></i> 已加载</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card" style="background: linear-gradient(135deg, #eb3349, #f45c43);">
+            <div class="stat-number">{{ error_strategies }}</div>
+            <div class="stat-label"><i class="fas fa-exclamation-circle"></i> 加载失败</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card" style="background: linear-gradient(135deg, #2193b0, #6dd5ed);">
+            {% for tf, count in data_summary.items %}
+                {% if forloop.first %}{{ count }}{% endif %}
+            {% endfor %}
+            <div class="stat-label"><i class="fas fa-database"></i> 日线数据股票数</div>
+        </div>
+    </div>
+</div>
+
+<!-- 快速入口 -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                <h5>策略管理</h5>
+                <p class="text-muted">查看和管理所有 {{ total_strategies }} 个量化策略</p>
+                <a href="{% url 'dashboard:strategy_list' %}" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i> 进入策略列表
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-play-circle fa-3x text-success mb-3"></i>
+                <h5>策略回测</h5>
+                <p class="text-muted">选择策略和股票，运行历史回测查看绩效</p>
+                <a href="{% url 'dashboard:backtest_page' %}" class="btn btn-success">
+                    <i class="fas fa-arrow-right"></i> 开始回测
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-filter fa-3x text-info mb-3"></i>
+                <h5>智能选股</h5>
+                <p class="text-muted">基于技术指标和策略信号筛选股票</p>
+                <a href="{% url 'dashboard:stock_selection' %}" class="btn btn-info text-white">
+                    <i class="fas fa-arrow-right"></i> 开始选股
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 数据概览 -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-database"></i> 数据概览</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr><th>数据类型</th><th>股票数量</th><th>状态</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for tf, count in data_summary.items %}
+                        <tr>
+                            <td>
+                                {% if tf == 'daily' %}日线数据
+                                {% elif tf == 'weekly' %}周线数据
+                                {% elif tf == '5min' %}5分钟数据
+                                {% elif tf == '30min' %}30分钟数据
+                                {% else %}{{ tf }}{% endif %}
+                            </td>
+                            <td><strong>{{ count }}</strong></td>
+                            <td>
+                                {% if count > 0 %}
+                                    <span class="badge bg-success">可用</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">无数据</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr><td colspan="3" class="text-muted">暂无数据</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-info-circle"></i> 平台说明</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>策略基类：</strong><code>core.base_strategy.BaseStrategy</code>
+                        <br><small class="text-muted">所有策略继承此类，实现 generate_signals() 方法</small>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>回测引擎：</strong><code>core.backtest_engine.BacktestEngine</code>
+                        <br><small class="text-muted">支持做多/做空，自动计算夏普比率、最大回撤等</small>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>数据来源：</strong>本地 CSV 文件
+                        <br><small class="text-muted">data/ 目录下，支持日线、周线、5分钟、30分钟</small>
+                    </li>
+                    <li class="list-group-item">
+                        <strong>信号格式：</strong>
+                        <code>{timestamp, action, symbol, price}</code>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

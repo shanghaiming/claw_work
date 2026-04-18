@@ -27,7 +27,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class PsychologicalTrainingSystem:
     """心理训练系统（按照第18章标准：完整实际代码）"""

@@ -24,7 +24,10 @@ import statistics
 import math
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class TimeframeLevel(Enum):
@@ -44,13 +47,13 @@ class TimeframeAlignment(Enum):
 
 class MultiTimeframeSignal:
     """多时间框架信号数据类"""
-    def __init__(self, 
+    def __init__(self,
                  timeframe: TimeframeLevel,
-                 trend_direction: str,  # "bullish", "bearish", "neutral"
-                 trend_strength: float,  # 0-1
+                 trend_direction: str,
+                 trend_strength: float,
                  reversal_signals: List[Dict[str, Any]],
                  confidence_score: float,
-                 timestamp: datetime):
+                 timestamp: datetime, **kwargs):
         self.timeframe = timeframe
         self.trend_direction = trend_direction
         self.trend_strength = trend_strength
@@ -812,7 +815,7 @@ def demonstrate_multi_timeframe_system():
 class MultiTimeframeReversalSystemStrategy(BaseStrategy):
     """多时间框架反转策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -823,14 +826,11 @@ class MultiTimeframeReversalSystemStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        timeframe_count = params.get('timeframe_count', 3)
-        alignment_threshold = params.get('alignment_threshold', 0.7)
+        timeframe_count = self.params.get('timeframe_count', 3)
+        alignment_threshold = self.params.get('alignment_threshold', 0.7)
         
         # 创建多时间框架反转系统实例
-        self.multi_tf_system = MultiTimeframeReversalSystem(
-            timeframe_count=timeframe_count,
-            alignment_threshold=alignment_threshold
-        )
+        self.multi_tf_system = MultiTimeframeReversalSystem()
     
     def generate_signals(self):
         """

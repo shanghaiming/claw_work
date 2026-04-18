@@ -1,10 +1,8 @@
 # migrated to quant_trade-main/integrated/strategies/
 # original file in workspace root
 # migration time: 2026-04-09T23:53:32.618035
-
 #!/usr/bin/env python3
-"""
-价格行为系统回测与TA-Lib策略开发综合系统
+"""价格行为系统回测与TA-Lib策略开发综合系统
 
 功能:
 1. 回测workspace下的价格行为系统
@@ -13,6 +11,12 @@
 4. 进行指标组合尝试
 5. 生成详细回测报告
 """
+
+# BaseStrategy导入
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 import sys
 import os
@@ -1098,3 +1102,23 @@ def update_task_manager_task5(all_results: Dict, system_files_count: int, talib_
 
 if __name__ == "__main__":
     main()
+
+
+class PriceActionTalibBacktestSystemStrategy(BaseStrategy):
+    """基于price_action_talib_backtest_system的策略"""
+    
+    def __init__(self, data, params=None):
+        super().__init__(data, params)
+        # 初始化代码
+        self.name = "PriceActionTalibBacktestSystemStrategy"
+        self.description = "基于price_action_talib_backtest_system的策略"
+        
+    def calculate_signals(self):
+        """计算交易信号"""
+        # 策略逻辑
+        return df
+        
+    def generate_signals(self):
+        """生成交易信号"""
+        # 信号生成逻辑
+        return self.signals

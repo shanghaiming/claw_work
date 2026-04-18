@@ -10,7 +10,10 @@ import os
 from pathlib import Path
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 # 设置中文字体
 matplotlib.rcParams['font.sans-serif'] = ['SimHei']

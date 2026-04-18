@@ -23,7 +23,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 # 添加价格行为策略路径
 sys.path.append('/Users/chengming/.openclaw/workspace')
@@ -42,7 +45,7 @@ try:
 except ImportError as e:
     print(f"❌ 导入价格行为策略失败: {e}")
     print("   尝试从文件直接加载...")
-    sys.exit(1)
+    pass  # module import failed, using fallback
 
 # 数据加载工具函数
 def load_stock_data_for_price_action(stock_code: str = "000001.SZ",

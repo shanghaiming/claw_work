@@ -6,7 +6,10 @@
 
 import pandas as pd
 import numpy as np
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class ConservativeMAStrategy(BaseStrategy):
     """保守型MA策略 - 移动平均策略变体"""

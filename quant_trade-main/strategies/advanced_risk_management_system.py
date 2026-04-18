@@ -28,7 +28,10 @@ import random
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class AdvancedRiskManagementSystem:
     """高级风险管理系统（按照第18章标准：完整实际代码）"""
@@ -1891,7 +1894,7 @@ class AdvancedRiskManagementSystem:
 class AdvancedRiskManagementSystemStrategy(BaseStrategy):
     """高级风险管理策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -1902,13 +1905,15 @@ class AdvancedRiskManagementSystemStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        max_drawdown_limit = params.get('max_drawdown_limit', 0.10)
-        var_conf_level = params.get('var_conf_level', 0.95)
+        max_drawdown_limit = self.params.get('max_drawdown_limit', 0.10)
+        var_conf_level = self.params.get('var_conf_level', 0.95)
         
         # 创建高级风险管理系统实例
+        portfolio_config = self.params.get('portfolio_config', None)
+        risk_tolerance = self.params.get('risk_tolerance', None)
         self.risk_system = AdvancedRiskManagementSystem(
-            max_drawdown_limit=max_drawdown_limit,
-            var_conf_level=var_conf_level
+            portfolio_config=portfolio_config,
+            risk_tolerance=risk_tolerance,
         )
     
     def generate_signals(self):

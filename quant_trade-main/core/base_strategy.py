@@ -12,6 +12,11 @@ class BaseStrategy(ABC):
 
     SIGNAL_ACTIONS = {'buy', 'sell', 'hold'}
 
+    # 看板元数据（子类可覆盖）
+    strategy_description: str = ""
+    strategy_category: str = "general"  # ma, price_action, momentum, wave, ml, volume, general
+    strategy_params_schema: Dict = {}   # 看板动态渲染参数表单用
+
     def __init__(self, data: pd.DataFrame, params: dict = None):
         self.data = data.copy()
         self.params = {**self.get_default_params(), **(params or {})}
@@ -48,6 +53,10 @@ class BaseStrategy(ABC):
         if self.data.empty:
             raise ValueError("数据为空")
 
+        # 自动注入 symbol 列
+        if 'symbol' not in self.data.columns:
+            self.data['symbol'] = 'DEFAULT'
+
         if not pd.api.types.is_datetime64_any_dtype(self.data.index):
             try:
                 self.data.index = pd.to_datetime(self.data.index)
@@ -61,6 +70,9 @@ class BaseStrategy(ABC):
         """记录交易信号"""
         if action not in self.SIGNAL_ACTIONS:
             raise ValueError(f"无效信号动作: {action}, 允许: {self.SIGNAL_ACTIONS}")
+        # 如果没传 symbol，尝试从数据中获取
+        if symbol == 'DEFAULT' and 'symbol' in self.data.columns:
+            symbol = self.data['symbol'].iloc[0]
         self.signals.append({
             'timestamp': timestamp,
             'action': action,
@@ -68,3 +80,12 @@ class BaseStrategy(ABC):
             'price': float(price),
             **extra
         })
+
+    def get_signals_summary(self) -> Dict:
+        """返回信号统计摘要"""
+        if not self.signals:
+            return {"total": 0, "buys": 0, "sells": 0, "holds": 0}
+        buys = len([s for s in self.signals if s['action'] == 'buy'])
+        sells = len([s for s in self.signals if s['action'] == 'sell'])
+        holds = len([s for s in self.signals if s['action'] == 'hold'])
+        return {"total": len(self.signals), "buys": buys, "sells": sells, "holds": holds}

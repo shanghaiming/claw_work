@@ -3,6 +3,10 @@
 # migration time: 2026-04-09T23:53:23.030778
 
 """
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 多时间框架反转量化分析系统 - 第7章《多时间框架反转》
 严格按照第18章标准：实际完整代码，非伪代码框架
 紧急冲刺恢复模式：17:26开始，17:56完成

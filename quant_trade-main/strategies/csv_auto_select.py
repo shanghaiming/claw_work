@@ -4,7 +4,10 @@ import pandas as pd
 import numpy as np
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import logging
@@ -39,15 +42,15 @@ def load_config():
     
     return {
         "data_paths": {
-            # 原始数据目录
+            # 原始数据目录（也作为主要数据源）
             "daily_raw": Path(os.path.join(project_root, 'data', 'daily_data2')),
             "weekly_raw": Path(os.path.join(project_root, 'data', 'week_data2')),
-            # 分析结果目录（用于读取）
-            "daily": Path(os.path.join(project_root, 'dashboard', 'analysis_results')),
+            # 分析结果目录（用于读取） - 修改为指向原始数据目录
+            "daily": Path(os.path.join(project_root, 'data', 'daily_data2')),
             "output": Path(os.path.join(project_root, 'dashboard', 'output'))
         },
         "target": Path(os.path.join(project_root, 'dashboard', 'output', 'selected_stocks')),
-        "file_suffix": "_analysis.csv",
+        "file_suffix": ".csv",  # 修改为.csv以匹配原始数据文件
         "system_params": {
             "max_workers": 8,
             "chunk_size": 200
@@ -77,14 +80,26 @@ def load_single_stock_data(config, code):
                     # 尝试从其他列名映射
                     if '开盘价' in df.columns and col == 'open':
                         df[col] = df['开盘价']
+                    elif 'open' in df.columns and col == 'open':  # 英文列名已存在
+                        pass
                     elif '最高价' in df.columns and col == 'high':
                         df[col] = df['最高价']
+                    elif 'high' in df.columns and col == 'high':  # 英文列名已存在
+                        pass
                     elif '最低价' in df.columns and col == 'low':
                         df[col] = df['最低价']
+                    elif 'low' in df.columns and col == 'low':  # 英文列名已存在
+                        pass
                     elif '收盘价' in df.columns and col == 'close':
                         df[col] = df['收盘价']
+                    elif 'close' in df.columns and col == 'close':  # 英文列名已存在
+                        pass
                     elif '成交量' in df.columns and col == 'volume':
                         df[col] = df['成交量']
+                    elif 'vol' in df.columns and col == 'volume':  # 原始数据使用vol
+                        df[col] = df['vol']
+                    elif 'amount' in df.columns and col == 'volume':  # 金额列备用
+                        df[col] = df['amount']
                     else:
                         df[col] = np.nan
             

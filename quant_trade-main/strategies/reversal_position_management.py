@@ -24,7 +24,10 @@ import statistics
 import math
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class PositionSizeMethod(Enum):
@@ -84,7 +87,7 @@ class ReversalPositionManagement:
     紧急冲刺加速模式：核心功能优先，实际完整代码
     """
     
-    def __init__(self, initial_balance: float = 10000.0):
+    def __init__(self, initial_balance: float = 10000.0, **kwargs):
         """
         初始化反转仓位管理系统
         
@@ -941,7 +944,7 @@ def demonstrate_position_management_system():
 class ReversalPositionManagementStrategy(BaseStrategy):
     """反转仓位管理策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -952,8 +955,8 @@ class ReversalPositionManagementStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        initial_balance = params.get('initial_balance', 10000.0)
-        position_method = params.get('position_method', 'fixed_risk')
+        initial_balance = self.params.get('initial_balance', 10000.0)
+        position_method = self.params.get('position_method', 'fixed_risk')
         
         # 创建反转仓位管理系统实例
         self.position_system = ReversalPositionManagement(

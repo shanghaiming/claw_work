@@ -1,0 +1,205 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Strategy List - Quant Dashboard{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1><i class="fas fa-list"></i> Strategy List</h1>
+        <p class="lead">All {{ stats.total }} strategies in the platform</p>
+    </div>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="dashboard-stat bg-success text-white">
+            <div class="stat-number">{{ stats.loaded }}</div>
+            <div class="stat-label">Loaded Successfully</div>
+            <div class="small mt-2"><i class="fas fa-check-circle"></i> BaseStrategy subclass</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="dashboard-stat bg-warning text-dark">
+            <div class="stat-number">{{ stats.no_base_strategy }}</div>
+            <div class="stat-label">Not BaseStrategy</div>
+            <div class="small mt-2"><i class="fas fa-exclamation-triangle"></i> Needs conversion</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="dashboard-stat bg-danger text-white">
+            <div class="stat-number">{{ stats.errors }}</div>
+            <div class="stat-label">Errors</div>
+            <div class="small mt-2"><i class="fas fa-times-circle"></i> Failed to load</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="dashboard-stat bg-info text-white">
+            <div class="stat-number">{{ stats.total }}</div>
+            <div class="stat-label">Total Strategies</div>
+            <div class="small mt-2"><i class="fas fa-cubes"></i> All files</div>
+        </div>
+    </div>
+</div>
+
+<!-- Strategy Filter -->
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="strategySearch" placeholder="Search strategies by name...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter-checkbox" type="checkbox" id="filterLoaded" value="loaded" checked>
+                            <label class="form-check-label" for="filterLoaded">Loaded</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter-checkbox" type="checkbox" id="filterError" value="error" checked>
+                            <label class="form-check-label" for="filterError">Error</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input filter-checkbox" type="checkbox" id="filterNoBase" value="no_base_strategy" checked>
+                            <label class="form-check-label" for="filterNoBase">Not BaseStrategy</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Strategy List -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-cogs"></i> All Strategies</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="strategyTable">
+                        <thead>
+                            <tr>
+                                <th width="20%">Strategy Name</th>
+                                <th width="15%">Status</th>
+                                <th width="20%">Class Name</th>
+                                <th width="35%">Error / Notes</th>
+                                <th width="10%">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for strategy in strategies %}
+                            <tr class="strategy-row {% if strategy.status == 'loaded' %}table-success{% elif strategy.status == 'error' %}table-danger{% elif strategy.status == 'no_base_strategy' %}table-warning{% endif %}" 
+                                data-status="{{ strategy.status }}">
+                                <td>
+                                    <strong>{{ strategy.name }}</strong><br>
+                                    <small class="text-muted">{{ strategy.filename }}</small>
+                                </td>
+                                <td>
+                                    {% if strategy.status == 'loaded' %}
+                                        <span class="badge bg-success">Loaded</span>
+                                        <div class="small text-success mt-1">
+                                            <i class="fas fa-check"></i> BaseStrategy
+                                        </div>
+                                    {% elif strategy.status == 'error' %}
+                                        <span class="badge bg-danger">Error</span>
+                                        <div class="small text-danger mt-1">
+                                            <i class="fas fa-times"></i> Failed
+                                        </div>
+                                    {% elif strategy.status == 'no_base_strategy' %}
+                                        <span class="badge bg-warning">Not BaseStrategy</span>
+                                        <div class="small text-warning mt-1">
+                                            <i class="fas fa-exclamation-triangle"></i> Needs conversion
+                                        </div>
+                                    {% else %}
+                                        <span class="badge bg-secondary">{{ strategy.status }}</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if strategy.class_name %}
+                                        <code>{{ strategy.class_name }}</code>
+                                    {% else %}
+                                        <span class="text-muted">-</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if strategy.error %}
+                                        <div class="text-danger small">
+                                            <i class="fas fa-exclamation-circle"></i> {{ strategy.error|truncatechars:100 }}
+                                        </div>
+                                    {% endif %}
+                                    {% if strategy.dependencies %}
+                                        <div class="mt-1">
+                                            <small class="text-info">
+                                                <i class="fas fa-box"></i> Missing: 
+                                                {% for dep in strategy.dependencies %}
+                                                    <span class="badge bg-info">{{ dep }}</span>
+                                                {% endfor %}
+                                            </small>
+                                        </div>
+                                    {% endif %}
+                                    {% if not strategy.error and not strategy.dependencies and strategy.status == 'loaded' %}
+                                        <span class="text-success small">
+                                            <i class="fas fa-check-circle"></i> Ready for backtesting
+                                        </span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{% url 'dashboard:strategy_detail' strategy.name %}" 
+                                       class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-eye"></i> View
+                                    </a>
+                                    {% if strategy.status == 'loaded' %}
+                                        <a href="{% url 'dashboard:backtest_page' %}?strategy={{ strategy.name }}"
+                                           class="btn btn-sm btn-success mt-1">
+                                            <i class="fas fa-play"></i> Backtest
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('strategySearch');
+    const checkboxes = document.querySelectorAll('.filter-checkbox');
+    const rows = document.querySelectorAll('.strategy-row');
+    
+    function filterStrategies() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedStatuses = Array.from(checkboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value);
+        
+        rows.forEach(row => {
+            const strategyName = row.querySelector('strong').textContent.toLowerCase();
+            const status = row.getAttribute('data-status');
+            
+            const matchesSearch = strategyName.includes(searchTerm);
+            const matchesStatus = selectedStatuses.includes(status);
+            
+            row.style.display = (matchesSearch && matchesStatus) ? '' : 'none';
+        });
+    }
+    
+    searchInput.addEventListener('input', filterStrategies);
+    checkboxes.forEach(cb => cb.addEventListener('change', filterStrategies));
+    
+    // Initial filter
+    filterStrategies();
+});
+</script>
+{% endblock %}

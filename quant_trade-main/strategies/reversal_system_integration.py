@@ -26,7 +26,10 @@ import statistics
 import random
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class IntegrationModule(Enum):
@@ -119,7 +122,7 @@ class ReversalSystemIntegration:
     紧急冲刺最终章：核心功能优先，实际完整代码
     """
     
-    def __init__(self, initial_balance: float = 10000.0):
+    def __init__(self, initial_balance: float = 10000.0, **kwargs):
         """
         初始化反转系统整合
         
@@ -1126,7 +1129,7 @@ def demonstrate_system_integration():
 class ReversalSystemIntegrationStrategy(BaseStrategy):
     """反转系统整合策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -1137,8 +1140,8 @@ class ReversalSystemIntegrationStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        initial_balance = params.get('initial_balance', 10000.0)
-        integration_threshold = params.get('integration_threshold', 0.7)
+        initial_balance = self.params.get('initial_balance', 10000.0)
+        integration_threshold = self.params.get('integration_threshold', 0.7)
         
         # 创建反转系统整合实例
         self.integration_system = ReversalSystemIntegration(

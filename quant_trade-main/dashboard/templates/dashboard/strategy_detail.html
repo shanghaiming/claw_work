@@ -1,0 +1,280 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}{{ strategy.name }} - Strategy Details{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard:strategy_list' %}">Strategies</a></li>
+                <li class="breadcrumb-item active">{{ strategy.name }}</li>
+            </ol>
+        </nav>
+        
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>
+                <i class="fas fa-cog"></i> {{ strategy.name }}
+                {% if strategy.status == 'loaded' %}
+                    <span class="badge bg-success ms-2">Loaded</span>
+                {% elif strategy.status == 'error' %}
+                    <span class="badge bg-danger ms-2">Error</span>
+                {% elif strategy.status == 'no_base_strategy' %}
+                    <span class="badge bg-warning ms-2">Not BaseStrategy</span>
+                {% endif %}
+            </h1>
+            <div>
+                <a href="{% url 'dashboard:strategy_list' %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to List
+                </a>
+                {% if strategy.status == 'loaded' %}
+                    <a href="{% url 'dashboard:backtest_page' %}?strategy={{ strategy.name }}" class="btn btn-success">
+                        <i class="fas fa-play"></i> Run Backtest
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <p class="lead">Strategy details and performance analysis</p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Left Column: Strategy Info -->
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-info-circle"></i> Strategy Information</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th width="30%">Filename:</th>
+                        <td><code>{{ strategy.filename }}</code></td>
+                    </tr>
+                    <tr>
+                        <th>Full Path:</th>
+                        <td><small class="text-muted">{{ strategy.path }}</small></td>
+                    </tr>
+                    <tr>
+                        <th>Status:</th>
+                        <td>
+                            {% if strategy.status == 'loaded' %}
+                                <span class="badge bg-success">Loaded Successfully</span>
+                            {% elif strategy.status == 'error' %}
+                                <span class="badge bg-danger">Error Loading</span>
+                            {% elif strategy.status == 'no_base_strategy' %}
+                                <span class="badge bg-warning">Not a BaseStrategy</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ strategy.status }}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% if strategy.class_name %}
+                    <tr>
+                        <th>Class Name:</th>
+                        <td><code>{{ strategy.class_name }}</code></td>
+                    </tr>
+                    {% endif %}
+                    {% if strategy.dependencies %}
+                    <tr>
+                        <th>Missing Dependencies:</th>
+                        <td>
+                            {% for dep in strategy.dependencies %}
+                                <span class="badge bg-info me-1">{{ dep }}</span>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% endif %}
+                </table>
+                
+                {% if strategy.error %}
+                <div class="alert alert-danger mt-3">
+                    <h6><i class="fas fa-exclamation-triangle"></i> Error Details:</h6>
+                    <pre class="mb-0"><code>{{ strategy.error }}</code></pre>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Quick Actions Card -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-bolt"></i> Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    {% if strategy.status == 'loaded' %}
+                        <a href="{% url 'dashboard:backtest_page' %}?strategy={{ strategy.name }}" class="btn btn-success btn-lg">
+                            <i class="fas fa-play-circle"></i> Run Full Backtest
+                        </a>
+                        <button class="btn btn-outline-primary" onclick="runQuickTest()">
+                            <i class="fas fa-rocket"></i> Quick Test (Sample Data)
+                        </button>
+                    {% endif %}
+                    <a href="file://{{ strategy.path }}" class="btn btn-outline-secondary" target="_blank">
+                        <i class="fas fa-code"></i> View Source Code
+                    </a>
+                    <button class="btn btn-outline-info" onclick="analyzeDependencies()">
+                        <i class="fas fa-search"></i> Analyze Dependencies
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Right Column: Charts and Results -->
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-chart-line"></i> Performance Charts</h5>
+            </div>
+            <div class="card-body">
+                {% if strategy.status == 'loaded' %}
+                    <div class="chart-container">
+                        <canvas id="equityChart"></canvas>
+                    </div>
+                    <div class="mt-3">
+                        <p class="text-muted small">Run a backtest to see performance charts here.</p>
+                    </div>
+                {% else %}
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> 
+                        Strategy must be loaded successfully to view performance charts.
+                        {% if strategy.error %}
+                            <div class="mt-2">
+                                <strong>Fix this error first:</strong>
+                                <pre class="mb-0 mt-2"><code>{{ strategy.error }}</code></pre>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Dependency Analysis -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0"><i class="fas fa-boxes"></i> Dependencies & Requirements</h5>
+            </div>
+            <div class="card-body">
+                <div id="dependencyAnalysis">
+                    {% if strategy.dependencies %}
+                        <div class="alert alert-info">
+                            <h6><i class="fas fa-exclamation-circle"></i> Missing Packages:</h6>
+                            <ul class="mb-0">
+                                {% for dep in strategy.dependencies %}
+                                    <li><code>{{ dep }}</code></li>
+                                {% endfor %}
+                            </ul>
+                            <div class="mt-2">
+                                <button class="btn btn-sm btn-info" onclick="installMissingPackages()">
+                                    <i class="fas fa-download"></i> Install Missing Packages
+                                </button>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="text-success">
+                            <i class="fas fa-check-circle"></i> No missing dependencies detected.
+                        </p>
+                    {% endif %}
+                    
+                    <h6 class="mt-3">Common Quant Trading Dependencies:</h6>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><span class="badge bg-success">✓</span> pandas</li>
+                                <li><span class="badge bg-success">✓</span> numpy</li>
+                                <li><span class="badge bg-success">✓</span> matplotlib</li>
+                                <li><span class="badge bg-success">✓</span> seaborn</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><span class="badge bg-success">✓</span> mplfinance</li>
+                                <li><span class="badge bg-success">✓</span> xgboost</li>
+                                <li><span class="badge bg-success">✓</span> scikit-learn</li>
+                                <li><span class="badge bg-success">✓</span> TA-Lib</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Code Preview Modal -->
+<div class="modal fade" id="codeModal" tabindex="-1">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Strategy Source Code: {{ strategy.name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <pre id="codePreview" style="height: 500px; overflow: auto;"><code class="python">
+// Loading code...
+                </code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function runQuickTest() {
+    alert('Quick test feature would run backtest on sample data. To be implemented.');
+}
+
+function analyzeDependencies() {
+    alert('Dependency analysis would scan imports and check availability. To be implemented.');
+}
+
+function installMissingPackages() {
+    const deps = {{ strategy.dependencies|default:"[]"|safe }};
+    if (deps.length > 0) {
+        const cmd = 'pip3 install ' + deps.join(' ') + ' --user';
+        alert('Install command:\n' + cmd + '\n\nRun this in terminal to install missing packages.');
+    }
+}
+
+// Initialize chart when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    {% if strategy.status == 'loaded' %}
+    const ctx = document.getElementById('equityChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+            datasets: [{
+                label: 'Equity Curve',
+                data: [100000, 100500, 101200, 100800, 102000, 103500, 104200],
+                borderColor: '#198754',
+                backgroundColor: 'rgba(25, 135, 84, 0.1)',
+                tension: 0.4,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Sample Equity Curve (Run backtest for real data)'
+                }
+            }
+        }
+    });
+    {% endif %}
+    
+    // Load code preview if modal is shown
+    $('#codeModal').on('shown.bs.modal', function() {
+        // This would load actual code via AJAX
+        $('#codePreview').text('// Code loading would be implemented with AJAX call\n// to fetch actual file content from server.');
+    });
+});
+</script>
+{% endblock %}

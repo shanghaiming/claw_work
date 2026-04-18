@@ -1,4 +1,7 @@
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 import pandas as pd
 import torch
 import torch.nn as nn

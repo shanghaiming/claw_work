@@ -23,7 +23,10 @@ from datetime import datetime, timedelta
 import statistics
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class ConfirmationSignalType(Enum):
@@ -76,7 +79,7 @@ class ReversalConfirmationSystem:
     紧急冲刺模式：核心功能优先，实际完整代码
     """
     
-    def __init__(self, initial_balance: float = 10000.0):
+    def __init__(self, initial_balance: float = 10000.0, **kwargs):
         """
         初始化反转确认系统
         
@@ -101,10 +104,10 @@ class ReversalConfirmationSystem:
         
         # 确认信号检测器映射
         self.confirmation_detectors = {
-            ConfirmationSignalType.VOLUME_CONFIRMATION: self._detect_volume_confirmation,
-            ConfirmationSignalType.PRICE_ACTION_CONFIRMATION: self._detect_price_action_confirmation,
-            ConfirmationSignalType.TIMEFRAME_CONFIRMATION: self._detect_timeframe_confirmation,
-            ConfirmationSignalType.MOMENTUM_CONFIRMATION: self._detect_momentum_confirmation,
+            ConfirmationSignalType.VOLUME_CONFIRMATION: self.detect_volume_confirmation,
+            ConfirmationSignalType.PRICE_ACTION_CONFIRMATION: self.detect_price_action_confirmation,
+            ConfirmationSignalType.TIMEFRAME_CONFIRMATION: self.detect_timeframe_confirmation,
+            ConfirmationSignalType.MOMENTUM_CONFIRMATION: self.detect_momentum_confirmation,
         }
     
     # ==================== 核心确认信号检测方法 ====================
@@ -957,7 +960,7 @@ def demonstrate_confirmation_system():
 class ReversalConfirmationSystemStrategy(BaseStrategy):
     """反转确认信号策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -968,8 +971,8 @@ class ReversalConfirmationSystemStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        initial_balance = params.get('initial_balance', 10000.0)
-        confirmation_threshold = params.get('confirmation_threshold', 0.7)
+        initial_balance = self.params.get('initial_balance', 10000.0)
+        confirmation_threshold = self.params.get('confirmation_threshold', 0.7)
         
         # 创建反转确认系统实例
         self.confirmation_system = ReversalConfirmationSystem(

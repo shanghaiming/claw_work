@@ -17,7 +17,7 @@
 
 import json
 import csv
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 from typing import List, Tuple, Optional, Dict, Any
 from datetime import datetime, timedelta
@@ -26,7 +26,10 @@ import random
 import math
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class CaseCategory(Enum):
@@ -62,26 +65,26 @@ class CaseOutcome(Enum):
 @dataclass
 class ReversalCase:
     """反转案例数据类"""
-    case_id: str
-    case_name: str
-    category: CaseCategory
-    market_condition: MarketCondition
-    timeframe: str
-    symbol: str
-    start_date: datetime
-    end_date: datetime
-    pattern_formation_days: int
-    price_move_percentage: float
-    volume_change_percentage: float
-    outcome: CaseOutcome
-    key_lessons: List[str]
-    success_factors: List[str]
-    failure_reasons: List[str]
-    entry_price: float
-    exit_price: float
-    profit_loss_percentage: float
-    risk_reward_ratio: float
-    confidence_score: float
+    case_id: str = ""
+    case_name: str = ""
+    category: CaseCategory = CaseCategory.OTHER_REVERSAL
+    market_condition: MarketCondition = MarketCondition.TRENDING
+    timeframe: str = "daily"
+    symbol: str = ""
+    start_date: datetime = None
+    end_date: datetime = None
+    pattern_formation_days: int = 0
+    price_move_percentage: float = 0.0
+    volume_change_percentage: float = 0.0
+    outcome: CaseOutcome = CaseOutcome.SUCCESSFUL_REVERSAL
+    key_lessons: List[str] = field(default_factory=list)
+    success_factors: List[str] = field(default_factory=list)
+    failure_reasons: List[str] = field(default_factory=list)
+    entry_price: float = 0.0
+    exit_price: float = 0.0
+    profit_loss_percentage: float = 0.0
+    risk_reward_ratio: float = 0.0
+    confidence_score: float = 0.0
     notes: Optional[str] = None
 
 
@@ -1161,24 +1164,23 @@ def demonstrate_case_studies_system():
 class ReversalCaseStudiesStrategy(BaseStrategy):
     """反转实战案例策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
-        
+
         参数:
             data: 价格数据
             params: 策略参数
         """
         super().__init__(data, params)
-        
+
         # 从params提取参数
-        case_database_size = params.get('case_database_size', 100)
-        matching_threshold = params.get('matching_threshold', 0.7)
-        
+        case_database_size = self.params.get('case_database_size', 100)
+        matching_threshold = self.params.get('matching_threshold', 0.7)
+
         # 创建反转实战案例系统实例
-        self.case_system = ReversalCaseStudies(
-            case_database_size=case_database_size,
-            matching_threshold=matching_threshold
+        self.case_system = ReversalCaseStudiesSystem(
+            data_source="internal"
         )
         
         # 初始化样本案例（实际使用中应提供真实案例）
@@ -1186,22 +1188,20 @@ class ReversalCaseStudiesStrategy(BaseStrategy):
     
     def _initialize_sample_cases(self):
         """初始化样本案例"""
-        # 创建样本案例数据
-        sample_cases = []
-        for i in range(20):  # 20个样本案例
-            case = {
-                'case_id': f'case_{i}',
-                'category': 'success' if i < 15 else 'failure',  # 75%成功案例
-                'market_condition': ['trending', 'ranging', 'volatile'][i % 3],
-                'reversal_type': ['double_top', 'double_bottom', 'head_shoulders'][i % 3],
-                'outcome': 'success' if i < 15 else 'failure',
-                'confidence': 0.7 + (i * 0.01),
-                'lessons': [f'教训_{j+1}' for j in range(3)]
-            }
-            sample_cases.append(case)
-        
-        # 添加到案例系统
-        for case in sample_cases:
+        categories = list(CaseCategory)
+        conditions = list(MarketCondition)
+        outcomes = list(CaseOutcome)
+
+        for i in range(20):
+            case = ReversalCase(
+                case_id=f'case_{i}',
+                case_name=f'样本案例_{i+1}',
+                category=categories[i % len(categories)],
+                market_condition=conditions[i % len(conditions)],
+                outcome=outcomes[0] if i < 15 else outcomes[1],
+                confidence_score=0.7 + (i * 0.01),
+                key_lessons=[f'教训_{j+1}' for j in range(3)],
+            )
             self.case_system.add_case(case)
     
     def generate_signals(self):

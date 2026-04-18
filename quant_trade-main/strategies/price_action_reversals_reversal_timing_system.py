@@ -3,6 +3,9 @@
 # migration time: 2026-04-09T23:53:23.028397
 
 """
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
 反转交易时机量化分析系统 - 第4章《反转交易时机》
 严格按照第18章标准：实际完整代码，非伪代码框架
 紧急冲刺模式：13:20-14:20完成
@@ -16,6 +19,8 @@
 """
 
 import numpy as np
+import pandas as pd
+from core.base_strategy import BaseStrategy
 from dataclasses import dataclass
 from enum import Enum
 from typing import List, Tuple, Optional, Dict, Any

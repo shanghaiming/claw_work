@@ -1,0 +1,11 @@
+{
+  "tasks": [
+    {
+      "id": "1b80e5ef",
+      "cron": "3 9 * * 1-5",
+      "prompt": "Weekly strategy iteration reminder (weekdays 9am). Check memory for strategy_backtest_results. Continue the strategy research loop: 1) Read existing strategies and identify weaknesses 2) Write new or improved strategies in strategies/ directory 3) Backtest on the Django platform using dashboard/services.py run_backtest() 4) Compare with previous results 5) Update memory/strategy_backtest_results.md with new findings. Focus on A-share momentum strategies.",
+      "createdAt": 1776476314330,
+      "recurring": true
+    }
+  ]
+}

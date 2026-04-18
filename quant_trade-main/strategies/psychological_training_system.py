@@ -27,7 +27,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class PsychologicalTrainingSystem:
     """心理训练系统（按照第18章标准：完整实际代码）"""
@@ -35,7 +38,7 @@ class PsychologicalTrainingSystem:
     def __init__(self,
                  trader_profile: Dict = None,
                  training_goals: Dict = None,
-                 improvement_rate: float = 0.1):
+                 improvement_rate: float = 0.1, **kwargs):
         """初始化心理训练系统"""
         self.trader_profile = trader_profile or {
             'experience_level': 'intermediate',
@@ -1426,7 +1429,7 @@ def demo_psychological_training():
 class PsychologicalTrainingSystemStrategy(BaseStrategy):
     """心理训练策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -1437,7 +1440,7 @@ class PsychologicalTrainingSystemStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        initial_profile = params.get('initial_profile', {
+        initial_profile = self.params.get('initial_profile', {
             'experience_level': 'intermediate',
             'risk_tolerance': 'moderate',
             'trading_style': 'mixed'

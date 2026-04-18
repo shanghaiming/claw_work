@@ -1,4 +1,7 @@
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 import pandas as pd
 import numpy as np
 
@@ -79,28 +82,28 @@ class SimpleMovingAverageStrategy(BaseStrategy):
         ma_signals = []
         positions = []  # 持仓状态
         
-        for i in range(self.long_window, len(close_prices)):
-            # 当前索引对应的日期
+        for i in range(self.long_window + 1, len(close_prices)):
+            # 当前索引对应的日期（信号基于i-1的close，在i的open执行）
             current_time = data.index[i]
-            
-            # 计算短期和长期移动平均
-            short_ma = np.mean(close_prices[i-self.short_window+1:i+1])
-            long_ma = np.mean(close_prices[i-self.long_window+1:i+1])
-            
+
+            # 计算短期和长期移动平均（使用到i-1的close，不含当前bar）
+            short_ma = np.mean(close_prices[i-self.short_window:i])
+            long_ma = np.mean(close_prices[i-self.long_window:i])
+
             # 前一期的移动平均（如果有）
-            if i > self.long_window:
-                prev_short_ma = np.mean(close_prices[i-self.short_window:i])
-                prev_long_ma = np.mean(close_prices[i-self.long_window:i])
+            if i > self.long_window + 1:
+                prev_short_ma = np.mean(close_prices[i-self.short_window-1:i-1])
+                prev_long_ma = np.mean(close_prices[i-self.long_window-1:i-1])
             else:
                 prev_short_ma = short_ma
                 prev_long_ma = long_ma
-            
+
             # 判断金叉（买入信号）
             golden_cross = (short_ma > long_ma) and (prev_short_ma <= prev_long_ma)
-            
+
             # 判断死叉（卖出信号）
             death_cross = (short_ma < long_ma) and (prev_short_ma >= prev_long_ma)
-            
+
             current_price = close_prices[i]
             symbol = data['symbol'].iloc[i] if 'symbol' in data.columns else 'UNKNOWN'
             

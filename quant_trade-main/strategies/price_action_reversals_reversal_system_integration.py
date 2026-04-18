@@ -2,8 +2,7 @@
 # original file in workspace root
 # migration time: 2026-04-09T23:53:23.030378
 
-"""
-反转系统整合量化分析系统 - 第10章《反转系统整合》
+"""反转系统整合量化分析系统 - 第10章《反转系统整合》
 严格按照第18章标准：实际完整代码，非伪代码框架
 紧急冲刺最终章：18:12开始，18:42完成
 
@@ -15,6 +14,11 @@
 5. 自适应调整：基于市场条件自适应调整系统参数
 6. 最终项目报告：生成完整的学习项目报告
 """
+
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 import json
 import math
@@ -1118,3 +1122,21 @@ def demonstrate_system_integration():
 if __name__ == "__main__":
     # 当直接运行此文件时执行演示
     demonstrate_system_integration()
+
+class PriceActionReversalsReversalSystemIntegrationStrategy(BaseStrategy):
+    """基于price_action_reversals_reversal_system_integration的策略"""
+    
+    def __init__(self, data, params=None):
+        super().__init__(data, params)
+        self.name = "PriceActionReversalsReversalSystemIntegrationStrategy"
+        self.description = "基于price_action_reversals_reversal_system_integration的策略"
+        
+    def calculate_signals(self):
+        """计算交易信号"""
+        # 策略逻辑
+        return df
+        
+    def generate_signals(self):
+        """生成交易信号"""
+        # 信号生成逻辑
+        return self.signals

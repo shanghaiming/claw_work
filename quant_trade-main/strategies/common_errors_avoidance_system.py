@@ -34,7 +34,10 @@ from collections import defaultdict
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class ErrorCategory(Enum):
@@ -2254,7 +2257,7 @@ class CommonErrorsAvoidanceSystem:
 class CommonErrorsAvoidanceSystemStrategy(BaseStrategy):
     """常见错误避免策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -2265,8 +2268,8 @@ class CommonErrorsAvoidanceSystemStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        error_tolerance = params.get('error_tolerance', 'low')
-        include_prevention = params.get('include_prevention', True)
+        error_tolerance = self.params.get('error_tolerance', 'low')
+        include_prevention = self.params.get('include_prevention', True)
         
         # 创建常见错误与避免系统实例
         self.error_system = CommonErrorsAvoidanceSystem(

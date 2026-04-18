@@ -28,7 +28,10 @@ import random
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class AdvancedRiskManagementSystem:
     """高级风险管理系统（按照第18章标准：完整实际代码）"""

@@ -1,0 +1,507 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Stock Selection - Quant Dashboard{% endblock %}
+
+{% block extra_css %}
+<style>
+.chart-container { position: relative; width: 100%; }
+#klineChart { height: 380px; }
+#volumeChart { height: 100px; }
+#indicatorChart { height: 150px; }
+.screen-result { transition: background 0.15s; }
+.screen-result:hover { background: #f0f7ff; }
+.stock-chip { display: inline-block; padding: 2px 8px; margin: 2px; border-radius: 12px;
+              font-size: 0.7rem; background: #e3f2fd; color: #1565c0; cursor: pointer; }
+.stock-chip:hover { background: #bbdefb; }
+.filter-section { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; }
+.filter-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.info-badge { font-size: 0.7rem; padding: 2px 6px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="row mb-3">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+        <div>
+            <h4 class="mb-0"><i class="fas fa-filter"></i> Stock Selection</h4>
+            <small class="text-muted">Screen stocks with any strategy, analyze K-line charts with indicators</small>
+        </div>
+        <div>
+            <span class="badge bg-primary">{{ strategies|length }} strategies</span>
+            <span class="badge bg-info">{{ stocks|length }} stocks</span>
+        </div>
+    </div>
+</div>
+
+<!-- Row 1: Filters + Chart -->
+<div class="row mb-3">
+    <!-- Left: All Filters in one card -->
+    <div class="col-lg-3 col-md-4 mb-3">
+        <div class="card">
+            <div class="card-header py-2">
+                <strong><i class="fas fa-sliders-h"></i> Filters</strong>
+            </div>
+            <div class="card-body p-2">
+                <!-- Market Cap -->
+                <div class="filter-section">
+                    <label class="form-label mb-1 small">Market Cap</label>
+                    <select class="form-select form-select-sm" id="marketCap">
+                        <option value="">Any</option>
+                        <option value="large">Large Cap (>100B)</option>
+                        <option value="mid">Mid Cap (10B-100B)</option>
+                        <option value="small">Small Cap (<10B)</option>
+                    </select>
+                </div>
+                <!-- PE Ratio -->
+                <div class="filter-section">
+                    <label class="form-label mb-1 small">PE Ratio</label>
+                    <select class="form-select form-select-sm" id="peRatio">
+                        <option value="">Any</option>
+                        <option value="low">Low (&lt;15)</option>
+                        <option value="medium">Medium (15-30)</option>
+                        <option value="high">High (&gt;30)</option>
+                    </select>
+                </div>
+                <!-- ROE -->
+                <div class="filter-section">
+                    <label class="form-label mb-1 small">ROE</label>
+                    <select class="form-select form-select-sm" id="roe">
+                        <option value="">Any</option>
+                        <option value="high">High (&gt;20%)</option>
+                        <option value="medium">Medium (10-20%)</option>
+                        <option value="low">Low (&lt;10%)</option>
+                    </select>
+                </div>
+                <!-- Strategy (replaces old "Technical Signal") -->
+                <div class="filter-section">
+                    <label class="form-label mb-1 small">
+                        <i class="fas fa-cogs"></i> Strategy
+                        <span class="badge bg-primary" style="font-size:0.6rem">{{ strategies|length }}</span>
+                    </label>
+                    <input type="text" class="form-control form-control-sm mb-1" id="strategySearch"
+                           placeholder="Search strategies...">
+                    <select class="form-select form-select-sm" id="strategySelect" size="5">
+                        <option value="">-- No Strategy --</option>
+                        {% for s in strategies %}
+                        <option value="{{ s.name }}" {% if forloop.first %}selected{% endif %}>
+                            {{ s.class_name|default:s.name }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <!-- Stock + Frequency -->
+                <div class="filter-section">
+                    <label class="form-label mb-1 small">Stock Symbol</label>
+                    <div class="d-flex gap-1">
+                        <input type="text" class="form-control form-control-sm" id="stockInput"
+                               placeholder="e.g. 000001.SZ" value="000001.SZ">
+                        <select class="form-select form-select-sm" id="frequencySelect" style="max-width:85px">
+                            <option value="daily" selected>Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="5min">5min</option>
+                            <option value="30min">30min</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Date Range -->
+                <div class="filter-section">
+                    <label class="form-label mb-1 small">Date Range</label>
+                    <div class="d-flex gap-1">
+                        <input type="date" class="form-control form-control-sm" id="startDate">
+                        <input type="date" class="form-control form-control-sm" id="endDate">
+                    </div>
+                </div>
+                <!-- Action Buttons -->
+                <div class="d-grid gap-1 mt-2">
+                    <button class="btn btn-primary btn-sm" id="btnLoadChart">
+                        <i class="fas fa-chart-bar"></i> Load Chart
+                    </button>
+                    <button class="btn btn-success btn-sm" id="btnScreen">
+                        <i class="fas fa-search"></i> Screen All Stocks
+                    </button>
+                </div>
+                <div class="progress mt-2 d-none" id="screenProgress" style="height:3px">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Indicators -->
+        <div class="card mt-3">
+            <div class="card-header py-2">
+                <strong><i class="fas fa-wave-square"></i> Indicators</strong>
+            </div>
+            <div class="card-body p-2">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="p-2 bg-light rounded text-center">
+                            <div class="small text-muted">RSI(14)</div>
+                            <div class="fw-bold" id="rsiValue">--</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-2 bg-light rounded text-center">
+                            <div class="small text-muted">MACD</div>
+                            <div class="fw-bold" id="macdValue">--</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-2 bg-light rounded text-center">
+                            <div class="small text-muted">MA5</div>
+                            <div class="fw-bold" id="ma5Value">--</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-2 bg-light rounded text-center">
+                            <div class="small text-muted">MA20</div>
+                            <div class="fw-bold" id="ma20Value">--</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: K-line Chart -->
+    <div class="col-lg-9 col-md-8 mb-3">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <div>
+                    <strong><i class="fas fa-chart-line"></i> <span id="chartTitle">K-Line Chart</span></strong>
+                    <span class="ms-2 info-badge badge bg-light text-dark" id="chartInfo"></span>
+                </div>
+                <div class="btn-group btn-group-sm" id="indicatorToggles">
+                    <button class="btn btn-outline-secondary btn-sm active" data-ind="ma5">MA5</button>
+                    <button class="btn btn-outline-secondary btn-sm active" data-ind="ma20">MA20</button>
+                    <button class="btn btn-outline-secondary btn-sm" data-ind="ma60">MA60</button>
+                    <button class="btn btn-outline-secondary btn-sm" data-ind="bb">BOLL</button>
+                    <button class="btn btn-outline-secondary btn-sm" data-ind="volume">VOL</button>
+                    <button class="btn btn-outline-secondary btn-sm active" data-ind="macd">MACD</button>
+                </div>
+            </div>
+            <div class="card-body p-2">
+                <div class="chart-container"><canvas id="klineChart"></canvas></div>
+                <div class="chart-container" id="volumeChartWrap"><canvas id="volumeChart"></canvas></div>
+                <div class="chart-container" id="indicatorChartWrap"><canvas id="indicatorChart"></canvas></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Row 2: Screening Results + Stock List -->
+<div class="row">
+    <div class="col-lg-8 mb-3">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <strong><i class="fas fa-list"></i> Screening Results</strong>
+                <span class="badge bg-secondary" id="screenResultCount">0 stocks</span>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive" style="max-height:400px; overflow-y:auto">
+                    <table class="table table-sm table-hover mb-0">
+                        <thead class="table-light sticky-top">
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Price</th>
+                                <th>Signals</th>
+                                <th>Buy</th>
+                                <th>Sell</th>
+                                <th>Latest</th>
+                                <th>Chart</th>
+                            </tr>
+                        </thead>
+                        <tbody id="screenResults">
+                            <tr><td colspan="7" class="text-center text-muted py-4">
+                                <i class="fas fa-arrow-up"></i> Select a strategy and click "Screen All Stocks"
+                            </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mb-3">
+        <div class="card">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center">
+                <strong><i class="fas fa-database"></i> Stocks</strong>
+                <input type="text" class="form-control form-control-sm" id="stockFilter"
+                       placeholder="Filter..." style="max-width:140px">
+            </div>
+            <div class="card-body p-2" style="max-height:370px; overflow-y:auto">
+                {% for s in stocks %}
+                <span class="stock-chip" data-symbol="{{ s }}" onclick="quickLoad('{{ s }}')">{{ s }}</span>
+                {% endfor %}
+                {% if stocks|length == 0 %}
+                <p class="text-muted text-center mb-0">No stocks in data/</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const CSRF = '{{ csrf_token }}';
+const ALL_STOCKS = {{ stocks|safe }};
+let klineChart = null, volumeChart = null, indicatorChart = null;
+let currentKlineData = null;
+
+document.getElementById('strategySearch').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('#strategySelect option').forEach(o => {
+        o.style.display = o.text.toLowerCase().includes(q) ? '' : 'none';
+    });
+});
+
+document.getElementById('stockFilter').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.stock-chip').forEach(el => {
+        el.style.display = el.dataset.symbol.toLowerCase().includes(q) ? '' : 'none';
+    });
+});
+
+function quickLoad(symbol) {
+    document.getElementById('stockInput').value = symbol;
+    loadChart();
+}
+
+document.getElementById('btnLoadChart').addEventListener('click', loadChart);
+document.getElementById('stockInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') loadChart();
+});
+
+function loadChart() {
+    const symbol = document.getElementById('stockInput').value.trim();
+    const freq = document.getElementById('frequencySelect').value;
+    const start = document.getElementById('startDate').value;
+    const end = document.getElementById('endDate').value;
+    if (!symbol) return;
+
+    document.getElementById('chartTitle').textContent = 'Loading...';
+    fetch('{% url "dashboard:api_stock_kline" %}', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'X-CSRFToken': CSRF},
+        body: JSON.stringify({symbol, frequency: freq, start_date: start, end_date: end, limit: 200})
+    })
+    .then(r => r.text())
+    .then(text => { try { return JSON.parse(text); } catch(e) { throw new Error('Bad JSON'); } })
+    .then(data => {
+        if (data.error) { alert(data.error); return; }
+        currentKlineData = data;
+        drawKline(data);
+        updateQuickIndicators(data);
+    })
+    .catch(e => {
+        document.getElementById('chartTitle').textContent = 'Error';
+        alert('Chart error: ' + e.message);
+    });
+}
+
+function updateQuickIndicators(data) {
+    const ind = data.indicators;
+    const setEl = (id, val) => {
+        const el = document.getElementById(id);
+        if (el && val != null) { el.textContent = val.toFixed(2); el.className = 'fw-bold'; }
+        else if (el) { el.textContent = '--'; el.className = 'fw-bold'; }
+    };
+    setEl('rsiValue', ind.rsi_latest);
+    setEl('macdValue', ind.macd_latest);
+    setEl('ma5Value', ind.ma5 ? ind.ma5[ind.ma5.length - 1] : null);
+    setEl('ma20Value', ind.ma20 ? ind.ma20[ind.ma20.length - 1] : null);
+
+    const rsiEl = document.getElementById('rsiValue');
+    if (rsiEl && ind.rsi_latest != null) {
+        rsiEl.classList.add(ind.rsi_latest < 30 ? 'text-success' : ind.rsi_latest > 70 ? 'text-danger' : '');
+    }
+    const macdEl = document.getElementById('macdValue');
+    if (macdEl && ind.macd_latest != null) {
+        macdEl.classList.add(ind.macd_latest >= 0 ? 'text-success' : 'text-danger');
+    }
+}
+
+function drawKline(data) {
+    const ohlcv = data.ohlcv;
+    const ind = data.indicators;
+    const n = ohlcv.dates.length;
+
+    document.getElementById('chartTitle').textContent = data.symbol + ' | ' + data.frequency.toUpperCase();
+
+    const dates = ohlcv.dates;
+    const opens = ohlcv.open, highs = ohlcv.high, lows = ohlcv.low, closes = ohlcv.close;
+    const volumes = ohlcv.volume || [];
+
+    if (closes.length > 0) {
+        const last = closes[closes.length - 1];
+        const prev = closes.length > 1 ? closes[closes.length - 2] : last;
+        const chg = ((last - prev) / prev * 100).toFixed(2);
+        const cls = chg >= 0 ? 'text-danger' : 'text-success';
+        document.getElementById('chartInfo').innerHTML =
+            `Close: ${last.toFixed(2)} <span class="${cls}">${chg >= 0 ? '+' : ''}${chg}%</span>`;
+    }
+
+    const step = Math.max(1, Math.floor(n / 40));
+    const thinLabels = dates.map((d, i) => i % step === 0 ? d : '');
+
+    const bodyData = [], wickData = [], bodyColors = [], wickColors = [];
+    for (let i = 0; i < n; i++) {
+        const o = opens[i], c = closes[i], h = highs[i], l = lows[i];
+        if (o == null || c == null || h == null || l == null) {
+            bodyData.push(null); wickData.push(null);
+            bodyColors.push('transparent'); wickColors.push('transparent');
+            continue;
+        }
+        const isUp = c >= o;
+        bodyData.push([Math.min(o, c), Math.max(o, c)]);
+        wickData.push([l, h]);
+        bodyColors.push(isUp ? 'rgba(220,53,69,0.85)' : 'rgba(40,167,69,0.85)');
+        wickColors.push(isUp ? 'rgba(220,53,69,0.4)' : 'rgba(40,167,69,0.4)');
+    }
+
+    const activeInd = getActiveIndicators();
+    const datasets = [
+        { label:'Wick', data:wickData, backgroundColor:wickColors, borderColor:wickColors,
+          borderWidth:1, barPercentage:0.15, categoryPercentage:1.0, order:2 },
+        { label:'Body', data:bodyData, backgroundColor:bodyColors, borderColor:bodyColors,
+          borderWidth:1, barPercentage:0.65, categoryPercentage:1.0, order:1 },
+    ];
+
+    const maColors = {ma5:'#ff9800', ma10:'#2196f3', ma20:'#9c27b0', ma60:'#4caf50'};
+    ['ma5','ma10','ma20','ma60'].forEach(key => {
+        if (activeInd.has(key) && ind[key]) {
+            datasets.push({ label:key.toUpperCase(), data:ind[key], borderColor:maColors[key],
+                borderWidth:1.5, pointRadius:0, type:'line', tension:0.1, fill:false, order:0 });
+        }
+    });
+
+    if (activeInd.has('bb') && ind.bb_upper) {
+        datasets.push({ label:'BB Upper', data:ind.bb_upper, borderColor:'rgba(156,39,176,0.3)',
+            borderWidth:1, pointRadius:0, type:'line', fill:false, order:0 });
+        datasets.push({ label:'BB Mid', data:ind.bb_mid, borderColor:'rgba(156,39,176,0.5)',
+            borderWidth:1, pointRadius:0, type:'line', fill:false, order:0 });
+        datasets.push({ label:'BB Lower', data:ind.bb_lower, borderColor:'rgba(156,39,176,0.3)',
+            borderWidth:1, pointRadius:0, type:'line', fill:'-1',
+            backgroundColor:'rgba(156,39,176,0.05)', order:0 });
+    }
+
+    if (klineChart) klineChart.destroy();
+    klineChart = new Chart(document.getElementById('klineChart').getContext('2d'), {
+        type: 'bar',
+        data: { labels: thinLabels, datasets },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false },
+                tooltip: { callbacks: {
+                    title: (items) => items.length ? (dates[items[0].dataIndex] || '') : '',
+                    label: (item) => {
+                        const i = item.dataIndex;
+                        if (Array.isArray(item.raw) && opens[i] != null)
+                            return `O:${opens[i].toFixed(2)} H:${highs[i].toFixed(2)} L:${lows[i].toFixed(2)} C:${closes[i].toFixed(2)}`;
+                        if (typeof item.raw === 'number') return `${item.dataset.label}: ${item.raw.toFixed(2)}`;
+                        return '';
+                    }
+                }}
+            },
+            scales: {
+                x: { ticks: { maxRotation: 45, font: { size: 9 } } },
+                y: { beginAtZero: false, position: 'right' }
+            },
+            interaction: { mode: 'index', intersect: false },
+        }
+    });
+
+    // Volume
+    const showVol = activeInd.has('volume');
+    document.getElementById('volumeChartWrap').style.display = showVol ? '' : 'none';
+    if (showVol && volumes.length > 0) {
+        if (volumeChart) volumeChart.destroy();
+        const vc = closes.map((c, i) => (c == null || opens[i] == null) ? 'rgba(150,150,150,0.5)' :
+            c >= opens[i] ? 'rgba(220,53,69,0.5)' : 'rgba(40,167,69,0.5)');
+        volumeChart = new Chart(document.getElementById('volumeChart').getContext('2d'), {
+            type:'bar',
+            data:{ labels:thinLabels, datasets:[{ label:'Volume', data:volumes, backgroundColor:vc, borderWidth:0, barPercentage:0.8 }] },
+            options:{ responsive:true, maintainAspectRatio:false,
+                plugins:{ legend:{ display:false } },
+                scales:{ x:{ display:false }, y:{ position:'right', ticks:{ font:{size:8} } } } }
+        });
+    } else { if (volumeChart) { volumeChart.destroy(); volumeChart=null; } }
+
+    // MACD
+    const showMacd = activeInd.has('macd');
+    document.getElementById('indicatorChartWrap').style.display = showMacd ? '' : 'none';
+    if (showMacd && ind.macd) {
+        if (indicatorChart) indicatorChart.destroy();
+        const ids = [
+            { label:'MACD', data:ind.macd, borderColor:'#2196f3', borderWidth:1.2, pointRadius:0, type:'line', fill:false },
+            { label:'Signal', data:ind.macd_signal, borderColor:'#ff9800', borderWidth:1.2, pointRadius:0, type:'line', fill:false },
+        ];
+        if (ind.macd_hist) {
+            const hc = ind.macd_hist.map(v => (v||0)>=0 ? 'rgba(220,53,69,0.4)' : 'rgba(40,167,69,0.4)');
+            ids.push({ label:'Hist', data:ind.macd_hist, backgroundColor:hc, borderWidth:0, type:'bar', barPercentage:0.5 });
+        }
+        indicatorChart = new Chart(document.getElementById('indicatorChart').getContext('2d'), {
+            type:'bar', data:{ labels:thinLabels, datasets:ids },
+            options:{ responsive:true, maintainAspectRatio:false,
+                plugins:{ legend:{ display:false } },
+                scales:{ x:{ display:false }, y:{ position:'right', ticks:{ font:{size:8} } } } }
+        });
+    } else { if (indicatorChart) { indicatorChart.destroy(); indicatorChart=null; } }
+}
+
+function getActiveIndicators() {
+    const s = new Set();
+    document.querySelectorAll('#indicatorToggles .active').forEach(b => s.add(b.dataset.ind));
+    return s;
+}
+
+document.querySelectorAll('#indicatorToggles button').forEach(btn => {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        if (currentKlineData) drawKline(currentKlineData);
+    });
+});
+
+// Screen
+document.getElementById('btnScreen').addEventListener('click', function() {
+    const strategyName = document.getElementById('strategySelect').value;
+    if (!strategyName) { alert('Select a strategy first'); return; }
+    const freq = document.getElementById('frequencySelect').value;
+    const start = document.getElementById('startDate').value;
+    const end = document.getElementById('endDate').value;
+    const prog = document.getElementById('screenProgress');
+    prog.classList.remove('d-none');
+    prog.querySelector('.progress-bar').style.width = '30%';
+
+    fetch('{% url "dashboard:api_stock_screen" %}', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'X-CSRFToken': CSRF},
+        body: JSON.stringify({ strategy_name:strategyName, symbols:ALL_STOCKS.slice(0,50), frequency:freq, start_date:start, end_date:end })
+    })
+    .then(r => r.text()).then(t => JSON.parse(t))
+    .then(data => {
+        prog.querySelector('.progress-bar').style.width = '100%';
+        setTimeout(() => prog.classList.add('d-none'), 500);
+        const results = data.results || [];
+        document.getElementById('screenResultCount').textContent = results.length + ' stocks';
+        const tbody = document.getElementById('screenResults');
+        if (!results.length) { tbody.innerHTML = '<tr><td colspan="7" class="text-center text-muted py-3">No results</td></tr>'; return; }
+        if (results[0] && results[0].error) { tbody.innerHTML = '<tr><td colspan="7" class="text-center text-danger py-3">'+results[0].error+'</td></tr>'; return; }
+        tbody.innerHTML = results.map(r => {
+            const sc = r.latest_signal==='buy'?'bg-success':r.latest_signal==='sell'?'bg-danger':'bg-secondary';
+            return `<tr class="screen-result"><td><strong>${r.symbol}</strong></td><td>${r.latest_price.toFixed(2)}</td><td>${r.signal_count}</td><td class="text-success">${r.buy_count}</td><td class="text-danger">${r.sell_count}</td><td><span class="badge ${sc}">${r.latest_signal}</span></td><td><button class="btn btn-sm btn-outline-primary" onclick="quickLoad('${r.symbol}')"><i class="fas fa-chart-bar"></i></button></td></tr>`;
+        }).join('');
+    })
+    .catch(e => { prog.classList.add('d-none'); alert('Error: '+e.message); });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const end = new Date(), start = new Date();
+    start.setMonth(start.getMonth() - 6);
+    document.getElementById('endDate').value = end.toISOString().split('T')[0];
+    document.getElementById('startDate').value = start.toISOString().split('T')[0];
+    if (ALL_STOCKS.length > 0) { document.getElementById('stockInput').value = ALL_STOCKS[0]; loadChart(); }
+});
+</script>
+{% endblock %}

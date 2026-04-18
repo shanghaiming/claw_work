@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 优化版MA策略 - BaseStrategy子类
 基于improved_ma_strategy_best_params.py的最佳参数，但继承自BaseStrategy
 提供完整的移动平均交叉信号生成，集成了信号过滤和风险控制

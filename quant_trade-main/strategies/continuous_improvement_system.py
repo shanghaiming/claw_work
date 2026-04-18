@@ -26,7 +26,10 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 策略改造: 添加BaseStrategy导入
-from base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 class ContinuousImprovementSystem:
     """持续改进系统（按照第18章标准：完整实际代码）"""
@@ -34,7 +37,7 @@ class ContinuousImprovementSystem:
     def __init__(self,
                  trader_profile: Dict = None,
                  improvement_goals: Dict = None,
-                 learning_rate: float = 0.1):
+                 learning_rate: float = 0.1, **kwargs):
         """初始化持续改进系统"""
         self.trader_profile = trader_profile or {
             'experience_level': 'intermediate',
@@ -1035,7 +1038,7 @@ def demo_continuous_improvement_system():
 class ContinuousImprovementSystemStrategy(BaseStrategy):
     """持续改进策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
         
@@ -1046,8 +1049,8 @@ class ContinuousImprovementSystemStrategy(BaseStrategy):
         super().__init__(data, params)
         
         # 从params提取参数
-        improvement_threshold = params.get('improvement_threshold', 0.1)
-        include_trend_analysis = params.get('include_trend_analysis', True)
+        improvement_threshold = self.params.get('improvement_threshold', 0.1)
+        include_trend_analysis = self.params.get('include_trend_analysis', True)
         
         # 创建持续改进系统实例
         self.improvement_system = ContinuousImprovementSystem(

@@ -24,7 +24,10 @@ import statistics
 import random
 
 # 策略改造: 添加BaseStrategy导入
-from strategies.base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 
 
 class PsychologicalState(Enum):
@@ -1250,26 +1253,26 @@ def demonstrate_trading_psychology_system():
 class ReversalTradingPsychologyStrategy(BaseStrategy):
     """反转交易心理策略"""
     
-    def __init__(self, data: pd.DataFrame, params: dict):
+    def __init__(self, data: pd.DataFrame, params: dict = None):
         """
         初始化策略
-        
+
         参数:
             data: 价格数据
             params: 策略参数
         """
         super().__init__(data, params)
-        
+
         # 从params提取参数
-        trader_profile = params.get('trader_profile', {
+        trader_profile = self.params.get('trader_profile', {
             'experience_level': 'intermediate',
             'risk_tolerance': 'moderate',
             'trading_style': 'reversal'
         })
-        
+
         # 创建反转交易心理系统实例
-        self.psychology_system = ReversalTradingPsychology(
-            trader_profile=trader_profile
+        self.psychology_system = ReversalTradingPsychologySystem(
+            trader_name=trader_profile.get('experience_level', 'default_trader')
         )
     
     def generate_signals(self):

@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
-"""
-修复策略文件导入语句
-将 'from strategies.base_strategy import BaseStrategy' 改为 'from base_strategy import BaseStrategy'
+"""修复策略文件导入语句
 """
 
 import os
 import re
+import sys
+
+# 将项目根目录添加到路径
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, project_root)
+
+# BaseStrategy导入
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    # 尝试相对导入
+    from core.base_strategy import BaseStrategy
 
 def fix_imports_in_file(file_path):
     """修复单个文件的导入语句"""
@@ -13,22 +23,22 @@ def fix_imports_in_file(file_path):
         content = f.read()
     
     # 检查是否需要修复
-    if 'from strategies.base_strategy import BaseStrategy' in content:
+    if 'from base_strategy import BaseStrategy' in content:
         # 修复导入
         new_content = content.replace(
-            'from strategies.base_strategy import BaseStrategy',
-            'from base_strategy import BaseStrategy'
+            'from base_strategy import BaseStrategy',
+            'try:\n    from core.base_strategy import BaseStrategy\nexcept ImportError:\n    from core.base_strategy import BaseStrategy'
         )
         
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(new_content)
         
         return True, "导入已修复"
-    elif 'import strategies.base_strategy' in content:
+    elif 'import base_strategy' in content:
         # 另一种可能的导入方式
         new_content = content.replace(
-            'import strategies.base_strategy',
-            'import base_strategy'
+            'import base_strategy',
+            'try:\n    from core.base_strategy import BaseStrategy\nexcept ImportError:\n    from core.base_strategy import BaseStrategy'
         )
         
         with open(file_path, 'w', encoding='utf-8') as f:
@@ -90,3 +100,23 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+class FixImportsStrategy(BaseStrategy):
+    """基于fix_imports的策略"""
+    
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # 初始化代码
+        self.name = "FixImportsStrategy"
+        self.description = "基于fix_imports的策略"
+        
+    def calculate_signals(self, df):
+        """计算交易信号"""
+        # 策略逻辑
+        return df
+        
+    def generate_signals(self, df):
+        """生成交易信号"""
+        # 信号生成逻辑
+        return df

@@ -1,7 +1,10 @@
 """
 价格行为分析策略适配器
 """
-from .base_strategy import BaseStrategy
+try:
+    from core.base_strategy import BaseStrategy
+except ImportError:
+    from core.base_strategy import BaseStrategy
 import pandas as pd
 from typing import Dict, List
 import numpy as np
