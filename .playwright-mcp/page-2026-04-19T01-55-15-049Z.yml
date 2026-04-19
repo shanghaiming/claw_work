@@ -1,0 +1,1149 @@
+- generic [active] [ref=e1]:
+  - button "Skip to main content" [ref=e4]:
+    - generic [ref=e5]:
+      - generic: Skip to main content
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - button "Open menu" [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+        - link "TradingView main page" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - img [ref=e16]
+      - button "Search" [ref=e23]:
+        - img [ref=e24]
+        - generic [ref=e26]: Search
+      - generic [ref=e27]:
+        - button "Open language menu" [ref=e28] [cursor=pointer]:
+          - img [ref=e29]
+          - text: EN
+        - button "Open user menu" [ref=e31] [cursor=pointer]:
+          - img [ref=e32]
+        - link "Get started" [ref=e36] [cursor=pointer]:
+          - /url: /pricing/?source=header_go_pro_button&feature=start_free_trial
+          - generic [ref=e38]: Get started
+    - main "Main content" [ref=e39]:
+      - main [ref=e41]:
+        - navigation "Breadcrumbs" [ref=e43]:
+          - list [ref=e44]:
+            - listitem [ref=e45]:
+              - link "Indicators and strategies" [ref=e46] [cursor=pointer]:
+                - /url: /scripts/
+                - generic [ref=e48]: Indicators and strategies
+            - listitem [ref=e49]:
+              - generic [ref=e50]: /
+              - link "Strategies" [ref=e51]:
+                - /url: /scripts/strategies/
+                - generic [ref=e53]: Strategies
+        - heading "Strategies" [level=1] [ref=e55]
+        - generic [ref=e57]:
+          - generic [ref=e60]:
+            - combobox "Script type filter" [ref=e61]:
+              - generic [ref=e63]: All types
+              - img [ref=e66]:
+                - img [ref=e67]
+            - button "Open-source only" [pressed] [ref=e69]:
+              - generic [ref=e72]:
+                - img [ref=e75]:
+                  - img [ref=e76]
+                - generic [ref=e79]: Open-source only
+            - radiogroup [ref=e81]:
+              - radio "Sort by most recent" [ref=e82]:
+                - img [ref=e85]:
+                  - img [ref=e86]
+              - radio "Sort by popularity" [checked] [ref=e88]:
+                - img [ref=e91]:
+                  - img [ref=e92]
+          - generic [ref=e95]:
+            - article [ref=e96]:
+              - generic [ref=e97]:
+                - link "lib_pickmytrade" [ref=e98] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/BnoJgkde-lib-pickmytrade/
+                - link [ref=e99] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/BnoJgkde-lib-pickmytrade/
+                  - generic [ref=e101]: "Library \"lib_pickmytrade\" a simple helper to create webhook messages for alert webhooks to pickmytrade alert_msg_exit(account_id, token) generates a json formatted EXIT message string for an alert() call, simply closing any open trade Parameters: account_id (string) : the pickmytrade account id token (string) : the pickmytrade token Returns: a json formatted message string for the alert() call alert_msg_trail_sl(account_id, token, is_long, trail_sl) generates a json formatted TRAIL STOP LOSS message string for an alert() call Parameters: account_id (string) : the pickmytrade account id token (string) : the pickmytrade token is_long (bool) : trade direction trail_sl (float) : new stop loss level Returns: a json formatted message string for the alert() call alert_msg_entry(account_id, token, is_long, tp1, qty1, tp2, qty2, tp3, qty3, sl, tp1_be_offset, limit_price, limit_cancel_time) generates a json formatted ENTRY message string for an alert() call Parameters: account_id (string) : the pickmytrade account id token (string) : the pickmytrade token is_long (bool) : trade direction tp1 (float) : tp1 target qty1 (int) : tp1 quantity (optional) tp2 (float) : tp2 target qty2 (int) : tp2 quantity (optional) tp3 (float) : tp3 target qty3 (int) : tp3 quantity (optional) sl (float) : sl stop tp1_be_offset (float) : sl to be when hitting tp1, with this offset (optional, must be >= 0) limit_price (float) : limit entry target (optional) limit_cancel_time (int) : limit entry cancel time, if not filled (gtc) (optional) Returns: a json formatted message string for the alert() call"
+              - generic [ref=e103]:
+                - generic "Pine Script® library" [ref=e104]:
+                  - img [ref=e105]:
+                    - img [ref=e106]
+                  - generic [ref=e108]: Pine Script® library
+                - link [ref=e109] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/BnoJgkde-lib-pickmytrade/
+              - generic [ref=e111]:
+                - generic [ref=e112]:
+                  - link "by robbatt" [ref=e114] [cursor=pointer]:
+                    - /url: /u/robbatt/
+                    - generic [ref=e115]: by robbatt
+                  - time [ref=e117]: Updated Apr 18
+                - generic [ref=e118]:
+                  - link "0 comments" [ref=e119] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/BnoJgkde-lib-pickmytrade/#chart-view-comment-form
+                    - img [ref=e121]:
+                      - img [ref=e122]
+                  - button "0 boosts 0" [ref=e124]:
+                    - generic [ref=e125]:
+                      - img "0 boosts" [ref=e127]:
+                        - img [ref=e128]
+                      - generic [ref=e134]: "0"
+            - article [ref=e135]:
+              - generic [ref=e136]:
+                - link "Vantage_PairedSizing" [ref=e137] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/X3CtR3Ao-Vantage-PairedSizing/
+                - link [ref=e138] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/X3CtR3Ao-Vantage-PairedSizing/
+                  - generic [ref=e140]: "Vantage_PairedSizing — Position sizing for strategies that pair a primary trade with a recovery trade under a daily loss budget. ───────────────────────────────────────── WHAT IT DOES Answers the question \"how many contracts can I take on the primary trade so that, if it stops out, a correctly-sized recovery trade still fits within my daily loss limit?\" The library scans candidate quantities top-down and returns the largest one whose worst case (primary stop + recovery stop) stays inside the budget, subject to one of four risk-reward modes. ───────────────────────────────────────── WHAT IT PROVIDES A single entry-point auto-sizer that takes the primary leg's entry/stop/target, the recovery leg's entry/stop/target, a daily loss budget, and a sizing mode — and returns a result record with primary quantity, recovery quantity, per-leg dollar risk, worst-case dollar exposure, and net-if-recovery-wins. The scan falls through a mode ladder (MatchPrimaryProfit → MatchPct → NetGreen) and a no-recovery fallback before giving up, so callers get a usable answer in marginal cases instead of a flat rejection. Four named sizing modes covering the common risk-reward shapes: largest size under a drawdown cap, largest size where the recovery win leaves the session net-green, largest size where the recovery win matches the primary's target profit, and a percentage variant of the match mode. Two utility functions for the dollar math — risk and profit for a given quantity between two prices — so strategies don't have to redo the tick-size / point-value arithmetic themselves. ───────────────────────────────────────── HOW TO USE A complete example call is in the comment block at the top of the source file — import the library, copy the pattern, plug in your primary and recovery price levels. Hover any exported type, enum, or function in the Pine Editor for per-parameter documentation."
+              - generic [ref=e142]:
+                - generic "Pine Script® library" [ref=e143]:
+                  - img [ref=e144]:
+                    - img [ref=e145]
+                  - generic [ref=e147]: Pine Script® library
+                - link [ref=e148] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/X3CtR3Ao-Vantage-PairedSizing/
+              - generic [ref=e150]:
+                - generic [ref=e151]:
+                  - link "by Vantage-Stack" [ref=e153] [cursor=pointer]:
+                    - /url: /u/Vantage-Stack/
+                    - generic [ref=e154]: by Vantage-Stack
+                  - time [ref=e156]: Updated Apr 17
+                - generic [ref=e157]:
+                  - link "0 comments" [ref=e158] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/X3CtR3Ao-Vantage-PairedSizing/#chart-view-comment-form
+                    - img [ref=e160]:
+                      - img [ref=e161]
+                  - button "0 boosts 0" [ref=e163]:
+                    - generic [ref=e164]:
+                      - img "0 boosts" [ref=e166]:
+                        - img [ref=e167]
+                      - generic [ref=e173]: "0"
+            - article [ref=e174]:
+              - generic [ref=e175]:
+                - link "Vantage_PickMyTrade_Integration" [ref=e176] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/gnl9L29I-Vantage-PickMyTrade-Integration/
+                - link [ref=e177] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/gnl9L29I-Vantage-PickMyTrade-Integration/
+                  - generic [ref=e179]: Vantage_PickMyTrade_Integration — Webhook integration library for Pine Script strategies routing orders through PickMyTrade. ───────────────────────────────────────── WHAT IT DOES Constructs and emits JSON webhook payloads in the PickMyTrade format. The library provides a strongly-typed Pine Script interface and emits the alert for you, so your strategy never has to hand-build JSON strings, remember exact field values, or track which fields are conditional. ───────────────────────────────────────── WHAT IT PROVIDES Strong types for every PickMyTrade enumeration — order actions (buy / sell / close), order types (market / limit / stop / stop-limit), and bracket-mode specification (price / dollar / percent). Using a typed enum catches typos at compile time. High-level send functions covering the common order patterns — a stop entry with bracket (pre-placed at the exchange), a market or limit entry with bracket, targeted close by comment tag, a full-flatten for a symbol, and in-place SL/TP modification on an existing position. All share a single underlying builder that handles field ordering, conditional fields, and token-in-body authentication. ───────────────────────────────────────── HOW TO USE A complete example call is in the comment block at the top of the source file — import the library, copy the pattern, adjust to your strategy. Hover any exported type or function in the Pine Editor for per-parameter documentation.
+              - generic [ref=e181]:
+                - generic "Pine Script® library" [ref=e182]:
+                  - img [ref=e183]:
+                    - img [ref=e184]
+                  - generic [ref=e186]: Pine Script® library
+                - link [ref=e187] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/gnl9L29I-Vantage-PickMyTrade-Integration/
+              - generic [ref=e189]:
+                - generic [ref=e190]:
+                  - link "by Vantage-Stack" [ref=e192] [cursor=pointer]:
+                    - /url: /u/Vantage-Stack/
+                    - generic [ref=e193]: by Vantage-Stack
+                  - time [ref=e195]: Apr 13
+                - generic [ref=e196]:
+                  - link "0 comments" [ref=e197] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/gnl9L29I-Vantage-PickMyTrade-Integration/#chart-view-comment-form
+                    - img [ref=e199]:
+                      - img [ref=e200]
+                  - button "0 boosts 0" [ref=e202]:
+                    - generic [ref=e203]:
+                      - img "0 boosts" [ref=e205]:
+                        - img [ref=e206]
+                      - generic [ref=e212]: "0"
+            - article [ref=e213]:
+              - generic [ref=e214]:
+                - link "Vantage_TradersPost" [ref=e215] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/lfDJtnYj-Vantage-TradersPost/
+                - link [ref=e216] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/lfDJtnYj-Vantage-TradersPost/
+                  - generic [ref=e218]: Vantage_TradersPost — Webhook integration library for Pine Script strategies routing orders through TradersPost. ───────────────────────────────────────── WHAT IT DOES Constructs and emits JSON webhook payloads in the TradersPost format. The library provides a strongly-typed Pine Script interface and emits the alert for you, so your strategy never has to hand-build JSON strings, remember exact enum values, or track which fields are conditional. ───────────────────────────────────────── WHAT IT PROVIDES Strong types for every TradersPost enumeration — order actions, order types, quantity types, position sentiment, stop-loss types, time-in-force, and the options fields. Using a typed enum in your strategy catches typos at compile time instead of at trade time. High-level send functions covering the common order patterns — a single-call bracket (entry + TP + SL), an advanced send with every TradersPost field exposed, a no-cancel variant, a sentiment-based position-management send, a cancel-all, and two-leg OTO and OCO helpers. ───────────────────────────────────────── HOW TO USE A complete example call is in the comment block at the top of the source file — import the library, copy the pattern, adjust to your strategy. Hover any exported type or function in the Pine Editor for per-parameter documentation. ───────────────────────────────────────── Maintenance of this library was taken over at the request of adam_overton.
+              - generic [ref=e220]:
+                - generic "Pine Script® library" [ref=e221]:
+                  - img [ref=e222]:
+                    - img [ref=e223]
+                  - generic [ref=e225]: Pine Script® library
+                - link [ref=e226] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/lfDJtnYj-Vantage-TradersPost/
+              - generic [ref=e228]:
+                - generic [ref=e229]:
+                  - link "by Vantage-Stack" [ref=e231] [cursor=pointer]:
+                    - /url: /u/Vantage-Stack/
+                    - generic [ref=e232]: by Vantage-Stack
+                  - time [ref=e234]: Apr 13
+                - generic [ref=e235]:
+                  - link "0 comments" [ref=e236] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/lfDJtnYj-Vantage-TradersPost/#chart-view-comment-form
+                    - img [ref=e238]:
+                      - img [ref=e239]
+                  - button "0 boosts 0" [ref=e241]:
+                    - generic [ref=e242]:
+                      - img "0 boosts" [ref=e244]:
+                        - img [ref=e245]
+                      - generic [ref=e251]: "0"
+            - article [ref=e252]:
+              - generic [ref=e253]:
+                - link "LO1_News2024H1" [ref=e254] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4ZdgVWEo-LO1-News2024H1/
+                - link "Library \"LO1_News2024H1\" Support Library for News Events f_loadNewsRows() f_loadExcSevByTypeId() f_loadExcTagByTypeId() f_loadExcDelayAfterNewsMins()" [ref=e255] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4ZdgVWEo-LO1-News2024H1/
+                  - generic [ref=e257]: Library "LO1_News2024H1" Support Library for News Events f_loadNewsRows() f_loadExcSevByTypeId() f_loadExcTagByTypeId() f_loadExcDelayAfterNewsMins()
+              - generic [ref=e259]:
+                - generic "Pine Script® library" [ref=e260]:
+                  - img [ref=e261]:
+                    - img [ref=e262]
+                  - generic [ref=e264]: Pine Script® library
+                - link [ref=e265] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4ZdgVWEo-LO1-News2024H1/
+              - generic [ref=e267]:
+                - generic [ref=e268]:
+                  - link "by Vantage-Stack" [ref=e270] [cursor=pointer]:
+                    - /url: /u/Vantage-Stack/
+                    - generic [ref=e271]: by Vantage-Stack
+                  - time [ref=e273]: Updated Feb 10
+                - generic [ref=e274]:
+                  - link "0 comments" [ref=e275] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/4ZdgVWEo-LO1-News2024H1/#chart-view-comment-form
+                    - img [ref=e277]:
+                      - img [ref=e278]
+                  - button "1 boost 1" [ref=e280]:
+                    - generic [ref=e281]:
+                      - img "1 boost" [ref=e283]:
+                        - img [ref=e284]
+                      - generic [ref=e290]: "1"
+            - article [ref=e291]:
+              - generic [ref=e292]:
+                - link "Vantage_Utils" [ref=e293] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/sZre3W3z-Vantage-Utils/
+                - link [ref=e294] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/sZre3W3z-Vantage-Utils/
+                  - generic [ref=e296]: "Vantage_Utils — Non-trading utilities for Pine Script strategies. A news-calendar state machine and a per-trade P&L tracker, both built as UDT pseudo-classes you instantiate and drive from your script. ───────────────────────────────────────── WHAT IT DOES Two capabilities are packaged as instantiable objects (UDT pseudo-classes) so your script holds the state and calls methods rather than threading raw values and globals: a news-calendar state machine that tells you whether the current bar is blocked or delayed by an economic event, and a P&L tracker that accumulates per-trade, session, and daily totals with on-chart labels. ───────────────────────────────────────── WHAT IT PROVIDES A news-calendar state machine that consolidates the Vantage_News_Types vocabulary and the Vantage_News / Vantage_News_Historical calendar data behind a single NewsState object. Your strategy asks whether the current bar is blocked or delayed, or when the next trading window starts, and gets the answer back — no need to join event rows against a severity table yourself. Per-type policy overrides and per-severity defaults are configurable. Allows avoiding trading news volatile moments in back testing and live trading. A P&L tracker (PnLTracker) that computes realized trade P&L with commission, accumulates session and daily totals, detects day boundaries for automatic reset, and manages the per-trade P&L label lifecycle on the chart. ───────────────────────────────────────── HOW TO USE A minimal usage example is in the comment block at the top of the source file — import the library, copy the pattern, adjust to your strategy. Hover any exported type or function in the Pine Editor for per-parameter documentation. Imports Vantage_News, Vantage_News_Historical, and Vantage_News_Types to expose the consolidated news calendar."
+              - generic [ref=e298]:
+                - generic "Pine Script® library" [ref=e299]:
+                  - img [ref=e300]:
+                    - img [ref=e301]
+                  - generic [ref=e303]: Pine Script® library
+                - link [ref=e304] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/sZre3W3z-Vantage-Utils/
+              - generic [ref=e306]:
+                - generic [ref=e307]:
+                  - link "by Vantage-Stack" [ref=e309] [cursor=pointer]:
+                    - /url: /u/Vantage-Stack/
+                    - generic [ref=e310]: by Vantage-Stack
+                  - time [ref=e312]: Updated Apr 14
+                - generic [ref=e313]:
+                  - link "0 comments" [ref=e314] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/sZre3W3z-Vantage-Utils/#chart-view-comment-form
+                    - img [ref=e316]:
+                      - img [ref=e317]
+                  - button "0 boosts 0" [ref=e319]:
+                    - generic [ref=e320]:
+                      - img "0 boosts" [ref=e322]:
+                        - img [ref=e323]
+                      - generic [ref=e329]: "0"
+            - article [ref=e330]:
+              - generic [ref=e331]:
+                - link "Vantage_OrderManagement" [ref=e332] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/skZ6rhTq-Vantage-OrderManagement/
+                - link [ref=e333] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/skZ6rhTq-Vantage-OrderManagement/
+                  - generic [ref=e335]: Vantage_OrderManagement — Converts Pine's strategy.closedtrades array into a stream of per-fill order events your handlers can react to. ───────────────────────────────────────── WHAT IT DOES Pine Script has no native order-fill callback — strategies that need to react to individual fills have to reconstruct them by diffing strategy.closedtrades and strategy.opentrades each bar. This library provides the types and state-tracking helpers so the reconstruction is consistent, and each fill arrives in your handler as a clean event record. ───────────────────────────────────────── WHAT IT PROVIDES An OrderEvent record type — direction, prices, quantity, and realized profit on exits — that your handler consumes one at a time. An OrderSystem state object plus the helpers to query current position direction and size, and to apply each detected event so the tracked state stays current. Your handler can inspect state between events, so it sees incremental position changes even when multiple fills arrive on the same bar. ───────────────────────────────────────── HOW TO USE Pine libraries cannot call strategy.* or read the trade arrays, so the detection loop lives in your strategy. A minimal copy-paste detection block is in the comment at the top of the source file — open the library in the Pine Editor, copy the block into your script, and the library-side call is one line per event. Hover any exported type or function for per-parameter documentation.
+              - generic [ref=e337]:
+                - generic "Pine Script® library" [ref=e338]:
+                  - img [ref=e339]:
+                    - img [ref=e340]
+                  - generic [ref=e342]: Pine Script® library
+                - link [ref=e343] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/skZ6rhTq-Vantage-OrderManagement/
+              - generic [ref=e345]:
+                - generic [ref=e346]:
+                  - link "by Vantage-Stack" [ref=e348] [cursor=pointer]:
+                    - /url: /u/Vantage-Stack/
+                    - generic [ref=e349]: by Vantage-Stack
+                  - time [ref=e351]: Apr 13
+                - generic [ref=e352]:
+                  - link "0 comments" [ref=e353] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/skZ6rhTq-Vantage-OrderManagement/#chart-view-comment-form
+                    - img [ref=e355]:
+                      - img [ref=e356]
+                  - button "0 boosts 0" [ref=e358]:
+                    - generic [ref=e359]:
+                      - img "0 boosts" [ref=e361]:
+                        - img [ref=e362]
+                      - generic [ref=e368]: "0"
+            - article [ref=e369]:
+              - generic [ref=e370]:
+                - link "APEXCore" [ref=e371] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/qOH3PvGy-APEXCore/
+                - link "Shared core library for the APEX algorithmic trading bot system. Provides canonical signal schema, ICT killzone enforcement, HTF bias, FVG detection, BSL/SSL liquidity levels, and composite score calculation for CME micro futures signal bots." [ref=e372] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/qOH3PvGy-APEXCore/
+                  - generic [ref=e374]: Shared core library for the APEX algorithmic trading bot system. Provides canonical signal schema, ICT killzone enforcement, HTF bias, FVG detection, BSL/SSL liquidity levels, and composite score calculation for CME micro futures signal bots.
+              - generic [ref=e376]:
+                - generic "Pine Script® library" [ref=e377]:
+                  - img [ref=e378]:
+                    - img [ref=e379]
+                  - generic [ref=e381]: Pine Script® library
+                - link [ref=e382] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/qOH3PvGy-APEXCore/
+              - generic [ref=e384]:
+                - generic [ref=e385]:
+                  - link "by denverjenkins" [ref=e387] [cursor=pointer]:
+                    - /url: /u/denverjenkins/
+                    - generic [ref=e388]: by denverjenkins
+                  - time [ref=e390]: Apr 7
+                - generic [ref=e391]:
+                  - link "0 comments" [ref=e392] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/qOH3PvGy-APEXCore/#chart-view-comment-form
+                    - img [ref=e394]:
+                      - img [ref=e395]
+                  - button "0 boosts 0" [ref=e397]:
+                    - generic [ref=e398]:
+                      - img "0 boosts" [ref=e400]:
+                        - img [ref=e401]
+                      - generic [ref=e407]: "0"
+            - article [ref=e408]:
+              - generic [ref=e409]:
+                - link "APExitManager" [ref=e410] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/bQI6jlkn-APExitManager/
+                - 'link "Library \"APExitManager\" apExitManager(entryID, isLong, rangeSize, rangeHigh, rangeLow, slMethod, tpMethod, slPercent, tpPercent, atrMultSL, atrMultTP, stackedCount, stackedTotalPercent, usePartial, partialPct, atrLength, superLength, superFactor) Parameters: entryID (string) isLong (bool) rangeSize (float) rangeHigh (float) rangeLow (float) slMethod (string) tpMethod (string) slPercent (float) tpPercent (float) atrMultSL (float) atrMultTP (float) stackedCount (int) stackedTotalPercent (float) usePartial (bool) partialPct (float) atrLength (simple int) superLength (simple int) superFactor (float)" [ref=e411] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/bQI6jlkn-APExitManager/
+                  - generic [ref=e413]: "Library \"APExitManager\" apExitManager(entryID, isLong, rangeSize, rangeHigh, rangeLow, slMethod, tpMethod, slPercent, tpPercent, atrMultSL, atrMultTP, stackedCount, stackedTotalPercent, usePartial, partialPct, atrLength, superLength, superFactor) Parameters: entryID (string) isLong (bool) rangeSize (float) rangeHigh (float) rangeLow (float) slMethod (string) tpMethod (string) slPercent (float) tpPercent (float) atrMultSL (float) atrMultTP (float) stackedCount (int) stackedTotalPercent (float) usePartial (bool) partialPct (float) atrLength (simple int) superLength (simple int) superFactor (float)"
+              - generic [ref=e415]:
+                - generic "Pine Script® library" [ref=e416]:
+                  - img [ref=e417]:
+                    - img [ref=e418]
+                  - generic [ref=e420]: Pine Script® library
+                - link [ref=e421] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/bQI6jlkn-APExitManager/
+              - generic [ref=e423]:
+                - generic [ref=e424]:
+                  - link "by ttuha" [ref=e426] [cursor=pointer]:
+                    - /url: /u/ttuha/
+                    - generic [ref=e427]: by ttuha
+                  - time [ref=e429]: Apr 3
+                - generic [ref=e430]:
+                  - link "0 comments" [ref=e431] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/bQI6jlkn-APExitManager/#chart-view-comment-form
+                    - img [ref=e433]:
+                      - img [ref=e434]
+                  - button "1 boost 1" [ref=e436]:
+                    - generic [ref=e437]:
+                      - img "1 boost" [ref=e439]:
+                        - img [ref=e440]
+                      - generic [ref=e446]: "1"
+            - article [ref=e447]:
+              - generic [ref=e448]:
+                - link "CursorDotSwingsLib" [ref=e449] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/1ZR2P7Ao-CursorDotSwingsLib/
+                - 'link "Library \"CursorDotSwingsLib\" packDotState(multFactor, atrLength, trendEndTicks) Parameters: multFactor (float) atrLength (simple int) trendEndTicks (int)" [ref=e450] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/1ZR2P7Ao-CursorDotSwingsLib/
+                  - generic [ref=e452]: "Library \"CursorDotSwingsLib\" packDotState(multFactor, atrLength, trendEndTicks) Parameters: multFactor (float) atrLength (simple int) trendEndTicks (int)"
+              - generic [ref=e454]:
+                - generic "Pine Script® library" [ref=e455]:
+                  - img [ref=e456]:
+                    - img [ref=e457]
+                  - generic [ref=e459]: Pine Script® library
+                - link [ref=e460] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/1ZR2P7Ao-CursorDotSwingsLib/
+              - generic [ref=e462]:
+                - generic [ref=e463]:
+                  - link "by kentassar" [ref=e465] [cursor=pointer]:
+                    - /url: /u/kentassar/
+                    - generic [ref=e466]: by kentassar
+                  - time [ref=e468]: Updated Apr 2
+                - generic [ref=e469]:
+                  - link "0 comments" [ref=e470] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/1ZR2P7Ao-CursorDotSwingsLib/#chart-view-comment-form
+                    - img [ref=e472]:
+                      - img [ref=e473]
+                  - button "0 boosts 0" [ref=e475]:
+                    - generic [ref=e476]:
+                      - img "0 boosts" [ref=e478]:
+                        - img [ref=e479]
+                      - generic [ref=e485]: "0"
+            - article [ref=e486]:
+              - generic [ref=e487]:
+                - link "Trade Strategy Calculator [WillyAlgoTrader]" [ref=e488] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Zc1gOfeX-Trade-Strategy-Calculator-WillyAlgoTrader/
+                - link [ref=e489] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Zc1gOfeX-Trade-Strategy-Calculator-WillyAlgoTrader/
+                  - generic [ref=e491]: "📊 Trade Strategy Calculator is the first comprehensive mathematical strategy calculator built entirely inside TradingView — a 4-panel dashboard that computes position sizing, risk analysis, deposit growth projection, and Kelly Criterion optimization in real time, directly on your chart. No spreadsheets, no external tools, no switching tabs. Every number you need before entering a trade — position size, stop loss level, take-profit targets, commission impact, expected value, probability of ruin, compound growth forecast, and optimal bet sizing — calculated from your strategy parameters and displayed in a single organized view. This tool is useful for every trader regardless of market, instrument, or timeframe — stocks, forex, crypto, futures, indices, commodities. Whether you trade scalping on 1-minute charts or swing on daily, whether you use 1x spot or 125x futures leverage — the mathematics of position sizing, risk management, and bankroll growth are universal. This calculator puts those mathematics at your fingertips. 🧩 WHY ALL FOUR PANELS WORK TOGETHER Most traders calculate position size in isolation — they know how much to risk but don't connect it to their long-term growth trajectory. They know their win rate but don't know if it's mathematically profitable after commissions. They have a \"feel\" for their risk level but haven't computed what happens after 7 consecutive losses. This calculator connects four mathematical dimensions into one coherent picture: 🎯 TRADE panel answers: \"How large should this specific trade be, and what are the exact entry/SL/TP prices?\" ⚠️ RISK panel answers: \"What happens when things go wrong — how many losses until I hit my daily limit, my max drawdown, and what's my expected value per trade?\" 📈 GROWTH panel answers: \"If I trade consistently with these parameters, where will my deposit be in 30/90/365 days — and how long to reach my target?\" 📐 KELLY panel answers: \"Am I betting the mathematically optimal amount — or am I over-betting (risking ruin) or under-betting (leaving growth on the table)?\" A trader who only uses the TRADE panel knows their position size but not whether their strategy has positive expected value. A trader who only uses KELLY knows the optimal bet size but not the specific position for their current trade. A trader who only uses GROWTH knows the projection but not whether the underlying math is sound. All four together give you the complete picture: \"Is my strategy profitable? Am I sizing correctly? What's the worst case? And where does this lead?\" 🔍 WHAT MAKES IT ORIGINAL There is no other indicator on TradingView that combines all four of these mathematical models — position sizing, risk stress testing, compound growth simulation, and Kelly Criterion — into a single, real-time, interactive dashboard. Each panel alone would be a useful tool. Together, they create something that doesn't exist elsewhere on the platform. 🎯 PANEL 1 — TRADE (Position Sizing + Targets) This panel calculates the exact position size for your trade based on your deposit, risk percentage, stop loss distance, leverage, and commissions. Core formula: positionSize = riskAmount / (slDistance% + commissionBothSides) Where: — riskAmount = deposit × riskPerTrade% — slDistance% = slPercent × (1 + slippage%) — slippage is added to the stop distance for realistic sizing — commissionBothSides = commission% × 2 (open + close) This formula ensures that if your stop loss is hit, you lose exactly riskAmount — not more, not less — after accounting for both slippage and round-trip commission. What you see: — Direction (Long / Short) — Entry Price (manual or auto from chart) — Stop Loss price (calculated from entry ± SL%) — 💰 Position Size in USD — the headline number — Margin Required (if leverage > 1) — Quantity (units/coins/shares) — 🔴 Risk (loss) in USD and % of deposit — 🟢 Profit at TP — in USD, % of deposit, and net R:R after commission — TP Price level — Commission cost in USD — Liquidation price (for leveraged positions) — ⚠️ Insufficient margin warning (if position exceeds deposit) Multi Take-Profit mode: When enabled, the position is split across 2 or 3 TP levels with configurable volume allocation: — TP1 at R:R 1.0 with 50% of position → locks partial profit early — TP2 at R:R 2.0 with 30% → captures the main move — TP3 at R:R 3.0 with 20% (if 3 TPs) → runner for extended moves Each TP shows: profit in USD, target price. The panel also computes: — Total blended profit across all TPs — Net R:R (blended, after commissions) — Breakeven price after TP1 — the price where your remaining position becomes zero-loss after banking TP1 profit. This is critical: after TP1, you move your stop to this price — the trade can no longer lose money. Example: Deposit: $10,000. Risk: 1% ($100). SL: 2%. Commission: 0.04%. Position = $100 / (0.02 + 0.0008) = $4,808. If BTC at $100,000 → SL at $98,000, TP1 at $102,000. If stopped out → you lose exactly $100 (1% of deposit). If TP1 hit → you gain ~$96 (after commission). ⚠️ PANEL 2 — RISK (Stress Testing + Expected Value) This panel answers: \"What happens when I have a losing streak, and is my strategy mathematically profitable?\" Daily risk limit: maxLosingDaily = floor(dailyRiskLimit% / riskPerTrade%) Example: 3% daily limit, 1% per trade → you stop after 3 losses in a day. Max drawdown limit: maxLosingTotal = floor(maxDrawdown% / riskPerTrade%) Example: 20% max DD, 1% per trade → 20 consecutive losses to hit max DD. Stress test — losing streaks: The panel computes what happens after 5, 7, and 10 consecutive losses: — depositAfterN = deposit × (1 − riskPerTrade%)^N — drawdownAfterN = (1 − (1 − riskPerTrade%)^N) × 100% — probabilityOfN = (1 − winrate%)^N × 100% Example: $10,000 deposit, 1% risk, 55% winrate: — 5 losses: −4.9% DD ($9,510), probability 1.85% — 7 losses: −6.8% DD ($9,321), probability 0.37% — 10 losses: −9.6% DD ($9,044), probability 0.03% This tells you: a 5-loss streak WILL happen (1.85% probability over hundreds of trades). A 10-loss streak is extremely rare (0.03%). Your risk% must be sized so that even the realistic worst case doesn't blow your account. Expected Value (EV): EV per trade = winrate × riskAmount × avgR:R − (1 − winrate) × riskAmount − commission This is the single most important number in trading. If EV > 0, your strategy makes money over time. If EV < 0, no amount of position sizing saves you. The panel shows: — 📈 EV per trade in USD (highlighted — this is the headline metric) — EV per 100 trades — Break-even winrate WITH commission — the minimum winrate needed to be profitable at your R:R, accounting for commission drag — Your actual WR and R:R for comparison Break-even winrate formula (with commission): beWinrate = (1 + commissionCost / riskAmount) / (avgR:R + 1) This is more accurate than the standard 1/(R:R+1) because it accounts for commission reducing your net edge. 📈 PANEL 3 — GROWTH (Deposit Projection + Scenarios) This is the unique deposit growth simulator — it projects where your deposit will be after N days of consistent trading, using either compound (reinvest profits) or simple (fixed risk from initial deposit) growth. Compound growth formula: EV per trade as % = winrate × (risk% × R:R) − (1 − winrate) × risk% totalTrades = tradesPerDay × projectionDays finalDeposit = deposit × (1 + evPerTrade%)^totalTrades Simple growth formula: finalDeposit = deposit + deposit × evPerTrade% × totalTrades The difference is massive. Compound growth reinvests profits — each winning trade increases the base for the next trade. Simple growth always risks a fixed amount from the initial deposit. Example — compound vs simple: $1,000 deposit, 55% WR, 1:2 R:R, 1% risk, 3 trades/day, 30 days: — Simple: $1,000 + $1,000 × 0.65% × 90 = $1,585 — Compound: $1,000 × (1.0065)^90 = $1,795 Over 90 days: $1,585 vs $1,795. Over 365 days the gap becomes enormous. This is why compound growth (reinvesting profits) is the key to deposit acceleration. Three scenarios: — 🟢 Optimistic: your winrate + 10% (what happens if you're having a great month) — 🟡 Realistic: your actual parameters — 🔴 Pessimistic: your winrate − 10% (what happens during a drawdown period) This gives you a range, not a single number. If even the pessimistic scenario is positive, your strategy is robust. Goal milestones: — Days to 2× deposit (double your money) — Days to 3× deposit — Days to custom target ($5,000, $10,000, etc.) Formula: daysToTarget = log(target / deposit) / (log(1 + evPerTrade%) × tradesPerDay) Risk metrics: — Max estimated drawdown: based on expected worst losing streak × risk% — Ruin probability: the probability of losing your entire bankroll at your current risk level Ruin probability formula: edge = winrate × R:R − (1 − winrate) bankrollUnits = floor(100 / risk%) ruinProb = ((1 − winrate) / (winrate × R:R))^bankrollUnits If edge ≤ 0, ruin probability is effectively 100%. If edge > 0, ruin probability decreases exponentially with more bankroll units (lower risk%). Presets for quick scenarios: — Beginner: 45% WR, 1:2 R:R, 1% risk — conservative starting point — Moderate: 55% WR, 1:2 R:R, 2% risk — typical intermediate trader — Aggressive: 50% WR, 1:3 R:R, 3% risk — higher risk, needs discipline — Custom: uses your exact My Strategy values 📐 PANEL 4 — KELLY CRITERION (Optimal Bet Sizing) The Kelly Criterion is the mathematically optimal percentage of your bankroll to risk on each bet, given your edge. It maximizes the long-term growth rate of your account. Kelly formula: edge = winrate × avgR:R − (1 − winrate) kellyPercent = edge / avgR:R If edge ≤ 0 → Kelly = 0% (no edge, don't trade). If edge > 0 → Kelly tells you the maximum you should risk. What the panel shows: — Your winrate and avg R:R — Break-even winrate (with commission) — 📐 Edge per $1 risked — your mathematical advantage. If +$0.15, every $1 risked returns $1.15 on average. — Full Kelly % — the theoretical maximum. Most traders should NOT use this — it's too aggressive. — Half Kelly ✦ — the recommended practical value. Reduces variance by ~75% while giving up only ~25% of growth. — Quarter Kelly — ultra-conservative, minimal variance. — Your current risk % — so you can compare — Status: 🟢 Optimal (between half and full Kelly), 🟡 Conservative (below half), 🔴 Over-bet (above full Kelly), 🚨 >2× Kelly (danger zone) Growth rate comparison: — Growth rate at Kelly %: the compound growth rate per trade at the optimal bet size — Growth rate at your %: your actual compound growth rate per trade Formula: growthRate = winrate × log(1 + risk% × R:R) + (1 − winrate) × log(1 − risk%) If your rate is close to the Kelly rate, you're near-optimal. If it's much lower, you're leaving growth on the table. If it's negative (possible when over-betting!), you're actually losing money despite having a positive edge — the over-betting destroys the compounding. Why this matters: A trader with a 55% WR and 1:2 R:R has an edge. Kelly says risk ~4.6%. But if that trader risks 10% per trade (2× Kelly), their actual growth rate can become negative — they go broke despite having a winning strategy. This is the most counterintuitive result in trading mathematics: over-betting a winning system turns it into a losing system . The Kelly panel prevents this. 📖 HOW TO USE — STEP BY STEP Step 1 — Enter your strategy parameters (My Strategy section): — Deposit: your actual account balance in USD — Risk per Trade: how much you risk per trade (start with 1% if unsure) — Winrate: your historical win rate (be honest — check your journal) — Average R:R: your average reward-to-risk on winning trades — Trades per Day: how many trades you typically take — Leverage: 1 for spot, or your futures leverage — Commission: your exchange fee per side (Binance Futures taker: 0.04%) Step 2 — Set up your current trade (Trade Setup section): — Direction: Long or Short — Stop Loss %: how far your SL is from entry — Risk:Reward: your target R:R for this trade — Entry Price: manual or auto from chart Step 3 — Read the TRADE panel: — The 💰 Position Size number is your order size in USD — If using leverage, check Margin Required doesn't exceed your deposit — Note the SL and TP prices — set these in your exchange Step 4 — Check the RISK panel: — Is your EV per trade positive? If not, your strategy loses money long-term — Is your winrate above the break-even? If not, improve your R:R — Check the stress test: can your deposit survive 7 losses in a row? — If the risk badge shows 🚨 DANGER, reduce your risk% or leverage Step 5 — Review the GROWTH panel: — The projected deposit shows where you'll be in 30 days — Check the pessimistic scenario — is it still above your starting deposit? — Note the days to 2× — this is your compound growth timeline — If ruin probability > 5%, your risk is too high Step 6 — Optimize with KELLY panel: — Compare your risk% to Half Kelly — this is the recommended level — If Status shows 🔴 Over-bet, reduce your risk% — If Status shows 🟡 Conservative, you could increase (but don't have to) — Check Growth Rate at Your % — is it positive? Is it close to Kelly's rate? 🎯 PRACTICAL EXAMPLES Example 1 — Conservative Spot Trader: Deposit $5,000, Risk 1%, WR 55%, R:R 1:2, 2 trades/day, No leverage, Commission 0.1% — Position: ~$2,500 per trade. Risk: $50. — EV: +$5.60 per trade. Positive — strategy is profitable. — 30-day projection (compound): $5,000 → $5,705 (+14.1%) — Days to double: ~98 days — Kelly: 4.6%. Your 1% = conservative. Status: 🟡 Example 2 — Crypto Futures Scalper: Deposit $1,000, Risk 2%, WR 50%, R:R 1:3, 5 trades/day, Leverage 10x, Commission 0.04% — Position: ~$10,000 per trade. Margin: $1,000. Risk: $20. — EV: +$10.40 per trade. Strong positive edge. — 30-day projection (compound): $1,000 → $4,680 (+368%) — Days to double: ~14 days — Kelly: 8.3%. Your 2% = well below Kelly. Room to grow. — ⚠️ But 7-loss streak probability: 0.78%. DD: −13.2%. Manageable. Example 3 — Why Over-Betting Kills: Same as Example 2, but Risk 15% (almost 2× Kelly): — EV per trade still positive (+$78) — BUT growth rate per trade: NEGATIVE (−0.3%) — 30-day projection: $1,000 → $620 (−38%) — Kelly Status: 🚨 >2× Kelly — Despite winning 50% with 1:3 R:R, you LOSE money because over-betting destroys compounding. ⚙️ KEY SETTINGS REFERENCE ⚙️ My Strategy: — Deposit : account balance in USD — Risk per Trade (default 1%): % of deposit risked per trade — Winrate (default 55%): historical win rate — Average R:R (default 2.0): average reward-to-risk on wins — Trades per Day (default 3): daily trade count — Leverage (default 1): 1 = spot, >1 = futures — Commission (default 0.04%): exchange fee per side 🎯 Trade Setup: — Direction : Long / Short — Stop Loss % (default 1%): SL distance from entry — Risk:Reward (default 2.0): target R:R — Slippage (default 0.05%): expected execution slippage — Entry Price : Manual or Auto (chart price) 🎯 Multi Take-Profit: — Enable Multi TP (default Off): split into 2–3 targets — R:R for TP1/TP2/TP3 (default 1.0/2.0/3.0) — Volume allocation (default 50%/30%/20%) 📈 Growth Projection: — Preset : Beginner / Moderate / Aggressive / Custom — Projection Period (default 30 days) — Compound (default On): reinvest profits — Target Deposit (default 0 = off): goal amount — Max Daily Risk (default 3%): daily loss limit — Max Drawdown (default 20%): total DD limit 🎨 Visual: — Font Size: Tiny / Small / Normal / Large — Auto / Dark / Light theme ⚠️ IMPORTANT NOTES — 📊 This is a calculator, not a signal generator. It does not produce buy/sell signals. It computes the mathematical framework for your trading decisions — position sizing, risk limits, growth projections, and optimal bet sizing. The math is universal and applies to any strategy. — 📐 All calculations are deterministic — they depend only on your input parameters, not on price data. The dashboard updates in real-time when you change any input. — ⚖️ The growth projection assumes consistent strategy parameters over the projection period. Real trading involves varying win rates, R:R ratios, and market conditions. The three scenarios (optimistic/realistic/pessimistic) partially address this by showing a range. — 📏 The Kelly Criterion assumes known, fixed probabilities . In practice, your winrate and R:R fluctuate. This is why Half Kelly (not Full Kelly) is recommended — it accounts for parameter uncertainty. — 💰 Commission is calculated as round-trip (both sides) and deducted from both profit calculations and expected value. This provides realistic net returns. — 📊 The break-even winrate calculation includes commission drag — it's higher than the simplified 1/(R:R+1) formula because commission erodes your edge. — 🔄 The compound growth formula uses logarithmic overflow protection — if the projected growth exceeds exp(23) ≈ 10 billion ×, it displays \"∞\" instead of crashing. — 🛠️ Works on any chart, any instrument, any timeframe . The calculator is price-independent — it uses your manual inputs. \"Auto\" entry price mode uses the current chart close for convenience. — 🌐 Useful for all markets : stocks (set leverage = 1, commission = 0.1%), forex (adjust for pip-based SL), crypto spot (leverage = 1), crypto futures (set your leverage), indices, commodities."
+              - generic [ref=e493]:
+                - generic "Pine Script® indicator" [ref=e494]:
+                  - img [ref=e495]:
+                    - img [ref=e496]
+                  - generic [ref=e498]: Pine Script® indicator
+                - link [ref=e499] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Zc1gOfeX-Trade-Strategy-Calculator-WillyAlgoTrader/
+              - generic [ref=e501]:
+                - generic [ref=e502]:
+                  - link "by WillyAlgoTrader" [ref=e504] [cursor=pointer]:
+                    - /url: /u/WillyAlgoTrader/
+                    - generic [ref=e505]: by WillyAlgoTrader
+                  - time [ref=e507]: Apr 1
+                - generic [ref=e508]:
+                  - link "2 comments" [ref=e509] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/Zc1gOfeX-Trade-Strategy-Calculator-WillyAlgoTrader/#chart-view-comment-form
+                    - img [ref=e511]:
+                      - img [ref=e512]
+                    - generic [ref=e515]: "2"
+                  - button "822 boosts 8 2 2" [ref=e516]:
+                    - generic [ref=e517]:
+                      - img "822 boosts" [ref=e519]:
+                        - img [ref=e520]
+                      - generic [ref=e524]:
+                        - generic [ref=e526]: "8"
+                        - generic [ref=e528]: "2"
+                        - generic [ref=e530]: "2"
+            - article [ref=e531]:
+              - generic [ref=e532]:
+                - link "FO_Util" [ref=e533] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Ojbd8jXI/
+                - link [ref=e534] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Ojbd8jXI/
+                  - generic [ref=e536]: "Library \"FO_Util\" f_inSession(startHour, startMinute, endHour, endMinute) Parameters: startHour (int) startMinute (int) endHour (int) endMinute (int) f_isExecutionBlocked(marketType) Parameters: marketType (string) f_allowEntry(useSessionFilter, startHour, startMinute, endHour, endMinute, marketType) Parameters: useSessionFilter (bool) startHour (int) startMinute (int) endHour (int) endMinute (int) marketType (string) f_volFilter(_volume, volMA, volMultiplier) Parameters: _volume (float) volMA (float) volMultiplier (float) f_wickCondition(_open, _close, _high, _low, _ratio, _wickSide) Parameters: _open (float) _close (float) _high (float) _low (float) _ratio (float) _wickSide (int) f_atrRangeFilter(_high, _low, _atr, _mult) Parameters: _high (float) _low (float) _atr (float) _mult (float) f_updatePositionExtremes(inLong, inShort, prevHigh, prevLow, highestPrev, lowestPrev) Parameters: inLong (bool) inShort (bool) prevHigh (float) prevLow (float) highestPrev (float) lowestPrev (float) f_calcATRExitLevels(avgPrice, atr, atrStopMult, atrLimitMult) Parameters: avgPrice (float) atr (float) atrStopMult (float) atrLimitMult (float) f_calcATRTrailStop(avgPrice, highestPrev, lowestPrev, atrPrev, trailAtrMult, atrLimitMult, atrStopMult, inLong, inShort) Parameters: avgPrice (float) highestPrev (float) lowestPrev (float) atrPrev (float) trailAtrMult (float) atrLimitMult (float) atrStopMult (float) inLong (bool) inShort (bool) f_calcATRExit(avgPrice, atr, highestPrev, lowestPrev, prevHigh, prevLow, trailAtrMult, atrStopMult, atrLimitMult, inLong, inShort) Parameters: avgPrice (float) atr (float) highestPrev (float) lowestPrev (float) prevHigh (float) prevLow (float) trailAtrMult (float) atrStopMult (float) atrLimitMult (float) inLong (bool) inShort (bool) f_executeEntry(longSignal, shortSignal) Parameters: longSignal (bool) shortSignal (bool) f_isPreClose(closeHour, closeMinute) Parameters: closeHour (int) closeMinute (int) f_executeSessionClose(useSessionClose, closeHour, closeMinute) Parameters: useSessionClose (bool) closeHour (int) closeMinute (int)"
+              - generic [ref=e538]:
+                - generic "Pine Script® library" [ref=e539]:
+                  - img [ref=e540]:
+                    - img [ref=e541]
+                  - generic [ref=e543]: Pine Script® library
+                - link [ref=e544] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Ojbd8jXI/
+              - generic [ref=e546]:
+                - generic [ref=e547]:
+                  - link "by kabutech" [ref=e549] [cursor=pointer]:
+                    - /url: /u/kabutech/
+                    - generic [ref=e550]: by kabutech
+                  - time [ref=e552]: Updated Apr 13
+                - generic [ref=e553]:
+                  - link "0 comments" [ref=e554] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/Ojbd8jXI/#chart-view-comment-form
+                    - img [ref=e556]:
+                      - img [ref=e557]
+                  - button "0 boosts 0" [ref=e559]:
+                    - generic [ref=e560]:
+                      - img "0 boosts" [ref=e562]:
+                        - img [ref=e563]
+                      - generic [ref=e569]: "0"
+            - article [ref=e570]:
+              - generic [ref=e571]:
+                - link "SetupsLib" [ref=e572] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/20IFOLTS-SetupsLib/
+                - link [ref=e573] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/20IFOLTS-SetupsLib/
+                  - generic [ref=e575]: "Library \"SetupsLib\" f_get_mc_family_from_setup(setup_id) Parameters: setup_id (string) f_setup_id_to_code(setup_id) Parameters: setup_id (string) f_setup_id_to_mask(setup_id) Parameters: setup_id (string) f_find_setup_spec(setup_db, setup_id) Parameters: setup_db (array) setup_id (string) f_get_setup_horizon(setup_db, setup_id, fallback_horizon) Parameters: setup_db (array) setup_id (string) fallback_horizon (int) f_register_event(engine_events, fire_condition, setup_id, setup_tooltip, setup_size_info) Parameters: engine_events (array) fire_condition (bool) setup_id (string) setup_tooltip (string) setup_size_info (string) f_collect_debug(engine_events) Parameters: engine_events (array) SetupSpec Fields: id (series string) name (series string) dir (series string) wr (series float) sharpe (series float) tp_pct (series float) sl_pct (series float) avg_bars (series int) tooltip (series string) SetupSignal Fields: id (series string) tooltip (series string) use_pred_rounding (series bool) debug_enabled (series bool) size_info (series string) SetupEvent Fields: id (series string) tooltip (series string) size_info (series string)"
+              - generic [ref=e577]:
+                - generic "Pine Script® library" [ref=e578]:
+                  - img [ref=e579]:
+                    - img [ref=e580]
+                  - generic [ref=e582]: Pine Script® library
+                - link [ref=e583] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/20IFOLTS-SetupsLib/
+              - generic [ref=e585]:
+                - generic [ref=e586]:
+                  - link "by cybermediaboy" [ref=e588] [cursor=pointer]:
+                    - /url: /u/cybermediaboy/
+                    - generic [ref=e589]: by cybermediaboy
+                  - time [ref=e591]: Updated Apr 14
+                - generic [ref=e592]:
+                  - link "0 comments" [ref=e593] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/20IFOLTS-SetupsLib/#chart-view-comment-form
+                    - img [ref=e595]:
+                      - img [ref=e596]
+                  - button "0 boosts 0" [ref=e598]:
+                    - generic [ref=e599]:
+                      - img "0 boosts" [ref=e601]:
+                        - img [ref=e602]
+                      - generic [ref=e608]: "0"
+            - article [ref=e609]:
+              - generic [ref=e610]:
+                - link "backtest_nr" [ref=e611] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/sfUb52Vu-backtest-nr/
+                - 'link "Library \"backtest_nr\" curve(disp_ind) Call function to get a certain curve of your strategy. Parameters: disp_ind (string) Returns: Returns type of curve plot. cleaner(disp_ind, plot) Call function to filter out your Strategy plots Parameters: disp_ind (string) plot (float) backtestTable(option, position) Assign this function to a random variable to get the \"Performance Table\" Parameters: option (simple string) position (simple string)" [ref=e612] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/sfUb52Vu-backtest-nr/
+                  - generic [ref=e614]: "Library \"backtest_nr\" curve(disp_ind) Call function to get a certain curve of your strategy. Parameters: disp_ind (string) Returns: Returns type of curve plot. cleaner(disp_ind, plot) Call function to filter out your Strategy plots Parameters: disp_ind (string) plot (float) backtestTable(option, position) Assign this function to a random variable to get the \"Performance Table\" Parameters: option (simple string) position (simple string)"
+              - generic [ref=e616]:
+                - generic "Pine Script® library" [ref=e617]:
+                  - img [ref=e618]:
+                    - img [ref=e619]
+                  - generic [ref=e621]: Pine Script® library
+                - link [ref=e622] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/sfUb52Vu-backtest-nr/
+              - generic [ref=e624]:
+                - generic [ref=e625]:
+                  - link "by TheTradingSpiderMan" [ref=e627] [cursor=pointer]:
+                    - /url: /u/TheTradingSpiderMan/
+                    - generic [ref=e628]: by TheTradingSpiderMan
+                  - time [ref=e630]: Mar 24
+                - generic [ref=e631]:
+                  - link "0 comments" [ref=e632] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/sfUb52Vu-backtest-nr/#chart-view-comment-form
+                    - img [ref=e634]:
+                      - img [ref=e635]
+                  - button "0 boosts 0" [ref=e637]:
+                    - generic [ref=e638]:
+                      - img "0 boosts" [ref=e640]:
+                        - img [ref=e641]
+                      - generic [ref=e647]: "0"
+            - article [ref=e648]:
+              - generic [ref=e649]:
+                - link "equity_curve" [ref=e650] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4kAsNJom-equity-curve/
+                - link [ref=e651] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4kAsNJom-equity-curve/
+                  - generic [ref=e653]: "Library \"equity_curve\" f_remove_exchange_name(name) Remove exchange prefix from ticker string (e.g., \"BINANCE:BTCUSD\" → \"BTCUSD\") Parameters: name (simple string) : Ticker string potentially containing exchange prefix Returns: Ticker without exchange prefix f_roc() Calculate bar-over-bar return as decimal (close-to-close, for buy-and-hold) Returns: Return as decimal (e.g., 0.02 for +2%) f_roc_entry() Calculate open-to-close return (realistic strategy entry assumption at bar open) Returns: Intrabar return as decimal f_equity(ticker1, ticker2, ticker3, ticker4, ticker5, ticker6, best_asset, r1, r2, r3, r4, r5, r6, backtest, prev_equity, prev_peak, prev_dd) Calculate strategy equity for a rotation system (stateless — caller must maintain var state). Uses best_asset so signal is visible 1 bar before equity acts on it. Parameters: ticker1 (simple string) : Asset 1 ticker string ticker2 (simple string) : Asset 2 ticker string ticker3 (simple string) : Asset 3 ticker string ticker4 (simple string) : Asset 4 ticker string ticker5 (simple string) : Asset 5 ticker string ticker6 (simple string) : Asset 6 ticker string best_asset (string) : The currently selected best-performing asset ticker r1 (float) : Per-bar return for asset 1 (open-to-close) r2 (float) : Per-bar return for asset 2 r3 (float) : Per-bar return for asset 3 r4 (float) : Per-bar return for asset 4 r5 (float) : Per-bar return for asset 5 r6 (float) : Per-bar return for asset 6 backtest (bool) : Whether backtesting is active this bar prev_equity (float) : Previous bar's equity value (caller initializes var as na) prev_peak (float) : Previous bar's peak equity value (caller initializes var as na) prev_dd (float) : Previous bar's max drawdown value (caller initializes var as 0.0) Returns: f_buy_and_hold(r, backtest, prev_equity, prev_peak, prev_dd) Calculate buy-and-hold equity for a single asset (stateless — caller must maintain var state) Parameters: r (float) : Per-bar return (close-to-close) backtest (bool) : Whether backtesting is active this bar prev_equity (float) : Previous bar's equity value (caller initializes var as na) prev_peak (float) : Previous bar's peak equity value (caller initializes var as na) prev_dd (float) : Previous bar's max drawdown value (caller initializes var as 0.0) Returns: f_since(active, prev_count) Calculate lookback period as bar count since condition became true (stateless — caller must maintain var state) Parameters: active (bool) : Whether the counting condition is active this bar prev_count (int) : Previous bar's raw count (caller initializes var as 0) Returns: — output is the adjusted lookback for metrics; count is the raw counter to feed back next bar f_best_asset_col(ticker1, ticker2, ticker3, ticker4, ticker5, ticker6, best_asset, backtest, colors) Return color for equity curve based on currently held asset. Uses best_asset so signal is visible 1 bar before equity execution. Parameters: ticker1 (simple string) : Asset 1 ticker string ticker2 (simple string) : Asset 2 ticker string ticker3 (simple string) : Asset 3 ticker string ticker4 (simple string) : Asset 4 ticker string ticker5 (simple string) : Asset 5 ticker string ticker6 (simple string) : Asset 6 ticker string best_asset (string) : The confirmed best-performing asset ticker backtest (bool) : Whether backtesting is active colors (array) : Array of 8 colors: Returns: Color corresponding to the currently held asset f_PerformanceMetrics(base, Lookback, backtest, max_drawdown) Calculate performance metrics from an equity curve Parameters: base (float) : The equity curve series Lookback (int) : Number of bars to analyze (capped at 4998) backtest (bool) : Whether backtesting is active max_drawdown (float) : Maximum drawdown value (pre-calculated, as decimal e.g. 0.25 = 25%) Returns: Array of 10 floats: f_PerfMetricTable(p, ticker1, ticker2, ticker3, ticker4, ticker5, ticker6, strategy, a1, a2, a3, a4, a5, a6, colors) Populate a performance metrics comparison table. Caller must create the table with `var` and pass it in. Should only be called on barstate.islast. Parameters: p (table) : Pre-created table (caller uses: var table p = table.new(position.top_left, 8, 15, ...)) ticker1 (simple string) : Asset 1 ticker string ticker2 (simple string) : Asset 2 ticker string ticker3 (simple string) : Asset 3 ticker string ticker4 (simple string) : Asset 4 ticker string ticker5 (simple string) : Asset 5 ticker string ticker6 (simple string) : Asset 6 ticker string strategy (array) : Strategy metrics array (from f_PerformanceMetrics) a1 (array) : Buy-and-hold metrics for asset 1 a2 (array) : Buy-and-hold metrics for asset 2 a3 (array) : Buy-and-hold metrics for asset 3 a4 (array) : Buy-and-hold metrics for asset 4 a5 (array) : Buy-and-hold metrics for asset 5 a6 (array) : Buy-and-hold metrics for asset 6 colors (array) : Array of 8 colors Returns: The table object"
+              - generic [ref=e655]:
+                - generic "Pine Script® library" [ref=e656]:
+                  - img [ref=e657]:
+                    - img [ref=e658]
+                  - generic [ref=e660]: Pine Script® library
+                - link [ref=e661] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4kAsNJom-equity-curve/
+              - generic [ref=e663]:
+                - generic [ref=e664]:
+                  - link "by TheTradingSpiderMan" [ref=e666] [cursor=pointer]:
+                    - /url: /u/TheTradingSpiderMan/
+                    - generic [ref=e667]: by TheTradingSpiderMan
+                  - time [ref=e669]: Mar 19
+                - generic [ref=e670]:
+                  - link "0 comments" [ref=e671] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/4kAsNJom-equity-curve/#chart-view-comment-form
+                    - img [ref=e673]:
+                      - img [ref=e674]
+                  - button "0 boosts 0" [ref=e676]:
+                    - generic [ref=e677]:
+                      - img "0 boosts" [ref=e679]:
+                        - img [ref=e680]
+                      - generic [ref=e686]: "0"
+            - article [ref=e687]:
+              - generic [ref=e688]:
+                - link "GLLV_Helpers" [ref=e689] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/3kWgZ5Xn-GLLV-Helpers/
+                - link [ref=e690] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/3kWgZ5Xn-GLLV-Helpers/
+                  - generic [ref=e692]: "Library \"GLLV_Helpers\" buildAlertMsg(pineLic, ticker, risk, sl, tp, strategyCode) Parameters: pineLic (string) ticker (string) risk (float) sl (float) tp (float) strategyCode (string) isRising(src, points, step) Parameters: src (float) points (int) step (int) regimeOf(pip2, posLimit, negLimit) Parameters: pip2 (float) posLimit (float) negLimit (float) calcMata(fast, mid, slow) Parameters: fast (float) mid (float) slow (float) crossUpByColor(src, ema, pvsraColor, expectedColor) Parameters: src (float) ema (float) pvsraColor (color) expectedColor (color) crossDownByColor(src, ema, pvsraColor, expectedColor) Parameters: src (float) ema (float) pvsraColor (color) expectedColor (color) calcSlope(src, length, mult, method) Parameters: src (float) length (simple int) mult (float) method (string) createDebugTable() updateDebugTable(tbl, row, label, value) Parameters: tbl (table) row (int) label (string) value (string)"
+              - generic [ref=e694]:
+                - generic "Pine Script® library" [ref=e695]:
+                  - img [ref=e696]:
+                    - img [ref=e697]
+                  - generic [ref=e699]: Pine Script® library
+                - link [ref=e700] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/3kWgZ5Xn-GLLV-Helpers/
+              - generic [ref=e702]:
+                - generic [ref=e703]:
+                  - link "by Akmonsalba" [ref=e705] [cursor=pointer]:
+                    - /url: /u/Akmonsalba/
+                    - generic [ref=e706]: by Akmonsalba
+                  - time [ref=e708]: Updated Apr 1
+                - generic [ref=e709]:
+                  - link "0 comments" [ref=e710] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/3kWgZ5Xn-GLLV-Helpers/#chart-view-comment-form
+                    - img [ref=e712]:
+                      - img [ref=e713]
+                  - button "0 boosts 0" [ref=e715]:
+                    - generic [ref=e716]:
+                      - img "0 boosts" [ref=e718]:
+                        - img [ref=e719]
+                      - generic [ref=e725]: "0"
+            - article [ref=e726]:
+              - generic [ref=e727]:
+                - link "FSE v1" [ref=e728] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VMA28fsZ-FSE-v1/
+                - link "Your organizational-level trading machine is officially complete and ready to explore the market!" [ref=e729] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VMA28fsZ-FSE-v1/
+                  - generic [ref=e731]: Your organizational-level trading machine is officially complete and ready to explore the market!
+              - generic [ref=e733]:
+                - generic "Pine Script® library" [ref=e734]:
+                  - img [ref=e735]:
+                    - img [ref=e736]
+                  - generic [ref=e738]: Pine Script® library
+                - link [ref=e739] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VMA28fsZ-FSE-v1/
+              - generic [ref=e741]:
+                - generic [ref=e742]:
+                  - link "by monahdkortyw5e2rr" [ref=e744] [cursor=pointer]:
+                    - /url: /u/monahdkortyw5e2rr/
+                    - generic [ref=e745]: by monahdkortyw5e2rr
+                  - time [ref=e747]: Updated Mar 15
+                - generic [ref=e748]:
+                  - link "0 comments" [ref=e749] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/VMA28fsZ-FSE-v1/#chart-view-comment-form
+                    - img [ref=e751]:
+                      - img [ref=e752]
+                  - button "1 boost 1" [ref=e754]:
+                    - generic [ref=e755]:
+                      - img "1 boost" [ref=e757]:
+                        - img [ref=e758]
+                      - generic [ref=e764]: "1"
+            - article [ref=e765]:
+              - generic [ref=e766]:
+                - link "riskRewardPositionTool" [ref=e767] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/X59JtSp6-riskRewardPositionTool/
+                - link [ref=e768] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/X59JtSp6-riskRewardPositionTool/
+                  - generic [ref=e770]: "I tried making a tool like this a year ago and it didn't work as planned. I'm coming back after having practiced a little more. The script might still have some bugs, sorry about that. The position tool colors are hard-coded to my chart colors, I don't know how to make them changeable, sorry, but the script is open source, so feel free to copy it and change the colors to yours. Library \"riskRewardPositionTool\" drawNewPosition(position) Used to draw a new position on the chart. Parameters: position (positionData) : The position data used to create the drawing objects for the position. Returns: The positionDrawObject instance containing the drawing objects for the position. getExitParams(pos) Gets exit parameters for a position based on the current price action and the position's TP and SL levels. Parameters: pos (positionData) : The position data for which to calculate the exit parameters. Returns: A tuple containing the exit price and the corresponding color for the exit area on the chart. enterOrder(pos, posArray) Used to enter a new position. Parameters: pos (positionData) : The position data for the new position being entered. posArray (array) : The array storing all the positionDrawObject instances for the current chart. The updOrders(posArray) Used to update the drawing objects for an open position on each bar. Call once per bar. Parameters: posArray (array) : The array storing all the positionDrawObject instances for the current chart. Returns: The modified array with updated positionDrawObject instances. positionData positionData Stores relevant data for a position. Fields: entry_x (series int) : X coordinate of the left side of the position tool (time). entry_x2 (series int) : X coordinate of the right side of the position tool (time). entry_y (series float) : price level of the entry. exit_x (series int) : X coordinate of the exit (time). exit_y (series float) : Price level of the exit. sl (series float) : Price level of the stop loss. tp (series float) : Price level of the take profit. posclosed (series bool) : Indicates if the position is closed. Do not change directly. posentered (series bool) : Indicates if the position is entered. Do not change directly. poserror (series bool) : Indicates if there is an error with the position data. Do not change directly. direction (series int) : Direction of the position. 1 for long, -1 for short. Do not change directly. win (series bool) : Indicates if the position was a win. Do not change directly. positionDrawObject positionDrawObject Stores relevant data for a position's drawing objects. Fields: data (positionData) : The position data associated with the drawing objects. tp_box (series box) : The box object representing the take profit area. sl_box (series box) : The box object representing the stop loss area. pnl_box (series box) : The box object overlaid on either the stop loss or take profit area representing open/closed PnL. entry_line (series line) : The line object representing the entry price level. pnl_line (series line) : The diagonal line going from the entry to the exit or current price level. lbl (series label) : The label object showing the risk-to-reward ratio and PnL. arw (series label) : The label object representing the arrow pointing to the entry price level. arw_ext (series label) : The label object representing the extension of the arrow pointing to the entry check (series bool) : A boolean used for internal checks when updating the drawing objects. Do not change directly."
+              - generic [ref=e772]:
+                - generic "Pine Script® library" [ref=e773]:
+                  - img [ref=e774]:
+                    - img [ref=e775]
+                  - generic [ref=e777]: Pine Script® library
+                - link [ref=e778] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/X59JtSp6-riskRewardPositionTool/
+              - generic [ref=e780]:
+                - generic [ref=e781]:
+                  - link "by k4sual" [ref=e783] [cursor=pointer]:
+                    - /url: /u/k4sual/
+                    - generic [ref=e784]: by k4sual
+                  - time [ref=e786]: Updated Mar 21
+                - generic [ref=e787]:
+                  - link "1 comment" [ref=e788] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/X59JtSp6-riskRewardPositionTool/#chart-view-comment-form
+                    - img [ref=e790]:
+                      - img [ref=e791]
+                    - generic [ref=e794]: "1"
+                  - button "10 boosts 1 0" [ref=e795]:
+                    - generic [ref=e796]:
+                      - img "10 boosts" [ref=e798]:
+                        - img [ref=e799]
+                      - generic [ref=e803]:
+                        - generic [ref=e805]: "1"
+                        - generic [ref=e807]: "0"
+            - article [ref=e808]:
+              - generic [ref=e809]:
+                - link "Letras_Lecaps_Library" [ref=e810] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/1QGcHVwN/
+                - link [ref=e811] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/1QGcHVwN/
+                  - generic [ref=e813]: "--- **Letras_Lecaps_Library — Argentine Fixed-Rate Instruments & Dollar Futures Data** Pine Script library that provides centralized reference data for Argentine Lecaps, Boncaps, and Matba-Rofex Dollar Futures contracts. Designed to be imported by indicators and strategies that need ticker symbols, maturity dates, and redemption prices without hardcoding them. **What's inside** The library exports simple accessor functions for three instrument classes: - **Lecaps** (9 series): BCBA tickers, maturity price per VN100 (Monto_al_Vto), and payment date for each active short-term zero-coupon treasury bill. - **Boncaps** (6 series): Same structure as Lecaps, covering longer-term capitalization bonds. - **Dollar Futures** (12 contracts): MATBAROFEX tickers and expiry dates for USD/ARS futures. Count functions (`lecapCount()`, `boncapCount()`, `futuresCount()`) return the number of active instruments in each category, so consuming scripts can adapt dynamically. **Data sources** - Lecaps & Boncaps: IAMC (Instituto Argentino de Mercado de Capitales) periodic report. - Dollar Futures: A3 Mercados (Matba-Rofex), expiry dates verified against TradingView contract pages. **How to use** ```pine import EcoValores/Letras_Lecaps_Library/1 as lib // Get the ticker and maturity data for the first Lecap ticker = lib.lecapTicker1() // \"BCBA:S27F6\" matPx = lib.lecapMaturityPrice1() // 125.84 matDt = lib.lecapMaturityDate1() // timestamp for 27/02/2026 ``` **Update cycle** This library reflects a point-in-time snapshot. It should be updated and republished after each public auction or when new IAMC data becomes available. Expired instruments are removed and new ones added, with count functions adjusted accordingly. The last data source date is noted in the script header. **Related** This library is the data backend for the **Breakeven Lecaps_Boncaps** indicator, which uses it to calculate and plot breakeven USD exchange rates across the term structure. --- **Descripción en Español** Librería Pine Script que centraliza los datos de referencia de Lecaps, Boncaps y contratos de Dólar Futuro de Matba-Rofex. Diseñada para ser importada por indicadores y estrategias que necesitan tickers, fechas de vencimiento y precios de rescate sin codificarlos directamente. Exporta funciones de acceso para tres clases de instrumentos: Lecaps (9 series, tickers BCBA, precio al vencimiento por VN100 y fecha de pago), Boncaps (6 series, misma estructura), y Dólar Futuro (12 contratos, tickers MATBAROFEX y fecha de expiración). Las funciones de conteo permiten que los scripts consumidores se adapten dinámicamente. Fuentes de datos: Lecaps y Boncaps del informe periódico del IAMC; Dólar Futuro de A3 Mercados (Matba-Rofex). La librería refleja una foto puntual y debe republicarse tras cada licitación o cuando haya nuevos datos disponibles. Esta librería es el backend de datos del indicador **Breakeven Lecaps_Boncaps**, que la utiliza para calcular y graficar el tipo de cambio breakeven en dólares a lo largo de la curva. --- **Disclaimer / Aviso legal** This library is for informational and educational purposes only. It does not constitute investment advice. Data may be incomplete, delayed, or inaccurate. Verify all tickers and values independently before use. Past performance is not indicative of future results. Consult a licensed financial advisor before making investment decisions. Esta librería es solo para fines informativos y educativos. No constituye asesoramiento de inversión. Los datos pueden ser incompletos, estar demorados o ser inexactos. Verifique todos los tickers y valores de forma independiente antes de utilizarla. El rendimiento pasado no es indicativo de resultados futuros. Consulte a un asesor financiero matriculado antes de invertir."
+              - generic [ref=e815]:
+                - generic "Pine Script® library" [ref=e816]:
+                  - img [ref=e817]:
+                    - img [ref=e818]
+                  - generic [ref=e820]: Pine Script® library
+                - link [ref=e821] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/1QGcHVwN/
+              - generic [ref=e823]:
+                - generic [ref=e824]:
+                  - link "by Eco Valores" [ref=e826] [cursor=pointer]:
+                    - /url: /u/EcoValores/
+                    - generic [ref=e827]: by Eco Valores
+                  - time [ref=e829]: Feb 20
+                - generic [ref=e830]:
+                  - link "0 comments" [ref=e831] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/1QGcHVwN/#chart-view-comment-form
+                    - img [ref=e833]:
+                      - img [ref=e834]
+                  - button "3 boosts 3" [ref=e836]:
+                    - generic [ref=e837]:
+                      - img "3 boosts" [ref=e839]:
+                        - img [ref=e840]
+                      - generic [ref=e846]: "3"
+            - article [ref=e847]:
+              - generic [ref=e848]:
+                - link "LECAPS_BONCAP_DUALES_Library" [ref=e849] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/8y1NJ7Bx/
+                - link [ref=e850] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/8y1NJ7Bx/
+                  - generic [ref=e852]: "LECAPS BONCAP DUALES Library - Argentine Fixed Income Data =========================================================== Library containing instrument data for Argentine Treasury fixed-rate securities (LECAPs, BONCAPs, and DUALES) and Dólar Futures contracts. 📊 CONTENTS ----------- • LECAP (9 instruments): Zero-coupon treasury notes with \"S\" prefix • BONCAP (6 instruments): Fixed-rate treasury bonds with \"T\" prefix • DUALES (2 instruments): Dual-rate TAMAR-linked bonds with \"M\" prefix • Dólar Futures (11 contracts): ROFEX USD/ARS futures (Feb-Dec 2026) 📈 DATA PROVIDED ---------------- For each instrument: • Ticker symbol (full and short versions) • Maturity price (precio de vencimiento) • Maturity date/timestamp 🔧 EXPORTED FUNCTIONS --------------------- // Counts getLecapCount() → int getBoncapCount() → int getDualesCount() → int getDolarFuturesCount() → int // LECAP data getLecapTicker(index) → string // e.g., \"BCBA:S27F6\" getLecapTickerShort(index) → string // e.g., \"S27F6\" getLecapMaturityPrice(index) → float // e.g., 125.84 getLecapMaturityTimestamp(index) → int // BONCAP data getBoncapTicker(index) → string getBoncapTickerShort(index) → string getBoncapMaturityPrice(index) → float getBoncapMaturityTimestamp(index) → int // DUALES data getDualesTicker(index) → string getDualesTickerShort(index) → string getDualesMaturityPrice(index) → float getDualesMaturityTimestamp(index) → int // Dólar Futures data getDolarFuturesTicker(index) → string // e.g., \"ROFEX:DLRG2026\" getDolarFuturesShort(index) → string // e.g., \"DLR Feb26\" getDolarFuturesExpiry(index) → int // Helpers isExpired(maturityTs) → bool getDaysToMaturity(maturityTs) → int 💡 USAGE EXAMPLE ---------------- import YourUsername/LECAPS_BONCAP_DUALES_Library/1 as lib // Get LECAP count and iterate for i = 0 to lib.getLecapCount() - 1 ticker = lib.getLecapTickerShort(i) maturityPrice = lib.getLecapMaturityPrice(i) maturityTs = lib.getLecapMaturityTimestamp(i) if not lib.isExpired(maturityTs) // Process active instrument daysLeft = lib.getDaysToMaturity(maturityTs) 📅 INSTRUMENTS (as of 2026-02-11) --------------------------------- LECAP: S27F6 (27-Feb-26), S16M6 (16-Mar-26), S17A6 (17-Apr-26), S30A6 (30-Apr-26), S29Y6 (29-May-26), S31L6 (31-Jul-26), S31G6 (31-Aug-26), S30O6 (30-Oct-26), S30N6 (30-Nov-26) BONCAP: T13F6 (13-Feb-26), T30J6 (30-Jun-26), T15E7 (15-Jan-27), T30A7 (30-Apr-27), T31Y7 (31-May-27), T30J7 (30-Jun-27) DUALES: M27F6 (27-Feb-26), M30A6 (30-Apr-26) DÓLAR FUTURES: DLRG2026 (Feb), DLRH2026 (Mar), DLRJ2026 (Apr), DLRK2026 (May), DLRM2026 (Jun), DLRN2026 (Jul), DLRQ2026 (Aug), DLRU2026 (Sep), DLRV2026 (Oct), DLRX2026 (Nov), DLRZ2026 (Dec) ⚠️ NOTES -------- • Data is updated periodically as new instruments are issued • Expired instruments are automatically filtered via isExpired() • Maturity prices are set at public auction (licitación) • Use with the companion indicator \"Breakeven LECAPs BONCAPs DUALES\" 🏷️ TAGS ------- argentina, lecap, boncap, duales, treasury, fixed-income, bonds, letras, bonos, dolar, futures, rofex, bcba, breakeven"
+              - generic [ref=e854]:
+                - generic "Pine Script® library" [ref=e855]:
+                  - img [ref=e856]:
+                    - img [ref=e857]
+                  - generic [ref=e859]: Pine Script® library
+                - link [ref=e860] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/8y1NJ7Bx/
+              - generic [ref=e862]:
+                - generic [ref=e863]:
+                  - link "by Eco Valores" [ref=e865] [cursor=pointer]:
+                    - /url: /u/EcoValores/
+                    - generic [ref=e866]: by Eco Valores
+                  - time [ref=e868]: Feb 12
+                - generic [ref=e869]:
+                  - link "0 comments" [ref=e870] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/8y1NJ7Bx/#chart-view-comment-form
+                    - img [ref=e872]:
+                      - img [ref=e873]
+                  - button "1 boost 1" [ref=e875]:
+                    - generic [ref=e876]:
+                      - img "1 boost" [ref=e878]:
+                        - img [ref=e879]
+                      - generic [ref=e885]: "1"
+            - article [ref=e886]:
+              - generic [ref=e887]:
+                - link "Vantage_News" [ref=e888] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Hs3SNCWB-Vantage-News/
+                - link [ref=e889] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Hs3SNCWB-Vantage-News/
+                  - generic [ref=e891]: "Vantage News is a Pine Script library that provides pre-market economic event filtering defaults intended for strategies that trade on YM futures. It determines a default for whether trading should be blocked, delayed, or allowed on any given day. Core Concept News events are pre-compiled into Pine Script data libraries organized by half-year (LO1_News2025H1, LO1_News2025H2, etc.), updated weekly on Sundays. There are no API calls — events are baked into arrays of dates, times, type IDs, and severities. Severity System Can be configured to define or override three default severity tiers: - Sev 3 (CPI, NFP, FOMC) — defaults to blocks the entire day or delays, depending on policy - Sev 2 (ISM PMI, claims) — defaults to delay trading until the event time + a configurable post-delay window - Sev 1 (secondary indicators) — defaults to no delays Blocking vs Delaying - Block: No trading for the full session. WillTradeToday() returns false. - Delay: Trading allowed after eventTime + delayMinutes. IsDelayed(currentTimeMs) returns true until the release time passes. Provides a per-event-type policy mechanism so overrides can force any event to block, delay, or be ignored regardless of its base severity. Next Trading Window Calculation FindNextTradingWindow() scans forward up to 14 days, skipping weekends and blocked days based on the provided configuration. If the next tradeable day has a delay, it returns the delayed start time — so an info panel can show e.g. \"Mon 7:35 AM\" to indicate the next trading opening Exception Mappings Each half-year library can ship per-event-type overrides (different severity, custom delay minutes, tags). When the applyLibExceptionMappings configuration is enabled, these override the base severity — allowing the data to carry date-specific adjustments. Special Handling CME early close days are encoded as a special event type. CheckCmeEarlyClose() returns a halt timestamp so a strategy can truncate the session. Caching Evaluation is lazy and memoized by date string — EvaluateForDate() only recomputes when the date changes. The event cache is built once at initialization via a day index for fast date lookups."
+              - generic [ref=e893]:
+                - generic "Pine Script® library" [ref=e894]:
+                  - img [ref=e895]:
+                    - img [ref=e896]
+                  - generic [ref=e898]: Pine Script® library
+                - link [ref=e899] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Hs3SNCWB-Vantage-News/
+              - generic [ref=e901]:
+                - generic [ref=e902]:
+                  - link "by Vantage-Stack" [ref=e904] [cursor=pointer]:
+                    - /url: /u/Vantage-Stack/
+                    - generic [ref=e905]: by Vantage-Stack
+                  - time [ref=e907]: Updated Apr 14
+                - generic [ref=e908]:
+                  - link "0 comments" [ref=e909] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/Hs3SNCWB-Vantage-News/#chart-view-comment-form
+                    - img [ref=e911]:
+                      - img [ref=e912]
+                  - button "1 boost 1" [ref=e914]:
+                    - generic [ref=e915]:
+                      - img "1 boost" [ref=e917]:
+                        - img [ref=e918]
+                      - generic [ref=e924]: "1"
+            - article [ref=e925]:
+              - generic [ref=e926]:
+                - link "TPOSmartMoneyLib" [ref=e927] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/v1iaI2iv-TPOSmartMoneyLib/
+                - link [ref=e928] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/v1iaI2iv-TPOSmartMoneyLib/
+                  - generic [ref=e930]: "Library \"TPOSmartMoneyLib\" Library for TPO (Time Price Opportunity) and Smart Money concepts including session management, PDH/PDL detection, sweeping logic, and volume profile utilities f_price_to_tick(p) Convert price to tick Parameters: p (float) : Price value Returns: Tick value f_tick_to_row(t, row_ticks_in) Convert tick to row Parameters: t (int) : Tick value row_ticks_in (int) : Number of ticks per row Returns: Row index f_row_to_price(row, row_ticks_in) Convert row to price (midpoint) Parameters: row (int) : Row index row_ticks_in (int) : Number of ticks per row Returns: Price at row midpoint f_calc_row_ticks(natr_ref, row_gran_mult) Calculate dynamic row size based on normalized ATR Parameters: natr_ref (float) : Daily normalized ATR reference value row_gran_mult (float) : Row granularity multiplier Returns: Number of ticks per row f_more_transp_pct(c, pct) Increase color transparency by percentage Parameters: c (color) : Input color pct (float) : Percentage to increase transparency (0.0 to 1.0) Returns: Color with increased transparency f_dom_color(dom, buy_col, sell_col, gamma, transp_weak, transp_strong) Calculate dominance color based on buy/sell ratio Parameters: dom (float) : Dominance ratio (-1 to 1, negative = sell, positive = buy) buy_col (color) : Buy dominant color sell_col (color) : Sell dominant color gamma (float) : Gamma correction for color intensity transp_weak (int) : Transparency for weak dominance transp_strong (int) : Transparency for strong dominance Returns: Blended color f_sess_part(sess_str, get_start) Parse session string to get start or end time Parameters: sess_str (string) : Session string in format \"HHMM-HHMM\" get_start (bool) : True to get start time, false to get end time Returns: Time string in HHMM format f_hhmm_to_h(hhmm) Convert HHMM string to hours Parameters: hhmm (string) : Time string in HHMM format Returns: Hours (0-23) f_hhmm_to_m(hhmm) Convert HHMM string to minutes Parameters: hhmm (string) : Time string in HHMM format Returns: Minutes (0-59) f_prev_day_window_bounds(today_day_rth, win_start, win_end, session_tz) Calculate previous day window bounds Parameters: today_day_rth (int) : Today's RTH start timestamp win_start (string) : Window start time in HHMM format win_end (string) : Window end time in HHMM format session_tz (string) : Session timezone Returns: Tuple of f_default_session_colors() Get default session colors Returns: Array of 4 colors f_session_names() Get session names Returns: Array of 4 session names f_process_hl(arr, rng, keep_bars, lock_to_live) Process high/low lines with sweeping detection Parameters: arr (array) : Array of HLLine objects rng (float) : Price range for visibility filtering keep_bars (int) : Maximum bars to keep lines lock_to_live (bool) : Whether to lock line end to current bar Returns: 0 (for chaining) f_process_naked_lines(arr, calc_bars, bars_per_day, keep_to_day_end) Process naked lines (POC/VAH/VAL) with sweeping detection Parameters: arr (array) : Array of NakedLine objects calc_bars (int) : Maximum calculation bars bars_per_day (int) : Bars per day for scope calculation keep_to_day_end (bool) : Whether to extend to day end Returns: 0 (for chaining) f_update_pdhl_lines(pd_hl, pdh, pdl, new_day, pd_rng, bars_per_day, pdh_color, pdl_color) Detect and create PDH/PDL lines Parameters: pd_hl (array) : Array to store HLLine objects pdh (float) : Previous day high pdl (float) : Previous day low new_day (bool) : Whether it's a new day pd_rng (float) : Price range for visibility bars_per_day (int) : Bars per day pdh_color (color) : PDH line color pdl_color (color) : PDL line color Returns: 0 (for chaining) f_poc_from_vals(keys, vals) Calculate POC from sorted keys and values Parameters: keys (array) : Sorted array of row keys vals (array) : Array of volume values Returns: POC row key f_value_area(keys, vals, poc_key, va_pct) Calculate Value Area from volume distribution Parameters: keys (array) : Sorted array of row keys vals (array) : Array of volume values poc_key (int) : POC row key va_pct (float) : Value Area percentage (typically 0.70) Returns: Tuple of f_find_key_sorted(keys, target) Find key in sorted array using binary search Parameters: keys (array) : Sorted array of keys target (int) : Target key to find Returns: Index of key, or -1 if not found f_zscore_safe(x, len) Safe z-score calculation using built-in functions Parameters: x (float) : Input series len (int) : Lookback length Returns: Z-score HLLine Represents a high/low line with sweeping detection Fields: ln (series line) : Line object lb (series label) : Label object lvl (series float) : Price level startBar (series int) : Bar index where line starts swept (series bool) : Whether the level has been swept isHigh (series bool) : True if this is a high, false if low col (series color) : Line color NakedLine Represents a naked POC/VAH/VAL line Fields: ln (series line) : Line object lb (series label) : Label object lvl (series float) : Price level startBar (series int) : Bar index where line starts swept (series bool) : Whether the level has been swept sweptBar (series int) : Bar index where swept occurred endBar (series int) : Bar index where line should end"
+              - generic [ref=e932]:
+                - generic "Pine Script® library" [ref=e933]:
+                  - img [ref=e934]:
+                    - img [ref=e935]
+                  - generic [ref=e937]: Pine Script® library
+                - link [ref=e938] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/v1iaI2iv-TPOSmartMoneyLib/
+              - generic [ref=e940]:
+                - generic [ref=e941]:
+                  - link "by cybermediaboy" [ref=e943] [cursor=pointer]:
+                    - /url: /u/cybermediaboy/
+                    - generic [ref=e944]: by cybermediaboy
+                  - time [ref=e946]: Updated Jan 30
+                - generic [ref=e947]:
+                  - link "0 comments" [ref=e948] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/v1iaI2iv-TPOSmartMoneyLib/#chart-view-comment-form
+                    - img [ref=e950]:
+                      - img [ref=e951]
+                  - button "1 boost 1" [ref=e953]:
+                    - generic [ref=e954]:
+                      - img "1 boost" [ref=e956]:
+                        - img [ref=e957]
+                      - generic [ref=e963]: "1"
+            - article [ref=e964]:
+              - generic [ref=e965]:
+                - link "LiveTracker by N&M" [ref=e966] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/pHfTJlS9/
+                - link "LiveTracker is a real-time trade execution and accounting engine built on top of statistically validated backtest states. It mirrors live trading conditions with precise fee modeling, partial take-profits, trailing stops, and liquidation logic. Each trade is tracked with both mark-to-market PnL and “net if closed now” metrics for full transparency. Designed as a modular Pine Script® library, it enables reliable, state-driven live execution without repainting." [ref=e967] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/pHfTJlS9/
+                  - generic [ref=e969]: LiveTracker is a real-time trade execution and accounting engine built on top of statistically validated backtest states. It mirrors live trading conditions with precise fee modeling, partial take-profits, trailing stops, and liquidation logic. Each trade is tracked with both mark-to-market PnL and “net if closed now” metrics for full transparency. Designed as a modular Pine Script® library, it enables reliable, state-driven live execution without repainting.
+              - generic [ref=e971]:
+                - generic "Pine Script® library" [ref=e972]:
+                  - img [ref=e973]:
+                    - img [ref=e974]
+                  - generic [ref=e976]: Pine Script® library
+                - link [ref=e977] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/pHfTJlS9/
+              - generic [ref=e979]:
+                - generic [ref=e980]:
+                  - link "by N_M_" [ref=e982] [cursor=pointer]:
+                    - /url: /u/N_M_/
+                    - generic [ref=e983]: by N_M_
+                  - time [ref=e985]: Updated Jan 24
+                - generic [ref=e986]:
+                  - link "0 comments" [ref=e987] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/pHfTJlS9/#chart-view-comment-form
+                    - img [ref=e989]:
+                      - img [ref=e990]
+                  - button "0 boosts 0" [ref=e992]:
+                    - generic [ref=e993]:
+                      - img "0 boosts" [ref=e995]:
+                        - img [ref=e996]
+                      - generic [ref=e1002]: "0"
+            - article [ref=e1003]:
+              - generic [ref=e1004]:
+                - link "ArgentinaBondsLib - Argentina Sovereign Bonds Cashflow Library" [ref=e1005] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IRvUmO6p/
+                - link [ref=e1006] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IRvUmO6p/
+                  - generic [ref=e1008]: "ArgentinaBondsLib A Pine Script v6 library providing cashflow data and financial calculation functions for Argentine sovereign bonds (Bonares and Globales). ## Supported Bonds **Bonares** (Argentina legislation, USD MEP): AE38, AL29, AL30, AL35, AL41, AN29 **Globales** (Foreign legislation, USD Cable): GD29, GD30, GD35, GD38, GD41, GD46 ## Exported Functions ### Cashflow Data - `getCashflows_ ()` - Returns timestamps, cashflows, and count for each bond ### Bond Identification - `getBondType(ticker)` - Returns BONAR() or GLOBAL() - `getBaseTicker(ticker)` - Extracts base ticker without prefix/suffix - `getCurrencyType(ticker)` - Returns 0=ARS, 1=MEP, 2=Cable - `isSupported(baseTicker)` - Checks if bond is supported ### Financial Calculations - `calcPV()` - Present Value calculation - `calcIRR()` - Internal Rate of Return using Newton-Raphson method - `calcPriceFromIRR()` - Calculate price from target IRR ### Currency Conversion - `convertToNativeCurrency()` - Converts price to cashflow currency (MEP for Bonares, Cable for Globales) ### Utilities - `getSettlementDate()` - Returns T+1 timestamp - `BONAR()` / `GLOBAL()` - Bond type constants ## Methodology - Day count convention: Actual/365 - Settlement: T+1 - IRR solver: Newton-Raphson iterative method ## Usage Example ``` import EcoValores/ArgentinaBondsLib/1 as Bonds = Bonds.getCashflows_AL30() settlementDate = Bonds.getSettlementDate() irr = Bonds.calcIRR(ts, cf, count, settlementDate, close) ``` --- ## Español Librería Pine Script v6 con datos de flujos de fondos y funciones de cálculo financiero para bonos soberanos argentinos. ### Bonos Soportados - **Bonares** (Legislación argentina, USD MEP): AE38, AL29, AL30, AL35, AL41, AN29 - **Globales** (Legislación extranjera, USD Cable): GD29, GD30, GD35, GD38, GD41, GD46 ### Metodología - Convención de días: Actual/365 - Liquidación: T+1 - Solver TIR: Método iterativo Newton-Raphson --- **DISCLAIMER**: This library is for informational and educational purposes only. Eco Valores S.A. does NOT provide investment advice or recommendations. Consult a qualified financial advisor before making investment decisions. **AVISO LEGAL**: Esta librería es solo para fines informativos y educativos. Eco Valores S.A. NO brinda asesoramiento ni recomendaciones de inversión. Consulte con un asesor financiero calificado antes de invertir."
+              - generic [ref=e1010]:
+                - generic "Pine Script® library" [ref=e1011]:
+                  - img [ref=e1012]:
+                    - img [ref=e1013]
+                  - generic [ref=e1015]: Pine Script® library
+                - link [ref=e1016] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IRvUmO6p/
+              - generic [ref=e1018]:
+                - generic [ref=e1019]:
+                  - link "by Eco Valores" [ref=e1021] [cursor=pointer]:
+                    - /url: /u/EcoValores/
+                    - generic [ref=e1022]: by Eco Valores
+                  - time [ref=e1024]: Updated Feb 25
+                - generic [ref=e1025]:
+                  - link "0 comments" [ref=e1026] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/IRvUmO6p/#chart-view-comment-form
+                    - img [ref=e1028]:
+                      - img [ref=e1029]
+                  - button "4 boosts 4" [ref=e1031]:
+                    - generic [ref=e1032]:
+                      - img "4 boosts" [ref=e1034]:
+                        - img [ref=e1035]
+                      - generic [ref=e1041]: "4"
+          - button "Show more publications" [ref=e1042]:
+            - generic [ref=e1043]: Show more publications
+          - generic [ref=e1047]:
+            - navigation "Pagination" [ref=e1048]:
+              - button "Previous page" [disabled] [ref=e1049]:
+                - img [ref=e1051]:
+                  - img [ref=e1052]
+              - generic [ref=e1054]:
+                - link "1" [ref=e1055] [cursor=pointer]:
+                  - /url: /scripts/strategies/?
+                  - generic [ref=e1056]: "1"
+                - link "2" [ref=e1057] [cursor=pointer]:
+                  - /url: /scripts/strategies/page-2/?
+                  - generic [ref=e1058]: "2"
+                - link "3" [ref=e1059] [cursor=pointer]:
+                  - /url: /scripts/strategies/page-3/?
+                  - generic [ref=e1060]: "3"
+                - link "4" [ref=e1061] [cursor=pointer]:
+                  - /url: /scripts/strategies/page-4/?
+                  - generic [ref=e1062]: "4"
+                - link "5" [ref=e1063] [cursor=pointer]:
+                  - /url: /scripts/strategies/page-5/?
+                  - generic [ref=e1064]: "5"
+                - link "6" [ref=e1065] [cursor=pointer]:
+                  - /url: /scripts/strategies/page-6/?
+                  - generic [ref=e1066]: "6"
+                - link "7" [ref=e1067] [cursor=pointer]:
+                  - /url: /scripts/strategies/page-7/?
+                  - generic [ref=e1068]: "7"
+              - button "Next page" [ref=e1069]:
+                - img [ref=e1071]:
+                  - img [ref=e1072]
+            - generic:
+              - generic:
+                - generic: …
+                - generic:
+                  - generic: "999"
+                - button:
+                  - generic:
+                    - img:
+                      - img
+    - contentinfo [ref=e1074]:
+      - generic [ref=e1076]:
+        - separator [ref=e1077]
+        - generic [ref=e1078]:
+          - generic [ref=e1079]:
+            - generic [ref=e1080]:
+              - generic [ref=e1081]:
+                - link "TradingView main page" [ref=e1082] [cursor=pointer]:
+                  - /url: /
+                - generic [ref=e1084]:
+                  - link "TradingView on X" [ref=e1085] [cursor=pointer]:
+                    - /url: https://x.com/tradingview/
+                    - img [ref=e1087]:
+                      - img [ref=e1088]
+                  - link "TradingView on Facebook" [ref=e1090] [cursor=pointer]:
+                    - /url: https://www.facebook.com/tradingview/
+                    - img [ref=e1092]:
+                      - img [ref=e1093]
+                  - link "TradingView on YouTube" [ref=e1095] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@TradingView
+                    - img [ref=e1097]:
+                      - img [ref=e1098]
+                  - link "TradingView on Instagram" [ref=e1100] [cursor=pointer]:
+                    - /url: https://www.instagram.com/tradingview/
+                    - img [ref=e1102]:
+                      - img [ref=e1103]
+                  - link "TradingView on LinkedIn" [ref=e1105] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/tradingview/
+                    - img [ref=e1107]:
+                      - img [ref=e1108]
+                  - link "TradingView on Telegram" [ref=e1110] [cursor=pointer]:
+                    - /url: https://t.me/tradingview/
+                    - img [ref=e1112]:
+                      - img [ref=e1113]
+                  - link "TradingView on TikTok" [ref=e1115] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@tradingview/
+                    - img [ref=e1117]:
+                      - img [ref=e1118]
+                  - link "TradingView on Reddit" [ref=e1120] [cursor=pointer]:
+                    - /url: https://www.reddit.com/r/TradingView/
+                    - img [ref=e1122]:
+                      - img [ref=e1123]
+              - generic [ref=e1125]:
+                - button "English" [ref=e1126]:
+                  - img [ref=e1128]:
+                    - img [ref=e1129]
+                  - generic [ref=e1132]: English
+                  - img [ref=e1133]:
+                    - img [ref=e1134]
+                - paragraph [ref=e1136]:
+                  - generic [ref=e1137]:
+                    - text: Select market data provided by
+                    - link "ICE Data Services" [ref=e1138] [cursor=pointer]:
+                      - /url: https://www.theice.com/market-data
+                    - text: .
+                  - generic [ref=e1139]: Select reference data provided by FactSet. Copyright © 2026 FactSet Research Systems Inc.
+                  - generic [ref=e1140]: Copyright © 2026, American Bankers Association. CUSIP Database provided by FactSet Research Systems Inc. All rights reserved.
+                  - generic [ref=e1141]:
+                    - text: SEC fillings and other documents provided by
+                    - link "Quartr" [ref=e1142] [cursor=pointer]:
+                      - /url: https://www.quartr.com
+                    - text: .
+                  - generic [ref=e1143]: © 2026 TradingView, Inc.
+            - generic [ref=e1144]:
+              - generic [ref=e1145]:
+                - generic [ref=e1146]:
+                  - generic [ref=e1147]: More than a product
+                  - list [ref=e1148]:
+                    - listitem [ref=e1149]:
+                      - link "Supercharts" [ref=e1150] [cursor=pointer]:
+                        - /url: /chart/
+                - generic [ref=e1151]:
+                  - generic [ref=e1152]: Screeners
+                  - list [ref=e1153]:
+                    - listitem [ref=e1154]:
+                      - link "Stocks" [ref=e1155] [cursor=pointer]:
+                        - /url: /screener/
+                    - listitem [ref=e1156]:
+                      - link "ETFs" [ref=e1157] [cursor=pointer]:
+                        - /url: /etf-screener/
+                    - listitem [ref=e1158]:
+                      - link "Bonds" [ref=e1159] [cursor=pointer]:
+                        - /url: /bond-screener/
+                    - listitem [ref=e1160]:
+                      - link "Crypto coins" [ref=e1161] [cursor=pointer]:
+                        - /url: /crypto-coins-screener/
+                    - listitem [ref=e1162]:
+                      - link "CEX pairs" [ref=e1163] [cursor=pointer]:
+                        - /url: /cex-screener/
+                    - listitem [ref=e1164]:
+                      - link "DEX pairs" [ref=e1165] [cursor=pointer]:
+                        - /url: /dex-screener/
+                    - listitem [ref=e1166]:
+                      - link "Pine" [ref=e1167] [cursor=pointer]:
+                        - /url: /pine-screener/
+                - generic [ref=e1168]:
+                  - generic [ref=e1169]: Heatmaps
+                  - list [ref=e1170]:
+                    - listitem [ref=e1171]:
+                      - link "Stocks" [ref=e1172] [cursor=pointer]:
+                        - /url: /heatmap/stock/
+                    - listitem [ref=e1173]:
+                      - link "ETFs" [ref=e1174] [cursor=pointer]:
+                        - /url: /heatmap/etf/
+                    - listitem [ref=e1175]:
+                      - link "Crypto coins" [ref=e1176] [cursor=pointer]:
+                        - /url: /heatmap/crypto/
+                - generic [ref=e1177]:
+                  - generic [ref=e1178]: Calendars
+                  - list [ref=e1179]:
+                    - listitem [ref=e1180]:
+                      - link "Economic" [ref=e1181] [cursor=pointer]:
+                        - /url: /economic-calendar/
+                    - listitem [ref=e1182]:
+                      - link "Earnings" [ref=e1183] [cursor=pointer]:
+                        - /url: /earnings-calendar/
+                    - listitem [ref=e1184]:
+                      - link "Dividends" [ref=e1185] [cursor=pointer]:
+                        - /url: /dividend-calendar/
+                - generic [ref=e1186]:
+                  - generic [ref=e1187]: More products
+                  - list [ref=e1188]:
+                    - listitem [ref=e1189]:
+                      - link "Yield Curves" [ref=e1190] [cursor=pointer]:
+                        - /url: /yield-curves/
+                    - listitem [ref=e1191]:
+                      - link "Options" [ref=e1192] [cursor=pointer]:
+                        - /url: /options/
+                    - listitem [ref=e1193]:
+                      - link "Macro Maps" [ref=e1194] [cursor=pointer]:
+                        - /url: /macro-maps/
+                    - listitem [ref=e1195]:
+                      - link "News Flow" [ref=e1196] [cursor=pointer]:
+                        - /url: /news-flow/
+                    - listitem [ref=e1197]:
+                      - link "Pine Script®" [ref=e1198] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/pine-script-docs/
+                - generic [ref=e1199]:
+                  - generic [ref=e1200]: Apps
+                  - list [ref=e1201]:
+                    - listitem [ref=e1202]:
+                      - link "Mobile" [ref=e1203] [cursor=pointer]:
+                        - /url: /mobile/
+                    - listitem [ref=e1204]:
+                      - link "Desktop" [ref=e1205] [cursor=pointer]:
+                        - /url: /desktop/
+              - generic [ref=e1206]:
+                - generic [ref=e1207]:
+                  - generic [ref=e1208]: Tools & subscriptions
+                  - list [ref=e1209]:
+                    - listitem [ref=e1210]:
+                      - link "Features" [ref=e1211] [cursor=pointer]:
+                        - /url: /features/
+                    - listitem [ref=e1212]:
+                      - link "Pricing" [ref=e1213] [cursor=pointer]:
+                        - /url: /pricing/?source=footer&feature=pricing
+                    - listitem [ref=e1214]:
+                      - link "Market data" [ref=e1215] [cursor=pointer]:
+                        - /url: /data-coverage/
+                    - listitem [ref=e1216]:
+                      - link "Gift plans" [ref=e1217] [cursor=pointer]:
+                        - /url: /gifts/
+                - generic [ref=e1218]:
+                  - generic [ref=e1219]: Trading
+                  - list [ref=e1220]:
+                    - listitem [ref=e1221]:
+                      - link "Overview" [ref=e1222] [cursor=pointer]:
+                        - /url: /trading/
+                    - listitem [ref=e1223]:
+                      - link "Top brokers" [ref=e1224] [cursor=pointer]:
+                        - /url: /brokers/
+                    - listitem [ref=e1225]:
+                      - link "Brokers comparison" [ref=e1226] [cursor=pointer]:
+                        - /url: /brokers/compare/
+                - generic [ref=e1227]:
+                  - generic [ref=e1228]: Special offers
+                  - list [ref=e1229]:
+                    - listitem [ref=e1230]:
+                      - link "CME Group futures" [ref=e1231] [cursor=pointer]:
+                        - /url: /cme/
+                    - listitem [ref=e1232]:
+                      - link "Eurex futures" [ref=e1233] [cursor=pointer]:
+                        - /url: /eurex/
+                    - listitem [ref=e1234]:
+                      - link "US stocks bundle" [ref=e1235] [cursor=pointer]:
+                        - /url: /us-markets-bundle/
+                - generic [ref=e1236]:
+                  - generic [ref=e1237]: About company
+                  - list [ref=e1238]:
+                    - listitem [ref=e1239]:
+                      - link "Who we are" [ref=e1240] [cursor=pointer]:
+                        - /url: /about/
+                    - listitem [ref=e1241]:
+                      - link "Space mission" [ref=e1242] [cursor=pointer]:
+                        - /url: /space-mission/
+                    - listitem [ref=e1243]:
+                      - link "Blog" [ref=e1244] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/blog/en/
+                    - listitem [ref=e1245]:
+                      - link "Careers" [ref=e1246] [cursor=pointer]:
+                        - /url: /careers/
+                    - listitem [ref=e1247]:
+                      - link "Media kit" [ref=e1248] [cursor=pointer]:
+                        - /url: /media-kit/
+                - generic [ref=e1249]:
+                  - generic [ref=e1250]: Merch
+                  - list [ref=e1251]:
+                    - listitem [ref=e1252]:
+                      - link "TradingView store" [ref=e1253] [cursor=pointer]:
+                        - /url: https://tradingviewstore.com/
+                    - listitem [ref=e1254]:
+                      - link "Tarot cards for traders" [ref=e1255] [cursor=pointer]:
+                        - /url: /tarot-reading/
+                    - listitem [ref=e1256]:
+                      - link "The C63 TradeTime" [ref=e1257] [cursor=pointer]:
+                        - /url: /tradetime/
+                - generic [ref=e1258]:
+                  - generic [ref=e1259]: Policies & security
+                  - list [ref=e1260]:
+                    - listitem [ref=e1261]:
+                      - link "Terms of Use" [ref=e1262] [cursor=pointer]:
+                        - /url: /policies/
+                    - listitem [ref=e1263]:
+                      - link "Disclaimer" [ref=e1264] [cursor=pointer]:
+                        - /url: /disclaimer/
+                    - listitem [ref=e1265]:
+                      - link "Privacy Policy" [ref=e1266] [cursor=pointer]:
+                        - /url: /privacy-policy/
+                    - listitem [ref=e1267]:
+                      - link "Cookies Policy" [ref=e1268] [cursor=pointer]:
+                        - /url: /cookies-policy/
+                    - listitem [ref=e1269]:
+                      - link "Accessibility Statement" [ref=e1270] [cursor=pointer]:
+                        - /url: /accessibility/
+                    - listitem [ref=e1271]:
+                      - link "Security tips" [ref=e1272] [cursor=pointer]:
+                        - /url: /security/
+                    - listitem [ref=e1273]:
+                      - link "Bug Bounty program" [ref=e1274] [cursor=pointer]:
+                        - /url: /bounty/
+                    - listitem [ref=e1275]:
+                      - link "Status page" [ref=e1276] [cursor=pointer]:
+                        - /url: https://status.tradingview.com/
+              - generic [ref=e1277]:
+                - generic [ref=e1278]:
+                  - generic [ref=e1279]: Community
+                  - list [ref=e1280]:
+                    - listitem [ref=e1281]:
+                      - link "Social network" [ref=e1282] [cursor=pointer]:
+                        - /url: /social-network/
+                    - listitem [ref=e1283]:
+                      - link "Wall of Love" [ref=e1284] [cursor=pointer]:
+                        - /url: /wall-of-love/
+                    - listitem [ref=e1285]:
+                      - link "Refer a friend" [ref=e1286] [cursor=pointer]:
+                        - /url: /share-your-love/?source=footer&feature=refer_friend
+                    - listitem [ref=e1287]:
+                      - link "House Rules" [ref=e1288] [cursor=pointer]:
+                        - /url: /house-rules/
+                    - listitem [ref=e1289]:
+                      - link "Moderators" [ref=e1290] [cursor=pointer]:
+                        - /url: /moderators/
+                - generic [ref=e1291]:
+                  - generic [ref=e1292]: Ideas
+                  - list [ref=e1293]:
+                    - listitem [ref=e1294]:
+                      - link "Trading" [ref=e1295] [cursor=pointer]:
+                        - /url: /ideas/
+                    - listitem [ref=e1296]:
+                      - link "Education" [ref=e1297] [cursor=pointer]:
+                        - /url: /ideas/?type=education
+                    - listitem [ref=e1298]:
+                      - link "Editors' picks" [ref=e1299] [cursor=pointer]:
+                        - /url: /ideas/editors-picks/
+                - generic [ref=e1300]:
+                  - generic [ref=e1301]: Pine Script
+                  - list [ref=e1302]:
+                    - listitem [ref=e1303]:
+                      - link "Indicators & strategies" [ref=e1304] [cursor=pointer]:
+                        - /url: /scripts/
+                    - listitem [ref=e1305]:
+                      - link "Wizards" [ref=e1306] [cursor=pointer]:
+                        - /url: /pine-wizards/
+                    - listitem [ref=e1307]:
+                      - link "Freelancers" [ref=e1308] [cursor=pointer]:
+                        - /url: /pine-script-freelancers/
+                    - listitem [ref=e1309]:
+                      - link "Paid Spaces" [ref=e1310] [cursor=pointer]:
+                        - /url: /spaces/
+              - generic [ref=e1311]:
+                - generic [ref=e1312]:
+                  - generic [ref=e1313]: Business solutions
+                  - list [ref=e1314]:
+                    - listitem [ref=e1315]:
+                      - link "Widgets" [ref=e1316] [cursor=pointer]:
+                        - /url: /widget/
+                    - listitem [ref=e1317]:
+                      - link "Charting libraries" [ref=e1318] [cursor=pointer]:
+                        - /url: /free-charting-libraries/
+                    - listitem [ref=e1319]:
+                      - link "Lightweight Charts™" [ref=e1320] [cursor=pointer]:
+                        - /url: /lightweight-charts/
+                    - listitem [ref=e1321]:
+                      - link "Advanced Charts" [ref=e1322] [cursor=pointer]:
+                        - /url: /advanced-charts/
+                    - listitem [ref=e1323]:
+                      - link "Trading Platform" [ref=e1324] [cursor=pointer]:
+                        - /url: /trading-platform/
+                - generic [ref=e1325]:
+                  - generic [ref=e1326]: Growth opportunities
+                  - list [ref=e1327]:
+                    - listitem [ref=e1328]:
+                      - link "Advertising" [ref=e1329] [cursor=pointer]:
+                        - /url: /advertising-info/
+                    - listitem [ref=e1330]:
+                      - link "Brokerage integration" [ref=e1331] [cursor=pointer]:
+                        - /url: /brokerage-integration/
+                    - listitem [ref=e1332]:
+                      - link "Partner program" [ref=e1333] [cursor=pointer]:
+                        - /url: /partner-program/
+                    - listitem [ref=e1334]:
+                      - link "Education program" [ref=e1335] [cursor=pointer]:
+                        - /url: /students/
+          - img "Look First" [ref=e1337]

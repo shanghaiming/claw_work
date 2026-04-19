@@ -1,0 +1,679 @@
+{
+  "meta": {
+    "description": "量化策略回测效益统计 — 每次回测后更新",
+    "test_stocks": 27,
+    "test_period": "2012-2026 (14年日线)",
+    "initial_cash": 1000000,
+    "commission": 0.0003,
+    "last_updated": "2026-04-19"
+  },
+  "strategies": {
+    "NadarayaWatson": {
+      "file": "nadaraya_watson_strategy.py",
+      "source": "TV Tier 1 (batch_1)",
+      "category": "regression",
+      "avg_return": 75.0,
+      "profitable": "25/27",
+      "best_stock": "中远海控 +164.8%",
+      "sharpe_range": "0.27-4.42",
+      "params": {
+        "kernel_bandwidth": 10,
+        "bandwidth_atr_mult": 1.0,
+        "trail_atr_mult": 2.5,
+        "use_ema_filter": true
+      },
+      "math_core": "Nadaraya-Watson高斯核回归, 斜率翻转信号, 残差2sigma带",
+      "status": "保留"
+    },
+    "AlgionicsRibbon": {
+      "file": "algionics_ribbon_strategy.py",
+      "source": "TV Tier 1 (batch_5)",
+      "category": "ma",
+      "avg_return": 20.5,
+      "profitable": "27/27",
+      "best_stock": "东方财富 +53.1%",
+      "sharpe_range": "0.38-1.47",
+      "params": {
+        "confirmation_bars": 2,
+        "trail_atr_mult": 2.0,
+        "max_hold": 90,
+        "num_lines": 28
+      },
+      "math_core": "28线EMA距离加权力场, Latch三态状态引擎, N-bar确认",
+      "status": "保留(已优化)"
+    },
+    "SmartLiquidity": {
+      "file": "smart_liquidity_trend_strategy.py",
+      "source": "TV Tier 1 (batch_6)",
+      "category": "price_action",
+      "avg_return": 1.5,
+      "profitable": "20/27",
+      "status": "微利-待调优"
+    },
+    "FibSwingProb": {
+      "file": "fib_swing_probability_strategy.py",
+      "source": "TV Tier 1 (batch_1)",
+      "category": "swing_trading",
+      "avg_return": 1.5,
+      "profitable": "22/27",
+      "status": "微利-待调优"
+    },
+    "FractalLiquidity": {
+      "file": "fractal_liquidity_strategy.py",
+      "source": "TV Tier 1 (batch_5/6)",
+      "category": "price_action",
+      "avg_return": 0.7,
+      "profitable": "22/27",
+      "status": "微利-待调优"
+    },
+    "MetisLadder": {
+      "file": "metis_ladder_strategy.py",
+      "source": "TV Tier 1 (batch_4_new)",
+      "category": "mean_reversion",
+      "avg_return": 0.2,
+      "profitable": "18/27",
+      "status": "微利-待调优"
+    },
+    "UndercutRally": {
+      "file": "undercut_rally_strategy.py",
+      "source": "TV Tier 1 (batch_1)",
+      "category": "price_action",
+      "avg_return": 0.0,
+      "profitable": "0/27",
+      "status": "淘汰"
+    },
+    "InstPressure": {
+      "file": "institutional_pressure_strategy.py",
+      "source": "TV Tier 1 (batch_6)",
+      "category": "volume",
+      "avg_return": -0.4,
+      "profitable": "5/27",
+      "status": "淘汰(交易频率过高)"
+    },
+    "EpanechnikovConf": {
+      "file": "epanechnikov_confluence_strategy.py",
+      "source": "TV Tier 2 (batch_1)",
+      "category": "multi_factor",
+      "avg_return": 25.3,
+      "profitable": "27/27",
+      "best_stock": "科大讯飞 +62.8%",
+      "sharpe_range": "0.48-1.52",
+      "math_core": "Epanechnikov核 K(u)=0.75*(1-u²) 5因子confluence评分",
+      "status": "保留"
+    },
+    "TrafficLight": {
+      "file": "traffic_light_strategy.py",
+      "source": "TV Tier 2 (batch_2)",
+      "category": "kline_pattern",
+      "avg_return": 18.0,
+      "profitable": "27/27",
+      "best_stock": "隆基绿能 +47.9%",
+      "sharpe_range": "0.71-1.52",
+      "math_core": "3连同色K线+1.5x量确认+ATR止损, 动量延续/恐慌反转",
+      "status": "保留"
+    },
+    "HurstRegime": {
+      "file": "hurst_regime_strategy.py",
+      "source": "TV Tier 2 (batch_1)",
+      "category": "market_state",
+      "avg_return": 0.7,
+      "profitable": "20/27",
+      "math_core": "Hurst指数+KFD+Shannon熵 三重regime分类",
+      "status": "微利-计算量大"
+    },
+    "HARRVSentinel": {
+      "file": "har_rv_sentinel_strategy.py",
+      "source": "TV batch_3 (Innovation 5/5)",
+      "category": "volatility",
+      "avg_return": 5.3,
+      "profitable": "22/27",
+      "best_stock": "中远海控 +29.6%",
+      "math_core": "HAR-RV波动率层次分解 RV=β₀+β₁RV_d+β₂RV_w+β₃RV_m, Fractional Kelly仓位",
+      "status": "可用(波动率预测有价值)"
+    },
+    "LiquidityTrap": {
+      "file": "liquidity_trap_strategy.py",
+      "source": "TV batch_3 (Innovation 4/5)",
+      "category": "price_action",
+      "avg_return": 0.0,
+      "profitable": "3/27",
+      "math_core": "111%-113%止损聚集区+127.2%深扫",
+      "status": "淘汰(A股10%涨跌限制使信号极少)"
+    },
+    "VolDeltaPressure": {
+      "file": "volume_delta_pressure_strategy.py",
+      "source": "TV Tier 2 (batch_1)",
+      "category": "volume",
+      "avg_return": 52.6,
+      "profitable": "27/27",
+      "best_stock": "东方财富 +95.6%",
+      "sharpe_range": "1.26-2.20",
+      "math_core": "K线体积拆分 delta=buy_vol-sell_vol, EMA平滑累积delta, EMA200区域过滤",
+      "status": "保留(强,已优化δema=14+trail=1.5)"
+    },
+    "SupplyDemandATR": {
+      "file": "supply_demand_atr_zone_strategy.py",
+      "source": "TV Tier 2 (batch_1)",
+      "category": "price_action",
+      "avg_return": 0.0,
+      "profitable": "2/27",
+      "status": "淘汰(信号太少)"
+    },
+    "PropVolSplit": {
+      "file": "proportional_volume_split_strategy.py",
+      "source": "TV Tier 2 (batch_1)",
+      "category": "volume",
+      "avg_return": 22.7,
+      "profitable": "27/27",
+      "best_stock": "隆基绿能 +54.9%",
+      "sharpe_range": "0.72-1.67",
+      "math_core": "比例成交量拆分 buy_vol=V×(C-L)/(H-L), EMA平滑Delta, 统计N(μ,σ)异常放量检测",
+      "status": "保留"
+    },
+    "VolTerrain": {
+      "file": "volatility_terrain_strategy.py",
+      "source": "TV Tier 2 (batch_4_new)",
+      "category": "volatility",
+      "avg_return": 6.9,
+      "profitable": "26/27",
+      "best_stock": "紫光国微 +24.6%",
+      "sharpe_range": "0.14-1.65",
+      "math_core": "双ATR比率 ratio=ATR_fast/ATR_slow, 百分位排名, Squeeze/Expansion状态分类",
+      "status": "可用(波动率环境过滤)"
+    },
+    "RegCandle": {
+      "file": "regression_candlestick_strategy.py",
+      "source": "TV Tier 2 (batch_6)",
+      "category": "kline_pattern",
+      "avg_return": 10.9,
+      "profitable": "27/27",
+      "best_stock": "通威股份 +39.0%",
+      "sharpe_range": "0.24-1.51",
+      "math_core": "CHoCH锚定OLS线性回归通道+K线5级强度评分body_ratio=|C-O|/(H-L)+趋势SMA过滤",
+      "status": "保留"
+    },
+    "HanningFIR": {
+      "file": "hanning_fir_strategy.py",
+      "source": "TV Tier 2 (batch_3)",
+      "category": "signal_processing",
+      "avg_return": 1.0,
+      "profitable": "21/27",
+      "math_core": "汉宁窗FIR w(n)=0.5(1-cos(2πn/(N-1))), 6层不同截止频率, 自适应ATR百分位包络",
+      "status": "微利-FIR日线太慢"
+    },
+    "IRLS": {
+      "file": "irls_strategy.py",
+      "source": "TV batch_2 (Innovation 5/5)",
+      "category": "regression",
+      "avg_return": 38.1,
+      "profitable": "27/27",
+      "best_stock": "隆基绿能 +62.4%",
+      "sharpe_range": "0.71-1.63",
+      "math_core": "IRLS Hardy权重 w(j)=1/√(d²+ε²), L1-robust稀疏重加权, 对涨跌停异常值鲁棒",
+      "status": "保留(强,已优化window=15)"
+    },
+    "ConvergenceProtocol": {
+      "file": "convergence_protocol_strategy.py",
+      "source": "TV batch_4 (pre-existing)",
+      "category": "multi_factor",
+      "avg_return": 13.0,
+      "profitable": "27/27",
+      "best_stock": "科大讯飞 +40.7%",
+      "sharpe_range": "0.25-1.23",
+      "math_core": "4模块(结构趋势/波动率状态/Delta压力/流动性结构)收敛, 0-7共融评分, 5种入场机制",
+      "status": "保留"
+    },
+    "WeinsteinStage": {
+      "file": "weinstein_stage_strategy.py",
+      "source": "pre-existing",
+      "category": "market_structure",
+      "avg_return": 11.9,
+      "profitable": "25/27",
+      "best_stock": "隆基绿能 +34.3%",
+      "sharpe_range": "0.18-1.17",
+      "math_core": "Weinstein 6阶段分析(1B底部→4顶部), MA30+MA150趋势判定, 阶段转换信号",
+      "status": "保留"
+    },
+    "OBVDivergence": {
+      "file": "obv_divergence_strategy.py",
+      "source": "pre-existing",
+      "category": "volume",
+      "avg_return": 8.8,
+      "profitable": "23/27",
+      "best_stock": "紫光国微 +41.0%",
+      "sharpe_range": "-0.07-1.02",
+      "math_core": "OBV累积能量潮背离检测, 价格新低但OBV不创新低=看涨背离",
+      "status": "可用"
+    },
+    "PocketPivot": {
+      "file": "pocket_pivot_strategy.py",
+      "source": "pre-existing",
+      "category": "momentum",
+      "avg_return": 1.9,
+      "profitable": "17/27",
+      "status": "微利-交易频率过高"
+    },
+    "VWAPDeviation": {
+      "file": "vwap_deviation_strategy.py",
+      "source": "pre-existing",
+      "category": "mean_reversion",
+      "avg_return": -0.6,
+      "profitable": "1/27",
+      "status": "淘汰(VWAP日线不适用)"
+    },
+    "AdaptiveRegimeMom": {
+      "file": "adaptive_regime_momentum_strategy.py",
+      "source": "TV Tier 2 (pre-existing, batch_4_new)",
+      "category": "momentum",
+      "avg_return": 7.7,
+      "profitable": "21/27",
+      "best_stock": "中远海控 +48.2%",
+      "sharpe_range": "-0.34-1.21",
+      "math_core": "ALMA+ZLMA ComboMA双MA融合+多bar斜率确认+Volume RSI过滤",
+      "status": "可用(交易频率略高)"
+    },
+    "KijunRSI": {
+      "file": "kijun_rsi_strategy.py",
+      "source": "pre-existing",
+      "category": "oscillator",
+      "avg_return": 13.3,
+      "profitable": "24/27",
+      "best_stock": "中远海控 +54.9%",
+      "sharpe_range": "-0.02-1.32",
+      "math_core": "Ichimoku基线(Kijun-sen, 26周期中值)+RSI过滤+ATR追踪止损",
+      "status": "保留"
+    },
+    "FibVolCloud": {
+      "file": "fib_volatility_cloud_strategy.py",
+      "source": "pre-existing",
+      "category": "volatility",
+      "avg_return": 11.5,
+      "profitable": "26/27",
+      "best_stock": "万华化学 +28.3%",
+      "sharpe_range": "0.33-1.19",
+      "math_core": "斐波那契比率(0.382/0.618/1.0)×ATR构建波动率云带, 云带突破信号",
+      "status": "保留"
+    },
+    "CCIRegime": {
+      "file": "cci_regime_strategy.py",
+      "source": "pre-existing",
+      "category": "oscillator",
+      "avg_return": 7.7,
+      "profitable": "24/27",
+      "best_stock": "通威股份 +46.3%",
+      "status": "可用"
+    },
+    "DemaSupertrend": {
+      "file": "dema_supertrend_strategy.py",
+      "source": "pre-existing",
+      "category": "trend",
+      "avg_return": 5.1,
+      "profitable": "22/27",
+      "status": "微利"
+    },
+    "DualHullMA": {
+      "file": "dual_hull_ma_strategy.py",
+      "source": "pre-existing",
+      "category": "ma",
+      "avg_return": 0.1,
+      "profitable": "10/27",
+      "status": "淘汰(过度交易700+trades)"
+    },
+    "VolStrengthShift": {
+      "file": "volume_strength_shift_strategy.py",
+      "source": "TV Tier 2",
+      "category": "volume",
+      "avg_return": 0.2,
+      "profitable": "14/27",
+      "status": "微利(状态转换信号太稀少)"
+    },
+    "QuadBBFusion": {
+      "file": "quad_bb_fusion_strategy.py",
+      "source": "TV Tier 2",
+      "category": "volatility",
+      "avg_return": 1.7,
+      "profitable": "26/27",
+      "status": "微利(挤压信号稀少)"
+    },
+    "CCIRSIFusion": {
+      "file": "ccirsi_fusion_strategy.py",
+      "source": "TV Tier 2",
+      "category": "oscillator",
+      "avg_return": 0.2,
+      "profitable": "20/27",
+      "status": "微利(背离信号稀少)"
+    },
+    "EnsembleRegVol": {
+      "file": "ensemble_regression_volume_strategy.py",
+      "source": "组合(IRLS+VDP)",
+      "category": "ensemble",
+      "avg_return": 81.4,
+      "profitable": "27/27",
+      "best_stock": "紫光国微 +137.8%",
+      "sharpe_range": "1.47-2.82",
+      "params": {
+        "irls_window": 15,
+        "irls_iterations": 3,
+        "irls_sparsity": 0.3,
+        "delta_ema_period": 10,
+        "score_threshold": 3,
+        "trail_atr_mult": 1.0,
+        "hold_min": 3
+      },
+      "math_core": "IRLS L1-robust斜率(方向) + VDP累积Delta(确认) + 评分制入场, P(both_wrong)≈P(A)×P(B)",
+      "status": "保留(#1策略,超越NW)"
+    },
+    "MinerviniSepa": {
+      "file": "minervini_sepa_strategy.py",
+      "source": "pre-existing",
+      "category": "momentum",
+      "avg_return": 14.9,
+      "profitable": "27/27",
+      "status": "保留(强)"
+    },
+    "VolatilitySqueeze": {
+      "file": "volatility_squeeze_strategy.py",
+      "source": "pre-existing",
+      "category": "volatility",
+      "avg_return": 14.1,
+      "profitable": "26/27",
+      "status": "保留"
+    },
+    "SeykotaTrend": {
+      "file": "seykota_trend_strategy.py",
+      "source": "pre-existing",
+      "category": "trend",
+      "avg_return": 13.3,
+      "profitable": "26/27",
+      "status": "保留"
+    },
+    "StructuralTension": {
+      "file": "structural_tension_strategy.py",
+      "source": "pre-existing",
+      "category": "market_structure",
+      "avg_return": 12.6,
+      "profitable": "23/27",
+      "status": "可用"
+    },
+    "SuperTrendTP": {
+      "file": "supertrend_tp_strategy.py",
+      "source": "pre-existing",
+      "category": "trend",
+      "avg_return": 12.0,
+      "profitable": "27/27",
+      "status": "保留"
+    },
+    "DeltaPressure": {
+      "file": "delta_pressure_strategy.py",
+      "source": "pre-existing",
+      "category": "volume",
+      "avg_return": 11.9,
+      "profitable": "27/27",
+      "status": "保留"
+    },
+    "MacroRocRegime": {
+      "file": "macro_roc_regime_strategy.py",
+      "source": "pre-existing",
+      "category": "macro",
+      "avg_return": 11.8,
+      "profitable": "25/27",
+      "status": "可用"
+    },
+    "LinRegScaleIn": {
+      "file": "linreg_scalein_strategy.py",
+      "source": "pre-existing",
+      "category": "regression",
+      "avg_return": 11.5,
+      "profitable": "24/27",
+      "status": "可用"
+    },
+    "EmaStochRsi": {
+      "file": "ema_stochrsi_strategy.py",
+      "source": "pre-existing",
+      "category": "oscillator",
+      "avg_return": 10.4,
+      "profitable": "25/27",
+      "status": "可用"
+    },
+    "AdvancedRSIMom": {
+      "file": "advanced_rsi_momentum_strategy.py",
+      "source": "pre-existing",
+      "category": "momentum",
+      "avg_return": 9.8,
+      "profitable": "24/27",
+      "status": "可用"
+    },
+    "SqueezeMomentum": {
+      "file": "squeeze_momentum_strategy.py",
+      "source": "pre-existing",
+      "category": "momentum",
+      "avg_return": 9.7,
+      "profitable": "24/27",
+      "status": "可用"
+    },
+    "FairValueGap": {
+      "file": "fair_value_gap_strategy.py",
+      "source": "pre-existing",
+      "category": "price_action",
+      "avg_return": 8.6,
+      "profitable": "25/27",
+      "status": "可用"
+    },
+    "EmaSuperCloud": {
+      "file": "ema_super_cloud_strategy.py",
+      "source": "pre-existing",
+      "category": "trend",
+      "avg_return": 8.5,
+      "profitable": "26/27",
+      "status": "可用"
+    },
+    "TrendlineBreakout": {
+      "file": "trendline_breakout_strategy.py",
+      "source": "pre-existing",
+      "category": "breakout",
+      "avg_return": 8.3,
+      "profitable": "25/27",
+      "status": "可用"
+    },
+    "PanicOversold": {
+      "file": "panic_oversold_strategy.py",
+      "source": "pre-existing",
+      "category": "mean_reversion",
+      "avg_return": 7.4,
+      "profitable": "23/27",
+      "status": "可用"
+    },
+    "AegisHMA": {
+      "file": "aegis_hma_sentinel_strategy.py",
+      "source": "pre-existing",
+      "category": "ma",
+      "avg_return": 6.2,
+      "profitable": "21/27",
+      "status": "微利"
+    },
+    "AdaptiveKeltner": {
+      "file": "adaptive_keltner_strategy.py",
+      "source": "pre-existing",
+      "category": "volatility",
+      "avg_return": 3.8,
+      "profitable": "21/27",
+      "status": "微利"
+    },
+    "VolumeWeightedRSI": {
+      "file": "volume_weighted_rsi_strategy.py",
+      "source": "pre-existing",
+      "category": "volume",
+      "avg_return": 3.8,
+      "profitable": "26/27",
+      "status": "微利"
+    },
+    "LiquiditySweep": {
+      "file": "liquidity_sweep_strategy.py",
+      "source": "pre-existing",
+      "category": "price_action",
+      "avg_return": 4.0,
+      "profitable": "18/27",
+      "status": "微利"
+    },
+    "DualMomentum": {
+      "file": "dual_momentum_strategy.py",
+      "source": "pre-existing",
+      "category": "momentum",
+      "avg_return": 1.1,
+      "profitable": "20/27",
+      "status": "微利"
+    },
+    "StatEdge": {
+      "file": "stat_edge_strategy.py",
+      "source": "pre-existing",
+      "category": "statistical",
+      "avg_return": 0.3,
+      "profitable": "7/27",
+      "status": "淘汰"
+    },
+    "PpoDivergence": {
+      "file": "ppo_divergence_strategy.py",
+      "source": "pre-existing",
+      "category": "oscillator",
+      "avg_return": 13.8,
+      "profitable": "27/27",
+      "status": "保留"
+    },
+    "TurtleTrading": {
+      "file": "turtle_trading_strategy.py",
+      "source": "pre-existing",
+      "category": "trend",
+      "avg_return": 9.9,
+      "profitable": "26/27",
+      "status": "可用"
+    },
+    "StructuralMomentum": {
+      "file": "structural_momentum_strategy.py",
+      "source": "pre-existing",
+      "category": "momentum",
+      "avg_return": 14.2,
+      "profitable": "24/27",
+      "status": "保留"
+    },
+    "ChandelierExit": {
+      "file": "chandelier_exit_strategy.py",
+      "source": "pre-existing",
+      "category": "trend",
+      "avg_return": 12.3,
+      "profitable": "27/27",
+      "status": "保留"
+    },
+    "BreakoutPullback": {
+      "file": "breakout_pullback_strategy.py",
+      "source": "pre-existing",
+      "category": "breakout",
+      "avg_return": 10.9,
+      "profitable": "26/27",
+      "status": "可用"
+    },
+    "WaveTrend": {
+      "file": "wavetrend_strategy.py",
+      "source": "pre-existing",
+      "category": "oscillator",
+      "avg_return": 8.4,
+      "profitable": "26/27",
+      "status": "可用"
+    },
+    "WyckoffAccumulation": {
+      "file": "wyckoff_accumulation_strategy.py",
+      "source": "pre-existing",
+      "category": "market_structure",
+      "avg_return": 0.0,
+      "profitable": "0/27",
+      "status": "淘汰(日线无法识别Wyckoff阶段)"
+    },
+    "VolatilityRegime": {
+      "file": "volatility_regime_strategy.py",
+      "source": "pre-existing",
+      "category": "volatility",
+      "avg_return": 5.9,
+      "profitable": "24/27",
+      "status": "微利"
+    },
+    "HaEmaCross": {
+      "file": "ha_ema_cross_strategy.py",
+      "source": "pre-existing",
+      "category": "ma",
+      "avg_return": 15.0,
+      "profitable": "25/27",
+      "status": "保留"
+    },
+    "InstitutionalBias": {
+      "file": "institutional_bias_strategy.py",
+      "source": "pre-existing",
+      "category": "volume",
+      "avg_return": 11.4,
+      "profitable": "26/27",
+      "status": "可用"
+    },
+    "KauffERGate": {
+      "file": "kauffman_er_gate_strategy.py",
+      "source": "pre-existing",
+      "category": "trend",
+      "avg_return": 7.9,
+      "profitable": "24/27",
+      "status": "可用"
+    },
+    "FisherRegime": {
+      "file": "fisher_regime_strategy.py",
+      "source": "pre-existing",
+      "category": "regime",
+      "avg_return": 0.2,
+      "profitable": "15/27",
+      "status": "淘汰"
+    }
+  },
+  "effective_strategy_ranking": [
+    {"name": "EnsembleRegVol", "avg_return": 81.4, "stability": "very_high(27/27)"},
+    {"name": "NadarayaWatson", "avg_return": 75.0, "stability": "high(25/27)"},
+    {"name": "VolDeltaPressure", "avg_return": 52.6, "stability": "very_high(27/27)"},
+    {"name": "IRLS", "avg_return": 38.1, "stability": "very_high(27/27)"},
+    {"name": "EpanechnikovConf", "avg_return": 25.3, "stability": "very_high(27/27)"},
+    {"name": "PropVolSplit", "avg_return": 22.7, "stability": "very_high(27/27)"},
+    {"name": "AlgionicsRibbon", "avg_return": 20.5, "stability": "very_high(27/27)"},
+    {"name": "TrafficLight", "avg_return": 18.0, "stability": "very_high(27/27)"},
+    {"name": "HaEmaCross", "avg_return": 15.0, "stability": "high(25/27)"},
+    {"name": "MinerviniSepa", "avg_return": 14.9, "stability": "very_high(27/27)"},
+    {"name": "StructuralMomentum", "avg_return": 14.2, "stability": "high(24/27)"},
+    {"name": "VolatilitySqueeze", "avg_return": 14.1, "stability": "high(26/27)"},
+    {"name": "PpoDivergence", "avg_return": 13.8, "stability": "very_high(27/27)"},
+    {"name": "SeykotaTrend", "avg_return": 13.3, "stability": "high(26/27)"},
+    {"name": "KijunRSI", "avg_return": 13.3, "stability": "high(24/27)"},
+    {"name": "ConvergenceProtocol", "avg_return": 13.0, "stability": "very_high(27/27)"},
+    {"name": "StructuralTension", "avg_return": 12.6, "stability": "medium(23/27)"},
+    {"name": "ChandelierExit", "avg_return": 12.3, "stability": "very_high(27/27)"},
+    {"name": "SuperTrendTP", "avg_return": 12.0, "stability": "very_high(27/27)"},
+    {"name": "DeltaPressure", "avg_return": 11.9, "stability": "very_high(27/27)"},
+    {"name": "MacroRocRegime", "avg_return": 11.8, "stability": "high(25/27)"},
+    {"name": "FibVolCloud", "avg_return": 11.5, "stability": "high(26/27)"},
+    {"name": "LinRegScaleIn", "avg_return": 11.5, "stability": "high(24/27)"},
+    {"name": "WeinsteinStage", "avg_return": 11.9, "stability": "high(25/27)"},
+    {"name": "RegCandle", "avg_return": 10.9, "stability": "very_high(27/27)"},
+    {"name": "EmaStochRsi", "avg_return": 10.4, "stability": "high(25/27)"},
+    {"name": "AdvancedRSIMom", "avg_return": 9.8, "stability": "high(24/27)"},
+    {"name": "SqueezeMomentum", "avg_return": 9.7, "stability": "high(24/27)"},
+    {"name": "FairValueGap", "avg_return": 8.6, "stability": "high(25/27)"},
+    {"name": "EmaSuperCloud", "avg_return": 8.5, "stability": "high(26/27)"},
+    {"name": "TrendlineBreakout", "avg_return": 8.3, "stability": "high(25/27)"},
+    {"name": "OBVDivergence", "avg_return": 8.8, "stability": "medium(23/27)"},
+    {"name": "PanicOversold", "avg_return": 7.4, "stability": "medium(23/27)"},
+    {"name": "CCIRegime", "avg_return": 7.7, "stability": "high(24/27)"},
+    {"name": "AdaptiveRegimeMom", "avg_return": 7.7, "stability": "medium(21/27)"},
+    {"name": "VolTerrain", "avg_return": 6.9, "stability": "high(26/27)"},
+    {"name": "AegisHMA", "avg_return": 6.2, "stability": "medium(21/27)"},
+    {"name": "HARRVSentinel", "avg_return": 5.3, "stability": "medium(22/27)"}
+  ],
+  "cross_batch_innovations": {
+    "atr_zone_clustering": "ATR比率阈值量化区域, 替代主观支撑阻力 (batch 3,4,5,6)",
+    "fractal_liquidity": "分形在ATR容差内收敛=高质量流动性区域 (batch 3,5,6)",
+    "log_volume_pressure": "log归一化体积压力与价格尺度无关 (batch_6)",
+    "sigmoid_gating": "σ(x)概率门控多因子信号质量 (batch 1,4)",
+    "latch_state_machine": "数学边界锁存防信号闪烁, 类似相变 (batch 1,5)",
+    "percentile_adaptive": "滚动窗口排名使阈值自适应 (batch 3,4,6)"
+  }
+}

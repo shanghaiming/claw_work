@@ -1,0 +1,1171 @@
+- generic [active] [ref=e1]:
+  - button "Skip to main content" [ref=e4]:
+    - generic [ref=e5]:
+      - generic: Skip to main content
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - button "Open menu" [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+        - link "TradingView main page" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - img [ref=e16]
+      - button "Search" [ref=e23]:
+        - img [ref=e24]
+        - generic [ref=e26]: Search
+      - generic [ref=e27]:
+        - button "Open language menu" [ref=e28] [cursor=pointer]:
+          - img [ref=e29]
+          - text: EN
+        - button "Open user menu" [ref=e31] [cursor=pointer]:
+          - img [ref=e32]
+        - link "Get started" [ref=e36] [cursor=pointer]:
+          - /url: /pricing/?source=header_go_pro_button&feature=start_free_trial
+          - generic [ref=e38]: Get started
+    - main "Main content" [ref=e39]:
+      - main [ref=e41]:
+        - generic [ref=e42]:
+          - heading "Indicators and strategies" [level=1] [ref=e43]
+          - navigation [ref=e44]:
+            - tablist [ref=e47]:
+              - tab "Popular" [selected] [ref=e48] [cursor=pointer]:
+                - generic [ref=e49]: Popular
+              - tab "Editors' picks" [ref=e50] [cursor=pointer]:
+                - generic [ref=e51]: Editors' picks
+        - generic [ref=e53]:
+          - generic [ref=e56]:
+            - combobox "Script type filter" [ref=e57]:
+              - generic [ref=e59]: All types
+              - img [ref=e62]:
+                - img [ref=e63]
+            - button "Open-source only" [pressed] [ref=e65]:
+              - generic [ref=e68]:
+                - img [ref=e71]:
+                  - img [ref=e72]
+                - generic [ref=e75]: Open-source only
+            - radiogroup [ref=e77]:
+              - radio "Sort by most recent" [ref=e78]:
+                - img [ref=e81]:
+                  - img [ref=e82]
+              - radio "Sort by popularity" [checked] [ref=e84]:
+                - img [ref=e87]:
+                  - img [ref=e88]
+          - generic [ref=e91]:
+            - article [ref=e92]:
+              - generic [ref=e93]:
+                - link "EMA Triple Cross Alert" [ref=e94] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/xCcNqktY-EMA-Triple-Cross-Alert/
+                - 'link "Indicator Features: 22 EMA (Blue/Fast) 222 EMA (Green/Medium) 222 EMA (Red/Slow) Red triangles appear when blue crosses below both green & red and stays below for the full 3-minute bar Built-in alert condition ready to use" [ref=e95] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/xCcNqktY-EMA-Triple-Cross-Alert/
+                  - generic [ref=e97]: "Indicator Features: 22 EMA (Blue/Fast) 222 EMA (Green/Medium) 222 EMA (Red/Slow) Red triangles appear when blue crosses below both green & red and stays below for the full 3-minute bar Built-in alert condition ready to use"
+              - generic [ref=e99]:
+                - generic "Pine Script® indicator" [ref=e100]:
+                  - img [ref=e101]:
+                    - img [ref=e102]
+                  - generic [ref=e104]: Pine Script® indicator
+                - link [ref=e105] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/xCcNqktY-EMA-Triple-Cross-Alert/
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - link "by veerbala82" [ref=e110] [cursor=pointer]:
+                    - /url: /u/veerbala82/
+                    - generic [ref=e111]: by veerbala82
+                  - time [ref=e113]: Apr 16
+                - generic [ref=e114]:
+                  - link "0 comments" [ref=e115] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/xCcNqktY-EMA-Triple-Cross-Alert/#chart-view-comment-form
+                    - img [ref=e117]:
+                      - img [ref=e118]
+                  - button "3 boosts 3" [ref=e120]:
+                    - generic [ref=e121]:
+                      - img "3 boosts" [ref=e123]:
+                        - img [ref=e124]
+                      - generic [ref=e130]: "3"
+            - article [ref=e131]:
+              - generic [ref=e132]:
+                - link "Qing LRC + S/R + EMA (Trend Cross Logic)" [ref=e133] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ZDhizQgu-Qing-LRC-S-R-EMA-Trend-Cross-Logic/
+                - link [ref=e134] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ZDhizQgu-Qing-LRC-S-R-EMA-Trend-Cross-Logic/
+                  - generic [ref=e136]: "The Strategy Concept The Qing LRC + S/R + EMA strategy is designed to find \"Gold Chances\" where price is undervalued relative to its current trend. Instead of chasing breakouts, this logic looks for price to touch the lower boundaries of a statistical corridor (LRC) or horizontal support levels, provided the overall trend (LRC Upper vs. EMA 20) remains intact. Key Technical Components LRC vs. EMA 20 Trend Logic: A unique trend filter. When the LRC Upper Channel is above the EMA 20, the market is considered \"Bullish.\" This is visually represented by a dynamic green background fill. Linear Regression Value Zones: The script plots an upper and lower channel based on price standard deviation. It looks for \"reversion to the mean\" opportunities when price hits the lower red channel. Pivot S/R Confirmation: Automatically identifies and plots significant Pivot Highs (Resistance) and Pivot Lows (Support). Entry signals are strengthened when price hits the Lower LRC Channel and a Support level simultaneously. Trend Weakness Exit: Unlike fixed targets, the script monitors trend health. If the LRC Lower Channel crosses below the EMA 20, it signals a potential trend shift, triggering an early exit to protect capital. How to Trade Identify the Bias: Ensure the background is Green (LRC Upper > EMA 20), indicating a healthy upward bias. The Entry (Value Zone): Look for a \"Long\" entry when the price dips to touch either the Red Lower Channel or a marked \"S\" (Support) label. The Exit (Statistical Extreme): The primary target is the Blue Upper Channel. If the trend weakens (LRC Lower crosses EMA 20), the strategy closes the position to avoid major drawdowns."
+              - generic [ref=e138]:
+                - generic "Pine Script® strategy" [ref=e139]:
+                  - img [ref=e140]:
+                    - img [ref=e141]
+                  - generic [ref=e143]: Pine Script® strategy
+                - link [ref=e144] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ZDhizQgu-Qing-LRC-S-R-EMA-Trend-Cross-Logic/
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - link "by Z8830" [ref=e149] [cursor=pointer]:
+                    - /url: /u/Z8830/
+                    - generic [ref=e150]: by Z8830
+                  - time [ref=e152]: Apr 16
+                - generic [ref=e153]:
+                  - link "0 comments" [ref=e154] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/ZDhizQgu-Qing-LRC-S-R-EMA-Trend-Cross-Logic/#chart-view-comment-form
+                    - img [ref=e156]:
+                      - img [ref=e157]
+                  - button "15 boosts 1 5" [ref=e159]:
+                    - generic [ref=e160]:
+                      - img "15 boosts" [ref=e162]:
+                        - img [ref=e163]
+                      - generic [ref=e167]:
+                        - generic [ref=e169]: "1"
+                        - generic [ref=e171]: "5"
+            - article [ref=e172]:
+              - generic [ref=e173]:
+                - link "Watermark" [ref=e174] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/trJpyFCU-Watermark/
+                - link [ref=e175] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/trJpyFCU-Watermark/
+                  - generic [ref=e177]: "Watermark A simple, clean watermark indicator designed to keep your trading mindset front and center while you work. Displays two fully customizable lines of text directly on your chart background — perfect for affirmations, rules, or reminders that keep you disciplined during a session. Features: Two editable text lines Full color picker for text Adjustable fade Five text size options Clean status line (no clutter) How to Use: Add the indicator to your chart, then click the Settings gear ⚙️ to customize the text, color, size, and fade to match your chart theme. Default Text: \"Trade with no emotion\" \"Not what you think it will do\" These two reminders were chosen intentionally — emotions are the #1 account killer, and the market will humble anyone who thinks they know what's coming next. Customize the text to whatever rules or mantras matter most to your own trading process. Free to use. No signals, no repaints, no nonsense — just a quiet reminder of what good trading looks like."
+              - generic [ref=e179]:
+                - generic "Pine Script® indicator" [ref=e180]:
+                  - img [ref=e181]:
+                    - img [ref=e182]
+                  - generic [ref=e184]: Pine Script® indicator
+                - link [ref=e185] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/trJpyFCU-Watermark/
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - link "by Kirk_M" [ref=e190] [cursor=pointer]:
+                    - /url: /u/Kirk_M/
+                    - generic [ref=e191]: by Kirk_M
+                  - time [ref=e193]: Apr 16
+                - generic [ref=e194]:
+                  - link "0 comments" [ref=e195] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/trJpyFCU-Watermark/#chart-view-comment-form
+                    - img [ref=e197]:
+                      - img [ref=e198]
+                  - button "2 boosts 2" [ref=e200]:
+                    - generic [ref=e201]:
+                      - img "2 boosts" [ref=e203]:
+                        - img [ref=e204]
+                      - generic [ref=e210]: "2"
+            - article [ref=e211]:
+              - generic [ref=e212]:
+                - link "Qing (EMA + MACD + Squeeze)" [ref=e213] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/PxAUrVvp-Qing-EMA-MACD-Squeeze/
+                - link [ref=e214] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/PxAUrVvp-Qing-EMA-MACD-Squeeze/
+                  - generic [ref=e216]: "Overview The Qing EMA + MACD + Squeeze strategy is designed for traders who prioritize systematic trend confirmation over speculative entries. The core philosophy centers on the \"bias\" or gap between price and key moving averages, particularly the EMA 20, to determine overextended or breakout-ready conditions. Key Features The EMA Power Stack: Visualizes six distinct EMA periods (6, 12, 20, 50, 100, 200) to provide a clear view of short-term momentum versus long-term trend health. EMA 20 Gap Label: Real-time percentage display of the distance between the current price and the EMA 20, allowing you to gauge \"mean reversion\" or \"breakout strength\" at a glance. Qing Squeeze Detection: A specialized logic that identifies \"tight\" market consolidation (the Squeeze) where EMAs 6, 12, and 20 converge, often preceding explosive moves. Integrated MACD & Volume: Uses MACD crossovers for momentum confirmation and volume spikes to filter out low-conviction breakouts. Smart Risk Management: Features automatic position sizing based on a percentage of your equity and dynamic ATR-based Stop Loss and Take Profit levels. How to Use Bold Entry (Aggressive): Monitor for price moving and holding above the EMA 6. This is the first signal of a shift in immediate momentum. Safe Entry (Conservative): Wait for a \"Pair Stack\" where the price is positioned above the EMA 6, 12, and 21 concurrently, supported by steadily buying volume. Trend Filter: The EMA 200 (Red) serves as the ultimate trend barometer; typically, long setups are favored when the price is above this line. Settings & Customization Squeeze Tightness: Adjust the percentage spread allowed between short-term EMAs to define your breakout sensitivity. Volume Spike: Customize the multiplier to ensure you only enter when professional interest is present. MTF Filter: Optionally toggle a Higher Timeframe (e.g., Daily) filter to ensure you are trading in the direction of the \"Big Picture.\""
+              - generic [ref=e218]:
+                - generic "Pine Script® strategy" [ref=e219]:
+                  - img [ref=e220]:
+                    - img [ref=e221]
+                  - generic [ref=e223]: Pine Script® strategy
+                - link [ref=e224] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/PxAUrVvp-Qing-EMA-MACD-Squeeze/
+              - generic [ref=e226]:
+                - generic [ref=e227]:
+                  - link "by Z8830" [ref=e229] [cursor=pointer]:
+                    - /url: /u/Z8830/
+                    - generic [ref=e230]: by Z8830
+                  - time [ref=e232]: Apr 16
+                - generic [ref=e233]:
+                  - link "0 comments" [ref=e234] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/PxAUrVvp-Qing-EMA-MACD-Squeeze/#chart-view-comment-form
+                    - img [ref=e236]:
+                      - img [ref=e237]
+                  - button "20 boosts 2 0" [ref=e239]:
+                    - generic [ref=e240]:
+                      - img "20 boosts" [ref=e242]:
+                        - img [ref=e243]
+                      - generic [ref=e247]:
+                        - generic [ref=e249]: "2"
+                        - generic [ref=e251]: "0"
+            - article [ref=e252]:
+              - generic [ref=e253]:
+                - link "Daily Bottom Trendline + Rainbow Arc" [ref=e254] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IlcitRnE/
+                - link "Daily Bottom Trendline + Rainbow Arc An advanced indicator that combines daily bottom-based trendlines with smooth rainbow arcs to visualize market structure and long-term price trajectory. Features Automatic detection of daily pivot lows Trendlines connecting key bottoms Smooth rainbow arcs based on time progression Visual support zones and growth curves 👉 Understand both trend direction and long-term positioning at a glance Daily Bottom Trendline + Rainbow Arc 日足レベルのボトムを基準に、トレンドラインと滑らかなアーチ（レインボーカーブ）を同時に描画するインジケーター。 トレンドの方向と、時間経過による価格の“成長軌道”を一目で把握できます。 主な機能 日足のピボット安値を自動検出 ボトム同士を結ぶトレンドライン 時間経過に応じて広がるレインボーアーチ サポートゾーンの視覚化 👉 「今が安いのか高いのか」を構造的に判断できる" [ref=e255] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IlcitRnE/
+                  - generic [ref=e257]: Daily Bottom Trendline + Rainbow Arc An advanced indicator that combines daily bottom-based trendlines with smooth rainbow arcs to visualize market structure and long-term price trajectory. Features Automatic detection of daily pivot lows Trendlines connecting key bottoms Smooth rainbow arcs based on time progression Visual support zones and growth curves 👉 Understand both trend direction and long-term positioning at a glance Daily Bottom Trendline + Rainbow Arc 日足レベルのボトムを基準に、トレンドラインと滑らかなアーチ（レインボーカーブ）を同時に描画するインジケーター。 トレンドの方向と、時間経過による価格の“成長軌道”を一目で把握できます。 主な機能 日足のピボット安値を自動検出 ボトム同士を結ぶトレンドライン 時間経過に応じて広がるレインボーアーチ サポートゾーンの視覚化 👉 「今が安いのか高いのか」を構造的に判断できる
+              - generic [ref=e259]:
+                - generic "Pine Script® indicator" [ref=e260]:
+                  - img [ref=e261]:
+                    - img [ref=e262]
+                  - generic [ref=e264]: Pine Script® indicator
+                - link [ref=e265] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IlcitRnE/
+              - generic [ref=e267]:
+                - generic [ref=e268]:
+                  - link "by getrich03" [ref=e270] [cursor=pointer]:
+                    - /url: /u/getrich03/
+                    - generic [ref=e271]: by getrich03
+                  - time [ref=e273]: Apr 16
+                - generic [ref=e274]:
+                  - link "0 comments" [ref=e275] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/IlcitRnE/#chart-view-comment-form
+                    - img [ref=e277]:
+                      - img [ref=e278]
+                  - button "12 boosts 1 2" [ref=e280]:
+                    - generic [ref=e281]:
+                      - img "12 boosts" [ref=e283]:
+                        - img [ref=e284]
+                      - generic [ref=e288]:
+                        - generic [ref=e290]: "1"
+                        - generic [ref=e292]: "2"
+            - article [ref=e293]:
+              - generic [ref=e294]:
+                - link "Overnight Hold/ Opening Range Indicator" [ref=e295] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/G9rqmz5O-Overnight-Hold-Opening-Range-Indicator/
+                - link [ref=e296] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/G9rqmz5O-Overnight-Hold-Opening-Range-Indicator/
+                  - generic [ref=e298]: "Overnight Hold / Opening Range Indicator Overnight Hold / Opening Range Indicator is designed to help traders identify stocks and ETFs that finished the day with enough directional quality to be used in two different ways. At its core, this indicator is built to help a trader judge the quality of the close, not just the fact that price moved during the day. A stock can be active, volatile, and attractive intraday, but still finish the session with weak structure. It can break a level, trend for a while, and still fade into the close. This indicator is designed to help separate those weaker finishes from the names that actually closed with meaningful bullish or bearish quality. The reason that matters is because the last part of the session often tells the real story. Late-day price action can reveal whether buyers or sellers stayed in control, whether the move held together into the bell, and whether the stock finished with enough strength, weakness, and structure to matter going into the next session. This indicator is built to turn that late-day read into a more organized decision-making process. Important chart setup For the clearest and most consistent read, this indicator should be viewed on a 5-minute chart with REGULAR TRADING HOURS enabled. The final decision is made at 3:55 PM ET , so using a 5-minute chart helps the trader see the intended decision window clearly. Using REGULAR TRADING HOURS also keeps the read focused on the normal session close instead of allowing after-hours price action to distract from the intended setup. That does not mean the indicator is trying to trade the 5-minute trend by itself. The underlying read is built from daily conditions, but the 5-minute chart is the best way to monitor the decision at 3:55 PM ET and use the indicator the way it was intended. Purpose 1: Overnight Hold The first use is to help a trader decide whether a position may be worth acquiring late in the session and holding overnight. The goal is to focus on names that did not simply move during the day, but actually closed with strength or weakness that may carry into the next session. In this context, the indicator helps a trader ask a more important question than, “Was this stock up or down today?” It helps ask, “Did this stock finish the day in a way that suggests the move may continue tomorrow?” For overnight trading, that distinction matters. A stock may rally intraday and still fade into the close. Another may spend most of the day choppy, then finish with real directional control in the final stretch. This indicator is meant to help identify the names that actually finished well, because the close often matters more than the path the stock took to get there. Purpose 2: Next-Day Opening Range Opportunity The second use is to help a trader build a watchlist for the following morning. A strong reading can highlight names that may be worth trading after the first 15 minutes of the new session, once the Opening Range Breakout (ORB) is established. In this case, the indicator is not being used to hold a position overnight. Instead, it is being used to identify stocks that may have the right daily foundation for a next-day continuation trade after the market opens. This is important because many opening range trades work best when the prior day already showed strong directional structure. If a stock finished with trend alignment, a meaningful break of recent levels, a strong close, and enough expansion, it may deserve more attention the next morning once the opening range forms and the market confirms direction. In that way, the indicator helps traders do part of their watchlist filtering in advance. In other words, this indicator is built to answer one key question: Did this stock finish the day with enough bullish or bearish quality to either justify an overnight position or make it a strong candidate for a trade after the 15-minute ORB the next morning? Why this indicator matters A stock can look strong or weak during the day and still fail as an overnight hold or as a next-day opening trade. Many names move intraday but do not finish with the kind of structure that leads to follow-through. This indicator is designed to help filter that out. It does that by looking at whether the stock finished the day with: directional control trend alignment a meaningful break of the previous day’s range a strong close within the day’s range enough expansion to show the move had real force behind it That matters because both overnight holds and next-day ORB trades work best when the prior session closes with quality, not just activity. How to use it This indicator should be read near the end of the trading day. For best results, use it on a 5-minute chart with REGULAR TRADING HOURS enabled and check the final reading at 3:55 PM ET. That is the intended decision point. It allows the trader to judge the stock based on how it is actually finishing the session, not how it looked earlier in the day or after the close. Use #1: For an overnight position If the indicator shows a strong bullish or bearish reading into the close, a trader can use that information to decide whether the stock may be worth entering before the close and carrying overnight. This use is for traders asking: Is this stock finishing strong enough to hold? Is the trend aligned? Did it close with real control? Is there a better chance of continuation tomorrow? Use #2: For a trade after the 15-minute ORB A trader may also choose not to hold overnight and instead use the reading to prepare for the next session. In that case, the indicator helps identify names that may be worth watching the next morning for: an opening drive a break of the 15-minute range a pullback after the ORB a continuation setup after the market establishes direction A strong bullish reading can support a bullish ORB watchlist. A strong bearish reading can support a bearish ORB watchlist. What the indicator measures The reading is built from a group of daily factors that work together to show how well the stock actually finished the session. Instead of focusing on one signal by itself, the indicator looks at several pieces of information that help answer a bigger question: Did the stock end the day with enough structure, trend alignment, and closing strength to matter? Each part of the reading has a job. Daily candle direction This looks at whether the stock closed the day bullish or bearish. That matters because it shows who had control of the session by the close. If the stock finishes green, buyers had the upper hand. If it finishes red, sellers had the upper hand. This is the most basic layer of directional information, but it is still important because overnight holds and next-day continuation ideas usually start with understanding which side won the day. Price vs fast EMA This looks at whether the stock is closing above or below the fast EMA. That matters because it helps show whether price is ending the day above or below short-term value. A close above the fast EMA suggests short-term strength. A close below it suggests short-term weakness. This helps the trader see whether the stock is finishing the day in a healthy position relative to recent price action, not just whether it happened to be green or red. Fast EMA vs slow EMA This compares the fast EMA to the slow EMA. That matters because it adds a broader trend filter to the reading. A bullish close is more meaningful when the fast EMA is already above the slow EMA, and a bearish close is more meaningful when the fast EMA is below the slow EMA. This keeps the indicator from treating every directional day the same and helps align the late-day read with the larger daily trend. Break of previous day high or low This checks whether the stock closed above the previous day’s high or below the previous day’s low. That matters because it shows whether price actually expanded beyond an important recent reference point. A stock that finishes beyond the prior day’s range has done more than just move around intraday. It has pushed through a level that traders commonly watch, which can make the move more meaningful for both overnight continuation and next-day opening setups. Close Location Value (CLV) This measures where the stock closed within the day’s total range. That matters because the close often says a lot about who stayed in control when the session was ending. A close near the high of the day usually shows buyers held control into the bell. A close near the low usually shows sellers stayed in control into the bell. This is especially important for overnight trades because a strong close often matters more than a stock that simply moved earlier in the day and then faded before the session ended. Range expansion vs ATR This compares the day’s range to ATR. That matters because not every move has enough size to matter. A stock can look good visually, but if the range is too small relative to its normal movement, the session may not have had enough energy behind it. This part of the reading helps separate a real expansion day from a weaker move that may not have much follow-through potential. Score-based confirmation This combines the main conditions into a score and only produces stronger readings when enough of them line up together. That matters because the best setups usually are not built on one signal alone. A stock may have one attractive feature, but still be missing trend alignment, close quality, or meaningful expansion. By requiring multiple conditions to agree with each other, the indicator becomes more selective and does a better job filtering out weaker end-of-day setups. Why all of this matters together Each individual factor tells part of the story, but the real value comes from how they work together. A stock may close green, but still be below important trend value. A stock may break the previous day’s high, but fail to close strongly. A stock may close near the highs, but with very little expansion. Taken one at a time, those signals can be misleading. When they begin to line up together, the reading becomes more meaningful. That is why the indicator focuses on combined daily quality rather than one isolated signal. How to interpret the readings TAKE CALLS The stock finished the day with strong bullish qualities. This can make it a candidate for: an overnight long position a next-day bullish ORB watchlist a continuation trade after the first 15 minutes if the next session confirms the idea TAKE PUTS The stock finished the day with strong bearish qualities. This can make it a candidate for: an overnight bearish position a next-day bearish ORB watchlist a continuation trade after the first 15 minutes if the next session confirms the idea CAUTION There is some directional quality, but not enough full confirmation. This may still be worth monitoring, but it is not a top-tier setup. PASS There is no clear edge. This helps the trader avoid forcing low-quality overnight holds or weak next-day watchlist names. WAIT The session has not yet reached the final decision window. Before then, the indicator is still waiting for the proper late-day moment to make its final read. For the cleanest use, wait until the 3:55 PM ET bar on a 5-minute chart with REGULAR TRADING HOURS enabled. What gives it an edge The edge comes from selectivity. A lot of indicators become less useful because they react to just one thing. One green candle, one breakout, one moving average cross, or one push into the close can make a chart look attractive even when the overall setup is still incomplete. This indicator is different because it does not treat any single piece of information as enough on its own. Instead, it combines trend, price location, previous-day range breaks, close quality, and range expansion into one late-day decision. That forces the trader to focus on names that are not just moving, but are finishing the day with stronger overall structure. That matters because late in the session, plenty of stocks can appear strong for the wrong reasons. Some are simply bouncing inside a weak trend. Some are closing green but still below important value areas. Some break a prior level but do not close with conviction. Others close near the highs or lows, but the move itself is too small to suggest real expansion. By requiring several factors to align at the same time, this indicator helps filter out those lower-quality names and narrow attention to the ones showing stronger confirmation. That selectivity is important for both uses of the indicator. For overnight holds, it helps reduce the tendency to carry weak names into the close just because they looked good intraday. A stock may have had a decent move during the session, but if it did not finish with trend alignment, a meaningful level break, a strong close within the range, and enough expansion, the odds of overnight follow-through may not be as strong. This indicator helps the trader separate a stock that merely moved from a stock that actually finished with the kind of quality that may deserve overnight risk. For next-day ORB trades, it helps identify stocks that may already have the right daily foundation for morning continuation. When a stock finishes the session with stronger bullish or bearish structure, it can become a better candidate for the next day’s first real directional move after the opening range is established. In that sense, the indicator is not trying to replace the ORB setup itself. It is helping the trader do the filtering work in advance, so the next morning’s watchlist starts with names that already showed higher-quality closing conditions. The real advantage is that it improves decision quality. Instead of asking, “Did this stock move today?” the trader is asking better questions: Did it close in the direction of control? Was it aligned with the short-term and broader daily trend? Did it break a meaningful prior-day level? Did it close in the right part of the day’s range? Was the move large enough to matter? When those answers begin to line up together, the setup becomes more meaningful. That is where the edge comes from. Not from prediction, but from better selection. Best way to think about it Think of this indicator as a quality-control filter. It is not meant to replace your entries, exits, or risk management. It is meant to help answer: “Is this actually a strong overnight or next-open candidate, or does it only look good at first glance?” The more disciplined you are about only acting on stronger readings, the more useful it becomes."
+              - generic [ref=e300]:
+                - generic "Pine Script® indicator" [ref=e301]:
+                  - img [ref=e302]:
+                    - img [ref=e303]
+                  - generic [ref=e305]: Pine Script® indicator
+                - link [ref=e306] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/G9rqmz5O-Overnight-Hold-Opening-Range-Indicator/
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - link "by rodtradessometimes" [ref=e311] [cursor=pointer]:
+                    - /url: /u/rodtradessometimes/
+                    - generic [ref=e312]: by rodtradessometimes
+                  - time [ref=e314]: Apr 16
+                - generic [ref=e315]:
+                  - link "0 comments" [ref=e316] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/G9rqmz5O-Overnight-Hold-Opening-Range-Indicator/#chart-view-comment-form
+                    - img [ref=e318]:
+                      - img [ref=e319]
+                  - button "4 boosts 4" [ref=e321]:
+                    - generic [ref=e322]:
+                      - img "4 boosts" [ref=e324]:
+                        - img [ref=e325]
+                      - generic [ref=e331]: "4"
+            - article [ref=e332]:
+              - generic [ref=e333]:
+                - link "Volume Order Blocks" [ref=e334] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/cVyk6aVO-volume-order-blocks/
+                - link "Volume Profile Bar-Magnified Order Blocks is an indicator that detects bullish and bearish Order Blocks and reveals where the highest volume is concentrated inside each block. Unlike standard OB tools, this version splits every block into multiple price levels and builds an internal volume profile using fixed 1-minute lower timeframe data. This helps traders identify the true reaction zone inside the block, refine entries, and better evaluate block strength. The script also includes alerts for max-volume zone touches, confirmed rejections, and newly formed Order Blocks. Suitable for SMC, Price Action, intraday, and execution-based trading." [ref=e335] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/cVyk6aVO-volume-order-blocks/
+                  - generic [ref=e337]: Volume Profile Bar-Magnified Order Blocks is an indicator that detects bullish and bearish Order Blocks and reveals where the highest volume is concentrated inside each block. Unlike standard OB tools, this version splits every block into multiple price levels and builds an internal volume profile using fixed 1-minute lower timeframe data. This helps traders identify the true reaction zone inside the block, refine entries, and better evaluate block strength. The script also includes alerts for max-volume zone touches, confirmed rejections, and newly formed Order Blocks. Suitable for SMC, Price Action, intraday, and execution-based trading.
+              - generic [ref=e339]:
+                - generic "Pine Script® indicator" [ref=e340]:
+                  - img [ref=e341]:
+                    - img [ref=e342]
+                  - generic [ref=e344]: Pine Script® indicator
+                - link [ref=e345] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/cVyk6aVO-volume-order-blocks/
+              - generic [ref=e347]:
+                - generic [ref=e348]:
+                  - link "by sholpan781906" [ref=e350] [cursor=pointer]:
+                    - /url: /u/sholpan781906/
+                    - generic [ref=e351]: by sholpan781906
+                  - time [ref=e353]: Apr 16
+                - generic [ref=e354]:
+                  - link "3 comments" [ref=e355] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/cVyk6aVO-volume-order-blocks/#chart-view-comment-form
+                    - img [ref=e357]:
+                      - img [ref=e358]
+                    - generic [ref=e361]: "3"
+                  - button "1695 boosts 1.6 K" [ref=e362]:
+                    - generic [ref=e363]:
+                      - img "1695 boosts" [ref=e365]:
+                        - img [ref=e366]
+                      - generic [ref=e370]: 1.6 K
+            - article [ref=e371]:
+              - generic [ref=e372]:
+                - link "5min BB Lower 0.2% Orange Box" [ref=e373] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/41TlFgER/
+                - link "로우어 라오어" [ref=e374] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/41TlFgER/
+                  - generic [ref=e376]: 로우어 라오어
+              - generic [ref=e378]:
+                - generic "Pine Script® indicator" [ref=e379]:
+                  - img [ref=e380]:
+                    - img [ref=e381]
+                  - generic [ref=e383]: Pine Script® indicator
+                - link [ref=e384] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/41TlFgER/
+              - generic [ref=e386]:
+                - generic [ref=e387]:
+                  - link "by an941276an" [ref=e389] [cursor=pointer]:
+                    - /url: /u/an941276an/
+                    - generic [ref=e390]: by an941276an
+                  - time [ref=e392]: Apr 16
+                - generic [ref=e393]:
+                  - link "0 comments" [ref=e394] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/41TlFgER/#chart-view-comment-form
+                    - img [ref=e396]:
+                      - img [ref=e397]
+                  - button "0 boosts 0" [ref=e399]:
+                    - generic [ref=e400]:
+                      - img "0 boosts" [ref=e402]:
+                        - img [ref=e403]
+                      - generic [ref=e409]: "0"
+            - article [ref=e410]:
+              - generic [ref=e411]:
+                - link "Relative Strength During Market Correction" [ref=e412] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ABlI2wJW-Relative-Strength-During-Market-Correction/
+                - link "Looking for sectors that display RS during market correction" [ref=e413] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ABlI2wJW-Relative-Strength-During-Market-Correction/
+                  - generic [ref=e415]: Looking for sectors that display RS during market correction
+              - generic [ref=e417]:
+                - generic "Pine Script® indicator" [ref=e418]:
+                  - img [ref=e419]:
+                    - img [ref=e420]
+                  - generic [ref=e422]: Pine Script® indicator
+                - link [ref=e423] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ABlI2wJW-Relative-Strength-During-Market-Correction/
+              - generic [ref=e425]:
+                - generic [ref=e426]:
+                  - link "by chaitanya.j" [ref=e428] [cursor=pointer]:
+                    - /url: /u/chaitanya.j/
+                    - generic [ref=e429]: by chaitanya.j
+                  - time [ref=e431]: Apr 16
+                - generic [ref=e432]:
+                  - link "0 comments" [ref=e433] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/ABlI2wJW-Relative-Strength-During-Market-Correction/#chart-view-comment-form
+                    - img [ref=e435]:
+                      - img [ref=e436]
+                  - button "1 boost 1" [ref=e438]:
+                    - generic [ref=e439]:
+                      - img "1 boost" [ref=e441]:
+                        - img [ref=e442]
+                      - generic [ref=e448]: "1"
+            - article [ref=e449]:
+              - generic [ref=e450]:
+                - link "AG Pro Value Migration Bands [AGPro Series]" [ref=e451] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/wGKF0kAU-AG-Pro-Value-Migration-Bands-AGPro-Series/
+                - link [ref=e452] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/wGKF0kAU-AG-Pro-Value-Migration-Bands-AGPro-Series/
+                  - generic [ref=e454]: "AG Pro Value Migration Bands Overview / What it does The \"AG Pro Value Migration Bands\" script is a chart-first analytical tool designed to visualize how the market's accepted-value region migrates over time. Instead of drawing a single average line, it builds a three-layer band (upper, middle, lower) that represents where price has been most accepted during the rolling lookback window. As this band drifts up, holds flat, or drifts down, the indicator classifies the environment into three structural regimes: Rising Value, Flat Value, and Falling Value. The script's goal is to help traders read structural direction at a glance — not entry signals — by turning the abstract concept of value migration into a single, dominant on-chart geometry. Unique Edge (Why it is not a basic mashup) This script is not a moving average envelope, a Keltner-style ATR band, a Bollinger Band, or a volume profile derivative. It introduces three distinct design choices that work together: First, the band itself is constructed from percentile-window statistics rather than from mean-plus-deviation logic. The upper and lower edges are the linear-interpolation percentiles of a typical-price series over the lookback, which captures the region where price has statistically spent the most time — the structural meaning of \"accepted value.\" Second, the migration classification is ATR-normalized, making the Rising / Flat / Falling regime scale-invariant across assets and timeframes. A 2-bar candidate confirmation layer prevents the regime from flipping on single-bar noise. Third, the visual identity is engineered around a single dominant band with a low-opacity fill. Event markers (Reclaim / Lost) are regime-gated and ATR-distance-gated to prevent label spam, so the chart stays clean even in choppy markets. Methodology (Conceptual Data Flow) 1. Percentile Band Construction: For each bar, the script computes the low-percentile and high-percentile of the typical price (HLC/3) over the user-defined Band Length. The Band Width Mode (Tight / Balanced / Wide) controls which percentile pair is used. 2. Light Smoothing: The raw percentile edges are lightly smoothed with an EMA whose length scales with the Band Length, stabilizing the band visually without introducing structural lag. 3. Strict Value Filter: When the band width collapses below 0.8 ATR, the band is treated as a compressed non-structural zone and the regime is forced to Flat. This eliminates trivial micro-bands. 4. Migration Slope: The slope of the middle line is measured over a rolling window and normalized by ATR, producing a scale-invariant slope coefficient. 5. Regime Classification: The ATR-normalized slope is compared to the user's Sensitivity threshold to produce a candidate regime (Rising / Flat / Falling). A 2-bar persistence check confirms the regime before it commits. 6. Location State: Price is continuously classified as Inside, Above, or Below the band. 7. Event Gating: Reclaim and Lost events are only emitted when the current regime makes that event structurally meaningful (Reclaim only when not Falling; Lost only when not Rising), and only after a minimum ATR-distance from the prior event. Signals and Alerts All alerts are deterministically defined based on strict mathematical conditions. For optimal stability, alerts should be configured to trigger on \"Once Per Bar Close.\" - VMB: Value Band Shifted Up — Triggers when the confirmed regime transitions into Rising Value. - VMB: Value Band Shifted Down — Triggers when the confirmed regime transitions into Falling Value. - VMB: Band Reclaimed — Triggers when price returns into the accepted-value region from below, and the regime is not Falling (regime-gated). - VMB: Band Lost — Triggers when price falls out of the accepted-value region from inside, and the regime is not Rising (regime-gated). Key Inputs - Band Length — Lookback window used to build the rolling accepted-value region. Default 100 is balanced for 1H–4H swing use. - Band Width Mode — Tight / Balanced / Wide. Controls which percentile pair defines the band edges. - Strict Value Filter — When enabled, forces Flat regime during extreme band compression (recommended ON). - Migration Slope Sensitivity — ATR-normalized slope threshold separating Rising / Flat / Falling. - Show Midline, Band Fill, State Label, Event Markers, Info Panel — Individual visual toggles for a configurable display. - Panel Font Size, Label Font Size — Separate font-size controls for the info panel and on-chart labels. - Rising / Falling / Flat Colors, Band Fill Opacity — Full color customization. How to use This indicator is designed as a structural context tool, not an entry system. It is most useful for identifying the dominant value-migration direction and filtering trade ideas against that context. - A persistent Rising Value regime with price repeatedly holding inside or above the band suggests a structurally constructive environment where long-biased setups from other tools carry a contextual tailwind. - A persistent Falling Value regime with price repeatedly losing the band suggests a structurally weak environment where short-biased setups carry a contextual tailwind. - A Flat Value regime with a Tight Band Width is a signal of compression; the indicator makes no directional claim in this state and the user should defer to breakout or range-trading tools. - Reclaim and Lost event markers are reference points for location transitions, not standalone entry signals. They are most useful as confluence with independent structure, liquidity, or volume analysis. - The info panel's four rows (Value State, Migration, Location, Band Width) are designed to be read in roughly two seconds and provide a complete snapshot of the current structural context. Limitations & Transparency The band is built from percentile statistics over a finite lookback window. This means the band will lag in absolute terms after sharp regime changes, and the structure will always re-stabilize only after enough post-shift data has accumulated. The Migration Slope is a historical measurement, not a forecasting tool — it describes what has happened, not what will happen next. The Strict Value Filter uses a fixed 0.8 ATR compression threshold that has been tuned for general crypto and equity behavior; in extremely low-volatility or very thinly-traded markets, users may wish to disable the filter or adjust the lookback. This script does not use request.security() and therefore does not carry any multi-timeframe repainting risk. Regime classification is deterministic and closes-only at the candle-close level, but during live bar development the classification can flicker before the bar closes. For stable reading, always evaluate the regime on closed bars. What It Is Not & Risk Disclosure This indicator is not a standalone trading strategy, not an automated bot, and does not provide buy or sell recommendations. There is no such thing as a guaranteed win rate or a perfect indicator. Not financial advice. Past performance is not indicative of future results. Do your own research and testing before making any trading decisions."
+              - generic [ref=e456]:
+                - generic "Pine Script® indicator" [ref=e457]:
+                  - img [ref=e458]:
+                    - img [ref=e459]
+                  - generic [ref=e461]: Pine Script® indicator
+                - link [ref=e462] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/wGKF0kAU-AG-Pro-Value-Migration-Bands-AGPro-Series/
+              - generic [ref=e464]:
+                - generic [ref=e465]:
+                  - link "by AGProLabs" [ref=e467] [cursor=pointer]:
+                    - /url: /u/AGProLabs/
+                    - generic [ref=e468]: by AGProLabs
+                  - time [ref=e470]: Updated 22 hours ago
+                - generic [ref=e471]:
+                  - link "3 comments" [ref=e472] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/wGKF0kAU-AG-Pro-Value-Migration-Bands-AGPro-Series/#chart-view-comment-form
+                    - img [ref=e474]:
+                      - img [ref=e475]
+                    - generic [ref=e478]: "3"
+                  - button "16 boosts 1 6" [ref=e479]:
+                    - generic [ref=e480]:
+                      - img "16 boosts" [ref=e482]:
+                        - img [ref=e483]
+                      - generic [ref=e487]:
+                        - generic [ref=e489]: "1"
+                        - generic [ref=e491]: "6"
+            - article [ref=e492]:
+              - generic [ref=e493]:
+                - link "MES 5-Min ORB" [ref=e494] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/CZamnoZS-MES-5-Min-ORB/
+                - link "yolo. built using edgeful data. this is my first script, don't trust me" [ref=e495] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/CZamnoZS-MES-5-Min-ORB/
+                  - generic [ref=e497]: yolo. built using edgeful data. this is my first script, don't trust me
+              - generic [ref=e499]:
+                - generic "Pine Script® indicator" [ref=e500]:
+                  - img [ref=e501]:
+                    - img [ref=e502]
+                  - generic [ref=e504]: Pine Script® indicator
+                - link [ref=e505] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/CZamnoZS-MES-5-Min-ORB/
+              - generic [ref=e507]:
+                - generic [ref=e508]:
+                  - link "by PLAYBOYP416" [ref=e510] [cursor=pointer]:
+                    - /url: /u/PLAYBOYP416/
+                    - generic [ref=e511]: by PLAYBOYP416
+                  - time [ref=e513]: Apr 16
+                - generic [ref=e514]:
+                  - link "0 comments" [ref=e515] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/CZamnoZS-MES-5-Min-ORB/#chart-view-comment-form
+                    - img [ref=e517]:
+                      - img [ref=e518]
+                  - button "0 boosts 0" [ref=e520]:
+                    - generic [ref=e521]:
+                      - img "0 boosts" [ref=e523]:
+                        - img [ref=e524]
+                      - generic [ref=e530]: "0"
+            - article [ref=e531]:
+              - generic [ref=e532]:
+                - link "S/R Max Pain - Full Levels" [ref=e533] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4VXpXn4x-S-R-Max-Pain-Full-Levels/
+                - link "S/R Max Pain - Full Levels S/R Max Pain - Full Levels S/R Max Pain - Full Levels S/R Max Pain - Full Levels" [ref=e534] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4VXpXn4x-S-R-Max-Pain-Full-Levels/
+                  - generic [ref=e536]: S/R Max Pain - Full Levels S/R Max Pain - Full Levels S/R Max Pain - Full Levels S/R Max Pain - Full Levels
+              - generic [ref=e538]:
+                - generic "Pine Script® indicator" [ref=e539]:
+                  - img [ref=e540]:
+                    - img [ref=e541]
+                  - generic [ref=e543]: Pine Script® indicator
+                - link [ref=e544] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4VXpXn4x-S-R-Max-Pain-Full-Levels/
+              - generic [ref=e546]:
+                - generic [ref=e547]:
+                  - link "by fondBird7020" [ref=e549] [cursor=pointer]:
+                    - /url: /u/fondBird7020/
+                    - generic [ref=e550]: by fondBird7020
+                  - time [ref=e552]: Updated Apr 17
+                - generic [ref=e553]:
+                  - link "0 comments" [ref=e554] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/4VXpXn4x-S-R-Max-Pain-Full-Levels/#chart-view-comment-form
+                    - img [ref=e556]:
+                      - img [ref=e557]
+                  - button "4 boosts 4" [ref=e559]:
+                    - generic [ref=e560]:
+                      - img "4 boosts" [ref=e562]:
+                        - img [ref=e563]
+                      - generic [ref=e569]: "4"
+            - article [ref=e570]:
+              - generic [ref=e571]:
+                - link "Volatility-Adjusted Supply & Demand Zones [Footprint]" [ref=e572] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/fTVJsjx5-Volatility-Adjusted-Supply-Demand-Zones-Footprint/
+                - link [ref=e573] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/fTVJsjx5-Volatility-Adjusted-Supply-Demand-Zones-Footprint/
+                  - generic [ref=e575]: "Volatility-Adjusted Supply & Demand Zones Overview Most supply and demand indicators draw zones based on price structure alone — a strong candle appears, a box gets painted, and every zone looks equally valid. This indicator takes a different approach: it sizes and scores every zone using ATR-based volatility, then validates each zone using real order flow data pulled from the bar's volume footprint. The result is a layer of institutional context that price-only zone detectors cannot provide. The indicator detects displacement candles whose bodies exceed a user-defined ATR multiple, assigns each zone a composite strength score derived from body size and relative volume, and then cross-references the zone's origin bar against footprint delta — the net difference between aggressive buying and aggressive selling — to classify each zone as confirmed, weak, or mitigated. Zones where order flow agreed with the directional move are rendered at full opacity. Zones where delta contradicted the move are faded, acting as a caution signal rather than a confident level. A built-in performance heatmap tracks historical win rates and delta confirmation rates across five strength bins so you can calibrate inputs to your instrument over time. How it works Zone detection On each bar the indicator computes ATR and compares the candle body size against it. If the body exceeds the displacement threshold (ATR × Displacement Multiplier), the bar is flagged as a displacement move. A pending zone is created at the candle's proximal edge and held in a queue. The zone is only confirmed after price has moved away cleanly for a user-defined number of bars without re-entering the candidate range. If price re-enters during the waiting period, the candidate is discarded. bodySize = math.abs(close - open) dispRatio = bodySize / atr isStrongMove = dispRatio > displacementMult Zone height is fixed at the time of detection: ATR × Zone Width Multiplier, measured from the proximal edge of the displacement candle inward. Demand zones extend downward from the candle high; supply zones extend upward from the candle low. Strength score Each zone carries a strength score calculated from the body-to-ATR ratio and the bar's relative volume (volume divided by its moving average). Multiplying these two factors rewards moves that were both large in price terms and accompanied by elevated volume. relVol = volume / ta.sma(volume, volLengthInput) strengthScore = dispRatio * math.sqrt(relVol) The score is displayed on the zone label and used to bin zones into the statistics table. Footprint delta confirmation The indicator calls request.footprint() once per bar to obtain the volume footprint for the displacement candle. It reads the bar-level delta (net aggressive buying minus selling), and also inspects the Point of Control (POC) row for directional imbalance. A demand zone is delta-confirmed when the origin bar shows net buying (delta > 0). A supply zone is confirmed when the origin bar shows net selling (delta < 0). When delta contradicts the zone direction, the zone is rendered at the Weak Zone Transparency level as a visual warning. Zones whose POC row has a confirming buy or sell imbalance are marked with a ⚡ symbol on their label, indicating that the most-traded price level within the bar showed a pronounced one-sided order flow skew. Visual encoding Full-opacity zone — footprint delta confirmed the zone direction. Treat as a standard level. Faded zone (Weak Zone Transparency) — delta contradicted the zone direction. Approach with caution; order flow did not support the move. Heavily faded zone (Mitigated Transparency) — price has since closed through the far edge of the zone. The level has been invalidated. ⚡ label marker — the POC row of the origin bar showed a confirming imbalance, suggesting concentrated institutional activity at the most-traded price. Inputs Detection ATR Length — lookback period for ATR, which controls zone width, displacement sensitivity, and reaction targets across the entire indicator. Lower values (e.g. 7) make ATR respond faster to recent volatility, producing narrower zones on quiet bars. Higher values (e.g. 21) smooth out spikes for more consistent sizing. Default: 14. Displacement Multiplier — minimum candle body size as a multiple of ATR required to qualify as a displacement move. Lower values (e.g. 0.5) detect more zones including smaller impulses. Higher values (e.g. 1.5–2.0) filter down to only the most explosive candles. Default: 1.0. Volume MA Length — lookback period for the volume simple moving average used to compute relative volume. Lower values (e.g. 10) make the baseline adapt quickly so only larger surges register. Higher values (e.g. 50) treat moderate volume increases as more significant. Affects the strength score only, not zone placement. Default: 20. Zone Width ATR Multiplier — height of each zone expressed as a multiple of ATR at detection. Lower values (e.g. 0.3) produce tight zones that require a precise re-entry. Higher values (e.g. 1.0) tolerate wider wicks before a touch is registered. Default: 0.5. Confirmation Bars — number of bars price must hold outside the zone after the displacement candle before the zone is drawn. Lower values (e.g. 1–2) capture zones faster but allow more false starts. Higher values (e.g. 5+) require a sustained move away and reduce noise. Default: 3. Volume Footprint Ticks Per Footprint Row — price range of each footprint row in ticks. Smaller values (e.g. 10–25) produce more granular rows and more detailed POC detection. Larger values (e.g. 200–500) aggregate into fewer rows and run faster. Match to your instrument: for ES futures (0.25 pts/tick), 100 ticks = 25 points per row; for BTC (0.10/tick), 1000 ticks ≈ $100 per row. Default: 100. Value Area % — percentage of total bar volume that defines the Value Area, following standard market profile convention. Raising this widens the VA; lowering it tightens it. Default: 70. Imbalance Threshold % — how much a row's buy volume must exceed the row below's sell volume (or vice versa) to be flagged as imbalanced. At 300%, buy volume must be 3× the adjacent row's sell volume. Lower values (e.g. 150%) flag more imbalances; higher values (e.g. 500%) flag only extreme skews. Default: 300. Show Delta on Zone — when enabled, the zone label includes the footprint delta direction (▲/▼) and size in thousands at the origin bar. Disable to show only the strength score. Default: on. Highlight Imbalanced Zones — when enabled, zones whose origin bar POC row has a confirming directional imbalance are marked with ⚡ in the label. Disable to suppress imbalance detection entirely. Default: on. Statistics Show Performance Heatmap — toggles the heatmap table in the top-right corner. The table groups zones into five strength bins and shows demand win rate, supply win rate, total zone count, and delta confirmation rate per bin, colour-coded from red (low) to green (high). Default: on. Reaction Target (ATR) — how far price must move away from a zone after touching it to count as a successful reaction, in ATR multiples. Lower values (e.g. 0.5) count small bounces as wins; higher values (e.g. 2.5–3.0) require meaningful moves. Affects statistics only — does not resize zones. Default: 1.5. Style Demand Color — fill and border colour for demand zones. The opacity set in the colour picker controls baseline transparency; delta-confirmed zones render at this opacity while weak zones are additionally faded. Default: green at 60% transparency. Supply Color — fill and border colour for supply zones. The same transparency layering applies as demand zones. Default: red at 60% transparency. Weak Zone Transparency — transparency applied to zones where footprint delta contradicts the zone direction. Higher values (closer to 100) make weak zones nearly invisible. Lower values keep them visible as a caution marker. Default: 82. Mitigated Transparency — transparency applied after a zone is invalidated by price closing through its far edge. Higher values clean up the chart; lower values retain mitigated zones as historical context. Default: 90. Usage notes Before trusting any zone, check the label: a ▼ delta on a demand zone or ▲ delta on a supply zone means aggressive order flow did not support the move. Wait for additional confirmation before entering against the zone. The ⚡ marker identifies zones where the most-traded price level within the displacement bar showed a one-sided imbalance. These levels represent potential areas of concentrated institutional activity and may produce stronger reactions than unmarked zones. Use the performance heatmap to calibrate your displacement and volume inputs. If the highest-scoring bins (6–8, 8+) are showing low win rates for your instrument, the displacement multiplier may be too low and is capturing impulsive but unsustained moves. The Δ Conf% column in the heatmap shows what fraction of zones in each strength bin had confirming delta. If high-strength zones show low confirmation rates on your instrument, consider whether a different timeframe or session gives more reliable footprint data. Footprint data requires a TradingView subscription tier that provides volume footprint access. On instruments or timeframes where footprint is unavailable, delta values display as \"Δ n/a\" and all zones default to confirmed status so zone detection still functions. Ticks Per Footprint Row is the most instrument-sensitive input. Set it too small and computation overhead increases; set it too large and POC imbalance detection loses resolution. For equity index futures, 50–100 ticks per row is a reasonable starting range. Mitigated zones (heavily faded) mark levels where price has already broken through. They are kept visible by default as historical reference but can be hidden completely by setting Mitigated Transparency to 100. This indicator does not generate entry signals. It identifies structural levels with order flow context. Combine it with a trigger mechanism — a lower-timeframe confirmation candle, a momentum signal, or a volume surge — before committing to a trade."
+              - generic [ref=e577]:
+                - generic "Pine Script® indicator" [ref=e578]:
+                  - img [ref=e579]:
+                    - img [ref=e580]
+                  - generic [ref=e582]: Pine Script® indicator
+                - link [ref=e583] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/fTVJsjx5-Volatility-Adjusted-Supply-Demand-Zones-Footprint/
+              - generic [ref=e585]:
+                - generic [ref=e586]:
+                  - link "by jabez4jc" [ref=e588] [cursor=pointer]:
+                    - /url: /u/jabez4jc/
+                    - generic [ref=e589]: by jabez4jc
+                  - time [ref=e591]: Apr 16
+                - generic [ref=e592]:
+                  - link "0 comments" [ref=e593] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/fTVJsjx5-Volatility-Adjusted-Supply-Demand-Zones-Footprint/#chart-view-comment-form
+                    - img [ref=e595]:
+                      - img [ref=e596]
+                  - button "12 boosts 1 2" [ref=e598]:
+                    - generic [ref=e599]:
+                      - img "12 boosts" [ref=e601]:
+                        - img [ref=e602]
+                      - generic [ref=e606]:
+                        - generic [ref=e608]: "1"
+                        - generic [ref=e610]: "2"
+            - article [ref=e611]:
+              - generic [ref=e612]:
+                - link "AG Pro Reference Price Operating Map [AGPro Series]" [ref=e613] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/sK37XQpW-AG-Pro-Reference-Price-Operating-Map-AGPro-Series/
+                - link [ref=e614] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/sK37XQpW-AG-Pro-Reference-Price-Operating-Map-AGPro-Series/
+                  - generic [ref=e616]: "AG Pro Reference Price Operating Map Overview / What it does AG Pro Reference Price Operating Map is an overlay that organizes the four most universally watched intraday reference prices — Daily Open, Weekly Open, Monthly Open, and Previous Close — into a single operating map with real-time state tracking and control attribution. Instead of drawing these levels as static horizontal lines and leaving interpretation to the user, the script tracks how price interacts with each reference during its current period and classifies every reference into one of five states: Untouched, First Touch, Tested, Held, Reclaimed, or Rejected. A proximity and state-weighted control score determines which reference is currently dominant, so the chart answers a direct question: which reference is controlling the session right now. When two or more references cluster within the same price area, the script automatically merges them into a single confluence label. When a reference drifts far from current price, it is rendered as a thin gray context zone instead of a hard line. The goal is a clean, readable operating map rather than a collection of unrelated horizontal levels. Unique Edge Most reference-price tools draw Daily Open, Weekly Open, Monthly Open, and Previous Close as flat lines and stop there. This script is different in three ways. First, each reference runs through its own independent state machine. The chart communicates not just where the references are, but what happened when price reached them. A line that has been Rejected looks different from one that has been Reclaimed, which looks different from one that has only been Tested. Second, a control-score layer ranks all active references by proximity and interaction quality, then marks the dominant one directly in the panel footer and with a thicker line on the chart. The user does not have to visually compare four references and guess which one matters most. Third, a confluence grouping engine merges labels when two or more references are within half an ATR of each other. A single combined label such as \"D-Open + PClose\" replaces two overlapping labels, which keeps the right edge of the chart clean even when references coincide. This script does not attempt to be a PDH/PDL sweep tool, a support and resistance dashboard, a VWAP overlay, or a multi-level indicator bundle. It focuses narrowly on the four reference prices that define session bias, tracks their state, and communicates which one is in control. Methodology 1. Reference price calculation The script calculates four reference prices using confirmed higher-timeframe data from request.security. - Daily Open: opening price of the current trading day. - Weekly Open: opening price of the current trading week. - Monthly Open: opening price of the current calendar month. - Previous Close: closing price of the prior trading day. 2. Proximity detection Touch and rejection thresholds are defined in ATR multiples so the logic adapts to volatility. A reference is considered \"touched\" when price enters an ATR-based proximity band. Wick-based detection is supported so that intrabar penetration of the level is not missed. 3. State engine Each reference runs through an independent state machine. - Untouched: price has not reached the proximity band yet in this period. - First Touch: price touched the reference for the first time in the current period. - Tested: price is interacting with the reference but has not resolved the interaction. - Held: price moved away from the reference in the expected direction. - Reclaimed: price crossed through the reference and confirmed on the other side. - Rejected: price touched the reference and produced a large-wick reversal. Period resets are applied at the start of each relevant period: daily for Daily Open and Previous Close, weekly for Weekly Open, monthly for Monthly Open. 4. Control score Each active reference is scored using a combination of state weight and proximity. Reclaimed carries the highest state weight, followed by Rejected, First Touch, Tested, and Held. The reference with the highest total score is marked as dominant. If the market is in an unresolved phase with no dominant reference, the footer reads \"No Active Control\". 5. Confluence grouping References within half an ATR of each other are grouped into a single label, led by the reference with the highest priority. Priority is based on dominant status first, then state weight, then a fixed tiebreak order. This prevents right-edge label overlap and surfaces confluence naturally. 6. Distance-aware rendering References further than a user-configurable ATR multiple from current price are treated as \"far\" and are drawn with a thin theme-neutral gray zone and a dotted gray line rather than a full colored band. This keeps distant references visible as context without competing with the active map. Signals & Alerts The script includes three confirmed-bar alerts: - Reference Touched: fires when any reference transitions from Untouched to its first interaction state during its current period. - Reference Reclaimed: fires when price crosses back through a reference and confirms on the other side. - Reference Rejected: fires when price touches a reference and produces a confirmed reversal bar. All alerts use confirmed-bar logic. The alerts follow the script's state engine rather than subjective interpretation. Key Inputs Reference Lines - Show Daily Open, Show Weekly Open, Show Monthly Open, Show Previous Close: independent visibility toggles for each reference. Display Mode - Show Active Only: hides references that are still Untouched and Far, showing only references that have interacted with price. - Strict Reclaim Mode: requires multi-bar confirmation for reclaim events to filter single-bar wick noise. - Label Density: Minimal shows only the dominant reference label, Normal shows all visible references, Detailed adds state text to each label. - Show Reaction Bands: toggles the ATR-based proximity bands around active references. - Mark First Touch: places a small diamond marker at the bar where a reference is touched for the first time. Panel Settings - Panel Position: Top Right, Top Left, Bottom Right, or Bottom Left. Sensitivity - Touch Threshold (ATR x): how close price must come to a reference to count as a touch. - Reclaim Confirm Bars: bars required on the reclaim side for confirmation. - Band Width (ATR x): visual width of active reaction bands. - Far Distance (ATR x): distance beyond which a reference is rendered as far context rather than active structure. How to use it Most users will treat this script as a session bias and reaction map rather than as a standalone entry system. A common workflow is: - open the panel and identify the currently dominant reference. - check whether price is trading above or below that dominant reference. - observe the state labels on the chart. Reclaimed and Rejected references often carry more behavioral weight than simply Tested or Held ones. - watch confluence zones where two or more references cluster. A \"D-Open + PClose\" confluence is a different decision surface than a lone Daily Open. - use the far-context gray zones for awareness of broader anchors that are not currently in play, without letting them dominate the active map. The script complements trend, structure, order flow, momentum, and risk management tools. It is not intended to replace them. Limitations & Transparency - The script tracks four specific reference prices only. It does not include PDH, PDL, PWH, PWL, intraday VWAP, or any moving average. - Proximity is ATR-based. In extremely low-volatility environments the touch threshold may need manual adjustment. - Control score is a relative ranking tool, not a predictive model. A dominant reference does not guarantee continuation. - References are derived from standard timeframe data. Non-standard chart types may produce unexpected results. - The script is designed for intraday and swing timeframes. On very high timeframes, such as monthly charts, the operating map concept becomes less relevant. - State resets occur at period boundaries. Late-session state changes near a reset point may not have time to fully develop before the reset. - First Touch markers are limited to recent bars to avoid historical clutter. Risk Disclosure This indicator is not a strategy, not a trading signal generator, and not a substitute for proper risk management. It is a reference-price organization tool intended to support discretionary chart reading. The state classifications, control scores, and confluence labels are analytical frameworks, not predictions of future price movement. All trading involves risk. Users should combine this tool with their own analysis, risk management, and independent confirmation before making any trading decisions."
+              - generic [ref=e618]:
+                - generic "Pine Script® indicator" [ref=e619]:
+                  - img [ref=e620]:
+                    - img [ref=e621]
+                  - generic [ref=e623]: Pine Script® indicator
+                - link [ref=e624] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/sK37XQpW-AG-Pro-Reference-Price-Operating-Map-AGPro-Series/
+              - generic [ref=e626]:
+                - generic [ref=e627]:
+                  - link "by AGProLabs" [ref=e629] [cursor=pointer]:
+                    - /url: /u/AGProLabs/
+                    - generic [ref=e630]: by AGProLabs
+                  - time [ref=e632]: Updated 21 hours ago
+                - generic [ref=e633]:
+                  - link "3 comments" [ref=e634] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/sK37XQpW-AG-Pro-Reference-Price-Operating-Map-AGPro-Series/#chart-view-comment-form
+                    - img [ref=e636]:
+                      - img [ref=e637]
+                    - generic [ref=e640]: "3"
+                  - button "29 boosts 2 9" [ref=e641]:
+                    - generic [ref=e642]:
+                      - img "29 boosts" [ref=e644]:
+                        - img [ref=e645]
+                      - generic [ref=e649]:
+                        - generic [ref=e651]: "2"
+                        - generic [ref=e653]: "9"
+            - article [ref=e654]:
+              - generic [ref=e655]:
+                - link "Pin Bar Detector [SSFX]" [ref=e656] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ziDBibMI-Pin-Bar-Detector-SSFX/
+                - link [ref=e657] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ziDBibMI-Pin-Bar-Detector-SSFX/
+                  - generic [ref=e659]: "Pin Bar Detector is an indicator designed to automatically identify Bullish Pin Bars and Bearish Pin Bars directly on the chart based on candle structure and wick proportions. It is built for price action traders who want a fast and objective way to spot rejection candles without manually checking every bar. The script evaluates each candle using three main components: Body size relative to the full candle range Main wick size Opposite wick size For a Bullish Pin Bar, the indicator looks for candles with: a small body a long lower wick a small upper wick For a Bearish Pin Bar, the indicator looks for candles with: a small body a long upper wick a small lower wick One of the main strengths of this script is its flexibility. Users can adjust how strict the pin bar definition should be through the available inputs: Max body % of candle range: sets the maximum body size allowed relative to the full candle range Min long wick % of candle range: requires the main wick to represent at least a certain percentage of the full candle range Max opposite wick % of candle range: limits the size of the opposite wick so the candle keeps a clean pin bar structure In addition to wick and body structure, the indicator also includes an optional candle color filter for stricter confirmation: Bullish Pin Bar must close bullish Bearish Pin Bar must close bearish This helps filter out candles that visually resemble pin bars but close with weaker confirmation. For visualization, the indicator supports: bullish markers below bullish pin bars bearish markers above bearish pin bars optional text labels optional candle coloring for detected pin bars built-in alert conditions for TradingView alerts This indicator can be useful in many price action situations, such as: spotting reversal candles at support and resistance identifying rejection candles in trending markets combining with market structure, supply and demand, trendlines, or moving averages scanning for price action setups across multiple timeframes Disclaimer: This indicator is for educational and research purposes only. It does not provide financial advice or guarantee trading performance."
+              - generic [ref=e661]:
+                - generic "Pine Script® indicator" [ref=e662]:
+                  - img [ref=e663]:
+                    - img [ref=e664]
+                  - generic [ref=e666]: Pine Script® indicator
+                - link [ref=e667] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/ziDBibMI-Pin-Bar-Detector-SSFX/
+              - generic [ref=e669]:
+                - generic [ref=e670]:
+                  - link "by SimplySafeFx" [ref=e672] [cursor=pointer]:
+                    - /url: /u/SimplySafeFx/
+                    - generic [ref=e673]: by SimplySafeFx
+                  - time [ref=e675]: Apr 16
+                - generic [ref=e676]:
+                  - link "0 comments" [ref=e677] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/ziDBibMI-Pin-Bar-Detector-SSFX/#chart-view-comment-form
+                    - img [ref=e679]:
+                      - img [ref=e680]
+                  - button "15 boosts 1 5" [ref=e682]:
+                    - generic [ref=e683]:
+                      - img "15 boosts" [ref=e685]:
+                        - img [ref=e686]
+                      - generic [ref=e690]:
+                        - generic [ref=e692]: "1"
+                        - generic [ref=e694]: "5"
+            - article [ref=e695]:
+              - generic [ref=e696]:
+                - link "Flexible Moving Averages with MACD and RSI" [ref=e697] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/CjWOn2zz-Flexible-Moving-Averages-with-MACD-and-RSI/
+                - 'link "Every stock momentum can be identified either by crossing of higher EMA by lower EMA or MACD line crossing signal line and moving up or RSI value rising above 45 or 50. This indicator combines Moving averages with MACD and RSI How to use: Configure any or all of 5 moving averages according to your preference. It can be EMA or SMA. Configure symbols for MACD crossing or RSI rising. By default, if RSI crosses above 50, green triangle appears below candle. If RSI crosses 50 and comes down, red inverted triangle appears above candle By default, if MACD line crosses signal line and moves above, green dot appears below candle. If MACD line crosses signal line and moves down, red dot appears above candle These indications can give the user how much time RSI and MACD crossing happened along with EMA crossovers. User can take calculated decision and risk" [ref=e698] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/CjWOn2zz-Flexible-Moving-Averages-with-MACD-and-RSI/
+                  - generic [ref=e700]: "Every stock momentum can be identified either by crossing of higher EMA by lower EMA or MACD line crossing signal line and moving up or RSI value rising above 45 or 50. This indicator combines Moving averages with MACD and RSI How to use: Configure any or all of 5 moving averages according to your preference. It can be EMA or SMA. Configure symbols for MACD crossing or RSI rising. By default, if RSI crosses above 50, green triangle appears below candle. If RSI crosses 50 and comes down, red inverted triangle appears above candle By default, if MACD line crosses signal line and moves above, green dot appears below candle. If MACD line crosses signal line and moves down, red dot appears above candle These indications can give the user how much time RSI and MACD crossing happened along with EMA crossovers. User can take calculated decision and risk"
+              - generic [ref=e702]:
+                - generic "Pine Script® indicator" [ref=e703]:
+                  - img [ref=e704]:
+                    - img [ref=e705]
+                  - generic [ref=e707]: Pine Script® indicator
+                - link [ref=e708] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/CjWOn2zz-Flexible-Moving-Averages-with-MACD-and-RSI/
+              - generic [ref=e710]:
+                - generic [ref=e711]:
+                  - link "by Naathaz" [ref=e713] [cursor=pointer]:
+                    - /url: /u/Naathaz/
+                    - generic [ref=e714]: by Naathaz
+                  - time [ref=e716]: Apr 16
+                - generic [ref=e717]:
+                  - link "0 comments" [ref=e718] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/CjWOn2zz-Flexible-Moving-Averages-with-MACD-and-RSI/#chart-view-comment-form
+                    - img [ref=e720]:
+                      - img [ref=e721]
+                  - button "3 boosts 3" [ref=e723]:
+                    - generic [ref=e724]:
+                      - img "3 boosts" [ref=e726]:
+                        - img [ref=e727]
+                      - generic [ref=e733]: "3"
+            - article [ref=e734]:
+              - generic [ref=e735]:
+                - link "Hourly Direction-Change Open Rays" [ref=e736] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/kO4uSQZU-Hourly-Direction-Change-Open-Rays/
+                - link "Plots price levels at direction changes of hourly candles" [ref=e737] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/kO4uSQZU-Hourly-Direction-Change-Open-Rays/
+                  - generic [ref=e739]: Plots price levels at direction changes of hourly candles
+              - generic [ref=e741]:
+                - generic "Pine Script® indicator" [ref=e742]:
+                  - img [ref=e743]:
+                    - img [ref=e744]
+                  - generic [ref=e746]: Pine Script® indicator
+                - link [ref=e747] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/kO4uSQZU-Hourly-Direction-Change-Open-Rays/
+              - generic [ref=e749]:
+                - generic [ref=e750]:
+                  - link "by bmedina89" [ref=e752] [cursor=pointer]:
+                    - /url: /u/bmedina89/
+                    - generic [ref=e753]: by bmedina89
+                  - time [ref=e755]: Apr 16
+                - generic [ref=e756]:
+                  - link "0 comments" [ref=e757] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/kO4uSQZU-Hourly-Direction-Change-Open-Rays/#chart-view-comment-form
+                    - img [ref=e759]:
+                      - img [ref=e760]
+                  - button "14 boosts 1 4" [ref=e762]:
+                    - generic [ref=e763]:
+                      - img "14 boosts" [ref=e765]:
+                        - img [ref=e766]
+                      - generic [ref=e770]:
+                        - generic [ref=e772]: "1"
+                        - generic [ref=e774]: "4"
+            - article [ref=e775]:
+              - generic [ref=e776]:
+                - link "NY Opening Range" [ref=e777] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/cI5aPZ5T-NY-Opening-Range/
+                - link "welcome to the locker welcome to the locker welcome to the locker welcome to the locker welcome to the locker welcome to the locker welcome to the locker welcome to the locker" [ref=e778] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/cI5aPZ5T-NY-Opening-Range/
+                  - generic [ref=e780]: welcome to the locker welcome to the locker welcome to the locker welcome to the locker welcome to the locker welcome to the locker welcome to the locker welcome to the locker
+              - generic [ref=e782]:
+                - generic "Pine Script® indicator" [ref=e783]:
+                  - img [ref=e784]:
+                    - img [ref=e785]
+                  - generic [ref=e787]: Pine Script® indicator
+                - link [ref=e788] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/cI5aPZ5T-NY-Opening-Range/
+              - generic [ref=e790]:
+                - generic [ref=e791]:
+                  - link "by alexfearo03" [ref=e793] [cursor=pointer]:
+                    - /url: /u/alexfearo03/
+                    - generic [ref=e794]: by alexfearo03
+                  - time [ref=e796]: Apr 16
+                - generic [ref=e797]:
+                  - link "0 comments" [ref=e798] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/cI5aPZ5T-NY-Opening-Range/#chart-view-comment-form
+                    - img [ref=e800]:
+                      - img [ref=e801]
+                  - button "18 boosts 1 8" [ref=e803]:
+                    - generic [ref=e804]:
+                      - img "18 boosts" [ref=e806]:
+                        - img [ref=e807]
+                      - generic [ref=e811]:
+                        - generic [ref=e813]: "1"
+                        - generic [ref=e815]: "8"
+            - article [ref=e816]:
+              - generic [ref=e817]:
+                - link "Aegis DTC Style Bounce Back System" [ref=e818] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/nqwu8jt5/
+                - link [ref=e819] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/nqwu8jt5/
+                  - generic [ref=e821]: "Aegis DTC Style Bounce Back System ■ OVERVIEW Aegis DTC Style Bounce Back System is a trend-following and mean-reversion hybrid strategy. It utilizes a dynamic EMA Ribbon to identify the primary market bias and automatically generates Support/Resistance zones based on recent price extremes. The system is designed to catch high-probability \"bounce back\" opportunities within an established trend. ■ KEY FEATURES Gradient EMA Ribbon: A multi-layered EMA cloud that visualizes trend strength and potential exhaustion points through color transitions. Auto-Dynamic Zones: High-precision support and resistance boxes that update in real-time based on lookback periods, marking institutional supply and demand areas. Target Projection: Provides dashed target lines upon signal generation to assist in profit-taking and trade planning. Trend-Validated Signals: BUY/SELL labels are filtered through the EMA ribbon to ensure entries are aligned with the prevailing momentum."
+              - generic [ref=e823]:
+                - generic "Pine Script® indicator" [ref=e824]:
+                  - img [ref=e825]:
+                    - img [ref=e826]
+                  - generic [ref=e828]: Pine Script® indicator
+                - link [ref=e829] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/nqwu8jt5/
+              - generic [ref=e831]:
+                - generic [ref=e832]:
+                  - link "by wjdtks255" [ref=e834] [cursor=pointer]:
+                    - /url: /u/wjdtks255/
+                    - generic [ref=e835]: by wjdtks255
+                  - time [ref=e837]: Apr 16
+                - generic [ref=e838]:
+                  - link "0 comments" [ref=e839] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/nqwu8jt5/#chart-view-comment-form
+                    - img [ref=e841]:
+                      - img [ref=e842]
+                  - button "12 boosts 1 2" [ref=e844]:
+                    - generic [ref=e845]:
+                      - img "12 boosts" [ref=e847]:
+                        - img [ref=e848]
+                      - generic [ref=e852]:
+                        - generic [ref=e854]: "1"
+                        - generic [ref=e856]: "2"
+            - article [ref=e857]:
+              - generic [ref=e858]:
+                - link "Aegis Quantum Energy Band [wjdtks255]" [ref=e859] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4zxvPrjE/
+                - link [ref=e860] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4zxvPrjE/
+                  - generic [ref=e862]: "Aegis Quantum Energy Band : High-Volatility Breakout System ■ OVERVIEW Aegis Quantum Energy Band is a volatility-based breakout framework that utilizes a hybrid envelope system to identify institutional entry points. By integrating Standard Deviation Bands with a Volume Spike Filter, it distinguishes between market noise and high-conviction momentum shifts, ensuring traders only enter when real energy is present. ■ CORE STRATEGY Energy Confirmation: Signals are only generated when volume exceeds the average by 1.8x, confirming institutional participation. Structural Breakout Filter: Validates the strength of the breakout bar’s body to avoid \"Fake-outs.\" Flat Market Protection: Incorporates a slope-based filter to prevent entries during low-volatility consolidation phases. Dynamic Risk Execution: Automatically calculates and plots Target (TP) and Stop (SL) levels based on ATR, providing a clear execution roadmap."
+              - generic [ref=e864]:
+                - generic "Pine Script® indicator" [ref=e865]:
+                  - img [ref=e866]:
+                    - img [ref=e867]
+                  - generic [ref=e869]: Pine Script® indicator
+                - link [ref=e870] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/4zxvPrjE/
+              - generic [ref=e872]:
+                - generic [ref=e873]:
+                  - link "by wjdtks255" [ref=e875] [cursor=pointer]:
+                    - /url: /u/wjdtks255/
+                    - generic [ref=e876]: by wjdtks255
+                  - time [ref=e878]: Apr 16
+                - generic [ref=e879]:
+                  - link "0 comments" [ref=e880] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/4zxvPrjE/#chart-view-comment-form
+                    - img [ref=e882]:
+                      - img [ref=e883]
+                  - button "3 boosts 3" [ref=e885]:
+                    - generic [ref=e886]:
+                      - img "3 boosts" [ref=e888]:
+                        - img [ref=e889]
+                      - generic [ref=e895]: "3"
+            - article [ref=e896]:
+              - generic [ref=e897]:
+                - link "Fabio AMT v4 - Auction Market" [ref=e898] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/x1FDCCNw/
+                - link [ref=e899] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/x1FDCCNw/
+                  - generic [ref=e901]: "//@version=6 indicator( title = \"Fabio AMT v4 - Auction Market\", shorttitle = \"AMT v4\", overlay = true, max_boxes_count = 30, description = \" # FABIO AMT v4 — MANUAL DE USO Indicador basado en el Auction Market Playbook de Fabio Valentini. Combina Value Area del D1 anterior + LVN detection + señales mecánicas de entrada. Diseñado para Gold Futures (GC/XAUUSD) en cuentas fondeadas Topstep. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## ¿QUÉ HACE ESTE INDICADOR? ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Responde tres preguntas antes de cada trade: 1. ¿Está el mercado en tendencia o en rango? 2. ¿Dónde está el nivel exacto de entrada? 3. ¿Hay momentum real detrás del movimiento? Si las tres respuestas se alinean → hay trade. Si una sola falta → quedarse flat. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## EL PANEL (esquina superior derecha) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ AMT STATE → Estado del mercado vs. el VA del D1 anterior DESEQUILIBRIO = precio sobre VAH → buscar M1 Trend Long DESEQUILIBRIO = precio bajo VAL → buscar M1 Trend Short EN BALANCE = precio en VA → solo M2 Mean Reversion SESGO D1 → Estructura del día anterior BULLISH D1 = máx > máx y mín > mín (HH + HL) BEARISH D1 = máx < máx y mín < mín (LH + LL) INDEFINIDO = estructura mixta → no operar M1 MODELO → Cruce automático de AMT STATE + SESGO D1 M1 Trend - LONG = desequilibrio + bullish D1 M1 Trend - SHORT = desequilibrio + bearish D1 M2 MeanRev - SHORT→POC = en balance + precio vino de arriba M2 MeanRev - LONG→POC = en balance + precio vino de abajo Sin modelo claro = NO operar ese día TARGET → Siempre el POC del D1 anterior. Salida total ahí. VAH / POC / VAL → Niveles numéricos del Value Area ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## LÍNEAS Y ELEMENTOS EN EL GRÁFICO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ── VAH (verde) → Techo del área de valor del D1 anterior Precio encima = desequilibrio bullish ── POC (morado) → Punto de control = precio más aceptado del D1 Siempre es el TARGET de salida ── VAL (verde) → Suelo del área de valor del D1 anterior Precio debajo = desequilibrio bearish Zona VA coloreada → Relleno dinámico entre VAH y VAL Verde = precio sobre VA (M1 bull activo) Rojo = precio bajo VA (M1 bear activo) Morado = precio en VA (zona M2) □ Caja amber (LVN) → Zona de bajo volumen tras un impulso Punto exacto de entrada potencial Esperar que precio retroceda aquí ▲ Triángulo verde → Señal mecánica Long Precio tocó LVN y cerró por encima NO ejecutar sin confirmar agresión footprint ▼ Triángulo rojo → Señal mecánica Short Precio tocó LVN y cerró por debajo NO ejecutar sin confirmar agresión footprint ● Círculo verde → Impulso bullish confirmado (vela > ATR × factor) ● Círculo rojo → Impulso bearish confirmado Si ves círculo sin triángulo = esperar el retroceso Fondo morado tenue → Precio muy cerca del POC (< ATR × 0.5) En trade: evaluar salida parcial/total Sin trade: no abrir posición aquí ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## MODELO 1 — TREND CONTINUATION (M1) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Cuándo: precio fuera del VA + sesgo D1 alineado Sesión: 10–11 AM EST (Silver Bullet window) — NO apertura London Paso 1 → Confirmar panel: AMT STATE desequilibrio + SESGO D1 alineado Paso 2 → Esperar caja amber activa tras impulso en esa dirección Paso 3 → Aguardar retroceso del precio hasta la caja amber Paso 4 → Verificar agresión en footprint (big buy/sell prints o CVD) Paso 5 → Triángulo aparece + agresión confirmada → ejecutar manualmente Paso 6 → SL justo debajo/encima del print agresivo + 1–2 ticks buffer Paso 7 → TP en el POC del panel. Cerrar 100% ahí. Invalidación: precio vuelve a entrar al VA → salir inmediatamente ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## MODELO 2 — MEAN REVERSION (M2) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Cuándo: precio en balance + breakout fallido Sesión: London open o días comprimidos. También válido en NY open. Paso 1 → Panel dice EN BALANCE + modelo M2 MeanRev activo Paso 2 → Precio intentó salir del VA pero no tuvo follow-through Paso 3 → NO entrar en el primer movimiento de regreso (muy arriesgado) Paso 4 → Esperar reclaim claro dentro del VA Paso 5 → Esperar pullback al LVN de esa pierna de reclaim Paso 6 → Confirmar agresión footprint en dirección del snap-back Paso 7 → Ejecutar manualmente → TP en el POC → SL sobre/bajo el failed high/low Invalidación: precio sale del otro lado del VA → salir inmediatamente ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## GESTIÓN DE RIESGO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Riesgo por trade: 0.25%–0.5% de la cuenta Stop Loss: Justo más allá del print agresivo + 1–2 ticks buffer Nunca moverlo más lejos — si toca, era trade incorrecto Break-even: Mover SL a entrada cuando CVD sigue fuerte y el precio recorrió la mitad del camino al target Target: POC del panel — salida total siempre R:R esperado: 1:2.5 a 1:5 en condiciones normales Máx trades/día: 3 en total. Si 2 seguidos pierden → cerrar plataforma REGLAS TOPSTEP: - Ejecución 100% manual (bots prohibidos) - El triángulo es alerta visual, no orden automática - Respetar trailing drawdown con el 0.25%–0.5% de riesgo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## INPUTS CONFIGURABLES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Value Area % (default 0.70) % del rango D1 que define el VA. 0.70 = estándar AMT. No cambiar. Factor ATR impulso (default 1.5) Multiplicador del ATR(14) para detectar impulso real. Subir a 2.0 en días de alta volatilidad en Gold. Sensibilidad LVN (default 0.30) Qué tan bajo debe ser el volumen vs. media de 20 períodos. Bajar a 0.20 en días de volumen extremo. Mostrar LVNs (default true) Activa las cajas amber. Siempre dejar activado. Mostrar señales (default true) Activa triángulos de entrada. Activado en trading activo. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## RUTINA DIARIA ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PREMARKET (antes 9:30 AM EST): □ Leer panel: anotar VAH, POC, VAL □ Confirmar AMT STATE + SESGO D1 + MODELO □ Si INDEFINIDO o Sin modelo → día de observación □ Poner alertas en VAH, POC y VAL □ Revisar noticias macro 10–11 AM EST SILVER BULLET WINDOW (10:00–11:00 AM EST): □ Panel confirma M1 → esperar caja amber □ Precio retrocede a caja → abrir footprint □ Agresión confirmada + triángulo → ejecutar □ Colocar SL y TP de inmediato □ Break-even a mitad del camino si CVD positivo □ Cerrar total en el POC POST-TRADE: □ Registrar en Tradezella: modelo, LVN respetado, resultado □ Si perdiste 2 seguidos → cerrar plataforma el resto del día ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## ERRORES MÁS COMUNES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ✗ Entrar solo por el triángulo sin confirmar footprint ✗ Operar cuando el panel dice 'Sin modelo claro' ✗ Mover el SL más lejos cuando el trade va en contra ✗ Entrar en el impulso inicial en lugar de esperar el retroceso al LVN ✗ No cerrar en el POC y esperar más ganancia ✗ Operar M1 fuera de la ventana 10–11 AM EST ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ## SEMÁFORO DE DECISIÓN DIARIA ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ VERDE → Operar: AMT STATE claro + Sesgo alineado + Modelo M1 o M2 activo AMARILLO → Cuidado: Sesgo indefinido o M2 sin LVN visible → solo observar ROJO → No operar: Panel sin modelo claro O ya perdiste 2 trades hoy ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ REGLA DE ORO: sin agresión en footprint = sin trade. Los triángulos son alertas. La ejecución siempre es manual. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ \")"
+              - generic [ref=e903]:
+                - generic "Pine Script® indicator" [ref=e904]:
+                  - img [ref=e905]:
+                    - img [ref=e906]
+                  - generic [ref=e908]: Pine Script® indicator
+                - link [ref=e909] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/x1FDCCNw/
+              - generic [ref=e911]:
+                - generic [ref=e912]:
+                  - link "by luismamt2017" [ref=e914] [cursor=pointer]:
+                    - /url: /u/luismamt2017/
+                    - generic [ref=e915]: by luismamt2017
+                  - time [ref=e917]: Apr 16
+                - generic [ref=e918]:
+                  - link "0 comments" [ref=e919] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/x1FDCCNw/#chart-view-comment-form
+                    - img [ref=e921]:
+                      - img [ref=e922]
+                  - button "18 boosts 1 8" [ref=e924]:
+                    - generic [ref=e925]:
+                      - img "18 boosts" [ref=e927]:
+                        - img [ref=e928]
+                      - generic [ref=e932]:
+                        - generic [ref=e934]: "1"
+                        - generic [ref=e936]: "8"
+            - article [ref=e937]:
+              - generic [ref=e938]:
+                - link "Aegis Quantum Momentum Wave [wjdtks255]" [ref=e939] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/zjQbWcTj/
+                - link [ref=e940] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/zjQbWcTj/
+                  - generic [ref=e942]: "Quantum Momentum Wave : Energy-Based Oscillator ■ OVERVIEW (English) Quantum Momentum Wave is a sophisticated oscillator that quantifies market inertia by synthesizing price velocity and volume data. Unlike standard momentum tools, it identifies the \"hidden energy\" behind price movements, allowing traders to spot trend exhaustion and reversal points before they manifest in price action. ■ CORE FEATURES Force Index Evolution: Utilizes a modified Elder’s Force Index to visualize buying and selling pressure as a continuous wave. Momentum Pivot Detection: Specialized signal dots identify precise moments when energy shifts, providing early warnings for trend reversals. Smart Divergence Engine: Automatically detects bullish and bearish divergences (Yellow Diamond signals) where price and energy drift apart, predicting high-probability exhaustion zones. Zero-Line Polarity: Instant visual confirmation of market dominance through color-coded area plots (Aqua for Bulls, Red for Bears)."
+              - generic [ref=e944]:
+                - generic "Pine Script® indicator" [ref=e945]:
+                  - img [ref=e946]:
+                    - img [ref=e947]
+                  - generic [ref=e949]: Pine Script® indicator
+                - link [ref=e950] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/zjQbWcTj/
+              - generic [ref=e952]:
+                - generic [ref=e953]:
+                  - link "by wjdtks255" [ref=e955] [cursor=pointer]:
+                    - /url: /u/wjdtks255/
+                    - generic [ref=e956]: by wjdtks255
+                  - time [ref=e958]: Apr 16
+                - generic [ref=e959]:
+                  - link "0 comments" [ref=e960] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/zjQbWcTj/#chart-view-comment-form
+                    - img [ref=e962]:
+                      - img [ref=e963]
+                  - button "7 boosts 7" [ref=e965]:
+                    - generic [ref=e966]:
+                      - img "7 boosts" [ref=e968]:
+                        - img [ref=e969]
+                      - generic [ref=e975]: "7"
+            - article [ref=e976]:
+              - generic [ref=e977]:
+                - link "Correlation Thermal Matrix [ShigemiQuant]" [ref=e978] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/RKTSnOkH-Correlation-Thermal-Matrix-ShigemiQuant/
+                - link [ref=e979] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/RKTSnOkH-Correlation-Thermal-Matrix-ShigemiQuant/
+                  - generic [ref=e981]: "What's hidden in your portfolio? Two \"diversified\" positions can silently carry the same risk — but a standard correlation table won't show you the structure behind it. Correlation Thermal Matrix (CTM) goes further: it builds a live pairwise heatmap for up to 15 symbols, then applies K-Means clustering to automatically group symbols that share similar correlation behavior. The result is a block-diagonal matrix where hidden risk clusters become immediately visible — something no other public TradingView indicator currently offers. ━━ What It Does ━━ CTM calculates pairwise Pearson correlation coefficients for up to 15 symbols and renders them as a color-coded thermal matrix directly on your chart. Red cells indicate strong negative correlation (-1.0), white indicates near-zero, and blue indicates strong positive correlation (+1.0). Beyond the heatmap, a K-Means algorithm analyzes each symbol's full row of correlations — its \"correlation profile\" — and groups symbols with similar profiles into clusters. The matrix is then reordered so that clustered symbols sit adjacent to each other, separated by clear visual dividers. This block-diagonal structure reveals the hidden architecture of your watchlist at a glance. ━━ Key Features ━━ K-Means Clustering (ML) — Automatically groups symbols whose correlation profiles are similar. Adjustable from K=2 to K=5 clusters (default K=3). Powered by MLMatrixLib. Block-Diagonal Sorting — Clustered symbols are placed adjacent to each other with separator rows/columns at cluster boundaries, making structural patterns impossible to miss. Live Correlation Heatmap — Pairwise correlations for up to 15 symbols, updated every bar. Manual Pearson calculation bypasses ta.correlation() limitations for full flexibility. 3 Built-in Presets + Custom Mode — FX Majors (12 pairs including EURUSD, GBPUSD, USDJPY), US Stocks (AAPL, MSFT, GOOGL and more), Crypto (BTC, ETH, SOL and more), or define your own symbols entirely. Auto Duplicate Skip — If your chart symbol already exists in the preset, CTM automatically removes the duplicate so no slot is wasted. Flexible Display — Choose table position (9 locations), text size (Tiny / Small / Normal), and toggle numeric values on or off. Open Source — Full source code available under Mozilla Public License 2.0. Read it, learn from it, build on it. ━━ How to Use ━━ Step 1 — Add CTM to any chart. Select a preset (FX Majors / US Stocks / Crypto) or switch to Custom and enter your own symbols. Step 2 — Read the heatmap. Deep blue cells = highly correlated pairs. Deep red = inversely correlated. White = independent. If two positions you hold are deep blue, you are more concentrated than you think. Step 3 — Check the cluster blocks. Symbols inside the same block share similar correlation behavior. Symbols in different blocks offer genuine diversification. Step 4 — Adjust the correlation period (default 20 bars) to match your trading horizon. Shorter periods capture recent regime shifts; longer periods reveal structural relationships. Step 5 — Watch for changes. When a pair that was previously uncorrelated suddenly turns blue, this often signals a regime change — reassess your exposure accordingly. ━━ Parameters ━━ Parameter Default Range / Options Correlation Period 20 5 - 100 bars Cluster Count (K) 3 2 - 5 Symbol Preset FX Majors FX Majors / US Stocks / Crypto / Custom Table Position Top Right 9 chart positions Text Size Tiny Tiny / Small / Normal Show Values On On / Off ━━ Practical Applications ━━ Concentration risk detection — Holding EURUSD and GBPUSD simultaneously? If their correlation reads +0.92, your effective exposure is nearly doubled. CTM makes this visible before the drawdown does. Diversification discovery — Symbols in separate clusters behave independently. For example, if BTC and ETH land in Cluster 1 while SOL sits in Cluster 2, SOL may offer genuine diversification against the BTC/ETH group. Use cluster membership to build positions that don't collapse together. Regime change early warning — A correlation that breaks from its historical pattern signals a structural shift in the market. Monitor cluster membership over time — when a symbol migrates from one cluster to another, it deserves attention. ━━ Suggested Workflow ━━ 1. Detect risk clusters (CTM) — Identify which of your positions share correlated behavior. 2. Find independent momentum (Multi-Symbol Momentum Screener) — Screen for momentum signals, then cross-check with CTM to confirm those signals come from different clusters. 3. Size by real exposure (Smart Position Sizer) — Allocate position size based on per-cluster exposure rather than per-symbol, so correlated groups don't silently dominate your book. ━━ About ShigemiQuant ━━ ShigemiQuant builds open-source quantitative tools focused on risk management and portfolio intelligence. Every script is designed to solve a real trading problem — no repainting, no black boxes, fully readable source code. ━━ Changelog ━━ v1.0 — Initial release. Live correlation heatmap with K-Means clustering, 3 presets, block-diagonal sorting, and auto duplicate skip."
+              - generic [ref=e983]:
+                - generic "Pine Script® indicator" [ref=e984]:
+                  - img [ref=e985]:
+                    - img [ref=e986]
+                  - generic [ref=e988]: Pine Script® indicator
+                - link [ref=e989] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/RKTSnOkH-Correlation-Thermal-Matrix-ShigemiQuant/
+              - generic [ref=e991]:
+                - generic [ref=e992]:
+                  - link "by ShigemiQuant" [ref=e994] [cursor=pointer]:
+                    - /url: /u/ShigemiQuant/
+                    - generic [ref=e995]: by ShigemiQuant
+                  - time [ref=e997]: Apr 16
+                - generic [ref=e998]:
+                  - link "0 comments" [ref=e999] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/RKTSnOkH-Correlation-Thermal-Matrix-ShigemiQuant/#chart-view-comment-form
+                    - img [ref=e1001]:
+                      - img [ref=e1002]
+                  - button "0 boosts 0" [ref=e1004]:
+                    - generic [ref=e1005]:
+                      - img "0 boosts" [ref=e1007]:
+                        - img [ref=e1008]
+                      - generic [ref=e1014]: "0"
+            - article [ref=e1015]:
+              - generic [ref=e1016]:
+                - link "Daily Bias - Bull / Bear / Neutral [Phil Vo]" [ref=e1017] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/A8ijZZFy-Daily-Bias-Bull-Bear-Neutral-Phil-Vo/
+                - link [ref=e1018] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/A8ijZZFy-Daily-Bias-Bull-Bear-Neutral-Phil-Vo/
+                  - generic [ref=e1020]: "This indicator is built to help traders quickly understand the current daily market bias in a simple visual way. It combines basic market structure with moving average trend filters to classify price conditions as bullish, bearish, or neutral. The script looks at swing highs and swing lows to detect whether price is forming higher highs and higher lows, or lower highs and lower lows. It then confirms that structure with the 50-period and 200-period moving averages. When both structure and trend filter agree, the indicator displays a clear directional bias. When they do not align, it shows a neutral or choppy condition instead. The goal is to reduce confusion and help traders stay aligned with the broader directional context before looking for entries on lower timeframes. Key features: Clear Bullish / Bearish / Neutral bias label Optional background color for fast chart reading 50 MA and 200 MA trend filters Swing-based market structure confirmation Last swing high and swing low reference points Alert conditions when bias flips bullish or bearish This is not a signal or entry tool. It is designed as a simple decision-support overlay to help traders understand whether the market structure and trend are aligned. You can use it as a higher-timeframe guide before planning executions with your own strategy, price action model, or risk management rules."
+              - generic [ref=e1022]:
+                - generic "Pine Script® indicator" [ref=e1023]:
+                  - img [ref=e1024]:
+                    - img [ref=e1025]
+                  - generic [ref=e1027]: Pine Script® indicator
+                - link [ref=e1028] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/A8ijZZFy-Daily-Bias-Bull-Bear-Neutral-Phil-Vo/
+              - generic [ref=e1030]:
+                - generic [ref=e1031]:
+                  - link "by BullBearInsights" [ref=e1033] [cursor=pointer]:
+                    - /url: /u/BullBearInsights/
+                    - generic [ref=e1034]: by BullBearInsights
+                  - time [ref=e1036]: Apr 16
+                - generic [ref=e1037]:
+                  - link "0 comments" [ref=e1038] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/A8ijZZFy-Daily-Bias-Bull-Bear-Neutral-Phil-Vo/#chart-view-comment-form
+                    - img [ref=e1040]:
+                      - img [ref=e1041]
+                  - button "6 boosts 6" [ref=e1043]:
+                    - generic [ref=e1044]:
+                      - img "6 boosts" [ref=e1046]:
+                        - img [ref=e1047]
+                      - generic [ref=e1053]: "6"
+          - button "Show more publications" [ref=e1054]:
+            - generic [ref=e1055]: Show more publications
+          - generic [ref=e1059]:
+            - navigation "Pagination" [ref=e1060]:
+              - button "Previous page" [ref=e1061]:
+                - img [ref=e1063]:
+                  - img [ref=e1064]
+              - generic [ref=e1066]:
+                - link "1" [ref=e1067] [cursor=pointer]:
+                  - /url: /scripts/?
+                  - generic [ref=e1068]: "1"
+                - generic [ref=e1069]: …
+                - link "18" [ref=e1070] [cursor=pointer]:
+                  - /url: /scripts/page-18/?
+                  - generic [ref=e1071]: "18"
+                - link "19" [ref=e1072] [cursor=pointer]:
+                  - /url: /scripts/page-19/?
+                  - generic [ref=e1073]: "19"
+                - link "20" [ref=e1074] [cursor=pointer]:
+                  - /url: /scripts/page-20/?
+                  - generic [ref=e1075]: "20"
+                - link "21" [ref=e1076] [cursor=pointer]:
+                  - /url: /scripts/page-21/?
+                  - generic [ref=e1077]: "21"
+                - link "22" [ref=e1078] [cursor=pointer]:
+                  - /url: /scripts/page-22/?
+                  - generic [ref=e1079]: "22"
+                - link "23" [ref=e1080] [cursor=pointer]:
+                  - /url: /scripts/page-23/?
+                  - generic [ref=e1081]: "23"
+                - link "24" [ref=e1082] [cursor=pointer]:
+                  - /url: /scripts/page-24/?
+                  - generic [ref=e1083]: "24"
+                - generic [ref=e1084]: …
+                - link "42" [ref=e1085] [cursor=pointer]:
+                  - /url: /scripts/page-42/?
+                  - generic [ref=e1086]: "42"
+              - button "Next page" [ref=e1087]:
+                - img [ref=e1089]:
+                  - img [ref=e1090]
+            - generic:
+              - generic:
+                - generic: …
+                - generic:
+                  - generic: "999"
+                - button:
+                  - generic:
+                    - img:
+                      - img
+    - contentinfo [ref=e1092]:
+      - generic [ref=e1094]:
+        - separator [ref=e1095]
+        - generic [ref=e1096]:
+          - generic [ref=e1097]:
+            - generic [ref=e1098]:
+              - generic [ref=e1099]:
+                - link "TradingView main page" [ref=e1100] [cursor=pointer]:
+                  - /url: /
+                - generic [ref=e1102]:
+                  - link "TradingView on X" [ref=e1103] [cursor=pointer]:
+                    - /url: https://x.com/tradingview/
+                    - img [ref=e1105]:
+                      - img [ref=e1106]
+                  - link "TradingView on Facebook" [ref=e1108] [cursor=pointer]:
+                    - /url: https://www.facebook.com/tradingview/
+                    - img [ref=e1110]:
+                      - img [ref=e1111]
+                  - link "TradingView on YouTube" [ref=e1113] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@TradingView
+                    - img [ref=e1115]:
+                      - img [ref=e1116]
+                  - link "TradingView on Instagram" [ref=e1118] [cursor=pointer]:
+                    - /url: https://www.instagram.com/tradingview/
+                    - img [ref=e1120]:
+                      - img [ref=e1121]
+                  - link "TradingView on LinkedIn" [ref=e1123] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/tradingview/
+                    - img [ref=e1125]:
+                      - img [ref=e1126]
+                  - link "TradingView on Telegram" [ref=e1128] [cursor=pointer]:
+                    - /url: https://t.me/tradingview/
+                    - img [ref=e1130]:
+                      - img [ref=e1131]
+                  - link "TradingView on TikTok" [ref=e1133] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@tradingview/
+                    - img [ref=e1135]:
+                      - img [ref=e1136]
+                  - link "TradingView on Reddit" [ref=e1138] [cursor=pointer]:
+                    - /url: https://www.reddit.com/r/TradingView/
+                    - img [ref=e1140]:
+                      - img [ref=e1141]
+              - generic [ref=e1143]:
+                - button "English" [ref=e1144]:
+                  - img [ref=e1146]:
+                    - img [ref=e1147]
+                  - generic [ref=e1150]: English
+                  - img [ref=e1151]:
+                    - img [ref=e1152]
+                - paragraph [ref=e1154]:
+                  - generic [ref=e1155]:
+                    - text: Select market data provided by
+                    - link "ICE Data Services" [ref=e1156] [cursor=pointer]:
+                      - /url: https://www.theice.com/market-data
+                    - text: .
+                  - generic [ref=e1157]: Select reference data provided by FactSet. Copyright © 2026 FactSet Research Systems Inc.
+                  - generic [ref=e1158]: Copyright © 2026, American Bankers Association. CUSIP Database provided by FactSet Research Systems Inc. All rights reserved.
+                  - generic [ref=e1159]:
+                    - text: SEC fillings and other documents provided by
+                    - link "Quartr" [ref=e1160] [cursor=pointer]:
+                      - /url: https://www.quartr.com
+                    - text: .
+                  - generic [ref=e1161]: © 2026 TradingView, Inc.
+            - generic [ref=e1162]:
+              - generic [ref=e1163]:
+                - generic [ref=e1164]:
+                  - generic [ref=e1165]: More than a product
+                  - list [ref=e1166]:
+                    - listitem [ref=e1167]:
+                      - link "Supercharts" [ref=e1168] [cursor=pointer]:
+                        - /url: /chart/
+                - generic [ref=e1169]:
+                  - generic [ref=e1170]: Screeners
+                  - list [ref=e1171]:
+                    - listitem [ref=e1172]:
+                      - link "Stocks" [ref=e1173] [cursor=pointer]:
+                        - /url: /screener/
+                    - listitem [ref=e1174]:
+                      - link "ETFs" [ref=e1175] [cursor=pointer]:
+                        - /url: /etf-screener/
+                    - listitem [ref=e1176]:
+                      - link "Bonds" [ref=e1177] [cursor=pointer]:
+                        - /url: /bond-screener/
+                    - listitem [ref=e1178]:
+                      - link "Crypto coins" [ref=e1179] [cursor=pointer]:
+                        - /url: /crypto-coins-screener/
+                    - listitem [ref=e1180]:
+                      - link "CEX pairs" [ref=e1181] [cursor=pointer]:
+                        - /url: /cex-screener/
+                    - listitem [ref=e1182]:
+                      - link "DEX pairs" [ref=e1183] [cursor=pointer]:
+                        - /url: /dex-screener/
+                    - listitem [ref=e1184]:
+                      - link "Pine" [ref=e1185] [cursor=pointer]:
+                        - /url: /pine-screener/
+                - generic [ref=e1186]:
+                  - generic [ref=e1187]: Heatmaps
+                  - list [ref=e1188]:
+                    - listitem [ref=e1189]:
+                      - link "Stocks" [ref=e1190] [cursor=pointer]:
+                        - /url: /heatmap/stock/
+                    - listitem [ref=e1191]:
+                      - link "ETFs" [ref=e1192] [cursor=pointer]:
+                        - /url: /heatmap/etf/
+                    - listitem [ref=e1193]:
+                      - link "Crypto coins" [ref=e1194] [cursor=pointer]:
+                        - /url: /heatmap/crypto/
+                - generic [ref=e1195]:
+                  - generic [ref=e1196]: Calendars
+                  - list [ref=e1197]:
+                    - listitem [ref=e1198]:
+                      - link "Economic" [ref=e1199] [cursor=pointer]:
+                        - /url: /economic-calendar/
+                    - listitem [ref=e1200]:
+                      - link "Earnings" [ref=e1201] [cursor=pointer]:
+                        - /url: /earnings-calendar/
+                    - listitem [ref=e1202]:
+                      - link "Dividends" [ref=e1203] [cursor=pointer]:
+                        - /url: /dividend-calendar/
+                - generic [ref=e1204]:
+                  - generic [ref=e1205]: More products
+                  - list [ref=e1206]:
+                    - listitem [ref=e1207]:
+                      - link "Yield Curves" [ref=e1208] [cursor=pointer]:
+                        - /url: /yield-curves/
+                    - listitem [ref=e1209]:
+                      - link "Options" [ref=e1210] [cursor=pointer]:
+                        - /url: /options/
+                    - listitem [ref=e1211]:
+                      - link "Macro Maps" [ref=e1212] [cursor=pointer]:
+                        - /url: /macro-maps/
+                    - listitem [ref=e1213]:
+                      - link "News Flow" [ref=e1214] [cursor=pointer]:
+                        - /url: /news-flow/
+                    - listitem [ref=e1215]:
+                      - link "Pine Script®" [ref=e1216] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/pine-script-docs/
+                - generic [ref=e1217]:
+                  - generic [ref=e1218]: Apps
+                  - list [ref=e1219]:
+                    - listitem [ref=e1220]:
+                      - link "Mobile" [ref=e1221] [cursor=pointer]:
+                        - /url: /mobile/
+                    - listitem [ref=e1222]:
+                      - link "Desktop" [ref=e1223] [cursor=pointer]:
+                        - /url: /desktop/
+              - generic [ref=e1224]:
+                - generic [ref=e1225]:
+                  - generic [ref=e1226]: Tools & subscriptions
+                  - list [ref=e1227]:
+                    - listitem [ref=e1228]:
+                      - link "Features" [ref=e1229] [cursor=pointer]:
+                        - /url: /features/
+                    - listitem [ref=e1230]:
+                      - link "Pricing" [ref=e1231] [cursor=pointer]:
+                        - /url: /pricing/?source=footer&feature=pricing
+                    - listitem [ref=e1232]:
+                      - link "Market data" [ref=e1233] [cursor=pointer]:
+                        - /url: /data-coverage/
+                    - listitem [ref=e1234]:
+                      - link "Gift plans" [ref=e1235] [cursor=pointer]:
+                        - /url: /gifts/
+                - generic [ref=e1236]:
+                  - generic [ref=e1237]: Trading
+                  - list [ref=e1238]:
+                    - listitem [ref=e1239]:
+                      - link "Overview" [ref=e1240] [cursor=pointer]:
+                        - /url: /trading/
+                    - listitem [ref=e1241]:
+                      - link "Top brokers" [ref=e1242] [cursor=pointer]:
+                        - /url: /brokers/
+                    - listitem [ref=e1243]:
+                      - link "Brokers comparison" [ref=e1244] [cursor=pointer]:
+                        - /url: /brokers/compare/
+                - generic [ref=e1245]:
+                  - generic [ref=e1246]: Special offers
+                  - list [ref=e1247]:
+                    - listitem [ref=e1248]:
+                      - link "CME Group futures" [ref=e1249] [cursor=pointer]:
+                        - /url: /cme/
+                    - listitem [ref=e1250]:
+                      - link "Eurex futures" [ref=e1251] [cursor=pointer]:
+                        - /url: /eurex/
+                    - listitem [ref=e1252]:
+                      - link "US stocks bundle" [ref=e1253] [cursor=pointer]:
+                        - /url: /us-markets-bundle/
+                - generic [ref=e1254]:
+                  - generic [ref=e1255]: About company
+                  - list [ref=e1256]:
+                    - listitem [ref=e1257]:
+                      - link "Who we are" [ref=e1258] [cursor=pointer]:
+                        - /url: /about/
+                    - listitem [ref=e1259]:
+                      - link "Space mission" [ref=e1260] [cursor=pointer]:
+                        - /url: /space-mission/
+                    - listitem [ref=e1261]:
+                      - link "Blog" [ref=e1262] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/blog/en/
+                    - listitem [ref=e1263]:
+                      - link "Careers" [ref=e1264] [cursor=pointer]:
+                        - /url: /careers/
+                    - listitem [ref=e1265]:
+                      - link "Media kit" [ref=e1266] [cursor=pointer]:
+                        - /url: /media-kit/
+                - generic [ref=e1267]:
+                  - generic [ref=e1268]: Merch
+                  - list [ref=e1269]:
+                    - listitem [ref=e1270]:
+                      - link "TradingView store" [ref=e1271] [cursor=pointer]:
+                        - /url: https://tradingviewstore.com/
+                    - listitem [ref=e1272]:
+                      - link "Tarot cards for traders" [ref=e1273] [cursor=pointer]:
+                        - /url: /tarot-reading/
+                    - listitem [ref=e1274]:
+                      - link "The C63 TradeTime" [ref=e1275] [cursor=pointer]:
+                        - /url: /tradetime/
+                - generic [ref=e1276]:
+                  - generic [ref=e1277]: Policies & security
+                  - list [ref=e1278]:
+                    - listitem [ref=e1279]:
+                      - link "Terms of Use" [ref=e1280] [cursor=pointer]:
+                        - /url: /policies/
+                    - listitem [ref=e1281]:
+                      - link "Disclaimer" [ref=e1282] [cursor=pointer]:
+                        - /url: /disclaimer/
+                    - listitem [ref=e1283]:
+                      - link "Privacy Policy" [ref=e1284] [cursor=pointer]:
+                        - /url: /privacy-policy/
+                    - listitem [ref=e1285]:
+                      - link "Cookies Policy" [ref=e1286] [cursor=pointer]:
+                        - /url: /cookies-policy/
+                    - listitem [ref=e1287]:
+                      - link "Accessibility Statement" [ref=e1288] [cursor=pointer]:
+                        - /url: /accessibility/
+                    - listitem [ref=e1289]:
+                      - link "Security tips" [ref=e1290] [cursor=pointer]:
+                        - /url: /security/
+                    - listitem [ref=e1291]:
+                      - link "Bug Bounty program" [ref=e1292] [cursor=pointer]:
+                        - /url: /bounty/
+                    - listitem [ref=e1293]:
+                      - link "Status page" [ref=e1294] [cursor=pointer]:
+                        - /url: https://status.tradingview.com/
+              - generic [ref=e1295]:
+                - generic [ref=e1296]:
+                  - generic [ref=e1297]: Community
+                  - list [ref=e1298]:
+                    - listitem [ref=e1299]:
+                      - link "Social network" [ref=e1300] [cursor=pointer]:
+                        - /url: /social-network/
+                    - listitem [ref=e1301]:
+                      - link "Wall of Love" [ref=e1302] [cursor=pointer]:
+                        - /url: /wall-of-love/
+                    - listitem [ref=e1303]:
+                      - link "Refer a friend" [ref=e1304] [cursor=pointer]:
+                        - /url: /share-your-love/?source=footer&feature=refer_friend
+                    - listitem [ref=e1305]:
+                      - link "House Rules" [ref=e1306] [cursor=pointer]:
+                        - /url: /house-rules/
+                    - listitem [ref=e1307]:
+                      - link "Moderators" [ref=e1308] [cursor=pointer]:
+                        - /url: /moderators/
+                - generic [ref=e1309]:
+                  - generic [ref=e1310]: Ideas
+                  - list [ref=e1311]:
+                    - listitem [ref=e1312]:
+                      - link "Trading" [ref=e1313] [cursor=pointer]:
+                        - /url: /ideas/
+                    - listitem [ref=e1314]:
+                      - link "Education" [ref=e1315] [cursor=pointer]:
+                        - /url: /ideas/?type=education
+                    - listitem [ref=e1316]:
+                      - link "Editors' picks" [ref=e1317] [cursor=pointer]:
+                        - /url: /ideas/editors-picks/
+                - generic [ref=e1318]:
+                  - generic [ref=e1319]: Pine Script
+                  - list [ref=e1320]:
+                    - listitem [ref=e1321]:
+                      - link "Indicators & strategies" [ref=e1322] [cursor=pointer]:
+                        - /url: /scripts/
+                    - listitem [ref=e1323]:
+                      - link "Wizards" [ref=e1324] [cursor=pointer]:
+                        - /url: /pine-wizards/
+                    - listitem [ref=e1325]:
+                      - link "Freelancers" [ref=e1326] [cursor=pointer]:
+                        - /url: /pine-script-freelancers/
+                    - listitem [ref=e1327]:
+                      - link "Paid Spaces" [ref=e1328] [cursor=pointer]:
+                        - /url: /spaces/
+              - generic [ref=e1329]:
+                - generic [ref=e1330]:
+                  - generic [ref=e1331]: Business solutions
+                  - list [ref=e1332]:
+                    - listitem [ref=e1333]:
+                      - link "Widgets" [ref=e1334] [cursor=pointer]:
+                        - /url: /widget/
+                    - listitem [ref=e1335]:
+                      - link "Charting libraries" [ref=e1336] [cursor=pointer]:
+                        - /url: /free-charting-libraries/
+                    - listitem [ref=e1337]:
+                      - link "Lightweight Charts™" [ref=e1338] [cursor=pointer]:
+                        - /url: /lightweight-charts/
+                    - listitem [ref=e1339]:
+                      - link "Advanced Charts" [ref=e1340] [cursor=pointer]:
+                        - /url: /advanced-charts/
+                    - listitem [ref=e1341]:
+                      - link "Trading Platform" [ref=e1342] [cursor=pointer]:
+                        - /url: /trading-platform/
+                - generic [ref=e1343]:
+                  - generic [ref=e1344]: Growth opportunities
+                  - list [ref=e1345]:
+                    - listitem [ref=e1346]:
+                      - link "Advertising" [ref=e1347] [cursor=pointer]:
+                        - /url: /advertising-info/
+                    - listitem [ref=e1348]:
+                      - link "Brokerage integration" [ref=e1349] [cursor=pointer]:
+                        - /url: /brokerage-integration/
+                    - listitem [ref=e1350]:
+                      - link "Partner program" [ref=e1351] [cursor=pointer]:
+                        - /url: /partner-program/
+                    - listitem [ref=e1352]:
+                      - link "Education program" [ref=e1353] [cursor=pointer]:
+                        - /url: /students/
+          - img "Look First" [ref=e1355]

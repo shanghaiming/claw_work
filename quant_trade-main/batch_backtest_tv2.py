@@ -59,6 +59,8 @@ def run_batch():
                     print(f"  {name}({symbol}): 数据不足, 跳过")
                     continue
 
+                if 'symbol' not in data.columns:
+                    data['symbol'] = 'DEFAULT'
                 engine = BacktestEngine(data, strat_class, initial_cash=1e6, commission=0.0003)
                 report = engine.run_backtest(params)
 

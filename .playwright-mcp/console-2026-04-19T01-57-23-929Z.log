@@ -1,0 +1,3 @@
+[   20367ms] [ERROR] WebSocket connection to 'wss://pushstream.tradingview.com/message-pipe-ws/public' failed: Error in connection establishment: net::ERR_CONNECTION_TIMED_OUT @ https://static.tradingview.com/static/bundles/68044.9b993c75068f9daf735e.js:9
+[   20375ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://snowplow-pixel.tradingview.com/com.tradingview/track:0
+[   20447ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://accounts.google.com/gsi/log?client_id=236720109952-v7ud8uaov0nb49fk5qm03as8o7dmsb30.apps.googleusercontent.com&as=hvwRYZhWeosrXJm2wIFtvYvLHMtYZa5pECPSgWsgQmA&bs=Y3L5xGmK1EUTyII7VD26Vy170cf6UTeEkc0vlh%2BPBk4&event=onetap.card.prompt.apiCall&enable_itp_optimization=1:0

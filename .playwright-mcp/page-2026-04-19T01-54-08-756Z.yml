@@ -1,0 +1,1155 @@
+- generic [active] [ref=e1]:
+  - button "Skip to main content" [ref=e4]:
+    - generic [ref=e5]:
+      - generic: Skip to main content
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - button "Open menu" [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+        - link "TradingView main page" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - img [ref=e16]
+      - button "Search" [ref=e23]:
+        - img [ref=e24]
+        - generic [ref=e26]: Search
+      - generic [ref=e27]:
+        - button "Open language menu" [ref=e28] [cursor=pointer]:
+          - img [ref=e29]
+          - text: EN
+        - button "Open user menu" [ref=e31] [cursor=pointer]:
+          - img [ref=e32]
+        - link "Get started" [ref=e36] [cursor=pointer]:
+          - /url: /pricing/?source=header_go_pro_button&feature=start_free_trial
+          - generic [ref=e38]: Get started
+    - main "Main content" [ref=e39]:
+      - main [ref=e41]:
+        - generic [ref=e42]:
+          - heading "Indicators and strategies" [level=1] [ref=e43]
+          - navigation [ref=e44]:
+            - tablist [ref=e47]:
+              - tab "Popular" [selected] [ref=e48] [cursor=pointer]:
+                - generic [ref=e49]: Popular
+              - tab "Editors' picks" [ref=e50] [cursor=pointer]:
+                - generic [ref=e51]: Editors' picks
+        - generic [ref=e53]:
+          - generic [ref=e56]:
+            - combobox "Script type filter" [ref=e57]:
+              - generic [ref=e59]: All types
+              - img [ref=e62]:
+                - img [ref=e63]
+            - button "Open-source only" [pressed] [ref=e65]:
+              - generic [ref=e68]:
+                - img [ref=e71]:
+                  - img [ref=e72]
+                - generic [ref=e75]: Open-source only
+            - radiogroup [ref=e77]:
+              - radio "Sort by most recent" [ref=e78]:
+                - img [ref=e81]:
+                  - img [ref=e82]
+              - radio "Sort by popularity" [checked] [ref=e84]:
+                - img [ref=e87]:
+                  - img [ref=e88]
+          - generic [ref=e91]:
+            - article [ref=e92]:
+              - generic [ref=e93]:
+                - link "Equal Highs and Lows Finder" [ref=e94] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/A8UaCjyF-Equal-Highs-and-Lows-Finder/
+                - link [ref=e95] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/A8UaCjyF-Equal-Highs-and-Lows-Finder/
+                  - generic [ref=e97]: "Overview The Equal Highs & Lows (EQH/EQL) Finder is a price-action tool designed to identify potential liquidity pools and \"double top/bottom\" structures automatically. In many technical analysis strategies (such as SMC or Inner Circle Trader methodologies), equal highs and lows represent areas where buy-side or sell-side liquidity is likely resting, often acting as a magnet for future price action. How It WorksThe script utilizes Pivot Points to detect local peaks and valleys. When two consecutive pivots occur at nearly the same price level, the script draws a dashed trendline connecting them and labels the area.Because markets are rarely \"perfect\" to the cent, this indicator includes a Sensitivity Threshold. This allows you to define how much of a percentage deviation is acceptable for two points to still be considered \"equal.\" Key Features Automated Detection: Saves time by instantly spotting EQH and EQL across any timeframe. Customizable Sensitivity: Adjust the Threshold % to filter for \"perfect\" matches or broader zones. Visual Clarity: Clean, dashed trendlines and labels (EQH/EQL) ensure your chart remains readable. Pivot Control: Modify the Lookback period to find short-term micro-structures or major long-term swing points. How to UseLiquidity Targets: Use the lines as potential targets for take-profits, as price often seeks out these \"equal\" levels to sweep liquidity.Support & Resistance: Identify strong horizontal levels where the market has reacted multiple times.Breakout Confirmation: Watch for price to \"clear\" these levels with high volume, indicating a liquidity grab. SettingsThreshold %: The maximum price difference (in percentage) allowed between two pivots.Pivot Lookback: The number of bars required on either side of a high/low to confirm it as a pivot point. Higher numbers detect more significant swings."
+              - generic [ref=e99]:
+                - generic "Pine Script® indicator" [ref=e100]:
+                  - img [ref=e101]:
+                    - img [ref=e102]
+                  - generic [ref=e104]: Pine Script® indicator
+                - link [ref=e105] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/A8UaCjyF-Equal-Highs-and-Lows-Finder/
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - link "by AlvinLe" [ref=e110] [cursor=pointer]:
+                    - /url: /u/AlvinLe/
+                    - generic [ref=e111]: by AlvinLe
+                  - time [ref=e113]: Apr 17
+                - generic [ref=e114]:
+                  - link "0 comments" [ref=e115] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/A8UaCjyF-Equal-Highs-and-Lows-Finder/#chart-view-comment-form
+                    - img [ref=e117]:
+                      - img [ref=e118]
+                  - button "6 boosts 6" [ref=e120]:
+                    - generic [ref=e121]:
+                      - img "6 boosts" [ref=e123]:
+                        - img [ref=e124]
+                      - generic [ref=e130]: "6"
+            - article [ref=e131]:
+              - generic [ref=e132]:
+                - link "Pre-Fixing Volume Spike" [ref=e133] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/nBs3Mdno-Pre-Fixing-Volume-Spike/
+                - link [ref=e134] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/nBs3Mdno-Pre-Fixing-Volume-Spike/
+                  - generic [ref=e136]: "📊 Pre-Fixing Volume Spike — Detect Fixing Paint Attempts Interesting things happen in the last few minutes before the fixing (closing auction). Large players often position themselves in the final 5-20 minutes of continuous trading to influence the fixing price — buying aggressively to paint it higher, or dumping to drag it lower. This indicator watches exactly that window and flags unusual volume activity. On GPW, fixing is at 17:00. The window from 16:40-17:00 is where the real action happens — not inside the auction itself, but in the positioning right before. ───────────────────────────────────────── 🔍 WHAT IT DETECTS ───────────────────────────────────────── The indicator watches one simple thing: how much volume is happening RIGHT NOW compared to what's normal for THIS EXACT MINUTE on other trading days. 📊 Volume at time-of-day — A bar at 16:42 is compared to historical bars at 16:42, not to a flat daily average. This is what makes the signal meaningful — a \"normal\" 16:42 is very different from a \"normal\" 10:30. ⚡ Spike ratio — Current volume ÷ historical average for this minute. 2x = mild, 3.5x = strong, 6x = extreme. ⬆⬇ Direction bias — Is the pre-fixing volume pushing price UP or DOWN? Aggressive buying before fixing = someone wants the close higher. Aggressive selling = someone wants it lower. ───────────────────────────────────────── 🧠 WHY IT WORKS ───────────────────────────────────────── The fixing price on GPW matters for multiple reasons: • It's the reference price for options and structured products • It's what many institutional mandates use for NAV calculation • It's the price that ends up in financial reports This creates incentive for large players to nudge the fixing in their preferred direction. They can't do it inside the auction (too transparent), so they position themselves in the final minutes of continuous trading — buying aggressively to set a higher last traded price before the auction opens, or unloading to set a lower one. A sudden 3-6x volume spike at 16:45 on a stock that normally trades quietly at that hour is a footprint. And if the spike is directional — all buying, or all selling — the intent is clear. ───────────────────────────────────────── 📐 HOW IT WORKS ───────────────────────────────────────── The indicator runs on 1min or 5min charts and shows: 🟡 Yellow columns — mild spike (2-3.5x normal) 🟠 Orange columns — strong spike (3.5-6x normal) 🟣 Purple columns — extreme spike (6x+) 🟢 Green/🔴 Red histogram — direction bias (buying/selling pressure during the spike) 🟡 Yellow shaded background — the pre-fixing window itself Threshold lines: ⚪ 1.0 baseline (normal volume for this time-of-day) 🟡 Mild threshold (dotted) 🟠 Strong threshold (dashed) 🟣 Extreme threshold (solid) When a spike is detected, an alert label shows: ⚠️ Severity (MILD / STRONG / EXTREME) 📊 Exact ratio, current volume, expected volume ⏱️ Minutes remaining until fixing ───────────────────────────────────────── 🕐 HTF SUMMARY MODE (with Auto) ───────────────────────────────────────── This is where it gets powerful for scanning. Add the indicator once to your chart, leave HTF mode on \"Auto\", and it will adapt to whatever timeframe you're viewing: • On 5min (or lower) — full detail: columns, labels, direction bias, window shading • On 1h (or higher) — scans the 5min timeframe in the background and highlights any HTF bar that contained a pre-fixing spike. Just the highlight, nothing else — clean scan view. Switch your chart from 5min to 1h and the indicator automatically swaps modes. No settings to touch, no duplicate indicator instances needed. If you want to override the auto-detection, set HTF mode to \"Always ON\" or \"Always OFF\". This lets you scan a whole month on 1h in seconds and immediately spot which days had aggressive fixing manipulation — then zoom into 5min for details. 🔧 HTF summary mode → Auto (recommended) 🔧 Lower timeframe to scan → 5 🔧 Minimum severity → Extreme (or Strong if you want more hits) ───────────────────────────────────────── ⚙️ SETTINGS ───────────────────────────────────────── Pre-fixing window: • Fixing hour (exchange time) — default 17 for GPW • Pre-fixing window (minutes) — how far back from fixing to analyze. Default 20 (16:40-17:00). Baseline calculation: • Lookback (days) — how many days to average for the time-of-day baseline. Default 20. Thresholds: • Mild spike multiplier — default 2.0 • Strong spike multiplier — default 3.5 • Extreme spike multiplier — default 6.0 Direction analysis: • Track pre-fixing direction bias — show buying vs selling pressure during spikes HTF summary mode: • HTF summary mode — Auto (default, recommended) / Always ON / Always OFF • Lower TF to scan — default 5 (5min) • Minimum severity to highlight — Mild, Strong, or Extreme • Separate color controls for HTF highlights Visual: • Full color customization for all severities • Toggle labels, background shading independently • Adjustable transparency Date range: • Optional date filter for specific period analysis ───────────────────────────────────────── ✅ RECOMMENDED SETTINGS ───────────────────────────────────────── For 5min chart (detail view): Window: 20 min Lookback: 20 days Mild: 2.0, Strong: 3.5, Extreme: 6.0 Track direction: ON For 1min chart (precise entry timing): Window: 15 min Lookback: 20 days Mild: 2.5, Strong: 5.0, Extreme: 10.0 (Tighter thresholds — 1min data is noisier) For 1h chart (scanning mode): HTF mode: Auto (auto-activates on 1h) Lower TF: 5 Minimum severity: Extreme (for cleanest signals) OR: Strong (to catch more events) For illiquid stocks (sWIG80, NewConnect): Raise all thresholds by ~50% (Mild 3.0, Strong 5.0, Extreme 10.0) — single orders routinely create 5x spikes on low-float stocks ───────────────────────────────────────── 💡 PRO TIPS ───────────────────────────────────────── • Direction matters more than magnitude. A 3x spike of pure buying is more meaningful than a 6x spike of mixed activity. Watch the histogram color. • The strongest paint signal: extreme spike + directional + very close to fixing (0-5 min to fix). This is someone making a final push to set the closing price. • If you see a pattern of daily pre-fixing spikes in the SAME direction over several days, combine this with the FO Gap indicator. Consistent pre-fixing buying + consistent OPEN > FIX bias = the same player is working the stock from both ends. • On days with major news or ex-dividend, expect false signals. The time-of-day baseline adapts over 20 days, but a single extreme event will show up as a spike even if it's not manipulation. • HTF mode is best for backtesting — scan a year of 1h data to find the days with suspicious pre-fixing activity, then investigate those days in detail on 5min. ───────────────────────────────────────── ⚠️ DISCLAIMER ───────────────────────────────────────── This indicator is a pattern detection tool, not a trading signal. Pre-fixing volume spikes can happen for legitimate reasons — index rebalancing, large institutional orders, news reactions. Always combine with your own analysis. ───────────────────────────────────────── 🛠️ BUILT WITH PINE SCRIPT v6 ───────────────────────────────────────── Open source. Part of the GPW Anomaly Detection toolkit alongside: • AutomatOff (ATR + Volume Collapse + Still Price) • Fixing Volume Visualization • Volume-Weighted Price Drift • Fixing-Open Gap Asymmetry Suggestions and bug reports welcome in the comments."
+              - generic [ref=e138]:
+                - generic "Pine Script® indicator" [ref=e139]:
+                  - img [ref=e140]:
+                    - img [ref=e141]
+                  - generic [ref=e143]: Pine Script® indicator
+                - link [ref=e144] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/nBs3Mdno-Pre-Fixing-Volume-Spike/
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - link "by fis_wse" [ref=e149] [cursor=pointer]:
+                    - /url: /u/fis_wse/
+                    - generic [ref=e150]: by fis_wse
+                  - time [ref=e152]: Apr 17
+                - generic [ref=e153]:
+                  - link "0 comments" [ref=e154] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/nBs3Mdno-Pre-Fixing-Volume-Spike/#chart-view-comment-form
+                    - img [ref=e156]:
+                      - img [ref=e157]
+                  - button "5 boosts 5" [ref=e159]:
+                    - generic [ref=e160]:
+                      - img "5 boosts" [ref=e162]:
+                        - img [ref=e163]
+                      - generic [ref=e169]: "5"
+            - article [ref=e170]:
+              - generic [ref=e171]:
+                - link "Daily Open 5-Minute Range Box (Any Timeframe)" [ref=e172] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/h6pDtjUc-Daily-Open-5-Minute-Range-Box-Any-Timeframe/
+                - 'link "Indicator Description (strategy-aligned) Defines the **daily opening reference zone** by projecting the high–low range of the first 5-minute candle across all timeframes. This zone acts as a **liquidity anchor**, capturing early-session imbalance and providing a structural baseline for intraday positioning. Used within the strategy to: * contextualize price relative to the daily open * identify compression vs expansion conditions * validate entries when **time (session alignment)** and **structure (range interaction)** converge The box is not a signal, but a **constraint framework**—trades are only considered when price behavior around this range aligns with higher timeframe bias and timing logic." [ref=e173] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/h6pDtjUc-Daily-Open-5-Minute-Range-Box-Any-Timeframe/
+                  - generic [ref=e175]: "Indicator Description (strategy-aligned) Defines the **daily opening reference zone** by projecting the high–low range of the first 5-minute candle across all timeframes. This zone acts as a **liquidity anchor**, capturing early-session imbalance and providing a structural baseline for intraday positioning. Used within the strategy to: * contextualize price relative to the daily open * identify compression vs expansion conditions * validate entries when **time (session alignment)** and **structure (range interaction)** converge The box is not a signal, but a **constraint framework**—trades are only considered when price behavior around this range aligns with higher timeframe bias and timing logic."
+              - generic [ref=e177]:
+                - generic "Pine Script® indicator" [ref=e178]:
+                  - img [ref=e179]:
+                    - img [ref=e180]
+                  - generic [ref=e182]: Pine Script® indicator
+                - link [ref=e183] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/h6pDtjUc-Daily-Open-5-Minute-Range-Box-Any-Timeframe/
+              - generic [ref=e185]:
+                - generic [ref=e186]:
+                  - link "by GOLDMANSAK" [ref=e188] [cursor=pointer]:
+                    - /url: /u/GOLDMANSAK/
+                    - generic [ref=e189]: by GOLDMANSAK
+                  - time [ref=e191]: Apr 17
+                - generic [ref=e192]:
+                  - link "0 comments" [ref=e193] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/h6pDtjUc-Daily-Open-5-Minute-Range-Box-Any-Timeframe/#chart-view-comment-form
+                    - img [ref=e195]:
+                      - img [ref=e196]
+                  - button "4 boosts 4" [ref=e198]:
+                    - generic [ref=e199]:
+                      - img "4 boosts" [ref=e201]:
+                        - img [ref=e202]
+                      - generic [ref=e208]: "4"
+            - article [ref=e209]:
+              - generic [ref=e210]:
+                - link "Caesar ES Levels" [ref=e211] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/NxqcjSzA-Caesar-ES-Levels/
+                - link "Input ES levels in this format (number, number, number) and auto populates levels for ES, MES, SPX, SPY for you in your charts" [ref=e212] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/NxqcjSzA-Caesar-ES-Levels/
+                  - generic [ref=e214]: Input ES levels in this format (number, number, number) and auto populates levels for ES, MES, SPX, SPY for you in your charts
+              - generic [ref=e216]:
+                - generic "Pine Script® indicator" [ref=e217]:
+                  - img [ref=e218]:
+                    - img [ref=e219]
+                  - generic [ref=e221]: Pine Script® indicator
+                - link [ref=e222] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/NxqcjSzA-Caesar-ES-Levels/
+              - generic [ref=e224]:
+                - generic [ref=e225]:
+                  - link "by twanzza" [ref=e227] [cursor=pointer]:
+                    - /url: /u/twanzza/
+                    - generic [ref=e228]: by twanzza
+                  - time [ref=e230]: Apr 17
+                - generic [ref=e231]:
+                  - link "0 comments" [ref=e232] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/NxqcjSzA-Caesar-ES-Levels/#chart-view-comment-form
+                    - img [ref=e234]:
+                      - img [ref=e235]
+                  - button "1 boost 1" [ref=e237]:
+                    - generic [ref=e238]:
+                      - img "1 boost" [ref=e240]:
+                        - img [ref=e241]
+                      - generic [ref=e247]: "1"
+            - article [ref=e248]:
+              - generic [ref=e249]:
+                - link "SMA14 + VWAP + HMA96 + EMA25 Band + TEMA18 (Buy + Exit + Lock)" [ref=e250] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/aAaQZuwT-SMA14-VWAP-HMA96-EMA25-Band-TEMA18-Buy-Exit-Lock/
+                - link "SMA14 + VWAP + HMA96 + EMA25 Band + TEMA18 (Buy + Exit + Lock) for Indian market" [ref=e251] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/aAaQZuwT-SMA14-VWAP-HMA96-EMA25-Band-TEMA18-Buy-Exit-Lock/
+                  - generic [ref=e253]: SMA14 + VWAP + HMA96 + EMA25 Band + TEMA18 (Buy + Exit + Lock) for Indian market
+              - generic [ref=e255]:
+                - generic "Pine Script® indicator" [ref=e256]:
+                  - img [ref=e257]:
+                    - img [ref=e258]
+                  - generic [ref=e260]: Pine Script® indicator
+                - link [ref=e261] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/aAaQZuwT-SMA14-VWAP-HMA96-EMA25-Band-TEMA18-Buy-Exit-Lock/
+              - generic [ref=e263]:
+                - generic [ref=e264]:
+                  - link "by naskardolly" [ref=e266] [cursor=pointer]:
+                    - /url: /u/naskardolly/
+                    - generic [ref=e267]: by naskardolly
+                  - time [ref=e269]: Apr 17
+                - generic [ref=e270]:
+                  - link "0 comments" [ref=e271] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/aAaQZuwT-SMA14-VWAP-HMA96-EMA25-Band-TEMA18-Buy-Exit-Lock/#chart-view-comment-form
+                    - img [ref=e273]:
+                      - img [ref=e274]
+                  - button "7 boosts 7" [ref=e276]:
+                    - generic [ref=e277]:
+                      - img "7 boosts" [ref=e279]:
+                        - img [ref=e280]
+                      - generic [ref=e286]: "7"
+            - article [ref=e287]:
+              - generic [ref=e288]:
+                - link "AI Smart Assistant UI Toolkit [Yosiet]" [ref=e289] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/DXdJJTts-AI-Smart-Assistant-UI-Toolkit-Yosiet/
+                - link [ref=e290] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/DXdJJTts-AI-Smart-Assistant-UI-Toolkit-Yosiet/
+                  - generic [ref=e292]: "AI Smart Assistant UI Toolkit Most TradingView indicators provide data, but few provide a User Experience . This script is not just a market scanne, it is a fully modular UI Framework designed to help Pine Script developers build interactive, \"talking\" AI interfaces within their indicators. The AI Smart Assistant Framework moves away from static labels and moves toward dynamic, state-driven communication. Key Framework Features + State-Driven Typewriter Engine: Includes a logic-gate system that detects changes in market conditions and triggers a \"typing\" animation, making the AI feel responsive and alive. + Dynamic Pulsing System: A custom-built alpha-transparency oscillator that creates a \"breathing\" effect on the UI based on real-time tick data. + Advanced Theme Engine: Comes pre-loaded with 6 professionally designed color palettes (Nord, Midnight, Cyberpunk, Glassmorphism) that can be swapped with a single line of code. + Actionable Logic Lists: Demonstrates how to turn raw data into structured, easy-to-read \"Recommended Action\" checklists for the end-user. ++ Stateless Rendering : The UI is decoupled from the logic, allowing you to plug in any data source (MACD, EMA, Liquidity Zones) into the Assistant’s brain. Included UI Themes Nord: A professional, arctic-blue palette for serious analysts. Midnight: High-contrast, deep-space colors for dark mode enthusiasts. Cyberpunk: High-energy neon aesthetics for a modern \"HUD\" feel. Warzone: Red bloody for a dramatic feel. Minimalist Light: Clean and crisp for those who prefer white backgrounds. How to use this as a Toolkit This script is open-source and intended to be used as a template. To integrate this into your own project: Define your Logic: Replace the RSI checks with your own entry/exit conditions. Set the State: Use the AIState type to trigger the typewriter reset when your conditions are met. Customize the UI: Modify the UITheme type to match your brand colors. Requirements Pine Script Version: v6 Performance: Lightweight. Optimized to render only on the last bar to save GPU resources. Why I built this I believe the future of TradingView scripts isn't just better math, it's better communication. If an user understands the \"Why\" behind a signal through a clear, beautiful interface, they become better traders. Feel free to use this framework in your own public or private scripts. A credit to the original framework is always appreciated! The data is not static, the UI should not be it"
+              - generic [ref=e294]:
+                - generic "Pine Script® indicator" [ref=e295]:
+                  - img [ref=e296]:
+                    - img [ref=e297]
+                  - generic [ref=e299]: Pine Script® indicator
+                - link [ref=e300] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/DXdJJTts-AI-Smart-Assistant-UI-Toolkit-Yosiet/
+              - generic [ref=e302]:
+                - generic [ref=e303]:
+                  - link "by ViboraTrader" [ref=e305] [cursor=pointer]:
+                    - /url: /u/ViboraTrader/
+                    - generic [ref=e306]: by ViboraTrader
+                  - time [ref=e308]: Apr 17
+                - generic [ref=e309]:
+                  - link "0 comments" [ref=e310] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/DXdJJTts-AI-Smart-Assistant-UI-Toolkit-Yosiet/#chart-view-comment-form
+                    - img [ref=e312]:
+                      - img [ref=e313]
+                  - button "4 boosts 4" [ref=e315]:
+                    - generic [ref=e316]:
+                      - img "4 boosts" [ref=e318]:
+                        - img [ref=e319]
+                      - generic [ref=e325]: "4"
+            - article [ref=e326]:
+              - generic [ref=e327]:
+                - link "50 EMA Cross + 200 EMA Filter + Stoch RSI Indicator" [ref=e328] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/gAbvCgpk-50-EMA-Cross-200-EMA-Filter-Stoch-RSI-Indicator/
+                - link "Price above 50 and 200 with RSI undersold. This helps maximize the trend and gives entries during the trend" [ref=e329] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/gAbvCgpk-50-EMA-Cross-200-EMA-Filter-Stoch-RSI-Indicator/
+                  - generic [ref=e331]: Price above 50 and 200 with RSI undersold. This helps maximize the trend and gives entries during the trend
+              - generic [ref=e333]:
+                - generic "Pine Script® indicator" [ref=e334]:
+                  - img [ref=e335]:
+                    - img [ref=e336]
+                  - generic [ref=e338]: Pine Script® indicator
+                - link [ref=e339] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/gAbvCgpk-50-EMA-Cross-200-EMA-Filter-Stoch-RSI-Indicator/
+              - generic [ref=e341]:
+                - generic [ref=e342]:
+                  - link "by priyanktyagipnp" [ref=e344] [cursor=pointer]:
+                    - /url: /u/priyanktyagipnp/
+                    - generic [ref=e345]: by priyanktyagipnp
+                  - time [ref=e347]: Apr 17
+                - generic [ref=e348]:
+                  - link "0 comments" [ref=e349] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/gAbvCgpk-50-EMA-Cross-200-EMA-Filter-Stoch-RSI-Indicator/#chart-view-comment-form
+                    - img [ref=e351]:
+                      - img [ref=e352]
+                  - button "5 boosts 5" [ref=e354]:
+                    - generic [ref=e355]:
+                      - img "5 boosts" [ref=e357]:
+                        - img [ref=e358]
+                      - generic [ref=e364]: "5"
+            - article [ref=e365]:
+              - generic [ref=e366]:
+                - link "EMA 4 / EMA 9 Cross" [ref=e367] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/h4qlxSL7-EMA-4-EMA-9-Cross/
+                - 'link "Best for 5 minute candlestick strategy. For buy: If the candle closes above the EMA 4 and 9 (the band is green) and crosses up the VWAP, there is an opportunity to buy. Also, if the candle closes above the EMA 4 and 9 (the band is green) and way below the VWAP, there is an opportunity to buy. For sell: If the candle closes below the EMA 4 and 9 (the band is red) and crosses down the VWAP, there is an opportunity to sell. Also, if the candle closes below the EMA 4 and 9 (the band is red) and way above the VWAP, there is an opportunity to sell." [ref=e368] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/h4qlxSL7-EMA-4-EMA-9-Cross/
+                  - generic [ref=e370]: "Best for 5 minute candlestick strategy. For buy: If the candle closes above the EMA 4 and 9 (the band is green) and crosses up the VWAP, there is an opportunity to buy. Also, if the candle closes above the EMA 4 and 9 (the band is green) and way below the VWAP, there is an opportunity to buy. For sell: If the candle closes below the EMA 4 and 9 (the band is red) and crosses down the VWAP, there is an opportunity to sell. Also, if the candle closes below the EMA 4 and 9 (the band is red) and way above the VWAP, there is an opportunity to sell."
+              - generic [ref=e372]:
+                - generic "Pine Script® indicator" [ref=e373]:
+                  - img [ref=e374]:
+                    - img [ref=e375]
+                  - generic [ref=e377]: Pine Script® indicator
+                - link [ref=e378] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/h4qlxSL7-EMA-4-EMA-9-Cross/
+              - generic [ref=e380]:
+                - generic [ref=e381]:
+                  - link "by cemkalpak" [ref=e383] [cursor=pointer]:
+                    - /url: /u/cemkalpak/
+                    - generic [ref=e384]: by cemkalpak
+                  - time [ref=e386]: Apr 17
+                - generic [ref=e387]:
+                  - link "0 comments" [ref=e388] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/h4qlxSL7-EMA-4-EMA-9-Cross/#chart-view-comment-form
+                    - img [ref=e390]:
+                      - img [ref=e391]
+                  - button "1 boost 1" [ref=e393]:
+                    - generic [ref=e394]:
+                      - img "1 boost" [ref=e396]:
+                        - img [ref=e397]
+                      - generic [ref=e403]: "1"
+            - article [ref=e404]:
+              - generic [ref=e405]:
+                - link "Ultra Accuracy FVGs By NickZZ" [ref=e406] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/wc8FDCoQ-Ultra-Accuracy-FVGs-By-NickZZ/
+                - link "Probably one of the most accurate indicators you will ever find to show you FVG Gaps on the Charts by NickZZ" [ref=e407] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/wc8FDCoQ-Ultra-Accuracy-FVGs-By-NickZZ/
+                  - generic [ref=e409]: Probably one of the most accurate indicators you will ever find to show you FVG Gaps on the Charts by NickZZ
+              - generic [ref=e411]:
+                - generic "Pine Script® indicator" [ref=e412]:
+                  - img [ref=e413]:
+                    - img [ref=e414]
+                  - generic [ref=e416]: Pine Script® indicator
+                - link [ref=e417] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/wc8FDCoQ-Ultra-Accuracy-FVGs-By-NickZZ/
+              - generic [ref=e419]:
+                - generic [ref=e420]:
+                  - link "by NickZTradez" [ref=e422] [cursor=pointer]:
+                    - /url: /u/NickZTradez/
+                    - generic [ref=e423]: by NickZTradez
+                  - time [ref=e425]: Apr 17
+                - generic [ref=e426]:
+                  - link "0 comments" [ref=e427] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/wc8FDCoQ-Ultra-Accuracy-FVGs-By-NickZZ/#chart-view-comment-form
+                    - img [ref=e429]:
+                      - img [ref=e430]
+                  - button "6 boosts 6" [ref=e432]:
+                    - generic [ref=e433]:
+                      - img "6 boosts" [ref=e435]:
+                        - img [ref=e436]
+                      - generic [ref=e442]: "6"
+            - article [ref=e443]:
+              - generic [ref=e444]:
+                - 'link "Advanced Global Sessions: Auto-DST & US Open Predictor" [ref=e445] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/MsQVd7UY/
+                - link [ref=e446] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/MsQVd7UY/
+                  - generic [ref=e448]: "Day trading requires absolute precision in timing, but manually adjusting UTC offsets for Daylight Saving Time (DST) every few months is a nightmare. This indicator is a heavily upgraded version of the classic LuxAlgo Sessions, completely re-engineered with a native IANA timezone engine and a forward-looking predictive market open line. 🌟 Key Upgrades & Features: ⏱️ 100% Zero-Touch Auto DST: Say goodbye to the \"UTC (+/-)\" manual input. This script is hardcoded with official IANA timezones (America/New_York, Europe/London, Asia/Tokyo). It automatically syncs with your local chart time and flawlessly adjusts itself during summer/winter time transitions. 🇺🇸 Predictive US Open Line (09:30 NY): Never miss the volatility injection of the US Equities Open. The script automatically plots a dashed vertical line at exactly 09:30 AM EST. Better yet, it features a Predictive Marker—drawing the upcoming US Open line in the future (empty space) before the price even gets there, allowing you to prepare your setups in advance. 🧹 Decluttered & Optimized UI: The Sydney session has been completely removed to free up chart space and simplify the dashboard. It now focuses purely on the \"Big 3\" liquidity sessions: Asia, London, and New York. 📊 The Original LuxAlgo DNA: Retains all the powerful visual features of the original script, including dynamic Session Ranges, Trendlines, VWAP tracking, and the sleek heads-up Dashboard. ⚙️ How to use: Simply add it to your chart. You do NOT need to calculate your local UTC offset. The boxes and the US Open line will automatically align perfectly with your local time, 365 days a year."
+              - generic [ref=e450]:
+                - generic "Pine Script® indicator" [ref=e451]:
+                  - img [ref=e452]:
+                    - img [ref=e453]
+                  - generic [ref=e455]: Pine Script® indicator
+                - link [ref=e456] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/MsQVd7UY/
+              - generic [ref=e458]:
+                - generic [ref=e459]:
+                  - link "by bo_wa_ear" [ref=e461] [cursor=pointer]:
+                    - /url: /u/bo_wa_ear/
+                    - generic [ref=e462]: by bo_wa_ear
+                  - time [ref=e464]: Apr 17
+                - generic [ref=e465]:
+                  - link "0 comments" [ref=e466] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/MsQVd7UY/#chart-view-comment-form
+                    - img [ref=e468]:
+                      - img [ref=e469]
+                  - button "2 boosts 2" [ref=e471]:
+                    - generic [ref=e472]:
+                      - img "2 boosts" [ref=e474]:
+                        - img [ref=e475]
+                      - generic [ref=e481]: "2"
+            - article [ref=e482]:
+              - generic [ref=e483]:
+                - link "Central Bank Dealing Range [#]" [ref=e484] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VnM16uoH-Central-Bank-Dealing-Range/
+                - link [ref=e485] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VnM16uoH-Central-Bank-Dealing-Range/
+                  - generic [ref=e487]: "Central Bank Dealing Range This indicator visualizes the central bank dealing range and projected price levels derived from historical intraday volatility. It is inspired by widely discussed market concepts involving session ranges and mean reversion or expansion behavior, and is designed strictly for analytical and educational purposes. The script identifies and plots a defined intraday range (referred to here as the Central Dealing Range). Once the range is established, the indicator calculates its high-to-low distance and projects multiple extension levels above and below the range using configurable deviation multiples. These projected levels help users observe how price interacts with prior volatility boundaries throughout the trading day. Key Features: • Session Range Detection: Automatically tracks and updates the high and low of selected trading sessions. • Range Visualization: Displays the active range as a shaded box on the chart for clear reference. • Deviation Projections: Plots multiple user-defined expansion levels based on the measured range. • Directional Control: Allows users to display projections on the upside, downside, or both. • Auto Selection Logic: Optionally highlights the most relevant range based on recent conditions. • Timezone Flexibility: Supports multiple timezone settings to align sessions with user preference. Important Notes: • This tool does not provide trading signals, alerts, or recommendations. • Past performance or historical range behavior does not guarantee future results. • This script is for informational and educational use only and should not be considered financial advice. • Users are responsible for validating any analysis and applying appropriate risk management. Usage: Apply the indicator to intraday charts for best results. Lower timeframes provide more precise session structure, while higher timeframes may reduce visibility due to range compression. Code base from Daily Protocol , which is derived from ICT Everything by coldbrewrosh"
+              - generic [ref=e489]:
+                - generic "Pine Script® indicator" [ref=e490]:
+                  - img [ref=e491]:
+                    - img [ref=e492]
+                  - generic [ref=e494]: Pine Script® indicator
+                - link [ref=e495] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VnM16uoH-Central-Bank-Dealing-Range/
+              - generic [ref=e497]:
+                - generic [ref=e498]:
+                  - link "by Shulkins" [ref=e500] [cursor=pointer]:
+                    - /url: /u/Shulkins/
+                    - generic [ref=e501]: by Shulkins
+                  - time [ref=e503]: Apr 17
+                - generic [ref=e504]:
+                  - link "0 comments" [ref=e505] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/VnM16uoH-Central-Bank-Dealing-Range/#chart-view-comment-form
+                    - img [ref=e507]:
+                      - img [ref=e508]
+                  - button "11 boosts 1 1" [ref=e510]:
+                    - generic [ref=e511]:
+                      - img "11 boosts" [ref=e513]:
+                        - img [ref=e514]
+                      - generic [ref=e518]:
+                        - generic [ref=e520]: "1"
+                        - generic [ref=e522]: "1"
+            - article [ref=e523]:
+              - generic [ref=e524]:
+                - link "Trading Plan - Configurable" [ref=e525] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/jEDfYtbQ-Trading-Plan-Configurable/
+                - link [ref=e526] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/jEDfYtbQ-Trading-Plan-Configurable/
+                  - generic [ref=e528]: "Trading Plan Dashboard — Session-Based Decision Framework A minimal, session-aware dashboard designed to keep traders aligned with their plan, timing, and execution rules. This tool does not generate signals. Instead, it answers three critical questions in real time: What time / session am I in? What type of trade is expected today? Am I allowed to take a trade right now? 🧠 Concept Most trading mistakes don’t come from bad entries — they come from: Trading at the wrong time Ignoring session context Forcing trades outside your plan This dashboard acts as a discipline filter, keeping you focused on when and whether to trade — not just how. ⚙️ Key Features ⏰ Session Awareness Configurable session windows (W1–W5) Automatically detects the current trading window Displays “OUTSIDE SESSION” when no trades should be considered 📅 Day-Based Trade Modes Assign each day a mode: TS1 (Continuation) TS2 (Reversal) No Trade Example default: Monday → Continuation Tue–Thu → Reversal Friday → No Trade 🔥 Execution State Engine Real-time state based on time + session logic: LOCKED → No trading allowed WATCH → Setup forming (ORB / build phase) ARMED → Conditions valid, trade can be taken 🧭 Trade Context Display Current session (W1–W5) Trade type (TS1 / TS2 / No Trade) Expected behavior (customizable text) Day + time (12h format) 🎛 Fully Configurable Session start/end times Window names Day-of-week behavior Trade and expectation text Panel position, colors, and sizing 🚫 What This Indicator Does NOT Do No buy/sell signals No indicators (RSI, EMA, etc.) No automated entries This is intentional. 🎯 Who This Is For Traders using session-based strategies ORB / time-window traders Discretionary traders who want structure without losing intuition Anyone struggling with overtrading or poor timing 🧠 Philosophy “Execution improves when decisions are constrained.” This tool is designed to reduce: impulsive trades trading in dead zones decision fatigue …and reinforce: patience timing consistency 🔧 Suggested Use Pair with your own strategy or indicators Use it as a pre-trade filter, not a signal Let it guide when you’re allowed to engage with the market ⚠️ Disclaimer This indicator is a planning and visualization tool only. It does not provide financial advice or guaranteed outcomes."
+              - generic [ref=e530]:
+                - generic "Pine Script® indicator" [ref=e531]:
+                  - img [ref=e532]:
+                    - img [ref=e533]
+                  - generic [ref=e535]: Pine Script® indicator
+                - link [ref=e536] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/jEDfYtbQ-Trading-Plan-Configurable/
+              - generic [ref=e538]:
+                - generic [ref=e539]:
+                  - link "by benjamenharper" [ref=e541] [cursor=pointer]:
+                    - /url: /u/benjamenharper/
+                    - generic [ref=e542]: by benjamenharper
+                  - time [ref=e544]: Updated Apr 17
+                - generic [ref=e545]:
+                  - link "0 comments" [ref=e546] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/jEDfYtbQ-Trading-Plan-Configurable/#chart-view-comment-form
+                    - img [ref=e548]:
+                      - img [ref=e549]
+                  - button "8 boosts 8" [ref=e551]:
+                    - generic [ref=e552]:
+                      - img "8 boosts" [ref=e554]:
+                        - img [ref=e555]
+                      - generic [ref=e561]: "8"
+            - article [ref=e562]:
+              - generic [ref=e563]:
+                - link "AG Pro Value Shift Ladder [AGPro Series]" [ref=e564] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/BxPKVrwy-AG-Pro-Value-Shift-Ladder-AGPro-Series/
+                - link [ref=e565] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/BxPKVrwy-AG-Pro-Value-Shift-Ladder-AGPro-Series/
+                  - generic [ref=e567]: "# AG Pro Value Shift Ladder ## Overview AG Pro Value Shift Ladder maps the ladder of accepted-value zones that price has repeatedly visited, showing how the market's notion of \"fair value\" migrates up, down, or breaks over time. Each rung of the ladder is a shelf anchored to a confirmed pivot, validated by the time price spent inside its band and the volume that traded there. Held, broken, and reclaimed shelves are tracked together, and the resulting sequence is summarized as a single ladder state — Rising, Falling, Mixed, Broken, Reclaiming, Building, or Neutral. The tool is intended as a structural reference for discretionary traders who want to see where price has been accepted, where it has been rejected, and how those anchors are drifting. It does not generate buy/sell signals and is not a trading system. --- ## Unique Edge Most shelf, S/R, or volume-based tools plot every candidate level they can find and leave the user to filter. Value Shift Ladder does three things differently: - **Pivot-anchored hybrid acceptance.** A shelf is only registered when a confirmed swing pivot is surrounded by a configurable time-dwell (bars spent inside its band) AND a volume threshold (cumulative volume inside the band). Both conditions must be met. Single-confirmation noise is filtered out at the source. - **Migration-aware state machine.** Each shelf has a lifecycle: Held → Broken → Reclaimed → Held. Transitions require sustained price behavior (three bars for a break, multiple bars of dwell for a reclaim), preventing oscillation between states on noise. - **Proximity-gated visualization.** Only shelves within a configurable ATR distance from current price are drawn and fed into the ladder state. Distant historical shelves do not clutter the chart or contaminate the panel's metrics. The result is a clean, structural ladder — usually three to five rungs — connected by thin riser lines that visually encode the migration path. --- ## Methodology **Shelf candidate generation.** A swing pivot (high or low) with N bars on each side becomes a candidate shelf anchor. N is user-configurable via Pivot Length. **Hybrid acceptance test.** For each candidate, the script scans the last 80 bars and counts: 1. How many bars closed inside the candidate's acceptance band (ATR × sensitivity multiplier). 2. Cumulative volume of those bars. A shelf is accepted only if both the dwell-bar count meets Min Dwell Bars AND the cumulative volume meets Min Volume Confirmation × (average volume × dwell bars). Candidates failing either test are discarded. **Separation filter.** A newly accepted shelf is rejected if it sits within Min Step Separation (ATR) of an existing active shelf, preventing micro-levels from cluttering the ladder. **Break detection.** A held shelf transitions to Broken when price closes beyond its band by more than Break Distance (ATR) for three consecutive bars. **Reclaim detection.** A broken shelf transitions to Reclaimed when price closes back inside its band for at least Reclaim Dwell Bars. A reclaimed shelf is promoted back to Held after ten additional bars of stability. **Expiry.** Broken shelves older than Broken Expire Bars with no reclaim are purged. **Ladder state.** The chronological sequence of active (held + reclaimed) shelves is evaluated: strictly monotonic rising → Rising; strictly monotonic falling → Falling; otherwise Mixed (with Above/Below context vs. the most recent shelf). Recent break or reclaim events override with Broken or Reclaiming. --- ## Signals & Alerts Four alert conditions are exposed: - **New Ladder Step Formed** — a new accepted-value shelf has been registered. - **Ladder Step Held** — an existing shelf has been re-confirmed by fresh dwell + volume. - **Ladder Step Broken** — a held shelf has been decisively lost. - **Ladder Step Reclaimed** — a previously broken shelf has been reclaimed. All alerts are informational markers of structural change. They do not encode directional trade intent. --- ## Key Inputs **Step Engine** - Step Sensitivity (Tight / Balanced / Wide) — band width around pivot anchors - Pivot Length — bars on each side for swing pivot detection - Min Dwell Bars — time-side of the hybrid acceptance test - Min Volume Confirmation × — volume-side of the hybrid acceptance test - Min Step Separation (ATR) — minimum ATR distance between accepted shelves - Break Distance (ATR) — how far price must close beyond a shelf to flag a break - Reclaim Dwell Bars — bars price must spend back inside the band to reclaim - Broken Expire Bars — age at which unreclaimed broken shelves are purged - Max Visible Distance (ATR) — proximity gate around current price **Ladder Display** - Max Visible Active Steps (3–8) — cap on simultaneously drawn active shelves - Max Visible Broken Steps (0–5) — cap on displayed migration history - Active Ladder Only — minimal mode showing just the dominant shelf - Project Steps Forward — 30-bar forward projection of each shelf - Show Ladder Connectors — thin riser lines between consecutive shelves **Panel & Labels** - Panel / label font size, panel position - Alert master toggle - Full color palette (state-driven, theme-independent) --- ## How to Use - Apply on any timeframe and instrument. Balanced defaults are tuned for 1H–4H crypto; on faster timeframes consider raising Pivot Length, on slower timeframes lower it. - Read the panel's Ladder state first, then the Dominant shelf price. These two values summarize where accepted value currently sits and how it is migrating. - Use the on-chart labels for structural context: Up / Down / Held / Reclaim / Broken describe what each rung is doing. - Integrity shows the percentage of recent shelves still holding. High integrity (green) means the ladder is intact; low integrity (red) means recent migration has broken most anchors. - Treat the output as a structural map, not a signal. Combine with your own directional, volatility, and risk framework. --- ## Limitations & Transparency - All calculations use completed bar data. Shelf registration is delayed by Pivot Length bars (the swing pivot is not confirmed until that many bars have elapsed). - The hybrid acceptance test is lookback-limited to the last 80 bars; very long historical basing periods outside that window are not weighted more heavily than recent ones. - On very low-volatility instruments or during compressed ranges the ATR-scaled thresholds may produce fewer shelves; widening Step Sensitivity is the intended adjustment. - On very high-volatility or thin-volume symbols the volume confirmation may be dominated by outlier bars; raising Min Volume Confirmation × is the intended adjustment. - The script does not repaint confirmed shelves, but state transitions (Held → Broken → Reclaimed) evaluate the last three to five bars, so fresh transitions can flip until those bars close. - Ladder state and Integrity reflect only shelves within the proximity gate. Distant historical shelves exist in memory but are not counted. --- ## Risk Disclosure This script is a structural visualization tool provided for educational and analytical purposes. It is not financial advice, not a trading strategy, and not a signal service. Past market behavior is not indicative of future results. All trading involves risk of loss. Users are responsible for their own decisions and for verifying the tool's behavior on their chosen instruments and timeframes before relying on it."
+              - generic [ref=e569]:
+                - generic "Pine Script® indicator" [ref=e570]:
+                  - img [ref=e571]:
+                    - img [ref=e572]
+                  - generic [ref=e574]: Pine Script® indicator
+                - link [ref=e575] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/BxPKVrwy-AG-Pro-Value-Shift-Ladder-AGPro-Series/
+              - generic [ref=e577]:
+                - generic [ref=e578]:
+                  - link "by AGProLabs" [ref=e580] [cursor=pointer]:
+                    - /url: /u/AGProLabs/
+                    - generic [ref=e581]: by AGProLabs
+                  - time [ref=e583]: Updated 23 hours ago
+                - generic [ref=e584]:
+                  - link "0 comments" [ref=e585] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/BxPKVrwy-AG-Pro-Value-Shift-Ladder-AGPro-Series/#chart-view-comment-form
+                    - img [ref=e587]:
+                      - img [ref=e588]
+                  - button "23 boosts 2 3" [ref=e590]:
+                    - generic [ref=e591]:
+                      - img "23 boosts" [ref=e593]:
+                        - img [ref=e594]
+                      - generic [ref=e598]:
+                        - generic [ref=e600]: "2"
+                        - generic [ref=e602]: "3"
+            - article [ref=e603]:
+              - generic [ref=e604]:
+                - link "ATR from ATH Levels" [ref=e605] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VUyUU13i-ATR-from-ATH-Levels/
+                - link [ref=e606] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VUyUU13i-ATR-from-ATH-Levels/
+                  - generic [ref=e608]: "ATH Levels This indicator automatically detects the All-Time High (ATH) on any asset and draws five configurable retracement zones below it. Every time a new ATH is set, all levels step up accordingly. This makes it possible to look back in history and see exactly where the levels were relative to previous highs. How it works The ATH is calculated bar by bar using the highest high up to that point. Each level is defined by a centerpoint percentage below the ATH. Around that centerpoint sits a zone with an adjustable width. The wider the zone, the more margin around the level. Levels (default centerpoints) Level 5: -23.5% Level 4: -38.2% Level 3: -49.5% Level 2: -60.5% Level 1: -76.5% Settings Zone width: makes all zones wider or narrower simultaneously, in steps of 1% Individual centerpoints: fine-tune each level separately in steps of 0.5% Table position: place the price table anywhere on the chart Price table A real-time table shows the exact dollar prices for the middle, top and bottom of each zone, always based on the current ATH."
+              - generic [ref=e610]:
+                - generic "Pine Script® indicator" [ref=e611]:
+                  - img [ref=e612]:
+                    - img [ref=e613]
+                  - generic [ref=e615]: Pine Script® indicator
+                - link [ref=e616] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/VUyUU13i-ATR-from-ATH-Levels/
+              - generic [ref=e618]:
+                - generic [ref=e619]:
+                  - link "by Benj-Juan" [ref=e621] [cursor=pointer]:
+                    - /url: /u/Benj-Juan/
+                    - generic [ref=e622]: by Benj-Juan
+                  - time [ref=e624]: Apr 17
+                - generic [ref=e625]:
+                  - link "0 comments" [ref=e626] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/VUyUU13i-ATR-from-ATH-Levels/#chart-view-comment-form
+                    - img [ref=e628]:
+                      - img [ref=e629]
+                  - button "6 boosts 6" [ref=e631]:
+                    - generic [ref=e632]:
+                      - img "6 boosts" [ref=e634]:
+                        - img [ref=e635]
+                      - generic [ref=e641]: "6"
+            - article [ref=e642]:
+              - generic [ref=e643]:
+                - link "Liquidity Zones -1W, 1D and 4H" [ref=e644] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Yi9dnx0O/
+                - link "Indicador para marcar os principais zonas de liquidez que são ímãs de preço" [ref=e645] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Yi9dnx0O/
+                  - generic [ref=e647]: Indicador para marcar os principais zonas de liquidez que são ímãs de preço
+              - generic [ref=e649]:
+                - generic "Pine Script® indicator" [ref=e650]:
+                  - img [ref=e651]:
+                    - img [ref=e652]
+                  - generic [ref=e654]: Pine Script® indicator
+                - link [ref=e655] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Yi9dnx0O/
+              - generic [ref=e657]:
+                - generic [ref=e658]:
+                  - link "by rcanella" [ref=e660] [cursor=pointer]:
+                    - /url: /u/rcanella/
+                    - generic [ref=e661]: by rcanella
+                  - time [ref=e663]: Updated Apr 18
+                - generic [ref=e664]:
+                  - link "0 comments" [ref=e665] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/Yi9dnx0O/#chart-view-comment-form
+                    - img [ref=e667]:
+                      - img [ref=e668]
+                  - button "10 boosts 1 0" [ref=e670]:
+                    - generic [ref=e671]:
+                      - img "10 boosts" [ref=e673]:
+                        - img [ref=e674]
+                      - generic [ref=e678]:
+                        - generic [ref=e680]: "1"
+                        - generic [ref=e682]: "0"
+            - article [ref=e683]:
+              - generic [ref=e684]:
+                - 'link "Footprint: Cluster by Exchanges v2 [AlexKo]" [ref=e685] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/Nauu64QF-footprint-cluster-by-exchanges-v2-alexko/
+                - link [ref=e686] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Nauu64QF-footprint-cluster-by-exchanges-v2-alexko/
+                  - generic [ref=e688]: "Footprint: Cluster by Exchanges v2 What the Indicator Does Detects buy and sell clusters from footprint data (POC level + delta) and draws a **stacked set of colored boxes** at each cluster — one box per connected exchange. Box height is proportional to that exchange's volume relative to its own average, so you can instantly see **which exchanges participated in forming the cluster**. How It Works 1. Cluster Detection A cluster is confirmed on bar close when all of the following conditions pass: | Condition | Buy Cluster | Sell Cluster | |-----------|-------------|--------------| | POC position | ≤ N% from candle bottom | ≥ (100−N)% from bottom | | Delta (optional) | > 0 | < 0 | | Min delta % | ≥ threshold | ≥ threshold | | Min candle volume | ≥ threshold | ≥ threshold | | Min range (ATR %) | ≥ threshold | ≥ threshold | 2. Fetching Exchange Volumes Once a cluster is detected, volume is pulled from each enabled exchange via `request.security()`, automatically substituting the current chart ticker. 3. Visualization — Stacked Boxes ``` ▲ ← label (hover → tooltip with full details) ┌──────────┐ │ OKX │ ← h = ATR × scale × (vol_okx / avg_okx) ├──────────┤ │ Bybit │ ← height reflects relative volume ├──────────┤ │ Binance │ ← bottom box = Exchange 1 in settings ● ← POC level of the cluster candle ``` Buy cluster** → stack grows **upward** from POC Sell cluster** → stack grows **downward** from POC - Each box is labeled with the exchange name - Hovering the ▲/▼ marker shows the full tooltip --- Tooltip (example) ``` ▲ BUY CLUSTER ───────────────────────── POC: 65 420.00 (18% from bottom) Delta: +12 450 (+8.3%) Buy: 54.2% │ Sell: 45.8% ───────────────────────── Exchange Volume ×avg ───────────────────────── Binance 1.2M ×2.3 Bybit 890K ×1.8 OKX 450K ×0.9 ───────────────────────── ∑ Total: 2.5M ``` --- Parameters Footprint Parameters | Parameter | Default | Description | |-----------|---------|-------------| | Ticks per Row | 100 | Footprint row size in ticks | | Value Area (%) | 70 | Value area percentage for POC calculation | Clusters | Parameter | Default | Description | |-----------|---------|-------------| | Cluster Zone (%) | 35 | POC in bottom/top N% of range = cluster. Recommended: 30–40% | | Show Buy / Sell Clusters | true / true | Toggle each cluster type on/off | | Accent Color: Buys / Sells | orange / blue | Color for the ▲/▼ label and frame | Filters | Parameter | Default | Description | |-----------|---------|-------------| | Confirm with Delta | true | Main filter. Buy cluster only when delta > 0 | | Min Delta (% of Volume) | 0 | Minimum delta strength as % of volume. 0 = disabled | | Min Candle Volume | 0 | Ignore low-activity bars. 0 = disabled | | Min Candle Range (ATR %) | 0 | Doji filter. 0 = disabled | Exchanges 1–5 | Parameter | Description | |-----------|-------------| | Enable | Toggle this exchange on/off | | Prefix | TradingView exchange prefix: `BINANCE`, `BYBIT`, `OKX`, `BITGET`, `KRAKEN`, `COINBASE`, `BITMEX`, etc. | | Ticker | Empty = current chart ticker. Fill manually if the exchange uses a different format (e.g. `XBTUSD` for Kraken) | | Name | Text shown on boxes and in the tooltip | | Color | Box fill and border color | Bar Visualization | Parameter | Default | Description | |-----------|---------|-------------| | Normalization Mode | % of Average | How bar heights are calculated (see below) | | SMA Period (bars) | 20 | Moving average period for normalization. Volume / SMA = relative size | | Height Scale (× ATR) | 0.08 | Base height when volume equals average. Increase if bars look too small | | Max Multiplier | 5.0 | Growth cap. Volume > 5×average does not increase height further | | Fill Transparency | 25 | 0 = fully opaque, 95 = nearly invisible | | Info Label (exchanges + volumes) | true | Show per-exchange volume label outside the candle | | Label Text Size | small | Text size for the label: tiny / small / normal | | Label Offset (× ATR) | 0.5 | Distance from candle high/low in ATR units. 0 = flush with candle | Normalization Modes | Mode | Description | |------|-------------| | **% of Average** | Each exchange bar is scaled against its own SMA. Height = base when volume = average; capped at Max Multiplier × base | | **% of Total** | Bar width represents the exchange's share of combined volume across all active exchanges on that bar | | **Absolute** | All exchanges normalized against the combined average of all active exchanges | Limitations Object limit:** `max_boxes_count = 500`. With 3 active exchanges you can see ~165 cluster bars; with 5 exchanges ~100. Older objects are removed automatically. Footprint data:** requires a TradingView subscription that includes Order Flow / Footprint access. Box labels:** may not be visible if a box is very thin (small ATR or low scale). The hover tooltip always works. Cluster detection** is based on the current chart's exchange only. Exchanges 1–5 provide volume breakdowns but do not affect whether a cluster is detected. Alerts | Alert Name | Trigger | |------------|---------| | Buy Cluster | Buy cluster detected on bar close | | Sell Cluster | Sell cluster detected on bar close | Alert message format: `{{ticker}} {{interval}} | Buy/Sell cluster by exchanges`"
+              - generic [ref=e690]:
+                - generic "Pine Script® indicator" [ref=e691]:
+                  - img [ref=e692]:
+                    - img [ref=e693]
+                  - generic [ref=e695]: Pine Script® indicator
+                - link [ref=e696] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/Nauu64QF-footprint-cluster-by-exchanges-v2-alexko/
+              - generic [ref=e698]:
+                - generic [ref=e699]:
+                  - link "by AlexKondom" [ref=e701] [cursor=pointer]:
+                    - /url: /u/AlexKondom/
+                    - generic [ref=e702]: by AlexKondom
+                  - time [ref=e704]: Apr 17
+                - generic [ref=e705]:
+                  - link "0 comments" [ref=e706] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/Nauu64QF-footprint-cluster-by-exchanges-v2-alexko/#chart-view-comment-form
+                    - img [ref=e708]:
+                      - img [ref=e709]
+                  - button "8 boosts 8" [ref=e711]:
+                    - generic [ref=e712]:
+                      - img "8 boosts" [ref=e714]:
+                        - img [ref=e715]
+                      - generic [ref=e721]: "8"
+            - article [ref=e722]:
+              - generic [ref=e723]:
+                - link "Levels of Greed (KenshinC)" [ref=e724] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IdHWI6t6-Levels-of-Greed-KenshinC/
+                - link [ref=e725] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IdHWI6t6-Levels-of-Greed-KenshinC/
+                  - generic [ref=e727]: "// ───────────────────────────────────────────────────────────────────────────── // 🔥 LEVELS OF GREED (KenshinC) 🔥 // ───────────────────────────────────────────────────────────────────────────── // // Tired of guessing when the market is getting dangerously euphoric? // Want to see the invisible force of greed directly on your chart? // // Levels of Greed is a powerful psychological visualization tool that // divides the price range from a major low to extreme greed levels into // 9 clear emotional stages — from \"😌 Calm\" all the way to \"💀 Extreme Greed\". // // Each level has increasing line thickness and emotional labels, making it // incredibly easy to read market sentiment at a glance. // // Whether you're a scalper, swing trader, or long-term holder, this indicator // helps you: // • Spot when greed is taking over the market // • Avoid buying at emotional peaks // • Recognize potential topping zones // • Stay disciplined during euphoric rallies // // Features: // • 3 Calculation Modes: Auto • Manual • Dynamic by Market Cap // • Custom Start Date (default: BTC 2022 bottom) // • Two display modes: \"Cool Guys Mode\" (with emojis) & \"Serious Guys Mode\" // • Clean, extendable horizontal levels with dynamic thickness // • Works on Bitcoin, altcoins, and any other asset // // \"In crypto, price is just a number. // Greed is the real driver.\" // // Built with passion by KenshinC 🇻🇳 // // ─────────────────────────────────────────────────────────────────────────────"
+              - generic [ref=e729]:
+                - generic "Pine Script® indicator" [ref=e730]:
+                  - img [ref=e731]:
+                    - img [ref=e732]
+                  - generic [ref=e734]: Pine Script® indicator
+                - link [ref=e735] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/IdHWI6t6-Levels-of-Greed-KenshinC/
+              - generic [ref=e737]:
+                - generic [ref=e738]:
+                  - link "by KenshinC" [ref=e740] [cursor=pointer]:
+                    - /url: /u/KenshinC/
+                    - generic [ref=e741]: by KenshinC
+                  - time [ref=e743]: Apr 17
+                - generic [ref=e744]:
+                  - link "0 comments" [ref=e745] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/IdHWI6t6-Levels-of-Greed-KenshinC/#chart-view-comment-form
+                    - img [ref=e747]:
+                      - img [ref=e748]
+                  - button "16 boosts 1 6" [ref=e750]:
+                    - generic [ref=e751]:
+                      - img "16 boosts" [ref=e753]:
+                        - img [ref=e754]
+                      - generic [ref=e758]:
+                        - generic [ref=e760]: "1"
+                        - generic [ref=e762]: "6"
+            - article [ref=e763]:
+              - generic [ref=e764]:
+                - link "indigobigboss" [ref=e765] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/JWl6PydK/
+                - link "厲害" [ref=e766] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/JWl6PydK/
+                  - generic [ref=e768]: 厲害
+              - generic [ref=e770]:
+                - generic "Pine Script® indicator" [ref=e771]:
+                  - img [ref=e772]:
+                    - img [ref=e773]
+                  - generic [ref=e775]: Pine Script® indicator
+                - link [ref=e776] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/JWl6PydK/
+              - generic [ref=e778]:
+                - generic [ref=e779]:
+                  - link "by luckypiss" [ref=e781] [cursor=pointer]:
+                    - /url: /u/luckypiss/
+                    - generic [ref=e782]: by luckypiss
+                  - time [ref=e784]: Apr 17
+                - generic [ref=e785]:
+                  - link "0 comments" [ref=e786] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/JWl6PydK/#chart-view-comment-form
+                    - img [ref=e788]:
+                      - img [ref=e789]
+                  - button "4 boosts 4" [ref=e791]:
+                    - generic [ref=e792]:
+                      - img "4 boosts" [ref=e794]:
+                        - img [ref=e795]
+                      - generic [ref=e801]: "4"
+            - article [ref=e802]:
+              - generic [ref=e803]:
+                - link "MTF Trend Cascade (compact)" [ref=e804] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/YgCTAQoX-mtf-trend-cascade-compact/
+                - 'link "MTF Trend Cascade is a multi-timeframe trend dashboard for TradingView that monitors 12 timeframes simultaneously (10m → 1D). How it works: Calculates trend direction, strength, and momentum on each TF using EMAs (8/21/55/200) and a manual ADX Detects cascades — when lower timeframes start reversing against the higher TF trend, signaling a potential turning point Displays everything in a compact on-chart table with color-coded bars (green = bullish, red = bearish, brightness = strength) Alerts included: Bullish / Bearish cascade (configurable minimum TF count) 8+ TFs aligned in one direction Full alignment (all 12 TFs bullish or bearish) Best used as a confluence filter — quickly see whether the broader trend supports or contradicts your trade setup across all timeframes at a glance." [ref=e805] [cursor=pointer]':
+                  - /url: https://www.tradingview.com/script/YgCTAQoX-mtf-trend-cascade-compact/
+                  - generic [ref=e807]: "MTF Trend Cascade is a multi-timeframe trend dashboard for TradingView that monitors 12 timeframes simultaneously (10m → 1D). How it works: Calculates trend direction, strength, and momentum on each TF using EMAs (8/21/55/200) and a manual ADX Detects cascades — when lower timeframes start reversing against the higher TF trend, signaling a potential turning point Displays everything in a compact on-chart table with color-coded bars (green = bullish, red = bearish, brightness = strength) Alerts included: Bullish / Bearish cascade (configurable minimum TF count) 8+ TFs aligned in one direction Full alignment (all 12 TFs bullish or bearish) Best used as a confluence filter — quickly see whether the broader trend supports or contradicts your trade setup across all timeframes at a glance."
+              - generic [ref=e809]:
+                - generic "Pine Script® indicator" [ref=e810]:
+                  - img [ref=e811]:
+                    - img [ref=e812]
+                  - generic [ref=e814]: Pine Script® indicator
+                - link [ref=e815] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/YgCTAQoX-mtf-trend-cascade-compact/
+              - generic [ref=e817]:
+                - generic [ref=e818]:
+                  - link "by bidagor" [ref=e820] [cursor=pointer]:
+                    - /url: /u/bidagor/
+                    - generic [ref=e821]: by bidagor
+                  - time [ref=e823]: Apr 17
+                - generic [ref=e824]:
+                  - link "0 comments" [ref=e825] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/YgCTAQoX-mtf-trend-cascade-compact/#chart-view-comment-form
+                    - img [ref=e827]:
+                      - img [ref=e828]
+                  - button "9 boosts 9" [ref=e830]:
+                    - generic [ref=e831]:
+                      - img "9 boosts" [ref=e833]:
+                        - img [ref=e834]
+                      - generic [ref=e840]: "9"
+            - article [ref=e841]:
+              - generic [ref=e842]:
+                - link "EMA COS & Pullback Analyzer" [ref=e843] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/MrlNAZ7d-EMA-COS-Pullback-Analyzer/
+                - link [ref=e844] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/MrlNAZ7d-EMA-COS-Pullback-Analyzer/
+                  - generic [ref=e846]: "This script is a hybrid trend-following and mean-reversion indicator that uses two distinct mathematical models for entries and exits. 1. Buy Logic (EMA Crossover) The script calculates a Modified EMA where the smoothing factor is slowed down by your multiplier (5.0). A green \"BUY\" triangle appears when the price crosses over this EMA line. This is designed to capture the start of an upward trend. 2. Sell Logic (Pullback Analyzer) Instead of a simple crossover, the sell signal uses a Peak Detection algorithm: Scanning: It looks back between 10 and 500 candles (as per your range) to find the local highest price (the \"Top\"). Detection: It identifies a sell signal only if the current price has dropped by a specific percentage (Sensitivity) from that identified top. Trigger: When a pullback from the peak is confirmed, a red \"SELL\" triangle appears above the candle. Key Inputs EMA Multiplier: Increasing this makes the EMA \"heavier\" and slower to react to price noise. Lookback Min/Max: Defines the window size (10-500 bars) to search for a resistance peak. Pullback Sensitivity: Controls how much the price must drop from the high before the Red Triangle is triggered."
+              - generic [ref=e848]:
+                - generic "Pine Script® indicator" [ref=e849]:
+                  - img [ref=e850]:
+                    - img [ref=e851]
+                  - generic [ref=e853]: Pine Script® indicator
+                - link [ref=e854] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/MrlNAZ7d-EMA-COS-Pullback-Analyzer/
+              - generic [ref=e856]:
+                - generic [ref=e857]:
+                  - link "by orbsaleus" [ref=e859] [cursor=pointer]:
+                    - /url: /u/orbsaleus/
+                    - generic [ref=e860]: by orbsaleus
+                  - time [ref=e862]: Updated Apr 18
+                - generic [ref=e863]:
+                  - link "1 comment" [ref=e864] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/MrlNAZ7d-EMA-COS-Pullback-Analyzer/#chart-view-comment-form
+                    - img [ref=e866]:
+                      - img [ref=e867]
+                    - generic [ref=e870]: "1"
+                  - button "6 boosts 6" [ref=e871]:
+                    - generic [ref=e872]:
+                      - img "6 boosts" [ref=e874]:
+                        - img [ref=e875]
+                      - generic [ref=e881]: "6"
+            - article [ref=e882]:
+              - generic [ref=e883]:
+                - link "Iteratively Reweighted Least Squares (IRLS) [Jamallo]" [ref=e884] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/EHhyqcML-Iteratively-Reweighted-Least-Squares-IRLS-Jamallo/
+                - link [ref=e885] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/EHhyqcML-Iteratively-Reweighted-Least-Squares-IRLS-Jamallo/
+                  - generic [ref=e887]: "Author's Note: This script is published as a unique mathematical contribution to TradingView's open-source public library. It is intended to introduce a novel application of a robust statistical method for the community and developers to study, adapt, and build upon, rather than to serve as a standalone, out-of-the-box trading strategy. Introduction Almost all moving averages and smoothing filters in technical analysis treat historical price data equally or apply a fixed mathematical decay (like an EMA). The problem? A massive, anomalous wick or a sudden volatility spike will inevitably drag the average away from the true underlying market consensus. Enter Iteratively Reweighted Least Squares (IRLS) . IRLS is a robust statistical method that calculates a \"consensus\" price by actively identifying and down-weighting outliers. Instead of letting a large wick distort the line, the algorithm assigns less weight to prices that deviate furthest from the current estimate. The result is a filter that cuts through noise, ignores price-distant spikes, and naturally locks onto the dominant, high-density price levels. How It Works The indicator uses the Hardy weight function to determine how heavily each historical candle influences the current estimate. On every bar, the algorithm checks the distance of each sample from the current consensus and iteratively refines the line until it converges on a robust mean. Epsilon — the outlier rejection scale — is derived dynamically from the average High–Low range, keeping the filter dimensionless and consistent across all instruments and timeframes. Parameters Window Size (N) : The rolling lookback window of historical samples the kernel considers. Larger values produce a smoother, slower-responding line. Sparsity (s/N) : The core behavioral control. Dictates the fraction of the window allowed to \"vote\" on the estimate. Low Sparsity (e.g., 0.1) : Only the 10% of samples closest to the current estimate participate. Produces a snappy, selective line that locks tightly onto the most dominant price cluster. High Sparsity (e.g., 1.0) : All samples participate, resulting in a smoother, more conventional robust mean. Gamma (ε scale) : Controls the strength of outlier rejection. Lower values enforce harsh, median-like rejection. Higher values soften the rejection toward a standard weighted mean. Iterations : The number of reweighting convergence passes per bar. 2–3 is sufficient for practical convergence. Potential Applications The Hardy IRLS filter provides a unique lens into market structure by shifting the focus from simple time-averaged prices to spatial price consensus. Because it rejects price-distant wicks and noise spikes by design, it can serve as a foundation for: Custom trailing stops Dynamic support and resistance trackers Baseline trend or regime filters Feel free to inspect the open-source code, experiment with extreme sparsity and gamma settings, and integrate the IRLS core into your own quantitative projects. References Li Shuang, \"Sparse Representation of Hardy Function by Iteratively Reweighted Least Squares,\" 2020 International Symposium on Computer Engineering and Intelligent Communications (ISCEIC), IEEE, 2020. DOI: 10.1109/ISCEIC51027.2020.00020"
+              - generic [ref=e889]:
+                - generic "Pine Script® indicator" [ref=e890]:
+                  - img [ref=e891]:
+                    - img [ref=e892]
+                  - generic [ref=e894]: Pine Script® indicator
+                - link [ref=e895] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/EHhyqcML-Iteratively-Reweighted-Least-Squares-IRLS-Jamallo/
+              - generic [ref=e897]:
+                - generic [ref=e898]:
+                  - link "by Jamallo22" [ref=e900] [cursor=pointer]:
+                    - /url: /u/Jamallo22/
+                    - generic [ref=e901]: by Jamallo22
+                  - time [ref=e903]: Apr 17
+                - generic [ref=e904]:
+                  - link "0 comments" [ref=e905] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/EHhyqcML-Iteratively-Reweighted-Least-Squares-IRLS-Jamallo/#chart-view-comment-form
+                    - img [ref=e907]:
+                      - img [ref=e908]
+                  - button "9 boosts 9" [ref=e910]:
+                    - generic [ref=e911]:
+                      - img "9 boosts" [ref=e913]:
+                        - img [ref=e914]
+                      - generic [ref=e920]: "9"
+            - article [ref=e921]:
+              - generic [ref=e922]:
+                - link "Session Ranges & London Sweeps" [ref=e923] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/dmWl6bxi-Session-Ranges-London-Sweeps/
+                - link "free sessions indicator which marks off trading sessions." [ref=e924] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/dmWl6bxi-Session-Ranges-London-Sweeps/
+                  - generic [ref=e926]: free sessions indicator which marks off trading sessions.
+              - generic [ref=e928]:
+                - generic "Pine Script® indicator" [ref=e929]:
+                  - img [ref=e930]:
+                    - img [ref=e931]
+                  - generic [ref=e933]: Pine Script® indicator
+                - link [ref=e934] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/dmWl6bxi-Session-Ranges-London-Sweeps/
+              - generic [ref=e936]:
+                - generic [ref=e937]:
+                  - link "by aldgray2663" [ref=e939] [cursor=pointer]:
+                    - /url: /u/aldgray2663/
+                    - generic [ref=e940]: by aldgray2663
+                  - time [ref=e942]: Apr 17
+                - generic [ref=e943]:
+                  - link "0 comments" [ref=e944] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/dmWl6bxi-Session-Ranges-London-Sweeps/#chart-view-comment-form
+                    - img [ref=e946]:
+                      - img [ref=e947]
+                  - button "9 boosts 9" [ref=e949]:
+                    - generic [ref=e950]:
+                      - img "9 boosts" [ref=e952]:
+                        - img [ref=e953]
+                      - generic [ref=e959]: "9"
+            - article [ref=e960]:
+              - generic [ref=e961]:
+                - link "SMA + MACD + RSI Signals" [ref=e962] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/9aK2KxwB-SMA-MACD-RSI-Signals/
+                - link "Intraday 5 mins, Best indicator for intraday BUY 10 SMA crosses above 20 SMA MACD line > Signal line (bullish momentum) RSI > 50 (strength confirmation) SELL 10 SMA crosses below 20 SMA MACD line < Signal line RSI < 50" [ref=e963] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/9aK2KxwB-SMA-MACD-RSI-Signals/
+                  - generic [ref=e965]: Intraday 5 mins, Best indicator for intraday BUY 10 SMA crosses above 20 SMA MACD line > Signal line (bullish momentum) RSI > 50 (strength confirmation) SELL 10 SMA crosses below 20 SMA MACD line < Signal line RSI < 50
+              - generic [ref=e967]:
+                - generic "Pine Script® indicator" [ref=e968]:
+                  - img [ref=e969]:
+                    - img [ref=e970]
+                  - generic [ref=e972]: Pine Script® indicator
+                - link [ref=e973] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/9aK2KxwB-SMA-MACD-RSI-Signals/
+              - generic [ref=e975]:
+                - generic [ref=e976]:
+                  - link "by FintegroTechnologies" [ref=e978] [cursor=pointer]:
+                    - /url: /u/FintegroTechnologies/
+                    - generic [ref=e979]: by FintegroTechnologies
+                  - time [ref=e981]: Apr 17
+                - generic [ref=e982]:
+                  - link "0 comments" [ref=e983] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/9aK2KxwB-SMA-MACD-RSI-Signals/#chart-view-comment-form
+                    - img [ref=e985]:
+                      - img [ref=e986]
+                  - button "3 boosts 3" [ref=e988]:
+                    - generic [ref=e989]:
+                      - img "3 boosts" [ref=e991]:
+                        - img [ref=e992]
+                      - generic [ref=e998]: "3"
+            - article [ref=e999]:
+              - generic [ref=e1000]:
+                - link "Joey's Current Day Open" [ref=e1001] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/W2p20DZc-Joey-s-Current-Day-Open/
+                - link "The Current Days Open with the ability to change settings etc." [ref=e1002] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/W2p20DZc-Joey-s-Current-Day-Open/
+                  - generic [ref=e1004]: The Current Days Open with the ability to change settings etc.
+              - generic [ref=e1006]:
+                - generic "Pine Script® indicator" [ref=e1007]:
+                  - img [ref=e1008]:
+                    - img [ref=e1009]
+                  - generic [ref=e1011]: Pine Script® indicator
+                - link [ref=e1012] [cursor=pointer]:
+                  - /url: https://www.tradingview.com/script/W2p20DZc-Joey-s-Current-Day-Open/
+              - generic [ref=e1014]:
+                - generic [ref=e1015]:
+                  - link "by JoeyPolk" [ref=e1017] [cursor=pointer]:
+                    - /url: /u/JoeyPolk/
+                    - generic [ref=e1018]: by JoeyPolk
+                  - time [ref=e1020]: Apr 17
+                - generic [ref=e1021]:
+                  - link "0 comments" [ref=e1022] [cursor=pointer]:
+                    - /url: https://www.tradingview.com/script/W2p20DZc-Joey-s-Current-Day-Open/#chart-view-comment-form
+                    - img [ref=e1024]:
+                      - img [ref=e1025]
+                  - button "4 boosts 4" [ref=e1027]:
+                    - generic [ref=e1028]:
+                      - img "4 boosts" [ref=e1030]:
+                        - img [ref=e1031]
+                      - generic [ref=e1037]: "4"
+          - button "Show more publications" [ref=e1038]:
+            - generic [ref=e1039]: Show more publications
+          - generic [ref=e1043]:
+            - navigation "Pagination" [ref=e1044]:
+              - button "Previous page" [ref=e1045]:
+                - img [ref=e1047]:
+                  - img [ref=e1048]
+              - generic [ref=e1050]:
+                - link "1" [ref=e1051] [cursor=pointer]:
+                  - /url: /scripts/?
+                  - generic [ref=e1052]: "1"
+                - generic [ref=e1053]: …
+                - link "7" [ref=e1054] [cursor=pointer]:
+                  - /url: /scripts/page-7/?
+                  - generic [ref=e1055]: "7"
+                - link "8" [ref=e1056] [cursor=pointer]:
+                  - /url: /scripts/page-8/?
+                  - generic [ref=e1057]: "8"
+                - link "9" [ref=e1058] [cursor=pointer]:
+                  - /url: /scripts/page-9/?
+                  - generic [ref=e1059]: "9"
+                - link "10" [ref=e1060] [cursor=pointer]:
+                  - /url: /scripts/page-10/?
+                  - generic [ref=e1061]: "10"
+                - link "11" [ref=e1062] [cursor=pointer]:
+                  - /url: /scripts/page-11/?
+                  - generic [ref=e1063]: "11"
+                - link "12" [ref=e1064] [cursor=pointer]:
+                  - /url: /scripts/page-12/?
+                  - generic [ref=e1065]: "12"
+                - link "13" [ref=e1066] [cursor=pointer]:
+                  - /url: /scripts/page-13/?
+                  - generic [ref=e1067]: "13"
+                - generic [ref=e1068]: …
+                - link "42" [ref=e1069] [cursor=pointer]:
+                  - /url: /scripts/page-42/?
+                  - generic [ref=e1070]: "42"
+              - button "Next page" [ref=e1071]:
+                - img [ref=e1073]:
+                  - img [ref=e1074]
+            - generic:
+              - generic:
+                - generic: …
+                - generic:
+                  - generic: "999"
+                - button:
+                  - generic:
+                    - img:
+                      - img
+    - contentinfo [ref=e1076]:
+      - generic [ref=e1078]:
+        - separator [ref=e1079]
+        - generic [ref=e1080]:
+          - generic [ref=e1081]:
+            - generic [ref=e1082]:
+              - generic [ref=e1083]:
+                - link "TradingView main page" [ref=e1084] [cursor=pointer]:
+                  - /url: /
+                - generic [ref=e1086]:
+                  - link "TradingView on X" [ref=e1087] [cursor=pointer]:
+                    - /url: https://x.com/tradingview/
+                    - img [ref=e1089]:
+                      - img [ref=e1090]
+                  - link "TradingView on Facebook" [ref=e1092] [cursor=pointer]:
+                    - /url: https://www.facebook.com/tradingview/
+                    - img [ref=e1094]:
+                      - img [ref=e1095]
+                  - link "TradingView on YouTube" [ref=e1097] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@TradingView
+                    - img [ref=e1099]:
+                      - img [ref=e1100]
+                  - link "TradingView on Instagram" [ref=e1102] [cursor=pointer]:
+                    - /url: https://www.instagram.com/tradingview/
+                    - img [ref=e1104]:
+                      - img [ref=e1105]
+                  - link "TradingView on LinkedIn" [ref=e1107] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/company/tradingview/
+                    - img [ref=e1109]:
+                      - img [ref=e1110]
+                  - link "TradingView on Telegram" [ref=e1112] [cursor=pointer]:
+                    - /url: https://t.me/tradingview/
+                    - img [ref=e1114]:
+                      - img [ref=e1115]
+                  - link "TradingView on TikTok" [ref=e1117] [cursor=pointer]:
+                    - /url: https://www.tiktok.com/@tradingview/
+                    - img [ref=e1119]:
+                      - img [ref=e1120]
+                  - link "TradingView on Reddit" [ref=e1122] [cursor=pointer]:
+                    - /url: https://www.reddit.com/r/TradingView/
+                    - img [ref=e1124]:
+                      - img [ref=e1125]
+              - generic [ref=e1127]:
+                - button "English" [ref=e1128]:
+                  - img [ref=e1130]:
+                    - img [ref=e1131]
+                  - generic [ref=e1134]: English
+                  - img [ref=e1135]:
+                    - img [ref=e1136]
+                - paragraph [ref=e1138]:
+                  - generic [ref=e1139]:
+                    - text: Select market data provided by
+                    - link "ICE Data Services" [ref=e1140] [cursor=pointer]:
+                      - /url: https://www.theice.com/market-data
+                    - text: .
+                  - generic [ref=e1141]: Select reference data provided by FactSet. Copyright © 2026 FactSet Research Systems Inc.
+                  - generic [ref=e1142]: Copyright © 2026, American Bankers Association. CUSIP Database provided by FactSet Research Systems Inc. All rights reserved.
+                  - generic [ref=e1143]:
+                    - text: SEC fillings and other documents provided by
+                    - link "Quartr" [ref=e1144] [cursor=pointer]:
+                      - /url: https://www.quartr.com
+                    - text: .
+                  - generic [ref=e1145]: © 2026 TradingView, Inc.
+            - generic [ref=e1146]:
+              - generic [ref=e1147]:
+                - generic [ref=e1148]:
+                  - generic [ref=e1149]: More than a product
+                  - list [ref=e1150]:
+                    - listitem [ref=e1151]:
+                      - link "Supercharts" [ref=e1152] [cursor=pointer]:
+                        - /url: /chart/
+                - generic [ref=e1153]:
+                  - generic [ref=e1154]: Screeners
+                  - list [ref=e1155]:
+                    - listitem [ref=e1156]:
+                      - link "Stocks" [ref=e1157] [cursor=pointer]:
+                        - /url: /screener/
+                    - listitem [ref=e1158]:
+                      - link "ETFs" [ref=e1159] [cursor=pointer]:
+                        - /url: /etf-screener/
+                    - listitem [ref=e1160]:
+                      - link "Bonds" [ref=e1161] [cursor=pointer]:
+                        - /url: /bond-screener/
+                    - listitem [ref=e1162]:
+                      - link "Crypto coins" [ref=e1163] [cursor=pointer]:
+                        - /url: /crypto-coins-screener/
+                    - listitem [ref=e1164]:
+                      - link "CEX pairs" [ref=e1165] [cursor=pointer]:
+                        - /url: /cex-screener/
+                    - listitem [ref=e1166]:
+                      - link "DEX pairs" [ref=e1167] [cursor=pointer]:
+                        - /url: /dex-screener/
+                    - listitem [ref=e1168]:
+                      - link "Pine" [ref=e1169] [cursor=pointer]:
+                        - /url: /pine-screener/
+                - generic [ref=e1170]:
+                  - generic [ref=e1171]: Heatmaps
+                  - list [ref=e1172]:
+                    - listitem [ref=e1173]:
+                      - link "Stocks" [ref=e1174] [cursor=pointer]:
+                        - /url: /heatmap/stock/
+                    - listitem [ref=e1175]:
+                      - link "ETFs" [ref=e1176] [cursor=pointer]:
+                        - /url: /heatmap/etf/
+                    - listitem [ref=e1177]:
+                      - link "Crypto coins" [ref=e1178] [cursor=pointer]:
+                        - /url: /heatmap/crypto/
+                - generic [ref=e1179]:
+                  - generic [ref=e1180]: Calendars
+                  - list [ref=e1181]:
+                    - listitem [ref=e1182]:
+                      - link "Economic" [ref=e1183] [cursor=pointer]:
+                        - /url: /economic-calendar/
+                    - listitem [ref=e1184]:
+                      - link "Earnings" [ref=e1185] [cursor=pointer]:
+                        - /url: /earnings-calendar/
+                    - listitem [ref=e1186]:
+                      - link "Dividends" [ref=e1187] [cursor=pointer]:
+                        - /url: /dividend-calendar/
+                - generic [ref=e1188]:
+                  - generic [ref=e1189]: More products
+                  - list [ref=e1190]:
+                    - listitem [ref=e1191]:
+                      - link "Yield Curves" [ref=e1192] [cursor=pointer]:
+                        - /url: /yield-curves/
+                    - listitem [ref=e1193]:
+                      - link "Options" [ref=e1194] [cursor=pointer]:
+                        - /url: /options/
+                    - listitem [ref=e1195]:
+                      - link "Macro Maps" [ref=e1196] [cursor=pointer]:
+                        - /url: /macro-maps/
+                    - listitem [ref=e1197]:
+                      - link "News Flow" [ref=e1198] [cursor=pointer]:
+                        - /url: /news-flow/
+                    - listitem [ref=e1199]:
+                      - link "Pine Script®" [ref=e1200] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/pine-script-docs/
+                - generic [ref=e1201]:
+                  - generic [ref=e1202]: Apps
+                  - list [ref=e1203]:
+                    - listitem [ref=e1204]:
+                      - link "Mobile" [ref=e1205] [cursor=pointer]:
+                        - /url: /mobile/
+                    - listitem [ref=e1206]:
+                      - link "Desktop" [ref=e1207] [cursor=pointer]:
+                        - /url: /desktop/
+              - generic [ref=e1208]:
+                - generic [ref=e1209]:
+                  - generic [ref=e1210]: Tools & subscriptions
+                  - list [ref=e1211]:
+                    - listitem [ref=e1212]:
+                      - link "Features" [ref=e1213] [cursor=pointer]:
+                        - /url: /features/
+                    - listitem [ref=e1214]:
+                      - link "Pricing" [ref=e1215] [cursor=pointer]:
+                        - /url: /pricing/?source=footer&feature=pricing
+                    - listitem [ref=e1216]:
+                      - link "Market data" [ref=e1217] [cursor=pointer]:
+                        - /url: /data-coverage/
+                    - listitem [ref=e1218]:
+                      - link "Gift plans" [ref=e1219] [cursor=pointer]:
+                        - /url: /gifts/
+                - generic [ref=e1220]:
+                  - generic [ref=e1221]: Trading
+                  - list [ref=e1222]:
+                    - listitem [ref=e1223]:
+                      - link "Overview" [ref=e1224] [cursor=pointer]:
+                        - /url: /trading/
+                    - listitem [ref=e1225]:
+                      - link "Top brokers" [ref=e1226] [cursor=pointer]:
+                        - /url: /brokers/
+                    - listitem [ref=e1227]:
+                      - link "Brokers comparison" [ref=e1228] [cursor=pointer]:
+                        - /url: /brokers/compare/
+                - generic [ref=e1229]:
+                  - generic [ref=e1230]: Special offers
+                  - list [ref=e1231]:
+                    - listitem [ref=e1232]:
+                      - link "CME Group futures" [ref=e1233] [cursor=pointer]:
+                        - /url: /cme/
+                    - listitem [ref=e1234]:
+                      - link "Eurex futures" [ref=e1235] [cursor=pointer]:
+                        - /url: /eurex/
+                    - listitem [ref=e1236]:
+                      - link "US stocks bundle" [ref=e1237] [cursor=pointer]:
+                        - /url: /us-markets-bundle/
+                - generic [ref=e1238]:
+                  - generic [ref=e1239]: About company
+                  - list [ref=e1240]:
+                    - listitem [ref=e1241]:
+                      - link "Who we are" [ref=e1242] [cursor=pointer]:
+                        - /url: /about/
+                    - listitem [ref=e1243]:
+                      - link "Space mission" [ref=e1244] [cursor=pointer]:
+                        - /url: /space-mission/
+                    - listitem [ref=e1245]:
+                      - link "Blog" [ref=e1246] [cursor=pointer]:
+                        - /url: https://www.tradingview.com/blog/en/
+                    - listitem [ref=e1247]:
+                      - link "Careers" [ref=e1248] [cursor=pointer]:
+                        - /url: /careers/
+                    - listitem [ref=e1249]:
+                      - link "Media kit" [ref=e1250] [cursor=pointer]:
+                        - /url: /media-kit/
+                - generic [ref=e1251]:
+                  - generic [ref=e1252]: Merch
+                  - list [ref=e1253]:
+                    - listitem [ref=e1254]:
+                      - link "TradingView store" [ref=e1255] [cursor=pointer]:
+                        - /url: https://tradingviewstore.com/
+                    - listitem [ref=e1256]:
+                      - link "Tarot cards for traders" [ref=e1257] [cursor=pointer]:
+                        - /url: /tarot-reading/
+                    - listitem [ref=e1258]:
+                      - link "The C63 TradeTime" [ref=e1259] [cursor=pointer]:
+                        - /url: /tradetime/
+                - generic [ref=e1260]:
+                  - generic [ref=e1261]: Policies & security
+                  - list [ref=e1262]:
+                    - listitem [ref=e1263]:
+                      - link "Terms of Use" [ref=e1264] [cursor=pointer]:
+                        - /url: /policies/
+                    - listitem [ref=e1265]:
+                      - link "Disclaimer" [ref=e1266] [cursor=pointer]:
+                        - /url: /disclaimer/
+                    - listitem [ref=e1267]:
+                      - link "Privacy Policy" [ref=e1268] [cursor=pointer]:
+                        - /url: /privacy-policy/
+                    - listitem [ref=e1269]:
+                      - link "Cookies Policy" [ref=e1270] [cursor=pointer]:
+                        - /url: /cookies-policy/
+                    - listitem [ref=e1271]:
+                      - link "Accessibility Statement" [ref=e1272] [cursor=pointer]:
+                        - /url: /accessibility/
+                    - listitem [ref=e1273]:
+                      - link "Security tips" [ref=e1274] [cursor=pointer]:
+                        - /url: /security/
+                    - listitem [ref=e1275]:
+                      - link "Bug Bounty program" [ref=e1276] [cursor=pointer]:
+                        - /url: /bounty/
+                    - listitem [ref=e1277]:
+                      - link "Status page" [ref=e1278] [cursor=pointer]:
+                        - /url: https://status.tradingview.com/
+              - generic [ref=e1279]:
+                - generic [ref=e1280]:
+                  - generic [ref=e1281]: Community
+                  - list [ref=e1282]:
+                    - listitem [ref=e1283]:
+                      - link "Social network" [ref=e1284] [cursor=pointer]:
+                        - /url: /social-network/
+                    - listitem [ref=e1285]:
+                      - link "Wall of Love" [ref=e1286] [cursor=pointer]:
+                        - /url: /wall-of-love/
+                    - listitem [ref=e1287]:
+                      - link "Refer a friend" [ref=e1288] [cursor=pointer]:
+                        - /url: /share-your-love/?source=footer&feature=refer_friend
+                    - listitem [ref=e1289]:
+                      - link "House Rules" [ref=e1290] [cursor=pointer]:
+                        - /url: /house-rules/
+                    - listitem [ref=e1291]:
+                      - link "Moderators" [ref=e1292] [cursor=pointer]:
+                        - /url: /moderators/
+                - generic [ref=e1293]:
+                  - generic [ref=e1294]: Ideas
+                  - list [ref=e1295]:
+                    - listitem [ref=e1296]:
+                      - link "Trading" [ref=e1297] [cursor=pointer]:
+                        - /url: /ideas/
+                    - listitem [ref=e1298]:
+                      - link "Education" [ref=e1299] [cursor=pointer]:
+                        - /url: /ideas/?type=education
+                    - listitem [ref=e1300]:
+                      - link "Editors' picks" [ref=e1301] [cursor=pointer]:
+                        - /url: /ideas/editors-picks/
+                - generic [ref=e1302]:
+                  - generic [ref=e1303]: Pine Script
+                  - list [ref=e1304]:
+                    - listitem [ref=e1305]:
+                      - link "Indicators & strategies" [ref=e1306] [cursor=pointer]:
+                        - /url: /scripts/
+                    - listitem [ref=e1307]:
+                      - link "Wizards" [ref=e1308] [cursor=pointer]:
+                        - /url: /pine-wizards/
+                    - listitem [ref=e1309]:
+                      - link "Freelancers" [ref=e1310] [cursor=pointer]:
+                        - /url: /pine-script-freelancers/
+                    - listitem [ref=e1311]:
+                      - link "Paid Spaces" [ref=e1312] [cursor=pointer]:
+                        - /url: /spaces/
+              - generic [ref=e1313]:
+                - generic [ref=e1314]:
+                  - generic [ref=e1315]: Business solutions
+                  - list [ref=e1316]:
+                    - listitem [ref=e1317]:
+                      - link "Widgets" [ref=e1318] [cursor=pointer]:
+                        - /url: /widget/
+                    - listitem [ref=e1319]:
+                      - link "Charting libraries" [ref=e1320] [cursor=pointer]:
+                        - /url: /free-charting-libraries/
+                    - listitem [ref=e1321]:
+                      - link "Lightweight Charts™" [ref=e1322] [cursor=pointer]:
+                        - /url: /lightweight-charts/
+                    - listitem [ref=e1323]:
+                      - link "Advanced Charts" [ref=e1324] [cursor=pointer]:
+                        - /url: /advanced-charts/
+                    - listitem [ref=e1325]:
+                      - link "Trading Platform" [ref=e1326] [cursor=pointer]:
+                        - /url: /trading-platform/
+                - generic [ref=e1327]:
+                  - generic [ref=e1328]: Growth opportunities
+                  - list [ref=e1329]:
+                    - listitem [ref=e1330]:
+                      - link "Advertising" [ref=e1331] [cursor=pointer]:
+                        - /url: /advertising-info/
+                    - listitem [ref=e1332]:
+                      - link "Brokerage integration" [ref=e1333] [cursor=pointer]:
+                        - /url: /brokerage-integration/
+                    - listitem [ref=e1334]:
+                      - link "Partner program" [ref=e1335] [cursor=pointer]:
+                        - /url: /partner-program/
+                    - listitem [ref=e1336]:
+                      - link "Education program" [ref=e1337] [cursor=pointer]:
+                        - /url: /students/
+          - img "Look First" [ref=e1339]

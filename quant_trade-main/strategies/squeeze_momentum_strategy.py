@@ -285,13 +285,13 @@ class SqueezeMomentumStrategy(BaseStrategy):
 
     def _calc_macd_histogram(self, close):
         """计算MACD histogram"""
-        fast_ema = self._calc_ema(close, self.macd_fast)
-        slow_ema = self._calc_ema(close, self.macd_slow)
+        fast_ema = self._calc_ema_series(close, self.macd_fast)
+        slow_ema = self._calc_ema_series(close, self.macd_slow)
         macd_line = fast_ema - slow_ema
-        signal = self._calc_ema(macd_line, self.macd_signal)
-        return macd_line - signal
+        signal = self._calc_ema_series(macd_line, self.macd_signal)
+        return float(macd_line[-1] - signal[-1])
 
-    def _calc_ema(self, values, period):
+    def _calc_ema_series(self, values, period):
         values = np.asarray(values, dtype=float)
         n = len(values)
         result = np.empty(n)
@@ -302,7 +302,7 @@ class SqueezeMomentumStrategy(BaseStrategy):
                 result[i] = np.mean(values[:i + 1])
             else:
                 result[i] = values[i] * k + result[i - 1] * (1 - k)
-        return result[-1] if n > 0 else 0
+        return result
 
     def _calc_atr(self, data):
         if len(data) < self.atr_period + 1:

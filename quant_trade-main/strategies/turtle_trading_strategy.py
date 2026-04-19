@@ -184,7 +184,7 @@ class TurtleTradingStrategy(BaseStrategy):
 
     def _check_entry(self, data):
         """检查Donchian突破入场"""
-        min_len = max(self.entry_period, self.ma_period, self.atr_period) + 5
+        min_len = max(self.entry_period, 60) + 5  # Lower MA requirement
         if len(data) < min_len:
             return None
 
@@ -192,36 +192,42 @@ class TurtleTradingStrategy(BaseStrategy):
         high = data['high'].values
         low = data['low'].values
 
-        # 200MA trend filter
-        ma = self._calc_sma(close, self.ma_period)
+        # MA trend filter (shorter period for more signals)
+        ma_period = min(self.ma_period, len(close) - 1)
+        ma = self._calc_sma(close, ma_period)
         if ma[-1] == 0:
             return None
 
-        # Donchian channel
-        dc_high = np.max(high[-self.entry_period:])
-        dc_low = np.min(low[-self.entry_period:])
+        # Donchian channel: use the PREVIOUS bars (not including the last bar)
+        # The last bar's close breaking above the previous 20-day high = breakout
+        if len(high) < self.entry_period + 1:
+            return None
 
+        prev_high = np.max(high[-self.entry_period-1:-1])  # 20-day high excluding last bar
+        prev_low = np.min(low[-self.entry_period-1:-1])
         current_close = close[-1]
+
         strength = 0
 
-        # Long: breakout above 20-day high, above 200MA
-        if current_close >= dc_high and current_close > ma[-1]:
-            # Strength: how far above the breakout, relative to ATR
-            atr = self._calc_atr(data)
-            if atr > 0:
-                strength = (current_close - dc_high) / atr
-            else:
-                strength = 0.5
-            return 1, strength
+        # Long: close breaks above previous 20-day high
+        if current_close > prev_high:
+            above_ma = current_close > ma[-1]
+            near_ma = abs(current_close - ma[-1]) / ma[-1] < 0.10 if ma[-1] > 0 else False
 
-        # Short: breakout below 20-day low, below 200MA
-        if current_close <= dc_low and current_close < ma[-1]:
-            atr = self._calc_atr(data)
-            if atr > 0:
-                strength = (dc_low - current_close) / atr
-            else:
-                strength = 0.5
-            return -1, strength
+            if above_ma or near_ma:
+                atr = self._calc_atr(data)
+                strength = (current_close - prev_high) / atr if atr > 0 else 0.5
+                return 1, strength
+
+        # Short: close breaks below previous 20-day low
+        if current_close < prev_low:
+            below_ma = current_close < ma[-1]
+            near_ma = abs(current_close - ma[-1]) / ma[-1] < 0.10 if ma[-1] > 0 else False
+
+            if below_ma or near_ma:
+                atr = self._calc_atr(data)
+                strength = (prev_low - current_close) / atr if atr > 0 else 0.5
+                return -1, strength
 
         return None
 

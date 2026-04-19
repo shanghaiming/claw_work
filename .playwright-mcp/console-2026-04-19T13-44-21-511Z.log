@@ -1,0 +1,5 @@
+[   55025ms] [WARNING] Deprecation warning: use moment.updateLocale(localeName, config) to change an existing locale. moment.defineLocale(localeName, config) should only be used for creating a new locale See http://momentjs.com/guides/#/warnings/define-locale/ for more info. @ https://static.tradingview.com/static/bundles/81868.e8d7418158aa18f0df0f.js:8
+[   55296ms] [WARNING] 2026-04-19T13:45:16.806Z:Property:The state with a data type: array does not match a schema @ https://static.tradingview.com/static/bundles/80058.6d3764c8a70528a7f783.js:13
+[   61193ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://accounts.google.com/gsi/client:0
+[   61243ms] undefined
+[   61225ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://www.tradingview.com/script/5Z0ELL9z-Fluid-Momentum-Oscillator/:0
